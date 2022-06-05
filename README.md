@@ -1,3 +1,3 @@
-# Roselt Color Picker
+# Roselt Developer Tools
 
-Cross-Platform Color Picker written in Delphi
+Cross-Platform Utilities App for Developers
