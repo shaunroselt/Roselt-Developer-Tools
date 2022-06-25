@@ -7,7 +7,8 @@ uses
   uStyles in 'uStyles.pas' {dmStyles: TDataModule},
   Roselt.ColorConversion in 'Roselt.ColorConversion.pas',
   Roselt.LoremIpsum in 'Roselt.LoremIpsum.pas',
-  Roselt.Screenshot in 'Roselt.Screenshot.pas';
+  Roselt.Screenshot in 'Roselt.Screenshot.pas',
+  Roselt.NameGenerator in 'Roselt.NameGenerator.pas';
 
 {$R *.res}
 

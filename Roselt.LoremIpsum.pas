@@ -1,3 +1,11 @@
+// Look at the following for inspiration :
+//
+// https://loremipsum.io/generator/
+// https://lipsum.com/
+// https://loremipsumgenerator.org/
+// https://www.webfx.com/tools/lorem-ipsum-generator/
+// https://loremgenerator.io/
+
 unit Roselt.LoremIpsum;
 
 interface

@@ -39,26 +39,17 @@ uses
   FMX.Colors,
   FMX.SearchBox,
   FMX.TabControl,
+  FMX.EditBox,
+  FMX.SpinBox,
 
   uStyles,
   Roselt.ColorConversion,
-  Roselt.LoremIpsum;
+  Roselt.LoremIpsum,
+  Roselt.NameGenerator;
 
 type
   TfrmMain = class(TForm)
     MultiView: TMultiView;
-    btnAbout: TButton;
-    Image15: TImage;
-    Label63: TLabel;
-    btnSettings: TButton;
-    Image17: TImage;
-    Label14: TLabel;
-    btnPredefinedCustom: TButton;
-    Image18: TImage;
-    Label13: TLabel;
-    btnExitApplication: TButton;
-    Image20: TImage;
-    Label61: TLabel;
     TopBar: TRectangle;
     lblNavTitle: TLabel;
     btnHamburger: TButton;
@@ -68,30 +59,6 @@ type
     Image1: TImage;
     lblAllTools: TLabel;
     btnAllTools: TRectangle;
-    layNavBase64EncoderDecoder: TLayout;
-    btnBase64EncoderDecoder: TRectangle;
-    Image2: TImage;
-    lblBase64EncoderDecoder: TLabel;
-    layNavHTMLEncoderDecoder: TLayout;
-    btnHTMLEncoderDecoder: TRectangle;
-    Image3: TImage;
-    lblHTMLEncoderDecoder: TLabel;
-    layNavHashGenerator: TLayout;
-    btnHashGenerator: TRectangle;
-    Image4: TImage;
-    lblHashGenerator: TLabel;
-    layNavJsonYamlConverter: TLayout;
-    btnJsonYamlConverter: TRectangle;
-    Image5: TImage;
-    lblJsonYamlConverter: TLabel;
-    layNavJsonFormatter: TLayout;
-    btnJsonFormatter: TRectangle;
-    Image6: TImage;
-    lblJsonFormatter: TLabel;
-    layNavTextCaseConverterInspector: TLayout;
-    btnTextCaseConverterInspector: TRectangle;
-    Image7: TImage;
-    lblTextCaseConverterInspector: TLabel;
     FloatAnimation1: TFloatAnimation;
     layBase64EncoderDecoder: TLayout;
     layHashGenerator: TLayout;
@@ -103,10 +70,6 @@ type
     layJsonYamlConverter: TLayout;
     Label9: TLabel;
     layTextCaseConverterInspector: TLayout;
-    layNavJWTDecoder: TLayout;
-    btnJWTDecoder: TRectangle;
-    Image8: TImage;
-    lblJWTDecoder: TLabel;
     layBase64EncoderDecoderTop: TLayout;
     lblBase64EncoderDecoderConfiguration: TLabel;
     layBase64EncoderDecoderInputOutput: TLayout;
@@ -282,22 +245,9 @@ type
     Label15: TLabel;
     Label18: TLabel;
     SplitterJsonFormatterInputOutput: TSplitter;
-    layNavColorPicker: TLayout;
-    btnColorPicker: TRectangle;
-    Image16: TImage;
-    lblColorPicker: TLabel;
-    layNavLoremIpsumGenerator: TLayout;
-    btnLoremIpsumGenerator: TRectangle;
-    Image21: TImage;
-    lblLoremIpsumGenerator: TLabel;
-    layNavUUIDGenerator: TLayout;
-    btnUUIDGenerator: TRectangle;
-    Image22: TImage;
-    lblUUIDGenerator: TLabel;
     layUUIDGenerator: TLayout;
     Label5: TLabel;
     layLoremIpsumGenerator: TLayout;
-    Label7: TLabel;
     layColorPicker: TLayout;
     DesktopView: TLayout;
     Splitter2: TSplitter;
@@ -707,8 +657,203 @@ type
     cs_cielab_b: TLabel;
     cs_cielab_a: TLabel;
     btnAddCustomColor: TButton;
-    Generate: TButton;
-    Memo1: TMemo;
+    layLoremIpsumGeneratorOutput: TLayout;
+    memTitleLoremIpsumGeneratorOutput: TLabel;
+    memLoremIpsumGeneratorOutput: TMemo;
+    layLoremIpsumGeneratorTop: TLayout;
+    lblLoremIpsumGeneratorConfiguration: TLabel;
+    layLoremIpsumGeneratorType: TRectangle;
+    Image28: TImage;
+    Layout25: TLayout;
+    Label7: TLabel;
+    Label34: TLabel;
+    layLoremIpsumGeneratorAmount: TRectangle;
+    Image29: TImage;
+    Layout26: TLayout;
+    Label36: TLabel;
+    Label37: TLabel;
+    cbLoremIpsumGeneratorType: TComboBox;
+    sbLoremIpsumGeneratorAmount: TSpinBox;
+    layLoremIpsumGeneratorLetterCase: TRectangle;
+    Image30: TImage;
+    Layout1: TLayout;
+    Label1: TLabel;
+    Label2: TLabel;
+    cbLoremIpsumGeneratorLetterCase: TComboBox;
+    MultiViewScrollBox: TVertScrollBox;
+    Button13: TButton;
+    layNameGenerator: TLayout;
+    Label3: TLabel;
+    layNavTesting: TLayout;
+    btnTesting: TRectangle;
+    Image36: TImage;
+    lblTesting: TLabel;
+    layTesting: TLayout;
+    Label41: TLabel;
+    memTesting: TMemo;
+    layNavGenerators: TLayout;
+    layNavGeneratorsExpandCollapse: TLayout;
+    btnGeneratorsExpandCollapse: TRectangle;
+    imgGeneratorsExpandCollapse: TImage;
+    lblGeneratorsExpandCollapse: TLabel;
+    imgGeneratorsExpandCollapseIcon: TImage;
+    layNavUUIDGenerator: TLayout;
+    btnUUIDGenerator: TRectangle;
+    imgUUIDGenerator: TImage;
+    lblUUIDGenerator: TLabel;
+    layNavHashGenerator: TLayout;
+    btnHashGenerator: TRectangle;
+    imgHashGenerator: TImage;
+    lblHashGenerator: TLabel;
+    layNavLoremIpsumGenerator: TLayout;
+    btnLoremIpsumGenerator: TRectangle;
+    imgLoremIpsumGenerator: TImage;
+    lblLoremIpsumGenerator: TLabel;
+    layNavNameGenerator: TLayout;
+    btnNameGenerator: TRectangle;
+    imgNameGenerator: TImage;
+    lblNameGenerator: TLabel;
+    layNavChecksumGenerator: TLayout;
+    btnChecksumGenerator: TRectangle;
+    imgChecksumGenerator: TImage;
+    lblChecksumGenerator: TLabel;
+    layNavEncodersDecoders: TLayout;
+    layNavEncodersDecodersExpandCollapse: TLayout;
+    btnEncodersDecodersExpandCollapse: TRectangle;
+    imgEncodersDecodersExpandCollapse: TImage;
+    lblEncodersDecodersExpandCollapse: TLabel;
+    imgEncodersDecodersExpandCollapseIcon: TImage;
+    layNavBase64EncoderDecoder: TLayout;
+    btnBase64EncoderDecoder: TRectangle;
+    imgBase64EncoderDecoder: TImage;
+    lblBase64EncoderDecoder: TLabel;
+    layNavHTMLEncoderDecoder: TLayout;
+    btnHTMLEncoderDecoder: TRectangle;
+    imgHTMLEncoderDecoder: TImage;
+    lblHTMLEncoderDecoder: TLabel;
+    layNavJWTDecoder: TLayout;
+    btnJWTDecoder: TRectangle;
+    imgJWTDecoder: TImage;
+    lblJWTDecoder: TLabel;
+    layNavBase64ImageEncoderDecoder: TLayout;
+    btnBase64ImageEncoderDecoder: TRectangle;
+    imgBase64ImageEncoderDecoder: TImage;
+    lblBase64ImageEncoderDecoder: TLabel;
+    layNavURLEncodingDecoding: TLayout;
+    btnURLEncodingDecoding: TRectangle;
+    imgURLEncodingDecoding: TImage;
+    lblURLEncodingDecoding: TLabel;
+    layNavGZipCompressDecompress: TLayout;
+    btnGZipCompressDecompress: TRectangle;
+    imgGZipCompressDecompress: TImage;
+    lblGZipCompressDecompress: TLabel;
+    layNavGraphics: TLayout;
+    layNavGraphicsExpandCollapse: TLayout;
+    btnGraphicsExpandCollapse: TRectangle;
+    imgGraphicsExpandCollapse: TImage;
+    lblGraphicsExpandCollapse: TLabel;
+    imgGraphicsExpandCollapseIcon: TImage;
+    layNavColorPicker: TLayout;
+    btnColorPicker: TRectangle;
+    Image16: TImage;
+    lblColorPicker: TLabel;
+    layNavColorBlindnessSimulator: TLayout;
+    btnColorBlindnessSimulator: TRectangle;
+    imgColorBlindnessSimulator: TImage;
+    lblColorBlindnessSimulator: TLabel;
+    layNavImageConverter: TLayout;
+    btnImageConverter: TRectangle;
+    imgImageConverter: TImage;
+    lblImageConverter: TLabel;
+    layNavPNGJPEGCompressor: TLayout;
+    btnPNGJPEGCompressor: TRectangle;
+    imgPNGJPEGCompressor: TImage;
+    lblPNGJPEGCompressor: TLabel;
+    layNavText: TLayout;
+    layNavTextExpandCollapse: TLayout;
+    btnTextExpandCollapse: TRectangle;
+    imgTextExpandCollapse: TImage;
+    lblTextExpandCollapse: TLabel;
+    imgTextExpandCollapseIcon: TImage;
+    layNavTextCaseConverterInspector: TLayout;
+    btnTextCaseConverterInspector: TRectangle;
+    imgTextCaseConverterInspector: TImage;
+    lblTextCaseConverterInspector: TLabel;
+    Layout2: TLayout;
+    Rectangle5: TRectangle;
+    Image4: TImage;
+    Label38: TLabel;
+    Layout9: TLayout;
+    Rectangle6: TRectangle;
+    Image7: TImage;
+    Label39: TLabel;
+    Layout27: TLayout;
+    Rectangle7: TRectangle;
+    Image8: TImage;
+    Label40: TLabel;
+    Layout28: TLayout;
+    Rectangle8: TRectangle;
+    Image21: TImage;
+    Label42: TLabel;
+    layNavSettings: TLayout;
+    btnSettings: TRectangle;
+    imgSettings: TImage;
+    lblSettings: TLabel;
+    laySettings: TLayout;
+    Label13: TLabel;
+    imgAboutLogo: TImage;
+    layNavConverters: TLayout;
+    layNavConvertersExpandCollapse: TLayout;
+    btnConvertersExpandCollapse: TRectangle;
+    imgConvertersExpandCollapse: TImage;
+    lblConvertersExpandCollapse: TLabel;
+    imgConvertersExpandCollapseIcon: TImage;
+    layNavJsonYamlConverter: TLayout;
+    btnJsonYamlConverter: TRectangle;
+    imgJsonYamlConverter: TImage;
+    lblJsonYamlConverter: TLabel;
+    layNavNumberBase: TLayout;
+    btnNavNumberBase: TRectangle;
+    imgNavNumberBase: TImage;
+    lblNavNumberBase: TLabel;
+    layNavTimestamp: TLayout;
+    btnTimestamp: TRectangle;
+    imgTimestamp: TImage;
+    lblTimestamp: TLabel;
+    layNavFormatters: TLayout;
+    layNavFormattersExpandCollapse: TLayout;
+    btnFormattersExpandCollapse: TRectangle;
+    imgFormattersExpandCollapse: TImage;
+    Formatters: TLabel;
+    imgFormattersExpandCollapseIcon: TImage;
+    layNavXMLFormatter: TLayout;
+    btnXMLFormatter: TRectangle;
+    imgXMLFormatter: TImage;
+    lblXMLFormatter: TLabel;
+    layNavHTMLFormatter: TLayout;
+    btnHTMLFormatter: TRectangle;
+    imgHTMLFormatter: TImage;
+    lblHTMLFormatter: TLabel;
+    layNavCSSFormatter: TLayout;
+    btnCSSFormatter: TRectangle;
+    imgCSSFormatter: TImage;
+    lblCSSFormatter: TLabel;
+    layNavJavaScriptFormatter: TLayout;
+    btnJavaScriptFormatter: TRectangle;
+    imgJavaScriptFormatter: TImage;
+    lblJavaScriptFormatter: TLabel;
+    laySQLFormatter: TLayout;
+    btnSQLFormatter: TRectangle;
+    imgSQLFormatter: TImage;
+    lblSQLFormatter: TLabel;
+    layNavPHPFormatter: TLayout;
+    btnPHPFormatter: TRectangle;
+    imgPHPFormatter: TImage;
+    lblPHPFormatter: TLabel;
+    layNavJsonFormatter: TLayout;
+    btnJsonFormatter: TRectangle;
+    imgJsonFormatter: TImage;
+    lblJsonFormatter: TLabel;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -744,7 +889,8 @@ type
     procedure btnAddCustomColorClick(Sender: TObject);
     procedure tbX_xzyChange(Sender: TObject);
     procedure memJsonFormatterInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
-    procedure GenerateClick(Sender: TObject);
+    procedure sbLoremIpsumGeneratorAmountChange(Sender: TObject);
+    procedure ExpandCollapseNavItem(Sender: TObject);
   private
     { Private declarations }
     TextCaseConverterInspectorInput: String;
@@ -860,6 +1006,32 @@ begin
     Layout_ColorSpace.Height := (lblColorCodes.Height + (DelphiVCLColorCodeTitle.Height * 11) + 24);
 end;
 
+procedure TfrmMain.ExpandCollapseNavItem(Sender: TObject);
+begin
+  var Button := TRectangle(Sender);
+  var ButtonLayout := Button.ParentControl;
+  var ExpandCollapseLayout := ButtonLayout.ParentControl;
+  var ExpandCollapseImage := TImage(Button.Children.Items[2]);
+
+  if (ExpandCollapseLayout.Height = ButtonLayout.Height) then
+  begin
+    ExpandCollapseLayout.Height := ButtonLayout.Height * ExpandCollapseLayout.ChildrenCount;
+    ExpandCollapseImage.Bitmap := ImageList1.Source[1].MultiResBitmap[0].Bitmap;
+
+    for var I := 0 to ExpandCollapseLayout.ChildrenCount-1 do
+      if ExpandCollapseLayout.Children.Items[I].Name <> ButtonLayout.Name then
+        TControl(ExpandCollapseLayout.Children.Items[I]).Visible := True;
+  end else
+  begin
+    ExpandCollapseLayout.Height := ButtonLayout.Height;
+    ExpandCollapseImage.Bitmap := ImageList1.Source[0].MultiResBitmap[0].Bitmap;
+
+    for var I := 0 to ExpandCollapseLayout.ChildrenCount-1 do
+      if ExpandCollapseLayout.Children.Items[I].Name <> ButtonLayout.Name then
+        TControl(ExpandCollapseLayout.Children.Items[I]).Visible := False;
+  end;
+end;
+
 procedure TfrmMain.Layout_cs_hunterlabClick(Sender: TObject);
 begin
   ColorSpacesExpand(Sender, Layout_cs_HunterLab_main, cPanel_HunterLab_Selector, ImageHunterLab, 3);
@@ -881,6 +1053,14 @@ begin
   Layout_cs_hunterlabClick(Sender);
   Layout_cs_cielabClick(Sender);
   PopulateColorPickerColorRange;
+
+  // Collapse Nav Items
+  ExpandCollapseNavItem(btnConvertersExpandCollapse);
+  ExpandCollapseNavItem(btnEncodersDecodersExpandCollapse);
+  ExpandCollapseNavItem(btnFormattersExpandCollapse);
+  ExpandCollapseNavItem(btnTextExpandCollapse);
+  ExpandCollapseNavItem(btnGeneratorsExpandCollapse);
+  ExpandCollapseNavItem(btnGraphicsExpandCollapse);
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
@@ -981,11 +1161,6 @@ begin
   bn_binary_red.Width := WidthCalculated;
   bn_binary_green.Width := WidthCalculated;
   bn_binary_blue.Width := WidthCalculated;
-end;
-
-procedure TfrmMain.GenerateClick(Sender: TObject);
-begin
-  Memo1.Text := GenerateLoremIpsum(TLoremIpsumType.Paragraphs, 1);
 end;
 
 procedure TfrmMain.HashGenerator;
@@ -1179,6 +1354,11 @@ begin
     TLayout(LayoutContainer.Children.Items[I]).Visible := False;
 
   TLayout(FindComponent(ToolLayoutName)).Visible := True;
+end;
+
+procedure TfrmMain.sbLoremIpsumGeneratorAmountChange(Sender: TObject);
+begin
+  memLoremIpsumGeneratorOutput.Text := GenerateLoremIpsum(TLoremIpsumType.Paragraphs, 1);
 end;
 
 procedure TfrmMain.SwitchBase64EncoderDecoderSwitch(Sender: TObject);
