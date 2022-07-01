@@ -31,6 +31,7 @@ uses
   FMX.Edit,
   FMX.SearchBox,
   FMX.TabControl,
+  FMX.Printer,
 
   uStyles,
   uAssets,
@@ -201,9 +202,6 @@ type
     btnSettings: TRectangle;
     imgSettings: TImage;
     lblSettings: TLabel;
-    laySettings: TLayout;
-    Label13: TLabel;
-    imgAboutLogo: TImage;
     layNavConverters: TLayout;
     layNavConvertersExpandCollapse: TLayout;
     btnConvertersExpandCollapse: TRectangle;
@@ -280,13 +278,61 @@ type
     layJavaScriptFormatter: TFrame_JavaScriptFormatter;
     layUUIDGenerator: TFrame_UUIDGenerator;
     layNameGenerator: TFrame_NameGenerator;
+    ImageList1: TImageList;
+    laySettings: TScrollBox;
+    layFontFamily: TRectangle;
+    cbFontFamily: TComboBox;
+    imgFontFamily: TImage;
+    layFontFamilyTitleDescription: TLayout;
+    lblFontFamilyTitle: TLabel;
+    lblFontFamilyDescription: TLabel;
+    layLanguage: TRectangle;
+    cbLanguage: TComboBox;
+    imgLanguage: TImage;
+    layLanguageTitleDescription: TLayout;
+    lblLanguageTitle: TLabel;
+    lblLanguageDescription: TLabel;
+    layLineNumbers: TRectangle;
+    imgLineNumbers: TImage;
+    layLineNumbersTitleDescription: TLayout;
+    lblLineNumbersTitle: TLabel;
+    lblLineNumbersDescription: TLabel;
+    SwitchLineNumbers: TSwitch;
+    lblSwitchLineNumbers: TLabel;
     layTheme: TRectangle;
     cbTheme: TComboBox;
     imgTheme: TImage;
     layThemeTitleDescription: TLayout;
     lblThemeTitle: TLabel;
     lblThemeDescription: TLabel;
-    ImageList1: TImageList;
+    layWordWrap: TRectangle;
+    imgWordWrap: TImage;
+    layWordWrapTitleDescription: TLayout;
+    lblWordWrapTitle: TLabel;
+    lblWordWrapDescription: TLabel;
+    SwitchWordWrap: TSwitch;
+    lblSwitchWordWrap: TLabel;
+    lblTopSettings: TLabel;
+    layAppInfo: TRectangle;
+    imgAppInfo: TImage;
+    layAppInfoTitleDescription: TLayout;
+    lblAppInfoTitle: TLabel;
+    lblAppInfoDescription: TLabel;
+    btnAppInfoCopyToClipboard: TButton;
+    imgAppInfoCopyToClipboard: TImage;
+    Rectangle1: TRectangle;
+    Layout3: TLayout;
+    Image1: TImage;
+    Label1: TLabel;
+    Layout1: TLayout;
+    Label2: TLabel;
+    Image2: TImage;
+    Layout4: TLayout;
+    Label3: TLabel;
+    Image3: TImage;
+    Layout5: TLayout;
+    Label4: TLabel;
+    Image5: TImage;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -295,10 +341,13 @@ type
     procedure ExpandCollapseNavItem(Sender: TObject);
     procedure btnToolHelpClick(Sender: TObject);
     procedure cbThemeChange(Sender: TObject);
+    procedure SwitchWordWrapSwitch(Sender: TObject);
+    procedure SwitchLineNumbersSwitch(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
     procedure SelectTool(ToolLayoutName: String);
+    function GetAppInfo(): String;
   public
     { Public declarations }
   end;
@@ -366,6 +415,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   btnAllTools.OnClick(btnAllTools);
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
+  lblAppInfoDescription.Text := GetAppInfo;
+
 
   // Collapse Nav Items
   ExpandCollapseNavItem(btnConvertersExpandCollapse);
@@ -375,6 +426,8 @@ begin
   ExpandCollapseNavItem(btnGeneratorsExpandCollapse);
   ExpandCollapseNavItem(btnGraphicsExpandCollapse);
 
+
+  // Load Themes (Settings)
   cbTheme.Items.Clear;
   for var c in dmStyles do
     if c is TStyleBook then
@@ -382,6 +435,29 @@ begin
       var Index := cbTheme.Items.Add(TStyleBook(c).StyleName);
       cbTheme.ListItems[Index].Data := TStyleBook(c);
     end;
+  cbTheme.ItemIndex := 0;
+
+
+  // Load Font Family (Settings)
+  // Might not work if there isn't a printer. Need to test.
+  // Probably isn't cross-platform either. Need to test.
+  Printer.ActivePrinter;
+  cbFontFamily.Items := Printer.Fonts;
+  cbFontFamily.ItemIndex := 0;
+end;
+
+function TfrmMain.GetAppInfo: String;
+// Need to get all of the App Info dynamically in the future
+begin
+  var Version := 'Version 1.0.0.0';
+  var Architecture := 'X64';
+  var BuildType := 'RELEASE';
+  {$IFDEF DEBUG}
+    BuildType := 'DEBUG';
+  {$ENDIF}
+  var CompiledDate := Date.ToString;
+
+  Result := Version + ' | ' + Architecture + ' | ' + BuildType + ' | ' + CompiledDate;
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
@@ -390,6 +466,32 @@ begin
     TControl(LayoutContainer.Children.Items[I]).Visible := False;
 
   TControl(FindComponent(ToolLayoutName)).Visible := True;
+end;
+
+procedure TfrmMain.SwitchLineNumbersSwitch(Sender: TObject);
+begin
+  if (lblSwitchLineNumbers.Text = 'On') then
+  begin
+    lblSwitchLineNumbers.Text := 'Off';
+    SwitchLineNumbers.IsChecked := True;
+  end else
+  begin
+    lblSwitchLineNumbers.Text := 'On';
+    SwitchLineNumbers.IsChecked := False;
+  end;
+end;
+
+procedure TfrmMain.SwitchWordWrapSwitch(Sender: TObject);
+begin
+  if (lblSwitchWordWrap.Text = 'On') then
+  begin
+    lblSwitchWordWrap.Text := 'Off';
+    SwitchWordWrap.IsChecked := True;
+  end else
+  begin
+    lblSwitchWordWrap.Text := 'On';
+    SwitchWordWrap.IsChecked := False;
+  end;
 end;
 
 procedure TfrmMain.btnAllToolsClick(Sender: TObject);
