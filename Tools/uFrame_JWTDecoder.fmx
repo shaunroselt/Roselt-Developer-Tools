@@ -1,0 +1,118 @@
+object Frame_JWTDecoder: TFrame_JWTDecoder
+  Size.Width = 800.000000000000000000
+  Size.Height = 750.000000000000000000
+  Size.PlatformDefault = False
+  object layBottom: TLayout
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 616.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object layHeader: TLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 760.000000000000000000
+      Size.Height = 245.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object memTitleHeader: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 760.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Header'
+        TabOrder = 0
+      end
+      object memHeader: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Align = Client
+        Size.Width = 760.000000000000000000
+        Size.Height = 215.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 215.000000000000000000
+      end
+    end
+    object layPayload: TLayout
+      Align = Client
+      Size.Width = 760.000000000000000000
+      Size.Height = 331.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object memTitlePayload: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 760.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Payload'
+        TabOrder = 0
+      end
+      object memPayload: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        TextSettings.WordWrap = True
+        Align = Client
+        Size.Width = 760.000000000000000000
+        Size.Height = 301.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 301.000000000000000000
+      end
+    end
+  end
+  object layTop: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 134.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object layJWTToken: TLayout
+      Align = Client
+      Size.Width = 760.000000000000000000
+      Size.Height = 94.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lblJWTToken: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 760.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'JWT Token'
+        TabOrder = 0
+      end
+      object memJWTToken: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        TextSettings.WordWrap = True
+        Align = Client
+        Size.Width = 760.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 64.000000000000000000
+      end
+    end
+  end
+end

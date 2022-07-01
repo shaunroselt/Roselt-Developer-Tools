@@ -1,0 +1,106 @@
+object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
+  Size.Width = 800.000000000000000000
+  Size.Height = 750.000000000000000000
+  Size.PlatformDefault = False
+  OnResize = FrameResize
+  object layContainer: TLayout
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 750.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object layBase64: TLayout
+      Align = Left
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 710.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object memTitleBase64: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 380.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Base64'
+        TabOrder = 0
+      end
+      object memBase64: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Align = Client
+        Size.Width = 380.000000000000000000
+        Size.Height = 680.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 676.000000000000000000
+      end
+    end
+    object layImage: TLayout
+      Align = Client
+      Size.Width = 375.000000000000000000
+      Size.Height = 710.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lblImage: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 375.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Image'
+        TabOrder = 0
+      end
+      object DropImage: TDropTarget
+        Align = Top
+        Position.Y = 30.000000000000000000
+        Size.Width = 375.000000000000000000
+        Size.Height = 147.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'PNG, JPG, JPEF, BMP, GIF, ICO, WEBP, SVG'
+        object btnDropImage: TButton
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 355.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 75
+          Text = 'Browse files'
+        end
+      end
+      object imgImage: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Size.Width = 375.000000000000000000
+        Size.Height = 533.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object Splitter: TSplitter
+      Align = Left
+      Cursor = crHSplit
+      MinSize = 20.000000000000000000
+      Position.X = 400.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 5.000000000000000000
+      Size.Height = 710.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+end

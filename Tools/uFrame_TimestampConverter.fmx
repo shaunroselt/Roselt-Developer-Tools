@@ -1,0 +1,286 @@
+object Frame_TimestampConverter: TFrame_TimestampConverter
+  Padding.Left = 20.000000000000000000
+  Padding.Top = 20.000000000000000000
+  Padding.Right = 20.000000000000000000
+  Padding.Bottom = 20.000000000000000000
+  Size.Width = 800.000000000000000000
+  Size.Height = 750.000000000000000000
+  Size.PlatformDefault = False
+  object layUnixTimestamp: TLayout
+    Align = Top
+    Position.X = 20.000000000000000000
+    Position.Y = 20.000000000000000000
+    Size.Width = 760.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblUnixTimestamp: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 760.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Unix Timestamp'
+      TabOrder = 0
+    end
+    object sbUnixTimestamp: TSpinBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 1
+      Cursor = crIBeam
+      Size.Width = 760.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object layDateTime: TGridLayout
+    Align = Top
+    ItemHeight = 64.000000000000000000
+    ItemWidth = 250.000000000000000000
+    Orientation = Horizontal
+    Position.X = 20.000000000000000000
+    Position.Y = 84.000000000000000000
+    Size.Width = 760.000000000000000000
+    Size.Height = 128.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object layYear: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      object lblYear: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Year'
+        TabOrder = 0
+      end
+      object sbYear: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Min = 1.000000000000000000
+        Max = 9999.000000000000000000
+        Value = 1.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object layMonth: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object lblMonth: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Month'
+        TabOrder = 0
+      end
+      object sbMonth: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Min = 1.000000000000000000
+        Max = 12.000000000000000000
+        Value = 1.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object layDay: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object lblDay: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Day'
+        TabOrder = 0
+      end
+      object sbDay: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Min = 1.000000000000000000
+        Max = 31.000000000000000000
+        Value = 1.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object layHours: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      object lblHours: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Hours (24 hours)'
+        TabOrder = 0
+      end
+      object sbHours: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Max = 24.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object layMinutes: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object lblMinutes: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Minutes'
+        TabOrder = 0
+      end
+      object sbMinutes: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Size.Width = 250.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object laySeconds: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lblSeconds: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Seconds'
+        TabOrder = 0
+      end
+      object sbSeconds: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Size.Width = 250.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+  object layTextCaseConverterInspectorInspect: TLayout
+    Align = Top
+    Position.X = 20.000000000000000000
+    Position.Y = 212.000000000000000000
+    Size.Width = 760.000000000000000000
+    Size.Height = 518.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lblResults: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 760.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Results'
+      TabOrder = 0
+    end
+    object layResults: TRectangle
+      Align = Client
+      Fill.Color = xFF2B2B2B
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 482.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object lblDontKnowYetTitle: TLabel
+        Align = Top
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 736.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'DontKnowYet'
+        TabOrder = 3
+      end
+      object layIDontKnowYet: TLayout
+        Align = Top
+        Position.X = 12.000000000000000000
+        Position.Y = 29.000000000000000000
+        Size.Width = 736.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblDontKnowYet: TLabel
+          Align = Left
+          Size.Width = 121.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'DontKnowYet'
+          TabOrder = 8
+        end
+        object lblDontKnowYetValue: TLabel
+          Align = Client
+          Size.Width = 615.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Trailing
+          Text = 'Value'
+          TabOrder = 7
+        end
+      end
+    end
+  end
+end

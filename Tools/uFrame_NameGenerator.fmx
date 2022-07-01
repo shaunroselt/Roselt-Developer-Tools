@@ -1,0 +1,405 @@
+object Frame_NameGenerator: TFrame_NameGenerator
+  Align = VertCenter
+  Size.Width = 800.000000000000000000
+  Size.Height = 750.000000000000000000
+  Size.PlatformDefault = False
+  object layBottom: TLayout
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 381.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object memTitleOutput: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 760.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Names'
+      TabOrder = 0
+    end
+    object memOutput: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      TextSettings.WordWrap = True
+      Align = Client
+      Size.Width = 760.000000000000000000
+      Size.Height = 311.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 756.000000000000000000
+      Viewport.Height = 307.000000000000000000
+    end
+  end
+  object layTop: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 369.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblConfiguration: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 760.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Configuration'
+      TabOrder = 0
+    end
+    object layGender: TRectangle
+      Align = Top
+      Fill.Color = xFF2B2B2B
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 206.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgGender: TImage
+        MultiResBitmap.Height = 2000
+        MultiResBitmap.Width = 2000
+        MultiResBitmap = <
+          item
+            Width = 2000
+            Height = 2000
+            PNG = {}
+            FileName = 
+              'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Icons\' +
+              'Dark mode\Shaun Roselt App Icons-12.png'
+          end>
+        Align = Left
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 17.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 38.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object cbGender: TComboBox
+        Align = Right
+        Items.Strings = (
+          'Any'
+          'Male'
+          'Female')
+        ItemIndex = 0
+        Position.X = 631.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object layGenderTitleDescription: TLayout
+        Align = Client
+        Size.Width = 582.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblGender: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Gender'
+          TabOrder = 1
+        end
+        object lblGenderDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'Select what type of gender specific names you want'
+          TabOrder = 0
+        end
+      end
+    end
+    object laySurname: TRectangle
+      Align = Top
+      Fill.Color = xFF2B2B2B
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 128.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgSurname: TImage
+        MultiResBitmap.Height = 2000
+        MultiResBitmap.Width = 2000
+        MultiResBitmap = <
+          item
+            Width = 2000
+            Height = 2000
+            PNG = {}
+            FileName = 
+              'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Icons\' +
+              'Dark mode\Shaun Roselt App Icons-12.png'
+          end>
+        Align = Left
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 17.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 38.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object laySurnameTitleDescription: TLayout
+        Align = Client
+        Size.Width = 537.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblSurnameTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 537.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Surname'
+          TabOrder = 1
+        end
+        object lblSurnameDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 537.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'Select whether you want to generate a surname or not'
+          TabOrder = 0
+        end
+      end
+      object SwitchSurname: TSwitch
+        Align = Right
+        Cursor = crHandPoint
+        IsChecked = True
+        Position.X = 690.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 58.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+      end
+      object lblSwitchSurname: TLabel
+        Align = Right
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Right = 8.000000000000000000
+        Position.X = 586.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.HorzAlign = Trailing
+        Text = 'On'
+        TabOrder = 1
+      end
+    end
+    object layAmount: TRectangle
+      Align = Top
+      Fill.Color = xFF2B2B2B
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 284.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgAmount: TImage
+        MultiResBitmap.Height = 2000
+        MultiResBitmap.Width = 2000
+        MultiResBitmap = <
+          item
+            Width = 2000
+            Height = 2000
+            PNG = {}
+            FileName = 
+              'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Icons\' +
+              'Dark mode\Shaun Roselt App Icons-24.png'
+          end>
+        Align = Left
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 17.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 38.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object layAmountTitleDescription: TLayout
+        Align = Client
+        Size.Width = 582.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblAmountTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Amount'
+          TabOrder = 1
+        end
+        object lblAmountDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'Select how many names you want'
+          TabOrder = 0
+        end
+      end
+      object sbAmount: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 2
+        Cursor = crIBeam
+        Value = 10.000000000000000000
+        Position.X = 631.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object layLetterCase: TRectangle
+      Align = Top
+      Fill.Color = xFF2B2B2B
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object cbLetterCase: TComboBox
+        Align = Right
+        Items.Strings = (
+          'Regular'
+          'lower'
+          'UPPER')
+        ItemIndex = 0
+        Position.X = 631.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object layLetterCaseTitleDescription: TLayout
+        Align = Client
+        Size.Width = 582.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblLetterCaseTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Letter Case'
+          TabOrder = 1
+        end
+        object lblLetterCaseDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'Select which letter case you want to use'
+          TabOrder = 0
+        end
+      end
+      object imgLetterCase: TImage
+        MultiResBitmap.Height = 2000
+        MultiResBitmap.Width = 2000
+        MultiResBitmap = <
+          item
+            Width = 2000
+            Height = 2000
+            PNG = {}
+            FileName = 
+              'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Icons\' +
+              'Dark mode\Shaun Roselt App Icons-11.png'
+          end>
+        Align = Left
+        HitTest = False
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 17.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 38.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end
