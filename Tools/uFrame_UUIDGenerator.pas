@@ -20,6 +20,7 @@ uses
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Edit,
+  FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts;
 
@@ -50,6 +51,13 @@ type
     lblSwitchHyphens: TLabel;
     imgHyphens: TImage;
     imgLetterCase: TImage;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    btnOutputRefresh: TButton;
+    imgOutputRefresh: TImage;
+    lblOutputRefresh: TLabel;
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,5 +67,13 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_UUIDGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 end.

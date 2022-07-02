@@ -20,6 +20,7 @@ uses
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Controls.Presentation,
+  FMX.Platform,
   FMX.Layouts;
 
 type
@@ -34,7 +35,17 @@ type
     DropImage: TDropTarget;
     imgImage: TImage;
     btnDropImage: TButton;
+    btnPasteFromClipboard: TButton;
+    imgPasteFromClipboard: TImage;
+    lblPasteFromClipboard: TLabel;
+    btnCopyToClipboard: TButton;
+    imgCopyToClipboard: TImage;
+    lblCopyToClipboard: TLabel;
+    OpenDialog: TOpenDialog;
     procedure FrameResize(Sender: TObject);
+    procedure btnCopyToClipboardClick(Sender: TObject);
+    procedure btnPasteFromClipboardClick(Sender: TObject);
+    procedure btnDropImageClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +55,30 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_Base64ImageEncoderDecoder.btnCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memBase64.Text);
+end;
+
+procedure TFrame_Base64ImageEncoderDecoder.btnDropImageClick(Sender: TObject);
+begin
+  if OpenDialog.Execute then
+  begin
+    // TOpenDialog doesn't work on all platforms
+  end;
+end;
+
+procedure TFrame_Base64ImageEncoderDecoder.btnPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memBase64.Text := ClipboardService.GetClipboard.ToString;
+end;
 
 procedure TFrame_Base64ImageEncoderDecoder.FrameResize(Sender: TObject);
 begin

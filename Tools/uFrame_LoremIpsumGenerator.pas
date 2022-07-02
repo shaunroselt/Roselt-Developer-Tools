@@ -20,6 +20,7 @@ uses
   FMX.SpinBox,
   FMX.ListBox,
   FMX.Objects,
+  FMX.Platform,
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Controls.Presentation,
@@ -51,7 +52,14 @@ type
     lblLetterCaseTitle: TLabel;
     lblLetterCaseDescription: TLabel;
     imgLetterCase: TImage;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    btnOutputRefresh: TButton;
+    imgOutputRefresh: TImage;
+    lblOutputRefresh: TLabel;
     procedure sbAmountChange(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,6 +69,14 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_LoremIpsumGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 procedure TFrame_LoremIpsumGenerator.sbAmountChange(Sender: TObject);
 begin

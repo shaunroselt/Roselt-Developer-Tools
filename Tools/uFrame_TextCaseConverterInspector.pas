@@ -18,6 +18,7 @@ uses
   FMX.Memo.Types,
   FMX.Layouts,
   FMX.Objects,
+  FMX.Platform,
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Controls.Presentation;
@@ -89,9 +90,18 @@ type
     btnTextCaseConverterInspectorConvertPascalCase: TButton;
     btnTextCaseConverterInspectorConvertTitleCase: TButton;
     imgConversion: TImage;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
     procedure TextCaseConverterButtonsClick(Sender: TObject);
     procedure memTextCaseConverterInspectorInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure memTextCaseConverterInspectorInputChange(Sender: TObject);
   private
     { Private declarations }
     TextCaseConverterInspectorInput: String;
@@ -104,6 +114,28 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_TextCaseConverterInspector.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memTextCaseConverterInspectorInput.Text);
+end;
+
+procedure TFrame_TextCaseConverterInspector.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memTextCaseConverterInspectorInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_TextCaseConverterInspector.memTextCaseConverterInspectorInputChange(Sender: TObject);
+begin
+  TextCaseConverterInspectorInput := memTextCaseConverterInspectorInput.Text;
+  TextCaseInspector();
+end;
 
 procedure TFrame_TextCaseConverterInspector.memTextCaseConverterInspectorInputKeyUp(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);

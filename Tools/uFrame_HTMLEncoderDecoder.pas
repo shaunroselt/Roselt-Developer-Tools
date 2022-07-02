@@ -19,18 +19,12 @@ uses
   FMX.Objects,
   FMX.ScrollBox,
   FMX.Memo,
+  FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts;
 
 type
   TFrame_HTMLEncoderDecoder = class(TFrame)
-    layBottom: TLayout;
-    layInput: TLayout;
-    memTitleInput: TLabel;
-    memInput: TMemo;
-    layOutput: TLayout;
-    memTitleOutput: TLabel;
-    memOutput: TMemo;
     layTop: TLayout;
     lblConfiguration: TLabel;
     layConversion: TRectangle;
@@ -40,11 +34,33 @@ type
     SwitchConversion: TSwitch;
     lblSwitchConversion: TLabel;
     imgConversion: TImage;
+    layBottom: TLayout;
+    layInput: TLayout;
+    memTitleInput: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
+    memInput: TMemo;
+    layOutput: TLayout;
+    memTitleOutput: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    memOutput: TMemo;
+    SplitterInputOutput: TSplitter;
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure FrameResize(Sender: TObject);
     procedure SwitchConversionSwitch(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure memInputChange(Sender: TObject);
   private
     { Private declarations }
+    procedure HTMLEncoderDecoder();
   public
     { Public declarations }
   end;
@@ -53,13 +69,36 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_HTMLEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_HTMLEncoderDecoder.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_HTMLEncoderDecoder.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
+
 procedure TFrame_HTMLEncoderDecoder.FrameResize(Sender: TObject);
 begin
   layInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
 end;
 
-procedure TFrame_HTMLEncoderDecoder.memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
-  Shift: TShiftState);
+procedure TFrame_HTMLEncoderDecoder.HTMLEncoderDecoder;
 begin
   try
     var TextToEncode := memInput.Text;
@@ -70,6 +109,17 @@ begin
   except on E: Exception do
 
   end;
+end;
+
+procedure TFrame_HTMLEncoderDecoder.memInputChange(Sender: TObject);
+begin
+  HTMLEncoderDecoder();
+end;
+
+procedure TFrame_HTMLEncoderDecoder.memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
+  Shift: TShiftState);
+begin
+  HTMLEncoderDecoder();
 end;
 
 procedure TFrame_HTMLEncoderDecoder.SwitchConversionSwitch(Sender: TObject);

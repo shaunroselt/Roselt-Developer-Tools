@@ -17,19 +17,13 @@ uses
   FMX.Memo.Types,
   FMX.Objects,
   FMX.ScrollBox,
+  FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts;
 
 type
   TFrame_URLEncoderDecoder = class(TFrame)
-    layBottom: TLayout;
-    layInput: TLayout;
-    memTitleInput: TLabel;
-    memInput: TMemo;
-    layOutput: TLayout;
-    memTitleOutput: TLabel;
-    memOutput: TMemo;
     layTop: TLayout;
     lblConfiguration: TLabel;
     layConversion: TRectangle;
@@ -39,9 +33,28 @@ type
     SwitchConversion: TSwitch;
     lblSwitchConversion: TLabel;
     imgConversion: TImage;
+    layBottom: TLayout;
+    layInput: TLayout;
+    memTitleInput: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    memInput: TMemo;
+    layOutput: TLayout;
+    memTitleOutput: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    memOutput: TMemo;
     procedure FrameResize(Sender: TObject);
     procedure SwitchConversionSwitch(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,6 +64,30 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_URLEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_URLEncoderDecoder.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_URLEncoderDecoder.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 procedure TFrame_URLEncoderDecoder.FrameResize(Sender: TObject);
 begin

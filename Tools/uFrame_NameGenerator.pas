@@ -27,6 +27,7 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   FMX.Edit,
+  FMX.Platform,
   FMX.EditBox,
   FMX.SpinBox,
   Roselt.NameGenerator;
@@ -63,6 +64,13 @@ type
     lblLetterCaseTitle: TLabel;
     lblLetterCaseDescription: TLabel;
     imgLetterCase: TImage;
+    btnRefresh: TButton;
+    imgRefresh: TImage;
+    lblRefresh: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,5 +80,13 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_NameGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 end.

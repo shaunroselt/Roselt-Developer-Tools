@@ -16,6 +16,7 @@ uses
   FMX.StdCtrls,
   FMX.Objects,
   FMX.Edit,
+  FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts;
 
@@ -47,6 +48,11 @@ type
     lblFormatValuesDescription: TLabel;
     SwitchFormatValues: TSwitch;
     lblFormatValues: TLabel;
+    imgHexadecimalCopyToClipboard: TImage;
+    imgDecimalCopyToClipboard: TImage;
+    imgOctalCopyToClipboard: TImage;
+    imgBinaryCopyToClipboard: TImage;
+    procedure CopyOutputToClipboard(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,5 +62,13 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_NumberBaseConverter.CopyOutputToClipboard(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
+end;
 
 end.

@@ -19,6 +19,7 @@ uses
   FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
+  FMX.Platform,
   FMX.Memo,
   FMX.Edit,
   FMX.Controls.Presentation,
@@ -68,9 +69,25 @@ type
     layOutputTypeTitleDescription: TLayout;
     lblOutputTypeTitle: TLabel;
     lblOutputTypeDescription: TLabel;
+    imgHashGeneratorOutputSHA512CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA384CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA256CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA224CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA1CopyToClipboard: TImage;
+    imgHashGeneratorOutputMD5CopyToClipboard: TImage;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
     procedure SwitchLetterCaseSwitch(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure cbOutputTypeChange(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure CopyOutputToClipboard(Sender: TObject);
+    procedure memInputChange(Sender: TObject);
   private
     { Private declarations }
     procedure HashGenerator();
@@ -82,6 +99,22 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_HashGenerator.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_HashGenerator.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
 procedure TFrame_HashGenerator.cbOutputTypeChange(Sender: TObject);
 begin
   // Base64 Encoding is not yet implemented
@@ -91,6 +124,14 @@ begin
     SwitchLetterCase.Enabled := TRUE;
 
   HashGenerator();
+end;
+
+procedure TFrame_HashGenerator.CopyOutputToClipboard(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
 end;
 
 procedure TFrame_HashGenerator.HashGenerator;
@@ -119,6 +160,11 @@ begin
 
   // Need to implement Base64 Encoding
 
+end;
+
+procedure TFrame_HashGenerator.memInputChange(Sender: TObject);
+begin
+  HashGenerator();
 end;
 
 procedure TFrame_HashGenerator.memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;

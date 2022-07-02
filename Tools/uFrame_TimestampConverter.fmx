@@ -18,7 +18,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
       Align = Top
       StyledSettings = [Family, Style, FontColor]
       Size.Width = 760.000000000000000000
-      Size.Height = 30.000000000000000000
+      Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
       Text = 'Unix Timestamp'
@@ -30,7 +30,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
       TabOrder = 1
       Cursor = crIBeam
       Size.Width = 760.000000000000000000
-      Size.Height = 34.000000000000000000
+      Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
     end
   end
@@ -55,7 +55,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 250.000000000000000000
-        Size.Height = 30.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Year'
@@ -70,7 +70,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Max = 9999.000000000000000000
         Value = 1.000000000000000000
         Size.Width = 250.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 28.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -84,7 +84,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 250.000000000000000000
-        Size.Height = 30.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Month'
@@ -99,7 +99,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Max = 12.000000000000000000
         Value = 1.000000000000000000
         Size.Width = 250.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 28.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -113,7 +113,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 250.000000000000000000
-        Size.Height = 30.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Day'
@@ -128,7 +128,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Max = 31.000000000000000000
         Value = 1.000000000000000000
         Size.Width = 250.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 28.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -142,7 +142,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 250.000000000000000000
-        Size.Height = 30.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Hours (24 hours)'
@@ -155,7 +155,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Cursor = crIBeam
         Max = 24.000000000000000000
         Size.Width = 250.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 28.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -169,7 +169,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 250.000000000000000000
-        Size.Height = 30.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Minutes'
@@ -181,7 +181,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         TabOrder = 1
         Cursor = crIBeam
         Size.Width = 250.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 28.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -195,7 +195,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 250.000000000000000000
-        Size.Height = 30.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Seconds'
@@ -207,7 +207,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         TabOrder = 1
         Cursor = crIBeam
         Size.Width = 250.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 28.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -224,7 +224,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
       Align = Top
       StyledSettings = [Family, Style, FontColor]
       Size.Width = 760.000000000000000000
-      Size.Height = 30.000000000000000000
+      Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
       Text = 'Results'
@@ -240,7 +240,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
       Margins.Bottom = 6.000000000000000000
       Sides = []
       Size.Width = 760.000000000000000000
-      Size.Height = 482.000000000000000000
+      Size.Height = 476.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
       XRadius = 8.000000000000000000

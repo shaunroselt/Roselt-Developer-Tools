@@ -19,6 +19,7 @@ uses
   FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
+  FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts;
@@ -47,10 +48,23 @@ type
     lblEncodingTitle: TLabel;
     lblEncodingDescription: TLabel;
     imgEncoding: TImage;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
     procedure SwitchConversionSwitch(Sender: TObject);
     procedure cbEncodingChange(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure FrameResize(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure memInputChange(Sender: TObject);
   private
     { Private declarations }
     procedure Base64EncodeDecode();
@@ -85,6 +99,30 @@ begin
   end;
 end;
 
+procedure TFrame_Base64TextEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_Base64TextEncoderDecoder.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_Base64TextEncoderDecoder.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
+
 procedure TFrame_Base64TextEncoderDecoder.cbEncodingChange(Sender: TObject);
 begin
   Base64EncodeDecode();
@@ -93,6 +131,11 @@ end;
 procedure TFrame_Base64TextEncoderDecoder.FrameResize(Sender: TObject);
 begin
   memInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
+end;
+
+procedure TFrame_Base64TextEncoderDecoder.memInputChange(Sender: TObject);
+begin
+  Base64EncodeDecode();
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.memInputKeyUp(Sender: TObject; var Key: Word;

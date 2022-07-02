@@ -18,20 +18,13 @@ uses
   FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
+  FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts;
 
 type
   TFrame_XMLFormatter = class(TFrame)
-    layBottom: TLayout;
-    layInput: TLayout;
-    memTitleInput: TLabel;
-    memInput: TMemo;
-    layOutput: TLayout;
-    memTitleOutput: TLabel;
-    memOutput: TMemo;
-    SplitterInputOutput: TSplitter;
     layTop: TLayout;
     lblConfiguration: TLabel;
     layIndentation: TRectangle;
@@ -47,7 +40,27 @@ type
     SwitchCompressDecompress: TSwitch;
     lblSwitchCompressDecompress: TLabel;
     imgIndentation: TImage;
+    layBottom: TLayout;
+    layInput: TLayout;
+    memTitleInput: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
+    memInput: TMemo;
+    layOutput: TLayout;
+    memTitleOutput: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    memOutput: TMemo;
+    SplitterInputOutput: TSplitter;
     procedure FrameResize(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,6 +70,30 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_XMLFormatter.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_XMLFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_XMLFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 procedure TFrame_XMLFormatter.FrameResize(Sender: TObject);
 begin

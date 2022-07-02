@@ -18,6 +18,7 @@ uses
   FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
+  FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts;
@@ -40,7 +41,19 @@ type
     layIndentationTitleDescription: TLayout;
     lblIndentationTitle: TLabel;
     lblIndentationDescription: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
     procedure FrameResize(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +63,30 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_CSSFormatter.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_CSSFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_CSSFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 procedure TFrame_CSSFormatter.FrameResize(Sender: TObject);
 begin

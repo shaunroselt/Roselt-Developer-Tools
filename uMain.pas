@@ -254,30 +254,8 @@ type
     btnJsonFormatter: TRectangle;
     imgJsonFormatter: TImage;
     lblJsonFormatter: TLabel;
-    layBase64EncoderDecoder: TFrame_Base64TextEncoderDecoder;
-    layJsonYamlConverter: TFrame_JsonYamlConverter;
-    layHashGenerator: TFrame_HashGenerator;
-    layHTMLEncoderDecoder: TFrame_HTMLEncoderDecoder;
-    layJsonFormatter: TFrame_JsonFormatter;
-    layLoremIpsumGenerator: TFrame_LoremIpsumGenerator;
-    layTextCaseConverterInspector: TFrame_TextCaseConverterInspector;
-    layColorPicker: TFrame_ColorPicker;
     SplitterNavContent: TSplitter;
     btnToolHelp: TButton;
-    layTimestampConverter: TFrame_TimestampConverter;
-    layNumberBaseConverter: TFrame_NumberBaseConverter;
-    layURLEncoderDecoder: TFrame_URLEncoderDecoder;
-    layGZipCompressDecompress: TFrame_GZipCompressDecompress;
-    layJWTDecoder: TFrame_JWTDecoder;
-    layBase64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder;
-    laySQLFormatter: TFrame_SQLFormatter;
-    layHTMLFormatter: TFrame_HTMLFormatter;
-    layCSSFormatter: TFrame_CSSFormatter;
-    layPHPFormatter: TFrame_PHPFormatter;
-    layXMLFormatter: TFrame_XMLFormatter;
-    layJavaScriptFormatter: TFrame_JavaScriptFormatter;
-    layUUIDGenerator: TFrame_UUIDGenerator;
-    layNameGenerator: TFrame_NameGenerator;
     ImageList1: TImageList;
     laySettings: TScrollBox;
     layFontFamily: TRectangle;
@@ -412,10 +390,42 @@ begin
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
+  procedure CreateToolFrame(ToolFrame: TFrame; FrameName: String);
+  begin
+    ToolFrame.Name := FrameName;
+    ToolFrame.Visible := False;
+    ToolFrame.Parent := LayoutContainer;
+    ToolFrame.Align := TAlignLayout.Client;
+  end;
 begin
   btnAllTools.OnClick(btnAllTools);
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
   lblAppInfoDescription.Text := GetAppInfo;
+
+
+  // Dynamically create Tool Frames
+  CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
+  CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
+  CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
+  CreateToolFrame(TFrame_JsonFormatter.Create(Self),'layJsonFormatter');
+  CreateToolFrame(TFrame_SQLFormatter.Create(Self),'laySQLFormatter');
+  CreateToolFrame(TFrame_XMLFormatter.Create(Self),'layXMLFormatter');
+  CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
+  CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
+  CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
+  CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
+  CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
+  CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
+  CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
+  CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
+  CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
+  CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
+  CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
+  CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
+  CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
+  CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
+  CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
+  CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
 
 
   // Collapse Nav Items

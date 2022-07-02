@@ -19,20 +19,13 @@ uses
   FMX.Objects,
   FMX.ScrollBox,
   FMX.Memo,
+  FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
   Roselt.JsonYamlConverter;
 
 type
   TFrame_JsonYamlConverter = class(TFrame)
-    layBottom: TLayout;
-    layInput: TLayout;
-    memTitleInput: TLabel;
-    memInput: TMemo;
-    layOutput: TLayout;
-    memTitleOutput: TLabel;
-    memOutput: TMemo;
-    SplitterInputOutput: TSplitter;
     layTop: TLayout;
     lblConfiguration: TLabel;
     layConversion: TRectangle;
@@ -47,9 +40,29 @@ type
     lblIndentationDescription: TLabel;
     imgIndentation: TImage;
     imgConversion: TImage;
+    layBottom: TLayout;
+    layInput: TLayout;
+    memTitleInput: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TImage;
+    lblInputPasteFromClipboard: TLabel;
+    btnInputCopyToClipboard: TButton;
+    imgInputCopyToClipboard: TImage;
+    lblInputCopyToClipboard: TLabel;
+    memInput: TMemo;
+    layOutput: TLayout;
+    memTitleOutput: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TImage;
+    lblOutputCopyToClipboard: TLabel;
+    memOutput: TMemo;
+    SplitterInputOutput: TSplitter;
     procedure FrameResize(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure ConfigChange(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
   private
     { Private declarations }
     procedure ConvertJsonYaml;
@@ -60,6 +73,30 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_JsonYamlConverter.btnInputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_JsonYamlConverter.btnInputPasteFromClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    memInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_JsonYamlConverter.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
+end;
 
 procedure TFrame_JsonYamlConverter.ConfigChange(Sender: TObject);
 begin
