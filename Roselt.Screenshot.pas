@@ -10,18 +10,19 @@ uses
   FMX.Types,
   FMX.Graphics,
   System.SysUtils,
-  System.Classes,
 {$IFDEF MSWINDOWS}
   Windows,
   VCL.Forms,
-  VCL.Graphics;
+  VCL.Graphics,
+  FMX.Platform.Win,
 {$ENDIF}
 {$IFDEF MACOS}
   Macapi.CoreFoundation,
   Macapi.CocoaTypes,
   Macapi.CoreGraphics,
-  Macapi.ImageIO;
+  Macapi.ImageIO,
 {$ENDIF MACOS}
+  System.Classes;
 
   procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);
   procedure TakeWindowShot(h: TWindowHandle; Dest: FMX.Graphics.TBitmap);
@@ -32,11 +33,19 @@ uses
 
 implementation
 
-{$IFDEF MSWINDOWS}
 
-uses
-  FMX.Platform.Win;
+{$IFDEF ANDROID}
+procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);
+begin
+  // Have not been implemented for Android yet
+end;
+
+procedure TakeWindowShot(h: TWindowHandle; Dest: FMX.Graphics.TBitmap);
+begin
+  // Have not been implemented for Android yet
+end;
 {$ENDIF}
+
 {$IFDEF MSWINDOWS}
 
 // get window width and height

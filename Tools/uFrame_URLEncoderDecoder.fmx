@@ -1357,7 +1357,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TImage
             MultiResBitmap.Height = 2000
@@ -2700,7 +2700,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputPasteFromClipboard: TButton
@@ -2714,7 +2714,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TImage
             MultiResBitmap.Height = 2000
@@ -4057,7 +4057,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -4071,8 +4071,8 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 756.000000000000000000
-        Viewport.Height = 205.000000000000000000
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 209.000000000000000000
       end
     end
     object layOutput: TLayout
@@ -4103,7 +4103,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TImage
             MultiResBitmap.Height = 2000
@@ -5446,7 +5446,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -5460,8 +5460,8 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
         Size.Height = 291.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 756.000000000000000000
-        Viewport.Height = 287.000000000000000000
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 291.000000000000000000
       end
     end
   end

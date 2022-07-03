@@ -959,9 +959,9 @@ begin
 
   /// /////////////////////////////////////////////////////////////////////////////
   /// Color Codes
-  DelphiVCLColorCode.Text := '$' + TAlphaColorRec.ColorToRGB(ColorBox.Color).ToHexString;
-  DelphiFMXColorCode.Text := '$' + A.ToHexString + HexCode;
-  VBColorCode.Text := TAlphaColorRec.ColorToRGB(ColorBox.Color).ToString;
+  DelphiVCLColorCode.Text := '$' + IntToHex(TAlphaColorRec.ColorToRGB(ColorBox.Color));
+  DelphiFMXColorCode.Text := '$' + IntToHex(A) + HexCode;
+  VBColorCode.Text := IntToStr(TAlphaColorRec.ColorToRGB(ColorBox.Color));
   JavaColorPicker.Text := '0x' + HexCode;
   PhotoshopColorCode.Text := HexCode;
   CPPColorCode.Text := '0x' + Copy(DelphiVCLColorCode.Text, 2, DelphiVCLColorCode.Text.Length);

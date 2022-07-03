@@ -23,37 +23,14 @@ uses
   FMX.Memo,
   FMX.Edit,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts, 
+  FMX.ExtCtrls;
 
 type
   TFrame_HashGenerator = class(TFrame)
-    layBottom: TLayout;
-    layHashGeneratorOutputMD5: TLayout;
-    lblHashGeneratorOutputMD5: TLabel;
-    edtHashGeneratorOutputMD5: TEdit;
-    edtHashGeneratorOutputMD5CopyToClipboard: TEditButton;
-    layHashGeneratorOutputSHA1: TLayout;
-    lblHashGeneratorOutputSHA1: TLabel;
-    edtHashGeneratorOutputSHA1: TEdit;
-    edtHashGeneratorOutputSHA1CopyToClipboard: TEditButton;
-    layHashGeneratorOutputSHA256: TLayout;
-    lblHashGeneratorOutputSHA256: TLabel;
-    edtHashGeneratorOutputSHA256: TEdit;
-    edtHashGeneratorOutputSHA256CopyToClipboard: TEditButton;
-    layHashGeneratorOutputSHA512: TLayout;
-    lblHashGeneratorOutputSHA512: TLabel;
-    edtHashGeneratorOutputSHA512: TEdit;
-    edtHashGeneratorOutputSHA512CopyToClipboard: TEditButton;
+    layBottom: TVertScrollBox;
     memTitleInput: TLabel;
     memInput: TMemo;
-    layHashGeneratorOutputSHA384: TLayout;
-    lblHashGeneratorOutputSHA384: TLabel;
-    edtHashGeneratorOutputSHA384: TEdit;
-    edtHashGeneratorOutputSHA384CopyToClipboard: TEditButton;
-    layHashGeneratorOutputSHA224: TLayout;
-    lblHashGeneratorOutputSHA224: TLabel;
-    edtHashGeneratorOutputSHA224: TEdit;
-    edtHashGeneratorOutputSHA224CopyToClipboard: TEditButton;
     layTop: TLayout;
     lblConfiguration: TLabel;
     layLetterCase: TRectangle;
@@ -69,18 +46,52 @@ type
     layOutputTypeTitleDescription: TLayout;
     lblOutputTypeTitle: TLabel;
     lblOutputTypeDescription: TLabel;
-    imgHashGeneratorOutputSHA512CopyToClipboard: TImage;
-    imgHashGeneratorOutputSHA384CopyToClipboard: TImage;
-    imgHashGeneratorOutputSHA256CopyToClipboard: TImage;
-    imgHashGeneratorOutputSHA224CopyToClipboard: TImage;
-    imgHashGeneratorOutputSHA1CopyToClipboard: TImage;
-    imgHashGeneratorOutputMD5CopyToClipboard: TImage;
     btnInputPasteFromClipboard: TButton;
     imgInputPasteFromClipboard: TImage;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
     imgInputCopyToClipboard: TImage;
     lblInputCopyToClipboard: TLabel;
+    layInput: TLayout;
+    layOutput: TLayout;
+    layHashGeneratorOutputMD5: TLayout;
+    lblHashGeneratorOutputMD5: TLabel;
+    edtHashGeneratorOutputMD5: TEdit;
+    edtHashGeneratorOutputMD5CopyToClipboard: TEditButton;
+    imgHashGeneratorOutputMD5CopyToClipboard: TImage;
+    layHashGeneratorOutputSHA1: TLayout;
+    lblHashGeneratorOutputSHA1: TLabel;
+    edtHashGeneratorOutputSHA1: TEdit;
+    edtHashGeneratorOutputSHA1CopyToClipboard: TEditButton;
+    imgHashGeneratorOutputSHA1CopyToClipboard: TImage;
+    layHashGeneratorOutputSHA224: TLayout;
+    lblHashGeneratorOutputSHA224: TLabel;
+    edtHashGeneratorOutputSHA224: TEdit;
+    edtHashGeneratorOutputSHA224CopyToClipboard: TEditButton;
+    imgHashGeneratorOutputSHA224CopyToClipboard: TImage;
+    layHashGeneratorOutputSHA256: TLayout;
+    lblHashGeneratorOutputSHA256: TLabel;
+    edtHashGeneratorOutputSHA256: TEdit;
+    edtHashGeneratorOutputSHA256CopyToClipboard: TEditButton;
+    imgHashGeneratorOutputSHA256CopyToClipboard: TImage;
+    layHashGeneratorOutputSHA384: TLayout;
+    lblHashGeneratorOutputSHA384: TLabel;
+    edtHashGeneratorOutputSHA384: TEdit;
+    edtHashGeneratorOutputSHA384CopyToClipboard: TEditButton;
+    imgHashGeneratorOutputSHA384CopyToClipboard: TImage;
+    layHashGeneratorOutputSHA512: TLayout;
+    lblHashGeneratorOutputSHA512: TLabel;
+    edtHashGeneratorOutputSHA512: TEdit;
+    edtHashGeneratorOutputSHA512CopyToClipboard: TEditButton;
+    imgHashGeneratorOutputSHA512CopyToClipboard: TImage;
+    layInputType: TRectangle;
+    imgInputType: TImage;
+    cbInputType: TComboBox;
+    layInputTypeTitleDescription: TLayout;
+    lblInputTypeTitle: TLabel;
+    lblInputTypeDescription: TLabel;
+    DropFile: TDropTarget;
+    btnDropFile: TButton;
     procedure SwitchLetterCaseSwitch(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure cbOutputTypeChange(Sender: TObject);
@@ -88,6 +99,8 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure CopyOutputToClipboard(Sender: TObject);
     procedure memInputChange(Sender: TObject);
+    procedure FrameResize(Sender: TObject);
+    procedure cbInputTypeChange(Sender: TObject);
   private
     { Private declarations }
     procedure HashGenerator();
@@ -115,6 +128,23 @@ begin
     memInput.Text := ClipboardService.GetClipboard.ToString;
 end;
 
+procedure TFrame_HashGenerator.cbInputTypeChange(Sender: TObject);
+begin
+  if (cbInputType.Selected.Text = 'Text') then
+  begin
+    memInput.Visible := True;
+    DropFile.Visible := False;
+    btnInputPasteFromClipboard.Visible := True;
+    btnInputCopyToClipboard.Visible := True;
+  end else
+  begin
+    memInput.Visible := False;
+    DropFile.Visible := True;
+    btnInputPasteFromClipboard.Visible := False;
+    btnInputCopyToClipboard.Visible := False;
+  end;
+end;
+
 procedure TFrame_HashGenerator.cbOutputTypeChange(Sender: TObject);
 begin
   // Base64 Encoding is not yet implemented
@@ -132,6 +162,21 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
+end;
+
+procedure TFrame_HashGenerator.FrameResize(Sender: TObject);
+// Need to improve this in the future
+begin
+  if (layInput.Height < 175) then
+  begin
+    layInput.Align := TAlignLayout.MostTop;
+    layInput.Height := 175;
+    layOutput.Align := TAlignLayout.Top;
+  end else
+  begin
+    layInput.Align := TAlignLayout.Client;
+    layOutput.Align := TAlignLayout.Bottom;
+  end;
 end;
 
 procedure TFrame_HashGenerator.HashGenerator;

@@ -41,7 +41,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           OnClick = btnPasteFromClipboardClick
           object imgPasteFromClipboard: TImage
             MultiResBitmap.Height = 2000
@@ -1384,7 +1384,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnCopyToClipboard: TButton
@@ -1398,7 +1398,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnCopyToClipboardClick
           object imgCopyToClipboard: TImage
             MultiResBitmap.Height = 2000
@@ -2741,7 +2741,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -2754,8 +2754,8 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
         Size.Height = 674.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 380.000000000000000000
-        Viewport.Height = 674.000000000000000000
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 670.000000000000000000
       end
     end
     object layImage: TLayout
@@ -2768,7 +2768,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
         Align = Top
         StyledSettings = [Family, Style, FontColor]
         Size.Width = 375.000000000000000000
-        Size.Height = 34.000000000000000000
+        Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
         Text = 'Image'
@@ -2776,7 +2776,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
       end
       object DropImage: TDropTarget
         Align = Top
-        Position.Y = 34.000000000000000000
+        Position.Y = 36.000000000000000000
         Size.Width = 375.000000000000000000
         Size.Height = 147.000000000000000000
         Size.PlatformDefault = False
@@ -2792,7 +2792,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 355.000000000000000000
           Size.Height = 22.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 74
+          TabOrder = 75
           Text = 'Browse files'
           OnClick = btnDropImageClick
         end
@@ -2803,7 +2803,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           end>
         Align = Client
         Size.Width = 375.000000000000000000
-        Size.Height = 529.000000000000000000
+        Size.Height = 527.000000000000000000
         Size.PlatformDefault = False
       end
     end

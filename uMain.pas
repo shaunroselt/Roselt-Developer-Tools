@@ -57,6 +57,9 @@ uses
   uFrame_XMLFormatter,
   uFrame_JavaScriptFormatter,
   uFrame_UUIDGenerator,
+  uFrame_TextEscapeUnescape,
+  uFrame_MarkdownPreview,
+  uFrame_RegexTester,
   uFrame_NameGenerator;
 
 type
@@ -116,10 +119,6 @@ type
     btnNameGenerator: TRectangle;
     imgNameGenerator: TImage;
     lblNameGenerator: TLabel;
-    layNavChecksumGenerator: TLayout;
-    btnChecksumGenerator: TRectangle;
-    imgChecksumGenerator: TImage;
-    lblChecksumGenerator: TLabel;
     layNavEncodersDecoders: TLayout;
     layNavEncodersDecodersExpandCollapse: TLayout;
     btnEncodersDecodersExpandCollapse: TRectangle;
@@ -182,22 +181,22 @@ type
     btnTextCaseConverterInspector: TRectangle;
     imgTextCaseConverterInspector: TImage;
     lblTextCaseConverterInspector: TLabel;
-    Layout2: TLayout;
-    Rectangle5: TRectangle;
-    Image4: TImage;
-    Label38: TLabel;
-    Layout9: TLayout;
-    Rectangle6: TRectangle;
-    Image7: TImage;
-    Label39: TLabel;
-    Layout27: TLayout;
-    Rectangle7: TRectangle;
-    Image8: TImage;
-    Label40: TLabel;
-    Layout28: TLayout;
-    Rectangle8: TRectangle;
-    Image21: TImage;
-    Label42: TLabel;
+    layNavTextEscapeUnescape: TLayout;
+    btnTextEscapeUnescape: TRectangle;
+    imgTextEscapeUnescape: TImage;
+    lblTextEscapeUnescape: TLabel;
+    layNavMarkdownPreview: TLayout;
+    btnMarkdownPreview: TRectangle;
+    imgMarkdownPreview: TImage;
+    lblMarkdownPreview: TLabel;
+    layNavTextDifference: TLayout;
+    btnTextDifference: TRectangle;
+    imgTextDifference: TImage;
+    lblTextDifference: TLabel;
+    layNavRegexTester: TLayout;
+    btnRegexTester: TRectangle;
+    imgRegexTester: TImage;
+    lblRegexTester: TLabel;
     layNavSettings: TLayout;
     btnSettings: TRectangle;
     imgSettings: TImage;
@@ -426,6 +425,9 @@ begin
   CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
   CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
   CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
+  CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
+  CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
+  CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
 
 
   // Collapse Nav Items
