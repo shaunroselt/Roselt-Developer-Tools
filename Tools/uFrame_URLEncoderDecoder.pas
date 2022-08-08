@@ -20,7 +20,9 @@ uses
   FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_URLEncoderDecoder = class(TFrame)
@@ -32,21 +34,21 @@ type
     lblConversionDescription: TLabel;
     SwitchConversion: TSwitch;
     lblSwitchConversion: TLabel;
-    imgConversion: TImage;
+    imgConversion: TSkSvg;
     layBottom: TLayout;
     layInput: TLayout;
     memTitleInput: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     memInput: TMemo;
     layOutput: TLayout;
     memTitleOutput: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
     procedure FrameResize(Sender: TObject);

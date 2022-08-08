@@ -22,7 +22,9 @@ uses
   FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_Base64TextEncoderDecoder = class(TFrame)
@@ -36,7 +38,7 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layConversion: TRectangle;
-    imgConversion: TImage;
+    imgConversion: TSkSvg;
     layConversionTitleDescription: TLayout;
     lblConversionTitle: TLabel;
     lblConversionDescription: TLabel;
@@ -47,15 +49,15 @@ type
     layEncodingTitleDescription: TLayout;
     lblEncodingTitle: TLabel;
     lblEncodingDescription: TLabel;
-    imgEncoding: TImage;
+    imgEncoding: TSkSvg;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     procedure SwitchConversionSwitch(Sender: TObject);
     procedure cbEncodingChange(Sender: TObject);

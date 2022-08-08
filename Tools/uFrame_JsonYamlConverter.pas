@@ -22,7 +22,9 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Roselt.JsonYamlConverter;
+  Roselt.JsonYamlConverter,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_JsonYamlConverter = class(TFrame)
@@ -38,31 +40,40 @@ type
     layIndentationTitleDescription: TLayout;
     lblIndentationTitle: TLabel;
     lblIndentationDescription: TLabel;
-    imgIndentation: TImage;
-    imgConversion: TImage;
+    imgIndentation: TSkSvg;
+    imgConversion: TSkSvg;
     layBottom: TLayout;
     layInput: TLayout;
     memTitleInput: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     memInput: TMemo;
     layOutput: TLayout;
     memTitleOutput: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
     SplitterInputOutput: TSplitter;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    OpenDialog: TOpenDialog;
     procedure FrameResize(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure ConfigChange(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
   private
     { Private declarations }
     procedure ConvertJsonYaml;
@@ -74,12 +85,27 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_JsonYamlConverter.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Text := '';
+  ConvertJsonYaml();
+end;
+
 procedure TFrame_JsonYamlConverter.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_JsonYamlConverter.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    ConvertJsonYaml();
+  end;
 end;
 
 procedure TFrame_JsonYamlConverter.btnInputPasteFromClipboardClick(Sender: TObject);

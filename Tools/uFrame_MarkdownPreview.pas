@@ -1,4 +1,4 @@
-unit uFrame_PHPFormatter;
+unit uFrame_MarkdownPreview;
 
 interface
 
@@ -15,26 +15,17 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   FMX.Memo.Types,
-  FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
-  FMX.Platform,
   FMX.Memo,
+  FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
   Skia,
   Skia.FMX;
 
 type
-  TFrame_PHPFormatter = class(TFrame)
-    layTop: TLayout;
-    lblConfiguration: TLabel;
-    layIndentation: TRectangle;
-    cbIndentation: TComboBox;
-    layIndentationTitleDescription: TLayout;
-    lblIndentationTitle: TLabel;
-    lblIndentationDescription: TLabel;
-    imgIndentation: TSkSvg;
+  TFrame_MarkdownPreview = class(TFrame)
     layBottom: TLayout;
     layInput: TLayout;
     memTitleInput: TLabel;
@@ -52,7 +43,15 @@ type
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
     SplitterInputOutput: TSplitter;
-    procedure FrameResize(Sender: TObject);
+    layTop: TLayout;
+    lblConfiguration: TLabel;
+    layConversion: TRectangle;
+    layConversionTitleDescription: TLayout;
+    lblConversionTitle: TLabel;
+    lblConversionDescription: TLabel;
+    SwitchConversion: TSwitch;
+    lblSwitchConversion: TLabel;
+    imgConversion: TSkSvg;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
@@ -66,7 +65,7 @@ implementation
 
 {$R *.fmx}
 
-procedure TFrame_PHPFormatter.btnInputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_MarkdownPreview.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -74,7 +73,7 @@ begin
     ClipboardService.SetClipboard(memInput.Text);
 end;
 
-procedure TFrame_PHPFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
+procedure TFrame_MarkdownPreview.btnInputPasteFromClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -82,17 +81,12 @@ begin
     memInput.Text := ClipboardService.GetClipboard.ToString;
 end;
 
-procedure TFrame_PHPFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_MarkdownPreview.btnOutputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memOutput.Text);
-end;
-
-procedure TFrame_PHPFormatter.FrameResize(Sender: TObject);
-begin
-  layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
 end;
 
 end.

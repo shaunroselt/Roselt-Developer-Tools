@@ -21,7 +21,9 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Platform,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_Base64ImageEncoderDecoder = class(TFrame)
@@ -33,13 +35,13 @@ type
     lblImage: TLabel;
     Splitter: TSplitter;
     DropImage: TDropTarget;
-    imgImage: TImage;
+    imgImage: TSkSvg;
     btnDropImage: TButton;
     btnPasteFromClipboard: TButton;
-    imgPasteFromClipboard: TImage;
+    imgPasteFromClipboard: TSkSvg;
     lblPasteFromClipboard: TLabel;
     btnCopyToClipboard: TButton;
-    imgCopyToClipboard: TImage;
+    imgCopyToClipboard: TSkSvg;
     lblCopyToClipboard: TLabel;
     OpenDialog: TOpenDialog;
     procedure FrameResize(Sender: TObject);

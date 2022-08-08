@@ -22,7 +22,9 @@ uses
   FMX.Edit,
   FMX.Platform,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_UUIDGenerator = class(TFrame)
@@ -38,7 +40,7 @@ type
     SwitchLetterCase: TSwitch;
     lblSwitchLetterCase: TLabel;
     layUUIDVersion: TRectangle;
-    imgUUIDVersion: TImage;
+    imgUUIDVersion: TSkSvg;
     cbUUIDVersion: TComboBox;
     layUUIDVersionTitleDescription: TLayout;
     lblUUIDVersionTitle: TLabel;
@@ -49,13 +51,13 @@ type
     lblHyphensDescription: TLabel;
     SwitchHyphens: TSwitch;
     lblSwitchHyphens: TLabel;
-    imgHyphens: TImage;
-    imgLetterCase: TImage;
+    imgHyphens: TSkSvg;
+    imgLetterCase: TSkSvg;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     btnOutputRefresh: TButton;
-    imgOutputRefresh: TImage;
+    imgOutputRefresh: TSkSvg;
     lblOutputRefresh: TLabel;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
   private

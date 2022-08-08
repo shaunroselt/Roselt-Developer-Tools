@@ -18,7 +18,9 @@ uses
   FMX.Edit,
   FMX.Platform,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_NumberBaseConverter = class(TFrame)
@@ -42,16 +44,16 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layFormatValues: TRectangle;
-    imgFormatValues: TImage;
+    imgFormatValues: TSkSvg;
     layFormatValuesTitleDescription: TLayout;
     lblFormatValuesTitle: TLabel;
     lblFormatValuesDescription: TLabel;
     SwitchFormatValues: TSwitch;
     lblFormatValues: TLabel;
-    imgHexadecimalCopyToClipboard: TImage;
-    imgDecimalCopyToClipboard: TImage;
-    imgOctalCopyToClipboard: TImage;
-    imgBinaryCopyToClipboard: TImage;
+    imgHexadecimalCopyToClipboard: TSkSvg;
+    imgDecimalCopyToClipboard: TSkSvg;
+    imgOctalCopyToClipboard: TSkSvg;
+    imgBinaryCopyToClipboard: TSkSvg;
     procedure CopyOutputToClipboard(Sender: TObject);
   private
     { Private declarations }

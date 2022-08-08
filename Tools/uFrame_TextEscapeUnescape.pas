@@ -1,4 +1,4 @@
-unit uFrame_PHPFormatter;
+unit uFrame_TextEscapeUnescape;
 
 interface
 
@@ -15,35 +15,26 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   FMX.Memo.Types,
-  FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
-  FMX.Platform,
   FMX.Memo,
+  FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
   Skia,
   Skia.FMX;
 
 type
-  TFrame_PHPFormatter = class(TFrame)
-    layTop: TLayout;
-    lblConfiguration: TLabel;
-    layIndentation: TRectangle;
-    cbIndentation: TComboBox;
-    layIndentationTitleDescription: TLayout;
-    lblIndentationTitle: TLabel;
-    lblIndentationDescription: TLabel;
-    imgIndentation: TSkSvg;
+  TFrame_TextEscapeUnescape = class(TFrame)
     layBottom: TLayout;
     layInput: TLayout;
     memTitleInput: TLabel;
-    btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TSkSvg;
-    lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
     imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
+    btnInputPasteFromClipboard: TButton;
+    imgInputPasteFromClipboard: TSkSvg;
+    lblInputPasteFromClipboard: TLabel;
     memInput: TMemo;
     layOutput: TLayout;
     memTitleOutput: TLabel;
@@ -51,8 +42,15 @@ type
     imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
-    SplitterInputOutput: TSplitter;
-    procedure FrameResize(Sender: TObject);
+    layTop: TLayout;
+    lblConfiguration: TLabel;
+    layConversion: TRectangle;
+    layConversionTitleDescription: TLayout;
+    lblConversionTitle: TLabel;
+    lblConversionDescription: TLabel;
+    SwitchConversion: TSwitch;
+    lblSwitchConversion: TLabel;
+    imgConversion: TSkSvg;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
@@ -66,7 +64,7 @@ implementation
 
 {$R *.fmx}
 
-procedure TFrame_PHPFormatter.btnInputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_TextEscapeUnescape.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -74,7 +72,7 @@ begin
     ClipboardService.SetClipboard(memInput.Text);
 end;
 
-procedure TFrame_PHPFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
+procedure TFrame_TextEscapeUnescape.btnInputPasteFromClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -82,17 +80,12 @@ begin
     memInput.Text := ClipboardService.GetClipboard.ToString;
 end;
 
-procedure TFrame_PHPFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_TextEscapeUnescape.btnOutputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memOutput.Text);
-end;
-
-procedure TFrame_PHPFormatter.FrameResize(Sender: TObject);
-begin
-  layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
 end;
 
 end.

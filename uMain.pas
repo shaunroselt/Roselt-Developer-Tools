@@ -8,6 +8,7 @@ uses
   System.Types,
   System.UITypes,
   System.Classes,
+  System.IOUtils,
   System.Variants,
   System.ImageList,
   System.DateUtils,
@@ -34,7 +35,7 @@ uses
   FMX.Printer,
 
   uStyles,
-  uAssets,
+  uBootstrapIcons,
 
   uFrame_Base64TextEncoderDecoder,
   uFrame_JsonYamlConverter,
@@ -60,7 +61,10 @@ uses
   uFrame_TextEscapeUnescape,
   uFrame_MarkdownPreview,
   uFrame_RegexTester,
-  uFrame_NameGenerator;
+  uFrame_NameGenerator,
+
+  Skia,
+  Skia.FMX;
 
 type
   TfrmMain = class(TForm)
@@ -68,14 +72,13 @@ type
     TopBar: TRectangle;
     lblNavTitle: TLabel;
     btnHamburger: TButton;
-    layAllTools: TLayout;
+    layAllTools: TScrollBox;
     layNavAllTools: TLayout;
-    imgAllTools: TImage;
+    imgAllTools: TSkSvg;
     lblAllTools: TLabel;
     btnAllTools: TRectangle;
-    FloatAnimation1: TFloatAnimation;
     LayoutContainer: TLayout;
-    GridLayout1: TGridLayout;
+    layAllToolsGrid: TGridLayout;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
@@ -92,7 +95,7 @@ type
     Button13: TButton;
     layNavTesting: TLayout;
     btnTesting: TRectangle;
-    Image36: TImage;
+    imgTesting: TSkSvg;
     lblTesting: TLabel;
     layTesting: TLayout;
     Label41: TLabel;
@@ -100,177 +103,176 @@ type
     layNavGenerators: TLayout;
     layNavGeneratorsExpandCollapse: TLayout;
     btnGeneratorsExpandCollapse: TRectangle;
-    imgGeneratorsExpandCollapse: TImage;
+    imgGeneratorsExpandCollapse: TSkSvg;
     lblGeneratorsExpandCollapse: TLabel;
-    imgGeneratorsExpandCollapseIcon: TImage;
+    imgGeneratorsExpandCollapseIcon: TSkSvg;
     layNavUUIDGenerator: TLayout;
     btnUUIDGenerator: TRectangle;
-    imgUUIDGenerator: TImage;
+    imgUUIDGenerator: TSkSvg;
     lblUUIDGenerator: TLabel;
     layNavHashGenerator: TLayout;
     btnHashGenerator: TRectangle;
-    imgHashGenerator: TImage;
+    imgHashGenerator: TSkSvg;
     lblHashGenerator: TLabel;
     layNavLoremIpsumGenerator: TLayout;
     btnLoremIpsumGenerator: TRectangle;
-    imgLoremIpsumGenerator: TImage;
+    imgLoremIpsumGenerator: TSkSvg;
     lblLoremIpsumGenerator: TLabel;
     layNavNameGenerator: TLayout;
     btnNameGenerator: TRectangle;
-    imgNameGenerator: TImage;
+    imgNameGenerator: TSkSvg;
     lblNameGenerator: TLabel;
     layNavEncodersDecoders: TLayout;
     layNavEncodersDecodersExpandCollapse: TLayout;
     btnEncodersDecodersExpandCollapse: TRectangle;
-    imgEncodersDecodersExpandCollapse: TImage;
+    imgEncodersDecodersExpandCollapse: TSkSvg;
     lblEncodersDecodersExpandCollapse: TLabel;
-    imgEncodersDecodersExpandCollapseIcon: TImage;
+    imgEncodersDecodersExpandCollapseIcon: TSkSvg;
     layNavBase64EncoderDecoder: TLayout;
     btnBase64EncoderDecoder: TRectangle;
-    imgBase64EncoderDecoder: TImage;
+    imgBase64EncoderDecoder: TSkSvg;
     lblBase64EncoderDecoder: TLabel;
     layNavHTMLEncoderDecoder: TLayout;
     btnHTMLEncoderDecoder: TRectangle;
-    imgHTMLEncoderDecoder: TImage;
+    imgHTMLEncoderDecoder: TSkSvg;
     lblHTMLEncoderDecoder: TLabel;
     layNavJWTDecoder: TLayout;
     btnJWTDecoder: TRectangle;
-    imgJWTDecoder: TImage;
+    imgJWTDecoder: TSkSvg;
     lblJWTDecoder: TLabel;
     layNavBase64ImageEncoderDecoder: TLayout;
     btnBase64ImageEncoderDecoder: TRectangle;
-    imgBase64ImageEncoderDecoder: TImage;
+    imgBase64ImageEncoderDecoder: TSkSvg;
     lblBase64ImageEncoderDecoder: TLabel;
     layNavURLEncoderDecoder: TLayout;
     btnURLEncoderDecoder: TRectangle;
-    imgURLEncoderDecoder: TImage;
+    imgURLEncoderDecoder: TSkSvg;
     lblURLEncoderDecoder: TLabel;
     layNavGZipCompressDecompress: TLayout;
     btnGZipCompressDecompress: TRectangle;
-    imgGZipCompressDecompress: TImage;
+    imgGZipCompressDecompress: TSkSvg;
     lblGZipCompressDecompress: TLabel;
     layNavGraphics: TLayout;
     layNavGraphicsExpandCollapse: TLayout;
     btnGraphicsExpandCollapse: TRectangle;
-    imgGraphicsExpandCollapse: TImage;
+    imgGraphicsExpandCollapse: TSkSvg;
     lblGraphicsExpandCollapse: TLabel;
-    imgGraphicsExpandCollapseIcon: TImage;
+    imgGraphicsExpandCollapseIcon: TSkSvg;
     layNavColorPicker: TLayout;
     btnColorPicker: TRectangle;
-    Image16: TImage;
+    imgColorPicker: TSkSvg;
     lblColorPicker: TLabel;
     layNavColorBlindnessSimulator: TLayout;
     btnColorBlindnessSimulator: TRectangle;
-    imgColorBlindnessSimulator: TImage;
+    imgColorBlindnessSimulator: TSkSvg;
     lblColorBlindnessSimulator: TLabel;
     layNavImageConverter: TLayout;
     btnImageConverter: TRectangle;
-    imgImageConverter: TImage;
+    imgImageConverter: TSkSvg;
     lblImageConverter: TLabel;
     layNavPNGJPEGCompressor: TLayout;
     btnPNGJPEGCompressor: TRectangle;
-    imgPNGJPEGCompressor: TImage;
+    imgPNGJPEGCompressor: TSkSvg;
     lblPNGJPEGCompressor: TLabel;
     layNavText: TLayout;
     layNavTextExpandCollapse: TLayout;
     btnTextExpandCollapse: TRectangle;
-    imgTextExpandCollapse: TImage;
+    imgTextExpandCollapse: TSkSvg;
     lblTextExpandCollapse: TLabel;
-    imgTextExpandCollapseIcon: TImage;
+    imgTextExpandCollapseIcon: TSkSvg;
     layNavTextCaseConverterInspector: TLayout;
     btnTextCaseConverterInspector: TRectangle;
-    imgTextCaseConverterInspector: TImage;
+    imgTextCaseConverterInspector: TSkSvg;
     lblTextCaseConverterInspector: TLabel;
     layNavTextEscapeUnescape: TLayout;
     btnTextEscapeUnescape: TRectangle;
-    imgTextEscapeUnescape: TImage;
+    imgTextEscapeUnescape: TSkSvg;
     lblTextEscapeUnescape: TLabel;
     layNavMarkdownPreview: TLayout;
     btnMarkdownPreview: TRectangle;
-    imgMarkdownPreview: TImage;
+    imgMarkdownPreview: TSkSvg;
     lblMarkdownPreview: TLabel;
     layNavTextDifference: TLayout;
     btnTextDifference: TRectangle;
-    imgTextDifference: TImage;
+    imgTextDifference: TSkSvg;
     lblTextDifference: TLabel;
     layNavRegexTester: TLayout;
     btnRegexTester: TRectangle;
-    imgRegexTester: TImage;
+    imgRegexTester: TSkSvg;
     lblRegexTester: TLabel;
     layNavSettings: TLayout;
     btnSettings: TRectangle;
-    imgSettings: TImage;
+    imgSettings: TSkSvg;
     lblSettings: TLabel;
     layNavConverters: TLayout;
     layNavConvertersExpandCollapse: TLayout;
     btnConvertersExpandCollapse: TRectangle;
-    imgConvertersExpandCollapse: TImage;
+    imgConvertersExpandCollapse: TSkSvg;
     lblConvertersExpandCollapse: TLabel;
-    imgConvertersExpandCollapseIcon: TImage;
+    imgConvertersExpandCollapseIcon: TSkSvg;
     layNavJsonYamlConverter: TLayout;
     btnJsonYamlConverter: TRectangle;
-    imgJsonYamlConverter: TImage;
+    imgJsonYamlConverter: TSkSvg;
     lblJsonYamlConverter: TLabel;
     layNavNumberBaseConverter: TLayout;
     btnNumberBaseConverter: TRectangle;
-    imgNumberBaseConverter: TImage;
+    imgNumberBaseConverter: TSkSvg;
     lblNumberBaseConverter: TLabel;
     layNavTimestampConverter: TLayout;
     btnTimestampConverter: TRectangle;
-    imgTimestampConverter: TImage;
+    imgTimestampConverter: TSkSvg;
     lblTimestampConverter: TLabel;
     layNavFormatters: TLayout;
     layNavFormattersExpandCollapse: TLayout;
     btnFormattersExpandCollapse: TRectangle;
-    imgFormattersExpandCollapse: TImage;
+    imgFormattersExpandCollapse: TSkSvg;
     Formatters: TLabel;
-    imgFormattersExpandCollapseIcon: TImage;
+    imgFormattersExpandCollapseIcon: TSkSvg;
     layNavXMLFormatter: TLayout;
     btnXMLFormatter: TRectangle;
-    imgXMLFormatter: TImage;
+    imgXMLFormatter: TSkSvg;
     lblXMLFormatter: TLabel;
     layNavHTMLFormatter: TLayout;
     btnHTMLFormatter: TRectangle;
-    imgHTMLFormatter: TImage;
+    imgHTMLFormatter: TSkSvg;
     lblHTMLFormatter: TLabel;
     layNavCSSFormatter: TLayout;
     btnCSSFormatter: TRectangle;
-    imgCSSFormatter: TImage;
+    imgCSSFormatter: TSkSvg;
     lblCSSFormatter: TLabel;
     layNavJavaScriptFormatter: TLayout;
     btnJavaScriptFormatter: TRectangle;
-    imgJavaScriptFormatter: TImage;
+    imgJavaScriptFormatter: TSkSvg;
     lblJavaScriptFormatter: TLabel;
     layNavSQLFormatter: TLayout;
     btnSQLFormatter: TRectangle;
-    imgSQLFormatter: TImage;
+    imgSQLFormatter: TSkSvg;
     lblSQLFormatter: TLabel;
     layNavPHPFormatter: TLayout;
     btnPHPFormatter: TRectangle;
-    imgPHPFormatter: TImage;
+    imgPHPFormatter: TSkSvg;
     lblPHPFormatter: TLabel;
     layNavJsonFormatter: TLayout;
     btnJsonFormatter: TRectangle;
-    imgJsonFormatter: TImage;
+    imgJsonFormatter: TSkSvg;
     lblJsonFormatter: TLabel;
     SplitterNavContent: TSplitter;
     btnToolHelp: TButton;
-    ImageList1: TImageList;
     laySettings: TScrollBox;
     layFontFamily: TRectangle;
     cbFontFamily: TComboBox;
-    imgFontFamily: TImage;
+    imgFontFamily: TSkSvg;
     layFontFamilyTitleDescription: TLayout;
     lblFontFamilyTitle: TLabel;
     lblFontFamilyDescription: TLabel;
     layLanguage: TRectangle;
     cbLanguage: TComboBox;
-    imgLanguage: TImage;
+    imgLanguage: TSkSvg;
     layLanguageTitleDescription: TLayout;
     lblLanguageTitle: TLabel;
     lblLanguageDescription: TLabel;
     layLineNumbers: TRectangle;
-    imgLineNumbers: TImage;
+    imgLineNumbers: TSkSvg;
     layLineNumbersTitleDescription: TLayout;
     lblLineNumbersTitle: TLabel;
     lblLineNumbersDescription: TLabel;
@@ -278,12 +280,12 @@ type
     lblSwitchLineNumbers: TLabel;
     layTheme: TRectangle;
     cbTheme: TComboBox;
-    imgTheme: TImage;
+    imgTheme: TSkSvg;
     layThemeTitleDescription: TLayout;
     lblThemeTitle: TLabel;
     lblThemeDescription: TLabel;
     layWordWrap: TRectangle;
-    imgWordWrap: TImage;
+    imgWordWrap: TSkSvg;
     layWordWrapTitleDescription: TLayout;
     lblWordWrapTitle: TLabel;
     lblWordWrapDescription: TLabel;
@@ -296,20 +298,23 @@ type
     lblAppInfoTitle: TLabel;
     lblAppInfoDescription: TLabel;
     btnAppInfoCopyToClipboard: TButton;
-    imgAppInfoCopyToClipboard: TImage;
+    imgAppInfoCopyToClipboard: TSkSvg;
     Rectangle1: TRectangle;
     Layout3: TLayout;
-    Image1: TImage;
+    Image1: TSkSvg;
     Label1: TLabel;
     Layout1: TLayout;
     Label2: TLabel;
-    Image2: TImage;
+    Image2: TSkSvg;
     Layout4: TLayout;
     Label3: TLabel;
-    Image3: TImage;
+    Image3: TSkSvg;
     Layout5: TLayout;
     Label4: TLabel;
-    Image5: TImage;
+    Image5: TSkSvg;
+    Button14: TButton;
+    imgToolHelp: TSkSvg;
+    layAllToolsHidden: TLayout;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -320,6 +325,7 @@ type
     procedure cbThemeChange(Sender: TObject);
     procedure SwitchWordWrapSwitch(Sender: TObject);
     procedure SwitchLineNumbersSwitch(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -367,12 +373,12 @@ begin
   var Button := TRectangle(Sender);
   var ButtonLayout := Button.ParentControl;
   var ExpandCollapseLayout := ButtonLayout.ParentControl;
-  var ExpandCollapseImage := TImage(Button.Children.Items[2]);
+  var ExpandCollapseImage := TSkSvg(Button.Children.Items[2]);
 
   if (ExpandCollapseLayout.Height = ButtonLayout.Height) then
   begin
     ExpandCollapseLayout.Height := ButtonLayout.Height * ExpandCollapseLayout.ChildrenCount;
-    ExpandCollapseImage.Bitmap := ImageList1.Source[1].MultiResBitmap[0].Bitmap;
+    ExpandCollapseImage.Svg.Source := GetBootstrapIcon('chevron-up');
 
     for var I := 0 to ExpandCollapseLayout.ChildrenCount-1 do
       if ExpandCollapseLayout.Children.Items[I].Name <> ButtonLayout.Name then
@@ -380,7 +386,7 @@ begin
   end else
   begin
     ExpandCollapseLayout.Height := ButtonLayout.Height;
-    ExpandCollapseImage.Bitmap := ImageList1.Source[0].MultiResBitmap[0].Bitmap;
+    ExpandCollapseImage.Svg.Source := GetBootstrapIcon('chevron-down');
 
     for var I := 0 to ExpandCollapseLayout.ChildrenCount-1 do
       if ExpandCollapseLayout.Children.Items[I].Name <> ButtonLayout.Name then
@@ -399,35 +405,64 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   btnAllTools.OnClick(btnAllTools);
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
+  SplitterNavContent.Position.X := HamburgerMenuWidth * 2; // Make sure Splitter is in the correct place
   lblAppInfoDescription.Text := GetAppInfo;
 
 
+  // Set Which Tool Frames to Create
+  var Tool_PHPFormatter := True;
+  var Tool_CSSFormatter := True;
+  var Tool_HTMLFormatter := True;
+  var Tool_JsonFormatter := True;
+  var Tool_SQLFormatter := True;
+  var Tool_XMLFormatter := True;
+  var Tool_JavaScriptFormatter := True;
+  var Tool_NumberBaseConverter := True;
+  var Tool_NameGenerator := True;
+  var Tool_UUIDGenerator := True;
+  var Tool_HashGenerator := True;
+  var Tool_TimestampConverter := False;
+  var Tool_Base64EncoderDecoder := True;
+  var Tool_Base64ImageEncoderDecoder := True;
+  var Tool_ColorPicker := True;
+  var Tool_GZipCompressDecompress := True;
+  var Tool_HTMLEncoderDecoder := True;
+  var Tool_JsonYamlConverter := True;
+  var Tool_JWTDecoder := True;
+  var Tool_LoremIpsumGenerator := True;
+  var Tool_TextCaseConverterInspector := True;
+  var Tool_URLEncoderDecoder := True;
+  var Tool_TextEscapeUnescape := True;
+  var Tool_MarkdownPreview := True;
+  var Tool_RegexTester := True;
+
+
   // Dynamically create Tool Frames
-  CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
-  CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
-  CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
-  CreateToolFrame(TFrame_JsonFormatter.Create(Self),'layJsonFormatter');
-  CreateToolFrame(TFrame_SQLFormatter.Create(Self),'laySQLFormatter');
-  CreateToolFrame(TFrame_XMLFormatter.Create(Self),'layXMLFormatter');
-  CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
-  CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
-  CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
-  CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
-  CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
-  CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
-  CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
-  CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
-  CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
-  CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
-  CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
-  CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
-  CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
-  CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
-  CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
-  CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
-  CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
-  CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
-  CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
+  if (Tool_PHPFormatter) then CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
+  if (Tool_CSSFormatter) then CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
+  if (Tool_HTMLFormatter) then CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
+  if (Tool_JsonFormatter) then CreateToolFrame(TFrame_JsonFormatter.Create(Self),'layJsonFormatter');
+  if (Tool_SQLFormatter) then CreateToolFrame(TFrame_SQLFormatter.Create(Self),'laySQLFormatter');
+  if (Tool_XMLFormatter) then CreateToolFrame(TFrame_XMLFormatter.Create(Self),'layXMLFormatter');
+  if (Tool_JavaScriptFormatter) then CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
+  if (Tool_NumberBaseConverter) then CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
+  if (Tool_NameGenerator) then CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
+  if (Tool_UUIDGenerator) then CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
+  if (Tool_HashGenerator) then CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
+  if (Tool_TimestampConverter) then CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
+  if (Tool_Base64EncoderDecoder) then CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
+  if (Tool_Base64ImageEncoderDecoder) then CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
+  if (Tool_ColorPicker) then CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
+  if (Tool_GZipCompressDecompress) then CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
+  if (Tool_HTMLEncoderDecoder) then CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
+  if (Tool_JsonYamlConverter) then CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
+  if (Tool_JWTDecoder) then CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
+  if (Tool_LoremIpsumGenerator) then CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
+  if (Tool_TextCaseConverterInspector) then CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
+  if (Tool_URLEncoderDecoder) then CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
+  if (Tool_TextEscapeUnescape) then CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
+  if (Tool_MarkdownPreview) then CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
+  if (Tool_RegexTester) then CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
 
 
   // Collapse Nav Items
@@ -458,6 +493,11 @@ begin
   cbFontFamily.ItemIndex := 0;
 end;
 
+procedure TfrmMain.FormResize(Sender: TObject);
+begin
+  layAllToolsGrid.Height := Round(layAllToolsGrid.ChildrenCount / (layAllToolsGrid.Width / layAllToolsGrid.ItemWidth)+1) * layAllToolsGrid.ItemHeight;  // Need to improve/change this in the future
+end;
+
 function TfrmMain.GetAppInfo: String;
 // Need to get all of the App Info dynamically in the future
 begin
@@ -474,10 +514,21 @@ end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
 begin
-  for var I := 0 to LayoutContainer.Children.Count-1 do
+  for var I := 0 to LayoutContainer.Children.Count-1 do // Loop through all tools and hide them
     TControl(LayoutContainer.Children.Items[I]).Visible := False;
 
-  TControl(FindComponent(ToolLayoutName)).Visible := True;
+  var cmpToolLayoutName := FindComponent(ToolLayoutName); // Find the selected tool
+  if (cmpToolLayoutName <> nil) then
+  begin
+    TControl(cmpToolLayoutName).Visible := True; // Show the selected tool
+    if (cmpToolLayoutName is TFrame) then // Check if the tool is a Frame
+    begin
+      var OnResizeEvent := TNotifyEvent(TFrame(cmpToolLayoutName).OnResize);
+      var NilEvent := TNotifyEvent(nil);
+      if (TMethod(OnResizeEvent) <> TMethod(NilEvent)) then
+        TFrame(cmpToolLayoutName).OnResize(nil); // Call onResize Event if it's a Frame
+    end;
+  end else ShowMessage('This tool is not available');
 end;
 
 procedure TfrmMain.SwitchLineNumbersSwitch(Sender: TObject);

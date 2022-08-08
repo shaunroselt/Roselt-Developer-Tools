@@ -20,7 +20,9 @@ uses
   FMX.Memo,
   FMX.Platform,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_GZipCompressDecompress = class(TFrame)
@@ -34,20 +36,20 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layCompressDecompress: TRectangle;
-    imgCompressDecompress: TImage;
+    imgCompressDecompress: TSkSvg;
     layCompressDecompressTitleDescription: TLayout;
     lblCompressDecompressTitle: TLabel;
     lblCompressDecompressDescription: TLabel;
     SwitchCompressDecompress: TSwitch;
     lblSwitchCompressDecompress: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     procedure SwitchCompressDecompressSwitch(Sender: TObject);
     procedure FrameResize(Sender: TObject);

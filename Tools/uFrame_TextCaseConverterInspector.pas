@@ -21,7 +21,9 @@ uses
   FMX.Platform,
   FMX.ScrollBox,
   FMX.Memo,
-  FMX.Controls.Presentation;
+  FMX.Controls.Presentation,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_TextCaseConverterInspector = class(TFrame)
@@ -89,12 +91,12 @@ type
     btnTextCaseConverterInspectorConvertCamelCase: TButton;
     btnTextCaseConverterInspectorConvertPascalCase: TButton;
     btnTextCaseConverterInspectorConvertTitleCase: TButton;
-    imgConversion: TImage;
+    imgConversion: TSkSvg;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     procedure TextCaseConverterButtonsClick(Sender: TObject);
     procedure memTextCaseConverterInspectorInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;

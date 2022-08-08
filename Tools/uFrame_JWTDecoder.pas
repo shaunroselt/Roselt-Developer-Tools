@@ -20,7 +20,9 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  FMX.Objects;
+  FMX.Objects,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_JWTDecoder = class(TFrame)
@@ -36,16 +38,16 @@ type
     lblJWTToken: TLabel;
     memJWTToken: TMemo;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     btnHeaderCopyToClipboard: TButton;
-    imgHeaderCopyToClipboard: TImage;
+    imgHeaderCopyToClipboard: TSkSvg;
     lblHeaderCopyToClipboard: TLabel;
     btnPayloadCopyToClipboard: TButton;
-    imgPayloadCopyToClipboard: TImage;
+    imgPayloadCopyToClipboard: TSkSvg;
     lblPayloadCopyToClipboard: TLabel;
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);

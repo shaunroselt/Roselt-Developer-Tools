@@ -25,7 +25,9 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Roselt.LoremIpsum;
+  Roselt.LoremIpsum,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_LoremIpsumGenerator = class(TFrame)
@@ -35,13 +37,13 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layType: TRectangle;
-    imgType: TImage;
+    imgType: TSkSvg;
     layTypeTitleDescription: TLayout;
     lblTypeTitle: TLabel;
     lblTypeDescription: TLabel;
     cbType: TComboBox;
     layAmount: TRectangle;
-    imgAmount: TImage;
+    imgAmount: TSkSvg;
     layAmountTitleDescription: TLayout;
     lblAmountTitle: TLabel;
     lblAmountDescription: TLabel;
@@ -51,12 +53,12 @@ type
     layLetterCaseTitleDescription: TLayout;
     lblLetterCaseTitle: TLabel;
     lblLetterCaseDescription: TLabel;
-    imgLetterCase: TImage;
+    imgLetterCase: TSkSvg;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     btnOutputRefresh: TButton;
-    imgOutputRefresh: TImage;
+    imgOutputRefresh: TSkSvg;
     lblOutputRefresh: TLabel;
     procedure sbAmountChange(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);

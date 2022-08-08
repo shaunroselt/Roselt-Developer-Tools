@@ -21,7 +21,9 @@ uses
   FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_CSSFormatter = class(TFrame)
@@ -36,19 +38,19 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layIndentation: TRectangle;
-    imgIndentation: TImage;
+    imgIndentation: TSkSvg;
     cbIndentation: TComboBox;
     layIndentationTitleDescription: TLayout;
     lblIndentationTitle: TLabel;
     lblIndentationDescription: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     procedure FrameResize(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);

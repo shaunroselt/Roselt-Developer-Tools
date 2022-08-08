@@ -32,10 +32,11 @@ uses
   uFrame_XMLFormatter in 'Tools\uFrame_XMLFormatter.pas' {Frame_XMLFormatter: TFrame},
   uFrame_UUIDGenerator in 'Tools\uFrame_UUIDGenerator.pas' {Frame_UUIDGenerator: TFrame},
   uFrame_NameGenerator in 'Tools\uFrame_NameGenerator.pas' {Frame_NameGenerator: TFrame},
-  uAssets in 'uAssets.pas' {dmAssets: TDataModule},
   uFrame_TextEscapeUnescape in 'Tools\uFrame_TextEscapeUnescape.pas' {Frame_TextEscapeUnescape: TFrame},
   uFrame_MarkdownPreview in 'Tools\uFrame_MarkdownPreview.pas' {Frame_MarkdownPreview: TFrame},
-  uFrame_RegexTester in 'Tools\uFrame_RegexTester.pas' {Frame_RegexTester: TFrame};
+  uFrame_RegexTester in 'Tools\uFrame_RegexTester.pas' {Frame_RegexTester: TFrame},
+  uBootstrapIcons in 'uBootstrapIcons.pas',
+  Roselt.SystemInformation in 'Roselt.SystemInformation.pas';
 
 {$R *.res}
 
@@ -43,6 +44,5 @@ begin
   Application.Initialize;
   Application.CreateForm(TdmStyles, dmStyles);
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TdmAssets, dmAssets);
   Application.Run;
 end.

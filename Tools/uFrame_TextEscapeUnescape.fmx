@@ -1,126 +1,7 @@
-object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
+object Frame_TextEscapeUnescape: TFrame_TextEscapeUnescape
   Size.Width = 800.000000000000000000
   Size.Height = 750.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
-  object layTop: TLayout
-    Align = Top
-    Padding.Left = 20.000000000000000000
-    Padding.Top = 20.000000000000000000
-    Padding.Right = 20.000000000000000000
-    Padding.Bottom = 20.000000000000000000
-    Size.Width = 800.000000000000000000
-    Size.Height = 134.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object lblConfiguration: TLabel
-      Align = Top
-      StyledSettings = [Family, Style, FontColor]
-      Position.X = 20.000000000000000000
-      Position.Y = 20.000000000000000000
-      Size.Width = 760.000000000000000000
-      Size.Height = 30.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 20.000000000000000000
-      Text = 'Configuration'
-      TabOrder = 0
-    end
-    object layConversion: TRectangle
-      Align = Top
-      Fill.Color = xFF2B2B2B
-      Padding.Left = 12.000000000000000000
-      Padding.Top = 12.000000000000000000
-      Padding.Right = 12.000000000000000000
-      Padding.Bottom = 12.000000000000000000
-      Margins.Bottom = 6.000000000000000000
-      Position.X = 20.000000000000000000
-      Position.Y = 50.000000000000000000
-      Sides = []
-      Size.Width = 760.000000000000000000
-      Size.Height = 72.000000000000000000
-      Size.PlatformDefault = False
-      Stroke.Kind = None
-      XRadius = 8.000000000000000000
-      YRadius = 8.000000000000000000
-      object layConversionTitleDescription: TLayout
-        Align = Client
-        Size.Width = 537.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        object lblConversionTitle: TLabel
-          Align = Top
-          StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
-          Size.Height = 24.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Size = 18.000000000000000000
-          Text = 'Conversion'
-          TabOrder = 1
-        end
-        object lblConversionDescription: TLabel
-          Align = Client
-          StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
-          Size.Height = 24.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Size = 14.000000000000000000
-          Text = 'Select which conversion mode you want to use'
-          TabOrder = 0
-        end
-      end
-      object SwitchConversion: TSwitch
-        Align = Right
-        Cursor = crHandPoint
-        IsChecked = True
-        Position.X = 690.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Width = 58.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 3
-        OnSwitch = SwitchConversionSwitch
-      end
-      object lblSwitchConversion: TLabel
-        Align = Right
-        StyledSettings = [Family, Style, FontColor]
-        Margins.Right = 8.000000000000000000
-        Position.X = 586.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Width = 96.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 18.000000000000000000
-        TextSettings.HorzAlign = Trailing
-        Text = 'Encode'
-        TabOrder = 1
-        OnClick = SwitchConversionSwitch
-        OnDblClick = SwitchConversionSwitch
-      end
-      object imgConversion: TSkSvg
-        Align = Left
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 12.000000000000000000
-        Margins.Right = 8.000000000000000000
-        Margins.Bottom = 12.000000000000000000
-        Position.X = 17.000000000000000000
-        Position.Y = 24.000000000000000000
-        Size.Width = 24.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        Svg.OverrideColor = claWhite
-        Svg.Source = 
-          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-          'ill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 1' +
-          '6 16">'#13#10'  <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h1' +
-          '1.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-' +
-          '4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0' +
-          ' 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 ' +
-          '0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>'#13 +
-          #10'</svg>'
-      end
-    end
-  end
   object layBottom: TLayout
     Align = Client
     Padding.Left = 20.000000000000000000
@@ -249,7 +130,6 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
         Size.Height = 209.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        OnKeyUp = memInputKeyUp
         Viewport.Width = 760.000000000000000000
         Viewport.Height = 209.000000000000000000
       end
@@ -328,6 +208,121 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
         TabOrder = 4
         Viewport.Width = 760.000000000000000000
         Viewport.Height = 291.000000000000000000
+      end
+    end
+  end
+  object layTop: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 800.000000000000000000
+    Size.Height = 134.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblConfiguration: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 760.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Configuration'
+      TabOrder = 0
+    end
+    object layConversion: TRectangle
+      Align = Top
+      Fill.Color = xFF2B2B2B
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object layConversionTitleDescription: TLayout
+        Align = Client
+        Size.Width = 537.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblConversionTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 537.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Conversion'
+          TabOrder = 1
+        end
+        object lblConversionDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 537.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select which conversion mode you want to use'
+          TabOrder = 0
+        end
+      end
+      object SwitchConversion: TSwitch
+        Align = Right
+        Cursor = crHandPoint
+        IsChecked = True
+        Position.X = 690.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 58.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+      end
+      object lblSwitchConversion: TLabel
+        Align = Right
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Right = 8.000000000000000000
+        Position.X = 586.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.HorzAlign = Trailing
+        Text = 'Encode'
+        TabOrder = 1
+      end
+      object imgConversion: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 1' +
+          '6 16">'#13#10'  <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h1' +
+          '1.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-' +
+          '4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0' +
+          ' 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 ' +
+          '0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>'#13 +
+          #10'</svg>'
       end
     end
   end

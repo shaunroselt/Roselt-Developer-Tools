@@ -23,7 +23,9 @@ uses
   FMX.Platform,
   FMX.Memo,
   FMX.Controls.Presentation,
-  FMX.Layouts;
+  FMX.Layouts,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_JsonFormatter = class(TFrame)
@@ -34,21 +36,21 @@ type
     layIndentationTitleDescription: TLayout;
     lblIndentationTitle: TLabel;
     lblIndentationDescription: TLabel;
-    imgIndentation: TImage;
+    imgIndentation: TSkSvg;
     layBottom: TLayout;
     layInput: TLayout;
     memTitleInput: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     memInput: TMemo;
     layOutput: TLayout;
     memTitleOutput: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
     SplitterInputOutput: TSplitter;

@@ -1,0 +1,17 @@
+object Frame_RegexTester: TFrame_RegexTester
+  Size.Width = 800.000000000000000000
+  Size.Height = 750.000000000000000000
+  Size.PlatformDefault = False
+  object lblComingSoon: TLabel
+    Align = Client
+    StyledSettings = [Family, FontColor]
+    Size.Width = 800.000000000000000000
+    Size.Height = 750.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 28.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Coming Soon!'
+    TabOrder = 0
+  end
+end

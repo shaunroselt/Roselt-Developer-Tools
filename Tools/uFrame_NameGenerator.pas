@@ -30,7 +30,9 @@ uses
   FMX.Platform,
   FMX.EditBox,
   FMX.SpinBox,
-  Roselt.NameGenerator;
+  Roselt.NameGenerator,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_NameGenerator = class(TFrame)
@@ -40,20 +42,20 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layGender: TRectangle;
-    imgGender: TImage;
+    imgGender: TSkSvg;
     cbGender: TComboBox;
     layGenderTitleDescription: TLayout;
     lblGender: TLabel;
     lblGenderDescription: TLabel;
     laySurname: TRectangle;
-    imgSurname: TImage;
+    imgSurname: TSkSvg;
     laySurnameTitleDescription: TLayout;
     lblSurnameTitle: TLabel;
     lblSurnameDescription: TLabel;
     SwitchSurname: TSwitch;
     lblSwitchSurname: TLabel;
     layAmount: TRectangle;
-    imgAmount: TImage;
+    imgAmount: TSkSvg;
     layAmountTitleDescription: TLayout;
     lblAmountTitle: TLabel;
     lblAmountDescription: TLabel;
@@ -63,12 +65,12 @@ type
     layLetterCaseTitleDescription: TLayout;
     lblLetterCaseTitle: TLabel;
     lblLetterCaseDescription: TLabel;
-    imgLetterCase: TImage;
+    imgLetterCase: TSkSvg;
     btnRefresh: TButton;
-    imgRefresh: TImage;
+    imgRefresh: TSkSvg;
     lblRefresh: TLabel;
     btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TImage;
+    imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
   private

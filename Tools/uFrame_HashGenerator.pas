@@ -24,7 +24,9 @@ uses
   FMX.Edit,
   FMX.Controls.Presentation,
   FMX.Layouts, 
-  FMX.ExtCtrls;
+  FMX.ExtCtrls,
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_HashGenerator = class(TFrame)
@@ -34,23 +36,23 @@ type
     layTop: TLayout;
     lblConfiguration: TLabel;
     layLetterCase: TRectangle;
-    imgLetterCase: TImage;
+    imgLetterCase: TSkSvg;
     layLetterCaseTitleDescription: TLayout;
     lblLetterCaseTitle: TLabel;
     lblLetterCaseDescription: TLabel;
     SwitchLetterCase: TSwitch;
     lblSwitchLetterCase: TLabel;
     layOutputType: TRectangle;
-    imgOutputType: TImage;
+    imgOutputType: TSkSvg;
     cbOutputType: TComboBox;
     layOutputTypeTitleDescription: TLayout;
     lblOutputTypeTitle: TLabel;
     lblOutputTypeDescription: TLabel;
     btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TImage;
+    imgInputPasteFromClipboard: TSkSvg;
     lblInputPasteFromClipboard: TLabel;
     btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TImage;
+    imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
     layInput: TLayout;
     layOutput: TLayout;
@@ -58,34 +60,34 @@ type
     lblHashGeneratorOutputMD5: TLabel;
     edtHashGeneratorOutputMD5: TEdit;
     edtHashGeneratorOutputMD5CopyToClipboard: TEditButton;
-    imgHashGeneratorOutputMD5CopyToClipboard: TImage;
+    imgHashGeneratorOutputMD5CopyToClipboard: TSkSvg;
     layHashGeneratorOutputSHA1: TLayout;
     lblHashGeneratorOutputSHA1: TLabel;
     edtHashGeneratorOutputSHA1: TEdit;
     edtHashGeneratorOutputSHA1CopyToClipboard: TEditButton;
-    imgHashGeneratorOutputSHA1CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA1CopyToClipboard: TSkSvg;
     layHashGeneratorOutputSHA224: TLayout;
     lblHashGeneratorOutputSHA224: TLabel;
     edtHashGeneratorOutputSHA224: TEdit;
     edtHashGeneratorOutputSHA224CopyToClipboard: TEditButton;
-    imgHashGeneratorOutputSHA224CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA224CopyToClipboard: TSkSvg;
     layHashGeneratorOutputSHA256: TLayout;
     lblHashGeneratorOutputSHA256: TLabel;
     edtHashGeneratorOutputSHA256: TEdit;
     edtHashGeneratorOutputSHA256CopyToClipboard: TEditButton;
-    imgHashGeneratorOutputSHA256CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA256CopyToClipboard: TSkSvg;
     layHashGeneratorOutputSHA384: TLayout;
     lblHashGeneratorOutputSHA384: TLabel;
     edtHashGeneratorOutputSHA384: TEdit;
     edtHashGeneratorOutputSHA384CopyToClipboard: TEditButton;
-    imgHashGeneratorOutputSHA384CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA384CopyToClipboard: TSkSvg;
     layHashGeneratorOutputSHA512: TLayout;
     lblHashGeneratorOutputSHA512: TLabel;
     edtHashGeneratorOutputSHA512: TEdit;
     edtHashGeneratorOutputSHA512CopyToClipboard: TEditButton;
-    imgHashGeneratorOutputSHA512CopyToClipboard: TImage;
+    imgHashGeneratorOutputSHA512CopyToClipboard: TSkSvg;
     layInputType: TRectangle;
-    imgInputType: TImage;
+    imgInputType: TSkSvg;
     cbInputType: TComboBox;
     layInputTypeTitleDescription: TLayout;
     lblInputTypeTitle: TLabel;
