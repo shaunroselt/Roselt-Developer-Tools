@@ -52,6 +52,13 @@ type
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
     SplitterInputOutput: TSplitter;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
+    OpenDialog: TOpenDialog;
     procedure FrameResize(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);

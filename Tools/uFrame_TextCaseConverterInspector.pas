@@ -98,6 +98,13 @@ type
     btnInputCopyToClipboard: TButton;
     imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
+    OpenDialog: TOpenDialog;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
     procedure TextCaseConverterButtonsClick(Sender: TObject);
     procedure memTextCaseConverterInspectorInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);

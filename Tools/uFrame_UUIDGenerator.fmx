@@ -1,6 +1,6 @@
 object Frame_UUIDGenerator: TFrame_UUIDGenerator
   Size.Width = 800.000000000000000000
-  Size.Height = 750.000000000000000000
+  Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   object layBottom: TLayout
     Align = Client
@@ -9,7 +9,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 461.000000000000000000
+    Size.Height = 459.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object memTitleOutput: TLabel
@@ -115,11 +115,11 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
       TextSettings.WordWrap = True
       Align = Client
       Size.Width = 760.000000000000000000
-      Size.Height = 385.000000000000000000
+      Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       Viewport.Width = 760.000000000000000000
-      Viewport.Height = 385.000000000000000000
+      Viewport.Height = 383.000000000000000000
     end
   end
   object layTop: TLayout

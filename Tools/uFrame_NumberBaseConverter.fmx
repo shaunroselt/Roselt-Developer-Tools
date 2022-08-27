@@ -1,6 +1,6 @@
 object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
   Size.Width = 800.000000000000000000
-  Size.Height = 750.000000000000000000
+  Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   object layBottom: TLayout
     Align = Client
@@ -9,7 +9,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 621.000000000000000000
+    Size.Height = 619.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object layHexadecimal: TLayout

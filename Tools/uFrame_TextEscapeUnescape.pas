@@ -51,6 +51,13 @@ type
     SwitchConversion: TSwitch;
     lblSwitchConversion: TLabel;
     imgConversion: TSkSvg;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
+    OpenDialog: TOpenDialog;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);

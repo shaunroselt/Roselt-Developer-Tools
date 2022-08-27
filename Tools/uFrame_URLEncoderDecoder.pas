@@ -51,6 +51,13 @@ type
     imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     memOutput: TMemo;
+    OpenDialog: TOpenDialog;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
     procedure FrameResize(Sender: TObject);
     procedure SwitchConversionSwitch(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);

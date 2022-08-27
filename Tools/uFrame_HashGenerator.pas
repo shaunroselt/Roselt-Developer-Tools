@@ -94,6 +94,13 @@ type
     lblInputTypeDescription: TLabel;
     DropFile: TDropTarget;
     btnDropFile: TButton;
+    OpenDialog: TOpenDialog;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
     procedure SwitchLetterCaseSwitch(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure cbOutputTypeChange(Sender: TObject);

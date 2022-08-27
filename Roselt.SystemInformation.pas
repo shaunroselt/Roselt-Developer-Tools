@@ -81,12 +81,12 @@ uses
   {$ENDIF}
 
 Type
-  TnsSystemLocation = record
+  TSystemLocation = record
     Latitude: Double;
     Longitude: Double;
   end;
 
-  TnsSystemInformation = class
+  TSystemInformation = class
   private
     FVideoCard: String;
     FMacAddress: String;
@@ -94,14 +94,14 @@ Type
     FOperatingSystem: String;
     FApplicationType: String;
     FTotalMemory: String;
-    FSystemLocation: TnsSystemLocation;
+    FSystemLocation: TSystemLocation;
     FUserName: String;
     function GetSystemLanguage: String;
     function GetSystemTotalMemory: String;
     function GetScreenResolution: String;
     function GetIPAddress: String;
     function GetAppVersion: String;
-    function GetSystemLocation: TnsSystemLocation;
+    function GetSystemLocation: TSystemLocation;
     function GetUserName: String;
     function GetMacAddress: String;
     function GetVideoCardName: String;
@@ -117,19 +117,19 @@ Type
     property ApplicationType: String read FApplicationType;
     property TotalMemory: String read FTotalMemory;
     property AppVersion: String read GetAppVersion;
-    property SystemLocation: TnsSystemLocation read GetSystemLocation;
+    property SystemLocation: TSystemLocation read GetSystemLocation;
     property UserName: String read FUserName write FUserName;
   end;
 
 implementation
 
-{ TnsSystemInformation }
+{ TSystemInformation }
 
 {$IFDEF MACOS}
 function NSUserName: Pointer; cdecl; external '/System/Library/Frameworks/Foundation.framework/Foundation' name '_NSUserName';
 {$ENDIF}
 
-function TnsSystemInformation.GetUserName: String;
+function TSystemInformation.GetUserName: String;
 {$IFDEF MSWINDOWS}
 var
   nSize: DWord;
@@ -157,7 +157,7 @@ begin
   {$ENDIF}
 end;
 
-function TnsSystemInformation.GetVideoCardName: String;
+function TSystemInformation.GetVideoCardName: String;
 {$IFDEF MSWINDOWS}
   const
     WbemUser = '';
@@ -191,7 +191,7 @@ begin;
   {$ENDIF}
 end;
 
-constructor TnsSystemInformation.Create;
+constructor TSystemInformation.Create;
 begin
   FMacAddress := GetMacAddress;
   FComputerName := GetEnvironmentVariable('COMPUTERNAME');
@@ -202,7 +202,7 @@ begin
   FVideoCard := GetVideoCardName;
 end;
 
-function TnsSystemInformation.GetAppVersion: String;
+function TSystemInformation.GetAppVersion: String;
 var
   wMajor, wMinor, wRelease, wBuild: Word;
   VersionSuccess: Boolean;
@@ -272,7 +272,7 @@ begin
   result := wMajor.ToString + '.' + wMinor.ToString + '.' + wRelease.ToString + '.' + wBuild.ToString;
 end;
 
-function TnsSystemInformation.GetIPAddress: String;
+function TSystemInformation.GetIPAddress: String;
   {$IF Defined(MSWINDOWS)}
     type
       pu_long = ^u_long;
@@ -321,7 +321,7 @@ begin
   end;
 end;
 
-function TnsSystemInformation.GetMacAddress: String;
+function TSystemInformation.GetMacAddress: String;
 {$IFDEF MSWINDOWS}
 var
   Lib: Cardinal;
@@ -363,12 +363,12 @@ begin
 {$ENDIF}
 end;
 
-function TnsSystemInformation.GetScreenResolution: String;
+function TSystemInformation.GetScreenResolution: String;
 begin
   result := Screen.Width.ToString+'x'+Screen.Height.ToString;
 end;
 
-function TnsSystemInformation.GetSystemLanguage: String;
+function TSystemInformation.GetSystemLanguage: String;
   {$IFDEF MACOS}
     var
       Languages: NSArray;
@@ -405,7 +405,7 @@ begin
   {$ENDIF}
 end;
 
-function TnsSystemInformation.GetSystemLocation: TnsSystemLocation;
+function TSystemInformation.GetSystemLocation: TSystemLocation;
 var
   MyLocationSensorArray : TSensorArray;
   MyLocationSensor : TCustomLocationSensor;
@@ -434,7 +434,7 @@ begin
   end;
 end;
 
-function TnsSystemInformation.GetSystemTotalMemory: String;
+function TSystemInformation.GetSystemTotalMemory: String;
   {$IFDEF ANDROID}
     var
       MemoryInfo: JActivityManager_MemoryInfo;

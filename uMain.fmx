@@ -13,13 +13,12 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnResize = FormResize
   DesignerMasterStyle = 0
-  object TopBar: TRectangle
+  object TopBar: TPanel
     Align = Top
-    Fill.Color = xFF2B2B2B
-    Sides = []
     Size.Width = 1200.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
+    StyleLookup = 'tabdotstyle'
     object lblNavTitle: TLabel
       Align = Top
       StyledSettings = [Family, FontColor]
@@ -365,8 +364,8 @@ object frmMain: TfrmMain
         Size.Height = 633.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 791.000000000000000000
-        Viewport.Height = 625.000000000000000000
+        Viewport.Width = 799.000000000000000000
+        Viewport.Height = 633.000000000000000000
       end
       object Button14: TButton
         Align = Top
@@ -5783,7 +5782,6 @@ object frmMain: TfrmMain
     Align = Left
     Cursor = crHSplit
     MinSize = 20.000000000000000000
-    Position.X = 400.000000000000000000
     Position.Y = 50.000000000000000000
     Size.Width = 1.000000000000000000
     Size.Height = 750.000000000000000000
@@ -5854,7 +5852,7 @@ object frmMain: TfrmMain
           end
           object lblAllTools: TLabel
             Align = Client
-            StyledSettings = [Family, Style, FontColor]
+            StyledSettings = [Family, FontColor]
             Margins.Top = 5.000000000000000000
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
@@ -5916,7 +5914,7 @@ object frmMain: TfrmMain
           end
           object lblTesting: TLabel
             Align = Client
-            StyledSettings = [Family, Style, FontColor]
+            StyledSettings = [Family, FontColor]
             Margins.Top = 5.000000000000000000
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
@@ -5983,7 +5981,7 @@ object frmMain: TfrmMain
             end
             object lblGeneratorsExpandCollapse: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 306.000000000000000000
@@ -6069,7 +6067,7 @@ object frmMain: TfrmMain
             end
             object lblUUIDGenerator: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6157,7 +6155,7 @@ object frmMain: TfrmMain
             end
             object lblHashGenerator: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6219,7 +6217,7 @@ object frmMain: TfrmMain
             end
             object lblLoremIpsumGenerator: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6279,7 +6277,7 @@ object frmMain: TfrmMain
             end
             object lblNameGenerator: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6353,7 +6351,7 @@ object frmMain: TfrmMain
             end
             object lblEncodersDecodersExpandCollapse: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 306.000000000000000000
@@ -6437,7 +6435,7 @@ object frmMain: TfrmMain
             end
             object lblBase64EncoderDecoder: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6499,7 +6497,7 @@ object frmMain: TfrmMain
             end
             object lblHTMLEncoderDecoder: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6570,7 +6568,7 @@ object frmMain: TfrmMain
             end
             object lblJWTDecoder: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6636,7 +6634,7 @@ object frmMain: TfrmMain
             end
             object lblBase64ImageEncoderDecoder: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6697,7 +6695,7 @@ object frmMain: TfrmMain
             end
             object lblURLEncoderDecoder: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6761,7 +6759,7 @@ object frmMain: TfrmMain
             end
             object lblGZipCompressDecompress: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6832,7 +6830,7 @@ object frmMain: TfrmMain
             end
             object lblGraphicsExpandCollapse: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 306.000000000000000000
@@ -6924,7 +6922,7 @@ object frmMain: TfrmMain
             end
             object lblColorPicker: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -6992,7 +6990,7 @@ object frmMain: TfrmMain
             end
             object lblColorBlindnessSimulator: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7053,7 +7051,7 @@ object frmMain: TfrmMain
             end
             object lblImageConverter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7114,7 +7112,7 @@ object frmMain: TfrmMain
             end
             object lblPNGJPEGCompressor: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7191,7 +7189,7 @@ object frmMain: TfrmMain
             end
             object lblTextExpandCollapse: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 306.000000000000000000
@@ -7275,7 +7273,7 @@ object frmMain: TfrmMain
             end
             object lblTextCaseConverterInspector: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7338,7 +7336,7 @@ object frmMain: TfrmMain
             end
             object lblTextEscapeUnescape: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7403,7 +7401,7 @@ object frmMain: TfrmMain
             end
             object lblMarkdownPreview: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7465,7 +7463,7 @@ object frmMain: TfrmMain
             end
             object lblTextDifference: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7535,7 +7533,7 @@ object frmMain: TfrmMain
             end
             object lblRegexTester: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7605,7 +7603,7 @@ object frmMain: TfrmMain
             end
             object lblConvertersExpandCollapse: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 306.000000000000000000
@@ -7685,7 +7683,7 @@ object frmMain: TfrmMain
             end
             object lblJsonYamlConverter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7753,7 +7751,7 @@ object frmMain: TfrmMain
             end
             object lblNumberBaseConverter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7818,7 +7816,7 @@ object frmMain: TfrmMain
             end
             object lblTimestampConverter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -7898,7 +7896,7 @@ object frmMain: TfrmMain
             end
             object Formatters: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
               Size.Width = 306.000000000000000000
@@ -7980,7 +7978,7 @@ object frmMain: TfrmMain
             end
             object lblXMLFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8043,7 +8041,7 @@ object frmMain: TfrmMain
             end
             object lblHTMLFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8139,7 +8137,7 @@ object frmMain: TfrmMain
             end
             object lblCSSFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8216,7 +8214,7 @@ object frmMain: TfrmMain
             end
             object lblJavaScriptFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8281,7 +8279,7 @@ object frmMain: TfrmMain
             end
             object lblSQLFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8352,7 +8350,7 @@ object frmMain: TfrmMain
             end
             object lblPHPFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8440,7 +8438,7 @@ object frmMain: TfrmMain
             end
             object lblJsonFormatter: TLabel
               Align = Client
-              StyledSettings = [Family, Style, FontColor]
+              StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
@@ -8520,7 +8518,7 @@ object frmMain: TfrmMain
         end
         object lblSettings: TLabel
           Align = Client
-          StyledSettings = [Family, Style, FontColor]
+          StyledSettings = [Family, FontColor]
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
@@ -8533,5 +8531,18 @@ object frmMain: TfrmMain
         end
       end
     end
+  end
+  object layConversion: TRectangle
+    Fill.Color = claNull
+    Margins.Bottom = 6.000000000000000000
+    Position.X = 28.000000000000000000
+    Position.Y = 287.000000000000000000
+    Sides = []
+    Size.Width = 347.000000000000000000
+    Size.Height = 103.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 20.000000000000000000
+    YRadius = 20.000000000000000000
   end
 end

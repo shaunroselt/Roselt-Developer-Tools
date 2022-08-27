@@ -69,7 +69,7 @@ uses
 type
   TfrmMain = class(TForm)
     MultiView: TMultiView;
-    TopBar: TRectangle;
+    TopBar: TPanel;
     lblNavTitle: TLabel;
     btnHamburger: TButton;
     layAllTools: TScrollBox;
@@ -315,6 +315,7 @@ type
     Button14: TButton;
     imgToolHelp: TSkSvg;
     layAllToolsHidden: TLayout;
+    layConversion: TRectangle;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -403,11 +404,11 @@ procedure TfrmMain.FormCreate(Sender: TObject);
     ToolFrame.Align := TAlignLayout.Client;
   end;
 begin
-  btnAllTools.OnClick(btnAllTools);
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
   SplitterNavContent.Position.X := HamburgerMenuWidth * 2; // Make sure Splitter is in the correct place
   lblAppInfoDescription.Text := GetAppInfo;
 
+  btnAllTools.OnClick(btnAllTools);
 
   // Set Which Tool Frames to Create
   var Tool_PHPFormatter := True;
@@ -421,7 +422,7 @@ begin
   var Tool_NameGenerator := True;
   var Tool_UUIDGenerator := True;
   var Tool_HashGenerator := True;
-  var Tool_TimestampConverter := False;
+  var Tool_TimestampConverter := True;
   var Tool_Base64EncoderDecoder := True;
   var Tool_Base64ImageEncoderDecoder := True;
   var Tool_ColorPicker := True;
@@ -474,6 +475,59 @@ begin
   ExpandCollapseNavItem(btnGraphicsExpandCollapse);
 
 
+  // Enable/Disable Nav Items that aren't created
+  layNavPHPFormatter.Enabled := Tool_PHPFormatter;
+  layNavCSSFormatter.Enabled := Tool_CSSFormatter;
+  layNavHTMLFormatter.Enabled := Tool_HTMLFormatter;
+  layNavJsonFormatter.Enabled := Tool_JsonFormatter;
+  layNavSQLFormatter.Enabled := Tool_SQLFormatter;
+  layNavXMLFormatter.Enabled := Tool_XMLFormatter;
+  layNavJavaScriptFormatter.Enabled := Tool_JavaScriptFormatter;
+  layNavNumberBaseConverter.Enabled := Tool_NumberBaseConverter;
+  layNavNameGenerator.Enabled := Tool_NameGenerator;
+  layNavUUIDGenerator.Enabled := Tool_UUIDGenerator;
+  layNavHashGenerator.Enabled := Tool_HashGenerator;
+  layNavTimestampConverter.Enabled := Tool_TimestampConverter;
+  layNavBase64EncoderDecoder.Enabled := Tool_Base64EncoderDecoder;
+  layNavBase64ImageEncoderDecoder.Enabled := Tool_Base64ImageEncoderDecoder;
+  layNavColorPicker.Enabled := Tool_ColorPicker;
+  layNavGZipCompressDecompress.Enabled := Tool_GZipCompressDecompress;
+  layNavHTMLEncoderDecoder.Enabled := Tool_HTMLEncoderDecoder;
+  layNavJsonYamlConverter.Enabled := Tool_JsonYamlConverter;
+  layNavJWTDecoder.Enabled := Tool_JWTDecoder;
+  layNavLoremIpsumGenerator.Enabled := Tool_LoremIpsumGenerator;
+  layNavTextCaseConverterInspector.Enabled := Tool_TextCaseConverterInspector;
+  layNavURLEncoderDecoder.Enabled := Tool_URLEncoderDecoder;
+  layNavTextEscapeUnescape.Enabled := Tool_TextEscapeUnescape;
+  layNavMarkdownPreview.Enabled := Tool_MarkdownPreview;
+  layNavRegexTester.Enabled := Tool_RegexTester;
+  if not(Tool_PHPFormatter) then lblPHPFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_CSSFormatter) then lblCSSFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_HTMLFormatter) then lblHTMLFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_JsonFormatter) then lblJsonFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_SQLFormatter) then lblSQLFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_XMLFormatter) then lblXMLFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_JavaScriptFormatter) then lblJavaScriptFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_NumberBaseConverter) then lblNumberBaseConverter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_NameGenerator) then lblNameGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_UUIDGenerator) then lblUUIDGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_HashGenerator) then lblHashGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_TimestampConverter) then lblTimestampConverter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_Base64EncoderDecoder) then lblBase64EncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_Base64ImageEncoderDecoder) then lblBase64ImageEncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_ColorPicker) then lblColorPicker.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_GZipCompressDecompress) then lblGZipCompressDecompress.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_HTMLEncoderDecoder) then lblHTMLEncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_JsonYamlConverter) then lblJsonYamlConverter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_JWTDecoder) then lblJWTDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_LoremIpsumGenerator) then lblLoremIpsumGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_TextCaseConverterInspector) then lblTextCaseConverterInspector.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_URLEncoderDecoder) then lblURLEncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_TextEscapeUnescape) then lblTextEscapeUnescape.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_MarkdownPreview) then lblMarkdownPreview.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  if not(Tool_RegexTester) then lblRegexTester.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+
+
   // Load Themes (Settings)
   cbTheme.Items.Clear;
   for var c in dmStyles do
@@ -485,12 +539,18 @@ begin
   cbTheme.ItemIndex := 0;
 
 
-  // Load Font Family (Settings)
-  // Might not work if there isn't a printer. Need to test.
-  // Probably isn't cross-platform either. Need to test.
-  Printer.ActivePrinter;
-  cbFontFamily.Items := Printer.Fonts;
-  cbFontFamily.ItemIndex := 0;
+  TThread.CreateAnonymousThread(
+    procedure
+    begin
+      // Load Font Family (Settings)
+      // Might not work if there isn't a printer. Need to test.
+      // Probably isn't cross-platform either. Need to test.
+      // The code is also super slow on Windows (That's why I have it in a TThread.Start)
+      Printer.ActivePrinter;
+      cbFontFamily.Items := Printer.Fonts;
+      cbFontFamily.ItemIndex := 0;
+    end
+  ).Start;
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);

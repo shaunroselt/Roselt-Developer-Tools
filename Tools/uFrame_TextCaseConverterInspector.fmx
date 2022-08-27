@@ -1,6 +1,6 @@
 object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
   Size.Width = 800.000000000000000000
-  Size.Height = 750.000000000000000000
+  Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   object layTextCaseConverterInspectorBottom: TLayout
     Align = Client
@@ -9,13 +9,13 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 608.000000000000000000
+    Size.Height = 606.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object layTextCaseConverterInspectorInput: TLayout
       Align = Client
       Size.Width = 413.000000000000000000
-      Size.Height = 568.000000000000000000
+      Size.Height = 566.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object lblTextCaseConverterInspectorInput: TLabel
@@ -33,12 +33,12 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 268.000000000000000000
+          Position.X = 194.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 6
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -71,21 +71,21 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputCopyToClipboard: TButton
           Align = Right
           Cursor = crHandPoint
           Margins.Top = 1.000000000000000000
-          Margins.Right = 1.000000000000000000
+          Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 342.000000000000000000
+          Position.X = 268.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 5
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -115,7 +115,88 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
+          end
+        end
+        object btnInputLoad: TButton
+          Align = Right
+          Cursor = crHandPoint
+          Margins.Top = 1.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 1.000000000000000000
+          Position.X = 120.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          object imgInputLoad: TSkSvg
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16' +
+              '">'#13#10'  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 ' +
+              '0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v1' +
+              '2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>'#13#10'</svg>'
+          end
+          object lblInputLoad: TLabel
+            Align = Client
+            Size.Width = 36.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Load'
+            TabOrder = 5
+          end
+        end
+        object btnInputClear: TButton
+          Align = Right
+          Cursor = crHandPoint
+          Margins.Top = 1.000000000000000000
+          Margins.Right = 1.000000000000000000
+          Margins.Bottom = 1.000000000000000000
+          Position.X = 342.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object imgInputClear: TSkSvg
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">'#13#10'  <p' +
+              'ath d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.' +
+              '5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707' +
+              'l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>'#13#10'</sv' +
+              'g>'
+          end
+          object lblInputClear: TLabel
+            Align = Client
+            Size.Width = 36.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Clear'
+            TabOrder = 5
           end
         end
       end
@@ -126,12 +207,17 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
         OnChange = memTextCaseConverterInspectorInputChange
         Align = Client
         Size.Width = 413.000000000000000000
-        Size.Height = 532.000000000000000000
+        Size.Height = 530.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memTextCaseConverterInspectorInputKeyUp
-        Viewport.Width = 413.000000000000000000
-        Viewport.Height = 532.000000000000000000
+        Viewport.Width = 409.000000000000000000
+        Viewport.Height = 526.000000000000000000
+        object OpenDialog: TOpenDialog
+          Filter = 'All Files|*|*.txt|*.txt'
+          Left = 320
+          Top = 416
+        end
       end
     end
     object layTextCaseConverterInspectorInspect: TLayout
@@ -140,7 +226,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
       Position.X = 448.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 332.000000000000000000
-      Size.Height = 568.000000000000000000
+      Size.Height = 566.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object lblTextCaseConverterInspectorInspect: TLabel
@@ -163,7 +249,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
         Margins.Bottom = 6.000000000000000000
         Sides = []
         Size.Width = 332.000000000000000000
-        Size.Height = 526.000000000000000000
+        Size.Height = 524.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         XRadius = 8.000000000000000000
@@ -427,7 +513,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Align = Client
           Margins.Top = 20.000000000000000000
           Size.Width = 308.000000000000000000
-          Size.Height = 38.000000000000000000
+          Size.Height = 36.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object memTextCaseConverterInspectorInspectWordDistribution: TMemo
@@ -436,11 +522,11 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             TextSettings.WordWrap = True
             Align = Client
             Size.Width = 308.000000000000000000
-            Size.Height = 21.000000000000000000
+            Size.Height = 19.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
-            Viewport.Width = 308.000000000000000000
-            Viewport.Height = 21.000000000000000000
+            Viewport.Width = 304.000000000000000000
+            Viewport.Height = 15.000000000000000000
           end
           object lblTextCaseConverterInspectorInspectWordDistributionTitle: TLabel
             Align = Top
@@ -455,7 +541,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Align = Bottom
           Margins.Top = 20.000000000000000000
           Position.X = 12.000000000000000000
-          Position.Y = 314.000000000000000000
+          Position.Y = 312.000000000000000000
           Size.Width = 308.000000000000000000
           Size.Height = 200.000000000000000000
           Size.PlatformDefault = False
@@ -469,8 +555,8 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 183.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
-            Viewport.Width = 308.000000000000000000
-            Viewport.Height = 183.000000000000000000
+            Viewport.Width = 304.000000000000000000
+            Viewport.Height = 179.000000000000000000
           end
           object lblTextCaseConverterInspectorInspectCharacterDistributionTitle: TLabel
             Align = Top
@@ -516,7 +602,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
       Position.X = 433.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 5.000000000000000000
-      Size.Height = 568.000000000000000000
+      Size.Height = 566.000000000000000000
       Size.PlatformDefault = False
     end
   end

@@ -44,6 +44,12 @@ type
     imgCopyToClipboard: TSkSvg;
     lblCopyToClipboard: TLabel;
     OpenDialog: TOpenDialog;
+    btnLoad: TButton;
+    imgLoad: TSkSvg;
+    lblLoad: TLabel;
+    btnClear: TButton;
+    imgClear: TSkSvg;
+    lblClear: TLabel;
     procedure FrameResize(Sender: TObject);
     procedure btnCopyToClipboardClick(Sender: TObject);
     procedure btnPasteFromClipboardClick(Sender: TObject);

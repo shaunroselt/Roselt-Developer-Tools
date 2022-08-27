@@ -1,6 +1,6 @@
 object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
   Size.Width = 800.000000000000000000
-  Size.Height = 750.000000000000000000
+  Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   object layBottom: TLayout
     Align = Client
@@ -9,7 +9,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 461.000000000000000000
+    Size.Height = 459.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object memTitleOutput: TLabel
@@ -34,7 +34,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
+        TabOrder = 4
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -64,7 +64,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
       object btnOutputRefresh: TButton
@@ -78,7 +78,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 81.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 3
         object imgOutputRefresh: TSkSvg
           Align = Left
           Margins.Left = 5.000000000000000000
@@ -91,6 +91,13 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16' +
+            ' 16">'#13#10'  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914' +
+            '.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>'#13#10'  <path d="M8 4.466V.5' +
+            '34a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.6' +
+            '58A.25.25 0 0 1 8 4.466z"/>'#13#10'</svg>'
         end
         object lblOutputRefresh: TLabel
           Align = Client
@@ -98,7 +105,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Refresh'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
     end
@@ -109,11 +116,11 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       TextSettings.WordWrap = True
       Align = Client
       Size.Width = 760.000000000000000000
-      Size.Height = 385.000000000000000000
+      Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Viewport.Width = 756.000000000000000000
-      Viewport.Height = 381.000000000000000000
+      Viewport.Width = 760.000000000000000000
+      Viewport.Height = 383.000000000000000000
     end
   end
   object layTop: TLayout

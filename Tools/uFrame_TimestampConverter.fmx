@@ -4,7 +4,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
   Padding.Right = 20.000000000000000000
   Padding.Bottom = 20.000000000000000000
   Size.Width = 800.000000000000000000
-  Size.Height = 750.000000000000000000
+  Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   object layUnixTimestamp: TLayout
     Align = Top

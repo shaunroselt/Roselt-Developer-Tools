@@ -49,6 +49,13 @@ type
     btnPayloadCopyToClipboard: TButton;
     imgPayloadCopyToClipboard: TSkSvg;
     lblPayloadCopyToClipboard: TLabel;
+    btnInputLoad: TButton;
+    imgInputLoad: TSkSvg;
+    lblInputLoad: TLabel;
+    btnInputClear: TButton;
+    imgInputClear: TSkSvg;
+    lblInputClear: TLabel;
+    OpenDialog: TOpenDialog;
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnHeaderCopyToClipboardClick(Sender: TObject);
