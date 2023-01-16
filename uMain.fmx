@@ -5690,14 +5690,14 @@ object frmMain: TfrmMain
       Size.Height = 701.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      Viewport.Width = 384.000000000000000000
+      Viewport.Width = 400.000000000000000000
       Viewport.Height = 701.000000000000000000
       object layNavAllTools: TLayout
         Align = Top
-        Size.Width = 384.000000000000000000
+        Size.Width = 400.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 9
+        TabOrder = 4
         object btnAllTools: TRectangle
           Align = Client
           Cursor = crHandPoint
@@ -5707,7 +5707,7 @@ object frmMain: TfrmMain
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
           Sides = []
-          Size.Width = 374.000000000000000000
+          Size.Width = 390.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
@@ -5744,7 +5744,7 @@ object frmMain: TfrmMain
             Margins.Top = 5.000000000000000000
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
-            Size.Width = 333.000000000000000000
+            Size.Width = 349.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 20.000000000000000000
@@ -5756,10 +5756,10 @@ object frmMain: TfrmMain
       object layNavTesting: TLayout
         Align = Top
         Position.Y = 50.000000000000000000
-        Size.Width = 384.000000000000000000
+        Size.Width = 400.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 8
+        TabOrder = 3
         object btnTesting: TRectangle
           Align = Client
           Cursor = crHandPoint
@@ -5769,7 +5769,7 @@ object frmMain: TfrmMain
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
           Sides = []
-          Size.Width = 374.000000000000000000
+          Size.Width = 390.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
@@ -5806,7 +5806,7 @@ object frmMain: TfrmMain
             Margins.Top = 5.000000000000000000
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
-            Size.Width = 329.000000000000000000
+            Size.Width = 345.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 20.000000000000000000
@@ -5815,1640 +5815,20 @@ object frmMain: TfrmMain
           end
         end
       end
-      object layNavGenerators: TLayout
-        Align = Top
-        Position.Y = 1102.000000000000000000
-        Size.Width = 384.000000000000000000
-        Size.Height = 251.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 6
-        object layNavGeneratorsExpandCollapse: TLayout
-          Align = Top
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 7
-          object btnGeneratorsExpandCollapse: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = ExpandCollapseNavItem
-            OnDblClick = ExpandCollapseNavItem
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgGeneratorsExpandCollapse: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">'#13#10 +
-                '  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.73' +
-                '2L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.' +
-                '732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1' +
-                '.732L7 6.268V1a1 1 0 0 1 1-1z"/>'#13#10'</svg>'
-            end
-            object lblGeneratorsExpandCollapse: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 306.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Generators'
-              TabOrder = 1
-            end
-            object imgGeneratorsExpandCollapseIcon: TSkSvg
-              Align = Right
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 11.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 11.000000000000000000
-              Position.X = 351.000000000000000000
-              Position.Y = 11.000000000000000000
-              Size.Width = 18.000000000000000000
-              Size.Height = 18.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 ' +
-                '0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 ' +
-                '0l-6-6a.5.5 0 0 1 0-.708z"/>'#13#10'</svg>'
-            end
-          end
-        end
-        object layNavUUIDGenerator: TLayout
-          Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 10
-          object btnUUIDGenerator: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgUUIDGenerator: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">'#13#10'  <p' +
-                'ath d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.' +
-                '5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3' +
-                'a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.' +
-                '5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13' +
-                '.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 ' +
-                '0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1' +
-                '.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A' +
-                '1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.' +
-                '5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1' +
-                ' 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1' +
-                '.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.' +
-                '5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>'#13#10'</svg>'
-            end
-            object lblUUIDGenerator: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'UUID'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavHashGenerator: TLayout
-          Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 4
-          object btnHashGenerator: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgHashGenerator: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-fingerprint" viewBox="0 0 16 16"' +
-                '>'#13#10'  <path d="M8.06 6.5a.5.5 0 0 1 .5.5v.776a11.5 11.5 0 0 1-.55' +
-                '2 3.519l-1.331 4.14a.5.5 0 0 1-.952-.305l1.33-4.141a10.5 10.5 0 ' +
-                '0 0 .504-3.213V7a.5.5 0 0 1 .5-.5Z"/>'#13#10'  <path d="M6.06 7a2 2 0 ' +
-                '1 1 4 0 .5.5 0 1 1-1 0 1 1 0 1 0-2 0v.332c0 .409-.022.816-.066 1' +
-                '.221A.5.5 0 0 1 6 8.447c.04-.37.06-.742.06-1.115V7Zm3.509 1a.5.5' +
-                ' 0 0 1 .487.513 11.5 11.5 0 0 1-.587 3.339l-1.266 3.8a.5.5 0 0 1' +
-                '-.949-.317l1.267-3.8a10.5 10.5 0 0 0 .535-3.048A.5.5 0 0 1 9.569' +
-                ' 8Zm-3.356 2.115a.5.5 0 0 1 .33.626L5.24 14.939a.5.5 0 1 1-.955-' +
-                '.296l1.303-4.199a.5.5 0 0 1 .625-.329Z"/>'#13#10'  <path d="M4.759 5.8' +
-                '33A3.501 3.501 0 0 1 11.559 7a.5.5 0 0 1-1 0 2.5 2.5 0 0 0-4.857' +
-                '-.833.5.5 0 1 1-.943-.334Zm.3 1.67a.5.5 0 0 1 .449.546 10.72 10.' +
-                '72 0 0 1-.4 2.031l-1.222 4.072a.5.5 0 1 1-.958-.287L4.15 9.793a9' +
-                '.72 9.72 0 0 0 .363-1.842.5.5 0 0 1 .546-.449Zm6 .647a.5.5 0 0 1' +
-                ' .5.5c0 1.28-.213 2.552-.632 3.762l-1.09 3.145a.5.5 0 0 1-.944-.' +
-                '327l1.089-3.145c.382-1.105.578-2.266.578-3.435a.5.5 0 0 1 .5-.5Z' +
-                '"/>'#13#10'  <path d="M3.902 4.222a4.996 4.996 0 0 1 5.202-2.113.5.5 0' +
-                ' 0 1-.208.979 3.996 3.996 0 0 0-4.163 1.69.5.5 0 0 1-.831-.556Zm' +
-                '6.72-.955a.5.5 0 0 1 .705-.052A4.99 4.99 0 0 1 13.059 7v1.5a.5.5' +
-                ' 0 1 1-1 0V7a3.99 3.99 0 0 0-1.386-3.028.5.5 0 0 1-.051-.705ZM3.' +
-                '68 5.842a.5.5 0 0 1 .422.568c-.029.192-.044.39-.044.59 0 .71-.1 ' +
-                '1.417-.298 2.1l-1.14 3.923a.5.5 0 1 1-.96-.279L2.8 8.821A6.531 6' +
-                '.531 0 0 0 3.058 7c0-.25.019-.496.054-.736a.5.5 0 0 1 .568-.422Z' +
-                'm8.882 3.66a.5.5 0 0 1 .456.54c-.084 1-.298 1.986-.64 2.934l-.74' +
-                '4 2.068a.5.5 0 0 1-.941-.338l.745-2.07a10.51 10.51 0 0 0 .584-2.' +
-                '678.5.5 0 0 1 .54-.456Z"/>'#13#10'  <path d="M4.81 1.37A6.5 6.5 0 0 1 ' +
-                '14.56 7a.5.5 0 1 1-1 0 5.5 5.5 0 0 0-8.25-4.765.5.5 0 0 1-.5-.86' +
-                '5Zm-.89 1.257a.5.5 0 0 1 .04.706A5.478 5.478 0 0 0 2.56 7a.5.5 0' +
-                ' 0 1-1 0c0-1.664.626-3.184 1.655-4.333a.5.5 0 0 1 .706-.04ZM1.91' +
-                '5 8.02a.5.5 0 0 1 .346.616l-.779 2.767a.5.5 0 1 1-.962-.27l.778-' +
-                '2.767a.5.5 0 0 1 .617-.346Zm12.15.481a.5.5 0 0 1 .49.51c-.03 1.4' +
-                '99-.161 3.025-.727 4.533l-.07.187a.5.5 0 0 1-.936-.351l.07-.187c' +
-                '.506-1.35.634-2.74.663-4.202a.5.5 0 0 1 .51-.49Z"/>'#13#10'</svg>'
-            end
-            object lblHashGenerator: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Hash'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavLoremIpsumGenerator: TLayout
-          Align = Top
-          Position.Y = 150.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-          object btnLoremIpsumGenerator: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgLoremIpsumGenerator: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-textarea" viewBox="0 0 16 16">'#13#10 +
-                '  <path d="M1.5 2.5A1.5 1.5 0 0 1 3 1h10a1.5 1.5 0 0 1 1.5 1.5v3' +
-                '.563a2 2 0 0 1 0 3.874V13.5A1.5 1.5 0 0 1 13 15H3a1.5 1.5 0 0 1-' +
-                '1.5-1.5V9.937a2 2 0 0 1 0-3.874V2.5zm1 3.563a2 2 0 0 1 0 3.874V1' +
-                '3.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V9.937a2 2 0 0 1 0-3.874V' +
-                '2.5A.5.5 0 0 0 13 2H3a.5.5 0 0 0-.5.5v3.563zM2 7a1 1 0 1 0 0 2 1' +
-                ' 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>'#13#10'</svg>'
-            end
-            object lblLoremIpsumGenerator: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Lorem Ipsum'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavNameGenerator: TLayout
-          Align = Top
-          Position.Y = 200.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 9
-          object btnNameGenerator: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgNameGenerator: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-person-square" viewBox="0 0 16 1' +
-                '6">'#13#10'  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>'#13#10'  <path d' +
-                '="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0' +
-                ' 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 ' +
-                '3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>'#13#10'</svg>'
-            end
-            object lblNameGenerator: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Name'
-              TabOrder = 1
-            end
-          end
-        end
-      end
-      object layNavEncodersDecoders: TLayout
-        Align = Top
-        Position.Y = 317.000000000000000000
-        Size.Width = 384.000000000000000000
-        Size.Height = 367.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        object layNavEncodersDecodersExpandCollapse: TLayout
-          Align = Top
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 6
-          object btnEncodersDecodersExpandCollapse: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = ExpandCollapseNavItem
-            OnDblClick = ExpandCollapseNavItem
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgEncodersDecodersExpandCollapse: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-file-binary" viewBox="0 0 16 16"' +
-                '>'#13#10'  <path d="M5.526 13.09c.976 0 1.524-.79 1.524-2.205 0-1.412-' +
-                '.548-2.203-1.524-2.203-.978 0-1.526.79-1.526 2.203 0 1.415.548 2' +
-                '.206 1.526 2.206zm-.832-2.205c0-1.05.29-1.612.832-1.612.358 0 .6' +
-                '07.247.733.721L4.7 11.137a6.749 6.749 0 0 1-.006-.252zm.832 1.61' +
-                '4c-.36 0-.606-.246-.732-.718l1.556-1.145c.003.079.005.164.005.24' +
-                '9 0 1.052-.29 1.614-.829 1.614zm5.329.501v-.595H9.73V8.772h-.69l' +
-                '-1.19.786v.688L8.986 9.5h.05v2.906h-1.18V13h3z"/>'#13#10'  <path d="M4' +
-                ' 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-' +
-                '2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 ' +
-                '0 0 1 1-1z"/>'#13#10'</svg>'
-            end
-            object lblEncodersDecodersExpandCollapse: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 306.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Encoders / Decoders'
-              TabOrder = 1
-            end
-            object imgEncodersDecodersExpandCollapseIcon: TSkSvg
-              Align = Right
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 11.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 11.000000000000000000
-              Position.X = 351.000000000000000000
-              Position.Y = 11.000000000000000000
-              Size.Width = 18.000000000000000000
-              Size.Height = 18.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 ' +
-                '0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 ' +
-                '0l-6-6a.5.5 0 0 1 0-.708z"/>'#13#10'</svg>'
-            end
-          end
-        end
-        object layNavBase64EncoderDecoder: TLayout
-          Align = Top
-          Position.Y = 150.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 14
-          object btnBase64EncoderDecoder: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgBase64EncoderDecoder: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-file-earmark-binary" viewBox="0 ' +
-                '0 16 16">'#13#10'  <path d="M7.05 11.885c0 1.415-.548 2.206-1.524 2.20' +
-                '6C4.548 14.09 4 13.3 4 11.885c0-1.412.548-2.203 1.526-2.203.976 ' +
-                '0 1.524.79 1.524 2.203zm-1.524-1.612c-.542 0-.832.563-.832 1.612' +
-                ' 0 .088.003.173.006.252l1.559-1.143c-.126-.474-.375-.72-.733-.72' +
-                'zm-.732 2.508c.126.472.372.718.732.718.54 0 .83-.563.83-1.614 0-' +
-                '.085-.003-.17-.006-.25l-1.556 1.146zm6.061.624V14h-3v-.595h1.181' +
-                'V10.5h-.05l-1.136.747v-.688l1.19-.786h.69v3.633h1.125z"/>'#13#10'  <pa' +
-                'th d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 ' +
-                '0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0' +
-                ' 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>'#13#10'</svg>'
-            end
-            object lblBase64EncoderDecoder: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Base64 Text'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavHTMLEncoderDecoder: TLayout
-          Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 12
-          object btnHTMLEncoderDecoder: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgHTMLEncoderDecoder: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">' +
-                #13#10'  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0' +
-                ' .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.14' +
-                '6a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 ' +
-                '0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5' +
-                ' 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.7' +
-                '08 0z"/>'#13#10'</svg>'
-            end
-            object lblHTMLEncoderDecoder: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'HTML'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavJWTDecoder: TLayout
-          Align = Top
-          Position.Y = 300.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 9
-          object btnJWTDecoder: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgJWTDecoder: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">'#13 +
-                #10'  <path d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.' +
-                '96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08' +
-                '.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931' +
-                ' 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1' +
-                '.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695' +
-                '-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283' +
-                'c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.0' +
-                '71.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434' +
-                'l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.' +
-                '187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96' +
-                ' 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a' +
-                '.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l' +
-                '-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1' +
-                '.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a' +
-                '4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"/>'#13#10'</svg>'
-            end
-            object lblJWTDecoder: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'JWT Decoder'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavBase64ImageEncoderDecoder: TLayout
-          Align = Top
-          Position.Y = 200.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 13
-          object btnBase64ImageEncoderDecoder: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgBase64ImageEncoderDecoder: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-file-earmark-binary" viewBox="0 ' +
-                '0 16 16">'#13#10'  <path d="M7.05 11.885c0 1.415-.548 2.206-1.524 2.20' +
-                '6C4.548 14.09 4 13.3 4 11.885c0-1.412.548-2.203 1.526-2.203.976 ' +
-                '0 1.524.79 1.524 2.203zm-1.524-1.612c-.542 0-.832.563-.832 1.612' +
-                ' 0 .088.003.173.006.252l1.559-1.143c-.126-.474-.375-.72-.733-.72' +
-                'zm-.732 2.508c.126.472.372.718.732.718.54 0 .83-.563.83-1.614 0-' +
-                '.085-.003-.17-.006-.25l-1.556 1.146zm6.061.624V14h-3v-.595h1.181' +
-                'V10.5h-.05l-1.136.747v-.688l1.19-.786h.69v3.633h1.125z"/>'#13#10'  <pa' +
-                'th d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 ' +
-                '0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0' +
-                ' 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>'#13#10'</svg>'
-            end
-            object lblBase64ImageEncoderDecoder: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Base64 Image'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavURLEncoderDecoder: TLayout
-          Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 11
-          object btnURLEncoderDecoder: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgURLEncoderDecoder: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-link" viewBox="0 0 16 16">'#13#10'  <p' +
-                'ath d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.' +
-                '17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.4' +
-                '95-.714.82-1z"/>'#13#10'  <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0' +
-                ' 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0' +
-                ' 1 0 0-6H9z"/>'#13#10'</svg>'
-            end
-            object lblURLEncoderDecoder: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'URL'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavGZipCompressDecompress: TLayout
-          Align = Top
-          Position.Y = 250.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-          object btnGZipCompressDecompress: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgGZipCompressDecompress: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-file-zip" viewBox="0 0 16 16">'#13#10 +
-                '  <path d="M6.5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a' +
-                '1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.109 0l-.93-.62a1 1 0 0 ' +
-                '1-.415-1.074l.4-1.599V7.5zm2 0h-1v.938a1 1 0 0 1-.03.243l-.4 1.5' +
-                '98.93.62.93-.62-.4-1.598a1 1 0 0 1-.03-.243V7.5z"/>'#13#10'  <path d="' +
-                'M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-' +
-                '2-2V2zm5.5-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a' +
-                '1 1 0 0 0-1-1H9v1H8v1h1v1H8v1h1v1H7.5V5h-1V4h1V3h-1V2h1V1z"/>'#13#10'<' +
-                '/svg>'
-            end
-            object lblGZipCompressDecompress: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'GZip'
-              TabOrder = 1
-            end
-          end
-        end
-      end
-      object layNavGraphics: TLayout
-        Align = Top
-        Position.Y = 1669.000000000000000000
-        Size.Width = 384.000000000000000000
-        Size.Height = 265.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 5
-        object layNavGraphicsExpandCollapse: TLayout
-          Align = Top
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 6
-          object btnGraphicsExpandCollapse: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = ExpandCollapseNavItem
-            OnDblClick = ExpandCollapseNavItem
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgGraphicsExpandCollapse: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-images" viewBox="0 0 16 16">'#13#10'  ' +
-                '<path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>'#13#10'  <pa' +
-                'th d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3' +
-                'a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 ' +
-                '0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1z' +
-                'M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.' +
-                '773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-' +
-                '10z"/>'#13#10'</svg>'
-            end
-            object lblGraphicsExpandCollapse: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 306.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Graphics'
-              TabOrder = 1
-            end
-            object imgGraphicsExpandCollapseIcon: TSkSvg
-              Align = Right
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 11.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 11.000000000000000000
-              Position.X = 351.000000000000000000
-              Position.Y = 11.000000000000000000
-              Size.Width = 18.000000000000000000
-              Size.Height = 18.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 ' +
-                '0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 ' +
-                '0l-6-6a.5.5 0 0 1 0-.708z"/>'#13#10'</svg>'
-            end
-          end
-        end
-        object layNavColorPicker: TLayout
-          Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 10
-          object btnColorPicker: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgColorPicker: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-brush" viewBox="0 0 16 16">'#13#10'  <' +
-                'path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.0' +
-                '95 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868' +
-                '-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.65' +
-                '9 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 ' +
-                '1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.3' +
-                '94-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.' +
-                '151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007' +
-                '.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.' +
-                '187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM' +
-                '4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.246-.013-.573.05-.879.479' +
-                '-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3' +
-                '.39 3.39 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-' +
-                '.569.993-1.06a3.122 3.122 0 0 0 .126-.75l-.793-.792zm1.44.026c.1' +
-                '2-.04.277-.1.458-.183a5.068 5.068 0 0 0 1.535-1.1c1.9-1.996 4.41' +
-                '2-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.7' +
-                '95 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.' +
-                '973 3.04.007-.005a.031.031 0 0 1-.007.004zm3.582-3.043.002.001h-' +
-                '.002z"/>'#13#10'</svg>'
-            end
-            object lblColorPicker: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Color Picker'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavColorBlindnessSimulator: TLayout
-          Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 9
-          object btnColorBlindnessSimulator: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgColorBlindnessSimulator: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">'#13 +
-                #10'  <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.0' +
-                '28 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3' +
-                '.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.1' +
-                '22.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.' +
-                '517.486l.708.709z"/>'#13#10'  <path d="M11.297 9.176a3.5 3.5 0 0 0-4.4' +
-                '74-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.2' +
-                '99.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.82' +
-                '9 2.829z"/>'#13#10'  <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.' +
-                '134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.' +
-                '121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7' +
-                '.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.7' +
-                '08.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>'#13#10'</svg>'
-            end
-            object lblColorBlindnessSimulator: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Color Blindness Simulator'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavImageConverter: TLayout
-          Align = Top
-          Position.Y = 200.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-          object btnImageConverter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgImageConverter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-file-earmark-image" viewBox="0 0' +
-                ' 16 16">'#13#10'  <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 ' +
-                '3z"/>'#13#10'  <path d="M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0' +
-                ' 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 ' +
-                '1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 ' +
-                '1.5 0 0 1 9.5 3V1H4z"/>'#13#10'</svg>'
-            end
-            object lblImageConverter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Image Converter'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavPNGJPEGCompressor: TLayout
-          Align = Top
-          Position.Y = 150.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 7
-          object btnPNGJPEGCompressor: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgPNGJPEGCompressor: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-image" viewBox="0 0 16 16">'#13#10'  <' +
-                'path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>'#13#10'  <p' +
-                'ath d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V' +
-                '3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 ' +
-                '0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3' +
-                'a1 1 0 0 1 1-1h12z"/>'#13#10'</svg>'
-            end
-            object lblPNGJPEGCompressor: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'PNG / JPEG Compressor'
-              TabOrder = 1
-            end
-          end
-        end
-      end
-      object layNavText: TLayout
-        Align = Top
-        Position.Y = 1353.000000000000000000
-        Size.Width = 384.000000000000000000
-        Size.Height = 316.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 4
-        object layNavTextExpandCollapse: TLayout
-          Align = Top
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 11
-          object btnTextExpandCollapse: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = ExpandCollapseNavItem
-            OnDblClick = ExpandCollapseNavItem
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgTextExpandCollapse: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">'#13 +
-                #10'  <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0' +
-                ' 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h' +
-                '-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5' +
-                '.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 ' +
-                '0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.' +
-                '5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z' +
-                'm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0' +
-                'a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.' +
-                '5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 ' +
-                '1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5' +
-                '-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4' +
-                'a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5' +
-                ' 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>'#13#10'</svg>'
-            end
-            object lblTextExpandCollapse: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 306.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Text'
-              TabOrder = 1
-            end
-            object imgTextExpandCollapseIcon: TSkSvg
-              Align = Right
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 11.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 11.000000000000000000
-              Position.X = 351.000000000000000000
-              Position.Y = 11.000000000000000000
-              Size.Width = 18.000000000000000000
-              Size.Height = 18.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 ' +
-                '0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 ' +
-                '0l-6-6a.5.5 0 0 1 0-.708z"/>'#13#10'</svg>'
-            end
-          end
-        end
-        object layNavTextCaseConverterInspector: TLayout
-          Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 10
-          object btnTextCaseConverterInspector: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgTextCaseConverterInspector: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-textarea-t" viewBox="0 0 16 16">' +
-                #13#10'  <path d="M1.5 2.5A1.5 1.5 0 0 1 3 1h10a1.5 1.5 0 0 1 1.5 1.5' +
-                'v3.563a2 2 0 0 1 0 3.874V13.5A1.5 1.5 0 0 1 13 15H3a1.5 1.5 0 0 ' +
-                '1-1.5-1.5V9.937a2 2 0 0 1 0-3.874V2.5zm1 3.563a2 2 0 0 1 0 3.874' +
-                'V13.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V9.937a2 2 0 0 1 0-3.87' +
-                '4V2.5A.5.5 0 0 0 13 2H3a.5.5 0 0 0-.5.5v3.563zM2 7a1 1 0 1 0 0 2' +
-                ' 1 1 0 0 0 0-2zm12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>'#13#10'  <path d=' +
-                '"M11.434 4H4.566L4.5 5.994h.386c.21-1.252.612-1.446 2.173-1.495l' +
-                '.343-.011v6.343c0 .537-.116.665-1.049.748V12h3.294v-.421c-.938-.' +
-                '083-1.054-.21-1.054-.748V4.488l.348.01c1.56.05 1.963.244 2.173 1' +
-                '.496h.386L11.434 4z"/>'#13#10'</svg>'
-            end
-            object lblTextCaseConverterInspector: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Case Converter && Inspector'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavTextEscapeUnescape: TLayout
-          Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 9
-          object btnTextEscapeUnescape: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgTextEscapeUnescape: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16">'#13 +
-                #10'  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0' +
-                ' 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1' +
-                '.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14' +
-                '.5 2h-13z"/>'#13#10'  <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 ' +
-                '1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A' +
-                '.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 ' +
-                '0 0 1-.5-.5z"/>'#13#10'</svg>'
-            end
-            object lblTextEscapeUnescape: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Escape / Unescape'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavMarkdownPreview: TLayout
-          Align = Top
-          Position.Y = 250.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-          object btnMarkdownPreview: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgMarkdownPreview: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-markdown" viewBox="0 0 16 16">'#13#10 +
-                '  <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4' +
-                'a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 ' +
-                '0 2-2V4a2 2 0 0 0-2-2H2z"/>'#13#10'  <path fill-rule="evenodd" d="M9.1' +
-                '46 8.146a.5.5 0 0 1 .708 0L11.5 9.793l1.646-1.647a.5.5 0 0 1 .70' +
-                '8.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 0-.708z"/>'#13#10'  <path' +
-                ' fill-rule="evenodd" d="M11.5 5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0' +
-                'v-4a.5.5 0 0 1 .5-.5z"/>'#13#10'  <path d="M3.56 11V7.01h.056l1.428 3.' +
-                '239h.774l1.42-3.24h.056V11h1.073V5.001h-1.2l-1.71 3.894h-.039l-1' +
-                '.71-3.894H2.5V11h1.06z"/>'#13#10'</svg>'
-            end
-            object lblMarkdownPreview: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Markdown Preview'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavTextDifference: TLayout
-          Align = Top
-          Position.Y = 200.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 7
-          object btnTextDifference: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgTextDifference: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-file-diff" viewBox="0 0 16 16">'#13 +
-                #10'  <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.' +
-                '5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4zm-2.5 6.5A' +
-                '.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>'#13#10'  <path' +
-                ' d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 ' +
-                '0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1' +
-                'V2a1 1 0 0 0-1-1z"/>'#13#10'</svg>'
-            end
-            object lblTextDifference: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Text Difference'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavRegexTester: TLayout
-          Align = Top
-          Position.Y = 150.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 6
-          object btnRegexTester: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgRegexTester: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-braces-asterisk" viewBox="0 0 16' +
-                ' 16">'#13#10'  <path fill-rule="evenodd" d="M1.114 8.063V7.9c1.005-.10' +
-                '2 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2' +
-                'h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.4' +
-                '9 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.35' +
-                '2 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.' +
-                '663c0-.984-.492-1.497-1.497-1.6ZM14.886 7.9v.164c-1.005.103-1.49' +
-                '7.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.' +
-                '376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49' +
-                '-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.7' +
-                '5 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 ' +
-                '.984.492 1.497 1.497 1.6ZM7.5 11.5V9.207l-1.621 1.621-.707-.707L' +
-                '6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.2' +
-                '93l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.7' +
-                '07L8.5 9.208V11.5h-1Z"/>'#13#10'</svg>'
-            end
-            object lblRegexTester: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Regex Tester'
-              TabOrder = 1
-            end
-          end
-        end
-      end
-      object layNavConverters: TLayout
+      object layNavTestingMore: TLayout
         Align = Top
         Position.Y = 100.000000000000000000
-        Size.Width = 384.000000000000000000
+        Size.Width = 400.000000000000000000
         Size.Height = 217.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 3
-        object layNavConvertersExpandCollapse: TLayout
+        TabOrder = 1
+        object layNavTestingMoreExpandCollapse: TLayout
           Align = Top
-          Size.Width = 384.000000000000000000
+          Size.Width = 400.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
-          object btnConvertersExpandCollapse: TRectangle
+          object btnTestingMoreExpandCollapse: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
@@ -7457,7 +5837,7 @@ object frmMain: TfrmMain
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
             Sides = []
-            Size.Width = 374.000000000000000000
+            Size.Width = 390.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -7467,7 +5847,7 @@ object frmMain: TfrmMain
             OnDblClick = ExpandCollapseNavItem
             OnMouseEnter = btnAllToolsMouseEnter
             OnMouseLeave = btnAllToolsMouseLeave
-            object imgConvertersExpandCollapse: TSkSvg
+            object imgTestingMoreMoreExpandCollapse: TSkSvg
               Align = Left
               Margins.Left = 8.000000000000000000
               Margins.Top = 8.000000000000000000
@@ -7489,16 +5869,16 @@ object frmMain: TfrmMain
                 '0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>'#13 +
                 #10'</svg>'
             end
-            object lblConvertersExpandCollapse: TLabel
+            object lblTestingMoreExpandCollapse: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 306.000000000000000000
+              Size.Width = 322.000000000000000000
               Size.Height = 30.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Converters'
+              Text = 'Testing More Stuff '#55358#56593
               TabOrder = 1
             end
             object imgConvertersExpandCollapseIcon: TSkSvg
@@ -7507,7 +5887,7 @@ object frmMain: TfrmMain
               Margins.Top = 11.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 11.000000000000000000
-              Position.X = 351.000000000000000000
+              Position.X = 367.000000000000000000
               Position.Y = 11.000000000000000000
               Size.Width = 18.000000000000000000
               Size.Height = 18.000000000000000000
@@ -7522,14 +5902,14 @@ object frmMain: TfrmMain
             end
           end
         end
-        object layNavJsonYamlConverter: TLayout
+        object layNavTesting1: TLayout
           Align = Top
           Position.Y = 50.000000000000000000
-          Size.Width = 384.000000000000000000
+          Size.Width = 400.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 11
-          object btnJsonYamlConverter: TRectangle
+          object btnTesting1: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
@@ -7538,7 +5918,7 @@ object frmMain: TfrmMain
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
             Sides = []
-            Size.Width = 374.000000000000000000
+            Size.Width = 390.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -7547,7 +5927,7 @@ object frmMain: TfrmMain
             OnClick = btnAllToolsClick
             OnMouseEnter = btnAllToolsMouseEnter
             OnMouseLeave = btnAllToolsMouseLeave
-            object imgJsonYamlConverter: TSkSvg
+            object imgTesting1: TSkSvg
               Align = Left
               Margins.Left = 32.000000000000000000
               Margins.Top = 8.000000000000000000
@@ -7569,29 +5949,29 @@ object frmMain: TfrmMain
                 '0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>'#13 +
                 #10'</svg>'
             end
-            object lblJsonYamlConverter: TLabel
+            object lblTesting1: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
+              Size.Width = 321.000000000000000000
               Size.Height = 30.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 20.000000000000000000
-              Text = 'JSON <> YAML'
+              Text = 'Testing 1'
               TabOrder = 1
             end
           end
         end
-        object layNavNumberBaseConverter: TLayout
+        object layNavTesting3: TLayout
           Align = Top
           Position.Y = 150.000000000000000000
-          Size.Width = 384.000000000000000000
+          Size.Width = 400.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 10
-          object btnNumberBaseConverter: TRectangle
+          object btnTesting3: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
@@ -7600,7 +5980,7 @@ object frmMain: TfrmMain
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
             Sides = []
-            Size.Width = 374.000000000000000000
+            Size.Width = 390.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -7609,7 +5989,7 @@ object frmMain: TfrmMain
             OnClick = btnAllToolsClick
             OnMouseEnter = btnAllToolsMouseEnter
             OnMouseLeave = btnAllToolsMouseLeave
-            object imgNumberBaseConverter: TSkSvg
+            object imgTesting3: TSkSvg
               Align = Left
               Margins.Left = 32.000000000000000000
               Margins.Top = 8.000000000000000000
@@ -7637,29 +6017,29 @@ object frmMain: TfrmMain
                 '032-.498.498-.944 1.206-.944.703 0 1.206.435 1.206 1.07.005.64-.' +
                 '504 1.106-1.2 1.106h-.75v.96Z"/>'#13#10'</svg>'
             end
-            object lblNumberBaseConverter: TLabel
+            object lblTesting3: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
+              Size.Width = 321.000000000000000000
               Size.Height = 30.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Number Base'
+              Text = 'Testing 3'
               TabOrder = 1
             end
           end
         end
-        object layNavTimestampConverter: TLayout
+        object layNavTesting2: TLayout
           Align = Top
           Position.Y = 100.000000000000000000
-          Size.Width = 384.000000000000000000
+          Size.Width = 400.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 9
-          object btnTimestampConverter: TRectangle
+          object btnTesting2: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
@@ -7668,7 +6048,7 @@ object frmMain: TfrmMain
             Margins.Right = 5.000000000000000000
             Margins.Bottom = 5.000000000000000000
             Sides = []
-            Size.Width = 374.000000000000000000
+            Size.Width = 390.000000000000000000
             Size.Height = 40.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -7677,7 +6057,7 @@ object frmMain: TfrmMain
             OnClick = btnAllToolsClick
             OnMouseEnter = btnAllToolsMouseEnter
             OnMouseLeave = btnAllToolsMouseLeave
-            object imgTimestampConverter: TSkSvg
+            object imgTesting2: TSkSvg
               Align = Left
               Margins.Left = 32.000000000000000000
               Margins.Top = 8.000000000000000000
@@ -7702,639 +6082,17 @@ object frmMain: TfrmMain
                 '-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 ' +
                 '2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>'#13#10'</svg>'
             end
-            object lblTimestampConverter: TLabel
+            object lblTesting2: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
               Margins.Top = 5.000000000000000000
               Margins.Right = 5.000000000000000000
               Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
+              Size.Width = 321.000000000000000000
               Size.Height = 30.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Timestamp'
-              TabOrder = 1
-            end
-          end
-        end
-      end
-      object layNavFormatters: TLayout
-        Align = Top
-        Position.Y = 684.000000000000000000
-        Size.Width = 384.000000000000000000
-        Size.Height = 418.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        object layNavFormattersExpandCollapse: TLayout
-          Align = Top
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 6
-          object btnFormattersExpandCollapse: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = ExpandCollapseNavItem
-            OnDblClick = ExpandCollapseNavItem
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgFormattersExpandCollapse: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-list-columns" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h9a.5.5 ' +
-                '0 0 1 0 1h-9A.5.5 0 0 1 0 .5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1' +
-                ' 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 2h8a.5.5 0 0 1 0 1' +
-                'h-8a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a' +
-                '.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 4h10a.5.5 0 0 1 0 1H.5a.5.' +
-                '5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 ' +
-                '0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 6h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-' +
-                '.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.' +
-                '5Zm-13 2A.5.5 0 0 1 .5 8h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm1' +
-                '3 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2' +
-                'a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5Zm13 0a.5.' +
-                '5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0' +
-                ' 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1' +
-                ' .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5' +
-                '-.5h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5' +
-                'h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>'#13#10'</svg>'
-            end
-            object Formatters: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 306.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'Formatters'
-              TabOrder = 1
-            end
-            object imgFormattersExpandCollapseIcon: TSkSvg
-              Align = Right
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 11.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 11.000000000000000000
-              Position.X = 351.000000000000000000
-              Position.Y = 11.000000000000000000
-              Size.Width = 18.000000000000000000
-              Size.Height = 18.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 ' +
-                '0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 ' +
-                '0l-6-6a.5.5 0 0 1 0-.708z"/>'#13#10'</svg>'
-            end
-          end
-        end
-        object layNavXMLFormatter: TLayout
-          Align = Top
-          Position.Y = 200.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 15
-          object btnXMLFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgXMLFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-filetype-xml" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2v-1a1' +
-                ' 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a' +
-                '2 2 0 0 1 2-2h5.5L14 4.5ZM3.527 11.85h-.893l-.823 1.439h-.036L.9' +
-                '43 11.85H.012l1.227 1.983L0 15.85h.861l.853-1.415h.035l.85 1.415' +
-                'h.908l-1.254-1.992 1.274-2.007Zm.954 3.999v-2.66h.038l.952 2.159' +
-                'h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596h-.025L4.58' +
-                ' 11.85h-.806v3.999h.706Zm4.71-.674h1.696v.674H8.4V11.85h.791v3.3' +
-                '25Z"/>'#13#10'</svg>'
-            end
-            object lblXMLFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'XML'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavHTMLFormatter: TLayout
-          Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 13
-          object btnHTMLFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgHTMLFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-filetype-html" viewBox="0 0 16 1' +
-                '6">'#13#10'  <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5' +
-                ' 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5Zm-' +
-                '9.736 7.35v3.999h-.791v-1.714H1.79v1.714H1V11.85h.791v1.626h1.68' +
-                '2V11.85h.79Zm2.251.662v3.337h-.794v-3.337H4.588v-.662h3.064v.662' +
-                'H6.515Zm2.176 3.337v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.' +
-                '661h.715V11.85h-.8l-1.14 2.596H9.93L8.79 11.85h-.805v3.999h.706Z' +
-                'm4.71-.674h1.696v.674H12.61V11.85h.79v3.325Z"/>'#13#10'</svg>'
-            end
-            object lblHTMLFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'HTML'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavCSSFormatter: TLayout
-          Align = Top
-          Position.Y = 350.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 10
-          object btnCSSFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgCSSFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-filetype-css" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-' +
-                '1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9' +
-                'H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.397 14.841a1.13 1.13 0 0 0 .401' +
-                '.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.' +
-                '053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.65' +
-                '6 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.0' +
-                '27 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-' +
-                '.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.14' +
-                '3 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h' +
-                '.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813' +
-                ' 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-' +
-                '.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.' +
-                '367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.3' +
-                '87.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.1' +
-                '93c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0' +
-                ' 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248' +
-                '.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.1' +
-                '37c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381' +
-                'h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.27' +
-                '2 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.' +
-                '44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.' +
-                '976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.05' +
-                '5.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.07' +
-                '6h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-' +
-                '.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1' +
-                '.699 0 0 1-.102-.627v-.495ZM6.78 15.29a1.176 1.176 0 0 1-.111-.4' +
-                '49h.764a.578.578 0 0 0 .255.384c.07.049.154.087.25.114.095.028.2' +
-                '01.041.319.041.164 0 .301-.023.413-.07a.559.559 0 0 0 .255-.193.' +
-                '507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.256-.1' +
-                '44-.463-.193l-.618-.143a1.72 1.72 0 0 1-.539-.214 1 1 0 0 1-.351' +
-                '-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.1' +
-                '81.303-.322.527-.422.225-.1.484-.149.777-.149.304 0 .564.05.779.' +
-                '152.217.102.384.239.5.41.12.17.187.359.2.566h-.75a.56.56 0 0 0-.' +
-                '12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.' +
-                '387.05-.512.152a.472.472 0 0 0-.184.384c0 .121.047.22.143.3a.97.' +
-                '97 0 0 0 .404.175l.621.143c.217.05.406.12.566.211.16.09.285.21.3' +
-                '75.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.21' +
-                '6 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665' +
-                '-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Z"/>'#13#10'<' +
-                '/svg>'
-            end
-            object lblCSSFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'CSS'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavJavaScriptFormatter: TLayout
-          Align = Top
-          Position.Y = 250.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 14
-          object btnJavaScriptFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgJavaScriptFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-filetype-js" viewBox="0 0 16 16"' +
-                '>'#13#10'  <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2H8v-1h' +
-                '4a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2' +
-                'V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.186 15.29a1.176 1.176 0 0 1-.111-' +
-                '.449h.765a.578.578 0 0 0 .255.384c.07.049.153.087.249.114.095.02' +
-                '8.202.041.319.041.164 0 .302-.023.413-.07a.559.559 0 0 0 .255-.1' +
-                '93.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.255' +
-                '-.144-.462-.193l-.619-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001' +
-                ' 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-' +
-                '.639.127-.181.303-.322.528-.422.224-.1.483-.149.776-.149.305 0 .' +
-                '564.05.78.152.216.102.383.239.5.41.12.17.186.359.2.566h-.75a.56.' +
-                '56 0 0 0-.12-.258.624.624 0 0 0-.247-.181.923.923 0 0 0-.369-.06' +
-                '8c-.217 0-.388.05-.513.152a.472.472 0 0 0-.184.384c0 .121.048.22' +
-                '.143.3a.97.97 0 0 0 .405.175l.62.143c.218.05.406.12.566.211.16.0' +
-                '9.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a' +
-                '1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.47' +
-                '6-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.' +
-                '375Zm-3.104-.033A1.32 1.32 0 0 1 0 14.791h.765a.576.576 0 0 0 .0' +
-                '73.27.499.499 0 0 0 .454.246c.19 0 .33-.055.422-.164.092-.11.138' +
-                '-.265.138-.466v-2.745h.79v2.725c0 .44-.119.774-.357 1.005-.236.2' +
-                '3-.564.345-.984.345a1.59 1.59 0 0 1-.569-.094 1.145 1.145 0 0 1-' +
-                '.407-.266 1.14 1.14 0 0 1-.243-.39Z"/>'#13#10'</svg>'
-            end
-            object lblJavaScriptFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'JavaScript'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavSQLFormatter: TLayout
-          Align = Top
-          Position.Y = 150.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 12
-          object btnSQLFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgSQLFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-server" viewBox="0 0 16 16">'#13#10'  ' +
-                '<path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 ' +
-                '2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.66' +
-                '7z"/>'#13#10'  <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.66' +
-                '7-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9' +
-                '.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.45' +
-                '8-.79z"/>'#13#10'  <path d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-' +
-                '1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.5' +
-                '1 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6' +
-                '.667-2.667v-1.665z"/>'#13#10'</svg>'
-            end
-            object lblSQLFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'SQL'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavPHPFormatter: TLayout
-          Align = Top
-          Position.Y = 300.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 9
-          object btnPHPFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgPHPFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-filetype-php" viewBox="0 0 16 16' +
-                '">'#13#10'  <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-' +
-                '1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9' +
-                'H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.80' +
-                '3c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42' +
-                ' 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46' +
-                '-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.08' +
-                '5.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.6' +
-                '6c.218 0 .389.06.512.181.123.122.185.295.185.522Zm4.48 2.666V11.' +
-                '85h-.79v1.626H4.153V11.85h-.79v3.999h.79v-1.714h1.682v1.714h.79Z' +
-                'm.703-3.999h1.6c.288 0 .533.06.732.179.2.117.354.276.46.477.105.' +
-                '201.158.427.158.677 0 .25-.054.476-.161.677-.106.199-.26.357-.46' +
-                '3.474a1.452 1.452 0 0 1-.733.173H8.12v1.342h-.791V11.85Zm2.06 1.' +
-                '714a.795.795 0 0 0 .084-.381c0-.227-.061-.4-.184-.521-.123-.122-' +
-                '.294-.182-.513-.182h-.66v1.406h.66a.794.794 0 0 0 .375-.082.574.' +
-                '574 0 0 0 .237-.24Z"/>'#13#10'</svg>'
-            end
-            object lblPHPFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'PHP'
-              TabOrder = 1
-            end
-          end
-        end
-        object layNavJsonFormatter: TLayout
-          Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 384.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-          object btnJsonFormatter: TRectangle
-            Align = Client
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Sides = []
-            Size.Width = 374.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object imgJsonFormatter: TSkSvg
-              Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-filetype-json" viewBox="0 0 16 1' +
-                '6">'#13#10'  <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5' +
-                ' 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM4' +
-                '.151 15.29a1.176 1.176 0 0 1-.111-.449h.764a.578.578 0 0 0 .255.' +
-                '384c.07.049.154.087.25.114.095.028.201.041.319.041.164 0 .301-.0' +
-                '23.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .084-.29.387.3' +
-                '87 0 0 0-.152-.326c-.101-.08-.256-.144-.463-.193l-.618-.143a1.72' +
-                ' 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.352-.367 1.068 1.068 0 ' +
-                '0 1-.123-.524c0-.244.064-.457.19-.639.128-.181.304-.322.528-.422' +
-                '.225-.1.484-.149.777-.149.304 0 .564.05.779.152.217.102.384.239.' +
-                '5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 ' +
-                '0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472' +
-                '.472 0 0 0-.185.384c0 .121.048.22.144.3a.97.97 0 0 0 .404.175l.6' +
-                '21.143c.217.05.406.12.566.211a1 1 0 0 1 .375.358c.09.148.135.335' +
-                '.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.23' +
-                '4.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 ' +
-                '1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-3.104-.033a1.32 1.32 0 0 ' +
-                '1-.082-.466h.764a.576.576 0 0 0 .074.27.499.499 0 0 0 .454.246c.' +
-                '19 0 .33-.055.422-.164.091-.11.137-.265.137-.466v-2.745h.791v2.7' +
-                '25c0 .44-.119.774-.357 1.005-.237.23-.565.345-.985.345a1.59 1.59' +
-                ' 0 0 1-.568-.094 1.145 1.145 0 0 1-.407-.266 1.14 1.14 0 0 1-.24' +
-                '3-.39Zm9.091-1.585v.522c0 .256-.039.47-.117.641a.862.862 0 0 1-.' +
-                '322.387.877.877 0 0 1-.47.126.883.883 0 0 1-.47-.126.87.87 0 0 1' +
-                '-.32-.387 1.55 1.55 0 0 1-.117-.641v-.522c0-.258.039-.471.117-.6' +
-                '41a.87.87 0 0 1 .32-.387.868.868 0 0 1 .47-.129c.177 0 .333.043.' +
-                '47.129a.862.862 0 0 1 .322.387c.078.17.117.383.117.641Zm.803.519' +
-                'v-.513c0-.377-.069-.701-.205-.973a1.46 1.46 0 0 0-.59-.63c-.253-' +
-                '.146-.559-.22-.916-.22-.356 0-.662.074-.92.22a1.441 1.441 0 0 0-' +
-                '.589.628c-.137.271-.205.596-.205.975v.513c0 .375.068.699.205.973' +
-                '.137.271.333.48.589.626.258.145.564.217.92.217.357 0 .663-.072.9' +
-                '17-.217.256-.146.452-.355.589-.626.136-.274.205-.598.205-.973Zm1' +
-                '.29-.935v2.675h-.746v-3.999h.662l1.752 2.66h.032v-2.66h.75v4h-.6' +
-                '56l-1.761-2.676h-.032Z"/>'#13#10'</svg>'
-            end
-            object lblJsonFormatter: TLabel
-              Align = Client
-              StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 305.000000000000000000
-              Size.Height = 30.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
-              Text = 'JSON'
+              Text = 'Testing 2'
               TabOrder = 1
             end
           end

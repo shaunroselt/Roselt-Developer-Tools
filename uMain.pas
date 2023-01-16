@@ -89,162 +89,28 @@ type
     layTesting: TLayout;
     Label41: TLabel;
     memTesting: TMemo;
-    layNavGenerators: TLayout;
-    layNavGeneratorsExpandCollapse: TLayout;
-    btnGeneratorsExpandCollapse: TRectangle;
-    imgGeneratorsExpandCollapse: TSkSvg;
-    lblGeneratorsExpandCollapse: TLabel;
-    imgGeneratorsExpandCollapseIcon: TSkSvg;
-    layNavUUIDGenerator: TLayout;
-    btnUUIDGenerator: TRectangle;
-    imgUUIDGenerator: TSkSvg;
-    lblUUIDGenerator: TLabel;
-    layNavHashGenerator: TLayout;
-    btnHashGenerator: TRectangle;
-    imgHashGenerator: TSkSvg;
-    lblHashGenerator: TLabel;
-    layNavLoremIpsumGenerator: TLayout;
-    btnLoremIpsumGenerator: TRectangle;
-    imgLoremIpsumGenerator: TSkSvg;
-    lblLoremIpsumGenerator: TLabel;
-    layNavNameGenerator: TLayout;
-    btnNameGenerator: TRectangle;
-    imgNameGenerator: TSkSvg;
-    lblNameGenerator: TLabel;
-    layNavEncodersDecoders: TLayout;
-    layNavEncodersDecodersExpandCollapse: TLayout;
-    btnEncodersDecodersExpandCollapse: TRectangle;
-    imgEncodersDecodersExpandCollapse: TSkSvg;
-    lblEncodersDecodersExpandCollapse: TLabel;
-    imgEncodersDecodersExpandCollapseIcon: TSkSvg;
-    layNavBase64EncoderDecoder: TLayout;
-    btnBase64EncoderDecoder: TRectangle;
-    imgBase64EncoderDecoder: TSkSvg;
-    lblBase64EncoderDecoder: TLabel;
-    layNavHTMLEncoderDecoder: TLayout;
-    btnHTMLEncoderDecoder: TRectangle;
-    imgHTMLEncoderDecoder: TSkSvg;
-    lblHTMLEncoderDecoder: TLabel;
-    layNavJWTDecoder: TLayout;
-    btnJWTDecoder: TRectangle;
-    imgJWTDecoder: TSkSvg;
-    lblJWTDecoder: TLabel;
-    layNavBase64ImageEncoderDecoder: TLayout;
-    btnBase64ImageEncoderDecoder: TRectangle;
-    imgBase64ImageEncoderDecoder: TSkSvg;
-    lblBase64ImageEncoderDecoder: TLabel;
-    layNavURLEncoderDecoder: TLayout;
-    btnURLEncoderDecoder: TRectangle;
-    imgURLEncoderDecoder: TSkSvg;
-    lblURLEncoderDecoder: TLabel;
-    layNavGZipCompressDecompress: TLayout;
-    btnGZipCompressDecompress: TRectangle;
-    imgGZipCompressDecompress: TSkSvg;
-    lblGZipCompressDecompress: TLabel;
-    layNavGraphics: TLayout;
-    layNavGraphicsExpandCollapse: TLayout;
-    btnGraphicsExpandCollapse: TRectangle;
-    imgGraphicsExpandCollapse: TSkSvg;
-    lblGraphicsExpandCollapse: TLabel;
-    imgGraphicsExpandCollapseIcon: TSkSvg;
-    layNavColorPicker: TLayout;
-    btnColorPicker: TRectangle;
-    imgColorPicker: TSkSvg;
-    lblColorPicker: TLabel;
-    layNavColorBlindnessSimulator: TLayout;
-    btnColorBlindnessSimulator: TRectangle;
-    imgColorBlindnessSimulator: TSkSvg;
-    lblColorBlindnessSimulator: TLabel;
-    layNavImageConverter: TLayout;
-    btnImageConverter: TRectangle;
-    imgImageConverter: TSkSvg;
-    lblImageConverter: TLabel;
-    layNavPNGJPEGCompressor: TLayout;
-    btnPNGJPEGCompressor: TRectangle;
-    imgPNGJPEGCompressor: TSkSvg;
-    lblPNGJPEGCompressor: TLabel;
-    layNavText: TLayout;
-    layNavTextExpandCollapse: TLayout;
-    btnTextExpandCollapse: TRectangle;
-    imgTextExpandCollapse: TSkSvg;
-    lblTextExpandCollapse: TLabel;
-    imgTextExpandCollapseIcon: TSkSvg;
-    layNavTextCaseConverterInspector: TLayout;
-    btnTextCaseConverterInspector: TRectangle;
-    imgTextCaseConverterInspector: TSkSvg;
-    lblTextCaseConverterInspector: TLabel;
-    layNavTextEscapeUnescape: TLayout;
-    btnTextEscapeUnescape: TRectangle;
-    imgTextEscapeUnescape: TSkSvg;
-    lblTextEscapeUnescape: TLabel;
-    layNavMarkdownPreview: TLayout;
-    btnMarkdownPreview: TRectangle;
-    imgMarkdownPreview: TSkSvg;
-    lblMarkdownPreview: TLabel;
-    layNavTextDifference: TLayout;
-    btnTextDifference: TRectangle;
-    imgTextDifference: TSkSvg;
-    lblTextDifference: TLabel;
-    layNavRegexTester: TLayout;
-    btnRegexTester: TRectangle;
-    imgRegexTester: TSkSvg;
-    lblRegexTester: TLabel;
     layNavSettings: TLayout;
     btnSettings: TRectangle;
     imgSettings: TSkSvg;
     lblSettings: TLabel;
-    layNavConverters: TLayout;
-    layNavConvertersExpandCollapse: TLayout;
-    btnConvertersExpandCollapse: TRectangle;
-    imgConvertersExpandCollapse: TSkSvg;
-    lblConvertersExpandCollapse: TLabel;
+    layNavTestingMore: TLayout;
+    layNavTestingMoreExpandCollapse: TLayout;
+    btnTestingMoreExpandCollapse: TRectangle;
+    imgTestingMoreMoreExpandCollapse: TSkSvg;
+    lblTestingMoreExpandCollapse: TLabel;
     imgConvertersExpandCollapseIcon: TSkSvg;
-    layNavJsonYamlConverter: TLayout;
-    btnJsonYamlConverter: TRectangle;
-    imgJsonYamlConverter: TSkSvg;
-    lblJsonYamlConverter: TLabel;
-    layNavNumberBaseConverter: TLayout;
-    btnNumberBaseConverter: TRectangle;
-    imgNumberBaseConverter: TSkSvg;
-    lblNumberBaseConverter: TLabel;
-    layNavTimestampConverter: TLayout;
-    btnTimestampConverter: TRectangle;
-    imgTimestampConverter: TSkSvg;
-    lblTimestampConverter: TLabel;
-    layNavFormatters: TLayout;
-    layNavFormattersExpandCollapse: TLayout;
-    btnFormattersExpandCollapse: TRectangle;
-    imgFormattersExpandCollapse: TSkSvg;
-    Formatters: TLabel;
-    imgFormattersExpandCollapseIcon: TSkSvg;
-    layNavXMLFormatter: TLayout;
-    btnXMLFormatter: TRectangle;
-    imgXMLFormatter: TSkSvg;
-    lblXMLFormatter: TLabel;
-    layNavHTMLFormatter: TLayout;
-    btnHTMLFormatter: TRectangle;
-    imgHTMLFormatter: TSkSvg;
-    lblHTMLFormatter: TLabel;
-    layNavCSSFormatter: TLayout;
-    btnCSSFormatter: TRectangle;
-    imgCSSFormatter: TSkSvg;
-    lblCSSFormatter: TLabel;
-    layNavJavaScriptFormatter: TLayout;
-    btnJavaScriptFormatter: TRectangle;
-    imgJavaScriptFormatter: TSkSvg;
-    lblJavaScriptFormatter: TLabel;
-    layNavSQLFormatter: TLayout;
-    btnSQLFormatter: TRectangle;
-    imgSQLFormatter: TSkSvg;
-    lblSQLFormatter: TLabel;
-    layNavPHPFormatter: TLayout;
-    btnPHPFormatter: TRectangle;
-    imgPHPFormatter: TSkSvg;
-    lblPHPFormatter: TLabel;
-    layNavJsonFormatter: TLayout;
-    btnJsonFormatter: TRectangle;
-    imgJsonFormatter: TSkSvg;
-    lblJsonFormatter: TLabel;
+    layNavTesting1: TLayout;
+    btnTesting1: TRectangle;
+    imgTesting1: TSkSvg;
+    lblTesting1: TLabel;
+    layNavTesting3: TLayout;
+    btnTesting3: TRectangle;
+    imgTesting3: TSkSvg;
+    lblTesting3: TLabel;
+    layNavTesting2: TLayout;
+    btnTesting2: TRectangle;
+    imgTesting2: TSkSvg;
+    lblTesting2: TLabel;
     SplitterNavContent: TSplitter;
     btnToolHelp: TButton;
     laySettings: TScrollBox;
@@ -440,6 +306,161 @@ begin
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
+  procedure CreateToolNavButtons();
+  begin
+    var DynamicParents := TList.Create;
+    for var Tool in RoseltToolsArray do
+    begin
+      // I think these buttons will be freed from memory when the app frees MultiViewScrollBox 🤷
+      if IsToolParent(Tool) then
+      begin
+        var ToolParentContainer := TLayout.Create(MultiViewScrollBox);
+        ToolParentContainer.Parent := MultiViewScrollBox;
+        ToolParentContainer.Align := TAlignLayout.Bottom;
+        ToolParentContainer.Height := 100;
+        ToolParentContainer.Align := TAlignLayout.Top;
+        ToolParentContainer.Name := 'layNav' + Tool.name;
+
+        var ToolButtonContainer := TLayout.Create(ToolParentContainer);
+        ToolButtonContainer.Parent := ToolParentContainer;
+        ToolButtonContainer.Align := TAlignLayout.Top;
+        ToolButtonContainer.Height := 50;
+        ToolButtonContainer.Name := 'layNav' + Tool.name + 'ExpandCollapse';
+
+        var ToolButton := TRectangle.Create(ToolButtonContainer);
+        ToolButton.Parent := ToolButtonContainer;
+        ToolButton.Align := TAlignLayout.Client;
+        ToolButton.Margins.Top := 5;
+        ToolButton.Margins.Right := 5;
+        ToolButton.Margins.Bottom := 5;
+        ToolButton.Margins.Left := 5;
+        ToolButton.Name := 'btn' + Tool.name + 'ExpandCollapse';
+        ToolButton.Cursor := crHandPoint;
+        ToolButton.Fill.Kind := TBrushKind.None;
+        ToolButton.Sides := [];
+        ToolButton.YRadius := 8;
+        ToolButton.XRadius := 8;
+        ToolButton.Stroke.Kind := TBrushKind.None;
+        ToolButton.OnMouseEnter := btnAllToolsMouseEnter;
+        ToolButton.OnMouseLeave := btnAllToolsMouseLeave;
+        ToolButton.OnClick := ExpandCollapseNavItem;
+        ToolButton.OnDblClick := ExpandCollapseNavItem;
+
+        var ToolButtonImg := TSkSvg.Create(ToolButtonContainer);
+        ToolButtonImg.Parent := ToolButton;
+        ToolButtonImg.Align := TAlignLayout.Left;
+        ToolButtonImg.Margins.Top := 8;
+        ToolButtonImg.Margins.Right := 8;
+        ToolButtonImg.Margins.Bottom := 8;
+        ToolButtonImg.Margins.Left := 8;
+        ToolButtonImg.Width := ToolButtonImg.Height;
+        ToolButtonImg.Name := 'img' + Tool.name + 'ExpandCollapse';
+        ToolButtonImg.Svg.Source := GetBootstrapIcon(Tool.icon);
+        ToolButtonImg.Svg.OverrideColor := TAlphaColors.White;
+
+        var ToolButtonLabel := TLabel.Create(ToolButtonContainer);
+        ToolButtonLabel.Parent := ToolButton;
+        ToolButtonLabel.Align := TAlignLayout.Client;
+        ToolButtonLabel.Margins.Top := 5;
+        ToolButtonLabel.Margins.Right := 5;
+        ToolButtonLabel.Margins.Bottom := 5;
+        ToolButtonLabel.Name := 'lbl' + Tool.name + 'ExpandCollapse';
+        ToolButtonLabel.Text := Tool.text_long;
+        ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+        ToolButtonLabel.TextSettings.Font.Size := 20;
+
+        var ToolButtonImgExpandCollapseIcon := TSkSvg.Create(ToolButtonContainer);
+        ToolButtonImgExpandCollapseIcon.Parent := ToolButton;
+        ToolButtonImgExpandCollapseIcon.Align := TAlignLayout.Right;
+        ToolButtonImgExpandCollapseIcon.Margins.Top := 11;
+        ToolButtonImgExpandCollapseIcon.Margins.Right := 5;
+        ToolButtonImgExpandCollapseIcon.Margins.Bottom := 11;
+        ToolButtonImgExpandCollapseIcon.Margins.Left := 5;
+        ToolButtonImgExpandCollapseIcon.Width := ToolButtonImgExpandCollapseIcon.Height;
+        ToolButtonImgExpandCollapseIcon.Name := 'img' + Tool.name + 'ExpandCollapseIcon';
+        ToolButtonImgExpandCollapseIcon.Svg.Source := GetBootstrapIcon('chevron-down');
+        ToolButtonImgExpandCollapseIcon.Svg.OverrideColor := TAlphaColors.White;
+
+        DynamicParents.Add(ToolParentContainer);
+      end else
+      begin
+        var ToolButtonContainer := TLayout.Create(MultiViewScrollBox);
+
+        if (Tool.parent = '') then
+        begin
+          ToolButtonContainer.Parent := MultiViewScrollBox;
+        end else
+        begin
+          for var MainChild in DynamicParents do
+            if (TLayout(MainChild).Name = 'layNav' + Tool.parent) then
+            begin
+              ToolButtonContainer.Parent := TLayout(MainChild);
+              TLayout(MainChild).Height := TLayout(MainChild).Height + 50;
+              break;
+            end;
+        end;
+        ToolButtonContainer.Align := TAlignLayout.Bottom;
+        ToolButtonContainer.Height := 50;
+        ToolButtonContainer.Align := TAlignLayout.Top;
+        ToolButtonContainer.Name := 'layNav' + Tool.name;
+
+        var ToolButton := TRectangle.Create(ToolButtonContainer);
+        ToolButton.Parent := ToolButtonContainer;
+        ToolButton.Align := TAlignLayout.Client;
+        ToolButton.Margins.Top := 5;
+        ToolButton.Margins.Right := 5;
+        ToolButton.Margins.Bottom := 5;
+        ToolButton.Margins.Left := 5;
+        ToolButton.Name := 'btn' + Tool.name;
+        ToolButton.Cursor := crHandPoint;
+        ToolButton.Fill.Kind := TBrushKind.None;
+        ToolButton.Sides := [];
+        ToolButton.YRadius := 8;
+        ToolButton.XRadius := 8;
+        ToolButton.Stroke.Kind := TBrushKind.None;
+        ToolButton.OnMouseEnter := btnAllToolsMouseEnter;
+        ToolButton.OnMouseLeave := btnAllToolsMouseLeave;
+        ToolButton.OnClick := btnAllToolsClick;
+
+        var ToolButtonImg := TSkSvg.Create(ToolButtonContainer);
+        ToolButtonImg.Parent := ToolButton;
+        ToolButtonImg.Align := TAlignLayout.Left;
+        ToolButtonImg.Margins.Top := 8;
+        ToolButtonImg.Margins.Right := 8;
+        ToolButtonImg.Margins.Bottom := 8;
+        if (Tool.parent = '') then
+        begin
+          ToolButtonImg.Margins.Left := 8;
+        end else
+        begin
+          ToolButtonImg.Margins.Left := 32;
+        end;
+        ToolButtonImg.Width := ToolButtonImg.Height;
+        ToolButtonImg.Name := 'img' + Tool.name;
+        ToolButtonImg.Svg.Source := GetBootstrapIcon(Tool.icon);
+        ToolButtonImg.Svg.OverrideColor := TAlphaColors.White;
+
+        var ToolButtonLabel := TLabel.Create(ToolButtonContainer);
+        ToolButtonLabel.Parent := ToolButton;
+        ToolButtonLabel.Align := TAlignLayout.Client;
+        ToolButtonLabel.Margins.Top := 5;
+        ToolButtonLabel.Margins.Right := 5;
+        ToolButtonLabel.Margins.Bottom := 5;
+        ToolButtonLabel.Name := 'lbl' + Tool.name;
+        ToolButtonLabel.Text := Tool.text_long;
+        ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+        ToolButtonLabel.TextSettings.Font.Size := 20;
+      end;
+    end;
+    for var ParentContainer in DynamicParents do
+      for var ParentChild in TLayout(ParentContainer).Children do
+        if (String(TLayout(ParentChild).Name).Contains('ExpandCollapse')) then
+        begin
+          ExpandCollapseNavItem(TRectangle(TLayout(ParentChild).Children[0]));
+          break;
+        end;
+    DynamicParents.Free;
+  end;
   procedure CreateToolButtons();
   begin
     for var Tool in RoseltToolsArray do
@@ -525,129 +546,43 @@ procedure TfrmMain.FormCreate(Sender: TObject);
   end;
 begin
   btnAllToolsTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
+  layNavTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
+  layNavTestingMore.Parent := layStuffThatwillNeverShow; // Hide Testing Button
   CreateToolButtons();
+  CreateToolNavButtons();
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
   SplitterNavContent.Position.X := HamburgerMenuWidth * 2; // Make sure Splitter is in the correct place
   lblAppInfoDescription.Text := GetAppInfo;
 
   btnAllTools.OnClick(btnAllTools);
 
-  // Set Which Tool Frames to Create
-  var Tool_PHPFormatter := True;
-  var Tool_CSSFormatter := True;
-  var Tool_HTMLFormatter := True;
-  var Tool_JsonFormatter := True;
-  var Tool_SQLFormatter := True;
-  var Tool_XMLFormatter := True;
-  var Tool_JavaScriptFormatter := True;
-  var Tool_NumberBaseConverter := True;
-  var Tool_NameGenerator := True;
-  var Tool_UUIDGenerator := True;
-  var Tool_HashGenerator := True;
-  var Tool_TimestampConverter := False;
-  var Tool_Base64EncoderDecoder := True;
-  var Tool_Base64ImageEncoderDecoder := True;
-  var Tool_ColorPicker := True;
-  var Tool_GZipCompressDecompress := True;
-  var Tool_HTMLEncoderDecoder := True;
-  var Tool_JsonYamlConverter := True;
-  var Tool_JWTDecoder := True;
-  var Tool_LoremIpsumGenerator := True;
-  var Tool_TextCaseConverterInspector := True;
-  var Tool_URLEncoderDecoder := True;
-  var Tool_TextEscapeUnescape := True;
-  var Tool_MarkdownPreview := True;
-  var Tool_RegexTester := True;
-
 
   // Dynamically create Tool Frames
-  if (Tool_PHPFormatter) then CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
-  if (Tool_CSSFormatter) then CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
-  if (Tool_HTMLFormatter) then CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
-  if (Tool_JsonFormatter) then CreateToolFrame(TFrame_JsonFormatter.Create(Self),'layJsonFormatter');
-  if (Tool_SQLFormatter) then CreateToolFrame(TFrame_SQLFormatter.Create(Self),'laySQLFormatter');
-  if (Tool_XMLFormatter) then CreateToolFrame(TFrame_XMLFormatter.Create(Self),'layXMLFormatter');
-  if (Tool_JavaScriptFormatter) then CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
-  if (Tool_NumberBaseConverter) then CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
-  if (Tool_NameGenerator) then CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
-  if (Tool_UUIDGenerator) then CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
-  if (Tool_HashGenerator) then CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
-  if (Tool_TimestampConverter) then CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
-  if (Tool_Base64EncoderDecoder) then CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
-  if (Tool_Base64ImageEncoderDecoder) then CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
-  if (Tool_ColorPicker) then CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
-  if (Tool_GZipCompressDecompress) then CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
-  if (Tool_HTMLEncoderDecoder) then CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
-  if (Tool_JsonYamlConverter) then CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
-  if (Tool_JWTDecoder) then CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
-  if (Tool_LoremIpsumGenerator) then CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
-  if (Tool_TextCaseConverterInspector) then CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
-  if (Tool_URLEncoderDecoder) then CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
-  if (Tool_TextEscapeUnescape) then CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
-  if (Tool_MarkdownPreview) then CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
-  if (Tool_RegexTester) then CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
-
-
-  // Collapse Nav Items
-  ExpandCollapseNavItem(btnConvertersExpandCollapse);
-  ExpandCollapseNavItem(btnEncodersDecodersExpandCollapse);
-  ExpandCollapseNavItem(btnFormattersExpandCollapse);
-  ExpandCollapseNavItem(btnTextExpandCollapse);
-  ExpandCollapseNavItem(btnGeneratorsExpandCollapse);
-  ExpandCollapseNavItem(btnGraphicsExpandCollapse);
-
-
-  // Enable/Disable Nav Items that aren't created
-  layNavPHPFormatter.Enabled := Tool_PHPFormatter;
-  layNavCSSFormatter.Enabled := Tool_CSSFormatter;
-  layNavHTMLFormatter.Enabled := Tool_HTMLFormatter;
-  layNavJsonFormatter.Enabled := Tool_JsonFormatter;
-  layNavSQLFormatter.Enabled := Tool_SQLFormatter;
-  layNavXMLFormatter.Enabled := Tool_XMLFormatter;
-  layNavJavaScriptFormatter.Enabled := Tool_JavaScriptFormatter;
-  layNavNumberBaseConverter.Enabled := Tool_NumberBaseConverter;
-  layNavNameGenerator.Enabled := Tool_NameGenerator;
-  layNavUUIDGenerator.Enabled := Tool_UUIDGenerator;
-  layNavHashGenerator.Enabled := Tool_HashGenerator;
-  layNavTimestampConverter.Enabled := Tool_TimestampConverter;
-  layNavBase64EncoderDecoder.Enabled := Tool_Base64EncoderDecoder;
-  layNavBase64ImageEncoderDecoder.Enabled := Tool_Base64ImageEncoderDecoder;
-  layNavColorPicker.Enabled := Tool_ColorPicker;
-  layNavGZipCompressDecompress.Enabled := Tool_GZipCompressDecompress;
-  layNavHTMLEncoderDecoder.Enabled := Tool_HTMLEncoderDecoder;
-  layNavJsonYamlConverter.Enabled := Tool_JsonYamlConverter;
-  layNavJWTDecoder.Enabled := Tool_JWTDecoder;
-  layNavLoremIpsumGenerator.Enabled := Tool_LoremIpsumGenerator;
-  layNavTextCaseConverterInspector.Enabled := Tool_TextCaseConverterInspector;
-  layNavURLEncoderDecoder.Enabled := Tool_URLEncoderDecoder;
-  layNavTextEscapeUnescape.Enabled := Tool_TextEscapeUnescape;
-  layNavMarkdownPreview.Enabled := Tool_MarkdownPreview;
-  layNavRegexTester.Enabled := Tool_RegexTester;
-  if not(Tool_PHPFormatter) then lblPHPFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_CSSFormatter) then lblCSSFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_HTMLFormatter) then lblHTMLFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_JsonFormatter) then lblJsonFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_SQLFormatter) then lblSQLFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_XMLFormatter) then lblXMLFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_JavaScriptFormatter) then lblJavaScriptFormatter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_NumberBaseConverter) then lblNumberBaseConverter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_NameGenerator) then lblNameGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_UUIDGenerator) then lblUUIDGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_HashGenerator) then lblHashGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_TimestampConverter) then lblTimestampConverter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_Base64EncoderDecoder) then lblBase64EncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_Base64ImageEncoderDecoder) then lblBase64ImageEncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_ColorPicker) then lblColorPicker.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_GZipCompressDecompress) then lblGZipCompressDecompress.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_HTMLEncoderDecoder) then lblHTMLEncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_JsonYamlConverter) then lblJsonYamlConverter.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_JWTDecoder) then lblJWTDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_LoremIpsumGenerator) then lblLoremIpsumGenerator.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_TextCaseConverterInspector) then lblTextCaseConverterInspector.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_URLEncoderDecoder) then lblURLEncoderDecoder.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_TextEscapeUnescape) then lblTextEscapeUnescape.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_MarkdownPreview) then lblMarkdownPreview.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-  if not(Tool_RegexTester) then lblRegexTester.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
+  CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
+  CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
+  CreateToolFrame(TFrame_JsonFormatter.Create(Self),'layJsonFormatter');
+  CreateToolFrame(TFrame_SQLFormatter.Create(Self),'laySQLFormatter');
+  CreateToolFrame(TFrame_XMLFormatter.Create(Self),'layXMLFormatter');
+  CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
+  CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
+  CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
+  CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
+  CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
+  CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
+  CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
+  CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
+  CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
+  CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
+  CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
+  CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
+  CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
+  CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
+  CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
+  CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
+  CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
+  CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
+  CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
 
 
   // Load Themes (Settings)
