@@ -27,7 +27,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
     end
     object layIndentation: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000
@@ -122,7 +122,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
     end
     object layCompressDecompress: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000

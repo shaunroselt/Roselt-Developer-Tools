@@ -34,10 +34,10 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
-        ReadOnly = True
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
+        OnKeyUp = edtHexadecimalKeyUp
         object edtHexadecimalCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
@@ -91,10 +91,10 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
-        ReadOnly = True
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
+        OnKeyUp = edtDecimalKeyUp
         object edtDecimalCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
@@ -148,10 +148,10 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
-        ReadOnly = True
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
+        OnKeyUp = edtOctalKeyUp
         object edtOctalCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
@@ -205,10 +205,10 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
-        ReadOnly = True
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
+        OnKeyUp = edtBinaryKeyUp
         object edtBinaryCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
@@ -265,7 +265,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
     end
     object layFormatValues: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000
@@ -335,8 +335,9 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
+        OnSwitch = SwitchFormatValuesSwitch
       end
-      object lblFormatValues: TLabel
+      object lblSwitchFormatValues: TLabel
         Align = Right
         StyledSettings = [Family, Style, FontColor]
         Margins.Right = 8.000000000000000000

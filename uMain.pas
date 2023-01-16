@@ -34,6 +34,8 @@ uses
   FMX.TabControl,
   FMX.Printer,
 
+  Roselt.Tools,
+
   uStyles,
   uBootstrapIcons,
 
@@ -69,7 +71,7 @@ uses
 type
   TfrmMain = class(TForm)
     MultiView: TMultiView;
-    TopBar: TPanel;
+    TopBar: TRectangle;
     lblNavTitle: TLabel;
     btnHamburger: TButton;
     layAllTools: TScrollBox;
@@ -78,21 +80,8 @@ type
     lblAllTools: TLabel;
     btnAllTools: TRectangle;
     LayoutContainer: TLayout;
-    layAllToolsGrid: TGridLayout;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    Button5: TButton;
-    Button6: TButton;
-    Button7: TButton;
-    Button8: TButton;
-    Button9: TButton;
-    Button10: TButton;
-    Button11: TButton;
-    Button12: TButton;
+    layAllToolsGrid: TFlowLayout;
     MultiViewScrollBox: TVertScrollBox;
-    Button13: TButton;
     layNavTesting: TLayout;
     btnTesting: TRectangle;
     imgTesting: TSkSvg;
@@ -314,11 +303,19 @@ type
     Image5: TSkSvg;
     Button14: TButton;
     imgToolHelp: TSkSvg;
-    layAllToolsHidden: TLayout;
-    layConversion: TRectangle;
+    layAllToolsHidden: TFlowLayout;
+    edtSearchAllTools: TEdit;
+    SearchEditButton1: TSearchEditButton;
+    btnAllToolsTesting: TButton;
+    Label7: TLabel;
+    Label8: TLabel;
+    Rectangle2: TRectangle;
+    SkSvg2: TSkSvg;
+    layStuffThatwillNeverShow: TLayout;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
+    procedure btnAllToolsSearchClick(Sender: TObject);
     procedure btnHamburgerClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ExpandCollapseNavItem(Sender: TObject);
@@ -327,11 +324,15 @@ type
     procedure SwitchWordWrapSwitch(Sender: TObject);
     procedure SwitchLineNumbersSwitch(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure AllToolsButtonClick(Sender: TObject);
+    procedure edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
+    procedure edtSearchAllToolsChange(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
     procedure SelectTool(ToolLayoutName: String);
     function GetAppInfo(): String;
+    procedure AllToolsSearch();
   public
     { Public declarations }
   end;
@@ -345,8 +346,41 @@ implementation
 
 procedure TfrmMain.btnHamburgerClick(Sender: TObject);
 begin
-  if (MultiView.Width <> 50) then HamburgerMenuWidth := MultiView.Width;
-  if (MultiView.Width = 50) then MultiView.Width := HamburgerMenuWidth else MultiView.Width := 50;
+  if (MultiView.Width = 50) then
+  begin
+    MultiView.Width := HamburgerMenuWidth;
+    for var Tool in RoseltToolsArray do
+      if IsToolParent(Tool) then
+      begin
+        // MultiView.FindComponent doesn't work. I don't know why. I feel like it should, but it doesn't 🙁
+        var ToolContainer := TControl(FindComponent('layNav' + Tool.name));
+        var ToolButton := TControl(FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+
+        ToolButton.OnClick := ExpandCollapseNavItem;
+        ToolButton.OnDblClick := ExpandCollapseNavItem;
+
+        TControl(FindComponent('img' + Tool.name + 'ExpandCollapseIcon')).Visible := True;
+      end;
+  end else
+  begin
+    HamburgerMenuWidth := MultiView.Width;
+    MultiView.Width := 50;
+    for var Tool in RoseltToolsArray do
+      if IsToolParent(Tool) then
+      begin
+        // MultiView.FindComponent doesn't work. I don't know why. I feel like it should, but it doesn't 🙁
+        var ToolContainer := TControl(FindComponent('layNav' + Tool.name));
+        var ToolButton := TControl(FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+
+        ToolButton.OnClick := btnAllToolsSearchClick;
+        ToolButton.OnDblClick := nil;
+
+        if (ToolContainer.Height <> TControl(ToolButton.Parent).Height) then
+          ExpandCollapseNavItem(ToolButton);
+
+        TControl(FindComponent('img' + Tool.name + 'ExpandCollapseIcon')).Visible := False;
+      end;
+  end;
 end;
 
 procedure TfrmMain.btnToolHelpClick(Sender: TObject);
@@ -367,6 +401,16 @@ procedure TfrmMain.cbThemeChange(Sender: TObject);
 begin
   if cbTheme.ItemIndex > -1 then
     StyleBook := TStyleBook(cbTheme.ListItems[cbTheme.ItemIndex].Data);
+end;
+
+procedure TfrmMain.edtSearchAllToolsChange(Sender: TObject);
+begin
+  AllToolsSearch;
+end;
+
+procedure TfrmMain.edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
+begin
+  AllToolsSearch;
 end;
 
 procedure TfrmMain.ExpandCollapseNavItem(Sender: TObject);
@@ -396,6 +440,82 @@ begin
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
+  procedure CreateToolButtons();
+  begin
+    for var Tool in RoseltToolsArray do
+    begin
+      if IsToolParent(Tool) then continue;
+
+      var ToolButton := TButton.Create(layAllToolsGrid);
+      // I think these buttons will be freed from memory when the app frees layAllToolsGrid 🤷
+      ToolButton.Parent := layAllToolsGrid;
+      ToolButton.TagString := Tool.name;
+      ToolButton.Name := 'btnAllTools' + Tool.name;
+      ToolButton.Text := '';
+      ToolButton.Hint := Tool.description;
+      ToolButton.Cursor := crHandPoint;
+      ToolButton.Margins.Top := 6;
+      ToolButton.Margins.Right := 6;
+      ToolButton.Margins.Bottom := 6;
+      ToolButton.Margins.Left := 6;
+      ToolButton.Padding.Top := 10;
+      ToolButton.Padding.Right := 12;
+      ToolButton.Padding.Bottom := 8;
+      ToolButton.Padding.Left := 12;
+      ToolButton.Width := 185;
+      ToolButton.Height := 240;
+      ToolButton.OnClick := AllToolsButtonClick;
+      ToolButton.Enabled := Tool.active;
+
+      var ToolIconContainer := TRectangle.Create(ToolButton);
+      ToolIconContainer.Parent := ToolButton;
+      ToolIconContainer.Name := 'btnAllToolsIconContainer' + Tool.name;
+      ToolIconContainer.Align := TAlignLayout.MostTop;
+      ToolIconContainer.Height := 100;
+      ToolIconContainer.Margins.Top := 0;
+      ToolIconContainer.Margins.Right := 26;
+      ToolIconContainer.Margins.Bottom := 12;
+      ToolIconContainer.Margins.Left := 26;
+      ToolIconContainer.Padding.Top := 12;
+      ToolIconContainer.Padding.Right := 12;
+      ToolIconContainer.Padding.Bottom := 12;
+      ToolIconContainer.Padding.Left := 12;
+      ToolIconContainer.fill.Color := $4B000000;
+      ToolIconContainer.Sides := [];
+      ToolIconContainer.Stroke.Kind := TBrushKind.None;
+      ToolIconContainer.HitTest := False;
+      ToolIconContainer.XRadius := 8;
+      ToolIconContainer.YRadius := 8;
+
+      var ToolIcon := TSkSvg.Create(ToolButton);
+      ToolIcon.Parent := ToolIconContainer;
+      ToolIcon.Name := 'btnAllToolsIcon' + Tool.name;
+      ToolIcon.Align := TAlignLayout.Client;
+      ToolIcon.Svg.OverrideColor := TAlphaColors.White;
+      ToolIcon.Svg.Source := GetBootstrapIcon(Tool.icon);
+
+      var ToolIconTitle := TLabel.Create(ToolButton);
+      ToolIconTitle.Parent := ToolButton;
+      ToolIconTitle.Name := 'btnAllToolsTitle' + Tool.name;
+      ToolIconTitle.Align := TAlignLayout.Top;
+      ToolIconTitle.Margins.Bottom := 14;
+      ToolIconTitle.Text := Tool.text_long;
+      ToolIconTitle.TextSettings.Font.Size := 16;
+      ToolIconTitle.TextSettings.WordWrap := True;
+      ToolIconTitle.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+      ToolIconTitle.AutoSize := True;
+
+      var ToolIconDescription := TLabel.Create(ToolButton);
+      ToolIconDescription.Parent := ToolButton;
+      ToolIconDescription.Name := 'btnAllToolsDescription' + Tool.name;
+      ToolIconDescription.Align := TAlignLayout.Client;
+      ToolIconDescription.Text := Tool.description;
+      ToolIconDescription.TextSettings.Font.Size := 13;
+      ToolIconDescription.TextSettings.WordWrap := True;
+      ToolIconDescription.TextSettings.VertAlign := TTextAlign.Leading;
+      ToolIconDescription.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+    end;
+  end;
   procedure CreateToolFrame(ToolFrame: TFrame; FrameName: String);
   begin
     ToolFrame.Name := FrameName;
@@ -404,6 +524,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
     ToolFrame.Align := TAlignLayout.Client;
   end;
 begin
+  btnAllToolsTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
+  CreateToolButtons();
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
   SplitterNavContent.Position.X := HamburgerMenuWidth * 2; // Make sure Splitter is in the correct place
   lblAppInfoDescription.Text := GetAppInfo;
@@ -422,7 +544,7 @@ begin
   var Tool_NameGenerator := True;
   var Tool_UUIDGenerator := True;
   var Tool_HashGenerator := True;
-  var Tool_TimestampConverter := True;
+  var Tool_TimestampConverter := False;
   var Tool_Base64EncoderDecoder := True;
   var Tool_Base64ImageEncoderDecoder := True;
   var Tool_ColorPicker := True;
@@ -539,6 +661,7 @@ begin
   cbTheme.ItemIndex := 0;
 
 
+  {$IFDEF WINDOWS}
   TThread.CreateAnonymousThread(
     procedure
     begin
@@ -551,18 +674,19 @@ begin
       cbFontFamily.ItemIndex := 0;
     end
   ).Start;
+  {$ENDIF}
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
-  layAllToolsGrid.Height := Round(layAllToolsGrid.ChildrenCount / (layAllToolsGrid.Width / layAllToolsGrid.ItemWidth)+1) * layAllToolsGrid.ItemHeight;  // Need to improve/change this in the future
+  layAllToolsGrid.Height := Round(layAllToolsGrid.ChildrenCount / (layAllToolsGrid.Width / 240)+1) * 185;  // Need to improve/change this in the future
 end;
 
 function TfrmMain.GetAppInfo: String;
 // Need to get all of the App Info dynamically in the future
 begin
   var Version := 'Version 1.0.0.0';
-  var Architecture := 'X64';
+  var Architecture := 'X64';     // Get Environement Variable for this on Windows: https://superuser.com/questions/305901/possible-values-of-processor-architecture
   var BuildType := 'RELEASE';
   {$IFDEF DEBUG}
     BuildType := 'DEBUG';
@@ -617,6 +741,31 @@ begin
   end;
 end;
 
+procedure TfrmMain.AllToolsButtonClick(Sender: TObject);
+begin
+  SelectTool('lay' + TButton(Sender).TagString);
+end;
+
+procedure TfrmMain.AllToolsSearch();
+// This doesn't work properly
+begin
+  if ((layAllToolsHidden.ChildrenCount > 0)) then // If there are Tools currently hidden
+    for var ToolButton in layAllToolsHidden.Children do // Then move all of them to layAllToolsGrid
+      ToolButton.Parent := layAllToolsGrid;
+  if (edtSearchAllTools.Text.IsEmpty = False) then
+    for var Tool in RoseltToolsArray do
+    begin
+      if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
+      var ToolButtonVisible := False;
+      if Tool.text_short.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if Tool.text_long.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if Tool.description.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if Tool.parent.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if (ToolButtonVisible = False) then
+        TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name)).Parent := layAllToolsHidden;
+    end;
+end;
+
 procedure TfrmMain.btnAllToolsClick(Sender: TObject);
 begin
   var ToolNavItem := TLabel(TRectangle(Sender).Children.Items[1]);
@@ -635,5 +784,10 @@ begin
   TRectangle(Sender).Fill.Kind := TBrushKind.None;
 end;
 
+procedure TfrmMain.btnAllToolsSearchClick(Sender: TObject);
+begin
+  btnAllToolsClick(btnAllTools);
+  edtSearchAllTools.Text := String(TControl(Sender).Name).Replace('btn','').Replace('ExpandCollapse','');
+end;
 
 end.

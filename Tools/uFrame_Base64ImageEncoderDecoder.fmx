@@ -41,7 +41,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 5
           OnClick = btnPasteFromClipboardClick
           object imgPasteFromClipboard: TSkSvg
             Align = Left
@@ -74,7 +74,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnCopyToClipboard: TButton
@@ -88,7 +88,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnCopyToClipboardClick
           object imgCopyToClipboard: TSkSvg
             Align = Left
@@ -118,7 +118,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnLoad: TButton
@@ -132,7 +132,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 6
           object imgLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -158,7 +158,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnClear: TButton
@@ -172,7 +172,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           object imgClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -199,7 +199,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -212,8 +212,8 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
         Size.Height = 672.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 376.000000000000000000
-        Viewport.Height = 668.000000000000000000
+        Viewport.Width = 380.000000000000000000
+        Viewport.Height = 672.000000000000000000
       end
     end
     object layImage: TLayout
@@ -250,7 +250,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Width = 355.000000000000000000
           Size.Height = 22.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 75
+          TabOrder = 74
           Text = 'Browse files'
           OnClick = btnDropImageClick
         end

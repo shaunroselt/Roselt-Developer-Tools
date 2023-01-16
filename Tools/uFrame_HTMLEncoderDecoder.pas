@@ -67,6 +67,8 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure memInputChange(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
   private
     { Private declarations }
     procedure HTMLEncoderDecoder();
@@ -78,12 +80,27 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_HTMLEncoderDecoder.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Text := '';
+  HTMLEncoderDecoder();
+end;
+
 procedure TFrame_HTMLEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_HTMLEncoderDecoder.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    HTMLEncoderDecoder();
+  end;
 end;
 
 procedure TFrame_HTMLEncoderDecoder.btnInputPasteFromClipboardClick(Sender: TObject);

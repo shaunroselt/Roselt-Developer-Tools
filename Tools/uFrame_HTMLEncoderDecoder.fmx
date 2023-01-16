@@ -27,7 +27,7 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
     end
     object layConversion: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000
@@ -251,6 +251,7 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
+          OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -291,6 +292,7 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
+          OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000

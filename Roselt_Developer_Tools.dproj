@@ -404,6 +404,8 @@
         </DCCReference>
         <DCCReference Include="uBootstrapIcons.pas"/>
         <DCCReference Include="Roselt.SystemInformation.pas"/>
+        <DCCReference Include="Roselt.NumberBaseConversion.pas"/>
+        <DCCReference Include="Roselt.Tools.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -886,6 +888,12 @@
                 <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>Roselt_Developer_Tools.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>Roselt_Developer_Tools.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

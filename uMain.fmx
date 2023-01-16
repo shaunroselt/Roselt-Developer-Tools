@@ -13,14 +13,16 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnResize = FormResize
   DesignerMasterStyle = 0
-  object TopBar: TPanel
+  object TopBar: TRectangle
     Align = Top
+    Corners = []
+    Fill.Color = x4B000000
+    Sides = []
     Size.Width = 1200.000000000000000000
-    Size.Height = 50.000000000000000000
+    Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
-    StyleLookup = 'tabdotstyle'
     object lblNavTitle: TLabel
-      Align = Top
+      Align = Client
       StyledSettings = [Family, FontColor]
       Size.Width = 1200.000000000000000000
       Size.Height = 49.000000000000000000
@@ -81,9 +83,9 @@ object frmMain: TfrmMain
   object LayoutContainer: TLayout
     Align = Client
     Size.Width = 799.000000000000000000
-    Size.Height = 750.000000000000000000
+    Size.Height = 751.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 7
+    TabOrder = 6
     object layAllTools: TScrollBox
       Align = Client
       Padding.Left = 10.000000000000000000
@@ -91,253 +93,134 @@ object frmMain: TfrmMain
       Padding.Right = 10.000000000000000000
       Padding.Bottom = 10.000000000000000000
       Size.Width = 799.000000000000000000
-      Size.Height = 750.000000000000000000
+      Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       Viewport.Width = 783.000000000000000000
-      Viewport.Height = 750.000000000000000000
-      object layAllToolsGrid: TGridLayout
+      Viewport.Height = 751.000000000000000000
+      object layAllToolsGrid: TFlowLayout
         Align = Top
-        ItemHeight = 195.000000000000000000
-        ItemWidth = 195.000000000000000000
-        Orientation = Horizontal
         Position.X = 10.000000000000000000
-        Position.Y = 10.000000000000000000
+        Position.Y = 55.000000000000000000
         Size.Width = 763.000000000000000000
         Size.Height = 2000.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
-        object Button1: TButton
+        Justify = Left
+        JustifyLastLine = Left
+        FlowDirection = LeftToRight
+        object btnAllToolsTesting: TButton
           Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 5.000000000000000000
-          Position.Y = 5.000000000000000000
+          Padding.Left = 12.000000000000000000
+          Padding.Top = 12.000000000000000000
+          Padding.Right = 12.000000000000000000
+          Padding.Bottom = 8.000000000000000000
+          Margins.Left = 6.000000000000000000
+          Margins.Top = 6.000000000000000000
+          Margins.Right = 6.000000000000000000
+          Margins.Bottom = 6.000000000000000000
+          Position.X = 6.000000000000000000
+          Position.Y = 6.000000000000000000
           Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
+          Size.Height = 240.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 12
-          Text = 'Base 64 Encoder / Decoder'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button2: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 200.000000000000000000
-          Position.Y = 5.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 8
-          Text = 'Hash Generator'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button3: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 395.000000000000000000
-          Position.Y = 5.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 9
-          Text = 'Hash Generator'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button4: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 5.000000000000000000
-          Position.Y = 200.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 3
-          Text = 'HTML Encoder / Decoder'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button5: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 200.000000000000000000
-          Position.Y = 200.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 10
-          Text = 'Text Case Converter & Inspector'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button6: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 395.000000000000000000
-          Position.Y = 200.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 4
-          Text = 'Json Formatter'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button7: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 5.000000000000000000
-          Position.Y = 395.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 5
-          Text = 'Json <> Yaml Converter'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button8: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 200.000000000000000000
-          Position.Y = 395.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          Text = 'JWT Decoder'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button9: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 395.000000000000000000
-          Position.Y = 395.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 11
-          Text = 'JWT Decoder'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button10: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 5.000000000000000000
-          Position.Y = 590.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 6
-          Text = 'UUID Generator'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button11: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 200.000000000000000000
-          Position.Y = 590.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 7
-          Text = 'Lorem Ipsum Generator'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button12: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 395.000000000000000000
-          Position.Y = 590.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 2
-          Text = 'Color Picker'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
-        end
-        object Button13: TButton
-          Cursor = crHandPoint
-          StyledSettings = [Family, Style, FontColor]
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Position.X = 5.000000000000000000
-          Position.Y = 785.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 185.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 1
-          Text = 'Name Generator'
-          TextSettings.Font.Size = 16.000000000000000000
-          TextSettings.WordWrap = True
+          object Label7: TLabel
+            Align = Top
+            AutoSize = True
+            StyledSettings = [Family, Style, FontColor]
+            Margins.Bottom = 14.000000000000000000
+            Position.X = 12.000000000000000000
+            Position.Y = 124.000000000000000000
+            Size.Width = 161.000000000000000000
+            Size.Height = 21.333328247070310000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            Text = 'Testing Stuff '#55357#56833#55357#56833#55357#56833
+            TabOrder = 5
+          end
+          object Label8: TLabel
+            Align = Client
+            Size.Width = 161.000000000000000000
+            Size.Height = 72.666671752929690000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.VertAlign = Leading
+            Text = 'This is just some random testing text. Nothing important here.'
+            TabOrder = 4
+          end
+          object Rectangle2: TRectangle
+            Align = MostTop
+            Fill.Color = x4B000000
+            Padding.Left = 12.000000000000000000
+            Padding.Top = 12.000000000000000000
+            Padding.Right = 12.000000000000000000
+            Padding.Bottom = 12.000000000000000000
+            Margins.Left = 26.000000000000000000
+            Margins.Right = 26.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Position.X = 38.000000000000000000
+            Position.Y = 12.000000000000000000
+            Sides = []
+            Size.Width = 109.000000000000000000
+            Size.Height = 100.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Thickness = 0.000000000000000000
+            XRadius = 8.000000000000000000
+            YRadius = 8.000000000000000000
+            object SkSvg2: TSkSvg
+              Align = Client
+              Size.Width = 85.000000000000000000
+              Size.Height = 76.000000000000000000
+              Size.PlatformDefault = False
+              Svg.OverrideColor = claWhite
+              Svg.Source = 
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                'ill="currentColor" class="bi bi-box" viewBox="0 0 16 16">'#13#10'  <pa' +
+                'th d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.' +
+                '5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V' +
+                '6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.1' +
+                '29 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874' +
+                'a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .' +
+                '314-.464L7.443.184z"/>'#13#10'</svg>'
+            end
+          end
         end
       end
-      object layAllToolsHidden: TLayout
+      object layAllToolsHidden: TFlowLayout
         Align = Top
         Position.X = 10.000000000000000000
-        Position.Y = 10.000000000000000000
+        Position.Y = 55.000000000000000000
         Size.Width = 763.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Height = 262.000000000000000000
         Size.PlatformDefault = False
         Visible = False
         TabOrder = 1
+        Justify = Left
+        JustifyLastLine = Left
+        FlowDirection = LeftToRight
+      end
+      object edtSearchAllTools: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = MostTop
+        TabOrder = 2
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 763.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Type to search for tools...'
+        OnChange = edtSearchAllToolsChange
+        OnKeyUp = edtSearchAllToolsKeyUp
+        object SearchEditButton1: TSearchEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 28.000000000000000000
+          Size.Height = 31.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
       end
     end
     object layTesting: TLayout
@@ -364,8 +247,8 @@ object frmMain: TfrmMain
         Size.Height = 633.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 799.000000000000000000
-        Viewport.Height = 633.000000000000000000
+        Viewport.Width = 791.000000000000000000
+        Viewport.Height = 625.000000000000000000
       end
       object Button14: TButton
         Align = Top
@@ -392,7 +275,7 @@ object frmMain: TfrmMain
       Viewport.Height = 750.000000000000000000
       object layFontFamily: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -467,7 +350,7 @@ object frmMain: TfrmMain
       end
       object layLanguage: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -552,7 +435,7 @@ object frmMain: TfrmMain
       end
       object layLineNumbers: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -653,7 +536,7 @@ object frmMain: TfrmMain
       end
       object layTheme: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -735,7 +618,7 @@ object frmMain: TfrmMain
       end
       object layWordWrap: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -849,7 +732,7 @@ object frmMain: TfrmMain
       end
       object layAppInfo: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -5582,7 +5465,7 @@ object frmMain: TfrmMain
       end
       object Rectangle1: TRectangle
         Align = Top
-        Fill.Color = xFF2B2B2B
+        Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
         Padding.Top = 12.000000000000000000
         Padding.Right = 12.000000000000000000
@@ -5782,28 +5665,33 @@ object frmMain: TfrmMain
     Align = Left
     Cursor = crHSplit
     MinSize = 20.000000000000000000
-    Position.Y = 50.000000000000000000
+    Position.Y = 49.000000000000000000
     Size.Width = 1.000000000000000000
-    Size.Height = 750.000000000000000000
+    Size.Height = 751.000000000000000000
     Size.PlatformDefault = False
+  end
+  object layStuffThatwillNeverShow: TLayout
+    Align = Client
+    Visible = False
+    TabOrder = 7
   end
   object MultiView: TMultiView
     DrawerOptions.TouchAreaSize = 25.000000000000000000
     Mode = Panel
     NavigationPaneOptions.CollapsedWidth = 250.000000000000000000
     Size.Width = 400.000000000000000000
-    Size.Height = 750.000000000000000000
+    Size.Height = 751.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'MultiView1Style1'
-    TabOrder = 4
+    TabOrder = 3
     object MultiViewScrollBox: TVertScrollBox
       Align = Client
       Size.Width = 400.000000000000000000
-      Size.Height = 700.000000000000000000
+      Size.Height = 701.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       Viewport.Width = 384.000000000000000000
-      Viewport.Height = 700.000000000000000000
+      Viewport.Height = 701.000000000000000000
       object layNavAllTools: TLayout
         Align = Top
         Size.Width = 384.000000000000000000
@@ -8455,7 +8343,7 @@ object frmMain: TfrmMain
     end
     object layNavSettings: TLayout
       Align = Bottom
-      Position.Y = 700.000000000000000000
+      Position.Y = 701.000000000000000000
       Size.Width = 400.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
@@ -8531,18 +8419,5 @@ object frmMain: TfrmMain
         end
       end
     end
-  end
-  object layConversion: TRectangle
-    Fill.Color = claNull
-    Margins.Bottom = 6.000000000000000000
-    Position.X = 28.000000000000000000
-    Position.Y = 287.000000000000000000
-    Sides = []
-    Size.Width = 347.000000000000000000
-    Size.Height = 103.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Kind = None
-    XRadius = 20.000000000000000000
-    YRadius = 20.000000000000000000
   end
 end

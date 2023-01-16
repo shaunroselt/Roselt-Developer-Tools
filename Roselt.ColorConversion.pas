@@ -8,8 +8,8 @@ uses
   System.UITypes,
   System.UIConsts;
 
-function IntToBin(Value: Cardinal; Digits: Integer): String;
-function IntToOct(invalue: Integer): ShortString;
+function IntToBin(Value: Cardinal; Digits: Integer): String; // Move into Roselt.NumberBaseConversion
+function IntToOct(invalue: Integer): ShortString; // Move into Roselt.NumberBaseConversion
 
 procedure RGBToXYZ(R, G, B: Byte; out X, Y, Z: Single); overload;
 procedure RGBToXYZ(aColor: TAlphaColor; out X, Y, Z: Single); overload;

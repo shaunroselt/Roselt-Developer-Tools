@@ -146,7 +146,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
     end
     object layLetterCase: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000
@@ -240,7 +240,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
     end
     object layUUIDVersion: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000
@@ -317,7 +317,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
     end
     object layHyphens: TRectangle
       Align = Top
-      Fill.Color = xFF2B2B2B
+      Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
       Padding.Top = 12.000000000000000000
       Padding.Right = 12.000000000000000000

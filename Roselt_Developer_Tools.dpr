@@ -36,7 +36,9 @@ uses
   uFrame_MarkdownPreview in 'Tools\uFrame_MarkdownPreview.pas' {Frame_MarkdownPreview: TFrame},
   uFrame_RegexTester in 'Tools\uFrame_RegexTester.pas' {Frame_RegexTester: TFrame},
   uBootstrapIcons in 'uBootstrapIcons.pas',
-  Roselt.SystemInformation in 'Roselt.SystemInformation.pas';
+  Roselt.SystemInformation in 'Roselt.SystemInformation.pas',
+  Roselt.NumberBaseConversion in 'Roselt.NumberBaseConversion.pas',
+  Roselt.Tools in 'Roselt.Tools.pas';
 
 {$R *.res}
 
