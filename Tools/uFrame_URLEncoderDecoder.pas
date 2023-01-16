@@ -8,6 +8,7 @@ uses
   System.UITypes,
   System.Classes,
   System.Variants,
+  System.NetEncoding,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -64,8 +65,12 @@ type
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure memInputChange(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
   private
     { Private declarations }
+    procedure URLEncoderDecoder();
   public
     { Public declarations }
   end;
@@ -74,12 +79,27 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_URLEncoderDecoder.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Text := '';
+  URLEncoderDecoder();
+end;
+
 procedure TFrame_URLEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_URLEncoderDecoder.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    URLEncoderDecoder();
+  end;
 end;
 
 procedure TFrame_URLEncoderDecoder.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -103,17 +123,14 @@ begin
   layInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
 end;
 
+procedure TFrame_URLEncoderDecoder.memInputChange(Sender: TObject);
+begin
+  URLEncoderDecoder();
+end;
+
 procedure TFrame_URLEncoderDecoder.memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
 begin
-  try
-    var URLToEncode := memInput.Text;
-    if (SwitchConversion.IsChecked) then
-      memOutput.Text := 'My Encoded URL'
-    else
-      memOutput.Text := 'My Decoded URL';
-  except on E: Exception do
-
-  end;
+  URLEncoderDecoder();
 end;
 
 procedure TFrame_URLEncoderDecoder.SwitchConversionSwitch(Sender: TObject);
@@ -131,6 +148,19 @@ begin
   var TempText := memOutput.Text;
   memOutput.Text := memInput.Text;
   memInput.Text := TempText;
+end;
+
+procedure TFrame_URLEncoderDecoder.URLEncoderDecoder;
+begin
+  try
+    var URLToEncode := memInput.Text;
+    if (SwitchConversion.IsChecked) then
+      memOutput.Text := TNetEncoding.URL.Encode(URLToEncode)
+    else
+      memOutput.Text := TNetEncoding.URL.Decode(URLToEncode);
+  except on E: Exception do
+
+  end;
 end;
 
 end.

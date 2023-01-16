@@ -159,7 +159,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -189,7 +189,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputPasteFromClipboard: TButton
@@ -203,7 +203,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -236,7 +236,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputLoad: TButton
@@ -250,7 +250,8 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 7
+          OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -276,7 +277,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputClear: TButton
@@ -290,7 +291,8 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
+          OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -317,7 +319,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -325,14 +327,15 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
         TextSettings.WordWrap = True
+        OnChange = memInputChange
         Align = Client
         Size.Width = 760.000000000000000000
         Size.Height = 209.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 760.000000000000000000
-        Viewport.Height = 209.000000000000000000
+        Viewport.Width = 756.000000000000000000
+        Viewport.Height = 205.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
           Left = 320
@@ -368,7 +371,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -398,7 +401,7 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -412,8 +415,8 @@ object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
         Size.Height = 289.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 760.000000000000000000
-        Viewport.Height = 289.000000000000000000
+        Viewport.Width = 756.000000000000000000
+        Viewport.Height = 285.000000000000000000
       end
     end
   end
