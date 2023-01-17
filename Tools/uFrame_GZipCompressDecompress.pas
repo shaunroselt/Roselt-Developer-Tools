@@ -64,15 +64,24 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure GZipCompressDecompress();
   end;
 
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_GZipCompressDecompress.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Text := '';
+  GZipCompressDecompress();
+end;
 
 procedure TFrame_GZipCompressDecompress.btnInputCopyToClipboardClick(Sender: TObject);
 var
@@ -80,6 +89,15 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_GZipCompressDecompress.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    GZipCompressDecompress();
+  end;
 end;
 
 procedure TFrame_GZipCompressDecompress.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -101,6 +119,11 @@ end;
 procedure TFrame_GZipCompressDecompress.FrameResize(Sender: TObject);
 begin
   layInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
+end;
+
+procedure TFrame_GZipCompressDecompress.GZipCompressDecompress;
+begin
+
 end;
 
 procedure TFrame_GZipCompressDecompress.memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;

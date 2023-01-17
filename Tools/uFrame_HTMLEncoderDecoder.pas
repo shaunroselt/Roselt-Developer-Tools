@@ -121,7 +121,7 @@ end;
 
 procedure TFrame_HTMLEncoderDecoder.FrameResize(Sender: TObject);
 begin
-  layInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
+  layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
 end;
 
 procedure TFrame_HTMLEncoderDecoder.HTMLEncoderDecoder;

@@ -434,6 +434,118 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\bin64\sk4d.dll" Configuration="Debug" Class="Skia">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Operation>0</Operation>
+                        <RemoteName>sk4d.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\bin64\sk4d.dll" Configuration="Release" Class="Skia">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Operation>0</Operation>
+                        <RemoteName>sk4d.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Debug" Class="Skia">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'=='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Debug" Class="Skia">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Release" Class="Skia">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'=='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(BDS)\binandroid32\libsk4d.so" Configuration="Release" Class="Skia">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid64\libsk4d.so" Configuration="Debug" Class="Skia">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binandroid64\libsk4d.so" Configuration="Release" Class="Skia">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binlinux64\libsk4d.so" Configuration="Debug" Class="Skia">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binlinux64\libsk4d.so" Configuration="Release" Class="Skia">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binosx64\libsk4d.dylib" Configuration="Debug" Class="Skia">
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.dylib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binosx64\libsk4d.dylib" Configuration="Release" Class="Skia">
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.dylib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binosxarm64\libsk4d.dylib" Configuration="Debug" Class="Skia">
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.dylib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\binosxarm64\libsk4d.dylib" Configuration="Release" Class="Skia">
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Operation>1</Operation>
+                        <RemoteName>libsk4d.dylib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
                     <Platform Name="Android64">
                         <RemoteName>ic_launcher.png</RemoteName>
@@ -614,6 +726,22 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\bin\sk4d.dll" Configuration="Debug" Class="Skia">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Operation>0</Operation>
+                        <RemoteName>sk4d.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(SKIADIR)'==''" Required="true" LocalName="$(BDS)\bin\sk4d.dll" Configuration="Release" Class="Skia">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Operation>0</Operation>
+                        <RemoteName>sk4d.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiv7aFile">
                     <Platform Name="Android64">
                         <RemoteName>libRoselt_Developer_Tools.so</RemoteName>
@@ -665,7 +793,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Android64\Release\libsk4d.so" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android64\libsk4d.so" Configuration="Debug" Class="Skia">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64-v8a\</RemoteDir>
                         <Operation>1</Operation>
@@ -673,7 +801,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Android64\Release\libsk4d.so" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android64\libsk4d.so" Configuration="Release" Class="Skia">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64-v8a\</RemoteDir>
                         <Operation>1</Operation>
@@ -681,7 +809,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Android\Release\libsk4d.so" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Debug" Class="Skia">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
                         <Operation>1</Operation>
@@ -689,7 +817,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(SKIADIR)\Binary\Android\Release\libsk4d.so" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Debug" Class="Skia">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
                         <Operation>1</Operation>
@@ -697,7 +825,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Android\Release\libsk4d.so" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Release" Class="Skia">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
                         <Operation>1</Operation>
@@ -705,7 +833,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(SKIADIR)\Binary\Android\Release\libsk4d.so" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!='' and '$(AndroidAppBundle)'=='true'" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android\libsk4d.so" Configuration="Release" Class="Skia">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
                         <Operation>1</Operation>
@@ -713,7 +841,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Linux64\Release\libsk4d.so" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Linux64\libsk4d.so" Configuration="Debug" Class="Skia">
                     <Platform Name="Linux64">
                         <RemoteDir>.\</RemoteDir>
                         <Operation>1</Operation>
@@ -721,7 +849,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Linux64\Release\libsk4d.so" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Linux64\libsk4d.so" Configuration="Release" Class="Skia">
                     <Platform Name="Linux64">
                         <RemoteDir>.\</RemoteDir>
                         <Operation>1</Operation>
@@ -729,39 +857,39 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\OSX64\Release\sk4d.dylib" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\OSX64\libsk4d.dylib" Configuration="Debug" Class="Skia">
                     <Platform Name="OSX64">
                         <RemoteDir>Contents\MacOS\</RemoteDir>
                         <Operation>1</Operation>
-                        <RemoteName>sk4d.dylib</RemoteName>
+                        <RemoteName>libsk4d.dylib</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\OSX64\Release\sk4d.dylib" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\OSX64\libsk4d.dylib" Configuration="Release" Class="Skia">
                     <Platform Name="OSX64">
                         <RemoteDir>Contents\MacOS\</RemoteDir>
                         <Operation>1</Operation>
-                        <RemoteName>sk4d.dylib</RemoteName>
+                        <RemoteName>libsk4d.dylib</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\OSXARM64\Release\sk4d.dylib" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\OSXARM64\libsk4d.dylib" Configuration="Debug" Class="Skia">
                     <Platform Name="OSXARM64">
                         <RemoteDir>Contents\MacOS\</RemoteDir>
                         <Operation>1</Operation>
-                        <RemoteName>sk4d.dylib</RemoteName>
+                        <RemoteName>libsk4d.dylib</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\OSXARM64\Release\sk4d.dylib" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\OSXARM64\libsk4d.dylib" Configuration="Release" Class="Skia">
                     <Platform Name="OSXARM64">
                         <RemoteDir>Contents\MacOS\</RemoteDir>
                         <Operation>1</Operation>
-                        <RemoteName>sk4d.dylib</RemoteName>
+                        <RemoteName>libsk4d.dylib</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Win32\Release\sk4d.dll" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Win32\sk4d.dll" Configuration="Debug" Class="Skia">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Operation>0</Operation>
@@ -769,7 +897,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Win32\Release\sk4d.dll" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Win32\sk4d.dll" Configuration="Release" Class="Skia">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Operation>0</Operation>
@@ -777,7 +905,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Win64\Release\sk4d.dll" Configuration="Debug" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Win64\sk4d.dll" Configuration="Debug" Class="Skia">
                     <Platform Name="Win64">
                         <RemoteDir>.\</RemoteDir>
                         <Operation>0</Operation>
@@ -785,7 +913,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Required="true" LocalName="$(SKIADIR)\Binary\Win64\Release\sk4d.dll" Configuration="Release" Class="Skia">
+                <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Win64\sk4d.dll" Configuration="Release" Class="Skia">
                     <Platform Name="Win64">
                         <RemoteDir>.\</RemoteDir>
                         <Operation>0</Operation>

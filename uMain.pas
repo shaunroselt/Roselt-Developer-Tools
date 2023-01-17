@@ -311,6 +311,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
     var DynamicParents := TList.Create;
     for var Tool in RoseltToolsArray do
     begin
+      if (Tool.Visible = False) then Continue;
+
       // I think these buttons will be freed from memory when the app frees MultiViewScrollBox 🤷
       if IsToolParent(Tool) then
       begin
@@ -326,6 +328,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonContainer.Align := TAlignLayout.Top;
         ToolButtonContainer.Height := 50;
         ToolButtonContainer.Name := 'layNav' + Tool.name + 'ExpandCollapse';
+        ToolButtonContainer.Enabled := Tool.active;
 
         var ToolButton := TRectangle.Create(ToolButtonContainer);
         ToolButton.Parent := ToolButtonContainer;
@@ -368,6 +371,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonLabel.Text := Tool.text_long;
         ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
         ToolButtonLabel.TextSettings.Font.Size := 20;
+        if (Tool.active = False) then
+          ToolButtonLabel.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
 
         var ToolButtonImgExpandCollapseIcon := TSkSvg.Create(ToolButtonContainer);
         ToolButtonImgExpandCollapseIcon.Parent := ToolButton;
@@ -380,6 +385,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonImgExpandCollapseIcon.Name := 'img' + Tool.name + 'ExpandCollapseIcon';
         ToolButtonImgExpandCollapseIcon.Svg.Source := GetBootstrapIcon('chevron-down');
         ToolButtonImgExpandCollapseIcon.Svg.OverrideColor := TAlphaColors.White;
+        ToolButtonImgExpandCollapseIcon.Visible := Tool.active;
 
         DynamicParents.Add(ToolParentContainer);
       end else
@@ -391,18 +397,26 @@ procedure TfrmMain.FormCreate(Sender: TObject);
           ToolButtonContainer.Parent := MultiViewScrollBox;
         end else
         begin
+          var ParentFound := False;
           for var MainChild in DynamicParents do
             if (TLayout(MainChild).Name = 'layNav' + Tool.parent) then
             begin
               ToolButtonContainer.Parent := TLayout(MainChild);
               TLayout(MainChild).Height := TLayout(MainChild).Height + 50;
+              ParentFound := True;
               break;
             end;
+          if (ParentFound = False) then
+          begin
+            FreeAndNil(ToolButtonContainer);
+            Continue;
+          end;
         end;
         ToolButtonContainer.Align := TAlignLayout.Bottom;
         ToolButtonContainer.Height := 50;
         ToolButtonContainer.Align := TAlignLayout.Top;
         ToolButtonContainer.Name := 'layNav' + Tool.name;
+        ToolButtonContainer.Enabled := Tool.active;
 
         var ToolButton := TRectangle.Create(ToolButtonContainer);
         ToolButton.Parent := ToolButtonContainer;
@@ -450,6 +464,8 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonLabel.Text := Tool.text_long;
         ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
         ToolButtonLabel.TextSettings.Font.Size := 20;
+        if (Tool.active = False) then
+          ToolButtonLabel.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
       end;
     end;
     for var ParentContainer in DynamicParents do
@@ -465,7 +481,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
   begin
     for var Tool in RoseltToolsArray do
     begin
-      if IsToolParent(Tool) then continue;
+      if (IsToolParent(Tool) OR (Tool.Visible = False)) then continue;
 
       var ToolButton := TButton.Create(layAllToolsGrid);
       // I think these buttons will be freed from memory when the app frees layAllToolsGrid 🤷
