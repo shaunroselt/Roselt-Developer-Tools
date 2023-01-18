@@ -60,6 +60,7 @@ uses
   uFrame_XMLFormatter,
   uFrame_JavaScriptFormatter,
   uFrame_UUIDGenerator,
+  uFrame_JWTTokenGenerator,
   uFrame_TextEscapeUnescape,
   uFrame_MarkdownPreview,
   uFrame_RegexTester,
@@ -594,6 +595,7 @@ begin
   CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
   CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
   CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
+  CreateToolFrame(TFrame_JWTTokenGenerator.Create(Self),'layJWTTokenGenerator');
   CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
   CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
   CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');

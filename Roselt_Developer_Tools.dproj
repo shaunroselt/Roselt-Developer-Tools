@@ -406,6 +406,12 @@
         <DCCReference Include="Roselt.SystemInformation.pas"/>
         <DCCReference Include="Roselt.NumberBaseConversion.pas"/>
         <DCCReference Include="Roselt.Tools.pas"/>
+        <DCCReference Include="Tools\uFrame_JWTTokenGenerator.pas">
+            <Form>Frame_JWTTokenGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -1004,6 +1010,12 @@
                 </DeployFile>
                 <DeployFile LocalName="Android64\Release\styles.xml" Configuration="Release" Class="AndroidSplashStyles">
                     <Platform Name="Android64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="README.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

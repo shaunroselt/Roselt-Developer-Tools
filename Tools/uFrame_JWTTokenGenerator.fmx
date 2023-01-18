@@ -1,0 +1,5 @@
+object Frame_JWTTokenGenerator: TFrame_JWTTokenGenerator
+  Size.Width = 836.000000000000000000
+  Size.Height = 812.000000000000000000
+  Size.PlatformDefault = False
+end

@@ -38,7 +38,8 @@ uses
   uBootstrapIcons in 'uBootstrapIcons.pas',
   Roselt.SystemInformation in 'Roselt.SystemInformation.pas',
   Roselt.NumberBaseConversion in 'Roselt.NumberBaseConversion.pas',
-  Roselt.Tools in 'Roselt.Tools.pas';
+  Roselt.Tools in 'Roselt.Tools.pas',
+  uFrame_JWTTokenGenerator in 'Tools\uFrame_JWTTokenGenerator.pas' {Frame_JWTTokenGenerator: TFrame};
 
 {$R *.res}
 
