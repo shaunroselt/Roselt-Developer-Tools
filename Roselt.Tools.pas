@@ -19,15 +19,20 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..35] of TRoseltTools = (
+  RoseltToolsArray: array[0..36] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
       name: 'Converters';
       description: 'Converters';
       icon: 'arrow-left-right';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: '';
     ),
     ( // Converters Main Category (Parent)
@@ -36,8 +41,13 @@ const
       name: 'EncodersDecoders';
       description: 'Encoders / Decoders';
       icon: 'file-binary';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: '';
     ),
     ( // Converters Main Category (Parent)
@@ -46,8 +56,13 @@ const
       name: 'Formatters';
       description: 'Formatters';
       icon: 'list-columns';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: '';
     ),
     ( // Converters Main Category (Parent)
@@ -56,8 +71,13 @@ const
       name: 'Generators';
       description: 'Generators';
       icon: 'asterisk';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: '';
     ),
     ( // Converters Main Category (Parent)
@@ -66,8 +86,13 @@ const
       name: 'Text';
       description: 'Text';
       icon: 'body-text';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: '';
     ),
     ( // Converters Main Category (Parent)
@@ -76,8 +101,13 @@ const
       name: 'Graphics';
       description: 'Graphics';
       icon: 'images';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: '';
     ),
     (
@@ -86,8 +116,13 @@ const
       name: 'Testing';
       description: 'Just a playground for me to test random things on';
       icon: 'box';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: '';
     ),
     (
@@ -96,8 +131,13 @@ const
       name: 'JsonYamlConverter';
       description: 'Convert JSON to YAML and vice versa';
       icon: 'arrow-left-right';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Converters';
     ),
     (
@@ -106,8 +146,13 @@ const
       name: 'TimestampConverter';
       description: 'Convert timestamp to human-readable text and vice versa';
       icon: 'calendar3';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Converters';
     ),
     (
@@ -116,8 +161,13 @@ const
       name: 'NumberBaseConverter';
       description: 'Convert numbers from one base to another';
       icon: '123';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Converters';
     ),
     (
@@ -126,8 +176,13 @@ const
       name: 'HTMLEncoderDecoder';
       description: 'Encode and decode applicable characters';
       icon: 'code-slash';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'EncodersDecoders';
     ),
     (
@@ -136,8 +191,13 @@ const
       name: 'URLEncoderDecoder';
       description: 'Encode and decode applicable characters';
       icon: 'link';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'EncodersDecoders';
     ),
     (
@@ -146,8 +206,13 @@ const
       name: 'Base64EncoderDecoder';
       description: 'Encode and decode Base64 text data';
       icon: 'file-binary';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'EncodersDecoders';
     ),
     (
@@ -156,8 +221,13 @@ const
       name: 'Base64ImageEncoderDecoder';
       description: 'Encode and decode Base64 image data';
       icon: 'file-binary';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'EncodersDecoders';
     ),
     (
@@ -166,8 +236,13 @@ const
       name: 'GZipCompressDecompress';
       description: 'Compress or decompress strings';
       icon: 'file-zip';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'EncodersDecoders';
     ),
     (
@@ -176,8 +251,13 @@ const
       name: 'JWTDecoder';
       description: 'Decode a JWT header, payload and signature';
       icon: 'gear-wide';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'EncodersDecoders';
     ),
     (
@@ -186,8 +266,13 @@ const
       name: 'JsonFormatter';
       description: 'Indent or minify JSON data';
       icon: 'filetype-json';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -196,8 +281,13 @@ const
       name: 'HTMLFormatter';
       description: 'Indent or minify HTML code';
       icon: 'filetype-html';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -206,8 +296,13 @@ const
       name: 'SQLFormatter';
       description: 'Indent SQL queries';
       icon: 'server';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -216,8 +311,13 @@ const
       name: 'XMLFormatter';
       description: 'Indent or minify XML data';
       icon: 'filetype-xml';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -226,8 +326,13 @@ const
       name: 'JavaScriptFormatter';
       description: 'Indent or minify JavaScript code';
       icon: 'filetype-js';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -236,8 +341,13 @@ const
       name: 'PHPFormatter';
       description: 'Indent PHP code';
       icon: 'filetype-php';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -246,8 +356,13 @@ const
       name: 'CSSFormatter';
       description: 'Indent CSS code';
       icon: 'filetype-css';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Formatters';
     ),
     (
@@ -256,8 +371,13 @@ const
       name: 'HashGenerator';
       description: 'Calculate hashes';
       icon: 'fingerprint';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Generators';
     ),
     (
@@ -266,8 +386,13 @@ const
       name: 'UUIDGenerator';
       description: 'Generate UUIDs';
       icon: 'grid';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Generators';
     ),
     (
@@ -276,8 +401,28 @@ const
       name: 'LoremIpsumGenerator';
       description: 'Generate Lorem Ipsum text';
       icon: 'textarea';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Generators';
+    ),
+    (
+      text_short: 'JWT Token';
+      text_long: 'JWT Token Generator';
+      name: 'JWTTokenGenerator';
+      description: 'Generate a JWT Token';
+      icon: 'gear-wide';
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Generators';
     ),
     (
@@ -286,8 +431,13 @@ const
       name: 'NameGenerator';
       description: 'Generate random names';
       icon: 'person-square';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Generators';
     ),
     (
@@ -296,8 +446,13 @@ const
       name: 'TextCaseConverterInspector';
       description: 'Analyse text and convert it to different cases';
       icon: 'textarea-t';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Text';
     ),
     (
@@ -306,8 +461,13 @@ const
       name: 'TextEscapeUnescape';
       description: 'Escape or unescape text';
       icon: 'card-text';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Text';
     ),
     (
@@ -316,8 +476,13 @@ const
       name: 'RegexTester';
       description: 'Validate and test regular expressions';
       icon: 'braces-asterisk';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Text';
     ),
     (
@@ -326,8 +491,13 @@ const
       name: 'TextDifference';
       description: 'Find the difference between two texts';
       icon: 'file-diff';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Text';
     ),
     (
@@ -336,8 +506,13 @@ const
       name: 'MarkdownPreview';
       description: 'Preview Markdown text';
       icon: 'markdown';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Text';
     ),
     (
@@ -346,8 +521,13 @@ const
       name: 'ColorPicker';
       description: 'Fully featured color picker';
       icon: 'brush';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
       parent: 'Graphics';
     ),
     (
@@ -356,8 +536,13 @@ const
       name: 'ColorBlindnessSimulator';
       description: 'Simulate color blindness on a picture or color';
       icon: 'eye-slash';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Graphics';
     ),
     (
@@ -366,8 +551,13 @@ const
       name: 'PNGJPEGCompressor';
       description: 'Compress PNG and JPEG images';
       icon: 'image';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Graphics';
     ),
     (
@@ -376,8 +566,13 @@ const
       name: 'ImageConverter';
       description: 'Convert images to different formats';
       icon: 'file-earmark-image';
-      active: true;
-      visible: true;
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
       parent: 'Graphics';
     )
   );
