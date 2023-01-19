@@ -32,6 +32,8 @@ _Note: All tools are still in active development with lots of bugs_
 - XML Formatter
 - Delphi Formatter
 - JWT Token Generator
+- JSON Generator
+- YAML Generator
 - Text Difference
 - Markdown Preview
 - Text Escape/Unescape
