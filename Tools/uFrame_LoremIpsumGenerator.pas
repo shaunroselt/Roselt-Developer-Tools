@@ -60,10 +60,11 @@ type
     btnOutputRefresh: TButton;
     imgOutputRefresh: TSkSvg;
     lblOutputRefresh: TLabel;
-    procedure sbAmountChange(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnOutputRefreshClick(Sender: TObject);
   private
     { Private declarations }
+    procedure GenerateRandomLoremIpsum();
   public
     { Public declarations }
   end;
@@ -80,7 +81,12 @@ begin
     ClipboardService.SetClipboard(memOutput.Text);
 end;
 
-procedure TFrame_LoremIpsumGenerator.sbAmountChange(Sender: TObject);
+procedure TFrame_LoremIpsumGenerator.btnOutputRefreshClick(Sender: TObject);
+begin
+  GenerateRandomLoremIpsum;
+end;
+
+procedure TFrame_LoremIpsumGenerator.GenerateRandomLoremIpsum;
 begin
   memOutput.Text := GenerateLoremIpsum(TLoremIpsumType.Paragraphs, 1);
 end;

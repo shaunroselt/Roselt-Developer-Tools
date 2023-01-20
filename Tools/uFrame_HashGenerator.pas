@@ -110,6 +110,7 @@ type
     procedure memInputChange(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     procedure cbInputTypeChange(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
   private
     { Private declarations }
     procedure HashGenerator();
@@ -120,6 +121,11 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_HashGenerator.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Text := '';
+end;
 
 procedure TFrame_HashGenerator.btnInputCopyToClipboardClick(Sender: TObject);
 var

@@ -73,8 +73,11 @@ type
     imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnRefreshClick(Sender: TObject);
+    procedure SwitchSurnameSwitch(Sender: TObject);
   private
     { Private declarations }
+    procedure GenerateRandomNames();
   public
     { Public declarations }
   end;
@@ -89,6 +92,38 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memOutput.Text);
+end;
+
+procedure TFrame_NameGenerator.btnRefreshClick(Sender: TObject);
+begin
+  GenerateRandomNames();
+end;
+
+procedure TFrame_NameGenerator.GenerateRandomNames;
+begin
+  memOutput.Text := '';
+  for var I := 1 to Round(sbAmount.Value) do
+  begin
+    var RandomName := GenerateRandomName(SwitchSurname.IsChecked);
+    if (cbLetterCase.Selected.Text = 'lower') then RandomName := RandomName.ToLower;
+    if (cbLetterCase.Selected.Text = 'UPPER') then RandomName := RandomName.ToUpper;
+
+    memOutput.Lines.Add(RandomName);
+  end;
+end;
+
+procedure TFrame_NameGenerator.SwitchSurnameSwitch(Sender: TObject);
+begin
+  if (lblSwitchSurname.Text = 'On') then
+  begin
+    lblSwitchSurname.Text := 'Off';
+    SwitchSurname.IsChecked := False;
+  end else
+  begin
+    lblSwitchSurname.Text := 'On';
+    SwitchSurname.IsChecked := True;
+  end;
+  GenerateRandomNames();
 end;
 
 end.

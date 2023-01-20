@@ -34,7 +34,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -64,7 +64,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnOutputRefresh: TButton
@@ -78,7 +78,8 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 81.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 3
+        TabOrder = 4
+        OnClick = btnOutputRefreshClick
         object imgOutputRefresh: TSkSvg
           Align = Left
           Margins.Left = 5.000000000000000000
@@ -105,7 +106,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Refresh'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
     end
@@ -119,8 +120,8 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Viewport.Width = 760.000000000000000000
-      Viewport.Height = 383.000000000000000000
+      Viewport.Width = 756.000000000000000000
+      Viewport.Height = 379.000000000000000000
     end
   end
   object layTop: TLayout
@@ -236,6 +237,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        OnChange = btnOutputRefreshClick
       end
     end
     object layAmount: TRectangle
@@ -321,7 +323,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 117.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
-        OnChange = sbAmountChange
+        OnChange = btnOutputRefreshClick
       end
     end
     object layLetterCase: TRectangle
@@ -356,6 +358,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        OnChange = btnOutputRefreshClick
       end
       object layLetterCaseTitleDescription: TLayout
         Align = Client

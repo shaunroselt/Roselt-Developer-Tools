@@ -8,9 +8,6 @@ uses
   System.UITypes,
   System.UIConsts;
 
-function IntToBin(Value: Cardinal; Digits: Integer): String; // Move into Roselt.NumberBaseConversion
-function IntToOct(invalue: Integer): ShortString; // Move into Roselt.NumberBaseConversion
-
 procedure RGBToXYZ(R, G, B: Byte; out X, Y, Z: Single); overload;
 procedure RGBToXYZ(aColor: TAlphaColor; out X, Y, Z: Single); overload;
 
@@ -42,41 +39,6 @@ procedure XYZtoRGB(X, Y, Z: Single; out aColor: TAlphaColor); overload;
 procedure CMYKToRGB(C, M, Y, K: Single; out R, G, B: Byte);
 
 implementation
-
-function IntToBin(Value: Cardinal; Digits: Integer): String;
-var
-  S: String;
-begin
-  S := '';
-  While Digits > 0 do
-  begin
-    if Odd(Value) then
-      S := '1' + S
-    Else
-      S := '0' + S;
-    Value := Value shr 1;
-    Digits := Digits - 1;
-  end;
-  Result := S;
-end;
-
-function IntToOct(invalue: Integer): ShortString;
-const
-  tt: array [0 .. 7] of char = ('0', '1', '2', '3', '4', '5', '6', '7');
-var
-  tempval: Integer;
-begin
-  Result := '';
-  tempval := invalue;
-  if tempval = 0 then
-    Result := '0'
-  else
-    while (tempval <> 0) do
-    begin
-      Result := tt[(tempval and $7)] + Result;
-      tempval := (tempval shr 3);
-    end;
-end;
 
 procedure RGBToXYZ(R, G, B: Byte; out X, Y, Z: Single);
 var
@@ -236,7 +198,6 @@ end;
 
 procedure RGBToCIELab(R, G, B: Byte; out CIEL, CIEa, CIEb: Single);
 var
-  var_R, var_G, var_B: Single;
   var_X, var_Y, var_Z: Single;
   X, Y, Z: Single;
 begin
@@ -263,7 +224,6 @@ end;
 
 procedure RGBToCIELab(aColor: TAlphaColor; out CIEL, CIEa, CIEb: Single);
 var
-  var_R, var_G, var_B: Single;
   var_X, var_Y, var_Z: Single;
   X, Y, Z: Single;
   R, G, B: Byte;

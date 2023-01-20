@@ -27,7 +27,8 @@ uses
   FMX.ImgList,
   FMX.Edit,
   FMX.Controls.Presentation,
-  Roselt.ColorConversion;
+  Roselt.ColorConversion,
+  Roselt.NumberBaseConversion;
 
 type
   TFrame_ColorPicker = class(TFrame)

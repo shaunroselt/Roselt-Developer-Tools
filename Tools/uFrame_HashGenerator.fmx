@@ -194,6 +194,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
