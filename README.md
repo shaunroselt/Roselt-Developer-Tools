@@ -20,6 +20,8 @@ _Note: All tools are still in active development with lots of bugs_
 
 
 ## Planned Tools
+- JSON <> XML Converter
+- JSON <> MsgPack Converter
 - JWT Decoder
 - GZip Encoder/Decoder
 - Base64 Image Encoder/Decoder
