@@ -211,6 +211,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memTextCaseConverterInspectorInputKeyUp
+        OnClick = memTextCaseConverterInspectorInputClick
         Viewport.Width = 409.000000000000000000
         Viewport.Height = 526.000000000000000000
         object OpenDialog: TOpenDialog

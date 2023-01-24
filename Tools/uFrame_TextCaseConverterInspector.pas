@@ -111,6 +111,7 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure memTextCaseConverterInspectorInputChange(Sender: TObject);
+    procedure memTextCaseConverterInspectorInputClick(Sender: TObject);
   private
     { Private declarations }
     TextCaseConverterInspectorInput: String;
@@ -146,6 +147,11 @@ begin
   TextCaseInspector();
 end;
 
+procedure TFrame_TextCaseConverterInspector.memTextCaseConverterInspectorInputClick(Sender: TObject);
+begin
+  TextCaseInspector();
+end;
+
 procedure TFrame_TextCaseConverterInspector.memTextCaseConverterInspectorInputKeyUp(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);
 begin
@@ -155,6 +161,8 @@ end;
 
 procedure TFrame_TextCaseConverterInspector.TextCaseConverterButtonsClick(Sender: TObject);
 begin
+  memTextCaseConverterInspectorInput.OnChange := nil;
+
   var TextCase := TButton(Sender).Text;
 
   if (TextCase = 'Original text') then
@@ -397,6 +405,7 @@ begin
     end;
     memTextCaseConverterInspectorInput.Text := strOutput;
   end;
+  memTextCaseConverterInspectorInput.OnChange := memTextCaseConverterInspectorInputChange;
 end;
 
 procedure TFrame_TextCaseConverterInspector.TextCaseInspector;
@@ -444,10 +453,57 @@ procedure TFrame_TextCaseConverterInspector.TextCaseInspector;
     sFinal.Free;
     WordDistribution.Free;
   end;
+  function CountWords(const S: string): Integer;
+  begin
+    Result := 0;
+    var L := S.Length;
+    var I := 1;
+    var J := 0;
+    while I <= L do
+    begin
+      while (I <= L) and (S[I] in [' ', #9, #10, #13]) do Inc(I);
+      J := I;
+      while (J <= L) and not (S[J] in [' ', #9, #10, #13]) do Inc(J);
+      if J > I then Inc(Result);
+      I := J;
+    end;
+  end;
+  function CountSentences(const MyString: string): integer;
+  begin
+    var SentenceCount := 0;
+    for var i := 1 to MyString.Length do
+    begin
+      if (MyString[i] = '.') or (MyString[i] = '!') or (MyString[i] = '?') then
+        SentenceCount := SentenceCount + 1;
+    end;
+    Result := SentenceCount;
+  end;
+  function CountParagraphs(const s: string): Integer;
+  begin
+    Result := 0;
+    var Lines := TStringList.Create;
+    try
+      Lines.Text := s;
+      for var i := 0 to Lines.Count - 1 do
+      begin
+        if (Lines[i] = '') then
+          Inc(Result);
+      end;
+    finally
+      Inc(Result);
+      Lines.Free;
+    end;
+  end;
 begin
   var Text := memTextCaseConverterInspectorInput.Text;
+  lblTextCaseConverterInspectorInspectLine.Text := (memTextCaseConverterInspectorInput.CaretPosition.Line+1).ToString;
+  lblTextCaseConverterInspectorInspectColumn.Text := memTextCaseConverterInspectorInput.CaretPosition.Pos.ToString;
+  lblTextCaseConverterInspectorInspectPosition.Text := memTextCaseConverterInspectorInput.CaretPosition.Pos.ToString;  // Doesn't work yet
   lblTextCaseConverterInspectorInspectCharacters.Text := Text.Length.ToString;
-  lblTextCaseConverterInspectorInspectLines.Text := Text.CountChar(#13).ToString;
+  lblTextCaseConverterInspectorInspectWords.Text := CountWords(Text).ToString;
+  lblTextCaseConverterInspectorInspectLines.Text := (Text.CountChar(#13)+1).ToString;
+  lblTextCaseConverterInspectorInspectSentences.Text := CountSentences(Text).ToString;
+  lblTextCaseConverterInspectorInspectParagraphs.Text := CountParagraphs(Text).ToString;
   lblTextCaseConverterInspectorInspectSpaces.Text := Text.CountChar(' ').ToString;
   lblTextCaseConverterInspectorInspectBytes.Text := TEncoding.UTF8.GetByteCount(Text).ToString;
 
