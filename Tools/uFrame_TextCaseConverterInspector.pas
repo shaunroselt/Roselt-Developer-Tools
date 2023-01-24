@@ -105,6 +105,8 @@ type
     btnInputClear: TButton;
     imgInputClear: TSkSvg;
     lblInputClear: TLabel;
+    btnTextCaseConverterInspectorConvertUpperSnakeCase: TButton;
+    btnTextCaseConverterInspectorConvertDotCase: TButton;
     procedure TextCaseConverterButtonsClick(Sender: TObject);
     procedure memTextCaseConverterInspectorInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
@@ -112,6 +114,8 @@ type
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure memTextCaseConverterInspectorInputChange(Sender: TObject);
     procedure memTextCaseConverterInspectorInputClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
   private
     { Private declarations }
     TextCaseConverterInspectorInput: String;
@@ -125,12 +129,26 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_TextCaseConverterInspector.btnInputClearClick(Sender: TObject);
+begin
+  memTextCaseConverterInspectorInput.Text := '';
+end;
+
 procedure TFrame_TextCaseConverterInspector.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memTextCaseConverterInspectorInput.Text);
+end;
+
+procedure TFrame_TextCaseConverterInspector.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memTextCaseConverterInspectorInput.Lines.LoadFromFile(OpenDialog.FileName);
+    TextCaseInspector();
+  end;
 end;
 
 procedure TFrame_TextCaseConverterInspector.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -293,6 +311,23 @@ begin
     memTextCaseConverterInspectorInput.Text := strOutput.Replace(' ','_');
   end;
 
+  if (TextCase = 'UPPER_SNAKE_CASE') then
+  begin
+    var strInput := TextCaseConverterInspectorInput.ToUpper;
+    var strOutput := '';
+    for var I := 1 to strInput.Length do
+    begin
+      if (strInput[I] = #13) then
+      begin
+        strOutput := strOutput + sLineBreak;
+        continue;
+      end;
+      if (CharInSet(strInput[I],['a'..'z'])) or (CharInSet(strInput[I],['0'..'9'])) or (strInput[I] = ' ') then
+        strOutput := strOutput + strInput[I];
+    end;
+    memTextCaseConverterInspectorInput.Text := strOutput.Replace(' ','_');
+  end;
+
   if (TextCase = 'CONSTANT_CASE') then
   begin
     var strInput := TextCaseConverterInspectorInput.ToUpper;
@@ -405,6 +440,24 @@ begin
     end;
     memTextCaseConverterInspectorInput.Text := strOutput;
   end;
+
+  if (TextCase = 'dot.case') then
+  begin
+    var strInput := TextCaseConverterInspectorInput.ToLower;
+    var strOutput := '';
+    for var I := 1 to strInput.Length do
+    begin
+      if (strInput[I] = #13) then
+      begin
+        strOutput := strOutput + sLineBreak;
+        continue;
+      end;
+      if (CharInSet(strInput[I],['a'..'z'])) or (CharInSet(strInput[I],['0'..'9'])) or (strInput[I] = ' ') then
+        strOutput := strOutput + strInput[I];
+    end;
+    memTextCaseConverterInspectorInput.Text := strOutput.Replace(' ','.');
+  end;
+
   memTextCaseConverterInspectorInput.OnChange := memTextCaseConverterInspectorInputChange;
 end;
 
