@@ -2,7 +2,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
   Size.Width = 800.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
+  OnResized = FrameResized
   object layBottom: TLayout
     Align = Client
     Padding.Left = 20.000000000000000000
@@ -133,6 +133,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
+          OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -173,6 +174,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000

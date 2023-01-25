@@ -69,11 +69,13 @@ type
     procedure SwitchConversionSwitch(Sender: TObject);
     procedure cbEncodingChange(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
-    procedure FrameResize(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure memInputChange(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
   private
     { Private declarations }
     procedure Base64EncodeDecode();
@@ -95,7 +97,7 @@ begin
       if (SwitchConversion.IsChecked) then
         memOutput.Text := TNetEncoding.Base64.Encode(ASCIITextToEncode)
       else
-        memOutput.Text := TNetEncoding.Base64.Decode(ASCIITextToEncode);
+        memOutput.Text := TNetEncoding.Base64.Decode(TNetEncoding.Base64.Encode(AnsiString(TNetEncoding.Base64.Decode(ASCIITextToEncode))));
     end else
     begin
       if (SwitchConversion.IsChecked) then
@@ -108,12 +110,26 @@ begin
   end;
 end;
 
+procedure TFrame_Base64TextEncoderDecoder.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Text := '';
+end;
+
 procedure TFrame_Base64TextEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_Base64TextEncoderDecoder.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    Base64EncodeDecode();
+  end;
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -137,9 +153,9 @@ begin
   Base64EncodeDecode();
 end;
 
-procedure TFrame_Base64TextEncoderDecoder.FrameResize(Sender: TObject);
+procedure TFrame_Base64TextEncoderDecoder.FrameResized(Sender: TObject);
 begin
-  memInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
+  layInput.Height := (layBottom.Height - layBottom.Padding.Top - layBottom.Padding.Bottom) / 2;
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.memInputChange(Sender: TObject);
