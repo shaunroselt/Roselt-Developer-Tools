@@ -33,7 +33,7 @@ type
     memTextCaseConverterInspectorInput: TMemo;
     layTextCaseConverterInspectorInspect: TLayout;
     lblTextCaseConverterInspectorInspect: TLabel;
-    Rectangle4: TRectangle;
+    layTextCaseConverterInspectorInspectOutput: TRectangle;
     lblTextCaseConverterInspectorInspectSelectionTitle: TLabel;
     layTextCaseConverterInspectorInspectLine: TLayout;
     lblTextCaseConverterInspectorInspectLineTitle: TLabel;
@@ -116,6 +116,7 @@ type
     procedure memTextCaseConverterInspectorInputClick(Sender: TObject);
     procedure btnInputClearClick(Sender: TObject);
     procedure btnInputLoadClick(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
   private
     { Private declarations }
     TextCaseConverterInspectorInput: String;
@@ -157,6 +158,33 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     memTextCaseConverterInspectorInput.Text := ClipboardService.GetClipboard.ToString;
+end;
+
+procedure TFrame_TextCaseConverterInspector.FrameResized(Sender: TObject);
+begin
+  layTextCaseConverterInspectorInspectCharacterDistribution.Height :=
+    (
+      layTextCaseConverterInspectorInspectOutput.Height -
+      (
+        layTextCaseConverterInspectorInspectOutput.Padding.Bottom +
+        layTextCaseConverterInspectorInspectOutput.Padding.Top +
+        lblTextCaseConverterInspectorInspectSelectionTitle.Height +
+        layTextCaseConverterInspectorInspectLine.Height +
+        layTextCaseConverterInspectorInspectColumn.Height +
+        layTextCaseConverterInspectorInspectPosition.Height +
+        lblTextCaseConverterInspectorInspectStatisticsTitle.Height +
+        lblTextCaseConverterInspectorInspectStatisticsTitle.Margins.Top +
+        layTextCaseConverterInspectorInspectCharacters.Height +
+        layTextCaseConverterInspectorInspectWords.Height +
+        layTextCaseConverterInspectorInspectLines.Height +
+        layTextCaseConverterInspectorInspectSentences.Height +
+        layTextCaseConverterInspectorInspectParagraphs.Height +
+        layTextCaseConverterInspectorInspectSpaces.Height +
+        layTextCaseConverterInspectorInspectBytes.Height +
+        layTextCaseConverterInspectorInspectWordDistribution.Margins.Top +
+        layTextCaseConverterInspectorInspectCharacterDistribution.Margins.Top
+      )
+    ) / 2;
 end;
 
 procedure TFrame_TextCaseConverterInspector.memTextCaseConverterInspectorInputChange(Sender: TObject);
@@ -322,7 +350,7 @@ begin
         strOutput := strOutput + sLineBreak;
         continue;
       end;
-      if (CharInSet(strInput[I],['a'..'z'])) or (CharInSet(strInput[I],['0'..'9'])) or (strInput[I] = ' ') then
+      if (CharInSet(strInput[I],['A'..'Z'])) or (CharInSet(strInput[I],['0'..'9'])) or (strInput[I] = ' ') then
         strOutput := strOutput + strInput[I];
     end;
     memTextCaseConverterInspectorInput.Text := strOutput.Replace(' ','_');
@@ -458,6 +486,8 @@ begin
     memTextCaseConverterInspectorInput.Text := strOutput.Replace(' ','.');
   end;
 
+  TextCaseInspector;
+
   memTextCaseConverterInspectorInput.OnChange := memTextCaseConverterInspectorInputChange;
 end;
 
@@ -562,6 +592,12 @@ begin
 
   memTextCaseConverterInspectorInspectCharacterDistribution.Text := GetCharacterDistribution(Text);
   memTextCaseConverterInspectorInspectWordDistribution.Text := GetWordDistribution(Text);
+
+  var PositionCount := 0;
+  for var I := 0 to memTextCaseConverterInspectorInput.CaretPosition.Line-1 do
+    PositionCount := PositionCount + memTextCaseConverterInspectorInput.Lines[I].Length;
+  PositionCount := PositionCount + memTextCaseConverterInspectorInput.CaretPosition.Pos;
+  lblTextCaseConverterInspectorInspectPosition.Text := PositionCount.ToString;
 end;
 
 end.

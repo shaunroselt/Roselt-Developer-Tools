@@ -2,6 +2,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
   Size.Width = 800.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
+  OnResized = FrameResized
   object layTextCaseConverterInspectorBottom: TLayout
     Align = Client
     Padding.Left = 20.000000000000000000
@@ -242,7 +243,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
         Text = 'Inspect'
         TabOrder = 0
       end
-      object Rectangle4: TRectangle
+      object layTextCaseConverterInspectorInspectOutput: TRectangle
         Align = Client
         Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
