@@ -36,6 +36,8 @@ _Note: All tools are still in active development with lots of bugs_
 - JWT Token Generator
 - JSON Generator
 - YAML Generator
+- XML Generator
+- Password Generator
 - Text Difference
 - Markdown Preview
 - Text Escape/Unescape
