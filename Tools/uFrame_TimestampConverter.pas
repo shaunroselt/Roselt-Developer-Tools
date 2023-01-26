@@ -136,6 +136,7 @@ begin
   sbSeconds.OnChange := nil;
   sbYear.Value := UnixToDateTime(Trunc(sbUnixTimestamp.Value)).Year;
   sbMonth.Value := UnixToDateTime(Trunc(sbUnixTimestamp.Value)).Month;
+  sbDay.Max := DaysInAMonth(Round(sbYear.Value),Round(sbMonth.Value));
   sbDay.Value := UnixToDateTime(Trunc(sbUnixTimestamp.Value)).Day;
   sbHours.Value := UnixToDateTime(Trunc(sbUnixTimestamp.Value)).Hour;
   sbMinutes.Value := UnixToDateTime(Trunc(sbUnixTimestamp.Value)).Minute;
@@ -151,6 +152,7 @@ end;
 procedure TFrame_TimestampConverter.TimestampChange(Sender: TObject);
 begin
   sbUnixTimestamp.OnChange := nil;
+  sbDay.Max := DaysInAMonth(Round(sbYear.Value),Round(sbMonth.Value));
   sbUnixTimestamp.Value := DateTimeToUnix(
                             EncodeDateTime(
                               Trunc(sbYear.Value),
