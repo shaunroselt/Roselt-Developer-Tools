@@ -16,7 +16,7 @@ implementation
 
 function GenerateRandomName(FullName: Boolean = false): String;
 const
-  FirstNames: array[0..6788] of string = (
+  FirstNames: array[0..6790] of string = (
     'Aaden',
     'Aaliyah',
     'Aarav',
@@ -2670,6 +2670,7 @@ const
     'Gonzalo',
     'Gorden',
     'Gordon',
+    'Gorhin',
     'Gorge',
     'Gottlieb',
     'Governor',
@@ -5839,6 +5840,7 @@ const
     'Shannan',
     'Shannen',
     'Shannon',
+    'Shannondor',
     'Shanon',
     'Shanta',
     'Shante',
@@ -6808,7 +6810,7 @@ const
     'Zula'
   );
 
-  LastNames: array[0..151495] of string = (
+  LastNames: array[0..151497] of string = (
     'Aab',
     'Aaberg',
     'Aaby',
@@ -12770,6 +12772,7 @@ const
     'Badell',
     'Baden',
     'Badenhop',
+    'Badenhorst',
     'Badenoch',
     'Bader',
     'Badertscher',
@@ -59175,6 +59178,7 @@ const
     'Grewell',
     'Grewing',
     'Grey',
+    'Greybe',
     'Greydanus',
     'Greyer',
     'Greyerbiehl',

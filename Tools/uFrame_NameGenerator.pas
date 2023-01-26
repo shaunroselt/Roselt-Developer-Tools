@@ -72,6 +72,12 @@ type
     btnOutputCopyToClipboard: TButton;
     imgOutputCopyToClipboard: TSkSvg;
     lblOutputCopyToClipboard: TLabel;
+    layMaxLength: TRectangle;
+    imgMaxLength: TSkSvg;
+    layMaxLengthTitleDescription: TLayout;
+    lblMaxLengthTitle: TLabel;
+    lblMaxLengthDescription: TLabel;
+    sbMaxLength: TSpinBox;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
     procedure SwitchSurnameSwitch(Sender: TObject);
@@ -105,6 +111,8 @@ begin
   for var I := 1 to Round(sbAmount.Value) do
   begin
     var RandomName := GenerateRandomName(SwitchSurname.IsChecked);
+    while (RandomName.Length > sbMaxLength.Value) do RandomName := GenerateRandomName(SwitchSurname.IsChecked);
+
     if (cbLetterCase.Selected.Text = 'lower') then RandomName := RandomName.ToLower;
     if (cbLetterCase.Selected.Text = 'UPPER') then RandomName := RandomName.ToUpper;
 

@@ -161,6 +161,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Size.Height = 72.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
+      Visible = False
       XRadius = 8.000000000000000000
       YRadius = 8.000000000000000000
       object imgGender: TSkSvg
@@ -197,6 +198,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        OnChange = btnRefreshClick
       end
       object layGenderTitleDescription: TLayout
         Align = Client
@@ -349,19 +351,21 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Svg.OverrideColor = claWhite
         Svg.Source = 
           '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-          'ill="currentColor" class="bi bi-123" viewBox="0 0 16 16">'#13#10'  <pa' +
-          'th d="M2.873 11.297V4.142H1.699L0 5.379v1.137l1.64-1.18h.06v5.96' +
-          '1h1.174Zm3.213-5.09v-.063c0-.618.44-1.169 1.196-1.169.676 0 1.17' +
-          '4.44 1.174 1.106 0 .624-.42 1.101-.807 1.526L4.99 10.553v.744h4.' +
-          '78v-.99H6.643v-.069L8.41 8.252c.65-.724 1.237-1.332 1.237-2.27C9' +
-          '.646 4.849 8.723 4 7.308 4c-1.573 0-2.36 1.064-2.36 2.15v.057h1.' +
-          '138Zm6.559 1.883h.786c.823 0 1.374.481 1.379 1.179.01.707-.55 1.' +
-          '216-1.421 1.21-.77-.005-1.326-.419-1.379-.953h-1.095c.042 1.053.' +
-          '938 1.918 2.464 1.918 1.478 0 2.642-.839 2.62-2.144-.02-1.143-.9' +
-          '22-1.651-1.551-1.714v-.063c.535-.09 1.347-.66 1.326-1.678-.026-1' +
-          '.053-.933-1.855-2.359-1.845-1.5.005-2.317.88-2.348 1.898h1.116c.' +
-          '032-.498.498-.944 1.206-.944.703 0 1.206.435 1.206 1.07.005.64-.' +
-          '504 1.106-1.2 1.106h-.75v.96Z"/>'#13#10'</svg>'
+          'ill="currentColor" class="bi bi-list-ol" viewBox="0 0 16 16">'#13#10' ' +
+          ' <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 ' +
+          '0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0' +
+          ' 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9' +
+          'a.5.5 0 0 1-.5-.5z"/>'#13#10'  <path d="M1.713 11.865v-.474H2c.217 0 .' +
+          '363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.' +
+          '31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.59' +
+          '5.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.' +
+          '8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.' +
+          '254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004' +
+          '-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756' +
+          ' 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957' +
+          '-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 ' +
+          '0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.6' +
+          '29-.443h.635V5z"/>'#13#10'</svg>'
       end
       object layAmountTitleDescription: TLayout
         Align = Client
@@ -401,6 +405,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Size.Width = 117.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
+        OnChange = btnRefreshClick
       end
     end
     object layLetterCase: TRectangle
@@ -485,6 +490,93 @@ object Frame_NameGenerator: TFrame_NameGenerator
           '.058 0 1.319.957 2.18 2.345 2.18 1.06 0 1.716-.43 2.078-1.011zm-' +
           '1.763.035c-.752 0-1.456-.397-1.456-1.244 0-.65.424-1.115 1.408-1' +
           '.115h1.805v.834c0 .896-.752 1.525-1.757 1.525z"/>'#13#10'</svg>'
+      end
+    end
+    object layMaxLength: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 206.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgMaxLength: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-123" viewBox="0 0 16 16">'#13#10'  <pa' +
+          'th d="M2.873 11.297V4.142H1.699L0 5.379v1.137l1.64-1.18h.06v5.96' +
+          '1h1.174Zm3.213-5.09v-.063c0-.618.44-1.169 1.196-1.169.676 0 1.17' +
+          '4.44 1.174 1.106 0 .624-.42 1.101-.807 1.526L4.99 10.553v.744h4.' +
+          '78v-.99H6.643v-.069L8.41 8.252c.65-.724 1.237-1.332 1.237-2.27C9' +
+          '.646 4.849 8.723 4 7.308 4c-1.573 0-2.36 1.064-2.36 2.15v.057h1.' +
+          '138Zm6.559 1.883h.786c.823 0 1.374.481 1.379 1.179.01.707-.55 1.' +
+          '216-1.421 1.21-.77-.005-1.326-.419-1.379-.953h-1.095c.042 1.053.' +
+          '938 1.918 2.464 1.918 1.478 0 2.642-.839 2.62-2.144-.02-1.143-.9' +
+          '22-1.651-1.551-1.714v-.063c.535-.09 1.347-.66 1.326-1.678-.026-1' +
+          '.053-.933-1.855-2.359-1.845-1.5.005-2.317.88-2.348 1.898h1.116c.' +
+          '032-.498.498-.944 1.206-.944.703 0 1.206.435 1.206 1.07.005.64-.' +
+          '504 1.106-1.2 1.106h-.75v.96Z"/>'#13#10'</svg>'
+      end
+      object layMaxLengthTitleDescription: TLayout
+        Align = Client
+        Size.Width = 582.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblMaxLengthTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Max Length'
+          TabOrder = 1
+        end
+        object lblMaxLengthDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select the max length of the name.'
+          TabOrder = 0
+        end
+      end
+      object sbMaxLength: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 2
+        Cursor = crIBeam
+        Min = 6.000000000000000000
+        Value = 100.000000000000000000
+        Position.X = 631.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = btnRefreshClick
       end
     end
   end
