@@ -39,7 +39,8 @@ uses
   Roselt.SystemInformation in 'Roselt.SystemInformation.pas',
   Roselt.NumberBaseConversion in 'Roselt.NumberBaseConversion.pas',
   Roselt.Tools in 'Roselt.Tools.pas',
-  uFrame_JWTTokenGenerator in 'Tools\uFrame_JWTTokenGenerator.pas' {Frame_JWTTokenGenerator: TFrame};
+  uFrame_JWTTokenGenerator in 'Tools\uFrame_JWTTokenGenerator.pas' {Frame_JWTTokenGenerator: TFrame},
+  Roselt.Utility in 'Roselt.Utility.pas';
 
 {$R *.res}
 

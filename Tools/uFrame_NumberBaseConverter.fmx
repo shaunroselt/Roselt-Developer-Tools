@@ -19,7 +19,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
       Size.Width = 760.000000000000000000
       Size.Height = 64.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 5
       object lblHexadecimal: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
@@ -27,13 +27,14 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
-        Text = 'Hexadecimal'
+        Text = 'Hexadecimal (base-16)'
         TabOrder = 0
       end
       object edtHexadecimal: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
+        FilterChar = '0123456789ABCDEFabcdef '
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
@@ -41,6 +42,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         object edtHexadecimalCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
+          Hint = 'Copy Hexadecimal value to Clipboard'
           Size.Width = 30.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
@@ -72,11 +74,11 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
     object layDecimal: TLayout
       Align = Top
       Position.X = 20.000000000000000000
-      Position.Y = 84.000000000000000000
+      Position.Y = 148.000000000000000000
       Size.Width = 760.000000000000000000
       Size.Height = 64.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 4
       object lblDecimal: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
@@ -84,13 +86,14 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
-        Text = 'Decimal'
+        Text = 'Decimal (base-10)'
         TabOrder = 0
       end
       object edtDecimal: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
+        FilterChar = '-0123456789 '
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
@@ -98,6 +101,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         object edtDecimalCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
+          Hint = 'Copy Decimal value to Clipboard'
           Size.Width = 30.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
@@ -129,7 +133,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
     object layOctal: TLayout
       Align = Top
       Position.X = 20.000000000000000000
-      Position.Y = 148.000000000000000000
+      Position.Y = 212.000000000000000000
       Size.Width = 760.000000000000000000
       Size.Height = 64.000000000000000000
       Size.PlatformDefault = False
@@ -141,13 +145,14 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
-        Text = 'Octal'
+        Text = 'Octal (base-8)'
         TabOrder = 0
       end
       object edtOctal: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
+        FilterChar = '0123456789 '
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
@@ -155,6 +160,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         object edtOctalCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
+          Hint = 'Copy Octal value to Clipboard'
           Size.Width = 30.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
@@ -186,7 +192,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
     object layBinary: TLayout
       Align = Top
       Position.X = 20.000000000000000000
-      Position.Y = 212.000000000000000000
+      Position.Y = 276.000000000000000000
       Size.Width = 760.000000000000000000
       Size.Height = 64.000000000000000000
       Size.PlatformDefault = False
@@ -198,13 +204,14 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
-        Text = 'Binary'
+        Text = 'Binary (base-2)'
         TabOrder = 0
       end
       object edtBinary: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
+        FilterChar = '01 '
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
@@ -212,12 +219,72 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         object edtBinaryCopyToClipboard: TEditButton
           CanFocus = False
           Cursor = crHandPoint
+          Hint = 'Copy Binary value to Clipboard'
           Size.Width = 30.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           OnClick = CopyOutputToClipboard
           object imgBinaryCopyToClipboard: TSkSvg
+            Align = Client
+            Margins.Left = 3.000000000000000000
+            Margins.Top = 3.000000000000000000
+            Margins.Right = 3.000000000000000000
+            Margins.Bottom = 3.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+              #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+              ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+              ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+              '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+              '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+              ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+          end
+        end
+      end
+    end
+    object layDuodecimal: TLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 84.000000000000000000
+      Size.Width = 760.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object lblDuodecimal: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 760.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Duodecimal (base-12)'
+        TabOrder = 0
+      end
+      object edtDuodecimal: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        FilterChar = '0123456789ABab'
+        Size.Width = 760.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        OnKeyUp = edtDuodecimalKeyUp
+        object edtDuodecimalCopyToClipboard: TEditButton
+          CanFocus = False
+          Cursor = crHandPoint
+          Hint = 'Copy Duodecimal value to Clipboard'
+          Size.Width = 30.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnClick = CopyOutputToClipboard
+          object imgDuodecimalCopyToClipboard: TSkSvg
             Align = Client
             Margins.Left = 3.000000000000000000
             Margins.Top = 3.000000000000000000

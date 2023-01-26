@@ -21,7 +21,8 @@ uses
   FMX.Layouts,
   Skia,
   Skia.FMX,
-  Roselt.NumberBaseConversion;
+  Roselt.NumberBaseConversion,
+  Roselt.Utility;
 
 type
   TFrame_NumberBaseConverter = class(TFrame)
@@ -55,12 +56,18 @@ type
     imgDecimalCopyToClipboard: TSkSvg;
     imgOctalCopyToClipboard: TSkSvg;
     imgBinaryCopyToClipboard: TSkSvg;
+    layDuodecimal: TLayout;
+    lblDuodecimal: TLabel;
+    edtDuodecimal: TEdit;
+    edtDuodecimalCopyToClipboard: TEditButton;
+    imgDuodecimalCopyToClipboard: TSkSvg;
     procedure CopyOutputToClipboard(Sender: TObject);
     procedure edtHexadecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtDecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtOctalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtBinaryKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure SwitchFormatValuesSwitch(Sender: TObject);
+    procedure edtDuodecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
   private
     { Private declarations }
     procedure FormatValues;
@@ -83,38 +90,88 @@ end;
 procedure TFrame_NumberBaseConverter.edtBinaryKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 begin
-  var BinaryValue := Trim(edtBinary.Text);
+  var BinaryValue := RemoveNonBinaryDigits(edtBinary.Text);
   if (BinaryValue.Length <> 0) then
   begin
-    var DecimalValue := BinaryToDecimal(BinaryValue);
-    var HexValue := DecimalValue.ToHexString;
-    while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
-    var OctalValue := DecimalToOctal(DecimalValue);
+    if (BinaryValue.ToInt64 = 0) then
+    begin
+      edtHexadecimal.Text := '0';
+      edtOctal.Text := '0';
+      edtDecimal.Text := '0';
+      edtDuodecimal.Text := '0';
+    end else
+    begin
+      var DecimalValue := BinaryToDecimal(BinaryValue);
+      var HexValue := DecimalValue.ToHexString;
+      while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
+      var OctalValue := DecimalToOctal(DecimalValue);
+      var DuodecimalValue := DecimalToDuodecimal(DecimalValue);
 
-    edtHexadecimal.Text := HexValue;
-    edtOctal.Text := OctalValue;
-    edtDecimal.Text := DecimalValue.ToString;
+      edtDuodecimal.Text := DuodecimalValue;
+      edtHexadecimal.Text := HexValue;
+      edtOctal.Text := OctalValue;
+      edtDecimal.Text := DecimalValue.ToString;
 
-    FormatValues;
+      FormatValues;
+    end;
   end else
   begin
     edtHexadecimal.Text := '';
     edtOctal.Text := '';
     edtDecimal.Text := '';
+    edtDuodecimal.Text := '';
   end;
 end;
 
 procedure TFrame_NumberBaseConverter.edtDecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 begin
-  var DecimalValue := Trim(edtDecimal.Text);
+  var DecimalValue := RemoveNonDecimalDigits(edtDecimal.Text);
   if (DecimalValue.Length <> 0) then
   begin
-    var HexValue := DecimalValue.ToInt64.ToHexString;
-    while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
-    var OctalValue := DecimalToOctal(DecimalValue.ToInt64);
-    var BinaryValue := DecimalToBinary(DecimalValue.ToInt64);
+    if (DecimalValue.ToInt64 = 0) then
+    begin
+      edtHexadecimal.Text := '0';
+      edtOctal.Text := '0';
+      edtBinary.Text := '0';
+      edtDuodecimal.Text := '0';
+    end else
+    begin
+      var HexValue := DecimalValue.ToInt64.ToHexString;
+      while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
+      var OctalValue := DecimalToOctal(DecimalValue.ToInt64);
+      var BinaryValue := DecimalToBinary(DecimalValue.ToInt64);
+      var DuodecimalValue := DecimalToDuodecimal(DecimalValue.ToInt64);
 
+      edtDuodecimal.Text := DuodecimalValue;
+      edtHexadecimal.Text := HexValue;
+      edtOctal.Text := OctalValue;
+      edtBinary.Text := BinaryValue;
+
+      FormatValues;
+    end;
+  end else
+  begin
+    edtHexadecimal.Text := '';
+    edtOctal.Text := '';
+    edtBinary.Text := '';
+    edtDuodecimal.Text := '0';
+  end;
+end;
+
+procedure TFrame_NumberBaseConverter.edtDuodecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
+  Shift: TShiftState);
+begin
+  var DuodecimalValue := RemoveNonDuodecimalDigits(edtDuodecimal.Text);
+  if (DuodecimalValue.Length <> 0) then
+  begin
+    var DecimalValue := DuodecimalToDecimal(DuodecimalValue);
+    var HexValue := DecimalValue.ToHexString;
+    while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
+    var OctalValue := DecimalToOctal(DecimalValue);
+    var BinaryValue := DecimalToBinary(DecimalValue);
+
+    edtDecimal.Text := DecimalValue.ToString;
     edtHexadecimal.Text := HexValue;
     edtOctal.Text := OctalValue;
     edtBinary.Text := BinaryValue;
@@ -125,19 +182,22 @@ begin
     edtHexadecimal.Text := '';
     edtOctal.Text := '';
     edtBinary.Text := '';
+    edtDecimal.Text := '0';
   end;
 end;
 
 procedure TFrame_NumberBaseConverter.edtHexadecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 begin
-  var HexString := Trim(edtHexadecimal.Text);
+  var HexString := RemoveNonHexadecimalCharacters(edtHexadecimal.Text);
   if (HexString.Length <> 0) then
   begin
     var DecimalValue := HexadecimalToDecimal(HexString);
     var OctalValue := DecimalToOctal(DecimalValue);
     var BinaryValue := DecimalToBinary(DecimalValue);
+    var DuodecimalValue := DecimalToDuodecimal(DecimalValue);
 
+    edtDuodecimal.Text := DuodecimalValue;
     edtDecimal.Text := DecimalValue.ToString;
     edtOctal.Text := OctalValue;
     edtBinary.Text := BinaryValue;
@@ -148,30 +208,43 @@ begin
     edtDecimal.Text := '';
     edtOctal.Text := '';
     edtBinary.Text := '';
+    edtDuodecimal.Text := '';
   end;
 end;
 
 procedure TFrame_NumberBaseConverter.edtOctalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 begin
-  var OctalValue := Trim(edtOctal.Text);
+  var OctalValue := RemoveNonDigits(edtOctal.Text);
   if (OctalValue.Length <> 0) then
   begin
-    var DecimalValue := OctalToDecimal(OctalValue);
-    var HexValue := DecimalValue.ToHexString;
-    while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
-    var BinaryValue := DecimalToBinary(DecimalValue);
+    if (OctalValue.ToInt64 = 0) then
+    begin
+      edtHexadecimal.Text := '0';
+      edtDecimal.Text := '0';
+      edtBinary.Text := '0';
+      edtDuodecimal.Text := '0';
+    end else
+    begin
+      var DecimalValue := OctalToDecimal(OctalValue);
+      var HexValue := DecimalValue.ToHexString;
+      while HexValue[1] = '0' do HexValue := HexValue.Remove(0,1);
+      var BinaryValue := DecimalToBinary(DecimalValue);
+      var DuodecimalValue := DecimalToDuodecimal(DecimalValue);
 
-    edtHexadecimal.Text := HexValue;
-    edtDecimal.Text := DecimalValue.ToString;
-    edtBinary.Text := BinaryValue;
+      edtDuodecimal.Text := DuodecimalValue;
+      edtHexadecimal.Text := HexValue;
+      edtDecimal.Text := DecimalValue.ToString;
+      edtBinary.Text := BinaryValue;
 
-    FormatValues;
+      FormatValues;
+    end;
   end else
   begin
     edtHexadecimal.Text := '';
     edtDecimal.Text := '';
     edtBinary.Text := '';
+    edtDuodecimal.Text := '';
   end;
 end;
 
