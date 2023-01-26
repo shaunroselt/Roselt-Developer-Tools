@@ -54,7 +54,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        OnChange = ConfigChange
+        OnChange = cbConversionChange
       end
       object layConversionTitleDescription: TLayout
         Align = Client

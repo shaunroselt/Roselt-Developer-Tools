@@ -74,6 +74,7 @@ type
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnInputClearClick(Sender: TObject);
     procedure btnInputLoadClick(Sender: TObject);
+    procedure cbConversionChange(Sender: TObject);
   private
     { Private declarations }
     procedure ConvertJsonYaml;
@@ -122,6 +123,18 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memOutput.Text);
+end;
+
+procedure TFrame_JsonYamlConverter.cbConversionChange(Sender: TObject);
+begin
+  memInput.OnChange := nil;
+
+  var TempText := memOutput.Text;
+  memOutput.Text := memInput.Text;
+  memInput.Text := TempText;
+
+  memInput.OnChange := ConfigChange;
+  ConvertJsonYaml();
 end;
 
 procedure TFrame_JsonYamlConverter.ConfigChange(Sender: TObject);
