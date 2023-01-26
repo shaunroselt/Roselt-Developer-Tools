@@ -15,6 +15,8 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   FMX.Memo.Types,
+  FMX.EditBox,
+  FMX.SpinBox,
   FMX.ListBox,
   FMX.Objects,
   FMX.ScrollBox,
@@ -59,11 +61,19 @@ type
     btnOutputRefresh: TButton;
     imgOutputRefresh: TSkSvg;
     lblOutputRefresh: TLabel;
+    layAmount: TRectangle;
+    imgAmount: TSkSvg;
+    layAmountTitleDescription: TLayout;
+    lblAmountTitle: TLabel;
+    lblAmountDescription: TLabel;
+    sbAmount: TSpinBox;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnOutputRefreshClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure GenerateRandomUUID();
   end;
 
 implementation
@@ -76,6 +86,30 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memOutput.Text);
+end;
+
+procedure TFrame_UUIDGenerator.btnOutputRefreshClick(Sender: TObject);
+begin
+  GenerateRandomUUID;
+end;
+
+procedure TFrame_UUIDGenerator.GenerateRandomUUID;
+begin
+  memOutput.Text := '';
+  for var I := 1 to Round(sbAmount.Value) do
+  begin
+    var RandomUUID := TGUID.NewGuid.ToString;
+
+    if (SwitchLetterCase.IsChecked) then
+      RandomUUID := RandomUUID.ToUpper
+    else
+      RandomUUID := RandomUUID.ToLower;
+    if (SwitchHyphens.IsChecked = False) then RandomUUID := RandomUUID.Replace('-','',[rfReplaceAll]);
+
+    RandomUUID := RandomUUID.Replace('{','',[rfReplaceAll]).Replace('}','',[rfReplaceAll]);
+
+    memOutput.Lines.Add(Trim(RandomUUID));
+  end;
 end;
 
 end.

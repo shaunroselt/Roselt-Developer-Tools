@@ -9,7 +9,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 459.000000000000000000
+    Size.Height = 379.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object memTitleOutput: TLabel
@@ -34,7 +34,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -64,7 +64,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnOutputRefresh: TButton
@@ -78,7 +78,8 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Size.Width = 81.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 3
+        TabOrder = 4
+        OnClick = btnOutputRefreshClick
         object imgOutputRefresh: TSkSvg
           Align = Left
           Margins.Left = 5.000000000000000000
@@ -105,21 +106,22 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Refresh'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
     end
     object memOutput: TMemo
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
       DataDetectorTypes = []
+      ReadOnly = True
       TextSettings.WordWrap = True
       Align = Client
       Size.Width = 760.000000000000000000
-      Size.Height = 383.000000000000000000
+      Size.Height = 303.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Viewport.Width = 760.000000000000000000
-      Viewport.Height = 383.000000000000000000
+      Viewport.Width = 756.000000000000000000
+      Viewport.Height = 299.000000000000000000
     end
   end
   object layTop: TLayout
@@ -129,7 +131,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 289.000000000000000000
+    Size.Height = 369.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object lblConfiguration: TLabel
@@ -198,6 +200,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
+        OnSwitch = btnOutputRefreshClick
       end
       object lblSwitchLetterCase: TLabel
         Align = Right
@@ -276,6 +279,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
       end
       object cbUUIDVersion: TComboBox
         Align = Right
+        Enabled = False
         Items.Strings = (
           'v1'
           'v4')
@@ -286,6 +290,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        OnChange = btnOutputRefreshClick
       end
       object layUUIDVersionTitleDescription: TLayout
         Align = Client
@@ -387,6 +392,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
+        OnSwitch = btnOutputRefreshClick
       end
       object lblSwitchHyphens: TLabel
         Align = Right
@@ -401,6 +407,94 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         TextSettings.HorzAlign = Trailing
         Text = 'On'
         TabOrder = 1
+      end
+    end
+    object layAmount: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 284.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgAmount: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-list-ol" viewBox="0 0 16 16">'#13#10' ' +
+          ' <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 ' +
+          '0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0' +
+          ' 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9' +
+          'a.5.5 0 0 1-.5-.5z"/>'#13#10'  <path d="M1.713 11.865v-.474H2c.217 0 .' +
+          '363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.' +
+          '31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.59' +
+          '5.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.' +
+          '8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.' +
+          '254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004' +
+          '-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756' +
+          ' 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957' +
+          '-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 ' +
+          '0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.6' +
+          '29-.443h.635V5z"/>'#13#10'</svg>'
+      end
+      object layAmountTitleDescription: TLayout
+        Align = Client
+        Size.Width = 582.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblAmountTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Amount'
+          TabOrder = 1
+        end
+        object lblAmountDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 582.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select how many names you want'
+          TabOrder = 0
+        end
+      end
+      object sbAmount: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 2
+        Cursor = crIBeam
+        Value = 10.000000000000000000
+        Position.X = 631.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = btnOutputRefreshClick
       end
     end
   end
