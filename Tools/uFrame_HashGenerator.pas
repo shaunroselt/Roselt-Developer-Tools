@@ -8,6 +8,7 @@ uses
   System.UITypes,
   System.Classes,
   System.Variants,
+  System.NetEncoding,
   System.Hash,
   FMX.Types,
   FMX.Graphics,
@@ -108,9 +109,10 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure CopyOutputToClipboard(Sender: TObject);
     procedure memInputChange(Sender: TObject);
-    procedure FrameResize(Sender: TObject);
     procedure cbInputTypeChange(Sender: TObject);
     procedure btnInputClearClick(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
   private
     { Private declarations }
     procedure HashGenerator();
@@ -124,7 +126,18 @@ implementation
 
 procedure TFrame_HashGenerator.btnInputClearClick(Sender: TObject);
 begin
+  memInput.OnChange := nil;
+
   memInput.Text := '';
+  edtHashGeneratorOutputMD5.Text := '';
+  edtHashGeneratorOutputSHA1.Text := '';
+  edtHashGeneratorOutputSHA224.Text := '';
+  edtHashGeneratorOutputSHA256.Text := '';
+  edtHashGeneratorOutputSHA384.Text := '';
+  edtHashGeneratorOutputSHA512.Text := '';
+  OpenDialog.FileName := '';
+
+  memInput.OnChange := memInputChange;
 end;
 
 procedure TFrame_HashGenerator.btnInputCopyToClipboardClick(Sender: TObject);
@@ -133,6 +146,26 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_HashGenerator.btnInputLoadClick(Sender: TObject);
+begin
+  if (cbInputType.Selected.Text = 'Text') then
+  begin
+    OpenDialog.Filter := 'All Files|*|*.txt|*.txt';
+    if (OpenDialog.Execute) then
+    begin
+      memInput.Lines.LoadFromFile(OpenDialog.FileName);
+      HashGenerator();
+    end;
+  end else
+  begin
+    OpenDialog.Filter := '';
+    if (OpenDialog.Execute) then
+    begin
+      HashGenerator();
+    end;
+  end;
 end;
 
 procedure TFrame_HashGenerator.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -162,12 +195,6 @@ end;
 
 procedure TFrame_HashGenerator.cbOutputTypeChange(Sender: TObject);
 begin
-  // Base64 Encoding is not yet implemented
-  if (cbOutputType.Selected.Text = 'Base64') then
-    SwitchLetterCase.Enabled := FALSE
-  else
-    SwitchLetterCase.Enabled := TRUE;
-
   HashGenerator();
 end;
 
@@ -179,7 +206,7 @@ begin
     ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
 end;
 
-procedure TFrame_HashGenerator.FrameResize(Sender: TObject);
+procedure TFrame_HashGenerator.FrameResized(Sender: TObject);
 // Need to improve this in the future
 begin
   if (layInput.Height < 175) then
@@ -196,14 +223,25 @@ end;
 
 procedure TFrame_HashGenerator.HashGenerator;
 begin
-  var TextToHash := memInput.Text;
-  edtHashGeneratorOutputMD5.Text := THashMD5.GetHashString(TextToHash);
-  edtHashGeneratorOutputSHA1.Text := THashSHA1.GetHashString(TextToHash);
-  edtHashGeneratorOutputSHA224.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA224);
-  edtHashGeneratorOutputSHA256.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA256);
-  edtHashGeneratorOutputSHA384.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA384);
-  edtHashGeneratorOutputSHA512.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA512);
-  // Need to add THashSHA2.TSHA2Version.SHA512_224 and THashSHA2.TSHA2Version.SHA512_256
+  if (cbInputType.Selected.Text = 'Text') then
+  begin
+    var TextToHash := memInput.Text;
+    edtHashGeneratorOutputMD5.Text := THashMD5.GetHashString(TextToHash);
+    edtHashGeneratorOutputSHA1.Text := THashSHA1.GetHashString(TextToHash);
+    edtHashGeneratorOutputSHA224.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA224);
+    edtHashGeneratorOutputSHA256.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA256);
+    edtHashGeneratorOutputSHA384.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA384);
+    edtHashGeneratorOutputSHA512.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA512);
+    // Need to add THashSHA2.TSHA2Version.SHA512_224 and THashSHA2.TSHA2Version.SHA512_256
+  end else
+  begin
+    edtHashGeneratorOutputMD5.Text := THashMD5.GetHashStringFromFile(OpenDialog.FileName);
+    edtHashGeneratorOutputSHA1.Text := THashSHA1.GetHashStringFromFile(OpenDialog.FileName);
+    edtHashGeneratorOutputSHA224.Text := THashSHA2.GetHashStringFromFile(OpenDialog.FileName);
+    edtHashGeneratorOutputSHA256.Text := THashSHA2.GetHashStringFromFile(OpenDialog.FileName);
+    edtHashGeneratorOutputSHA384.Text := THashSHA2.GetHashStringFromFile(OpenDialog.FileName);
+    edtHashGeneratorOutputSHA512.Text := THashSHA2.GetHashStringFromFile(OpenDialog.FileName);
+  end;
 
 
 
@@ -218,8 +256,15 @@ begin
   end;
 
 
-  // Need to implement Base64 Encoding
-
+  if (cbOutputType.Selected.Text = 'Base64') then
+  begin
+    edtHashGeneratorOutputMD5.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputMD5.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
+    edtHashGeneratorOutputSHA1.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA1.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
+    edtHashGeneratorOutputSHA224.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA224.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
+    edtHashGeneratorOutputSHA256.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA256.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
+    edtHashGeneratorOutputSHA384.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA384.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
+    edtHashGeneratorOutputSHA512.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA512.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
+  end;
 end;
 
 procedure TFrame_HashGenerator.memInputChange(Sender: TObject);

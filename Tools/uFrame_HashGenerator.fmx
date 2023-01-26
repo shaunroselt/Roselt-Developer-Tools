@@ -2,7 +2,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
   Size.Width = 800.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
+  OnResized = FrameResized
   object layBottom: TVertScrollBox
     Align = Client
     Padding.Left = 20.000000000000000000
@@ -154,6 +154,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
+          OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -245,6 +246,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.PlatformDefault = False
           TabOrder = 74
           Text = 'Browse files'
+          OnClick = btnInputLoadClick
         end
       end
     end
@@ -508,7 +510,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             CanFocus = False
             Cursor = crHandPoint
             Size.Width = 30.000000000000000000
-            Size.Height = 50.000000000000000000
+            Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
             OnClick = CopyOutputToClipboard
@@ -519,7 +521,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
               Margins.Right = 3.000000000000000000
               Margins.Bottom = 3.000000000000000000
               Size.Width = 24.000000000000000000
-              Size.Height = 44.000000000000000000
+              Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -564,7 +566,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             CanFocus = False
             Cursor = crHandPoint
             Size.Width = 30.000000000000000000
-            Size.Height = 50.000000000000000000
+            Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
             OnClick = CopyOutputToClipboard
@@ -575,7 +577,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
               Margins.Right = 3.000000000000000000
               Margins.Bottom = 3.000000000000000000
               Size.Width = 24.000000000000000000
-              Size.Height = 44.000000000000000000
+              Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
