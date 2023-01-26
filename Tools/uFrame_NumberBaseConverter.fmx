@@ -270,7 +270,7 @@ object Frame_NumberBaseConverter: TFrame_NumberBaseConverter
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Client
         TabOrder = 1
-        FilterChar = '0123456789ABab'
+        FilterChar = '0123456789ABab '
         Size.Width = 760.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False

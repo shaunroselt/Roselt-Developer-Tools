@@ -44,12 +44,16 @@ function DecimalToDuodecimal(decimal: Int64): string;
 function DuodecimalToDecimal(duodecimal: String): Int64;
 
 
-function FormatHexadecimal(Value: String; Spaces: Cardinal = 4): String;
+function FormatNumberString(Value: String; Spaces: Cardinal = 4): String;
 
 function RemoveNonDecimalDigits(const S: string): string; // Removes all characters except numbers and negative -
 function RemoveNonDuodecimalDigits(const S: string): string; // Removes all characters except 0123456789ABab
 function RemoveNonHexadecimalCharacters(const S: string): string; // Removes all characters except 0123456789ABCDEFabcdef
 function RemoveNonBinaryDigits(const Value: string): string; // Removes all characters except 0 and 1
+
+
+
+function ConvertNumberBase(const input: string; fromBase, toBase: Integer): string; // One function to rule them all :D
 
 
 implementation
@@ -194,16 +198,17 @@ begin
   Result := decimal;
 end;
 
-function FormatHexadecimal(Value: String; Spaces: Cardinal): String;
+function FormatNumberString(Value: String; Spaces: Cardinal): String;
 begin
   Result := '';
-  for var I := Length(Value) downto 1 do
+  Value := ReverseString(Value);
+  for var I := 1 to Value.Length do
   begin
+    Result := Result + Value[I];
     if (I mod Spaces) = 0 then
       Result := Result + ' ';
-    Result := Result + Value[I];
   end;
-  Result := ReverseString(Result);
+  Result := Trim(ReverseString(Result));
 end;
 
 function RemoveNonDecimalDigits(const S: string): string;
@@ -257,5 +262,34 @@ begin
     end;
   SetLength(Result, LActualLength);
 end;
+
+function ConvertNumberBase(const input: string; fromBase, toBase: Integer): string;
+var
+  num, remainder: Int64;
+begin
+  num := 0;
+  for var i := 1 to input.Length do
+  begin
+    if (Ord(input[i]) >= Ord('0')) and (Ord(input[i]) <= Ord('9')) then
+      num := num * fromBase + (Ord(input[i]) - Ord('0'))
+    else if (Ord(input[i]) >= Ord('A')) and (Ord(input[i]) <= Ord('Z')) then
+      num := num * fromBase + (Ord(input[i]) - Ord('A') + 10)
+    else if (Ord(input[i]) >= Ord('a')) and (Ord(input[i]) <= Ord('z')) then
+      num := num * fromBase + (Ord(input[i]) - Ord('a') + 10);
+  end;
+  result := '';
+  while num > 0 do
+  begin
+    remainder := num mod toBase;
+    if remainder < 10 then
+      result := Chr(remainder + Ord('0')) + result
+    else
+      result := Chr(remainder - 10 + Ord('A')) + result;
+    num := num div toBase;
+  end;
+  if result = '' then
+    result := '0';
+end;
+
 
 end.

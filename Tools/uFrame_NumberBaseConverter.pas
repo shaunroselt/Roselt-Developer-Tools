@@ -70,7 +70,7 @@ type
     procedure edtDuodecimalKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
   private
     { Private declarations }
-    procedure FormatValues;
+    procedure FormatValues(NotToFormat: TEdit = nil);
   public
     { Public declarations }
   end;
@@ -112,7 +112,7 @@ begin
       edtOctal.Text := OctalValue;
       edtDecimal.Text := DecimalValue.ToString;
 
-      FormatValues;
+      FormatValues(TEdit(Sender));
     end;
   end else
   begin
@@ -148,7 +148,7 @@ begin
       edtOctal.Text := OctalValue;
       edtBinary.Text := BinaryValue;
 
-      FormatValues;
+      FormatValues(TEdit(Sender));
     end;
   end else
   begin
@@ -176,7 +176,7 @@ begin
     edtOctal.Text := OctalValue;
     edtBinary.Text := BinaryValue;
 
-    FormatValues;
+    FormatValues(TEdit(Sender));
   end else
   begin
     edtHexadecimal.Text := '';
@@ -202,7 +202,7 @@ begin
     edtOctal.Text := OctalValue;
     edtBinary.Text := BinaryValue;
 
-    FormatValues;
+    FormatValues(TEdit(Sender));
   end else
   begin
     edtDecimal.Text := '';
@@ -237,7 +237,7 @@ begin
       edtDecimal.Text := DecimalValue.ToString;
       edtBinary.Text := BinaryValue;
 
-      FormatValues;
+      FormatValues(TEdit(Sender));
     end;
   end else
   begin
@@ -248,21 +248,15 @@ begin
   end;
 end;
 
-procedure TFrame_NumberBaseConverter.FormatValues;
+procedure TFrame_NumberBaseConverter.FormatValues(NotToFormat: TEdit);
 begin
   if (SwitchFormatValues.IsChecked) then
   begin
-//    var TempString := '';
-//    var TempRemainder := edtHexadecimal.Text.Length mod 4;
-//    for var I := 1 to edtHexadecimal.Text.Length do
-//    begin
-//      TempString := TempString + edtHexadecimal.Text[I];
-//      if (I = TempRemainder) then TempString := TempString + ' ';
-//    end;
-
-    lblHexadecimal.Text := FormatHexadecimal(edtHexadecimal.Text,2);
-    lblDecimal.Text := FormatHexadecimal(edtHexadecimal.Text,4);
-
+    if (NotToFormat <> edtHexadecimal) then edtHexadecimal.Text := FormatNumberString(edtHexadecimal.Text,4);
+    if (NotToFormat <> edtDecimal) then edtDecimal.Text := FormatNumberString(edtDecimal.Text,3);
+    if (NotToFormat <> edtDuodecimal) then edtDuodecimal.Text := FormatNumberString(edtDuodecimal.Text,4);
+    if (NotToFormat <> edtOctal) then edtOctal.Text := FormatNumberString(edtOctal.Text,3);
+    if (NotToFormat <> edtBinary) then edtBinary.Text := FormatNumberString(edtBinary.Text,4);
   end else
   begin
 
