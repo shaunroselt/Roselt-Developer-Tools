@@ -441,8 +441,8 @@ const
       parent: 'Generators';
     ),
     (
-      text_short: 'Case Converter & Inspector';
-      text_long: 'Case Converter & Inspector';
+      text_short: 'Case Converter && Inspector';
+      text_long: 'Case Converter && Inspector';
       name: 'TextCaseConverterInspector';
       description: 'Analyse text and convert it to different cases';
       icon: 'textarea-t';
@@ -537,7 +537,7 @@ const
       description: 'Simulate color blindness on a picture or color';
       icon: 'eye-slash';
       {$IFDEF DEBUG}
-        active: true;
+        active: false;
         visible: true;
       {$ELSE}
         active: false;

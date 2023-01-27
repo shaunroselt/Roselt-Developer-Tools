@@ -56,6 +56,7 @@ object frmMain: TfrmMain
         Size.Height = 37.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        Visible = False
         OnClick = btnToolHelpClick
         object imgToolHelp: TSkSvg
           Align = Client
@@ -96,6 +97,7 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+      Visible = False
       Viewport.Width = 783.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layAllToolsGrid: TFlowLayout
@@ -226,7 +228,7 @@ object frmMain: TfrmMain
     object layTesting: TLayout
       Align = Client
       Size.Width = 799.000000000000000000
-      Size.Height = 750.000000000000000000
+      Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       Visible = False
       TabOrder = 0
@@ -244,11 +246,11 @@ object frmMain: TfrmMain
         DataDetectorTypes = []
         Align = Client
         Size.Width = 799.000000000000000000
-        Size.Height = 633.000000000000000000
+        Size.Height = 634.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         Viewport.Width = 791.000000000000000000
-        Viewport.Height = 625.000000000000000000
+        Viewport.Height = 626.000000000000000000
       end
       object Button14: TButton
         Align = Top
@@ -267,12 +269,11 @@ object frmMain: TfrmMain
       Padding.Right = 20.000000000000000000
       Padding.Bottom = 20.000000000000000000
       Size.Width = 799.000000000000000000
-      Size.Height = 750.000000000000000000
+      Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
-      Visible = False
       Viewport.Width = 799.000000000000000000
-      Viewport.Height = 750.000000000000000000
+      Viewport.Height = 751.000000000000000000
       object layFontFamily: TRectangle
         Align = Top
         Fill.Color = x4B000000
@@ -288,6 +289,7 @@ object frmMain: TfrmMain
         Size.Height = 72.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
+        Visible = False
         XRadius = 8.000000000000000000
         YRadius = 8.000000000000000000
         object cbFontFamily: TComboBox
@@ -442,12 +444,13 @@ object frmMain: TfrmMain
         Padding.Bottom = 12.000000000000000000
         Margins.Bottom = 6.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 362.000000000000000000
+        Position.Y = 284.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
         Size.Height = 72.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
+        Visible = False
         XRadius = 8.000000000000000000
         YRadius = 8.000000000000000000
         object imgLineNumbers: TSkSvg
@@ -625,12 +628,13 @@ object frmMain: TfrmMain
         Padding.Bottom = 12.000000000000000000
         Margins.Bottom = 6.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 284.000000000000000000
+        Position.Y = 206.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
         Size.Height = 72.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
+        Visible = False
         XRadius = 8.000000000000000000
         YRadius = 8.000000000000000000
         object imgWordWrap: TSkSvg
@@ -739,7 +743,7 @@ object frmMain: TfrmMain
         Padding.Bottom = 12.000000000000000000
         Margins.Bottom = 6.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 440.000000000000000000
+        Position.Y = 206.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
         Size.Height = 72.000000000000000000
@@ -5463,7 +5467,7 @@ object frmMain: TfrmMain
           end
         end
       end
-      object Rectangle1: TRectangle
+      object layUsefulLinks: TRectangle
         Align = Top
         Fill.Color = x4B000000
         Padding.Left = 12.000000000000000000
@@ -5472,15 +5476,15 @@ object frmMain: TfrmMain
         Padding.Bottom = 12.000000000000000000
         Margins.Bottom = 6.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 518.000000000000000000
+        Position.Y = 284.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
-        Size.Height = 192.000000000000000000
+        Size.Height = 115.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         XRadius = 8.000000000000000000
         YRadius = 8.000000000000000000
-        object Layout3: TLayout
+        object layUsefulLinksTitle: TLayout
           Align = Top
           Position.X = 12.000000000000000000
           Position.Y = 12.000000000000000000
@@ -5520,14 +5524,17 @@ object frmMain: TfrmMain
             TabOrder = 1
           end
         end
-        object Layout1: TLayout
+        object laySourceCodeLink: TLayout
           Align = Top
+          Cursor = crHandPoint
+          HitTest = True
           Position.X = 12.000000000000000000
           Position.Y = 60.000000000000000000
           Size.Width = 735.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
+          OnClick = laySourceCodeLinkClick
           object Label2: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -5568,13 +5575,14 @@ object frmMain: TfrmMain
               '-8z"/>'#13#10'</svg>'
           end
         end
-        object Layout4: TLayout
+        object layMicrosoftStoreLink: TLayout
           Align = Top
           Position.X = 12.000000000000000000
           Position.Y = 140.000000000000000000
           Size.Width = 735.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
+          Visible = False
           TabOrder = 2
           object Label3: TLabel
             Align = Client
@@ -5608,13 +5616,14 @@ object frmMain: TfrmMain
               ' 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z"/>'#13#10'</svg>'
           end
         end
-        object Layout5: TLayout
+        object laySteamLink: TLayout
           Align = Top
           Position.X = 12.000000000000000000
           Position.Y = 100.000000000000000000
           Size.Width = 735.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
+          Visible = False
           TabOrder = 1
           object Label4: TLabel
             Align = Client

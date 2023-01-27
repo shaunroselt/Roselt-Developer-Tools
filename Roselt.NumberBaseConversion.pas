@@ -24,6 +24,13 @@
   Base 64
 }
 
+{
+  Can use these sites to fact check my results:
+
+  https://calculator.name/baseconvert/decimal/duodecimal/0822004431
+  https://trustconverter.com/en/base-number-conversion/decimal/decimal-to-duodecimal.html
+}
+
 unit Roselt.NumberBaseConversion;
 
 interface
@@ -32,8 +39,8 @@ uses
   System.SysUtils,
   System.StrUtils;
 
-function IntToBin(Value: Cardinal; Digits: Integer): String;
-function IntToOct(invalue: Integer): ShortString;
+function IntToBin(Value: Cardinal; Digits: Integer): String;  // old... need to deprecate
+function IntToOct(Value: Integer): String;  // old... need to deprecate
 
 function HexadecimalToDecimal(Value: String): Int64;
 function DecimalToOctal(Value: Int64): String;
@@ -54,6 +61,7 @@ function RemoveNonBinaryDigits(const Value: string): string; // Removes all char
 
 
 function ConvertNumberBase(const input: string; fromBase, toBase: Integer): string; // One function to rule them all :D
+// Need to properly test ConvertNumberBase() function and see if it works for everything
 
 
 implementation
@@ -75,14 +83,14 @@ begin
   Result := S;
 end;
 
-function IntToOct(invalue: Integer): ShortString;
+function IntToOct(Value: Integer): String;
 const
   tt: array [0 .. 7] of char = ('0', '1', '2', '3', '4', '5', '6', '7');
 var
   tempval: Integer;
 begin
   Result := '';
-  tempval := invalue;
+  tempval := Value;
   if tempval = 0 then
     Result := '0'
   else

@@ -11,6 +11,7 @@ uses
   System.Variants,
   System.UIConsts,
   System.ImageList,
+  System.IOUtils,
   System.Math,
   FMX.Types,
   FMX.Graphics,
@@ -41,27 +42,27 @@ type
     Layout12: TLayout;
     CSColorCodeTitle: TLabel;
     CSColorCode: TEdit;
-    EditButton7: TEditButton;
+    CSColorCodeCopyToClipboard: TEditButton;
     Layout13: TLayout;
     PhotoshopColorCodeTitle: TLabel;
     PhotoshopColorCode: TEdit;
-    EditButton5: TEditButton;
+    PhotoshopColorCodeCopyToClipboard: TEditButton;
     Layout14: TLayout;
     VBColorCodeTitle: TLabel;
     VBColorCode: TEdit;
-    EditButton2: TEditButton;
+    VBColorCodeCopyToClipboard: TEditButton;
     Layout15: TLayout;
     VBHexColorCodeTitle: TLabel;
     VBHexColorCode: TEdit;
-    EditButton10: TEditButton;
+    VBHexColorCodeCopyToClipboard: TEditButton;
     Layout17: TLayout;
     JavaColorPickerTitle: TLabel;
     JavaColorPicker: TEdit;
-    EditButton4: TEditButton;
+    JavaColorPickerCopyToClipboard: TEditButton;
     Layout18: TLayout;
     CPPColorCodeTitle: TLabel;
     CPPColorCode: TEdit;
-    EditButton6: TEditButton;
+    CPPColorCodeCopyToClipboard: TEditButton;
     Line15: TLine;
     Line20: TLine;
     Line25: TLine;
@@ -71,23 +72,23 @@ type
     Layout19: TLayout;
     DelphiVCLColorCodeTitle: TLabel;
     DelphiVCLColorCode: TEdit;
-    EditButton1: TEditButton;
+    DelphiVCLColorCodeCopyToClipboard: TEditButton;
     Layout20: TLayout;
     UnityColorCodeTitle: TLabel;
     UnityColorCode: TEdit;
-    EditButton11: TEditButton;
+    UnityColorCodeCopyToClipboard: TEditButton;
     Layout21: TLayout;
     HTMLColorCodeTitle: TLabel;
     HTMLColorCode: TEdit;
-    EditButton3: TEditButton;
+    HTMLColorCodeCopyToClipboard: TEditButton;
     Layout22: TLayout;
     ClarionColorCodeTitle: TLabel;
     ClarionColorCode: TEdit;
-    EditButton9: TEditButton;
+    ClarionColorCodeCopyToClipboard: TEditButton;
     Layout23: TLayout;
     DelphiFMXColorCodeTitle: TLabel;
     DelphiFMXColorCode: TEdit;
-    EditButton8: TEditButton;
+    DelphiFMXColorCodeCopyToClipboard: TEditButton;
     Line14: TLine;
     Line19: TLine;
     Line21: TLine;
@@ -459,7 +460,10 @@ type
     procedure tbHue_hsvChange(Sender: TObject);
     procedure tbSaturation_hslChange(Sender: TObject);
     procedure tbX_xzyChange(Sender: TObject);
+    procedure CopyColorCodeToClipboard(Sender: TObject);
   private
+    procedure LoadSavedColorsClick(Sender: TObject);
+    procedure CopyColorCode(Sender: TObject);
     { Private declarations }
   public
     { Public declarations }
@@ -478,12 +482,12 @@ implementation
 
 procedure TFrame_ColorPicker.btnAddCustomColorClick(Sender: TObject);
 begin
-//  var StringList := TStringList.Create; // Need to free somewhere
-//  StringList.LoadFromFile(txtSavedColors);
-//
 //  InputQuery('Save Color', ['Give it a name:'], [''],
 //    procedure(const AResult: TModalResult; const AValues: array of string)
 //    begin
+//      var txtSavedColors := System.IOUtils.TPath.Combine(System.IOUtils.TPath.GetDocumentsPath, 'txtSavedColors.txt');
+//      var StringList := TStringList.Create;
+//      StringList.LoadFromFile(txtSavedColors);
 //      if AValues[0] <> '' then
 //      begin
 //        var DummyStr := AValues[0] + '~' + TAlphaColorRec(ColorBox.Color).R.ToString + '-' +
@@ -495,6 +499,7 @@ begin
 //        ShowMessage('Color Successfully Saved!');
 //        LoadSavedColorsClick;
 //      end;
+//      StringList.Free;
 //    end);
 end;
 
@@ -580,6 +585,21 @@ begin
   Layout_cs_hunterlabClick(Self);
   Layout_cs_cielabClick(Self);
   PopulateColorPickerColorRange;
+end;
+
+procedure TFrame_ColorPicker.CopyColorCode(Sender: TObject);
+begin
+
+end;
+
+procedure TFrame_ColorPicker.CopyColorCodeToClipboard(Sender: TObject);
+begin
+  ((Sender as TEditButton).Parent.Parent as TEdit).SelectAll;
+  ((Sender as TEditButton).Parent.Parent as TEdit).CopyToClipboard;
+
+  {$IFDEF ANDROID}
+    ShowMessage(((Sender as TEditButton).Parent.Parent as TEdit).Text + ' copied to clipboard.');
+  {$ENDIF ANDROID}
 end;
 
 procedure TFrame_ColorPicker.FrameResize(Sender: TObject);
@@ -701,6 +721,30 @@ end;
 procedure TFrame_ColorPicker.Layout_cs_yxyClick(Sender: TObject);
 begin
   ColorSpacesExpand(Sender, Layout_cs_yxy_main, cPanel_yxy_Selector, ImageYxy, 3);
+end;
+
+procedure TFrame_ColorPicker.LoadSavedColorsClick(Sender: TObject);
+begin
+//  TabControl1.ActiveTab := TabItem2;
+//  lstboxSavedColors.Clear;
+//  lstboxSavedColorsRGBA.Clear;
+//
+//  AssignFile(txtSavedColorsFile,txtSavedColors);
+//  Reset(txtSavedColorsFile);
+//
+//  while not eof(txtSavedColorsFile) do
+//  begin
+//    ReadLn(txtSavedColorsFile,DummyStr);
+//    lstboxSavedColors.Items.Add(Copy(DummyStr,1,pos('~',DummyStr)-1));
+//    lstboxSavedColorsRGBA.Items.Add(Copy(DummyStr,pos('~',DummyStr)+1,DummyStr.Length));
+//  end;
+//
+//  CloseFile(txtSavedColorsFile);
+//
+//  if (btnPredefinedCustom.Visible) then
+//    btnPredefinedCustomClick(Sender)
+//  else
+//    btnHomeClick(Sender);
 end;
 
 procedure TFrame_ColorPicker.lstboxSavedColorsItemClick(const Sender: TCustomListBox; const Item: TListBoxItem);
@@ -976,13 +1020,13 @@ begin
     HTMLColorCode.Text := 'RGBA(' + R.ToString + ',' + G.ToString + ',' + B.ToString + ',' +
       RoundTo((A / 255), -2).ToString.Replace(',', '.') + ')';
 
-    EditButton1.Visible := FALSE;
-    EditButton6.Visible := FALSE;
-    EditButton4.Visible := FALSE;
-    EditButton10.Visible := FALSE;
-    EditButton2.Visible := FALSE;
-    EditButton5.Visible := FALSE;
-    EditButton9.Visible := FALSE;
+    DelphiVCLColorCodeCopyToClipboard.Visible := FALSE;
+    CPPColorCodeCopyToClipboard.Visible := FALSE;
+    JavaColorPickerCopyToClipboard.Visible := FALSE;
+    VBColorCodeCopyToClipboard.Visible := FALSE;
+    VBHexColorCodeCopyToClipboard.Visible := FALSE;
+    PhotoshopColorCodeCopyToClipboard.Visible := FALSE;
+    ClarionColorCodeCopyToClipboard.Visible := FALSE;
 
     DelphiVCLColorCode.Text := 'DOES NOT SUPPORT "ALPHA" COLOR';
     CPPColorCode.Text := 'DOES NOT SUPPORT "ALPHA" COLOR';
@@ -1012,13 +1056,13 @@ begin
     HTMLColorCode.Text := '#' + HexCode;
     // end;
 
-    EditButton1.Visible := TRUE;
-    EditButton6.Visible := TRUE;
-    EditButton4.Visible := TRUE;
-    EditButton10.Visible := TRUE;
-    EditButton2.Visible := TRUE;
-    EditButton5.Visible := TRUE;
-    EditButton9.Visible := TRUE;
+    DelphiVCLColorCodeCopyToClipboard.Visible := TRUE;
+    CPPColorCodeCopyToClipboard.Visible := TRUE;
+    JavaColorPickerCopyToClipboard.Visible := TRUE;
+    VBColorCodeCopyToClipboard.Visible := TRUE;
+    VBHexColorCodeCopyToClipboard.Visible := TRUE;
+    PhotoshopColorCodeCopyToClipboard.Visible := TRUE;
+    ClarionColorCodeCopyToClipboard.Visible := TRUE;
 
     DelphiVCLColorCode.Font.Size := 16;
     CPPColorCode.Font.Size := 16;

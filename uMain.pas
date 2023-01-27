@@ -35,6 +35,7 @@ uses
   FMX.Printer,
 
   Roselt.Tools,
+  Roselt.Utility,
 
   uStyles,
   uBootstrapIcons,
@@ -155,17 +156,17 @@ type
     lblAppInfoDescription: TLabel;
     btnAppInfoCopyToClipboard: TButton;
     imgAppInfoCopyToClipboard: TSkSvg;
-    Rectangle1: TRectangle;
-    Layout3: TLayout;
+    layUsefulLinks: TRectangle;
+    layUsefulLinksTitle: TLayout;
     Image1: TSkSvg;
     Label1: TLabel;
-    Layout1: TLayout;
+    laySourceCodeLink: TLayout;
     Label2: TLabel;
     Image2: TSkSvg;
-    Layout4: TLayout;
+    layMicrosoftStoreLink: TLayout;
     Label3: TLabel;
     Image3: TSkSvg;
-    Layout5: TLayout;
+    laySteamLink: TLayout;
     Label4: TLabel;
     Image5: TSkSvg;
     Button14: TButton;
@@ -194,6 +195,7 @@ type
     procedure AllToolsButtonClick(Sender: TObject);
     procedure edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtSearchAllToolsChange(Sender: TObject);
+    procedure laySourceCodeLinkClick(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -647,6 +649,11 @@ begin
   var CompiledDate := Date.ToString;
 
   Result := Version + ' | ' + Architecture + ' | ' + BuildType + ' | ' + CompiledDate;
+end;
+
+procedure TfrmMain.laySourceCodeLinkClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools');
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);

@@ -41,7 +41,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -71,7 +71,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputPasteFromClipboard: TButton
@@ -85,7 +85,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 5
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -118,7 +118,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputLoad: TButton
@@ -132,7 +132,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 6
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -159,7 +159,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputClear: TButton
@@ -173,7 +173,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -201,7 +201,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -216,8 +216,8 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 756.000000000000000000
-        Viewport.Height = 205.000000000000000000
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 209.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
           Left = 400
@@ -253,7 +253,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -283,7 +283,7 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -297,8 +297,8 @@ object Frame_Base64TextEncoderDecoder: TFrame_Base64TextEncoderDecoder
         Size.Height = 214.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 756.000000000000000000
-        Viewport.Height = 210.000000000000000000
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 214.000000000000000000
       end
     end
   end
