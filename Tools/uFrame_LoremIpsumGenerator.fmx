@@ -228,8 +228,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           'Paragraphs'
           'Sentences'
           'Words'
-          'Lists'
-          'Bytes')
+          'Lists')
         ItemIndex = 0
         Position.X = 631.000000000000000000
         Position.Y = 12.000000000000000000
@@ -349,8 +348,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           'Regular'
           'lower'
           'UPPER'
-          'Title'
-          'Sentence')
+          'Title')
         ItemIndex = 0
         Position.X = 631.000000000000000000
         Position.Y = 12.000000000000000000

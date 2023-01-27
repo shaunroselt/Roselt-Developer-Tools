@@ -87,8 +87,21 @@ begin
 end;
 
 procedure TFrame_LoremIpsumGenerator.GenerateRandomLoremIpsum;
+var
+  LoremIpsumType: TLoremIpsumType;
+  LoremIpsumCase: TLoremIpsumCase;
 begin
-  memOutput.Text := GenerateLoremIpsum(TLoremIpsumType.Paragraphs, 1);
+  if (cbType.Selected.Text = 'Paragraphs') then LoremIpsumType := TLoremIpsumType.Paragraphs;
+  if (cbType.Selected.Text = 'Sentences') then LoremIpsumType := TLoremIpsumType.Sentences;
+  if (cbType.Selected.Text = 'Words') then LoremIpsumType := TLoremIpsumType.Words;
+  if (cbType.Selected.Text = 'Lists') then LoremIpsumType := TLoremIpsumType.Lists;
+
+  if (cbLetterCase.Selected.Text = 'Regular') then LoremIpsumCase := TLoremIpsumCase.Regular;
+  if (cbLetterCase.Selected.Text = 'lower') then LoremIpsumCase := TLoremIpsumCase.Lower;
+  if (cbLetterCase.Selected.Text = 'UPPER') then LoremIpsumCase := TLoremIpsumCase.Upper;
+  if (cbLetterCase.Selected.Text = 'Title') then LoremIpsumCase := TLoremIpsumCase.Title;
+
+  memOutput.Text := GenerateLoremIpsum(LoremIpsumType, LoremIpsumCase, Round(sbAmount.Value));
 end;
 
 end.
