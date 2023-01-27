@@ -1,6 +1,11 @@
-# Roselt Developer Tools
+<p align="center">
+  <img width="160" align="center" src="/Assets/Logo.png">
+</p>
+<h1 align="center">
+  Roselt Developer Tools
+</h1>
 
-Cross-Platform Utilities App for Developers
+Cross-Platform Utilities App for Developers.
 
 _Note: All tools are still in active development with lots of bugs_
 
