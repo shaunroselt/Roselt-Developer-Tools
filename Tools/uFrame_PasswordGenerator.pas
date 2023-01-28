@@ -17,6 +17,7 @@ TFrame_PasswordGenerator = class(TFrame)
     SpecialSwitch: TSwitch;
     cbLetterCase: TComboBox;
     procedure btnRefreshClick(Sender: TObject);
+    procedure btnOutputCopyToClipboardClick(Sender: TObject);
 public
 constructor Create(AOwner: TComponent); override;
 function GeneratePassword(len: Integer): string;
@@ -25,6 +26,12 @@ end;
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_PasswordGenerator.btnOutputCopyToClipboardClick(
+  Sender: TObject);
+begin
+Memo1.CopyToClipboard;
+end;
 
 procedure TFrame_PasswordGenerator.btnRefreshClick(Sender: TObject);
 var
