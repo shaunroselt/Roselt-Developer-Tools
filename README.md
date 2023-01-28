@@ -25,6 +25,7 @@ _Note: All tools are still in active development with lots of bugs_
 - UUID Generator
 - Text Case Converter & Inspector
 - Color Picker
+- Password Generator
 
 
 ## Planned Tools
@@ -45,7 +46,6 @@ _Note: All tools are still in active development with lots of bugs_
 - JSON Generator
 - YAML Generator
 - XML Generator
-- Password Generator
 - Text Difference
 - Markdown Preview
 - Text Escape/Unescape
