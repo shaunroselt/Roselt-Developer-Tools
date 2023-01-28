@@ -252,7 +252,7 @@ const
       description: 'Decode a JWT header, payload and signature';
       icon: 'gear-wide';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
