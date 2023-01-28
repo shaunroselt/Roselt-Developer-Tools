@@ -93,7 +93,7 @@ begin
   var BinaryValue := RemoveNonBinaryDigits(edtBinary.Text);
   if (BinaryValue.Length <> 0) then
   begin
-    if (BinaryValue.Replace('0','',[rfReplaceAll]).Length = 0) then
+    if (BinaryValue.ToInt64 = 0) then
     begin
       edtHexadecimal.Text := '0';
       edtOctal.Text := '0';

@@ -479,7 +479,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         Svg.OverrideColor = claWhite
-        Svg.Source = 
+        Svg.Source =
           '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
           'ill="currentColor" class="bi bi-type" viewBox="0 0 16 16">'#13#10'  <p' +
           'ath d="m2.244 13.081.943-2.803H6.66l.944 2.803H8.86L5.54 3.75H4.' +

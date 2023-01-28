@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..36] of TRoseltTools = (
+  RoseltToolsArray: array[0..37] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -380,6 +380,24 @@ const
       {$ENDIF}
       parent: 'Generators';
     ),
+
+    //Password Generator
+    (
+      text_short: 'Password';
+      text_long: 'Password Generator';
+      name: 'PasswordGenerator';
+      description: 'Generates Passwords';
+      icon: 'key';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Generators';
+    ),
+
     (
       text_short: 'UUID';
       text_long: 'UUID Generator';
