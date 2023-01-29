@@ -9,7 +9,8 @@ unit uFrame_NameGenerator;
 interface
 
 uses
-  System.SysUtils,System.Types,
+  System.SysUtils,
+  System.Types,
   System.UITypes,
   System.Classes,
   System.Variants,
@@ -30,7 +31,9 @@ uses
   FMX.Platform,
   FMX.EditBox,
   FMX.SpinBox,
+
   Roselt.NameGenerator,
+
   Skia,
   Skia.FMX;
 

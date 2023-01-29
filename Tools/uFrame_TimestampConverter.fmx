@@ -3,22 +3,23 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
   Padding.Top = 20.000000000000000000
   Padding.Right = 20.000000000000000000
   Padding.Bottom = 20.000000000000000000
-  Size.Width = 800.000000000000000000
+  Size.Width = 790.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   OnResized = FrameResized
   object layUnixTimestamp: TLayout
     Align = Top
+    Margins.Bottom = 20.000000000000000000
     Position.X = 20.000000000000000000
-    Position.Y = 20.000000000000000000
-    Size.Width = 760.000000000000000000
+    Position.Y = 372.000000000000000000
+    Size.Width = 750.000000000000000000
     Size.Height = 64.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object lblUnixTimestamp: TLabel
       Align = Top
       StyledSettings = [Family, Style, FontColor]
-      Size.Width = 760.000000000000000000
+      Size.Width = 750.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
@@ -30,12 +31,12 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Margins.Top = 1.000000000000000000
         Margins.Right = 1.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 689.000000000000000000
+        Position.X = 679.000000000000000000
         Position.Y = 1.000000000000000000
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 3
+        TabOrder = 4
         OnClick = btnInputClearClick
         object imgInputClear: TSkSvg
           Align = Left
@@ -63,7 +64,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Clear'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnInputCopyToClipboard: TButton
@@ -72,12 +73,12 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Margins.Top = 1.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 615.000000000000000000
+        Position.X = 605.000000000000000000
         Position.Y = 1.000000000000000000
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         OnClick = btnInputCopyToClipboardClick
         object imgInputCopyToClipboard: TSkSvg
           Align = Left
@@ -107,7 +108,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnNow: TButton
@@ -116,12 +117,12 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Margins.Top = 1.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 467.000000000000000000
+        Position.X = 457.000000000000000000
         Position.Y = 1.000000000000000000
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
+        TabOrder = 6
         OnClick = btnNowClick
         object imgNow: TSkSvg
           Align = Left
@@ -148,7 +149,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Now'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnInputPasteFromClipboard: TButton
@@ -157,12 +158,12 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Margins.Top = 1.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 541.000000000000000000
+        Position.X = 531.000000000000000000
         Position.Y = 1.000000000000000000
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 6
+        TabOrder = 7
         OnClick = btnInputPasteFromClipboardClick
         object imgInputPasteFromClipboard: TSkSvg
           Align = Left
@@ -195,7 +196,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Paste'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
     end
@@ -205,7 +206,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
       TabOrder = 1
       Cursor = crIBeam
       Max = 1E22
-      Size.Width = 760.000000000000000000
+      Size.Width = 750.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       OnChange = sbUnixTimestampChange
@@ -216,8 +217,8 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
     ItemHeight = 64.000000000000000000
     ItemWidth = 250.000000000000000000
     Orientation = Horizontal
-    Size.Width = 760.000000000000000000
-    Size.Height = 644.000000000000000000
+    Size.Width = 750.000000000000000000
+    Size.Height = 272.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object layYear: TLayout
@@ -393,6 +394,76 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Size.PlatformDefault = False
         OnChange = TimestampChange
       end
+    end
+  end
+  object Layout1: TLayout
+    Align = MostTop
+    Position.X = 20.000000000000000000
+    Position.Y = 20.000000000000000000
+    Size.Width = 750.000000000000000000
+    Size.Height = 352.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object Label1: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 750.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Calendar'
+      TabOrder = 0
+      object Button1: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 679.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClick = btnNowClick
+        object SkSvg1: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">'#13#10'  <' +
+            'path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0' +
+            ' 0 0 .496-.868L8 8.71V3.5z"/>'#13#10'  <path d="M8 16A8 8 0 1 0 8 0a8 ' +
+            '8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>'#13#10'</svg>'
+        end
+        object Label2: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Now'
+          TabOrder = 5
+        end
+      end
+    end
+    object Calendar: TCalendar
+      Align = Client
+      Date = 44955.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Size.Width = 750.000000000000000000
+      Size.Height = 296.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = CalendarChange
     end
   end
 end
