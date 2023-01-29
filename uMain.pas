@@ -66,6 +66,7 @@ uses
   uFrame_MarkdownPreview,
   uFrame_RegexTester,
   uFrame_NameGenerator,
+  uFrame_PasswordGenerator,
 
   Skia,
   Skia.FMX;
@@ -97,7 +98,6 @@ type
     lblSettings: TLabel;
     layNavTestingMore: TLayout;
     layNavTestingMoreExpandCollapse: TLayout;
-    btnTestingMoreExpandCollapse: TRectangle;
     imgTestingMoreMoreExpandCollapse: TSkSvg;
     lblTestingMoreExpandCollapse: TLabel;
     imgConvertersExpandCollapseIcon: TSkSvg;
@@ -115,7 +115,6 @@ type
     lblTesting2: TLabel;
     SplitterNavContent: TSplitter;
     btnToolHelp: TButton;
-    laySettings: TScrollBox;
     layFontFamily: TRectangle;
     cbFontFamily: TComboBox;
     imgFontFamily: TSkSvg;
@@ -603,6 +602,7 @@ begin
   CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
   CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
   CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
+  CreateToolFrame(TFrame_PasswordGenerator.Create(Self), 'layPasswordGenerator');
 
 
   // Load Themes (Settings)

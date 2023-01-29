@@ -25,12 +25,13 @@ _Note: All tools are still in active development with lots of bugs_
 - UUID Generator
 - Text Case Converter & Inspector
 - Color Picker
+- Password Generator
+- JWT Decoder
 
 
 ## Planned Tools
 - JSON <> XML Converter
 - JSON <> MsgPack Converter
-- JWT Decoder
 - GZip Encoder/Decoder
 - Base64 Image Encoder/Decoder
 - JSON Formatter
@@ -45,7 +46,6 @@ _Note: All tools are still in active development with lots of bugs_
 - JSON Generator
 - YAML Generator
 - XML Generator
-- Password Generator
 - Text Difference
 - Markdown Preview
 - Text Escape/Unescape

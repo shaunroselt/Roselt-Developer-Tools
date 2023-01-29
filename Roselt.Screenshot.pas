@@ -144,7 +144,7 @@ const
 
 function PutBytesCallback(Stream: TStream; NewBytes: Pointer; Count: LongInt): LongInt; cdecl;
 begin
-  Result := Stream.Write(NewBytes^, Count);
+  //Result := Stream.Write(NewBytes^, Count);
 end;
 
 procedure ReleaseConsumerCallback(Dummy: Pointer); cdecl;
@@ -160,29 +160,29 @@ var
   ImageDest: CGImageDestinationRef;
   TypeCF: CFStringRef;
 begin
-  Callbacks.putBytes := @PutBytesCallback;
-  Callbacks.releaseConsumer := ReleaseConsumerCallback;
-  ImageDest := nil;
-  TypeCF := nil;
-  Consumer := CGDataConsumerCreate(AStream, @Callbacks);
-  if Consumer = nil then
-    RaiseLastOSError;
-  try
-    TypeCF := CFStringCreateWithCharactersNoCopy(nil, PChar(AType), Length(AType), kCFAllocatorNull);
-    // wrap the Delphi string in a CFString shell
-    ImageDest := CGImageDestinationCreateWithDataConsumer(Consumer, TypeCF, 1, AOptions);
-    if ImageDest = nil then
-      RaiseLastOSError;
-    CGImageDestinationAddImage(ImageDest, AImage, nil);
-    if CGImageDestinationFinalize(ImageDest) = 0 then
-      RaiseLastOSError;
-  finally
-    if ImageDest <> nil then
-      CFRelease(ImageDest);
-    if TypeCF <> nil then
-      CFRelease(TypeCF);
-    CGDataConsumerRelease(Consumer);
-  end;
+//  Callbacks.putBytes := @PutBytesCallback;
+//  Callbacks.releaseConsumer := ReleaseConsumerCallback;
+//  ImageDest := nil;
+//  TypeCF := nil;
+//  Consumer := CGDataConsumerCreate(AStream, @Callbacks);
+//  if Consumer = nil then
+//    RaiseLastOSError;
+//  try
+//    TypeCF := CFStringCreateWithCharactersNoCopy(nil, PChar(AType), Length(AType), kCFAllocatorNull);
+//    // wrap the Delphi string in a CFString shell
+//    ImageDest := CGImageDestinationCreateWithDataConsumer(Consumer, TypeCF, 1, AOptions);
+//    if ImageDest = nil then
+//      RaiseLastOSError;
+//    CGImageDestinationAddImage(ImageDest, AImage, nil);
+//    if CGImageDestinationFinalize(ImageDest) = 0 then
+//      RaiseLastOSError;
+//  finally
+//    if ImageDest <> nil then
+//      CFRelease(ImageDest);
+//    if TypeCF <> nil then
+//      CFRelease(TypeCF);
+//    CGDataConsumerRelease(Consumer);
+//  end;
 end;
 
 procedure TakeScreenshot(Dest: TBitmap);
@@ -190,20 +190,20 @@ var
   Screenshot: CGImageRef;
   Stream: TMemoryStream;
 begin
-  Stream := nil;
-  Screenshot := CGWindowListCreateImage(CGRectInfinite, kCGWindowListOptionOnScreenOnly, kCGNullWindowID,
-    kCGWindowImageDefault);
-  if Screenshot = nil then
-    RaiseLastOSError;
-  try
-    Stream := TMemoryStream.Create;
-    WriteCGImageToStream(Screenshot, Stream);
-    Stream.Position := 0;
-    Dest.LoadFromStream(Stream);
-  finally
-    CGImageRelease(Screenshot);
-    Stream.Free;
-  end;
+//  Stream := nil;
+//  Screenshot := CGWindowListCreateImage(CGRectInfinite, kCGWindowListOptionOnScreenOnly, kCGNullWindowID,
+//    kCGWindowImageDefault);
+//  if Screenshot = nil then
+//    RaiseLastOSError;
+//  try
+//    Stream := TMemoryStream.Create;
+//    WriteCGImageToStream(Screenshot, Stream);
+//    Stream.Position := 0;
+//    Dest.LoadFromStream(Stream);
+//  finally
+//    CGImageRelease(Screenshot);
+//    Stream.Free;
+//  end;
 end;
 
 procedure TakeWindowShot(h: TWindowHandle; Dest: FMX.Graphics.TBitmap);
@@ -211,21 +211,21 @@ var
   Screenshot: CGImageRef;
   Stream: TMemoryStream;
 begin
-  Stream := nil;
-  // todo: window handle if logic
-  Screenshot := CGWindowListCreateImage(CGRectInfinite, kCGWindowListOptionOnScreenOnly, kCGNullWindowID,
-    kCGWindowImageDefault);
-  if Screenshot = nil then
-    RaiseLastOSError;
-  try
-    Stream := TMemoryStream.Create;
-    WriteCGImageToStream(Screenshot, Stream);
-    Stream.Position := 0;
-    Dest.LoadFromStream(Stream);
-  finally
-    CGImageRelease(Screenshot);
-    Stream.Free;
-  end;
+//  Stream := nil;
+//  // todo: window handle if logic
+//  Screenshot := CGWindowListCreateImage(CGRectInfinite, kCGWindowListOptionOnScreenOnly, kCGNullWindowID,
+//    kCGWindowImageDefault);
+//  if Screenshot = nil then
+//    RaiseLastOSError;
+//  try
+//    Stream := TMemoryStream.Create;
+//    WriteCGImageToStream(Screenshot, Stream);
+//    Stream.Position := 0;
+//    Dest.LoadFromStream(Stream);
+//  finally
+//    CGImageRelease(Screenshot);
+//    Stream.Free;
+//  end;
 end;
 
 {$ENDIF MACOS}
