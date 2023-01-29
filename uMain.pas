@@ -705,7 +705,14 @@ end;
 
 procedure TfrmMain.AllToolsButtonClick(Sender: TObject);
 begin
-  SelectTool('lay' + TButton(Sender).TagString);
+  var ToolButton := TButton(Sender);
+  for var I in ToolButton.Children do
+    if String(I.Name).Contains('btnAllToolsTitle') then
+    begin
+      lblNavTitle.Text := TLabel(I).Text;
+      break;
+    end;
+  SelectTool('lay' + ToolButton.TagString);
 end;
 
 procedure TfrmMain.AllToolsSearch();
