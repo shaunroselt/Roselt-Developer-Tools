@@ -97,7 +97,6 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Visible = False
       Viewport.Width = 783.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layAllToolsGrid: TFlowLayout
@@ -272,6 +271,7 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
+      Visible = False
       Viewport.Width = 799.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layFontFamily: TRectangle
