@@ -23,7 +23,11 @@ uses
   FMX.Layouts,
   FMX.Objects,
   Skia,
-  Skia.FMX;
+  Skia.FMX,
+  IdGlobal,
+  IdHMAC,
+  IdCoderMIME,
+  Fmx.Clipboard;
 
 type
   TFrame_JWTDecoder = class(TFrame)
@@ -56,9 +60,14 @@ type
     btnInputClear: TButton;
     imgInputClear: TSkSvg;
     lblInputClear: TLabel;
-    OpenDialog: TOpenDialog;
-    procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    btnDecode: TButton;
+
+    procedure btnDecodeClick(Sender: TObject);
+    function DecodeJWT(const JWT : string) : TStringList;
+    procedure btnInputClearClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnHeaderCopyToClipboardClick(Sender: TObject);
     procedure btnPayloadCopyToClipboardClick(Sender: TObject);
   private
@@ -71,36 +80,102 @@ implementation
 
 {$R *.fmx}
 
-procedure TFrame_JWTDecoder.btnHeaderCopyToClipboardClick(Sender: TObject);
+function TFrame_JWTDecoder.DecodeJWT(const JWT: string): TStringList;
 var
-  ClipboardService: IFMXClipboardService;
+  Header, Payload, Signature: string;
+  SplitPos: Integer;
+  JWTTemp:string;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memHeader.Text);
+  Result := TStringList.Create;
+  JWTTemp:=JWT;
+  SplitPos := Pos('.', JWTTemp);
+  Header := JWTTemp.Substring(0, SplitPos - 1);
+  Delete(JWTTemp, 1, SplitPos);
+  SplitPos := Pos('.', JWTTemp);
+  Payload := JWTTemp.Substring(0, SplitPos - 1);
+  Signature := JWTTemp.Substring(SplitPos, Length(JWTTemp));
+  Result.AddPair('header', TIdDecoderMIME.DecodeString(Header));
+  Result.AddPair('payload', TIdDecoderMIME.DecodeString(Payload));
+  Result.AddPair('signature', TIdDecoderMIME.DecodeString(Signature));
+
+
 end;
 
+
+procedure TFrame_JWTDecoder.btnDecodeClick(Sender: TObject);
+var
+  JWT : string;
+  JWTResult : TStringList;
+begin
+  JWT := memJWTToken.Text;
+  JWTResult:= DecodeJWT(JWT);
+  memHeader.Text := JWTResult.Values['header'];
+  memPayload.Text := JWTResult.Values['payload'];
+
+end;
+
+
+
+
+
+
+procedure TFrame_JWTDecoder.btnHeaderCopyToClipboardClick(Sender: TObject);
+var
+ClipboardService: IFMXClipboardService;
+begin
+if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
+begin
+ClipboardService.SetClipboard(memHeader.Lines.Text);
+end;
+end;
+
+procedure TFrame_JWTDecoder.btnInputClearClick(Sender: TObject);
+begin
+memJWTToken.Text := '';
+end;
 procedure TFrame_JWTDecoder.btnInputCopyToClipboardClick(Sender: TObject);
 var
-  ClipboardService: IFMXClipboardService;
+ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memJWTToken.Text);
+if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
+begin
+ClipboardService.SetClipboard(memJWTToken.Lines.Text);
+end;
+end;
+
+procedure TFrame_JWTDecoder.btnInputLoadClick(Sender: TObject);
+var
+  OpenDialog: TOpenDialog;
+begin
+  OpenDialog := TOpenDialog.Create(nil);
+  try
+    if OpenDialog.Execute then
+    begin
+      memJWTToken.Lines.LoadFromFile(OpenDialog.FileName);
+    end;
+  finally
+    OpenDialog.Free;
+  end;
 end;
 
 procedure TFrame_JWTDecoder.btnInputPasteFromClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    memJWTToken.Text := ClipboardService.GetClipboard.ToString;
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
+  begin
+    memJWTToken.Lines.Text := ClipboardService.GetClipboard.AsString;
+  end;
 end;
 
 procedure TFrame_JWTDecoder.btnPayloadCopyToClipboardClick(Sender: TObject);
 var
-  ClipboardService: IFMXClipboardService;
+ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memPayload.Text);
+if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
+begin
+ClipboardService.SetClipboard(memPayload.Lines.Text);
+end;
 end;
 
 end.
