@@ -28,8 +28,13 @@ uses
   FMX.ImgList,
   FMX.Edit,
   FMX.Controls.Presentation,
+
+  Roselt.Screenshot,
   Roselt.ColorConversion,
-  Roselt.NumberBaseConversion;
+  Roselt.NumberBaseConversion,
+
+  Skia,
+  Skia.FMX;
 
 type
   TFrame_ColorPicker = class(TFrame)
@@ -441,6 +446,8 @@ type
     Splitter3: TSplitter;
     Splitter2: TSplitter;
     ImageList1: TImageList;
+    btnEyeDropper: TButton;
+    imgEyeDropper: TSkSvg;
     procedure ColorPanelChange(Sender: TObject);
     procedure ColorRangeClick(Sender: TObject);
     procedure ColorListBox1ItemClick(const Sender: TCustomListBox; const Item: TListBoxItem);
@@ -454,16 +461,21 @@ type
     procedure Layout_cs_xyzClick(Sender: TObject);
     procedure Layout_cs_yxyClick(Sender: TObject);
     procedure Layout_cs_hunterlabClick(Sender: TObject);
-    procedure FrameResize(Sender: TObject);
     procedure tbRedChange(Sender: TObject);
     procedure tbCyan_cmykChange(Sender: TObject);
     procedure tbHue_hsvChange(Sender: TObject);
     procedure tbSaturation_hslChange(Sender: TObject);
     procedure tbX_xzyChange(Sender: TObject);
     procedure CopyColorCodeToClipboard(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
+    procedure btnEyeDropperClick(Sender: TObject);
   private
+    cLastEyeDropperColor: TAlphaColor;
+
     procedure LoadSavedColorsClick(Sender: TObject);
     procedure CopyColorCode(Sender: TObject);
+    procedure frmImageClick(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+    procedure frmImageMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
     { Private declarations }
   public
     { Public declarations }
@@ -472,6 +484,8 @@ type
     procedure UpdateColorPickerSelectors;
     procedure WriteColorPickerCodes;
     procedure ColorSpacesExpand(Sender: TObject; MainLayout: TLayout; SelectorLayout: TCalloutPanel; ExpandImage: TImage; SelectorCount: Byte);
+
+    property LastEyeDropperColor: TAlphaColor read cLastEyeDropperColor write cLastEyeDropperColor;
   end;
 
 implementation
@@ -501,6 +515,56 @@ begin
 //      end;
 //      StringList.Free;
 //    end);
+end;
+
+procedure TFrame_ColorPicker.frmImageMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
+begin
+  TForm(TImage(Sender).Parent).Caption := Format('Select Color (X: %n | Y: %n)',[X,Y]);
+end;
+
+procedure TFrame_ColorPicker.frmImageClick(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+var
+  BitmapData: TBitmapData;
+begin
+  TImage(Sender).Bitmap.Map(TMapAccess.Read, BitmapData);
+  try
+    LastEyeDropperColor := BitmapData.GetPixel(Round(X), Round(Y));
+  finally
+    TImage(Sender).Bitmap.Unmap(BitmapData);
+    TForm(TImage(Sender).Parent).ModalResult := mrOk;
+  end;
+end;
+
+procedure TFrame_ColorPicker.btnEyeDropperClick(Sender: TObject);
+begin
+  var bm := TBitmap.Create;
+  TakeScreenshot(bm);
+
+  var frmImageColor := TForm.CreateNew(Self);
+  frmImageColor.Caption := 'Select Color';
+  frmImageColor.BorderStyle := TFMXFormBorderStyle.ToolWindow;
+  frmImageColor.WindowState := TWindowState.wsMaximized;
+
+  var frmImage := TImage.Create(frmImageColor);
+  frmImage.Parent := frmImageColor;
+  frmImage.Align := TAlignLayout.Client;
+  frmImage.WrapMode := TImageWrapMode.Original;
+  frmImage.Cursor := crCross;
+  frmImage.OnMouseDown := frmImageClick;
+  frmImage.OnMouseMove := frmImageMouseMove;
+  frmImage.Bitmap.Assign(bm);
+  bm.Free;
+  bm := nil;
+
+  try
+    if (frmImageColor.ShowModal = mrOk) then
+    begin
+      ColorPanel.Color := LastEyeDropperColor;
+    end;
+  finally
+    FreeAndNil(frmImage);
+    FreeAndNil(frmImageColor);
+  end;
 end;
 
 procedure TFrame_ColorPicker.ColorListBox1ItemClick(const Sender: TCustomListBox; const Item: TListBoxItem);
@@ -602,7 +666,7 @@ begin
   {$ENDIF ANDROID}
 end;
 
-procedure TFrame_ColorPicker.FrameResize(Sender: TObject);
+procedure TFrame_ColorPicker.FrameResized(Sender: TObject);
 begin
   ColorRange1.Width := Round(ColorTabControl.Width / 95);
   for var i := 2 to 101 do
