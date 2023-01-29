@@ -3,11 +3,30 @@ unit uFrame_PasswordGenerator;
 interface
 
 uses
-System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-FMX.Memo.Types, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Memo, Skia,
-  FMX.Edit, FMX.EditBox, FMX.SpinBox, FMX.ListBox, FMX.Objects, Skia.FMX,
-  FMX.Layouts;
+    System.SysUtils, 
+    System.Types, 
+    System.UITypes, 
+    System.Classes, 
+    System.Variants,
+    FMX.Types, 
+    FMX.Graphics, 
+    FMX.Controls, 
+    FMX.Forms, 
+    FMX.Dialogs, 
+    FMX.StdCtrls,
+    FMX.Memo.Types, 
+    FMX.Controls.Presentation, 
+    FMX.ScrollBox, 
+    FMX.Memo,
+    FMX.Edit, 
+    FMX.EditBox, 
+    FMX.SpinBox, 
+    FMX.ListBox, 
+    FMX.Layouts,
+    FMX.Objects, 
+    
+    Skia,
+    Skia.FMX;
 
 type
 TFrame_PasswordGenerator = class(TFrame)
@@ -19,8 +38,8 @@ TFrame_PasswordGenerator = class(TFrame)
     procedure btnRefreshClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
 public
-constructor Create(AOwner: TComponent); override;
-function GeneratePassword(len: Integer): string;
+    constructor Create(AOwner: TComponent); override;
+    function GeneratePassword(len: Integer): string;
 end;
 
 implementation
@@ -30,17 +49,17 @@ implementation
 procedure TFrame_PasswordGenerator.btnOutputCopyToClipboardClick(
   Sender: TObject);
 begin
-Memo1.CopyToClipboard;
+    Memo1.CopyToClipboard;
 end;
 
 procedure TFrame_PasswordGenerator.btnRefreshClick(Sender: TObject);
 var
-Value : string;
-i : integer;
+    Value : string;
+    i : integer;
 begin
-Memo1.Text := '';
-for I := 1 to StrToInt(sbMaxAmount.Text) do
-Memo1.Lines.Add(GeneratePassword(StrToInt((sbMaxLength.Text))));
+    Memo1.Text := '';
+    for I := 1 to StrToInt(sbMaxAmount.Text) do
+        Memo1.Lines.Add(GeneratePassword(StrToInt((sbMaxLength.Text))));
 end;
 
 constructor TFrame_PasswordGenerator.Create(AOwner: TComponent);
@@ -51,25 +70,26 @@ end;
 
 function TFrame_PasswordGenerator.GeneratePassword(len: Integer): string;
 var
-i: Integer;
-charSet: string;
+    i: Integer;
+    charSet: string;
 begin
-if SpecialSwitch.IsChecked then
-charset := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-='
-else
-charSet := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-Randomize;
-Result := '';
-for i := 1 to len do
-Result := Result + charSet[Random(Length(charSet)) + 1];
-case cbLetterCase.ItemIndex of
-0: Result := Result;
-1: Result :=  UpperCase(Result);
-2: Result := LowerCase(Result);
+    if SpecialSwitch.IsChecked then
+        charset := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-='
+    else
+        charSet := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    Randomize;
+    Result := '';
+    for i := 1 to len do
+        Result := Result + charSet[Random(Length(charSet)) + 1];
 
-end;
+    case cbLetterCase.ItemIndex of
+        0: Result := Result;
+        1: Result :=  UpperCase(Result);
+        2: Result := LowerCase(Result);
 
-Result := Result;
+    end;
+
+    Result := Result;
 end;
 
 end.
