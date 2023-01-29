@@ -23,6 +23,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Name Generator
 - Lorem Ipsum Generator
 - UUID Generator
+- Password Generator
 - Text Case Converter & Inspector
 - Color Picker
 
@@ -45,7 +46,6 @@ _Note: All tools are still in active development with lots of bugs_
 - JSON Generator
 - YAML Generator
 - XML Generator
-- Password Generator
 - Text Difference
 - Markdown Preview
 - Text Escape/Unescape
