@@ -62,6 +62,7 @@ uses
   uFrame_JavaScriptFormatter,
   uFrame_UUIDGenerator,
   uFrame_JWTTokenGenerator,
+  uFrame_PasswordGenerator,
   uFrame_TextEscapeUnescape,
   uFrame_MarkdownPreview,
   uFrame_RegexTester,
@@ -586,6 +587,7 @@ begin
   CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
   CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
   CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
+  CreateToolFrame(TFrame_PasswordGenerator.Create(Self),'layPasswordGenerator');
   CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
   CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
   CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');

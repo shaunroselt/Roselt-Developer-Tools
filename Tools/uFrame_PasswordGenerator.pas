@@ -3,93 +3,131 @@ unit uFrame_PasswordGenerator;
 interface
 
 uses
-    System.SysUtils, 
-    System.Types, 
-    System.UITypes, 
-    System.Classes, 
-    System.Variants,
-    FMX.Types, 
-    FMX.Graphics, 
-    FMX.Controls, 
-    FMX.Forms, 
-    FMX.Dialogs, 
-    FMX.StdCtrls,
-    FMX.Memo.Types, 
-    FMX.Controls.Presentation, 
-    FMX.ScrollBox, 
-    FMX.Memo,
-    FMX.Edit, 
-    FMX.EditBox, 
-    FMX.SpinBox, 
-    FMX.ListBox, 
-    FMX.Layouts,
-    FMX.Objects, 
-    
-    Skia,
-    Skia.FMX;
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Forms,
+  FMX.Dialogs,
+  FMX.StdCtrls,
+  FMX.Memo.Types,
+  FMX.Controls.Presentation,
+  FMX.ScrollBox,
+  FMX.Memo,
+  FMX.Edit,
+  FMX.EditBox,
+  FMX.SpinBox,
+  FMX.Platform,
+  FMX.ListBox,
+  FMX.Layouts,
+  FMX.Objects,
+
+  Skia,
+  Skia.FMX;
 
 type
-TFrame_PasswordGenerator = class(TFrame)
-    Memo1: TMemo;
-    sbMaxLength: TSpinBox;
-    sbMaxAmount: TSpinBox;
-    SpecialSwitch: TSwitch;
+  TFrame_PasswordGenerator = class(TFrame)
+    layBottom: TLayout;
+    memTitleOutput: TLabel;
+    btnRefresh: TButton;
+    imgRefresh: TSkSvg;
+    lblRefresh: TLabel;
+    btnOutputCopyToClipboard: TButton;
+    imgOutputCopyToClipboard: TSkSvg;
+    lblOutputCopyToClipboard: TLabel;
+    memOutput: TMemo;
+    layTop: TLayout;
+    lblConfiguration: TLabel;
+    laySpecialCharacters: TRectangle;
+    imgSpecialCharacters: TSkSvg;
+    laySpecialCharactersTitleDescription: TLayout;
+    lblSpecialCharactersTitle: TLabel;
+    lblSpecialCharactersDescription: TLabel;
+    lblSwitchSpecialCharacters: TLabel;
+    SpecialCharactersSwitch: TSwitch;
+    layAmount: TRectangle;
+    imgAmount: TSkSvg;
+    layAmountTitleDescription: TLayout;
+    lblAmountTitle: TLabel;
+    lblAmountDescription: TLabel;
+    sbAmount: TSpinBox;
+    layLetterCase: TRectangle;
+    layLetterCaseTitleDescription: TLayout;
+    lblLetterCaseTitle: TLabel;
+    lblLetterCaseDescription: TLabel;
+    imgLetterCase: TSkSvg;
     cbLetterCase: TComboBox;
+    layPasswordLength: TRectangle;
+    imgPasswordLength: TSkSvg;
+    layPasswordLengthTitleDescription: TLayout;
+    lblPasswordLengthTitle: TLabel;
+    lblMaxLengthDescription: TLabel;
+    sbPasswordLength: TSpinBox;
     procedure btnRefreshClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
-public
-    constructor Create(AOwner: TComponent); override;
-    function GeneratePassword(len: Integer): string;
-end;
+    procedure SpecialCharactersSwitchSwitch(Sender: TObject);
+  private
+    { Private declarations }
+    procedure GenerateRandomPassword();
+  public
+    { Public declarations }
+  end;
 
 implementation
 
 {$R *.fmx}
 
-procedure TFrame_PasswordGenerator.btnOutputCopyToClipboardClick(
-  Sender: TObject);
+procedure TFrame_PasswordGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
 begin
-    Memo1.CopyToClipboard;
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memOutput.Text);
 end;
 
 procedure TFrame_PasswordGenerator.btnRefreshClick(Sender: TObject);
-var
-    Value : string;
-    i : integer;
 begin
-    Memo1.Text := '';
-    for I := 1 to StrToInt(sbMaxAmount.Text) do
-        Memo1.Lines.Add(GeneratePassword(StrToInt((sbMaxLength.Text))));
+  GenerateRandomPassword();
 end;
 
-constructor TFrame_PasswordGenerator.Create(AOwner: TComponent);
-begin
-inherited;
-// additional initialization code here
-end;
+procedure TFrame_PasswordGenerator.GenerateRandomPassword;
+  function GeneratePassword(HowManyPasswords, PasswordLength: UInt64; SpecialCharacters: Boolean): string;
+  begin
+    var charSet := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    if (SpecialCharacters) then charSet := charSet + '!@#$%^&*()_+-=';
 
-function TFrame_PasswordGenerator.GeneratePassword(len: Integer): string;
-var
-    i: Integer;
-    charSet: string;
-begin
-    if SpecialSwitch.IsChecked then
-        charset := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-='
-    else
-        charSet := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    Randomize;
     Result := '';
-    for i := 1 to len do
-        Result := Result + charSet[Random(Length(charSet)) + 1];
-
-    case cbLetterCase.ItemIndex of
-        0: Result := Result;
-        1: Result :=  UpperCase(Result);
-        2: Result := LowerCase(Result);
-
+    for var i := 1 to HowManyPasswords do
+    begin
+      for var j := 1 to PasswordLength do
+        Result := Result + charSet[Random(charSet.Length) + 1];
+      Result := Result + sLineBreak;
     end;
+  end;
+begin
+  var RandomPassword := GeneratePassword(Round(sbAmount.Value),Round(sbPasswordLength.Value),SpecialCharactersSwitch.IsChecked);
+  if (cbLetterCase.Selected.Text = 'lower') then RandomPassword := RandomPassword.ToLower;
+  if (cbLetterCase.Selected.Text = 'UPPER') then RandomPassword := RandomPassword.ToLower;
 
-    Result := Result;
+  memOutput.Text := RandomPassword;
+end;
+
+procedure TFrame_PasswordGenerator.SpecialCharactersSwitchSwitch(Sender: TObject);
+begin
+  if (lblSwitchSpecialCharacters.Text = 'On') then
+  begin
+    lblSwitchSpecialCharacters.Text := 'Off';
+    SpecialCharactersSwitch.IsChecked := False;
+  end else
+  begin
+    lblSwitchSpecialCharacters.Text := 'On';
+    SpecialCharactersSwitch.IsChecked := True;
+  end;
+  GenerateRandomPassword();
 end;
 
 end.

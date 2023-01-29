@@ -4,7 +4,7 @@
         <ProjectVersion>19.4</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>168979</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -413,6 +413,11 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Roselt.Utility.pas"/>
+        <DCCReference Include="Tools\uFrame_PasswordGenerator.pas">
+            <Form>Frame_PasswordGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

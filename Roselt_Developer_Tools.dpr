@@ -1,5 +1,7 @@
 program Roselt_Developer_Tools;
 
+
+
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -40,7 +42,8 @@ uses
   Roselt.NumberBaseConversion in 'Roselt.NumberBaseConversion.pas',
   Roselt.Tools in 'Roselt.Tools.pas',
   uFrame_JWTTokenGenerator in 'Tools\uFrame_JWTTokenGenerator.pas' {Frame_JWTTokenGenerator: TFrame},
-  Roselt.Utility in 'Roselt.Utility.pas';
+  Roselt.Utility in 'Roselt.Utility.pas',
+  uFrame_PasswordGenerator in 'Tools\uFrame_PasswordGenerator.pas' {Frame_PasswordGenerator: TFrame};
 
 {$R *.res}
 
