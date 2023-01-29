@@ -60,9 +60,7 @@ type
     btnInputClear: TButton;
     imgInputClear: TSkSvg;
     lblInputClear: TLabel;
-    btnDecode: TButton;
 
-    procedure btnDecodeClick(Sender: TObject);
     function DecodeJWT(const JWT : string) : TStringList;
     procedure btnInputClearClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
@@ -70,6 +68,8 @@ type
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnHeaderCopyToClipboardClick(Sender: TObject);
     procedure btnPayloadCopyToClipboardClick(Sender: TObject);
+    procedure memJWTTokenChange(Sender: TObject);
+    procedure memJWTTokenChangeTracking(Sender: TObject);
   private
     { Private declarations }
   public
@@ -102,7 +102,13 @@ begin
 end;
 
 
-procedure TFrame_JWTDecoder.btnDecodeClick(Sender: TObject);
+
+
+
+
+
+
+procedure TFrame_JWTDecoder.memJWTTokenChange(Sender: TObject);
 var
   JWT : string;
   JWTResult : TStringList;
@@ -111,13 +117,18 @@ begin
   JWTResult:= DecodeJWT(JWT);
   memHeader.Text := JWTResult.Values['header'];
   memPayload.Text := JWTResult.Values['payload'];
-
 end;
 
-
-
-
-
+procedure TFrame_JWTDecoder.memJWTTokenChangeTracking(Sender: TObject);
+var
+  JWT : string;
+  JWTResult : TStringList;
+begin
+  JWT := memJWTToken.Text;
+  JWTResult:= DecodeJWT(JWT);
+  memHeader.Text := JWTResult.Values['header'];
+  memPayload.Text := JWTResult.Values['payload'];
+end;
 
 procedure TFrame_JWTDecoder.btnHeaderCopyToClipboardClick(Sender: TObject);
 var

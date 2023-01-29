@@ -77,6 +77,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
       object memHeader: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
+        ReadOnly = True
         TextSettings.WordWrap = True
         Align = Client
         Size.Width = 802.000000000000000000
@@ -90,7 +91,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
     object layPayload: TLayout
       Align = Client
       Size.Width = 802.000000000000000000
-      Size.Height = 119.000000000000000000
+      Size.Height = 157.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object memTitlePayload: TLabel
@@ -156,23 +157,12 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
         TextSettings.WordWrap = True
         Align = Client
         Size.Width = 802.000000000000000000
-        Size.Height = 79.000000000000000000
+        Size.Height = 117.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         Viewport.Width = 798.000000000000000000
-        Viewport.Height = 75.000000000000000000
+        Viewport.Height = 113.000000000000000000
       end
-    end
-    object btnDecode: TButton
-      Align = MostBottom
-      Position.X = 20.000000000000000000
-      Position.Y = 344.000000000000000000
-      Size.Width = 802.000000000000000000
-      Size.Height = 38.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-      Text = 'Decode'
-      OnClick = btnDecodeClick
     end
   end
   object layTop: TLayout
@@ -380,8 +370,9 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
       object memJWTToken: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
-        ReadOnly = True
         TextSettings.WordWrap = True
+        OnChange = memJWTTokenChange
+        OnChangeTracking = memJWTTokenChangeTracking
         Align = Client
         Size.Width = 802.000000000000000000
         Size.Height = 58.000000000000000000
