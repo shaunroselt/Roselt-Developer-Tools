@@ -111,7 +111,7 @@ procedure TFrame_PasswordGenerator.GenerateRandomPassword;
 begin
   var RandomPassword := GeneratePassword(Round(sbAmount.Value),Round(sbPasswordLength.Value),SpecialCharactersSwitch.IsChecked);
   if (cbLetterCase.Selected.Text = 'lower') then RandomPassword := RandomPassword.ToLower;
-  if (cbLetterCase.Selected.Text = 'UPPER') then RandomPassword := RandomPassword.ToLower;
+  if (cbLetterCase.Selected.Text = 'UPPER') then RandomPassword := RandomPassword.ToUpper;
 
   memOutput.Text := RandomPassword;
 end;
