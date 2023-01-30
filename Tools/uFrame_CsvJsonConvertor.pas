@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   Skia, FMX.Memo.Types, FMX.ListBox, FMX.Objects, FMX.ScrollBox, FMX.Memo,
-  Skia.FMX, FMX.Controls.Presentation, FMX.Layouts,System.JSON, Fmx.Clipboard, FMX.Platform;
+  Skia.FMX, FMX.Controls.Presentation, FMX.Layouts,System.JSON, Fmx.Clipboard, FMX.Platform, System.Threading;
 
 type
   TFrame_CsvJsonConvertor = class(TFrame)
@@ -34,6 +34,7 @@ type
     lblInputLoad: TLabel;
     OpenDialog1: TOpenDialog;
     SplitterInputOutput: TSplitter;
+    cbConversion: TComboBox;
     function CSVToJSON(const CSV: string): string;
     procedure memInputChange(Sender: TObject);
     procedure memInputChangeTracking(Sender: TObject);
@@ -43,6 +44,7 @@ type
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure FrameResize(Sender: TObject);
+    function JSONToCSV(const JSON: string): string;
   private
     { Private declarations }
   public
@@ -52,6 +54,8 @@ type
 implementation
 
 {$R *.fmx}
+
+
 
 
 procedure TFrame_CsvJsonConvertor.btnInputClearClick(Sender: TObject);
@@ -141,9 +145,55 @@ begin
 end;
 
 procedure TFrame_CsvJsonConvertor.memInputChangeTracking(Sender: TObject);
+var
+ConvertTask: ITask;
 begin
-  memOutput.Text := CsvToJson(memInput.Text);
+ConvertTask := TTask.Create(
+procedure
+begin
+TThread.Synchronize(nil,
+procedure
+begin
+case cbConversion.ItemIndex of
+0: memOutput.Text := CsvToJson(memInput.Text);
+1: memOutput.Text := JsonToCsv(memInput.Text)
 end;
+end);
+end);
+ConvertTask.Start;
+end;
+
+
+
+function TFrame_CsvJsonConvertor.JSONToCSV(const JSON: string): string;
+var
+  JArr: TJSONArray;
+  JObj: TJSONObject;
+  i, j: Integer;
+  Line: string;
+  Fields: TArray<string>;
+  List: TStringList;
+begin
+  JArr := TJSONObject.ParseJSONValue(JSON) as TJSONArray;
+  List := TStringList.Create;
+  try
+    for i := 0 to JArr.Count - 1 do
+    begin
+      JObj := JArr.Items[i] as TJSONObject;
+      SetLength(Fields, JObj.Count);
+      for j := 0 to JObj.Count - 1 do
+      begin
+        Fields[j] := JObj.Pairs[j].JsonValue.Value;
+      end;
+      Line := string.Join(',', Fields);
+      List.Add(Line);
+    end;
+    Result := List.Text;
+  finally
+    List.Free;
+  end;
+end;
+
 
 end.
 

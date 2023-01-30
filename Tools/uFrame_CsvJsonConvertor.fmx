@@ -1,6 +1,6 @@
 object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
-  Size.Width = 805.000000000000000000
-  Size.Height = 701.000000000000000000
+  Size.Width = 1067.000000000000000000
+  Size.Height = 906.000000000000000000
   Size.PlatformDefault = False
   OnResize = FrameResize
   object layBottom: TLayout
@@ -9,8 +9,8 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
-    Size.Width = 805.000000000000000000
-    Size.Height = 701.000000000000000000
+    Size.Width = 1067.000000000000000000
+    Size.Height = 884.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object layInput: TLayout
@@ -18,7 +18,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 380.000000000000000000
-      Size.Height = 661.000000000000000000
+      Size.Height = 844.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object memTitleInput: TLabel
@@ -213,23 +213,23 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
         OnChangeTracking = memInputChangeTracking
         Align = Client
         Size.Width = 380.000000000000000000
-        Size.Height = 625.000000000000000000
+        Size.Height = 808.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         Viewport.Width = 376.000000000000000000
-        Viewport.Height = 621.000000000000000000
+        Viewport.Height = 804.000000000000000000
       end
     end
     object layOutput: TLayout
       Align = Client
-      Size.Width = 380.000000000000000000
-      Size.Height = 661.000000000000000000
+      Size.Width = 642.000000000000000000
+      Size.Height = 844.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object memTitleOutput: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 380.000000000000000000
+        Size.Width = 642.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -241,7 +241,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 309.000000000000000000
+          Position.X = 571.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -286,12 +286,12 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
         ReadOnly = True
         TextSettings.WordWrap = True
         Align = Client
-        Size.Width = 380.000000000000000000
-        Size.Height = 625.000000000000000000
+        Size.Width = 642.000000000000000000
+        Size.Height = 808.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 376.000000000000000000
-        Viewport.Height = 621.000000000000000000
+        Viewport.Width = 638.000000000000000000
+        Viewport.Height = 804.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter
@@ -301,12 +301,23 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
       Position.X = 400.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 5.000000000000000000
-      Size.Height = 661.000000000000000000
+      Size.Height = 844.000000000000000000
       Size.PlatformDefault = False
     end
   end
   object OpenDialog1: TOpenDialog
     Left = 229
     Top = 344
+  end
+  object cbConversion: TComboBox
+    Align = Top
+    Items.Strings = (
+      'CSV to JSON'
+      'JSON TO CSV')
+    ItemIndex = 0
+    Size.Width = 1067.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
   end
 end
