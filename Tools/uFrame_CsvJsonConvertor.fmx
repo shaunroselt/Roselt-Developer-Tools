@@ -1,5 +1,5 @@
 object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
-  Size.Width = 1067.000000000000000000
+  Size.Width = 1066.000000000000000000
   Size.Height = 906.000000000000000000
   Size.PlatformDefault = False
   OnResize = FrameResize
@@ -9,7 +9,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
-    Size.Width = 1067.000000000000000000
+    Size.Width = 1066.000000000000000000
     Size.Height = 884.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -41,7 +41,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 6
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -74,7 +74,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -88,7 +88,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -118,7 +118,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputClear: TButton
@@ -132,7 +132,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -160,7 +160,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputLoad: TButton
@@ -174,7 +174,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 5
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -201,7 +201,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -216,20 +216,20 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
         Size.Height = 808.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 376.000000000000000000
-        Viewport.Height = 804.000000000000000000
+        Viewport.Width = 380.000000000000000000
+        Viewport.Height = 808.000000000000000000
       end
     end
     object layOutput: TLayout
       Align = Client
-      Size.Width = 642.000000000000000000
+      Size.Width = 641.000000000000000000
       Size.Height = 844.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object memTitleOutput: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 642.000000000000000000
+        Size.Width = 641.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -241,12 +241,12 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 571.000000000000000000
+          Position.X = 570.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -276,7 +276,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -286,12 +286,12 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
         ReadOnly = True
         TextSettings.WordWrap = True
         Align = Client
-        Size.Width = 642.000000000000000000
+        Size.Width = 641.000000000000000000
         Size.Height = 808.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 638.000000000000000000
-        Viewport.Height = 804.000000000000000000
+        Viewport.Width = 641.000000000000000000
+        Viewport.Height = 808.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter
@@ -315,7 +315,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
       'CSV to JSON'
       'JSON TO CSV')
     ItemIndex = 0
-    Size.Width = 1067.000000000000000000
+    Size.Width = 1066.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2

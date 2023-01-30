@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   Skia, FMX.Memo.Types, FMX.ListBox, FMX.Objects, FMX.ScrollBox, FMX.Memo,
-  Skia.FMX, FMX.Controls.Presentation, FMX.Layouts,System.JSON, Fmx.Clipboard, FMX.Platform, System.Threading;
+  Skia.FMX, FMX.Controls.Presentation, FMX.Layouts,System.JSON, Fmx.Clipboard, FMX.Platform, System.Threading,
+  System.Generics.Collections;
 
 type
   TFrame_CsvJsonConvertor = class(TFrame)
@@ -46,6 +47,7 @@ type
     procedure FrameResize(Sender: TObject);
     function JSONToCSV(const JSON: string): string;
     procedure cbConversionChange(Sender: TObject);
+    function DetermineDelimiter(const JObj: TJSONObject; const JSON: string): string;
   private
     { Private declarations }
   public
@@ -180,10 +182,21 @@ var
   Line: string;
   Fields: TArray<string>;
   List: TStringList;
+  Delimiter: string;
 begin
   JArr := TJSONObject.ParseJSONValue(JSON) as TJSONArray;
   List := TStringList.Create;
   try
+    if (JArr.Count > 0) and (JArr.Items[0] is TJSONObject) then
+    begin
+      JObj := JArr.Items[0] as TJSONObject;
+      Delimiter := DetermineDelimiter(JObj, JSON);
+    end
+    else
+    begin
+      Delimiter := ',';
+    end;
+
     for i := 0 to JArr.Count - 1 do
     begin
       JObj := JArr.Items[i] as TJSONObject;
@@ -192,7 +205,7 @@ begin
       begin
         Fields[j] := JObj.Pairs[j].JsonValue.Value;
       end;
-      Line := string.Join(',', Fields);
+      Line := string.Join(Delimiter, Fields);
       List.Add(Line);
     end;
     Result := List.Text;
@@ -200,6 +213,44 @@ begin
     List.Free;
   end;
 end;
+
+function TFrame_CsvJsonConvertor.DetermineDelimiter(const JObj: TJSONObject; const JSON: string): string;
+var
+  i: Integer;
+  CharCounts: TDictionary<Char, Integer>;
+  MaxCount: Integer;
+  MaxChar: Char;
+begin
+  Result := ',';
+  CharCounts := TDictionary<Char, Integer>.Create;
+  try
+    for i := 1 to Length(JSON) do
+    begin
+      if CharCounts.ContainsKey(JSON[i]) then
+      begin
+        CharCounts[JSON[i]] := CharCounts[JSON[i]] + 1;
+      end
+      else
+      begin
+        CharCounts.Add(JSON[i], 1);
+      end;
+    end;
+    MaxCount := 0;
+    for i := 0 to JObj.Count - 1 do
+    begin
+      if CharCounts[JObj.Pairs[i].JsonValue.Value[1]] > MaxCount then
+      begin
+        MaxCount := CharCounts[JObj.Pairs[i].JsonValue.Value[1]];
+        MaxChar := JObj.Pairs[i].JsonValue.Value[1];
+      end;
+    end;
+    Result := MaxChar;
+  finally
+    CharCounts.Free;
+  end;
+end;
+
+end.
 
 
 end.
