@@ -52,6 +52,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Image Converter
 - PNG/JPEG Compressor
 - Color Blindness Simulator
+- Code Minifier (Various languages)
 
 
 
