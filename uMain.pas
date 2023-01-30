@@ -62,11 +62,12 @@ uses
   uFrame_JavaScriptFormatter,
   uFrame_UUIDGenerator,
   uFrame_JWTTokenGenerator,
-  uFrame_PasswordGenerator,
   uFrame_TextEscapeUnescape,
   uFrame_MarkdownPreview,
   uFrame_RegexTester,
   uFrame_NameGenerator,
+  uFrame_PasswordGenerator,
+  uFrame_CsvJsonConvertor,
 
   Skia,
   Skia.FMX;
@@ -98,7 +99,6 @@ type
     lblSettings: TLabel;
     layNavTestingMore: TLayout;
     layNavTestingMoreExpandCollapse: TLayout;
-    btnTestingMoreExpandCollapse: TRectangle;
     imgTestingMoreMoreExpandCollapse: TSkSvg;
     lblTestingMoreExpandCollapse: TLabel;
     imgConvertersExpandCollapseIcon: TSkSvg;
@@ -116,7 +116,6 @@ type
     lblTesting2: TLabel;
     SplitterNavContent: TSplitter;
     btnToolHelp: TButton;
-    laySettings: TScrollBox;
     layFontFamily: TRectangle;
     cbFontFamily: TComboBox;
     imgFontFamily: TSkSvg;
@@ -181,6 +180,7 @@ type
     Rectangle2: TRectangle;
     SkSvg2: TSkSvg;
     layStuffThatwillNeverShow: TLayout;
+    laySettings: TScrollBox;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -587,7 +587,6 @@ begin
   CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
   CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
   CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
-  CreateToolFrame(TFrame_PasswordGenerator.Create(Self),'layPasswordGenerator');
   CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
   CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
   CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
@@ -605,6 +604,8 @@ begin
   CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
   CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
   CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
+  CreateToolFrame(TFrame_PasswordGenerator.Create(Self), 'layPasswordGenerator');
+  CreateToolFrame(TFrame_CsvJsonConvertor.Create(Self), 'layCsvJsonConvertor');
 
 
   // Load Themes (Settings)
@@ -705,14 +706,7 @@ end;
 
 procedure TfrmMain.AllToolsButtonClick(Sender: TObject);
 begin
-  var ToolButton := TButton(Sender);
-  for var I in ToolButton.Children do
-    if String(I.Name).Contains('btnAllToolsTitle') then
-    begin
-      lblNavTitle.Text := TLabel(I).Text;
-      break;
-    end;
-  SelectTool('lay' + ToolButton.TagString);
+  SelectTool('lay' + TButton(Sender).TagString);
 end;
 
 procedure TfrmMain.AllToolsSearch();

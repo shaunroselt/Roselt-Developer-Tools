@@ -319,5 +319,6 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
+    OnChange = cbConversionChange
   end
 end

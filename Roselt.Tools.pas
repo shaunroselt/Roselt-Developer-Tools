@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..37] of TRoseltTools = (
+  RoseltToolsArray: array[0..38] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -130,6 +130,21 @@ const
       text_long: 'JSON <> YAML';
       name: 'JsonYamlConverter';
       description: 'Convert JSON to YAML and vice versa';
+      icon: 'arrow-left-right';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Converters';
+    ),
+    (
+      text_short: 'JSON <> CSV';
+      text_long: 'JSON <> CSV';
+      name: 'CsvJsonConvertor';
+      description: 'Convert JSON to CSV and vice versa';
       icon: 'arrow-left-right';
       {$IFDEF DEBUG}
         active: true;
@@ -252,7 +267,7 @@ const
       description: 'Decode a JWT header, payload and signature';
       icon: 'gear-wide';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -380,6 +395,24 @@ const
       {$ENDIF}
       parent: 'Generators';
     ),
+
+    //Password Generator
+    (
+      text_short: 'Password';
+      text_long: 'Password Generator';
+      name: 'PasswordGenerator';
+      description: 'Generates Passwords';
+      icon: 'key';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Generators';
+    ),
+
     (
       text_short: 'UUID';
       text_long: 'UUID Generator';
@@ -431,21 +464,6 @@ const
       name: 'NameGenerator';
       description: 'Generate random names';
       icon: 'person-square';
-      {$IFDEF DEBUG}
-        active: true;
-        visible: true;
-      {$ELSE}
-        active: true;
-        visible: true;
-      {$ENDIF}
-      parent: 'Generators';
-    ),
-    (
-      text_short: 'Password';
-      text_long: 'Password Generator';
-      name: 'PasswordGenerator';
-      description: 'Generate random passwords';
-      icon: 'key';
       {$IFDEF DEBUG}
         active: true;
         visible: true;

@@ -45,6 +45,7 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     function JSONToCSV(const JSON: string): string;
+    procedure cbConversionChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -102,6 +103,12 @@ ClipboardService: IFMXClipboardService;
 begin
 if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
 ClipboardService.SetClipboard(memOutput.Text)
+end;
+
+procedure TFrame_CsvJsonConvertor.cbConversionChange(Sender: TObject);
+begin
+memInput.Text := '';
+memOutput.Text := '';
 end;
 
 function TFrame_CsvJsonConvertor.CSVToJSON(const CSV: string): string;
