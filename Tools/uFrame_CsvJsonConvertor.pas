@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 unit uFrame_CsvJsonConvertor;   //Converting CSV to JSON and JSON to CSV , Nice tool
-=======
-unit uFrame_CsvJsonConvertor;   //Converting CSV to JSON and JSON to CSV
->>>>>>> f38b82d4d7325319d652cb3d06d1ce7177ba432a
 
 interface
 
@@ -39,7 +35,6 @@ type
     lblInputLoad: TLabel;
     OpenDialog1: TOpenDialog;
     SplitterInputOutput: TSplitter;
-<<<<<<< HEAD
     layTop: TLayout;
     lblConfiguration: TLabel;
     layConversion: TRectangle;
@@ -48,9 +43,6 @@ type
     lblConversionTitle: TLabel;
     lblConversionDescription: TLabel;
     imgConversion: TSkSvg;
-=======
-    cbConversion: TComboBox;
->>>>>>> f38b82d4d7325319d652cb3d06d1ce7177ba432a
     function CSVToJSON(const CSV: string): string;
     procedure memInputChange(Sender: TObject);
     procedure memInputChangeTracking(Sender: TObject);
@@ -61,11 +53,7 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     function JSONToCSV(const JSON: string): string;
-<<<<<<< HEAD
     procedure cbConverChange(Sender: TObject);
-=======
-    procedure cbConversionChange(Sender: TObject);
->>>>>>> f38b82d4d7325319d652cb3d06d1ce7177ba432a
     function DetermineDelimiter(const JObj: TJSONObject; const JSON: string): string;
   private
     { Private declarations }
@@ -126,11 +114,7 @@ if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInte
 ClipboardService.SetClipboard(memOutput.Text)
 end;
 
-<<<<<<< HEAD
 procedure TFrame_CsvJsonConvertor.cbConverChange(Sender: TObject);
-=======
-procedure TFrame_CsvJsonConvertor.cbConversionChange(Sender: TObject);
->>>>>>> f38b82d4d7325319d652cb3d06d1ce7177ba432a
 begin
 memInput.Text := '';
 memOutput.Text := '';
