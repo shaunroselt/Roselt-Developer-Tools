@@ -88,6 +88,7 @@ begin
 begin
   if (OpenDialog1.Execute) then
   begin
+    memInput.Text := '';
     memInput.Lines.LoadFromFile(OpenDialog1.FileName);
     memOutput.Text := CsvToJson(memInput.Text);
   end;
@@ -101,6 +102,7 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
   begin
+    memInput.Text := '';
     memInput.Text := ClipboardService.GetClipboard.AsString;
   end;
 end;
@@ -157,7 +159,7 @@ end;
 
 procedure TFrame_CsvJsonConvertor.memInputChange(Sender: TObject);
 begin
- memOutput.Text := CsvToJson(memInput.Text);
+ //memOutput.Text := CsvToJson(memInput.Text);   //
 end;
 
 procedure TFrame_CsvJsonConvertor.memInputChangeTracking(Sender: TObject);
