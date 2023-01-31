@@ -385,7 +385,7 @@ object Frame_CsvJsonConvertor: TFrame_CsvJsonConvertor
           Size.Height = 39.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
-          Text = 'Select which conversion mode you want to use'
+          Text = 'Select which conversion mode you want to use:'
           TabOrder = 0
         end
       end
