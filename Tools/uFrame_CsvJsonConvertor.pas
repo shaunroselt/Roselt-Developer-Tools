@@ -35,7 +35,14 @@ type
     lblInputLoad: TLabel;
     OpenDialog1: TOpenDialog;
     SplitterInputOutput: TSplitter;
+    layTop: TLayout;
+    lblConfiguration: TLabel;
+    layConversion: TRectangle;
     cbConversion: TComboBox;
+    layConversionTitleDescription: TLayout;
+    lblConversionTitle: TLabel;
+    lblConversionDescription: TLabel;
+    imgConversion: TSkSvg;
     function CSVToJSON(const CSV: string): string;
     procedure memInputChange(Sender: TObject);
     procedure memInputChangeTracking(Sender: TObject);
@@ -46,7 +53,7 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     function JSONToCSV(const JSON: string): string;
-    procedure cbConversionChange(Sender: TObject);
+    procedure cbConverChange(Sender: TObject);
     function DetermineDelimiter(const JObj: TJSONObject; const JSON: string): string;
   private
     { Private declarations }
@@ -107,7 +114,7 @@ if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInte
 ClipboardService.SetClipboard(memOutput.Text)
 end;
 
-procedure TFrame_CsvJsonConvertor.cbConversionChange(Sender: TObject);
+procedure TFrame_CsvJsonConvertor.cbConverChange(Sender: TObject);
 begin
 memInput.Text := '';
 memOutput.Text := '';
