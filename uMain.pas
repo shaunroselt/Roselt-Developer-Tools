@@ -48,6 +48,7 @@ uses
   uFrame_LoremIpsumGenerator,
   uFrame_TextCaseConverterInspector,
   uFrame_ColorPicker,
+  uFrame_ImageEffects,
   uFrame_TimestampConverter,
   uFrame_NumberBaseConverter,
   uFrame_URLEncoderDecoder,
@@ -594,6 +595,7 @@ begin
   CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
   CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
   CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
+  CreateToolFrame(TFrame_ImageEffects.Create(Self),'layImageEffects');
   CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
   CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
   CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');

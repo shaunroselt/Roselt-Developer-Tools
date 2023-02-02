@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..37] of TRoseltTools = (
+  RoseltToolsArray: array[0..38] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -536,6 +536,21 @@ const
       name: 'ColorPicker';
       description: 'Fully featured color picker';
       icon: 'brush';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Image Effects';
+      text_long: 'Image Effects';
+      name: 'ImageEffects';
+      description: 'Different Effects applied to images';
+      icon: 'mask';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
