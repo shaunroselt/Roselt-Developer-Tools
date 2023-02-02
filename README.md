@@ -54,6 +54,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Color Blindness Simulator
 - Code Minifier (Various languages)
 - Image Effects
+- IP Ping
 
 
 
