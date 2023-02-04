@@ -2,7 +2,7 @@ unit Ping;
 
 interface
 
-uses WinSock;
+uses Winapi.Winsock2;
 
 function PingHost(const HostName: AnsiString; TimeoutMS: cardinal = 900): boolean;
 
