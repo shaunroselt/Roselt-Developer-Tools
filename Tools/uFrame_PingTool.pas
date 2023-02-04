@@ -10,7 +10,7 @@ Macapi.CoreServices,
 
 {$IFDEF MSWINDOWS}
 Winapi.Windows,
-Winapi.WinSock,
+Winapi.Winsock2,
 {$ENDIF}
 
 System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
