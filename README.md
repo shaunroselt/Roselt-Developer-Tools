@@ -26,6 +26,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Password Generator
 - Text Case Converter & Inspector
 - Color Picker
+- Image Effects
 
 
 ## Planned Tools
@@ -53,7 +54,6 @@ _Note: All tools are still in active development with lots of bugs_
 - PNG/JPEG Compressor
 - Color Blindness Simulator
 - Code Minifier (Various languages)
-- Image Effects
 - IP Ping
 
 
