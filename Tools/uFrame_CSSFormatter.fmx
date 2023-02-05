@@ -388,23 +388,23 @@ object Frame_CSSFormatter: TFrame_CSSFormatter
           '8 tabs'
           'Minified')
         ItemIndex = 0
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
       end
       object layIndentationTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblIndentationTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -414,7 +414,7 @@ object Frame_CSSFormatter: TFrame_CSSFormatter
         object lblIndentationDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000

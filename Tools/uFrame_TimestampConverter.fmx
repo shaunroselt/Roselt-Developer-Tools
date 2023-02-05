@@ -36,7 +36,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 3
         OnClick = btnInputClearClick
         object imgInputClear: TSkSvg
           Align = Left
@@ -64,7 +64,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Clear'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
       object btnInputCopyToClipboard: TButton
@@ -78,7 +78,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
+        TabOrder = 4
         OnClick = btnInputCopyToClipboardClick
         object imgInputCopyToClipboard: TSkSvg
           Align = Left
@@ -108,7 +108,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
       object btnNow: TButton
@@ -122,7 +122,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 6
+        TabOrder = 5
         OnClick = btnNowClick
         object imgNow: TSkSvg
           Align = Left
@@ -149,7 +149,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Now'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
       object btnInputPasteFromClipboard: TButton
@@ -163,7 +163,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 7
+        TabOrder = 6
         OnClick = btnInputPasteFromClipboardClick
         object imgInputPasteFromClipboard: TSkSvg
           Align = Left
@@ -196,7 +196,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Paste'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
     end
@@ -424,7 +424,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 3
         OnClick = btnNowClick
         object SkSvg1: TSkSvg
           Align = Left
@@ -451,7 +451,7 @@ object Frame_TimestampConverter: TFrame_TimestampConverter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Now'
-          TabOrder = 5
+          TabOrder = 4
         end
       end
     end

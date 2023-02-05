@@ -133,6 +133,7 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
+          OnClick = btnLoadClick
           object imgLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -255,7 +256,17 @@ object Frame_Base64ImageEncoderDecoder: TFrame_Base64ImageEncoderDecoder
           OnClick = btnDropImageClick
         end
       end
-      object imgImage: TSkSvg
+      object svgImage: TSkSvg
+        Align = Client
+        Size.Width = 375.000000000000000000
+        Size.Height = 525.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+      end
+      object imgImage: TImage
+        MultiResBitmap = <
+          item
+          end>
         Align = Client
         Size.Width = 375.000000000000000000
         Size.Height = 525.000000000000000000

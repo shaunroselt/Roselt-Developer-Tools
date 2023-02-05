@@ -65,7 +65,7 @@ type
     imgPasswordLength: TSkSvg;
     layPasswordLengthTitleDescription: TLayout;
     lblPasswordLengthTitle: TLabel;
-    lblMaxLengthDescription: TLabel;
+    lblPasswordLengthDescription: TLabel;
     sbPasswordLength: TSpinBox;
     procedure btnRefreshClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);

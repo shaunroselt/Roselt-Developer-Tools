@@ -11,7 +11,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
     Size.Width = 998.000000000000000000
     Size.Height = 912.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     TabPosition = PlatformDefault
     Sizes = (
@@ -29,7 +29,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 62.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -4714,7 +4714,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 63.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -9721,7 +9721,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Cursor = crIBeam
             Min = -1000000.000000000000000000
             Max = 1000000.000000000000000000
-            Value = 0.300000000000000000
+            Value = 0.300000011920929000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
             Position.X = 806.000000000000000000
@@ -9803,7 +9803,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Cursor = crIBeam
             Min = -1000000.000000000000000000
             Max = 1000000.000000000000000000
-            Value = 0.600000000000000000
+            Value = 0.600000023841857900
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
             Position.X = 806.000000000000000000
@@ -14682,6 +14682,8 @@ object Frame_ImageEffects: TFrame_ImageEffects
       StyleLookup = ''
       TabOrder = 0
       Text = 'Glow'
+      ExplicitSize.cx = 47.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object imgGlow: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -19678,7 +19680,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Cursor = crIBeam
             Min = -1000000.000000000000000000
             Max = 1000000.000000000000000000
-            Value = 0.900000000000000000
+            Value = 0.899999976158142100
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
             Position.X = 806.000000000000000000
@@ -19701,6 +19703,8 @@ object Frame_ImageEffects: TFrame_ImageEffects
       StyleLookup = ''
       TabOrder = 0
       Text = 'Inner Glow'
+      ExplicitSize.cx = 78.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object imgInnerGlow: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -24696,7 +24700,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Cursor = crIBeam
             Min = -1000000.000000000000000000
             Max = 1000000.000000000000000000
-            Value = 0.900000000000000000
+            Value = 0.899999976158142100
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
             Position.X = 806.000000000000000000

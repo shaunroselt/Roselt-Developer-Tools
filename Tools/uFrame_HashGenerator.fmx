@@ -34,8 +34,8 @@ object Frame_HashGenerator: TFrame_HashGenerator
         Size.PlatformDefault = False
         TabOrder = 1
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 740.000000000000000000
-        Viewport.Height = 135.000000000000000000
+        Viewport.Width = 744.000000000000000000
+        Viewport.Height = 139.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
           Left = 320
@@ -62,7 +62,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 5
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -95,7 +95,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -109,7 +109,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -139,7 +139,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputLoad: TButton
@@ -153,7 +153,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 6
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -180,7 +180,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputClear: TButton
@@ -194,7 +194,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -222,7 +222,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -660,14 +660,14 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layLetterCaseTitleDescription: TLayout
         Align = Client
-        Size.Width = 537.000000000000000000
+        Size.Width = 517.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblLetterCaseTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -677,7 +677,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
         object lblLetterCaseDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -689,9 +689,9 @@ object Frame_HashGenerator: TFrame_HashGenerator
         Align = Right
         Cursor = crHandPoint
         IsChecked = False
-        Position.X = 690.000000000000000000
+        Position.X = 670.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 58.000000000000000000
+        Size.Width = 78.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -701,7 +701,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
         Align = Right
         StyledSettings = [Family, Style, FontColor]
         Margins.Right = 8.000000000000000000
-        Position.X = 586.000000000000000000
+        Position.X = 566.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 96.000000000000000000
         Size.Height = 48.000000000000000000
@@ -758,9 +758,9 @@ object Frame_HashGenerator: TFrame_HashGenerator
           'Hex'
           'Base64')
         ItemIndex = 0
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -768,14 +768,14 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layOutputTypeTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblOutputTypeTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -785,7 +785,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
         object lblOutputTypeDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -838,9 +838,9 @@ object Frame_HashGenerator: TFrame_HashGenerator
           'Text'
           'File')
         ItemIndex = 0
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -848,14 +848,14 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layInputTypeTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblInputTypeTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -865,7 +865,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
         object lblInputTypeDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
