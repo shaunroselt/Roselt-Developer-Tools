@@ -97,6 +97,7 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+      Visible = False
       Viewport.Width = 783.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layAllToolsGrid: TFlowLayout
@@ -271,7 +272,6 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
-      Visible = False
       Viewport.Width = 799.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layFontFamily: TRectangle
@@ -5479,7 +5479,7 @@ object frmMain: TfrmMain
         Position.Y = 284.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
-        Size.Height = 115.000000000000000000
+        Size.Height = 152.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         XRadius = 8.000000000000000000
@@ -5623,8 +5623,8 @@ object frmMain: TfrmMain
           Size.Width = 735.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
-          Visible = False
           TabOrder = 1
+          OnClick = laySteamLinkClick
           object Label4: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]

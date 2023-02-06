@@ -33,6 +33,8 @@ uses
   FMX.SearchBox,
   FMX.TabControl,
   FMX.Printer,
+  FMX.EditBox,
+  FMX.SpinBox,
 
   Roselt.Tools,
   Roselt.Utility,
@@ -198,6 +200,7 @@ type
     procedure edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtSearchAllToolsChange(Sender: TObject);
     procedure laySourceCodeLinkClick(Sender: TObject);
+    procedure laySteamLinkClick(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -658,6 +661,11 @@ end;
 procedure TfrmMain.laySourceCodeLinkClick(Sender: TObject);
 begin
   OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools');
+end;
+
+procedure TfrmMain.laySteamLinkClick(Sender: TObject);
+begin
+  OpenURL('https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/');
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
