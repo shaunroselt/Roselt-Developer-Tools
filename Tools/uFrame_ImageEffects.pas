@@ -8,6 +8,8 @@ uses
   System.UITypes,
   System.Classes,
   System.Variants,
+  System.Rtti,
+  System.Bindings.Outputs,
 
   FMX.Types,
   FMX.Graphics,
@@ -25,10 +27,16 @@ uses
   FMX.EditBox,
   FMX.SpinBox,
   FMX.Layouts,
+  FMX.Colors,
+  FMX.Filter.Effects,
+  FMX.Bind.DBEngExt,
+  FMX.Bind.Editors,
+
+  Data.Bind.EngExt,
+  Data.Bind.Components,
 
   Skia,
-  Skia.FMX, Data.Bind.EngExt, Fmx.Bind.DBEngExt, System.Rtti, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, FMX.Colors;
+  Skia.FMX;
 
 type
   TFrame_ImageEffects = class(TFrame)
@@ -42,42 +50,42 @@ type
     imgShadow: TImage;
     layTopShadow: TLayout;
     lblConfigurationShadow: TLabel;
-    layShadowEnabled: TRectangle;
-    imgShadowEnabled: TSkSvg;
-    layShadowEnabledTitleDescription: TLayout;
-    lblShadowEnabledTitle: TLabel;
-    lblShadowEnabledDescription: TLabel;
-    lblSwitchShadowEnabled: TLabel;
-    ShadowEnabledSwitch: TSwitch;
-    layShadowDistance: TRectangle;
-    imgShadowDistance: TSkSvg;
-    layShadowDistanceTitleDescription: TLayout;
-    lblShadowDistanceTitle: TLabel;
-    lblShadowDistanceDescription: TLabel;
-    sbShadowDistance: TSpinBox;
-    layShadowDirection: TRectangle;
-    imgShadowDirection: TSkSvg;
-    layShadowDirectionTitleDescription: TLayout;
-    lblShadowDirectionTitle: TLabel;
-    lblShadowDirectionDescription: TLabel;
-    sbShadowDirection: TSpinBox;
+    layEnabledShadow: TRectangle;
+    imgEnabledShadow: TSkSvg;
+    layEnabledTitleDescriptionShadow: TLayout;
+    lblEnabledTitleShadow: TLabel;
+    lblEnabledDescriptionShadow: TLabel;
+    lblSwitchEnabledShadow: TLabel;
+    EnabledSwitchShadow: TSwitch;
+    layDistanceShadow: TRectangle;
+    imgDistanceShadow: TSkSvg;
+    layDistanceTitleDescriptionShadow: TLayout;
+    lblDistanceTitleShadow: TLabel;
+    lblDistanceDescriptionShadow: TLabel;
+    sbDistanceShadow: TSpinBox;
+    layDirectionShadow: TRectangle;
+    imgDirectionShadow: TSkSvg;
+    layDirectionTitleDescriptionShadow: TLayout;
+    lblDirectionTitleShadow: TLabel;
+    lblDirectionDescriptionShadow: TLabel;
+    sbDirectionShadow: TSpinBox;
     ShadowEffect: TShadowEffect;
     BindingsList: TBindingsList;
     LinkControlToPropertyDistance: TLinkControlToProperty;
     LinkControlToPropertyDirection: TLinkControlToProperty;
     LinkControlToPropertyEnabled: TLinkControlToProperty;
-    layShadowSoftness: TRectangle;
-    imgShadowSoftness: TSkSvg;
-    layShadowSoftnessTitleDescription: TLayout;
-    lblShadowSoftnessTitle: TLabel;
-    lblShadowSoftnessDescription: TLabel;
-    sbShadowSoftness: TSpinBox;
-    layShadowOpacity: TRectangle;
-    imgShadowOpacity: TSkSvg;
-    layShadowOpacityTitleDescription: TLayout;
-    lblShadowOpacityTitle: TLabel;
-    lblShadowOpacityDescription: TLabel;
-    sbShadowOpacity: TSpinBox;
+    laySoftnessShadow: TRectangle;
+    imgSoftnessShadow: TSkSvg;
+    laySoftnessTitleDescriptionShadow: TLayout;
+    lblSoftnessTitleShadow: TLabel;
+    lblSoftnessDescriptionShadow: TLabel;
+    sbSoftnessShadow: TSpinBox;
+    layOpacityShadow: TRectangle;
+    imgOpacityShadow: TSkSvg;
+    layOpacityTitleDescriptionShadow: TLayout;
+    lblOpacityTitleShadow: TLabel;
+    lblOpacityDescriptionShadow: TLabel;
+    sbOpacityShadow: TSpinBox;
     TabBlur: TTabItem;
     LinkControlToPropertySoftness: TLinkControlToProperty;
     LinkControlToPropertyOpacity: TLinkControlToProperty;
@@ -93,7 +101,7 @@ type
     sbBlurSoftness: TSpinBox;
     LinkControlToPropertySoftness2: TLinkControlToProperty;
     layBlurEnabled: TRectangle;
-    imgBlurEnabled: TSkSvg;
+    imgEnabledBlur: TSkSvg;
     layTitleDescriptionBlurEnabled: TLayout;
     lblTitleBlurEnabled: TLabel;
     lblDescriptionBlurEnabled: TLabel;
@@ -166,7 +174,75 @@ type
     LinkControlToPropertyEnabled4: TLinkControlToProperty;
     LinkControlToPropertyOpacity3: TLinkControlToProperty;
     LinkControlToPropertySoftness4: TLinkControlToProperty;
-    procedure ShadowEnabledSwitchSwitch(Sender: TObject);
+    TabBevelEffect: TTabItem;
+    imgBevel: TImage;
+    BevelEffect: TBevelEffect;
+    layTopBevel: TLayout;
+    lblConfigurationBevel: TLabel;
+    layEnabledBevel: TRectangle;
+    imgEnabledBevel: TSkSvg;
+    layEnabledTitleDescriptionBevel: TLayout;
+    lblEnabledTitleBevel: TLabel;
+    lblEnabledDescriptionBevel: TLabel;
+    lblSwitchEnabledBevel: TLabel;
+    EnabledSwitchBevel: TSwitch;
+    laySizeBevel: TRectangle;
+    imgSizeBevel: TSkSvg;
+    laySizeTitleDescriptionBevel: TLayout;
+    lblSizeTitleBevel: TLabel;
+    lblSizeDescriptionBevel: TLabel;
+    sbSizeBevel: TSpinBox;
+    layDirectionBevel: TRectangle;
+    imgDirectionBevel: TSkSvg;
+    layDirectionTitleDescriptionBevel: TLayout;
+    lblDirectionTitleBevel: TLabel;
+    lblDirectionDescriptionBevel: TLabel;
+    sbDirectionBevel: TSpinBox;
+    LinkControlToPropertyDirection2: TLinkControlToProperty;
+    LinkControlToPropertyEnabled5: TLinkControlToProperty;
+    LinkControlToPropertySize: TLinkControlToProperty;
+    TabRipple: TTabItem;
+    imgRipple: TImage;
+    RippleEffect: TRippleEffect;
+    layTopRipple: TLayout;
+    lblConfigurationRipple: TLabel;
+    layEnabledRipple: TRectangle;
+    imgEnabledRipple: TSkSvg;
+    layEnabledTitleDescriptionRipple: TLayout;
+    lblEnabledTitleRipple: TLabel;
+    lblEnabledDescriptionRipple: TLabel;
+    lblSwitchEnabledRipple: TLabel;
+    EnabledSwitchRipple: TSwitch;
+    layAspectRatioRipple: TRectangle;
+    imgAspectRatioRipple: TSkSvg;
+    layAspectRatioTitleDescriptionRipple: TLayout;
+    lblAspectRatioTitleRipple: TLabel;
+    lblAspectRatioDescriptionRipple: TLabel;
+    sbAspectRatioRipple: TSpinBox;
+    layAmplitudeRipple: TRectangle;
+    imgAmplitudeRipple: TSkSvg;
+    layAmplitudeTitleDescriptionRipple: TLayout;
+    lblAmplitudeTitleRipple: TLabel;
+    lblAmplitudeDescriptionRipple: TLabel;
+    sbAmplitudeRipple: TSpinBox;
+    layFrequencyRipple: TRectangle;
+    imgFrequencyRipple: TSkSvg;
+    layFrequencyTitleDescriptionRipple: TLayout;
+    lblFrequencyTitleRipple: TLabel;
+    lblFrequencyDescriptionRipple: TLabel;
+    sbFrequencyRipple: TSpinBox;
+    layPhaseRipple: TRectangle;
+    imgPhaseRipple: TSkSvg;
+    layPhaseTitleDescriptionRipple: TLayout;
+    lblPhaseTitleRipple: TLabel;
+    lblPhaseDescriptionRipple: TLabel;
+    sbPhaseRipple: TSpinBox;
+    LinkControlToPropertyAmplitude: TLinkControlToProperty;
+    LinkControlToPropertyAspectRatio: TLinkControlToProperty;
+    LinkControlToPropertyFrequency: TLinkControlToProperty;
+    LinkControlToPropertyPhase: TLinkControlToProperty;
+    LinkControlToPropertyEnabled6: TLinkControlToProperty;
+    procedure EnabledSwitch(Sender: TObject);
     procedure cbGlowColorChange(Sender: TObject);
     procedure btnDropImageClick(Sender: TObject);
   private
@@ -196,7 +272,7 @@ begin
   GlowEffect.GlowColor := cbGlowColor.Color;
 end;
 
-procedure TFrame_ImageEffects.ShadowEnabledSwitchSwitch(Sender: TObject);
+procedure TFrame_ImageEffects.EnabledSwitch(Sender: TObject);
 var
   FindLabel: TLabel;
 begin
