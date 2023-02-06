@@ -1,11 +1,11 @@
 object Frame_PingTool: TFrame_PingTool
-  Size.Width = 381.000000000000000000
-  Size.Height = 146.000000000000000000
+  Size.Width = 618.000000000000000000
+  Size.Height = 787.000000000000000000
   Size.PlatformDefault = False
   object Layout1: TLayout
     Align = Top
     Position.Y = 65.000000000000000000
-    Size.Width = 381.000000000000000000
+    Size.Width = 618.000000000000000000
     Size.Height = 72.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -14,16 +14,16 @@ object Frame_PingTool: TFrame_PingTool
       Align = Top
       TabOrder = 0
       Position.Y = 22.000000000000000000
-      Size.Width = 381.000000000000000000
+      Size.Width = 618.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
     end
     object lblAddress: TLabel
       Align = MostTop
-      Size.Width = 381.000000000000000000
+      Size.Width = 618.000000000000000000
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      Text = 'IP Address:'
+      Text = 'IP Address / Domain Name:'
       TabOrder = 1
     end
     object btnPing: TButton
@@ -40,12 +40,23 @@ object Frame_PingTool: TFrame_PingTool
   object lblHeading: TLabel
     Align = MostTop
     StyledSettings = [Family, Style, FontColor]
-    Size.Width = 381.000000000000000000
+    Size.Width = 618.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Size = 28.000000000000000000
     TextSettings.HorzAlign = Center
     Text = 'Ping Tools'
     TabOrder = 1
+  end
+  object memStats: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 618.000000000000000000
+    Size.Height = 650.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 614.000000000000000000
+    Viewport.Height = 646.000000000000000000
   end
 end
