@@ -69,6 +69,7 @@ type
     sbAmount: TSpinBox;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnOutputRefreshClick(Sender: TObject);
+    procedure SwitchLetterCaseSwitch(Sender: TObject);
   private
     { Private declarations }
   public
@@ -110,6 +111,20 @@ begin
 
     memOutput.Lines.Add(Trim(RandomUUID));
   end;
+end;
+
+procedure TFrame_UUIDGenerator.SwitchLetterCaseSwitch(Sender: TObject);
+begin
+  if (lblSwitchLetterCase.Text = 'Lowercase') then
+  begin
+    lblSwitchLetterCase.Text := 'Uppercase';
+    SwitchLetterCase.IsChecked := True;
+  end else
+  begin
+    lblSwitchLetterCase.Text := 'Lowercase';
+    SwitchLetterCase.IsChecked := False;
+  end;
+  GenerateRandomUUID();
 end;
 
 end.
