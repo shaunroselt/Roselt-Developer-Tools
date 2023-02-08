@@ -224,27 +224,29 @@ begin
   begin
     MultiView.Width := HamburgerMenuWidth;
     for var Tool in RoseltToolsArray do
-      if IsToolParent(Tool) then
+      if IsToolParent(Tool) and Tool.visible then
       begin
-        // MultiView.FindComponent doesn't work. I don't know why. I feel like it should, but it doesn't 🙁
-        var ToolContainer := TControl(FindComponent('layNav' + Tool.name));
-        var ToolButton := TControl(FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
+        var ToolButtonContainer := ToolContainer.FindComponent('layNav' + Tool.name + 'ExpandCollapse');
+        var ToolButton := TControl(ToolButtonContainer.FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('img' + Tool.name + 'ExpandCollapseIcon'));
 
         ToolButton.OnClick := ExpandCollapseNavItem;
         ToolButton.OnDblClick := ExpandCollapseNavItem;
 
-        TControl(FindComponent('img' + Tool.name + 'ExpandCollapseIcon')).Visible := True;
+        ToolButtonExpandCollapseIcon.Visible := True;
       end;
   end else
   begin
     HamburgerMenuWidth := MultiView.Width;
     MultiView.Width := 50;
     for var Tool in RoseltToolsArray do
-      if IsToolParent(Tool) then
+      if IsToolParent(Tool) and Tool.visible then
       begin
-        // MultiView.FindComponent doesn't work. I don't know why. I feel like it should, but it doesn't 🙁
-        var ToolContainer := TControl(FindComponent('layNav' + Tool.name));
-        var ToolButton := TControl(FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
+        var ToolButtonContainer := ToolContainer.FindComponent('layNav' + Tool.name + 'ExpandCollapse');
+        var ToolButton := TControl(ToolButtonContainer.FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('img' + Tool.name + 'ExpandCollapseIcon'));
 
         ToolButton.OnClick := btnAllToolsSearchClick;
         ToolButton.OnDblClick := nil;
@@ -252,7 +254,7 @@ begin
         if (ToolContainer.Height <> TControl(ToolButton.Parent).Height) then
           ExpandCollapseNavItem(ToolButton);
 
-        TControl(FindComponent('img' + Tool.name + 'ExpandCollapseIcon')).Visible := False;
+        ToolButtonExpandCollapseIcon.Visible := False;
       end;
   end;
 end;

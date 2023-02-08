@@ -1,3 +1,5 @@
+// This is a unit to convert JSON to YAML and vice versa.
+
 unit Roselt.JsonYamlConverter;
 
 interface
