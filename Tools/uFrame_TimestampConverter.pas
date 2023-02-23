@@ -49,48 +49,74 @@ type
     laySeconds: TLayout;
     lblSeconds: TLabel;
     sbSeconds: TSpinBox;
-    btnInputClear: TButton;
-    imgInputClear: TSkSvg;
-    lblInputClear: TLabel;
-    btnInputCopyToClipboard: TButton;
-    imgInputCopyToClipboard: TSkSvg;
-    lblInputCopyToClipboard: TLabel;
-    btnNow: TButton;
-    imgNow: TSkSvg;
-    lblNow: TLabel;
-    btnInputPasteFromClipboard: TButton;
-    imgInputPasteFromClipboard: TSkSvg;
-    lblInputPasteFromClipboard: TLabel;
-    Layout1: TLayout;
-    Label1: TLabel;
+    btnInputClearUnixTimestamp: TButton;
+    imgInputClearUnixTimestamp: TSkSvg;
+    lblInputClearUnixTimestamp: TLabel;
+    btnInputCopyToClipboardUnixTimestamp: TButton;
+    imgInputCopyToClipboardUnixTimestamp: TSkSvg;
+    lblInputCopyToClipboardUnixTimestamp: TLabel;
+    btnNowUnixTimestamp: TButton;
+    imgNowUnixTimestamp: TSkSvg;
+    lblNowUnixTimestamp: TLabel;
+    btnInputPasteFromClipboardUnixTimestamp: TButton;
+    imgInputPasteFromClipboardUnixTimestamp: TSkSvg;
+    lblInputPasteFromClipboardUnixTimestamp: TLabel;
+    layCalendar: TLayout;
+    lblCalendar: TLabel;
     Calendar: TCalendar;
-    Button1: TButton;
-    SkSvg1: TSkSvg;
-    Label2: TLabel;
+    btnNowCalendar: TButton;
+    imgNowCalendar: TSkSvg;
+    lblNowCalendar: TLabel;
+    layVariantTimestamp: TLayout;
+    lbVariantTimestamp: TLabel;
+    btnInputClearVariantTimestamp: TButton;
+    imgInputClearVariantTimestamp: TSkSvg;
+    lblInputClearVariantTimestamp: TLabel;
+    btnInputCopyToClipboardVariantTimestamp: TButton;
+    imgInputCopyToClipboardVariantTimestamp: TSkSvg;
+    lblInputCopyToClipboardVariantTimestamp: TLabel;
+    btnNowVariantTimestamp: TButton;
+    imgNowVariantTimestamp: TSkSvg;
+    lblNowVariantTimestamp: TLabel;
+    btnInputPasteFromClipboardVariantTimestamp: TButton;
+    imgInputPasteFromClipboardVariantTimestamp: TSkSvg;
+    lblInputPasteFromClipboardVariantTimestamp: TLabel;
+    sbVariantTimestamp: TSpinBox;
     procedure FrameResized(Sender: TObject);
     procedure sbUnixTimestampChange(Sender: TObject);
     procedure TimestampChange(Sender: TObject);
-    procedure btnNowClick(Sender: TObject);
-    procedure btnInputClearClick(Sender: TObject);
-    procedure btnInputCopyToClipboardClick(Sender: TObject);
-    procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure btnNowUnixTimestampClick(Sender: TObject);
+    procedure btnInputClearUnixTimestampClick(Sender: TObject);
+    procedure btnInputCopyToClipboardUnixTimestampClick(Sender: TObject);
+    procedure btnInputPasteFromClipboardUnixTimestampClick(Sender: TObject);
     procedure CalendarChange(Sender: TObject);
+    procedure sbVariantTimestampChange(Sender: TObject);
+    procedure btnInputPasteFromClipboardVariantTimestampClick(Sender: TObject);
+    procedure btnInputCopyToClipboardVariantTimestampClick(Sender: TObject);
+    procedure btnInputClearVariantTimestampClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
 
 {$R *.fmx}
 
-procedure TFrame_TimestampConverter.btnInputClearClick(Sender: TObject);
+procedure TFrame_TimestampConverter.btnInputClearUnixTimestampClick(Sender: TObject);
 begin
   sbUnixTimestamp.Value := 0;
 end;
 
-procedure TFrame_TimestampConverter.btnInputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_TimestampConverter.btnInputClearVariantTimestampClick(
+  Sender: TObject);
+begin
+  sbVariantTimestamp.Value := 0;
+end;
+
+procedure TFrame_TimestampConverter.btnInputCopyToClipboardUnixTimestampClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -98,7 +124,16 @@ begin
     ClipboardService.SetClipboard(sbUnixTimestamp.Value);
 end;
 
-procedure TFrame_TimestampConverter.btnInputPasteFromClipboardClick(Sender: TObject);
+procedure TFrame_TimestampConverter.btnInputCopyToClipboardVariantTimestampClick(
+  Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(sbVariantTimestamp.Value);
+end;
+
+procedure TFrame_TimestampConverter.btnInputPasteFromClipboardUnixTimestampClick(Sender: TObject);
   function RemoveNonNumericChars(const s: string): string;
   begin
     Result := '';
@@ -115,7 +150,25 @@ begin
     sbUnixTimestamp.Value := RemoveNonNumericChars(ClipboardService.GetClipboard.ToString).ToDouble;
 end;
 
-procedure TFrame_TimestampConverter.btnNowClick(Sender: TObject);
+procedure TFrame_TimestampConverter.btnInputPasteFromClipboardVariantTimestampClick(
+  Sender: TObject);
+  function RemoveNonNumericChars(const s: string): string;
+  begin
+    Result := '';
+    for var i := 1 to s.Length do
+    begin
+      if s[i] in ['0'..'9','.'] then
+        Result := Result + s[i];
+    end;
+  end;
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    sbVariantTimestamp.Value := RemoveNonNumericChars(ClipboardService.GetClipboard.ToString).ToDouble;
+end;
+
+procedure TFrame_TimestampConverter.btnNowUnixTimestampClick(Sender: TObject);
 begin
   sbUnixTimestamp.Value := DateTimeToUnix(Now);
 end;
@@ -123,6 +176,12 @@ end;
 procedure TFrame_TimestampConverter.CalendarChange(Sender: TObject);
 begin
   sbUnixTimestamp.Value := DateTimeToUnix(Calendar.DateTime,True);
+end;
+
+constructor TFrame_TimestampConverter.Create(AOwner: TComponent);
+begin
+  inherited;
+  btnNowUnixTimestamp.OnClick(btnNowUnixTimestamp);
 end;
 
 procedure TFrame_TimestampConverter.FrameResized(Sender: TObject);
@@ -147,6 +206,7 @@ begin
   sbMinutes.OnChange := nil;
   sbSeconds.OnChange := nil;
   Calendar.OnChange := nil;
+  sbVariantTimestamp.OnChange := nil;
 
   var SelectedDateTime := UnixToDateTime(Trunc(sbUnixTimestamp.Value));
   sbYear.Value := YearOf(SelectedDateTime);
@@ -157,6 +217,7 @@ begin
   sbMinutes.Value := MinuteOf(SelectedDateTime);
   sbSeconds.Value := SecondOf(SelectedDateTime);
   Calendar.DateTime := SelectedDateTime;
+  sbVariantTimestamp.Value := SelectedDateTime;
 
   sbYear.OnChange := TimestampChange;
   sbMonth.OnChange := TimestampChange;
@@ -165,11 +226,18 @@ begin
   sbMinutes.OnChange := TimestampChange;
   sbSeconds.OnChange := TimestampChange;
   Calendar.OnChange := CalendarChange;
+  sbVariantTimestamp.OnChange := sbVariantTimestampChange;
+end;
+
+procedure TFrame_TimestampConverter.sbVariantTimestampChange(Sender: TObject);
+begin
+  sbUnixTimestamp.Value := DateTimeToUnix(sbVariantTimestamp.Value,True);
 end;
 
 procedure TFrame_TimestampConverter.TimestampChange(Sender: TObject);
 begin
   sbUnixTimestamp.OnChange := nil;
+  sbVariantTimestamp.OnChange := nil;
   Calendar.OnChange := nil;
 
   sbDay.Max := DaysInAMonth(Round(sbYear.Value),Round(sbMonth.Value));
@@ -187,6 +255,7 @@ begin
   Calendar.DateTime := UnixToDateTime(Trunc(sbUnixTimestamp.Value));
 
   sbUnixTimestamp.OnChange := sbUnixTimestampChange;
+  sbVariantTimestamp.OnChange := sbVariantTimestampChange;
   Calendar.OnChange := CalendarChange;
 end;
 
