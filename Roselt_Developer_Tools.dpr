@@ -44,7 +44,8 @@ uses
   uFrame_JWTTokenGenerator in 'Tools\uFrame_JWTTokenGenerator.pas' {Frame_JWTTokenGenerator: TFrame},
   Roselt.Utility in 'Roselt.Utility.pas',
   uFrame_PasswordGenerator in 'Tools\uFrame_PasswordGenerator.pas' {Frame_PasswordGenerator: TFrame},
-  uFrame_ImageEffects in 'Tools\uFrame_ImageEffects.pas' {Frame_ImageEffects: TFrame};
+  uFrame_ImageEffects in 'Tools\uFrame_ImageEffects.pas' {Frame_ImageEffects: TFrame},
+  uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame};
 
 {$R *.res}
 

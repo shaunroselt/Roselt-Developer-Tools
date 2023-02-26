@@ -68,6 +68,7 @@ uses
   uFrame_PasswordGenerator,
   uFrame_TextEscapeUnescape,
   uFrame_MarkdownPreview,
+  uFrame_HTMLPreview,
   uFrame_RegexTester,
   uFrame_NameGenerator,
 
@@ -184,6 +185,12 @@ type
     Rectangle2: TRectangle;
     SkSvg2: TSkSvg;
     layStuffThatwillNeverShow: TLayout;
+    btnChangeLog: TButton;
+    imgChangeLog: TSkSvg;
+    layChangeLog: TScrollBox;
+    layMemoChangeLog: TRectangle;
+    lblChangeLog: TLabel;
+    memChangeLog: TMemo;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -201,6 +208,7 @@ type
     procedure edtSearchAllToolsChange(Sender: TObject);
     procedure laySourceCodeLinkClick(Sender: TObject);
     procedure laySteamLinkClick(Sender: TObject);
+    procedure btnChangeLogClick(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -236,6 +244,7 @@ begin
 
         ToolButtonExpandCollapseIcon.Visible := True;
       end;
+    TControl(FindComponent('btnAllTools')).OnClick := btnAllToolsClick;
   end else
   begin
     HamburgerMenuWidth := MultiView.Width;
@@ -256,6 +265,7 @@ begin
 
         ToolButtonExpandCollapseIcon.Visible := False;
       end;
+    TControl(FindComponent('btnAllTools')).OnClick := btnAllToolsSearchClick;
   end;
 end;
 
@@ -611,6 +621,7 @@ begin
   CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
   CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
   CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
+  CreateToolFrame(TFrame_HTMLPreview.Create(Self),'layHTMLPreview');
   CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
 
 
@@ -768,7 +779,17 @@ end;
 procedure TfrmMain.btnAllToolsSearchClick(Sender: TObject);
 begin
   btnAllToolsClick(btnAllTools);
-  edtSearchAllTools.Text := String(TControl(Sender).Name).Replace('btn','').Replace('ExpandCollapse','');
+
+  var SearchText := String(TControl(Sender).Name).Replace('btn','').Replace('ExpandCollapse','');
+  if (TControl(Sender).Name = 'btnAllTools') then SearchText := '';
+
+  edtSearchAllTools.Text := SearchText;
+end;
+
+procedure TfrmMain.btnChangeLogClick(Sender: TObject);
+begin
+  lblNavTitle.Text := 'Change Log';
+  SelectTool('layChangeLog');
 end;
 
 end.

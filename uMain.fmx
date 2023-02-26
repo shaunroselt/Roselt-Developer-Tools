@@ -86,7 +86,7 @@ object frmMain: TfrmMain
     Size.Width = 799.000000000000000000
     Size.Height = 751.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 6
+    TabOrder = 5
     object layAllTools: TScrollBox
       Align = Client
       Padding.Left = 10.000000000000000000
@@ -97,7 +97,6 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Visible = False
       Viewport.Width = 783.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layAllToolsGrid: TFlowLayout
@@ -126,7 +125,7 @@ object frmMain: TfrmMain
           Size.Width = 185.000000000000000000
           Size.Height = 240.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 12
+          TabOrder = 11
           object Label7: TLabel
             Align = Top
             AutoSize = True
@@ -271,7 +270,8 @@ object frmMain: TfrmMain
       Size.Width = 799.000000000000000000
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 3
+      Visible = False
       Viewport.Width = 799.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layFontFamily: TRectangle
@@ -5408,14 +5408,14 @@ object frmMain: TfrmMain
         end
         object layAppInfoTitleDescription: TLayout
           Align = Client
-          Size.Width = 650.000000000000000000
+          Size.Width = 600.000000000000000000
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object lblAppInfoTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 650.000000000000000000
+            Size.Width = 600.000000000000000000
             Size.Height = 24.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
@@ -5425,7 +5425,7 @@ object frmMain: TfrmMain
           object lblAppInfoDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 650.000000000000000000
+            Size.Width = 600.000000000000000000
             Size.Height = 24.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 14.000000000000000000
@@ -5436,12 +5436,15 @@ object frmMain: TfrmMain
         object btnAppInfoCopyToClipboard: TButton
           Align = Right
           Cursor = crHandPoint
-          Position.X = 699.000000000000000000
+          Hint = 'Copy App Info to Clipboard'
+          Margins.Right = 2.000000000000000000
+          Position.X = 649.000000000000000000
           Position.Y = 12.000000000000000000
           Size.Width = 48.000000000000000000
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 2
+          TabOrder = 3
+          OnClick = btnAllToolsClick
           object imgAppInfoCopyToClipboard: TSkSvg
             Align = Client
             Margins.Left = 12.000000000000000000
@@ -5464,6 +5467,43 @@ object frmMain: TfrmMain
               '5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0' +
               ' 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13 +
               #10'</svg>'
+          end
+        end
+        object btnChangeLog: TButton
+          Align = Right
+          Cursor = crHandPoint
+          Hint = 'View Change Log'
+          Position.X = 699.000000000000000000
+          Position.Y = 12.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          OnClick = btnChangeLogClick
+          object imgChangeLog: TSkSvg
+            Align = Client
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16' +
+              '">'#13#10'  <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 ' +
+              '0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646' +
+              ' 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0' +
+              ' 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 ' +
+              '0 0 0-.708z"/>'#13#10'  <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 ' +
+              '2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 ' +
+              '0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>'#13#10'  <path d="M1 5' +
+              'v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3' +
+              'v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3' +
+              'v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>' +
+              #13#10'</svg>'
           end
         end
       end
@@ -5618,6 +5658,7 @@ object frmMain: TfrmMain
         end
         object laySteamLink: TLayout
           Align = Top
+          Cursor = crHandPoint
           Position.X = 12.000000000000000000
           Position.Y = 100.000000000000000000
           Size.Width = 735.000000000000000000
@@ -5669,6 +5710,63 @@ object frmMain: TfrmMain
         end
       end
     end
+    object layChangeLog: TScrollBox
+      Align = Client
+      Padding.Left = 20.000000000000000000
+      Padding.Top = 20.000000000000000000
+      Padding.Right = 20.000000000000000000
+      Padding.Bottom = 20.000000000000000000
+      Size.Width = 799.000000000000000000
+      Size.Height = 751.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Visible = False
+      Viewport.Width = 799.000000000000000000
+      Viewport.Height = 751.000000000000000000
+      object layMemoChangeLog: TRectangle
+        Align = Client
+        Fill.Color = x4B000000
+        Padding.Left = 12.000000000000000000
+        Padding.Top = 12.000000000000000000
+        Padding.Right = 12.000000000000000000
+        Padding.Bottom = 12.000000000000000000
+        Margins.Bottom = 6.000000000000000000
+        Sides = []
+        Size.Width = 759.000000000000000000
+        Size.Height = 675.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object memChangeLog: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          Lines.Strings = (
+            '1.0.0.0 (2023-03-01):'
+            '- Initial Release')
+          ReadOnly = True
+          Align = Client
+          Size.Width = 735.000000000000000000
+          Size.Height = 651.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Viewport.Width = 727.000000000000000000
+          Viewport.Height = 643.000000000000000000
+        end
+      end
+      object lblChangeLog: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 759.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Change Log'
+        TabOrder = 0
+      end
+    end
   end
   object SplitterNavContent: TSplitter
     Align = Left
@@ -5682,7 +5780,7 @@ object frmMain: TfrmMain
   object layStuffThatwillNeverShow: TLayout
     Align = Client
     Visible = False
-    TabOrder = 7
+    TabOrder = 6
   end
   object MultiView: TMultiView
     DrawerOptions.TouchAreaSize = 25.000000000000000000
@@ -5692,7 +5790,7 @@ object frmMain: TfrmMain
     Size.Height = 751.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'MultiView1Style1'
-    TabOrder = 3
+    TabOrder = 2
     object MultiViewScrollBox: TVertScrollBox
       Align = Client
       Size.Width = 400.000000000000000000

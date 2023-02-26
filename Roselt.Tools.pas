@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..38] of TRoseltTools = (
+  RoseltToolsArray: array[0..39] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -527,6 +527,21 @@ const
       {$ELSE}
         active: false;
         visible: false;
+      {$ENDIF}
+      parent: 'Text';
+    ),
+    (
+      text_short: 'HTML Preview';
+      text_long: 'HTML Preview';
+      name: 'HTMLPreview';
+      description: 'Preview HTML, CSS and JavaScript';
+      icon: 'browser-edge';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Text';
     ),

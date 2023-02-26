@@ -2,7 +2,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
   Size.Width = 800.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
+  OnResized = FrameResized
   object layTop: TLayout
     Align = Top
     Padding.Left = 20.000000000000000000
@@ -240,7 +240,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 7
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -273,7 +273,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -287,7 +287,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -317,7 +317,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputClear: TButton
@@ -331,7 +331,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -359,7 +359,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputLoad: TButton
@@ -373,7 +373,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -400,7 +400,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -415,8 +415,8 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 380.000000000000000000
-        Viewport.Height = 463.000000000000000000
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 459.000000000000000000
       end
     end
     object layOutput: TLayout
@@ -445,7 +445,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -475,7 +475,7 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -489,8 +489,8 @@ object Frame_JsonYamlConverter: TFrame_JsonYamlConverter
         Size.Height = 463.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 375.000000000000000000
-        Viewport.Height = 463.000000000000000000
+        Viewport.Width = 371.000000000000000000
+        Viewport.Height = 459.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter
