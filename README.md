@@ -27,6 +27,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Text Case Converter & Inspector
 - Color Picker
 - Image Effects
+- HTML Preview
 
 
 ## Planned Tools
@@ -49,7 +50,6 @@ _Note: All tools are still in active development with lots of bugs_
 - XML Generator
 - Text Difference
 - Markdown Preview
-- HTML Preview
 - Text Escape/Unescape
 - Image Converter
 - PNG/JPEG Compressor
