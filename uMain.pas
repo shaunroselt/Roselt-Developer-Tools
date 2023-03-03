@@ -166,14 +166,10 @@ type
     Image1: TSkSvg;
     Label1: TLabel;
     laySourceCodeLink: TLayout;
-    Label2: TLabel;
-    Image2: TSkSvg;
     layMicrosoftStoreLink: TLayout;
     Label3: TLabel;
     Image3: TSkSvg;
     laySteamLink: TLayout;
-    Label4: TLabel;
-    Image5: TSkSvg;
     Button14: TButton;
     imgToolHelp: TSkSvg;
     layAllToolsHidden: TFlowLayout;
@@ -191,6 +187,12 @@ type
     layMemoChangeLog: TRectangle;
     lblChangeLog: TLabel;
     memChangeLog: TMemo;
+    btnSteamLink: TRectangle;
+    Image5: TSkSvg;
+    Label4: TLabel;
+    btnSourceCodeLink: TRectangle;
+    Image2: TSkSvg;
+    Label2: TLabel;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -206,9 +208,10 @@ type
     procedure AllToolsButtonClick(Sender: TObject);
     procedure edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtSearchAllToolsChange(Sender: TObject);
-    procedure laySourceCodeLinkClick(Sender: TObject);
-    procedure laySteamLinkClick(Sender: TObject);
     procedure btnChangeLogClick(Sender: TObject);
+    procedure btnSteamLinkClick(Sender: TObject);
+    procedure btnSourceCodeLinkClick(Sender: TObject);
+    procedure btnSettingsMouseEnter(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -267,6 +270,22 @@ begin
       end;
     TControl(FindComponent('btnAllTools')).OnClick := btnAllToolsSearchClick;
   end;
+end;
+
+procedure TfrmMain.btnSettingsMouseEnter(Sender: TObject);
+begin
+  TRectangle(Sender).Fill.Kind := TBrushKind.Solid;
+  TRectangle(Sender).Fill.Color := $FF3C3C3C;
+end;
+
+procedure TfrmMain.btnSourceCodeLinkClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools');
+end;
+
+procedure TfrmMain.btnSteamLinkClick(Sender: TObject);
+begin
+  OpenURL('https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/');
 end;
 
 procedure TfrmMain.btnToolHelpClick(Sender: TObject);
@@ -669,16 +688,6 @@ begin
   var CompiledDate := Date.ToString;
 
   Result := Version + ' | ' + Architecture + ' | ' + BuildType + ' | ' + CompiledDate;
-end;
-
-procedure TfrmMain.laySourceCodeLinkClick(Sender: TObject);
-begin
-  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools');
-end;
-
-procedure TfrmMain.laySteamLinkClick(Sender: TObject);
-begin
-  OpenURL('https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/');
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
