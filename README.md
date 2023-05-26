@@ -15,6 +15,7 @@ _Note: All tools are still in active development with lots of bugs_
 ## Current Tools
 - YSON <> YAML Converter
 - Number Base Converter
+- Text to Array Converter
 - Timestamp Converter
 - HTML Encoder/Decoder
 - Base64 Text Encoder/Decoder
