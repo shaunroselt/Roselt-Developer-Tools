@@ -147,7 +147,7 @@ begin
   if (memInput.Text.IsEmpty) then
   begin
     // If Input is empty, then set output to empty and exit funtion.
-    memOutput.Text.Empty;
+    memOutput.Lines.Clear;
     Exit;
   end;
 

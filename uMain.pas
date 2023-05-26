@@ -71,6 +71,7 @@ uses
   uFrame_HTMLPreview,
   uFrame_RegexTester,
   uFrame_NameGenerator,
+  uFrame_TextToArray,
 
   Skia,
   Skia.FMX;
@@ -629,6 +630,7 @@ begin
   CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
   CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
   CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
+  CreateToolFrame(TFrame_TextToArray.Create(Self),'layTextToArray');
   CreateToolFrame(TFrame_ImageEffects.Create(Self),'layImageEffects');
   CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
   CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');

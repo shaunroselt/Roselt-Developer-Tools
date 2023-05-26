@@ -21,14 +21,16 @@ uses
   {$ENDIF}
 
   System.SysUtils,
-  System.StrUtils;
+  System.StrUtils,
+  System.Classes;
 
 
 procedure OpenURL(URL: string);
 
-
 function RemoveNonDigits(const S: string): string;
 function RemoveNonDigitsAndLetters(const S: string): string;
+
+function RemoveEmptyLinesAndWhitespace(const S: string): string;
 
 implementation
 
@@ -75,6 +77,21 @@ begin
       Result[LActualLength] := S[i];
     end;
   SetLength(Result, LActualLength);
+end;
+
+function RemoveEmptyLinesAndWhitespace(const S: string): string;
+begin
+  var SL := TStringList.Create;
+  SL.Text := S;
+
+  for var i := SL.Count - 1 downto 0 do
+  begin
+    SL[i] := Trim(SL[i]);
+    if SL[i] = '' then SL.Delete(i);
+  end;
+
+  Result := SL.Text;
+  SL.Free;
 end;
 
 end.

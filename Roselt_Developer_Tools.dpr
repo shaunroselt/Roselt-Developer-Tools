@@ -45,11 +45,16 @@ uses
   Roselt.Utility in 'Roselt.Utility.pas',
   uFrame_PasswordGenerator in 'Tools\uFrame_PasswordGenerator.pas' {Frame_PasswordGenerator: TFrame},
   uFrame_ImageEffects in 'Tools\uFrame_ImageEffects.pas' {Frame_ImageEffects: TFrame},
-  uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame};
+  uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame},
+  Roselt.CodeFormatting in 'Roselt.CodeFormatting.pas',
+  uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame};
 
 {$R *.res}
 
 begin
+//  {$IFDEF DEBUG}
+//    ReportMemoryLeaksOnShutdown := True; // This could be useful. Need to learn how it works.
+//  {$ENDIF}
   Application.Initialize;
   Application.CreateForm(TdmStyles, dmStyles);
   Application.CreateForm(TfrmMain, frmMain);

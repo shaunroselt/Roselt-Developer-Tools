@@ -1,134 +1,16 @@
-object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
-  Size.Width = 800.000000000000000000
-  Size.Height = 748.000000000000000000
+object Frame_TextToArray: TFrame_TextToArray
+  Size.Width = 864.000000000000000000
+  Size.Height = 676.000000000000000000
   Size.PlatformDefault = False
-  OnResize = FrameResize
-  object layTop: TLayout
-    Align = Top
-    Padding.Left = 20.000000000000000000
-    Padding.Top = 20.000000000000000000
-    Padding.Right = 20.000000000000000000
-    Padding.Bottom = 20.000000000000000000
-    Size.Width = 800.000000000000000000
-    Size.Height = 134.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object lblConfiguration: TLabel
-      Align = Top
-      StyledSettings = [Family, Style, FontColor]
-      Position.X = 20.000000000000000000
-      Position.Y = 20.000000000000000000
-      Size.Width = 760.000000000000000000
-      Size.Height = 30.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 20.000000000000000000
-      Text = 'Configuration'
-      TabOrder = 0
-    end
-    object layConversion: TRectangle
-      Align = Top
-      Fill.Color = x4B000000
-      Padding.Left = 12.000000000000000000
-      Padding.Top = 12.000000000000000000
-      Padding.Right = 12.000000000000000000
-      Padding.Bottom = 12.000000000000000000
-      Margins.Bottom = 6.000000000000000000
-      Position.X = 20.000000000000000000
-      Position.Y = 50.000000000000000000
-      Sides = []
-      Size.Width = 760.000000000000000000
-      Size.Height = 72.000000000000000000
-      Size.PlatformDefault = False
-      Stroke.Kind = None
-      XRadius = 8.000000000000000000
-      YRadius = 8.000000000000000000
-      object layConversionTitleDescription: TLayout
-        Align = Client
-        Size.Width = 517.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        object lblConversionTitle: TLabel
-          Align = Top
-          StyledSettings = [Family, Style, FontColor]
-          Size.Width = 517.000000000000000000
-          Size.Height = 24.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Size = 18.000000000000000000
-          Text = 'Conversion'
-          TabOrder = 1
-        end
-        object lblConversionDescription: TLabel
-          Align = Client
-          StyledSettings = [Family, Style, FontColor]
-          Size.Width = 517.000000000000000000
-          Size.Height = 24.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Size = 14.000000000000000000
-          Text = 'Select which conversion mode you want to use'
-          TabOrder = 0
-        end
-      end
-      object SwitchConversion: TSwitch
-        Align = Right
-        Cursor = crHandPoint
-        IsChecked = True
-        Position.X = 670.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Width = 78.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 3
-        OnSwitch = SwitchConversionSwitch
-      end
-      object lblSwitchConversion: TLabel
-        Align = Right
-        StyledSettings = [Family, Style, FontColor]
-        Margins.Right = 8.000000000000000000
-        Position.X = 566.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Width = 96.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 18.000000000000000000
-        TextSettings.HorzAlign = Trailing
-        Text = 'Encode'
-        TabOrder = 1
-        OnClick = SwitchConversionSwitch
-        OnDblClick = SwitchConversionSwitch
-      end
-      object imgConversion: TSkSvg
-        Align = Left
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 12.000000000000000000
-        Margins.Right = 8.000000000000000000
-        Margins.Bottom = 12.000000000000000000
-        Position.X = 17.000000000000000000
-        Position.Y = 24.000000000000000000
-        Size.Width = 24.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        Svg.OverrideColor = claWhite
-        Svg.Source = 
-          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-          'ill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 1' +
-          '6 16">'#13#10'  <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h1' +
-          '1.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-' +
-          '4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0' +
-          ' 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 ' +
-          '0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>'#13 +
-          #10'</svg>'
-      end
-    end
-  end
+  OnResized = FrameResized
   object layBottom: TLayout
     Align = Client
     Padding.Left = 20.000000000000000000
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
-    Size.Width = 800.000000000000000000
-    Size.Height = 614.000000000000000000
+    Size.Width = 864.000000000000000000
+    Size.Height = 467.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object layInput: TLayout
@@ -136,7 +18,7 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 380.000000000000000000
-      Size.Height = 574.000000000000000000
+      Size.Height = 427.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object memTitleInput: TLabel
@@ -159,7 +41,7 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 7
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -239,47 +121,6 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
             TabOrder = 5
           end
         end
-        object btnInputLoad: TButton
-          Align = Right
-          Cursor = crHandPoint
-          Margins.Top = 1.000000000000000000
-          Margins.Right = 4.000000000000000000
-          Margins.Bottom = 1.000000000000000000
-          Position.X = 87.000000000000000000
-          Position.Y = 1.000000000000000000
-          Size.Width = 70.000000000000000000
-          Size.Height = 34.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 7
-          OnClick = btnInputLoadClick
-          object imgInputLoad: TSkSvg
-            Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Position.X = 5.000000000000000000
-            Position.Y = 5.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
-            Size.PlatformDefault = False
-            Svg.OverrideColor = claWhite
-            Svg.Source = 
-              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-              'ill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16' +
-              '">'#13#10'  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 ' +
-              '0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v1' +
-              '2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>'#13#10'</svg>'
-          end
-          object lblInputLoad: TLabel
-            Align = Client
-            Size.Width = 36.000000000000000000
-            Size.Height = 34.000000000000000000
-            Size.PlatformDefault = False
-            Text = 'Load'
-            TabOrder = 5
-          end
-        end
         object btnInputClear: TButton
           Align = Right
           Cursor = crHandPoint
@@ -322,6 +163,47 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
             TabOrder = 5
           end
         end
+        object btnInputLoad: TButton
+          Align = Right
+          Cursor = crHandPoint
+          Margins.Top = 1.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 1.000000000000000000
+          Position.X = 87.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          OnClick = btnInputLoadClick
+          object imgInputLoad: TSkSvg
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16' +
+              '">'#13#10'  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 ' +
+              '0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v1' +
+              '2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>'#13#10'</svg>'
+          end
+          object lblInputLoad: TLabel
+            Align = Client
+            Size.Width = 36.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Load'
+            TabOrder = 5
+          end
+        end
       end
       object memInput: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
@@ -330,29 +212,24 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
         OnChange = memInputChange
         Align = Client
         Size.Width = 380.000000000000000000
-        Size.Height = 538.000000000000000000
+        Size.Height = 391.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
         Viewport.Width = 376.000000000000000000
-        Viewport.Height = 534.000000000000000000
-        object OpenDialog: TOpenDialog
-          Filter = 'All Files|*|*.txt|*.txt|*.html|*.html'
-          Left = 320
-          Top = 416
-        end
+        Viewport.Height = 387.000000000000000000
       end
     end
     object layOutput: TLayout
       Align = Client
-      Size.Width = 375.000000000000000000
-      Size.Height = 574.000000000000000000
+      Size.Width = 439.000000000000000000
+      Size.Height = 427.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object memTitleOutput: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 375.000000000000000000
+        Size.Width = 439.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -364,7 +241,7 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 304.000000000000000000
+          Position.X = 368.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -409,12 +286,12 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
         ReadOnly = True
         TextSettings.WordWrap = True
         Align = Client
-        Size.Width = 375.000000000000000000
-        Size.Height = 538.000000000000000000
+        Size.Width = 439.000000000000000000
+        Size.Height = 391.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 371.000000000000000000
-        Viewport.Height = 534.000000000000000000
+        Viewport.Width = 435.000000000000000000
+        Viewport.Height = 387.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter
@@ -424,8 +301,206 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
       Position.X = 400.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 5.000000000000000000
-      Size.Height = 574.000000000000000000
+      Size.Height = 427.000000000000000000
       Size.PlatformDefault = False
     end
+  end
+  object layTop: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 864.000000000000000000
+    Size.Height = 209.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblConfiguration: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 824.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Configuration'
+      TabOrder = 0
+    end
+    object layConversion: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Sides = []
+      Size.Width = 824.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object cbConversion: TComboBox
+        Align = Right
+        Items.Strings = (
+          'C#'
+          'C++'
+          'Delphi'
+          'Kotlin'
+          'Java'
+          'JavaScript'
+          'Go'
+          'PHP'
+          'Python')
+        ItemIndex = 5
+        Position.X = 672.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnChange = memInputChange
+      end
+      object layTitleDescriptionConversion: TLayout
+        Align = Client
+        Size.Width = 623.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblTitleConversion: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 623.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Conversion'
+          TabOrder = 1
+        end
+        object lblDescriptionConversion: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 623.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select which language to convert to'
+          TabOrder = 0
+        end
+      end
+      object imgConversion: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 1' +
+          '6 16">'#13#10'  <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h1' +
+          '1.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-' +
+          '4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0' +
+          ' 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 ' +
+          '0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>'#13 +
+          #10'</svg>'
+      end
+    end
+    object layArrayName: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 128.000000000000000000
+      Sides = []
+      Size.Width = 824.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object layTitleDescriptionArrayName: TLayout
+        Align = Client
+        Size.Width = 623.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblTitleArrayName: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 623.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Array Name'
+          TabOrder = 1
+        end
+        object lblDescriptionArrayName: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 623.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select which name you want for the array'
+          TabOrder = 0
+        end
+      end
+      object imgArrayName: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-cursor-text" viewBox="0 0 16 16"' +
+          '>'#13#10'  <path d="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.17' +
+          '4.099.321.198.44.286.119-.088.266-.187.44-.286A4.165 4.165 0 0 1' +
+          ' 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.49 3.49 0' +
+          ' 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.2' +
+          '94.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.165 4.165 0 0 1-2.' +
+          '06-.566A4.561 4.561 0 0 1 8 13.65a4.561 4.561 0 0 1-.44.285 4.16' +
+          '5 4.165 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.43' +
+          '4.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.49 ' +
+          '3.49 0 0 0-.436-.294A3.166 3.166 0 0 0 5.5 2.5.5.5 0 0 1 5 2zm3.' +
+          '352 1.355zm-.704 9.29z"/>'#13#10'</svg>'
+      end
+      object edtArrayName: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 2
+        Text = 'MyArray'
+        Position.X = 672.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Filter = 'All Files|*|*.txt|*.txt'
+    Left = 320
+    Top = 416
   end
 end

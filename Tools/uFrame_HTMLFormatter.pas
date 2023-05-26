@@ -22,6 +22,9 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
+  Roselt.CodeFormatting,
+
   Skia,
   Skia.FMX;
 
@@ -63,8 +66,14 @@ type
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
+    procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
+      Shift: TShiftState);
+    procedure memInputChange(Sender: TObject);
   private
     { Private declarations }
+    procedure HTMLFormat();
   public
     { Public declarations }
   end;
@@ -73,12 +82,27 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_HTMLFormatter.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Lines.Clear;
+  HTMLFormat();
+end;
+
 procedure TFrame_HTMLFormatter.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_HTMLFormatter.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    HTMLFormat();
+  end;
 end;
 
 procedure TFrame_HTMLFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -100,6 +124,22 @@ end;
 procedure TFrame_HTMLFormatter.FrameResize(Sender: TObject);
 begin
   layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
+end;
+
+procedure TFrame_HTMLFormatter.HTMLFormat;
+begin
+  memOutput.Text := FormatHTML(memInput.Text);
+end;
+
+procedure TFrame_HTMLFormatter.memInputChange(Sender: TObject);
+begin
+  HTMLFormat();
+end;
+
+procedure TFrame_HTMLFormatter.memInputKeyUp(Sender: TObject; var Key: Word;
+  var KeyChar: Char; Shift: TShiftState);
+begin
+  HTMLFormat();
 end;
 
 end.

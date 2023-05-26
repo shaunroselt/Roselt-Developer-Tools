@@ -251,6 +251,7 @@ object Frame_HTMLFormatter: TFrame_HTMLFormatter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 8
+          OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -291,6 +292,7 @@ object Frame_HTMLFormatter: TFrame_HTMLFormatter
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -325,11 +327,13 @@ object Frame_HTMLFormatter: TFrame_HTMLFormatter
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
         TextSettings.WordWrap = True
+        OnChange = memInputChange
         Align = Client
         Size.Width = 380.000000000000000000
         Size.Height = 543.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
+        OnKeyUp = memInputKeyUp
         Viewport.Width = 376.000000000000000000
         Viewport.Height = 539.000000000000000000
         object OpenDialog: TOpenDialog

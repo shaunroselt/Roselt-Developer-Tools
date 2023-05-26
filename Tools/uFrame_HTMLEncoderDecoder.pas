@@ -82,7 +82,7 @@ implementation
 
 procedure TFrame_HTMLEncoderDecoder.btnInputClearClick(Sender: TObject);
 begin
-  memInput.Text := '';
+  memInput.Lines.Clear;
   HTMLEncoderDecoder();
 end;
 

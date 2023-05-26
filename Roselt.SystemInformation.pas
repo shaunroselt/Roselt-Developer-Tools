@@ -130,10 +130,6 @@ function NSUserName: Pointer; cdecl; external '/System/Library/Frameworks/Founda
 {$ENDIF}
 
 function TSystemInformation.GetUserName: String;
-{$IFDEF MSWINDOWS}
-var
-  nSize: DWord;
-{$ENDIF}
 begin
   Result := '';
   {$IFDEF MACOS}
@@ -141,7 +137,7 @@ begin
   {$ENDIF}
   {$IFDEF MSWINDOWS}
     // GetEnvironmentVariable('USERNAME') works on Windows, but is not safe as this can be modified by apps and isn't always accurate
-    nSize := 1024;
+    var nSize: DWord := 1024;
     SetLength(Result, nSize);
     if Winapi.Windows.GetUserName(PChar(Result), nSize) then
     begin
