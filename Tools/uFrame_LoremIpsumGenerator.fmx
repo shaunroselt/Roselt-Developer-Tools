@@ -34,7 +34,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -64,7 +64,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnOutputRefresh: TButton
@@ -78,7 +78,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Width = 81.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 3
+        TabOrder = 4
         OnClick = btnOutputRefreshClick
         object imgOutputRefresh: TSkSvg
           Align = Left
@@ -106,7 +106,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Refresh'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
     end
@@ -120,8 +120,8 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Viewport.Width = 760.000000000000000000
-      Viewport.Height = 383.000000000000000000
+      Viewport.Width = 756.000000000000000000
+      Viewport.Height = 379.000000000000000000
     end
   end
   object layTop: TLayout
@@ -197,14 +197,14 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       end
       object layTypeTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblTypeTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -214,7 +214,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         object lblTypeDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -230,9 +230,9 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           'Words'
           'Lists')
         ItemIndex = 0
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -286,14 +286,14 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       end
       object layAmountTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblAmountTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -303,7 +303,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         object lblAmountDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -317,9 +317,9 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         TabOrder = 2
         Cursor = crIBeam
         Value = 10.000000000000000000
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         OnChange = btnOutputRefreshClick
@@ -350,9 +350,9 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           'UPPER'
           'Title')
         ItemIndex = 0
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -360,14 +360,14 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       end
       object layLetterCaseTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblLetterCaseTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -377,7 +377,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         object lblLetterCaseDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000

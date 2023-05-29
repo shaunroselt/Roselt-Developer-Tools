@@ -141,6 +141,21 @@ const
       parent: 'Converters';
     ),
     (
+      text_short: 'Text to Array';
+      text_long: 'Text to Array';
+      name: 'TextToArray';
+      description: 'Convert a text to an array';
+      icon: 'braces';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Converters';
+    ),
+    (
       text_short: 'Timestamp';
       text_long: 'Timestamp';
       name: 'TimestampConverter';
@@ -161,21 +176,6 @@ const
       name: 'NumberBaseConverter';
       description: 'Convert numbers from one base to another';
       icon: '123';
-      {$IFDEF DEBUG}
-        active: true;
-        visible: true;
-      {$ELSE}
-        active: true;
-        visible: true;
-      {$ENDIF}
-      parent: 'Converters';
-    ),
-    (
-      text_short: 'Text to Array';
-      text_long: 'Text to Array';
-      name: 'TextToArray';
-      description: 'Convert a text to an array';
-      icon: 'braces';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
@@ -300,8 +300,8 @@ const
         active: true;
         visible: true;
       {$ELSE}
-        active: true;
-        visible: true;
+        active: false;
+        visible: false;
       {$ENDIF}
       parent: 'Formatters';
     ),

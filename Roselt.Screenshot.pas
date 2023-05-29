@@ -33,6 +33,17 @@ uses
 
 implementation
 
+{$IFDEF LINUX}
+procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);
+begin
+  // Have not been implemented for Linux yet
+end;
+
+procedure TakeWindowShot(h: TWindowHandle; Dest: FMX.Graphics.TBitmap);
+begin
+  // Have not been implemented for Linux yet
+end;
+{$ENDIF LINUX}
 
 {$IFDEF ANDROID}
 procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);

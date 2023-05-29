@@ -35,7 +35,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Size.Width = 81.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 3
+        TabOrder = 4
         OnClick = btnRefreshClick
         object imgRefresh: TSkSvg
           Align = Left
@@ -63,7 +63,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Refresh'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
       object btnOutputCopyToClipboard: TButton
@@ -77,7 +77,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Size.Width = 70.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
+        TabOrder = 5
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -107,7 +107,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Copy'
-          TabOrder = 4
+          TabOrder = 5
         end
       end
     end
@@ -120,8 +120,8 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Size.Height = 303.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Viewport.Width = 760.000000000000000000
-      Viewport.Height = 303.000000000000000000
+      Viewport.Width = 756.000000000000000000
+      Viewport.Height = 299.000000000000000000
     end
   end
   object layTop: TLayout
@@ -369,14 +369,14 @@ object Frame_NameGenerator: TFrame_NameGenerator
       end
       object layAmountTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblAmountTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -386,7 +386,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         object lblAmountDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -401,9 +401,9 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Cursor = crIBeam
         Max = 1000.000000000000000000
         Value = 20.000000000000000000
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         OnChange = btnRefreshClick
@@ -433,9 +433,9 @@ object Frame_NameGenerator: TFrame_NameGenerator
           'lower'
           'UPPER')
         ItemIndex = 0
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -443,14 +443,14 @@ object Frame_NameGenerator: TFrame_NameGenerator
       end
       object layLetterCaseTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblLetterCaseTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -460,7 +460,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         object lblLetterCaseDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -540,14 +540,14 @@ object Frame_NameGenerator: TFrame_NameGenerator
       end
       object layMaxLengthTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblMaxLengthTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -557,7 +557,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         object lblMaxLengthDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -573,9 +573,9 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Min = 6.000000000000000000
         Max = 1000.000000000000000000
         Value = 100.000000000000000000
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         OnChange = btnRefreshClick
