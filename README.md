@@ -66,6 +66,8 @@ Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](http
 ## Third Party Libraries
 Skia4Delphi: https://github.com/skia4delphi/skia4delphi
 
+Bootstrap Icons: https://github.com/shaunroselt/Delphi-Bootstrap-Icons
+
 
 ## Screenshots
 ![JSON-YAML Converter](https://user-images.githubusercontent.com/5418178/215146229-9509d54d-e2c5-4864-b9b6-9509efef440a.png)
