@@ -91,7 +91,7 @@ begin
 // MODIFIED
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(TEdit(TControl(Sender).Parent.Parent).Text);
-// ENDMOD TEO 20230629 18:28:48 CEST
+// ENDMOD TEO 20 230629 18:28:48 CEST
 end;
 
 procedure TFrame_NumberBaseConverter.edtBinaryKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
