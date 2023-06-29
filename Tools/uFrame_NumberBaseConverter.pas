@@ -83,8 +83,15 @@ procedure TFrame_NumberBaseConverter.CopyOutputToClipboard(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+// MOD TEO 20230629 18:28:48 CEST
+// ORIGINAL
+{*  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
+*}
+// MODIFIED
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(TEdit(TControl(Sender).Parent.Parent).Text);
+// ENDMOD TEO 20230629 18:28:48 CEST
 end;
 
 procedure TFrame_NumberBaseConverter.edtBinaryKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
