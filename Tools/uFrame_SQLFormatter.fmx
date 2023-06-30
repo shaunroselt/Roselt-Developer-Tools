@@ -159,7 +159,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -192,7 +192,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -206,7 +206,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -236,7 +236,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputLoad: TButton
@@ -250,7 +250,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 8
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -276,7 +276,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputClear: TButton
@@ -290,7 +290,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -317,21 +317,29 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
       object memInput: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
+        Lines.Strings = (
+          
+            'SELECT id_asiento, id_apunte, fecha, fecha_valor, concepto, debe' +
+            ', haber, ISNULL(debe_haber,'#39'D'#39') AS debe_haber, ISNULL(punteado,'#39 +
+            '0'#39') as punteado FROM vExtracto WHERE id_empresa = 1 AND id_ejerc' +
+            'icio = 2018 AND  id_cuenta = '#39'41090600'#39' AND fecha BETWEEN '#39'01-01' +
+            '-2018'#39' AND '#39'27/07/2018 0:00:00'#39' ORDER BY id_cuenta,fecha,CASE id' +
+            '_concepto WHEN 7 THEN -1  ELSE 0 END , id_asiento')
         TextSettings.WordWrap = True
         Align = Client
         Size.Width = 380.000000000000000000
         Size.Height = 543.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 380.000000000000000000
-        Viewport.Height = 543.000000000000000000
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 539.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt|*.sql|*.sql'
           Left = 320
@@ -365,7 +373,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -395,7 +403,7 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -409,8 +417,9 @@ object Frame_SQLFormatter: TFrame_SQLFormatter
         Size.Height = 543.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 375.000000000000000000
-        Viewport.Height = 543.000000000000000000
+        OnEnter = memOutputEnter
+        Viewport.Width = 371.000000000000000000
+        Viewport.Height = 539.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter

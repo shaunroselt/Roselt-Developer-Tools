@@ -22,6 +22,7 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
+  Roselt.CodeFormatting,
   Skia,
   Skia.FMX;
 
@@ -63,8 +64,10 @@ type
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
+    procedure memOutputEnter(Sender: TObject);
   private
     { Private declarations }
+    procedure SQLFormat();
   public
     { Public declarations }
   end;
@@ -100,6 +103,16 @@ end;
 procedure TFrame_SQLFormatter.FrameResize(Sender: TObject);
 begin
   layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
+end;
+
+procedure TFrame_SQLFormatter.memOutputEnter(Sender: TObject);
+begin
+  SQLFormat();
+end;
+
+Procedure TFrame_SQLFormatter.SQLFormat;
+begin
+  memOutput.Text := FormatSQL(memInput.Text);
 end;
 
 end.

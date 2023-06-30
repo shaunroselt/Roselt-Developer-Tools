@@ -312,10 +312,10 @@ const
       description: 'Indent SQL queries';
       icon: 'server';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
+        active: true;
         visible: false;
       {$ENDIF}
       parent: 'Formatters';
