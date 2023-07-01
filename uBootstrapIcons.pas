@@ -3,6 +3,8 @@ unit uBootstrapIcons;
 
 interface
 
+uses System.RegularExpressions;
+
 type
   TBootstrapIcon = record
     name: String;
@@ -10,8 +12,22 @@ type
   end;
 
 function GetBootstrapIcon(IconName: String): String;
+function GetBootstrapIconPathData(IconName: String): String;
 
 implementation
+
+function GetBootstrapIconPathData(IconName: String): String;
+// This function doesn't work on all of the icons, but works on most of them.
+begin
+  Result := '';
+  var Matches := TRegEx.Matches(GetBootstrapIcon(IconName), '<path\s+d="([^"]+)"');
+  if Matches.Count > 0 then
+  begin
+    var Match: TMatch := Matches[0];
+    var PathData := Match.Groups[1].Value;
+    Result := PathData;
+  end;
+end;
 
 function GetBootstrapIcon(IconName: String): String;
 const
