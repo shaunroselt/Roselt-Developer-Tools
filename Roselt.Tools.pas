@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..40] of TRoseltTools = (
+  RoseltToolsArray: array[0..42] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -107,6 +107,21 @@ const
       {$ELSE}
         active: true;
         visible: true;
+      {$ENDIF}
+      parent: '';
+    ),
+    ( // Converters Main Category (Parent)
+      text_short: 'Other';
+      text_long: 'Other';
+      name: 'Other';
+      description: 'Other';
+      icon: 'hexagon';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
       {$ENDIF}
       parent: '';
     ),
@@ -312,7 +327,7 @@ const
       description: 'Indent SQL queries';
       icon: 'server';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -619,6 +634,21 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Graphics';
+    ),
+    (
+      text_short: 'Ping IP / Domain';
+      text_long: 'Ping IP / Domain';
+      name: 'PingIP';
+      description: 'Ping and IP Address or Domain Name';
+      icon: 'wifi';
+      {$IFDEF DEBUG}
+        active: false;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
+      {$ENDIF}
+      parent: 'Other';
     ),
     (
       text_short: 'Image Converter';
