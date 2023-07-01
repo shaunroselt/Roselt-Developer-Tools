@@ -1,0 +1,7 @@
+{
+  "name": "Rpselt Developer Tools",
+  "version": "Early Access",
+  "dependencies": {
+    "Delphi-Bootstrap-Icons": "shaunroselt/Delphi-Bootstrap-Icons"
+  }
+}
