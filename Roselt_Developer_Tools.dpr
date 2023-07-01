@@ -37,7 +37,6 @@ uses
   uFrame_TextEscapeUnescape in 'Tools\uFrame_TextEscapeUnescape.pas' {Frame_TextEscapeUnescape: TFrame},
   uFrame_MarkdownPreview in 'Tools\uFrame_MarkdownPreview.pas' {Frame_MarkdownPreview: TFrame},
   uFrame_RegexTester in 'Tools\uFrame_RegexTester.pas' {Frame_RegexTester: TFrame},
-  uBootstrapIcons in 'uBootstrapIcons.pas',
   Roselt.SystemInformation in 'Roselt.SystemInformation.pas',
   Roselt.NumberBaseConversion in 'Roselt.NumberBaseConversion.pas',
   Roselt.Tools in 'Roselt.Tools.pas',
@@ -47,7 +46,8 @@ uses
   uFrame_ImageEffects in 'Tools\uFrame_ImageEffects.pas' {Frame_ImageEffects: TFrame},
   uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame},
   Roselt.CodeFormatting in 'Roselt.CodeFormatting.pas',
-  uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame};
+  uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame},
+  uBootstrapIcons in 'Libraries\Delphi-Bootstrap-Icons\uBootstrapIcons.pas';
 
 {$R *.res}
 
