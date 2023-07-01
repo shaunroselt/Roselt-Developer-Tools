@@ -537,9 +537,7 @@ end;
 
 procedure TFrame_ColorPicker.btnEyeDropperClick(Sender: TObject);
 begin
-  {$IF DEFINED(LINUX)}
-    ShowMessage('Not supported on Linux');
-  {$ELSEIF DEFINED(ANDROID)}
+  {$IF DEFINED(ANDROID)}
     ShowMessage('Not supported on Android');
   {$ELSE}
     var bm := TBitmap.Create;
@@ -674,9 +672,6 @@ end;
 
 procedure TFrame_ColorPicker.FrameResized(Sender: TObject);
 begin
-  {$IF DEFINED(LINUX)}
-    btnEyeDropper.Visible := False;
-  {$ENDIF}
   {$IF DEFINED(ANDROID)}
     btnEyeDropper.Visible := False;
   {$ENDIF}
