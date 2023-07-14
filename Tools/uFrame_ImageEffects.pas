@@ -21,6 +21,8 @@ uses
   FMX.Objects,
   FMX.Controls.Presentation,
   FMX.ExtCtrls,
+  FMX.Platform,
+  FMX.Menus,
   FMX.Effects,
   FMX.ListBox,
   FMX.Edit,
@@ -296,9 +298,15 @@ type
     LinkControlToPropertyBandDensity: TLinkControlToProperty;
     LinkControlToPropertyBandIntensity: TLinkControlToProperty;
     LinkControlToPropertyEnabled8: TLinkControlToProperty;
+    PopupMenu: TPopupMenu;
+    btnCopyImageToClipboard: TMenuItem;
+    btnSaveImageToFile: TMenuItem;
+    SaveDialog: TSaveDialog;
     procedure EnabledSwitch(Sender: TObject);
     procedure cbColorGlowChange(Sender: TObject);
     procedure btnDropImageClick(Sender: TObject);
+    procedure btnSaveImageToFileClick(Sender: TObject);
+    procedure btnCopyImageToClipboardClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -309,6 +317,15 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_ImageEffects.btnCopyImageToClipboardClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  var TheImage := TImage(FindComponent('img' + TabControlImages.ActiveTab.Text.Replace(' ','',[rfReplaceAll])));
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(TheImage.MakeScreenshot);
+end;
+
 procedure TFrame_ImageEffects.btnDropImageClick(Sender: TObject);
 begin
   if (OpenDialog.Execute) then
@@ -318,6 +335,15 @@ begin
     imgBlur.Bitmap.LoadFromFile(OpenDialog.FileName);
     imgGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
     imgInnerGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
+  end;
+end;
+
+procedure TFrame_ImageEffects.btnSaveImageToFileClick(Sender: TObject);
+begin
+  if SaveDialog.Execute then
+  begin
+    var TheImage := TImage(FindComponent('img' + TabControlImages.ActiveTab.Text.Replace(' ','',[rfReplaceAll])));
+    TheImage.MakeScreenshot.SaveToFile(SaveDialog.FileName);
   end;
 end;
 
