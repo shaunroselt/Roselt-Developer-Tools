@@ -4,9 +4,12 @@ interface
 
 uses
   Roselt.Utility,
+
   System.SysUtils,
   System.Classes,
-  System.StrUtils;
+  System.StrUtils,
+
+  XML.XMLDoc;
 
 type
   TCodeFormatter = record
@@ -41,7 +44,7 @@ end;
 class function TCodeFormatter.FormatXML(xml: String; IndentationType: TIndentationType; IndentationCount: TIdentationCount): String;
 //  Doesn't work yet. Just testing things out.
 begin
-
+  Result := FormatXMLData(xml);
 end;
 
 class function TCodeFormatter.FormatHTML(html: String; IndentationType: TIndentationType; IndentationCount: TIdentationCount): String;
