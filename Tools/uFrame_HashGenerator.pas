@@ -26,8 +26,8 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts, 
   FMX.ExtCtrls,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_HashGenerator = class(TFrame)

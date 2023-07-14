@@ -22,8 +22,8 @@ uses
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Controls.Presentation,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_TextCaseConverterInspector = class(TFrame)

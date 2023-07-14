@@ -73,8 +73,8 @@ uses
   uFrame_NameGenerator,
   uFrame_TextToArray,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TfrmMain = class(TForm)

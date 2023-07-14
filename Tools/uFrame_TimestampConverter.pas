@@ -23,8 +23,8 @@ uses
   FMX.EditBox,
   FMX.Objects,
   FMX.Calendar,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_TimestampConverter = class(TFrame)

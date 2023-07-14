@@ -23,8 +23,8 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   Roselt.JsonYamlConverter,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_JsonYamlConverter = class(TFrame)

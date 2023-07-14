@@ -22,8 +22,8 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX, FMX.Edit;
+  System.Skia,
+  FMX.Skia, FMX.Edit;
 
 type
   TFrame_TextToArray = class(TFrame)

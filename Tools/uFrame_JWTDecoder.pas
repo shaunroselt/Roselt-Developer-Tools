@@ -22,8 +22,8 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   FMX.Objects,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_JWTDecoder = class(TFrame)

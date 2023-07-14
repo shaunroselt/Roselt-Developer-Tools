@@ -35,8 +35,8 @@ uses
   Data.Bind.EngExt,
   Data.Bind.Components,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_ImageEffects = class(TFrame)

@@ -24,8 +24,8 @@ uses
   FMX.Platform,
   FMX.Layouts,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_Base64ImageEncoderDecoder = class(TFrame)

@@ -25,8 +25,8 @@ uses
 
   Roselt.CodeFormatting,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_HTMLFormatter = class(TFrame)

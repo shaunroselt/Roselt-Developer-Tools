@@ -26,8 +26,8 @@ uses
   FMX.Layouts,
   FMX.Objects,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_PasswordGenerator = class(TFrame)

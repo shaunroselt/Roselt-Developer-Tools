@@ -34,8 +34,8 @@ uses
 
   Roselt.NameGenerator,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_NameGenerator = class(TFrame)

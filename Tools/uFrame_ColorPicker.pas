@@ -33,8 +33,8 @@ uses
   Roselt.ColorConversion,
   Roselt.NumberBaseConversion,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_ColorPicker = class(TFrame)

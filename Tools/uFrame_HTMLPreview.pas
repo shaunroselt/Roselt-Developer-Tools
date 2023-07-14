@@ -23,8 +23,8 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   FMX.WebBrowser,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_HTMLPreview = class(TFrame)

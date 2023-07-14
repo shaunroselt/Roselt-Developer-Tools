@@ -22,8 +22,8 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_JavaScriptFormatter = class(TFrame)

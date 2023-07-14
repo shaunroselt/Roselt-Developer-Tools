@@ -19,8 +19,8 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX,
+  System.Skia,
+  FMX.Skia,
   Roselt.NumberBaseConversion,
   Roselt.Utility;
 
