@@ -5,6 +5,7 @@ program Roselt_Developer_Tools;
 uses
   System.StartUpCopy,
   FMX.Forms,
+  FMX.Skia,
   uMain in 'uMain.pas' {frmMain},
   uStyles in 'uStyles.pas' {dmStyles: TDataModule},
   Roselt.ColorConversion in 'Roselt.ColorConversion.pas',
@@ -52,6 +53,7 @@ uses
 {$R *.res}
 
 begin
+  GlobalUseSkia := True;
 //  {$IFDEF DEBUG}
 //    ReportMemoryLeaksOnShutdown := True; // This could be useful. Need to learn how it works.
 //  {$ENDIF}
