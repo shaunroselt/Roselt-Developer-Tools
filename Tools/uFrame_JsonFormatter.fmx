@@ -44,6 +44,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
       YRadius = 8.000000000000000000
       object cbIndentation: TComboBox
         Align = Right
+        Enabled = False
         Items.Strings = (
           '2 spaces'
           '3 spaces'
@@ -159,7 +160,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -192,7 +193,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -206,7 +207,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -236,7 +237,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputLoad: TButton
@@ -250,7 +251,8 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 7
+          OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -276,7 +278,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputClear: TButton
@@ -290,7 +292,8 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
+          OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -317,7 +320,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -332,8 +335,8 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 380.000000000000000000
-        Viewport.Height = 543.000000000000000000
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 539.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt|*.json|*.json'
           Left = 320
@@ -367,7 +370,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -397,7 +400,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -411,8 +414,8 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
         Size.Height = 543.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 375.000000000000000000
-        Viewport.Height = 543.000000000000000000
+        Viewport.Width = 371.000000000000000000
+        Viewport.Height = 539.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter

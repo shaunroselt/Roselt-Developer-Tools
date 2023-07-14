@@ -9,6 +9,8 @@ uses
   System.Classes,
   System.StrUtils,
 
+  System.JSON,
+
   XML.XMLDoc;
 
 type
@@ -24,7 +26,7 @@ type
     class function FormatJavaScript(js: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: TIdentationCount = 2): String; static;
     class function FormatXML(xml: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: TIdentationCount = 2): String; static;
     class function FormatPHP(php: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: TIdentationCount = 2): String; static;
-    class function FormatJson(delphi: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: TIdentationCount = 2): String; static;
+    class function FormatJson(json: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: TIdentationCount = 2): String; static;
   end;
 
 implementation
@@ -42,7 +44,7 @@ begin
 end;
 
 class function TCodeFormatter.FormatXML(xml: String; IndentationType: TIndentationType; IndentationCount: TIdentationCount): String;
-//  Doesn't work yet. Just testing things out.
+// It works, but Indentation still needs to be implemented
 begin
   Result := FormatXMLData(xml);
 end;
@@ -92,10 +94,18 @@ begin
 
 end;
 
-class function TCodeFormatter.FormatJson(delphi: String; IndentationType: TIndentationType; IndentationCount: TIdentationCount): String;
-//  Doesn't work yet. Just testing things out.
+class function TCodeFormatter.FormatJson(json: String; IndentationType: TIndentationType; IndentationCount: TIdentationCount): String;
+// It works, but need to add ability to choose between spaces and tabs
 begin
-
+  try
+    var JsonObject := TJSONObject.ParseJSONValue(json) as TJSONObject;
+    Result := JsonObject.Format(IndentationCount);
+  except
+    on E:Exception do
+    begin
+      // Error in JSON syntax
+    end;
+  end;
 end;
 
 class function TCodeFormatter.FormatPHP(php: String; IndentationType: TIndentationType; IndentationCount: TIdentationCount): String;

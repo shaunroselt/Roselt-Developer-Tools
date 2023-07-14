@@ -8,8 +8,6 @@ uses
   System.UITypes,
   System.Classes,
   System.Variants,
-  System.JSON,
-  REST.Json,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -24,6 +22,9 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
+  Roselt.CodeFormatting,
+
   System.Skia,
   FMX.Skia;
 
@@ -67,9 +68,11 @@ type
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
+    procedure btnInputClearClick(Sender: TObject);
+    procedure btnInputLoadClick(Sender: TObject);
   private
     { Private declarations }
-    procedure JsonFormatter();
+    procedure JsonFormat();
   public
     { Public declarations }
   end;
@@ -78,12 +81,27 @@ implementation
 
 {$R *.fmx}
 
+procedure TFrame_JsonFormatter.btnInputClearClick(Sender: TObject);
+begin
+  memInput.Lines.Clear;
+  JsonFormat();
+end;
+
 procedure TFrame_JsonFormatter.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memInput.Text);
+end;
+
+procedure TFrame_JsonFormatter.btnInputLoadClick(Sender: TObject);
+begin
+  if (OpenDialog.Execute) then
+  begin
+    memInput.Lines.LoadFromFile(OpenDialog.FileName);
+    JsonFormat();
+  end;
 end;
 
 procedure TFrame_JsonFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -107,23 +125,19 @@ begin
   layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
 end;
 
-procedure TFrame_JsonFormatter.JsonFormatter;
+procedure TFrame_JsonFormatter.JsonFormat;
 begin
-  try
-    memOutput.Text := TJSON.Format(TJSONObject.ParseJSONValue(memInput.Text));
-  except on E: Exception do
-
-  end;
+  memOutput.Text := TCodeFormatter.FormatJson(memInput.Text);
 end;
 
 procedure TFrame_JsonFormatter.memInputChange(Sender: TObject);
 begin
-  JsonFormatter();
+  JsonFormat();
 end;
 
 procedure TFrame_JsonFormatter.memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
 begin
-  JsonFormatter();
+  JsonFormat();
 end;
 
 end.

@@ -60,8 +60,8 @@ const
         active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: '';
     ),
@@ -297,11 +297,11 @@ const
       description: 'Indent or minify JSON data';
       icon: 'filetype-json';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Formatters';
     ),
