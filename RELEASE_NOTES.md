@@ -4,10 +4,20 @@
 <h1 align="center">
   Roselt Developer Tools
 </h1>
-
-<p align="center">
+<h2 align="center">
   Cross-Platform Utilities App for Developers.
-</p>
+</h2>
+
+This app's history actually goes back to 2013 when I created the very first tool (Color Picker) in the app. 
+
+Initially, it was just a simple Color Picker Tool for myself and close friends. I kept updating and rewriting this tool and eventually in 2017 I released it to the public as "Roselt Color Picker".
+
+And in the back of my mind, I always knew I wanted the app to be fully cross-platform, open source, and have many many other tools in it.
+
+And in 2020, I finally started working on "Roselt Developer Tools", one app to rule them all 😁.
+
+Since 2017, I've kept release notes for every public release of the app and I'm proud to finally have the release notes available on GitHub too.
+
 
 ## Release Notes
 * Version 1.0.0 (29/08/2017)
@@ -46,10 +56,12 @@
 
 
 ## Version 1.0.0 (29/08/2017)
+![Roselt Color Picker - Version 1.0.0 (29/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/01449a9e-4e7c-41a0-959d-ff65b5cd43dd)
 - Initial Release.
 
   
 ## Version 1.1.0 (29/08/2017)
+![Roselt Color Picker - Version 1.1.0 (29/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/40fa5bcf-94f9-49a0-bcac-30bae9567b86)
 - Added an RGB picker.
 - Updated the app icon.
 - Made the starting window size larger.
@@ -60,6 +72,7 @@
 
   
 ## Version 1.2.0 (30/08/2017)
+![Roselt Color Picker - Version 1.2.0 (30/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/10c6cd25-5631-4797-81aa-8cb512f24e27)
 - Added Settings.
 - Mentioned that the Delphi Color Code is for the VCL Framework.
 - Added support for Delphi in the FMX Framework.
@@ -71,6 +84,7 @@
 
 
 ## Version 1.3.0 (31/08/2017)
+![Roselt Color Picker - Version 1.3.0 (31/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/25aba14f-aab1-44dc-8344-49e5351a84dc)
 - You can now type an RGB color.
 - The app now has an installer.
 - Added support for RGBA colors in C# and Delphi (FMX).
@@ -80,11 +94,13 @@
 
 
 ## Version 1.4.0 (31/08/2017)
+![Roselt Color Picker - Version 1.4.0 (31/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f51a8b80-2d33-4eb1-ba43-f081495c0e60)
 - Added the shortcut keys section in the About Form.
 - Added the ability to save and load custom colors.
 
 
 ## Version 1.5.0 (05/09/2017)
+![Roselt Color Picker - Version 1.5.0 (05/09/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/33e26a2f-d484-416f-a463-87f02f644b93)
 - Added the ability to delete all custom colors.
 - It is now mobile responsive.
 - You can now select a color from your own screen.
