@@ -31,6 +31,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Color Picker
 - Image Effects
 - HTML Preview
+- Ping IP / Domain
 
 
 ## Planned Tools
@@ -56,7 +57,6 @@ _Note: All tools are still in active development with lots of bugs_
 - PNG/JPEG Compressor
 - Color Blindness Simulator
 - Code Minifier (Various languages)
-- IP Ping
 - SSL Certificate Decoder
 
 
