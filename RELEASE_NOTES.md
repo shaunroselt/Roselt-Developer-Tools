@@ -110,6 +110,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 1.6.0 (06/09/2017)
+![Roselt Color Picker - Version 1.6.0 (06/09/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f25d5219-5a84-4648-aa99-3ce3076cd57b)
 - Improved backend code and efficiency of code.
 - Saving Colors now doesn't accept blank names.
 - Changed the layout of Settings.
@@ -123,6 +124,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 1.6.2 (12/09/2017)
+![Roselt Color Picker - Version 1.6.2 (12/09/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f6b53d20-ff7b-41e7-bccd-20887a1450fc)
 - Added the ability to search for predefined colors and custom colors.
 
 
@@ -144,14 +146,17 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 1.7.1 (04/10/2017)
+![Roselt Color Picker - Version 1.7.1 (04/10/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/51d8e44c-5176-4c5b-a323-b046707bea95)
 - Added support for Unity's Hex Color Codes.
 
 
 ## Version 1.8.0 (06/02/2018)
+![Roselt Color Picker - Version 1.8.0 (06/02/2018)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/fe9f2c20-4acf-43d7-b57b-1e66b460be21)
 - Improved the overall User Interface.
 
 
 ## Version 1.8.1 (07/02/2018)
+![Roselt Color Picker - Version 1.8.1 (07/02/2018)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/1b998c1a-1f5b-4708-a224-6ea875754c4e)
 - Added the ability to Hide/Show Color Codes.
 - Fixed a hamburger menu bug with the "Screen Eye Dropper".
 - Added more information to the Developer tab in the About.
@@ -190,6 +195,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 1.9.0 (24/06/2018)
+![Roselt Color Picker - Version 1.9.0 (24/06/2018)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/5f7171be-0a2f-4577-b252-a0b7346fe80b)
 - Fixed an issue with HSV Color Values.
 - Improve the GUI for Color Values.
 - Added HSL Color Values.
@@ -205,6 +211,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 2.0.0 (01/07/2018)
+![Roselt Color Picker](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/b4cf1949-6248-444c-ad46-cd5114b9f43c)
 - Added CIELAB Color Values.
 - Added a new feature called "Color Range" where you can see colors matching your current color.
 - Improved the responsiveness of the app when going into Mobile View and resizing the window.
@@ -224,6 +231,8 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 2.1.0 (13/01/2018)
+![Roselt Color Picker - Version 2.1.0 (13/01/2018)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/071319db-c4c3-4cd4-9f04-ebb07b1bdfe6)
+![Roselt Color Picker - Version 2.1.0 (13/01/2018) - Dark Mode](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/4970ef6a-d3b9-4aa0-98be-0f86793e7680)
 - Improved Samsung DeX Support on Android.
 - Improved Android 9.0 Support.
 - The Hamburger Menu is now always visible on Android and has icons added to it.
@@ -258,6 +267,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 3.0.0 Beta 1 (27/04/2020)
+![Roselt Color Picker - Version 3.0.0 Beta 1 (27/04/2020)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/7f640a6b-8ff8-489b-9ad7-1b531635e5ad)
 - Open Sourced the entire codebase on GitHub.
 - Revamped most of the user interface.
 - New icons.
@@ -273,6 +283,8 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 3.0.0 Beta 2 (28/05/2023)
+![Roselt Developer Tools - Version 3.0.0 Beta 2 (28/05/2023) - All Tools](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/8e0c3a56-6e82-46d7-b285-506e2c8b4e5a)
+![Roselt Developer Tools - Version 3.0.0 Beta 2 (28/05/2023) - Color Picker](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f426d00d-635f-444a-8a7f-c36f067b27e5)
 - Renamed the app to "Roselt Developer Tools".
 - Revamped the entire user interface again.
 - New icons again (Bootstrap Icons).
@@ -295,6 +307,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 3.0.0 Beta 3 (Unreleased)
+![Roselt Developer Tools - Version 3.0.0 Beta 3](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/623c4b2e-4ee3-4d68-a571-f3c6e275e5ee)
 - Fixed "Copy to Clipboard" buttons on Number Base Converter Tool.
 - Added "Copy to Clipboard" and "Save to File" for the Image Effects Tool.
 - Added JSON Formatter Tool.
