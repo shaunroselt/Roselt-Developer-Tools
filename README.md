@@ -63,6 +63,9 @@ _Note: All tools are still in active development with lots of bugs_
 ## Download
 Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/)
 
+## Release Notes (Change Log)
+[RELEASE_NOTES.md](https://github.com/shaunroselt/Roselt-Developer-Tools/blob/master/RELEASE_NOTES.md)
+
 
 ## Third-Party Libraries
 Skia4Delphi: https://github.com/skia4delphi/skia4delphi
