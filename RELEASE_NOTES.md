@@ -20,6 +20,8 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Release Notes
+* Version 0.1.0 Alpha (~2013)
+* Version 0.2.0 Alpha (~2015)
 * Version 1.0.0 (29/08/2017)
 * Version 1.1.0 (29/08/2017)
 * Version 1.2.0 (30/08/2017)
@@ -55,9 +57,19 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 * Version 3.0.0 Beta 3 (Unreleased)
 
 
+## Version 0.1.0 Alpha (~2013)
+![Delphi Color Picker - Version 0.1.0 Alpha (~2013)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f2a7b542-a3d2-4879-82ae-85b8ca1dc088)
+
+
+## Version 0.2.0 Alpha (~2015)
+![Delphi Color Picker - Version 0.2.0 Alpha (~2015)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/3e0b4f07-fd58-4270-8f77-e94330541a23)
+
+
+
 ## Version 1.0.0 (29/08/2017)
 ![Roselt Color Picker - Version 1.0.0 (29/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/01449a9e-4e7c-41a0-959d-ff65b5cd43dd)
 - Initial Release.
+- Changed name to "Roselt Color Picker"
 
   
 ## Version 1.1.0 (29/08/2017)
@@ -268,6 +280,7 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 ## Version 3.0.0 Beta 1 (27/04/2020)
 ![Roselt Color Picker - Version 3.0.0 Beta 1 (27/04/2020)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/7f640a6b-8ff8-489b-9ad7-1b531635e5ad)
+![Roselt Color Picker - Version 3.0.0 Beta 1 (27/04/2020) - Dark Mode](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/72827cd1-6918-435f-8797-ef6227c7b9c9)
 - Open Sourced the entire codebase on GitHub.
 - Revamped most of the user interface.
 - New icons.
