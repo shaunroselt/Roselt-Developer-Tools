@@ -72,6 +72,7 @@ uses
   uFrame_RegexTester,
   uFrame_NameGenerator,
   uFrame_TextToArray,
+  uFrame_PingIPDomain,
 
   System.Skia,
   FMX.Skia;
@@ -644,6 +645,7 @@ begin
   CreateToolFrame(TFrame_HTMLPreview.Create(Self),'layHTMLPreview');
   CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
   CreateToolFrame(TFrame_TextToArray.Create(Self),'layTextToArray');
+  CreateToolFrame(TFrame_PingIPDomain.Create(Self),'layPingIPDomain');
 
 
   // Load Themes (Settings)
