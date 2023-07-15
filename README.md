@@ -7,7 +7,7 @@
 
 Cross-Platform Utilities App for Developers.
 
-![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/7f00b84f-445e-4f09-8a4a-c81a346c41d3)
+![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/c3058dbe-1169-4f8f-98d9-a5d5eab7e009)
 
 
 _Note: All tools are still in active development with lots of bugs_
@@ -25,6 +25,8 @@ _Note: All tools are still in active development with lots of bugs_
 - Lorem Ipsum Generator
 - UUID Generator
 - Password Generator
+- JSON Code Formatter
+- XML Code Formatter
 - Text Case Converter & Inspector
 - Color Picker
 - Image Effects
@@ -37,14 +39,12 @@ _Note: All tools are still in active development with lots of bugs_
 - JWT Decoder
 - GZip Encoder/Decoder
 - Base64 Image Encoder/Decoder
-- JSON Formatter
-- CSS Formatter
-- HTML Formatter
-- PHP Formatter
-- SQL Formatter
-- JavaScript Formatter
-- XML Formatter
-- Delphi Formatter
+- CSS Code Formatter
+- HTML Code Formatter
+- PHP Code Formatter
+- SQL Code Formatter
+- JavaScript Code Formatter
+- Delphi Code Formatter
 - JWT Token Generator
 - JSON Generator
 - YAML Generator
@@ -64,7 +64,7 @@ _Note: All tools are still in active development with lots of bugs_
 Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/)
 
 
-## Third Party Libraries
+## Third-Party Libraries
 Skia4Delphi: https://github.com/skia4delphi/skia4delphi
 
 Bootstrap Icons: https://github.com/shaunroselt/Delphi-Bootstrap-Icons
