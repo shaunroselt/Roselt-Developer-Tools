@@ -48,7 +48,8 @@ uses
   uFrame_ImageEffects in 'Tools\uFrame_ImageEffects.pas' {Frame_ImageEffects: TFrame},
   uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame},
   Roselt.CodeFormatting in 'Roselt.CodeFormatting.pas',
-  uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame};
+  uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame},
+  uFrame_PingIPDomain in 'Tools\uFrame_PingIPDomain.pas' {Frame_PingIPDomain: TFrame};
 
 {$R *.res}
 
