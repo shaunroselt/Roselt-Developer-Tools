@@ -321,9 +321,8 @@ procedure TFrame_ImageEffects.btnCopyImageToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
-  var TheImage := TImage(FindComponent('img' + TabControlImages.ActiveTab.Text.Replace(' ','',[rfReplaceAll])));
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(TheImage.MakeScreenshot);
+    ClipboardService.SetClipboard(TImage(Sender).MakeScreenshot);
 end;
 
 procedure TFrame_ImageEffects.btnDropImageClick(Sender: TObject);
@@ -341,10 +340,7 @@ end;
 procedure TFrame_ImageEffects.btnSaveImageToFileClick(Sender: TObject);
 begin
   if SaveDialog.Execute then
-  begin
-    var TheImage := TImage(FindComponent('img' + TabControlImages.ActiveTab.Text.Replace(' ','',[rfReplaceAll])));
-    TheImage.MakeScreenshot.SaveToFile(SaveDialog.FileName);
-  end;
+    TImage(Sender).MakeScreenshot.SaveToFile(SaveDialog.FileName);
 end;
 
 procedure TFrame_ImageEffects.cbColorGlowChange(Sender: TObject);

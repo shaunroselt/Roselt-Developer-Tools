@@ -46795,6 +46795,23 @@ object Frame_ImageEffects: TFrame_ImageEffects
     Left = 216
     Top = 664
   end
+  object PopupMenu: TPopupMenu
+    Left = 456
+    Top = 456
+    object btnCopyImageToClipboard: TMenuItem
+      Text = 'Copy Image to Clipboard'
+      OnClick = btnCopyImageToClipboardClick
+    end
+    object btnSaveImageToFile: TMenuItem
+      Text = 'Save Image to File'
+      OnClick = btnSaveImageToFileClick
+    end
+  end
+  object SaveDialog: TSaveDialog
+    Filter = 'All Files|*|*.jpg|*.jpg|*.jpeg|*.jpeg|*.png|*.png'
+    Left = 232
+    Top = 568
+  end
   object BindingsList: TBindingsList
     Methods = <>
     OutputConverters = <>
@@ -46989,22 +47006,5 @@ object Frame_ImageEffects: TFrame_ImageEffects
       Component = BandsEffect
       ComponentProperty = 'Enabled'
     end
-  end
-  object PopupMenu: TPopupMenu
-    Left = 456
-    Top = 456
-    object btnCopyImageToClipboard: TMenuItem
-      Text = 'Copy Image to Clipboard'
-      OnClick = btnCopyImageToClipboardClick
-    end
-    object btnSaveImageToFile: TMenuItem
-      Text = 'Save Image to File'
-      OnClick = btnSaveImageToFileClick
-    end
-  end
-  object SaveDialog: TSaveDialog
-    Filter = 'All Files|*|*.jpg|*.jpg|*.jpeg|*.jpeg|*.png|*.png'
-    Left = 232
-    Top = 568
   end
 end
