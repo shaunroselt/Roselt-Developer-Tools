@@ -638,15 +638,15 @@ const
     (
       text_short: 'Ping IP / Domain';
       text_long: 'Ping IP / Domain';
-      name: 'PingIP';
+      name: 'PingIPDomain';
       description: 'Ping and IP Address or Domain Name';
       icon: 'wifi';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Other';
     ),

@@ -1,0 +1,309 @@
+object Frame_PingIPDomain: TFrame_PingIPDomain
+  Size.Width = 904.000000000000000000
+  Size.Height = 688.000000000000000000
+  Size.PlatformDefault = False
+  object layBottom: TLayout
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 904.000000000000000000
+    Size.Height = 559.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object memTitleOutput: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 864.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Results'
+      TabOrder = 0
+      object btnRefresh: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 708.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 81.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClick = btnRefreshClick
+        object imgRefresh: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16' +
+            ' 16">'#13#10'  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914' +
+            '.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>'#13#10'  <path d="M8 4.466V.5' +
+            '34a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.6' +
+            '58A.25.25 0 0 1 8 4.466z"/>'#13#10'</svg>'
+        end
+        object lblRefresh: TLabel
+          Align = Client
+          Size.Width = 47.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Refresh'
+          TabOrder = 5
+        end
+      end
+      object btnOutputCopyToClipboard: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 793.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        OnClick = btnOutputCopyToClipboardClick
+        object imgOutputCopyToClipboard: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+            #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+            ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+            ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+            '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+            '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+            ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+        end
+        object lblOutputCopyToClipboard: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Copy'
+          TabOrder = 5
+        end
+      end
+    end
+    object memOutput: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Size.Width = 864.000000000000000000
+      Size.Height = 413.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 860.000000000000000000
+      Viewport.Height = 409.000000000000000000
+    end
+    object layIPDomain: TLayout
+      Align = MostTop
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 864.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object lblIPDomainPing: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 864.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'IP Address / Domain'
+        TabOrder = 0
+      end
+      object edtIPDomain: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Size.Width = 864.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        object edtIPDomainButton: TEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 68.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          OnClick = btnRefreshClick
+          object edtIPDomainButtonLabel: TLabel
+            Align = Client
+            Size.Width = 34.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Ping'
+            TabOrder = 5
+          end
+          object edtIPDomainButtonImage: TSkSvg
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-router" viewBox="0 0 16 16">'#13#10'  ' +
+              '<path d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 ' +
+              '4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707Z"/>'#13#10'  <path d="M6.94 ' +
+              '4.44a1.5 1.5 0 0 1 2.12 0 .5.5 0 0 0 .708-.708 2.5 2.5 0 0 0-3.5' +
+              '36 0 .5.5 0 0 0 .707.707ZM2.5 11a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1Zm' +
+              '4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2.5.5a.5.5 0 1 1 0-1 .5.5 ' +
+              '0 0 1 0 1Zm1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 ' +
+              '1 0 .5.5 0 0 0-1 0Z"/>'#13#10'  <path d="M2.974 2.342a.5.5 0 1 0-.948.' +
+              '316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.' +
+              '5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5' +
+              '-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78' +
+              '-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86L2.974 2.342ZM14.5 9a.5.' +
+              '5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 ' +
+              '1 .5-.5h13Z"/>'#13#10'  <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 ' +
+              '0Z"/>'#13#10'</svg>'
+          end
+        end
+      end
+    end
+  end
+  object layTop: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 904.000000000000000000
+    Size.Height = 129.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblConfiguration: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 864.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Configuration'
+      TabOrder = 0
+    end
+    object layTimeout: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Sides = []
+      Size.Width = 864.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgTimeout: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-123" viewBox="0 0 16 16">'#13#10'  <pa' +
+          'th d="M2.873 11.297V4.142H1.699L0 5.379v1.137l1.64-1.18h.06v5.96' +
+          '1h1.174Zm3.213-5.09v-.063c0-.618.44-1.169 1.196-1.169.676 0 1.17' +
+          '4.44 1.174 1.106 0 .624-.42 1.101-.807 1.526L4.99 10.553v.744h4.' +
+          '78v-.99H6.643v-.069L8.41 8.252c.65-.724 1.237-1.332 1.237-2.27C9' +
+          '.646 4.849 8.723 4 7.308 4c-1.573 0-2.36 1.064-2.36 2.15v.057h1.' +
+          '138Zm6.559 1.883h.786c.823 0 1.374.481 1.379 1.179.01.707-.55 1.' +
+          '216-1.421 1.21-.77-.005-1.326-.419-1.379-.953h-1.095c.042 1.053.' +
+          '938 1.918 2.464 1.918 1.478 0 2.642-.839 2.62-2.144-.02-1.143-.9' +
+          '22-1.651-1.551-1.714v-.063c.535-.09 1.347-.66 1.326-1.678-.026-1' +
+          '.053-.933-1.855-2.359-1.845-1.5.005-2.317.88-2.348 1.898h1.116c.' +
+          '032-.498.498-.944 1.206-.944.703 0 1.206.435 1.206 1.07.005.64-.' +
+          '504 1.106-1.2 1.106h-.75v.96Z"/>'#13#10'</svg>'
+      end
+      object layTitleDescriptionTimeout: TLayout
+        Align = Client
+        Size.Width = 663.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblTitleTimeout: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 663.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Timeout (ms)'
+          TabOrder = 1
+        end
+        object lblDescriptionTimeout: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 663.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select the timeout in milliseconds'
+          TabOrder = 0
+        end
+      end
+      object sbTimeout: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Right
+        TabOrder = 2
+        Cursor = crIBeam
+        Max = 4294967295.000000000000000000
+        Value = 900.000000000000000000
+        Position.X = 712.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end

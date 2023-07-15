@@ -1,57 +1,57 @@
+// This unit is far from complete. We need to be able to ping an ip on all platforms (Windows, iOS, MacOS, Android, Linux)
+// Should maybe also investigate using Indy for pinging instead of this.
 unit Ping;
 
 interface
 {$IFDEF MSWINDOWS}
-uses Winapi.Winsock2,Windows;
+uses
+  Winapi.Winsock2,
+  Windows;
 {$ENDIF}
 
 type
-TPingStatistics = record
-Address: AnsiString;
-Status: DWORD;
-RoundTripTime: DWORD;
-DataSize: Integer;
-RepliesReceived: Cardinal;
-end;
+  TPingStatistics = record
+    Address: AnsiString;
+    Status: DWORD;
+    RoundTripTime: DWORD;
+    DataSize: Integer;
+    RepliesReceived: Cardinal;
+  end;
 
-function PingHost(const HostName: AnsiString; TimeoutMS: cardinal = 900): TPingStatistics;
+function PingHost(const HostName: AnsiString; TimeoutMS: Cardinal = 900): TPingStatistics;
 
 implementation
 
 uses SysUtils;
 
 function IcmpCreateFile: THandle; stdcall; external 'iphlpapi.dll';
-function IcmpCloseHandle(icmpHandle: THandle): boolean; stdcall;
-external 'iphlpapi.dll';
-function IcmpSendEcho(icmpHandle: THandle; DestinationAddress: In_Addr;
-RequestData: Pointer; RequestSize: Smallint; RequestOptions: Pointer;
-ReplyBuffer: Pointer; ReplySize: DWORD; Timeout: DWORD): DWORD; stdcall;
-external 'iphlpapi.dll';
+function IcmpCloseHandle(icmpHandle: THandle): boolean; stdcall; external 'iphlpapi.dll';
+function IcmpSendEcho(icmpHandle: THandle; DestinationAddress: In_Addr; RequestData: Pointer; RequestSize: Smallint; RequestOptions: Pointer; ReplyBuffer: Pointer; ReplySize: DWORD; Timeout: DWORD): DWORD; stdcall; external 'iphlpapi.dll';
 
 type
-PEchoReply = ^TEchoReply;
-TEchoReply = packed record
-Addr: In_Addr;
-Status: DWORD;
-RoundTripTime: DWORD;
-end;
+  PEchoReply = ^TEchoReply;
+  TEchoReply = packed record
+    Addr: In_Addr;
+    Status: DWORD;
+    RoundTripTime: DWORD;
+  end;
 
 var
-WSAData: TWSAData;
+  WSAData: TWSAData;
 
 procedure Startup;
 begin
-if WSAStartup(MAKEWORD(2, 2), WSAData) <> 0 then
-raise Exception.Create('WSAStartup');
+  if WSAStartup(MAKEWORD(2, 2), WSAData) <> 0 then
+    raise Exception.Create('WSAStartup');
 end;
 
 procedure Cleanup;
 begin
-if WSACleanup <> 0 then
-raise Exception.Create('WSACleanup');
+  if WSACleanup <> 0 then
+    raise Exception.Create('WSACleanup');
 end;
 
-function PingHost(const HostName: AnsiString; TimeoutMS: cardinal = 900): TPingStatistics;
+function PingHost(const HostName: AnsiString; TimeoutMS: Cardinal = 900): TPingStatistics;
 const
   rSize = $400;
 var
@@ -97,8 +97,6 @@ begin
   end;
   Cleanup;
 end;
-
-
 
 end.
 
