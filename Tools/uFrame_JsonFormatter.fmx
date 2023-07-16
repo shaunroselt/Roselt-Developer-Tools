@@ -10,7 +10,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 129.000000000000000000
+    Size.Height = 209.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object lblConfiguration: TLabel
@@ -44,8 +44,8 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
       YRadius = 8.000000000000000000
       object cbIndentation: TComboBox
         Align = Right
-        Enabled = False
         Items.Strings = (
+          '1 space'
           '2 spaces'
           '3 spaces'
           '4 spaces'
@@ -62,13 +62,14 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           '7 tabs'
           '8 tabs'
           'Minified')
-        ItemIndex = 0
+        ItemIndex = 1
         Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        OnChange = cbIndentationChange
       end
       object layIndentationTitleDescription: TLayout
         Align = Client
@@ -121,6 +122,88 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
           #10'</svg>'
       end
     end
+    object layInputType: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 128.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgInputType: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-sort-down-alt" viewBox="0 0 16 1' +
+          '6">'#13#10'  <path d="M3.5 3.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 ' +
+          '0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0' +
+          ' 0 0-.707-.708L3.5 12.293V3.5zm4 .5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 ' +
+          '0 1h-1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1h-3zm0 3a.5.5 0 0 1 0' +
+          '-1h5a.5.5 0 0 1 0 1h-5zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h' +
+          '-7a.5.5 0 0 0-.5.5z"/>'#13#10'</svg>'
+      end
+      object cbInputType: TComboBox
+        Align = Right
+        Enabled = False
+        Items.Strings = (
+          'No sorting'
+          'A to Z'
+          'Z to A')
+        ItemIndex = 0
+        Position.X = 608.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object layInputTypeTitleDescription: TLayout
+        Align = Client
+        Size.Width = 559.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblInputTypeTitle: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 559.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Sort Type'
+          TabOrder = 1
+        end
+        object lblInputTypeDescription: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 559.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select which sorting type you want applied to the properties'
+          TabOrder = 0
+        end
+      end
+    end
   end
   object layBottom: TLayout
     Align = Client
@@ -129,7 +212,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 619.000000000000000000
+    Size.Height = 539.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object layInput: TLayout
@@ -137,7 +220,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 380.000000000000000000
-      Size.Height = 579.000000000000000000
+      Size.Height = 499.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object memTitleInput: TLabel
@@ -331,12 +414,12 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
         OnChange = memInputChange
         Align = Client
         Size.Width = 380.000000000000000000
-        Size.Height = 543.000000000000000000
+        Size.Height = 463.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
         Viewport.Width = 376.000000000000000000
-        Viewport.Height = 539.000000000000000000
+        Viewport.Height = 459.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt|*.json|*.json'
           Left = 320
@@ -347,7 +430,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
     object layOutput: TLayout
       Align = Client
       Size.Width = 375.000000000000000000
-      Size.Height = 579.000000000000000000
+      Size.Height = 499.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object memTitleOutput: TLabel
@@ -411,11 +494,11 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
         TextSettings.WordWrap = True
         Align = Client
         Size.Width = 375.000000000000000000
-        Size.Height = 543.000000000000000000
+        Size.Height = 463.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         Viewport.Width = 371.000000000000000000
-        Viewport.Height = 539.000000000000000000
+        Viewport.Height = 459.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter
@@ -425,7 +508,7 @@ object Frame_JsonFormatter: TFrame_JsonFormatter
       Position.X = 400.000000000000000000
       Position.Y = 20.000000000000000000
       Size.Width = 5.000000000000000000
-      Size.Height = 579.000000000000000000
+      Size.Height = 499.000000000000000000
       Size.PlatformDefault = False
     end
   end

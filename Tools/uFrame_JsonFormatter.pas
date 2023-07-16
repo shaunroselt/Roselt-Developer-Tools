@@ -62,6 +62,12 @@ type
     btnInputClear: TButton;
     imgInputClear: TSkSvg;
     lblInputClear: TLabel;
+    layInputType: TRectangle;
+    imgInputType: TSkSvg;
+    cbInputType: TComboBox;
+    layInputTypeTitleDescription: TLayout;
+    lblInputTypeTitle: TLabel;
+    lblInputTypeDescription: TLabel;
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure FrameResize(Sender: TObject);
     procedure memInputChange(Sender: TObject);
@@ -70,6 +76,7 @@ type
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputClearClick(Sender: TObject);
     procedure btnInputLoadClick(Sender: TObject);
+    procedure cbIndentationChange(Sender: TObject);
   private
     { Private declarations }
     procedure JsonFormat();
@@ -120,6 +127,11 @@ begin
     ClipboardService.SetClipboard(memOutput.Text);
 end;
 
+procedure TFrame_JsonFormatter.cbIndentationChange(Sender: TObject);
+begin
+  JsonFormat();
+end;
+
 procedure TFrame_JsonFormatter.FrameResize(Sender: TObject);
 begin
   layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
@@ -127,7 +139,45 @@ end;
 
 procedure TFrame_JsonFormatter.JsonFormat;
 begin
-  memOutput.Text := TCodeFormatter.FormatJson(memInput.Text);
+  if (Trim(memInput.Text).Length > 0) then
+  begin
+    if (cbIndentation.Selected.Text = '1 space') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 1);
+    if (cbIndentation.Selected.Text = '2 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 2);
+    if (cbIndentation.Selected.Text = '3 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 3);
+    if (cbIndentation.Selected.Text = '4 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 4);
+    if (cbIndentation.Selected.Text = '5 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 5);
+    if (cbIndentation.Selected.Text = '6 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 6);
+    if (cbIndentation.Selected.Text = '7 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 7);
+    if (cbIndentation.Selected.Text = '8 spaces') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Spaces, 8);
+
+    if (cbIndentation.Selected.Text = '1 tab') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 1);
+    if (cbIndentation.Selected.Text = '2 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 2);
+    if (cbIndentation.Selected.Text = '3 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 3);
+    if (cbIndentation.Selected.Text = '4 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 4);
+    if (cbIndentation.Selected.Text = '5 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 5);
+    if (cbIndentation.Selected.Text = '6 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 6);
+    if (cbIndentation.Selected.Text = '7 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 7);
+    if (cbIndentation.Selected.Text = '8 tabs') then
+      memOutput.Text := TCodeFormatter.FormatJson(memInput.Text, TCodeFormatter.TIndentationType.Tabs, 8);
+
+    if (cbIndentation.Selected.Text = 'Minified') then
+      memOutput.Text := TCodeFormatter.MinifyJson(memInput.Text);
+  end else memOutput.Text := '';
 end;
 
 procedure TFrame_JsonFormatter.memInputChange(Sender: TObject);

@@ -120,8 +120,8 @@ const
         active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: '';
     ),
