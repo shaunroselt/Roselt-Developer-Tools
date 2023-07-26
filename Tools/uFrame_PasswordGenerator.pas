@@ -67,9 +67,17 @@ type
     lblPasswordLengthTitle: TLabel;
     lblPasswordLengthDescription: TLabel;
     sbPasswordLength: TSpinBox;
+    layNumberCharacters: TRectangle;
+    imgNumberCharacters: TSkSvg;
+    layTitleDescriptionNumberCharacters: TLayout;
+    lblTitleNumberCharacters: TLabel;
+    lblDescriptionNumberCharacters: TLabel;
+    lblSwitchNumberCharacters: TLabel;
+    SwitchNumberCharacters: TSwitch;
     procedure btnRefreshClick(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure SpecialCharactersSwitchSwitch(Sender: TObject);
+    procedure SwitchNumberCharactersSwitch(Sender: TObject);
   private
     { Private declarations }
     procedure GenerateRandomPassword();
@@ -95,10 +103,11 @@ begin
 end;
 
 procedure TFrame_PasswordGenerator.GenerateRandomPassword;
-  function GeneratePassword(HowManyPasswords, PasswordLength: UInt64; SpecialCharacters: Boolean): string;
+  function GeneratePassword(HowManyPasswords, PasswordLength: UInt64; SpecialChars, NumberChars: Boolean): string;
   begin
-    var charSet := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    if (SpecialCharacters) then charSet := charSet + '!@#$%^&*()_+-=';
+    var charSet := 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (NumberChars) then charSet := charSet + '0123456789';
+    if (SpecialChars) then charSet := charSet + '!@#$%^&*()_+-=';
 
     Result := '';
     for var i := 1 to HowManyPasswords do
@@ -109,7 +118,12 @@ procedure TFrame_PasswordGenerator.GenerateRandomPassword;
     end;
   end;
 begin
-  var RandomPassword := GeneratePassword(Round(sbAmount.Value),Round(sbPasswordLength.Value),SpecialCharactersSwitch.IsChecked);
+  var RandomPassword := GeneratePassword(
+                          Round(sbAmount.Value),
+                          Round(sbPasswordLength.Value),
+                          SpecialCharactersSwitch.IsChecked,
+                          SwitchNumberCharacters.IsChecked
+                        );
   if (cbLetterCase.Selected.Text = 'lower') then RandomPassword := RandomPassword.ToLower;
   if (cbLetterCase.Selected.Text = 'UPPER') then RandomPassword := RandomPassword.ToUpper;
 
@@ -126,6 +140,21 @@ begin
   begin
     lblSwitchSpecialCharacters.Text := 'On';
     SpecialCharactersSwitch.IsChecked := True;
+  end;
+  GenerateRandomPassword();
+end;
+
+procedure TFrame_PasswordGenerator.SwitchNumberCharactersSwitch(
+  Sender: TObject);
+begin
+  if (lblSwitchNumberCharacters.Text = 'On') then
+  begin
+    lblSwitchNumberCharacters.Text := 'Off';
+    SwitchNumberCharacters.IsChecked := False;
+  end else
+  begin
+    lblSwitchNumberCharacters.Text := 'On';
+    SwitchNumberCharacters.IsChecked := True;
   end;
   GenerateRandomPassword();
 end;
