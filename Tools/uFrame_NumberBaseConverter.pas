@@ -19,8 +19,8 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX,
+  System.Skia,
+  FMX.Skia,
   Roselt.NumberBaseConversion,
   Roselt.Utility;
 
@@ -82,9 +82,15 @@ implementation
 procedure TFrame_NumberBaseConverter.CopyOutputToClipboard(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
+  ParentEdit: TEdit;
 begin
+  if (TControl(Sender).Parent) is TEdit then
+    ParentEdit := TEdit(TControl(Sender).Parent) // I feel like this should be the Edit, but it's not. I am totally confused.
+  else
+    ParentEdit := TEdit(TControl(Sender).Parent.Parent); // Somehow going up two parents is the Edit. Wtf?
+
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
+    ClipboardService.SetClipboard(ParentEdit.Text);
 end;
 
 procedure TFrame_NumberBaseConverter.edtBinaryKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;

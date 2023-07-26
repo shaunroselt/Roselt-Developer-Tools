@@ -9,6 +9,7 @@ uses
   System.Classes,
   System.Variants,
   System.NetEncoding,
+  System.Skia,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -23,8 +24,7 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX;
+  FMX.Skia;
 
 type
   TFrame_Base64TextEncoderDecoder = class(TFrame)

@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..36] of TRoseltTools = (
+  RoseltToolsArray: array[0..42] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -60,8 +60,8 @@ const
         active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: '';
     ),
@@ -110,6 +110,21 @@ const
       {$ENDIF}
       parent: '';
     ),
+    ( // Converters Main Category (Parent)
+      text_short: 'Other';
+      text_long: 'Other';
+      name: 'Other';
+      description: 'Other';
+      icon: 'hexagon';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: '';
+    ),
     (
       text_short: 'Testing';
       text_long: 'Testing';
@@ -131,6 +146,21 @@ const
       name: 'JsonYamlConverter';
       description: 'Convert JSON to YAML and vice versa';
       icon: 'arrow-left-right';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Converters';
+    ),
+    (
+      text_short: 'Text to Array';
+      text_long: 'Text to Array';
+      name: 'TextToArray';
+      description: 'Convert a text to an array';
+      icon: 'braces';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
@@ -267,11 +297,11 @@ const
       description: 'Indent or minify JSON data';
       icon: 'filetype-json';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Formatters';
     ),
@@ -282,7 +312,7 @@ const
       description: 'Indent or minify HTML code';
       icon: 'filetype-html';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -297,7 +327,7 @@ const
       description: 'Indent SQL queries';
       icon: 'server';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -312,11 +342,11 @@ const
       description: 'Indent or minify XML data';
       icon: 'filetype-xml';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Formatters';
     ),
@@ -441,6 +471,21 @@ const
       parent: 'Generators';
     ),
     (
+      text_short: 'Password';
+      text_long: 'Password Generator';
+      name: 'PasswordGenerator';
+      description: 'Generate random passwords';
+      icon: 'key';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Generators';
+    ),
+    (
       text_short: 'Case Converter && Inspector';
       text_long: 'Case Converter && Inspector';
       name: 'TextCaseConverterInspector';
@@ -516,11 +561,41 @@ const
       parent: 'Text';
     ),
     (
+      text_short: 'HTML Preview';
+      text_long: 'HTML Preview';
+      name: 'HTMLPreview';
+      description: 'Preview HTML, CSS and JavaScript';
+      icon: 'browser-edge';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Text';
+    ),
+    (
       text_short: 'Color Picker';
       text_long: 'Color Picker';
       name: 'ColorPicker';
       description: 'Fully featured color picker';
       icon: 'brush';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Image Effects';
+      text_long: 'Image Effects';
+      name: 'ImageEffects';
+      description: 'Different Effects applied to images';
+      icon: 'mask';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
@@ -559,6 +634,21 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Graphics';
+    ),
+    (
+      text_short: 'Ping IP / Domain';
+      text_long: 'Ping IP / Domain';
+      name: 'PingIPDomain';
+      description: 'Ping and IP Address or Domain Name';
+      icon: 'wifi';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Other';
     ),
     (
       text_short: 'Image Converter';

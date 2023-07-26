@@ -22,8 +22,8 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_HTMLEncoderDecoder = class(TFrame)
@@ -82,7 +82,7 @@ implementation
 
 procedure TFrame_HTMLEncoderDecoder.btnInputClearClick(Sender: TObject);
 begin
-  memInput.Text := '';
+  memInput.Lines.Clear;
   HTMLEncoderDecoder();
 end;
 

@@ -1,4 +1,4 @@
-unit uFrame_SQLFormatter;
+unit uFrame_HTMLPreview;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   System.UITypes,
   System.Classes,
   System.Variants,
-
+  System.IOUtils,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -16,29 +16,18 @@ uses
   FMX.Dialogs,
   FMX.StdCtrls,
   FMX.Memo.Types,
-  FMX.ListBox,
   FMX.Platform,
   FMX.Objects,
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
-
-  Roselt.CodeFormatting,
-
+  FMX.WebBrowser,
   System.Skia,
   FMX.Skia;
 
 type
-  TFrame_SQLFormatter = class(TFrame)
-    layTop: TLayout;
-    lblConfiguration: TLabel;
-    layIndentation: TRectangle;
-    cbIndentation: TComboBox;
-    layIndentationTitleDescription: TLayout;
-    lblIndentationTitle: TLabel;
-    lblIndentationDescription: TLabel;
-    imgIndentation: TSkSvg;
+  TFrame_HTMLPreview = class(TFrame)
     layBottom: TLayout;
     layInput: TLayout;
     memTitleInput: TLabel;
@@ -48,48 +37,49 @@ type
     btnInputCopyToClipboard: TButton;
     imgInputCopyToClipboard: TSkSvg;
     lblInputCopyToClipboard: TLabel;
-    memInput: TMemo;
-    layOutput: TLayout;
-    memTitleOutput: TLabel;
-    btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TSkSvg;
-    lblOutputCopyToClipboard: TLabel;
-    memOutput: TMemo;
-    SplitterInputOutput: TSplitter;
-    OpenDialog: TOpenDialog;
     btnInputLoad: TButton;
     imgInputLoad: TSkSvg;
     lblInputLoad: TLabel;
     btnInputClear: TButton;
     imgInputClear: TSkSvg;
     lblInputClear: TLabel;
-    procedure FrameResize(Sender: TObject);
-    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    memInput: TMemo;
+    OpenDialog: TOpenDialog;
+    layOutput: TLayout;
+    memTitleOutput: TLabel;
+    SplitterInputOutput: TSplitter;
+    WebBrowser: TWebBrowser;
+    btnRefresh: TButton;
+    imgRefresh: TSkSvg;
+    lblRefresh: TLabel;
+    procedure btnInputClearClick(Sender: TObject);
     procedure btnInputCopyToClipboardClick(Sender: TObject);
     procedure btnInputPasteFromClipboardClick(Sender: TObject);
     procedure btnInputLoadClick(Sender: TObject);
-    procedure btnInputClearClick(Sender: TObject);
-    procedure memInputChange(Sender: TObject);
+    procedure btnRefreshClick(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
+    procedure FrameResized(Sender: TObject);
   private
     { Private declarations }
-    procedure SQLFormat();
   public
     { Public declarations }
+    procedure HTMLPreview;
   end;
 
 implementation
 
 {$R *.fmx}
 
-procedure TFrame_SQLFormatter.btnInputClearClick(Sender: TObject);
+{ TFrame_HTMLPreview }
+
+procedure TFrame_HTMLPreview.btnInputClearClick(Sender: TObject);
 begin
   memInput.Lines.Clear;
-  SQLFormat();
+  HTMLPreview();
 end;
 
-procedure TFrame_SQLFormatter.btnInputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_HTMLPreview.btnInputCopyToClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -97,16 +87,16 @@ begin
     ClipboardService.SetClipboard(memInput.Text);
 end;
 
-procedure TFrame_SQLFormatter.btnInputLoadClick(Sender: TObject);
+procedure TFrame_HTMLPreview.btnInputLoadClick(Sender: TObject);
 begin
   if (OpenDialog.Execute) then
   begin
     memInput.Lines.LoadFromFile(OpenDialog.FileName);
-    SQLFormat();
+    HTMLPreview();
   end;
 end;
 
-procedure TFrame_SQLFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
+procedure TFrame_HTMLPreview.btnInputPasteFromClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -114,33 +104,27 @@ begin
     memInput.Text := ClipboardService.GetClipboard.ToString;
 end;
 
-procedure TFrame_SQLFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
+procedure TFrame_HTMLPreview.btnRefreshClick(Sender: TObject);
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  HTMLPreview;
 end;
 
-procedure TFrame_SQLFormatter.FrameResize(Sender: TObject);
+procedure TFrame_HTMLPreview.FrameResized(Sender: TObject);
 begin
   layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
 end;
 
-procedure TFrame_SQLFormatter.memInputChange(Sender: TObject);
+procedure TFrame_HTMLPreview.HTMLPreview;
 begin
-  SQLFormat();
+  var HTMLPreviewFileName := System.IOUtils.TPath.GetDocumentsPath + PathDelim + 'HTMLPreview.html';
+  memInput.Lines.SaveToFile(HTMLPreviewFileName);
+  WebBrowser.Navigate(HTMLPreviewFileName);
 end;
 
-procedure TFrame_SQLFormatter.memInputKeyUp(Sender: TObject; var Key: Word;
+procedure TFrame_HTMLPreview.memInputKeyUp(Sender: TObject; var Key: Word;
   var KeyChar: Char; Shift: TShiftState);
 begin
-  SQLFormat();
-end;
-
-procedure TFrame_SQLFormatter.SQLFormat;
-begin
-  memOutput.Text := TCodeFormatter.FormatSQL(memInput.Text);
+  HTMLPreview;
 end;
 
 end.

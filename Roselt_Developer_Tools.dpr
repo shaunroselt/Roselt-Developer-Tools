@@ -1,8 +1,11 @@
 program Roselt_Developer_Tools;
 
+
+
 uses
   System.StartUpCopy,
   FMX.Forms,
+  FMX.Skia,
   uMain in 'uMain.pas' {frmMain},
   uStyles in 'uStyles.pas' {dmStyles: TDataModule},
   Roselt.ColorConversion in 'Roselt.ColorConversion.pas',
@@ -40,11 +43,21 @@ uses
   Roselt.NumberBaseConversion in 'Roselt.NumberBaseConversion.pas',
   Roselt.Tools in 'Roselt.Tools.pas',
   uFrame_JWTTokenGenerator in 'Tools\uFrame_JWTTokenGenerator.pas' {Frame_JWTTokenGenerator: TFrame},
-  Roselt.Utility in 'Roselt.Utility.pas';
+  Roselt.Utility in 'Roselt.Utility.pas',
+  uFrame_PasswordGenerator in 'Tools\uFrame_PasswordGenerator.pas' {Frame_PasswordGenerator: TFrame},
+  uFrame_ImageEffects in 'Tools\uFrame_ImageEffects.pas' {Frame_ImageEffects: TFrame},
+  uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame},
+  Roselt.CodeFormatting in 'Roselt.CodeFormatting.pas',
+  uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame},
+  uFrame_PingIPDomain in 'Tools\uFrame_PingIPDomain.pas' {Frame_PingIPDomain: TFrame};
 
 {$R *.res}
 
 begin
+  GlobalUseSkia := True;
+//  {$IFDEF DEBUG}
+//    ReportMemoryLeaksOnShutdown := True; // This could be useful. Need to learn how it works.
+//  {$ENDIF}
   Application.Initialize;
   Application.CreateForm(TdmStyles, dmStyles);
   Application.CreateForm(TfrmMain, frmMain);

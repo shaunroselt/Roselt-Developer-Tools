@@ -6,12 +6,14 @@ uses
   {$IFDEF MACOS}
     MacApi.CoreFoundation,
     MacApi.Foundation,
+    System.Sensors,
   {$ENDIF}
   {$IFDEF MSWINDOWS}
     Winapi.Windows,
     Winapi.ActiveX,
     Winapi.WinSock,
     System.Win.ComObj,
+    System.Sensors,
   {$ENDIF}
   {$IFDEF ANDROID}
     Androidapi.Helpers,
@@ -24,13 +26,13 @@ uses
     Androidapi.JNI.Java.Net,
     Androidapi.JNI.Os,
     FMX.Helpers.Android,
+    System.Sensors,
   {$ENDIF}
 
   FMX.Forms,
   FMX.Platform,
   System.SysUtils,
   System.Classes,
-  System.Sensors,
   System.Variants,
   System.TypInfo;
 
@@ -130,10 +132,6 @@ function NSUserName: Pointer; cdecl; external '/System/Library/Frameworks/Founda
 {$ENDIF}
 
 function TSystemInformation.GetUserName: String;
-{$IFDEF MSWINDOWS}
-var
-  nSize: DWord;
-{$ENDIF}
 begin
   Result := '';
   {$IFDEF MACOS}
@@ -141,7 +139,7 @@ begin
   {$ENDIF}
   {$IFDEF MSWINDOWS}
     // GetEnvironmentVariable('USERNAME') works on Windows, but is not safe as this can be modified by apps and isn't always accurate
-    nSize := 1024;
+    var nSize: DWord := 1024;
     SetLength(Result, nSize);
     if Winapi.Windows.GetUserName(PChar(Result), nSize) then
     begin
@@ -406,32 +404,94 @@ begin
 end;
 
 function TSystemInformation.GetSystemLocation: TSystemLocation;
-var
-  MyLocationSensorArray : TSensorArray;
-  MyLocationSensor : TCustomLocationSensor;
+  {$IFDEF MSWINDOWS}
+    var
+      MyLocationSensorArray : TSensorArray;
+      MyLocationSensor : TCustomLocationSensor;
+  {$ENDIF}
+  {$IFDEF ANDROID}
+    var
+      MyLocationSensorArray : TSensorArray;
+      MyLocationSensor : TCustomLocationSensor;
+  {$ENDIF}
+  {$IFDEF MACOS}
+    var
+      MyLocationSensorArray : TSensorArray;
+      MyLocationSensor : TCustomLocationSensor;
+  {$ENDIF}
 begin
-  try
-    TSensorManager.Current.Activate;
-    MyLocationSensorArray := TSensorManager.Current.GetSensorsByCategory(TSensorCategory.Location);
-    if MyLocationSensorArray <> nil then
-    begin
-      // Location Sensor Found
-      MyLocationSensor := MyLocationSensorArray[0] as TCustomLocationSensor;
-      MyLocationSensor.Start;
+  {$IFDEF MSWINDOWS}
+    try
+      TSensorManager.Current.Activate;
+      MyLocationSensorArray := TSensorManager.Current.GetSensorsByCategory(TSensorCategory.Location);
+      if MyLocationSensorArray <> nil then
+      begin
+        // Location Sensor Found
+        MyLocationSensor := MyLocationSensorArray[0] as TCustomLocationSensor;
+        MyLocationSensor.Start;
 
-      result.Latitude := MyLocationSensor.Latitude;
-      result.Longitude := MyLocationSensor.Longitude;
+        result.Latitude := MyLocationSensor.Latitude;
+        result.Longitude := MyLocationSensor.Longitude;
 
-      MyLocationSensor.Stop;
-    end else
-    begin
-      // Location Sensor Not Found
-      result.Latitude := 0;
-      result.Longitude := 0;
+        MyLocationSensor.Stop;
+      end else
+      begin
+        // Location Sensor Not Found
+        result.Latitude := 0;
+        result.Longitude := 0;
+      end;
+    finally
+      TSensorManager.Current.DeActivate
     end;
-  finally
-    TSensorManager.Current.DeActivate
-  end;
+  {$ENDIF}
+  {$IFDEF ANDROID}
+    try
+      TSensorManager.Current.Activate;
+      MyLocationSensorArray := TSensorManager.Current.GetSensorsByCategory(TSensorCategory.Location);
+      if MyLocationSensorArray <> nil then
+      begin
+        // Location Sensor Found
+        MyLocationSensor := MyLocationSensorArray[0] as TCustomLocationSensor;
+        MyLocationSensor.Start;
+
+        result.Latitude := MyLocationSensor.Latitude;
+        result.Longitude := MyLocationSensor.Longitude;
+
+        MyLocationSensor.Stop;
+      end else
+      begin
+        // Location Sensor Not Found
+        result.Latitude := 0;
+        result.Longitude := 0;
+      end;
+    finally
+      TSensorManager.Current.DeActivate
+    end;
+  {$ENDIF}
+  {$IFDEF MACOS}
+    try
+      TSensorManager.Current.Activate;
+      MyLocationSensorArray := TSensorManager.Current.GetSensorsByCategory(TSensorCategory.Location);
+      if MyLocationSensorArray <> nil then
+      begin
+        // Location Sensor Found
+        MyLocationSensor := MyLocationSensorArray[0] as TCustomLocationSensor;
+        MyLocationSensor.Start;
+
+        result.Latitude := MyLocationSensor.Latitude;
+        result.Longitude := MyLocationSensor.Longitude;
+
+        MyLocationSensor.Stop;
+      end else
+      begin
+        // Location Sensor Not Found
+        result.Latitude := 0;
+        result.Longitude := 0;
+      end;
+    finally
+      TSensorManager.Current.DeActivate
+    end;
+  {$ENDIF}
 end;
 
 function TSystemInformation.GetSystemTotalMemory: String;

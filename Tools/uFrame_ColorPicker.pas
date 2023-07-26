@@ -33,8 +33,8 @@ uses
   Roselt.ColorConversion,
   Roselt.NumberBaseConversion,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_ColorPicker = class(TFrame)
@@ -537,34 +537,38 @@ end;
 
 procedure TFrame_ColorPicker.btnEyeDropperClick(Sender: TObject);
 begin
-  var bm := TBitmap.Create;
-  TakeScreenshot(bm);
+  {$IF DEFINED(ANDROID)}
+    ShowMessage('Not supported on Android');
+  {$ELSE}
+    var bm := TBitmap.Create;
+    TakeScreenshot(bm);
 
-  var frmImageColor := TForm.CreateNew(Self);
-  frmImageColor.Caption := 'Select Color';
-  frmImageColor.BorderStyle := TFMXFormBorderStyle.ToolWindow;
-  frmImageColor.WindowState := TWindowState.wsMaximized;
+    var frmImageColor := TForm.CreateNew(Self);
+    frmImageColor.Caption := 'Select Color';
+    frmImageColor.BorderStyle := TFMXFormBorderStyle.ToolWindow;
+    frmImageColor.WindowState := TWindowState.wsMaximized;
 
-  var frmImage := TImage.Create(frmImageColor);
-  frmImage.Parent := frmImageColor;
-  frmImage.Align := TAlignLayout.Client;
-  frmImage.WrapMode := TImageWrapMode.Original;
-  frmImage.Cursor := crCross;
-  frmImage.OnMouseDown := frmImageClick;
-  frmImage.OnMouseMove := frmImageMouseMove;
-  frmImage.Bitmap.Assign(bm);
-  bm.Free;
-  bm := nil;
+    var frmImage := TImage.Create(frmImageColor);
+    frmImage.Parent := frmImageColor;
+    frmImage.Align := TAlignLayout.Client;
+    frmImage.WrapMode := TImageWrapMode.Original;
+    frmImage.Cursor := crCross;
+    frmImage.OnMouseDown := frmImageClick;
+    frmImage.OnMouseMove := frmImageMouseMove;
+    frmImage.Bitmap.Assign(bm);
+    bm.Free;
+    bm := nil;
 
-  try
-    if (frmImageColor.ShowModal = mrOk) then
-    begin
-      ColorPanel.Color := LastEyeDropperColor;
+    try
+      if (frmImageColor.ShowModal = mrOk) then
+      begin
+        ColorPanel.Color := LastEyeDropperColor;
+      end;
+    finally
+      FreeAndNil(frmImage);
+      FreeAndNil(frmImageColor);
     end;
-  finally
-    FreeAndNil(frmImage);
-    FreeAndNil(frmImageColor);
-  end;
+  {$ENDIF}
 end;
 
 procedure TFrame_ColorPicker.ColorListBox1ItemClick(const Sender: TCustomListBox; const Item: TListBoxItem);
@@ -668,6 +672,9 @@ end;
 
 procedure TFrame_ColorPicker.FrameResized(Sender: TObject);
 begin
+  {$IF DEFINED(ANDROID)}
+    btnEyeDropper.Visible := False;
+  {$ENDIF}
   ColorRange1.Width := Round(ColorTabControl.Width / 95);
   for var i := 2 to 101 do
     (FindComponent('ColorRange' + i.ToString) as TRectangle).Width := ColorRange1.Width;

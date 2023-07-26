@@ -23,8 +23,8 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   Roselt.JsonYamlConverter,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_JsonYamlConverter = class(TFrame)
@@ -66,7 +66,6 @@ type
     imgInputLoad: TSkSvg;
     lblInputLoad: TLabel;
     OpenDialog: TOpenDialog;
-    procedure FrameResize(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure ConfigChange(Sender: TObject);
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
@@ -75,6 +74,7 @@ type
     procedure btnInputClearClick(Sender: TObject);
     procedure btnInputLoadClick(Sender: TObject);
     procedure cbConversionChange(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
   private
     { Private declarations }
     procedure ConvertJsonYaml;
@@ -88,7 +88,7 @@ implementation
 
 procedure TFrame_JsonYamlConverter.btnInputClearClick(Sender: TObject);
 begin
-  memInput.Text := '';
+  memInput.Lines.Clear;
   ConvertJsonYaml();
 end;
 
@@ -147,7 +147,7 @@ begin
   if (memInput.Text.IsEmpty) then
   begin
     // If Input is empty, then set output to empty and exit funtion.
-    memOutput.Text.Empty;
+    memOutput.Lines.Clear;
     Exit;
   end;
 
@@ -178,7 +178,7 @@ begin
   end;
 end;
 
-procedure TFrame_JsonYamlConverter.FrameResize(Sender: TObject);
+procedure TFrame_JsonYamlConverter.FrameResized(Sender: TObject);
 begin
   layInput.Width := (layBottom.Width - layBottom.Padding.Left - layBottom.Padding.Right - SplitterInputOutput.Width) / 2;
 end;

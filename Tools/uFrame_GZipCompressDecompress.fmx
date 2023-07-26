@@ -41,7 +41,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 5
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -74,7 +74,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -88,7 +88,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -118,7 +118,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputLoad: TButton
@@ -132,7 +132,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 6
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -159,7 +159,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputClear: TButton
@@ -173,7 +173,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -201,7 +201,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -215,8 +215,8 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 756.000000000000000000
-        Viewport.Height = 205.000000000000000000
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 209.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
           Left = 360
@@ -252,7 +252,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -282,7 +282,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -296,8 +296,8 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
         Size.Height = 289.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 756.000000000000000000
-        Viewport.Height = 285.000000000000000000
+        Viewport.Width = 760.000000000000000000
+        Viewport.Height = 289.000000000000000000
       end
     end
   end
@@ -366,14 +366,14 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
       end
       object layCompressDecompressTitleDescription: TLayout
         Align = Client
-        Size.Width = 519.000000000000000000
+        Size.Width = 499.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblCompressDecompressTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 519.000000000000000000
+          Size.Width = 499.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -383,7 +383,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
         object lblCompressDecompressDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 519.000000000000000000
+          Size.Width = 499.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -395,9 +395,9 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
         Align = Right
         Cursor = crHandPoint
         IsChecked = True
-        Position.X = 690.000000000000000000
+        Position.X = 670.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 58.000000000000000000
+        Size.Width = 78.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -407,7 +407,7 @@ object Frame_GZipCompressDecompress: TFrame_GZipCompressDecompress
         Align = Right
         StyledSettings = [Family, Style, FontColor]
         Margins.Right = 8.000000000000000000
-        Position.X = 568.000000000000000000
+        Position.X = 548.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 114.000000000000000000
         Size.Height = 48.000000000000000000

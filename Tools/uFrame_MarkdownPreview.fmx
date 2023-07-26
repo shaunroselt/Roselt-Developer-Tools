@@ -346,14 +346,14 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
       YRadius = 8.000000000000000000
       object layConversionTitleDescription: TLayout
         Align = Client
-        Size.Width = 537.000000000000000000
+        Size.Width = 517.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblConversionTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -363,7 +363,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
         object lblConversionDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -375,9 +375,9 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
         Align = Right
         Cursor = crHandPoint
         IsChecked = True
-        Position.X = 690.000000000000000000
+        Position.X = 670.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 58.000000000000000000
+        Size.Width = 78.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -386,7 +386,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
         Align = Right
         StyledSettings = [Family, Style, FontColor]
         Margins.Right = 8.000000000000000000
-        Position.X = 586.000000000000000000
+        Position.X = 566.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 96.000000000000000000
         Size.Height = 48.000000000000000000

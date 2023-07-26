@@ -165,14 +165,14 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
       YRadius = 8.000000000000000000
       object layLetterCaseTitleDescription: TLayout
         Align = Client
-        Size.Width = 537.000000000000000000
+        Size.Width = 517.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblLetterCaseTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -182,7 +182,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         object lblLetterCaseDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -194,19 +194,19 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Align = Right
         Cursor = crHandPoint
         IsChecked = False
-        Position.X = 690.000000000000000000
+        Position.X = 670.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 58.000000000000000000
+        Size.Width = 78.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        OnSwitch = btnOutputRefreshClick
+        OnSwitch = SwitchLetterCaseSwitch
       end
       object lblSwitchLetterCase: TLabel
         Align = Right
         StyledSettings = [Family, Style, FontColor]
         Margins.Right = 8.000000000000000000
-        Position.X = 586.000000000000000000
+        Position.X = 566.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 96.000000000000000000
         Size.Height = 48.000000000000000000
@@ -284,9 +284,9 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
           'v1'
           'v4')
         ItemIndex = 1
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -294,14 +294,14 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
       end
       object layUUIDVersionTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblUUIDVersionTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -311,7 +311,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         object lblUUIDVersionDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -357,14 +357,14 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
       end
       object layHyphensTitleDescription: TLayout
         Align = Client
-        Size.Width = 537.000000000000000000
+        Size.Width = 517.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblHyphensTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -374,7 +374,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         object lblHyphensDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 537.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -386,9 +386,9 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Align = Right
         Cursor = crHandPoint
         IsChecked = True
-        Position.X = 690.000000000000000000
+        Position.X = 670.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 58.000000000000000000
+        Size.Width = 78.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -398,7 +398,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         Align = Right
         StyledSettings = [Family, Style, FontColor]
         Margins.Right = 8.000000000000000000
-        Position.X = 586.000000000000000000
+        Position.X = 566.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 96.000000000000000000
         Size.Height = 48.000000000000000000
@@ -458,14 +458,14 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
       end
       object layAmountTitleDescription: TLayout
         Align = Client
-        Size.Width = 582.000000000000000000
+        Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblAmountTitle: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
@@ -475,7 +475,7 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         object lblAmountDescription: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 582.000000000000000000
+          Size.Width = 559.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -489,9 +489,9 @@ object Frame_UUIDGenerator: TFrame_UUIDGenerator
         TabOrder = 2
         Cursor = crIBeam
         Value = 10.000000000000000000
-        Position.X = 631.000000000000000000
+        Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
-        Size.Width = 117.000000000000000000
+        Size.Width = 140.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         OnChange = btnOutputRefreshClick

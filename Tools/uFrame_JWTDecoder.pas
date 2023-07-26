@@ -22,12 +22,14 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   FMX.Objects,
-  Skia,
-  Skia.FMX,
   IdGlobal,
   IdHMAC,
   IdCoderMIME,
-  Fmx.Clipboard;
+  Fmx.Clipboard,
+  
+  System.Skia,
+  FMX.Skia;
+
 
 type
   TFrame_JWTDecoder = class(TFrame)

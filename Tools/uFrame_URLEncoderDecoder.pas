@@ -22,8 +22,8 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TFrame_URLEncoderDecoder = class(TFrame)

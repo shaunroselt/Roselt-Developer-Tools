@@ -1,6 +1,6 @@
 { TODO: Need to properly test on latest MacOS and Windows }
 { TODO: Need to add Android Screenshot, especially useful for when on Samsung DeX }
-{ TODO: Need to add Linux Screenshot }
+{ TODO: Need to test and finish Linux Screenshot }
 { TODO: Need to add iOS Screenshot }
 unit Roselt.Screenshot;
 
@@ -22,6 +22,9 @@ uses
   Macapi.CoreGraphics,
   Macapi.ImageIO,
 {$ENDIF MACOS}
+{$IFDEF LINUX}
+  FMX.Canvas.Linux,
+{$ENDIF}
   System.Classes;
 
   procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);
@@ -33,6 +36,18 @@ uses
 
 implementation
 
+{$IFDEF LINUX}
+procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);
+begin
+  // Have not been tested for Linux yet
+  Dest := FMX.Canvas.Linux.TakeScreenshot;
+end;
+
+procedure TakeWindowShot(h: TWindowHandle; Dest: FMX.Graphics.TBitmap);
+begin
+  // Have not been implemented for Linux yet
+end;
+{$ENDIF LINUX}
 
 {$IFDEF ANDROID}
 procedure TakeScreenshot(Dest: FMX.Graphics.TBitmap);
