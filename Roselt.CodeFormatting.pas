@@ -76,13 +76,26 @@ begin
       if (TrimmedLine[1] = '/') AND (TrimmedLine[2] = '/') then
         Continue; // This whole line is a comment that can't be minified, so remove it.
 
-      TrimmedLine := TrimmedLine.Remove(TrimmedLine.IndexOf('//')); // Somewhere else is a comment, remove it.
+      var StringCharCount := TrimmedLine.CountChar('''');
+      var StringCharFirst := TrimmedLine.IndexOf('''');
+      var StringCharLast := TrimmedLine.LastIndexOf('''');
+      var CommentChar := TrimmedLine.IndexOf('//');
+      if (StringCharCount > 1) then
+      begin
+        if (StringCharFirst > -1) AND (StringCharLast > -1) AND (StringCharFirst <> StringCharLast) then
+          if (StringCharFirst < CommentChar) AND (StringCharLast > CommentChar) AND (StringCharCount mod 2 = 0) then
+          begin
+             // We found //, but it is within a string (quotes ' '), let's leave it.
+          end else
+            TrimmedLine := TrimmedLine.Remove(CommentChar); // Somewhere else is a comment, remove it.
+      end else
+        TrimmedLine := TrimmedLine.Remove(CommentChar); // There's no strings, remove this comment.
     end;
 
-    if ((sLine.Length + TrimmedLine.Length + 1) >= 4000) then
+    if ((sLine.Length + TrimmedLine.Length + 1) >= 1023) then
     begin
-      Result := Result + sLine + TrimmedLine + sLineBreak;
-      sLine := '';
+      Result := Result + sLine + sLineBreak;
+      sLine := TrimmedLine + ' ';
     end else
       sLine := sLine + TrimmedLine + ' ';
   end;
