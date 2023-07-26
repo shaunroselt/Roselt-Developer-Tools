@@ -27,7 +27,7 @@ type
     class function FormatPHP(php: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: Integer = 2): String; static;
     class function FormatJson(json: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: Integer = 2): String; static;
 
-    class function MinifyDelphi(delphi: String): String; static;
+    class function MinifyDelphi(delphi: String; RemoveComments: Boolean = True): String; static;
     class function MinifyHTML(html: String): String; static;
     class function MinifyCSS(css: String): String; static;
     class function MinifySQL(sql: String): String; static;
@@ -63,16 +63,37 @@ begin
 
 end;
 
-class function TCodeFormatter.MinifyDelphi(delphi: String): String;
-//  Doesn't work yet. Just testing things out.
+class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boolean): String;
+//  Doesn't work completely yet. RemoveComments hasn't been implemented yet.
+//  RemoveComments is supposed to remove multiline {} comments
 begin
+  var sLine := '';
+  for var I in delphi.Split([sLineBreak]) do
+  begin
+    var TrimmedLine := I.Trim([' ', #09, #10, #13]);
+    if (TrimmedLine.Contains('//')) then
+    begin
+      if (TrimmedLine[1] = '/') AND (TrimmedLine[2] = '/') then
+        Continue; // This whole line is a comment that can't be minified, so remove it.
 
+      TrimmedLine := TrimmedLine.Remove(TrimmedLine.IndexOf('//')); // Somewhere else is a comment, remove it.
+    end;
+
+    if ((sLine.Length + TrimmedLine.Length + 1) >= 4000) then
+    begin
+      Result := Result + sLine + TrimmedLine + sLineBreak;
+      sLine := '';
+    end else
+      sLine := sLine + TrimmedLine + ' ';
+  end;
+
+  if (sLine.Length > 0) then Result := Result + sLine;
 end;
 
 class function TCodeFormatter.MinifyHTML(html: String): String;
 //  Doesn't work yet. Just testing things out.
 begin
-
+//
 end;
 
 class function TCodeFormatter.MinifyJavaScript(js: String): String;

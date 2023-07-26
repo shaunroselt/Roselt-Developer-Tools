@@ -57,6 +57,7 @@ uses
   uFrame_GZipCompressDecompress,
   uFrame_JWTDecoder,
   uFrame_Base64ImageEncoderDecoder,
+  uFrame_DelphiFormatter,
   uFrame_SQLFormatter,
   uFrame_HTMLFormatter,
   uFrame_CSSFormatter,
@@ -615,6 +616,7 @@ begin
 
 
   // Dynamically create Tool Frames
+  CreateToolFrame(TFrame_DelphiFormatter.Create(Self),'layDelphiFormatter');
   CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
   CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
   CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');

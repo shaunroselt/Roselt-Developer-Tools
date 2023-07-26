@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..42] of TRoseltTools = (
+  RoseltToolsArray: array[0..43] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -289,6 +289,21 @@ const
         visible: false;
       {$ENDIF}
       parent: 'EncodersDecoders';
+    ),
+    (
+      text_short: 'Delphi';
+      text_long: 'Delphi Formatter';
+      name: 'DelphiFormatter';
+      description: 'Indent or minify Delphi code';
+      icon: 'file-earmark';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Formatters';
     ),
     (
       text_short: 'JSON';

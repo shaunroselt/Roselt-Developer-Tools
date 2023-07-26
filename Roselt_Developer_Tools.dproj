@@ -556,6 +556,11 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="Tools\uFrame_DelphiFormatter.pas">
+            <Form>Frame_DelphiFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

@@ -49,7 +49,8 @@ uses
   uFrame_HTMLPreview in 'Tools\uFrame_HTMLPreview.pas' {Frame_HTMLPreview: TFrame},
   Roselt.CodeFormatting in 'Roselt.CodeFormatting.pas',
   uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame},
-  uFrame_PingIPDomain in 'Tools\uFrame_PingIPDomain.pas' {Frame_PingIPDomain: TFrame};
+  uFrame_PingIPDomain in 'Tools\uFrame_PingIPDomain.pas' {Frame_PingIPDomain: TFrame},
+  uFrame_DelphiFormatter in 'Tools\uFrame_DelphiFormatter.pas' {Frame_DelphiFormatter: TFrame};
 
 {$R *.res}
 
