@@ -64,33 +64,46 @@ begin
 end;
 
 class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boolean): String;
-//  Doesn't work completely yet. RemoveComments hasn't been implemented yet.
-//  RemoveComments is supposed to remove multiline {} comments
+  function RemoveCommentsFromLine(MyLine: String): String;
+  begin
+    if (MyLine.Contains('//')) then
+    begin
+      if (MyLine[1] = '/') AND (MyLine[2] = '/') then
+      begin
+        MyLine := ''; // This whole line is a comment that can't be minified, so remove it.
+      end else
+      begin
+        var StringCharCount := MyLine.CountChar('''');
+        var StringCharFirst := MyLine.IndexOf('''');
+        var StringCharSecond := MyLine.Substring(StringCharFirst+1).IndexOf('''') + StringCharFirst + 1;
+        var CommentChar := MyLine.IndexOf('//');
+        if (StringCharCount > 1) then
+        begin
+          if (StringCharFirst > -1) AND (StringCharSecond > -1) AND (StringCharFirst <> StringCharSecond) then
+            if (StringCharFirst < CommentChar) AND (StringCharSecond > CommentChar) AND (StringCharCount mod 2 = 0) then
+            begin
+               // We found //, but it is within a string (quotes ' '), let's leave it.
+              var CommentCharAnother := MyLine.LastIndexOf('//');
+              if (CommentChar <> CommentCharAnother) then
+                MyLine := MyLine.Remove(CommentCharAnother); // Somewhere else is a comment, remove it.
+            end else
+            begin
+              if (StringCharFirst < CommentChar) AND (StringCharSecond > CommentChar) then
+                CommentChar := MyLine.Substring(CommentChar+2).IndexOf('//') + CommentChar + 1;
+              MyLine := MyLine.Remove(CommentChar); // Somewhere else is a comment, remove it.
+            end;
+        end else
+          MyLine := MyLine.Remove(CommentChar); // There's no strings, remove this comment.
+      end;
+    end;
+    Result := MyLine;
+  end;
 begin
   var sLine := '';
   for var I in delphi.Split([sLineBreak]) do
   begin
     var TrimmedLine := I.Trim([' ', #09, #10, #13]);
-    if (TrimmedLine.Contains('//')) then
-    begin
-      if (TrimmedLine[1] = '/') AND (TrimmedLine[2] = '/') then
-        Continue; // This whole line is a comment that can't be minified, so remove it.
-
-      var StringCharCount := TrimmedLine.CountChar('''');
-      var StringCharFirst := TrimmedLine.IndexOf('''');
-      var StringCharLast := TrimmedLine.LastIndexOf('''');
-      var CommentChar := TrimmedLine.IndexOf('//');
-      if (StringCharCount > 1) then
-      begin
-        if (StringCharFirst > -1) AND (StringCharLast > -1) AND (StringCharFirst <> StringCharLast) then
-          if (StringCharFirst < CommentChar) AND (StringCharLast > CommentChar) AND (StringCharCount mod 2 = 0) then
-          begin
-             // We found //, but it is within a string (quotes ' '), let's leave it.
-          end else
-            TrimmedLine := TrimmedLine.Remove(CommentChar); // Somewhere else is a comment, remove it.
-      end else
-        TrimmedLine := TrimmedLine.Remove(CommentChar); // There's no strings, remove this comment.
-    end;
+    TrimmedLine := RemoveCommentsFromLine(TrimmedLine);
 
     if ((sLine.Length + TrimmedLine.Length + 1) >= 1023) then
     begin
