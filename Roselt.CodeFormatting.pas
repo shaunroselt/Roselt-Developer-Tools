@@ -66,6 +66,7 @@ end;
 class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boolean): String;
   function RemoveCommentsFromLine(MyLine: String): String;
   begin
+    var MultiLineComment := '';
     if (MyLine.Contains('//')) then
     begin
       if (MyLine[1] = '/') AND (MyLine[2] = '/') then
@@ -77,7 +78,18 @@ class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boole
         var StringCharFirst := MyLine.IndexOf('''');
         var StringCharSecond := MyLine.Substring(StringCharFirst+1).IndexOf('''') + StringCharFirst + 1;
         var CommentChar := MyLine.IndexOf('//');
-        if (StringCharCount > 1) then
+        if (MyLine.CountChar('{') > 0) AND (MyLine.CountChar('}') > 0) then
+            if (MyLine.IndexOf('}') > MyLine.IndexOf('{')) then
+            begin
+                MultiLineComment := MyLine.Remove(MyLine.IndexOf('}')+1);
+                MyLine := MyLine.Substring(MultiLineComment.Length);
+                StringCharCount := MyLine.CountChar('''');
+                StringCharFirst := MyLine.IndexOf('''');
+                StringCharSecond := MyLine.Substring(StringCharFirst+1).IndexOf('''') + StringCharFirst + 1;
+                CommentChar := MyLine.IndexOf('//');
+            end;
+
+        if (StringCharCount > 1) AND (MyLine.Contains('//')) then
         begin
           if (StringCharFirst > -1) AND (StringCharSecond > -1) AND (StringCharFirst <> StringCharSecond) then
             if (StringCharFirst < CommentChar) AND (StringCharSecond > CommentChar) AND (StringCharCount mod 2 = 0) then
@@ -96,7 +108,7 @@ class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boole
           MyLine := MyLine.Remove(CommentChar); // There's no strings, remove this comment.
       end;
     end;
-    Result := MyLine;
+    Result := MultiLineComment + MyLine;
   end;
 begin
   var sLine := '';
