@@ -58,9 +58,10 @@ begin
 end;
 
 class function TCodeFormatter.MinifyCSS(css: String): String;
-//  Doesn't work yet. Just testing things out.
+//  Doesn't work perfectly yet. Just testing things out.
 begin
-
+  for var I in css.Split([sLineBreak]) do
+    Result := Result + I.Trim([' ', #9, #10, #13]);
 end;
 
 class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boolean): String;
@@ -129,9 +130,10 @@ begin
 end;
 
 class function TCodeFormatter.MinifyHTML(html: String): String;
-//  Doesn't work yet. Just testing things out.
+//  Doesn't work perfectly yet. Just testing things out.
 begin
-//
+  for var I in html.Split([sLineBreak]) do
+    Result := Result + I.Trim([' ', #9, #10, #13]);
 end;
 
 class function TCodeFormatter.MinifyJavaScript(js: String): String;

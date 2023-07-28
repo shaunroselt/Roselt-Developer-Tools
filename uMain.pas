@@ -685,7 +685,7 @@ end;
 function TfrmMain.GetAppInfo: String;
 // Need to get all of the App Info dynamically in the future
 begin
-  var Version := 'Version 1.0.0.0';
+  var Version := 'Version 3.0.0.0 Beta 3';
   var Architecture := 'X64';     // Get Environement Variable for this on Windows: https://superuser.com/questions/305901/possible-values-of-processor-architecture
   var BuildType := 'RELEASE';
   {$IFDEF DEBUG}

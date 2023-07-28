@@ -45,24 +45,9 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
       object cbIndentation: TComboBox
         Align = Right
         Items.Strings = (
-          '1 space'
           '2 spaces'
-          '3 spaces'
-          '4 spaces'
-          '5 spaces'
-          '6 spaces'
-          '7 spaces'
-          '8 spaces'
-          '1 tab'
-          '2 tabs'
-          '3 tabs'
-          '4 tabs'
-          '5 tabs'
-          '6 tabs'
-          '7 tabs'
-          '8 tabs'
           'Minified')
-        ItemIndex = 1
+        ItemIndex = 0
         Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 140.000000000000000000
