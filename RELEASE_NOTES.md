@@ -340,5 +340,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added "Copy to Clipboard" and "Save to File" for the Image Effects Tool.
 - Added JSON Formatter Tool.
 - Added XML Formatter Tool.
+- Added Delphi Formatter Tool (Only minifies currently).
 - Added Ping IP / Domain Tool.
+- Added an option to enable/disable number characters in the Password Generator Tool.
 - General fixes and improvements for Windows, MacOS, and Linux.
