@@ -16,12 +16,14 @@ And in the back of my mind, I always knew I wanted the app to be fully cross-pla
 
 And in 2020, I finally started working on "Roselt Developer Tools", one app to rule them all 😁.
 
-Since 2017, I've kept release notes for every public release of the app and I'm proud to finally have the release notes available on GitHub too.
+Since 2017, I've kept release notes for every release of the app and I'm proud to finally have the release notes available on GitHub too.
 
 
 ## Release Notes
 * Version 0.1.0 Alpha (~2013)
-* Version 0.2.0 Alpha (~2015)
+* Version 1.0.0 Prototype (~2014)
+* Version 0.2.0 Alpha (Early 2015)
+* Version 0.3.0 Alpha (Late 2015)
 * Version 1.0.0 (29/08/2017)
 * Version 1.1.0 (29/08/2017)
 * Version 1.2.0 (30/08/2017)
@@ -59,22 +61,35 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 ## Version 0.1.0 Alpha (~2013)
 ![Delphi Color Picker - Version 0.1.0 Alpha (~2013)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f2a7b542-a3d2-4879-82ae-85b8ca1dc088)
+- This is the first version I built and I distributed it to all my friends and fellow IT classmates.
+- It actually evolved into having over 100 different colors instead of the 20 in the screenshot, but that version is lost.
 
+## Version 1.0.0 Prototype (~2014)
+![Programming Color Code Helper - Version 1.0.0 Prototype (~2014)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f82aac6a-9b03-41aa-bdb8-9eace9b13360)
+- Changed name to "Programming Color Code Helper" and added many more color codes and features.
+- This was supposed to become Version 1.0.0, but I never finished it and I lost the source code to it.
 
-## Version 0.2.0 Alpha (~2015)
-![Delphi Color Picker - Version 0.2.0 Alpha (~2015)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/3e0b4f07-fd58-4270-8f77-e94330541a23)
+## Version 0.2.0 Alpha (Early 2015)
+![Delphi Color Picker - Version 0.2.0 Alpha (Early 2015)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/d2f74907-e432-4c9a-a6e0-44e9ba920236)
+- After losing the source code to my Version 1.0.0 Prototype (Programming Color Code Helper), I went back to my 0.1.0 Alpha codebase and built this version.
+- This is the first version I built and distributed to children from other schools who also had IT as a subject.
 
-
+## Version 0.3.0 Alpha (Late 2015)
+![Delphi Color Picker - Version 0.3.0 Alpha (Late 2015)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/3e0b4f07-fd58-4270-8f77-e94330541a23)
+- Added RGB Selectors.
+- Based on feedback from 0.2.0 Alpha, I polished the user interface in this version in order to make it feel more professional.
 
 ## Version 1.0.0 (29/08/2017)
 ![Roselt Color Picker - Version 1.0.0 (29/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/01449a9e-4e7c-41a0-959d-ff65b5cd43dd)
-- Initial Release.
-- Changed name to "Roselt Color Picker"
-
+- Initial Public Release.
+- Changed name to "Roselt Color Picker".
+- Completely redesigned the user interface.
+- Added color codes for HTML, C++, Java, VB, and Photoshop.
+- Replaced the RGB Selectors with a Color Panel.
   
 ## Version 1.1.0 (29/08/2017)
 ![Roselt Color Picker - Version 1.1.0 (29/08/2017)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/40fa5bcf-94f9-49a0-bcac-30bae9567b86)
-- Added an RGB picker.
+- Added back the RGB picker.
 - Updated the app icon.
 - Made the starting window size larger.
 - Added support for C#.
@@ -320,10 +335,12 @@ Since 2017, I've kept release notes for every public release of the app and I'm 
 
 
 ## Version 3.0.0 Beta 3 (Unreleased)
-![Roselt Developer Tools - Version 3.0.0 Beta 3](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/623c4b2e-4ee3-4d68-a571-f3c6e275e5ee)
+![Roselt Developer Tools - Version 3.0.0 Beta 3](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f53f337f-9ac0-490e-9642-a0b445068ec0)
 - Fixed "Copy to Clipboard" buttons on Number Base Converter Tool.
 - Added "Copy to Clipboard" and "Save to File" for the Image Effects Tool.
 - Added JSON Formatter Tool.
 - Added XML Formatter Tool.
+- Added Delphi Formatter Tool (Only minifies currently).
 - Added Ping IP / Domain Tool.
+- Added an option to enable/disable number characters in the Password Generator Tool.
 - General fixes and improvements for Windows, MacOS, and Linux.
