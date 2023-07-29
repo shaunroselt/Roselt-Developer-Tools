@@ -1,0 +1,201 @@
+object Frame_BootstrapIcons: TFrame_BootstrapIcons
+  Size.Width = 852.000000000000000000
+  Size.Height = 656.000000000000000000
+  Size.PlatformDefault = False
+  OnResize = FrameResize
+  OnResized = FrameResized
+  object layIcons: TVertScrollBox
+    Align = Client
+    Size.Width = 852.000000000000000000
+    Size.Height = 609.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 852.000000000000000000
+    Viewport.Height = 609.000000000000000000
+    object layIconsGrid: TGridLayout
+      Align = Top
+      ItemHeight = 150.000000000000000000
+      ItemWidth = 150.000000000000000000
+      Orientation = Horizontal
+      Size.Width = 852.000000000000000000
+      Size.Height = 500.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+  end
+  object layDetails: TLayout
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 852.000000000000000000
+    Size.Height = 609.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 1
+    object layIcon: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Sides = []
+      Size.Width = 812.000000000000000000
+      Size.Height = 157.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgIcon: TSkSvg
+        Align = Client
+        Size.Width = 788.000000000000000000
+        Size.Height = 133.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-text-indent-left" viewBox="0 0 1' +
+          '6 16">'#13#10'  <path d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11' +
+          'a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0' +
+          ' .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0' +
+          '-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-' +
+          '.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-' +
+          '5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>'#13 +
+          #10'</svg>'
+      end
+    end
+    object layOutput: TLayout
+      Align = Client
+      Margins.Top = 12.000000000000000000
+      Size.Width = 812.000000000000000000
+      Size.Height = 400.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object memTitleOutput: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 812.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'SVG Code'
+        TabOrder = 0
+        object btnOutputCopyToClipboard: TButton
+          Align = Right
+          Cursor = crHandPoint
+          Margins.Top = 1.000000000000000000
+          Margins.Right = 1.000000000000000000
+          Margins.Bottom = 1.000000000000000000
+          Position.X = 741.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          OnClick = btnOutputCopyToClipboardClick
+          object imgOutputCopyToClipboard: TSkSvg
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 24.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            Svg.OverrideColor = claWhite
+            Svg.Source = 
+              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+              'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+              #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+              ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+              ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+              '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+              '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+              ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+          end
+          object lblOutputCopyToClipboard: TLabel
+            Align = Client
+            Size.Width = 36.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Copy'
+            TabOrder = 5
+          end
+        end
+      end
+      object memOutput: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        ReadOnly = True
+        TextSettings.WordWrap = True
+        Align = Client
+        Size.Width = 812.000000000000000000
+        Size.Height = 364.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 808.000000000000000000
+        Viewport.Height = 360.000000000000000000
+      end
+    end
+  end
+  object layTop: TLayout
+    Align = Top
+    Size.Width = 852.000000000000000000
+    Size.Height = 47.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object lblTitle: TLabel
+      Align = Client
+      Cursor = crHandPoint
+      StyledSettings = [Family, Style, FontColor]
+      HitTest = True
+      Size.Width = 852.000000000000000000
+      Size.Height = 47.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = 'https://icons.getbootstrap.com/'
+      TabOrder = 1
+    end
+    object btnBack: TButton
+      Align = Left
+      Cursor = crHandPoint
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 6.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 6.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 35.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Visible = False
+      OnClick = btnBackClick
+      object imgBack: TSkSvg
+        Align = Client
+        Margins.Left = 6.000000000000000000
+        Margins.Top = 6.000000000000000000
+        Margins.Right = 6.000000000000000000
+        Margins.Bottom = 6.000000000000000000
+        Size.Width = 23.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 ' +
+          '16 16">'#13#10'  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 ' +
+          '0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1' +
+          ' 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.70' +
+          '8l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>'#13#10'</svg>'
+      end
+    end
+  end
+end

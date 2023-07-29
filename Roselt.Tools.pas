@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..43] of TRoseltTools = (
+  RoseltToolsArray: array[0..44] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -611,6 +611,21 @@ const
       name: 'ImageEffects';
       description: 'Different Effects applied to images';
       icon: 'mask';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Bootstrap Icons';
+      text_long: 'Bootstrap Icons';
+      name: 'BootstrapIcons';
+      description: 'Bootstrap Icons (SVG)';
+      icon: 'filetype-svg';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
