@@ -50,7 +50,8 @@ uses
   Roselt.CodeFormatting in 'Roselt.CodeFormatting.pas',
   uFrame_TextToArray in 'Tools\uFrame_TextToArray.pas' {Frame_TextToArray: TFrame},
   uFrame_PingIPDomain in 'Tools\uFrame_PingIPDomain.pas' {Frame_PingIPDomain: TFrame},
-  uFrame_DelphiFormatter in 'Tools\uFrame_DelphiFormatter.pas' {Frame_DelphiFormatter: TFrame};
+  uFrame_DelphiFormatter in 'Tools\uFrame_DelphiFormatter.pas' {Frame_DelphiFormatter: TFrame},
+  uFrame_BootstrapIcons in 'Tools\uFrame_BootstrapIcons.pas' {Frame_BootstrapIcons: TFrame};
 
 {$R *.res}
 

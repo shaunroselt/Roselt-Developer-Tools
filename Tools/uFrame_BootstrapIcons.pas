@@ -32,24 +32,52 @@ type
   TFrame_BootstrapIcons = class(TFrame)
     layIcons: TVertScrollBox;
     layIconsGrid: TGridLayout;
-    layDetails: TLayout;
+    layDetailsLeft: TLayout;
     layTop: TLayout;
     lblTitle: TLabel;
     btnBack: TButton;
     imgBack: TSkSvg;
     layIcon: TRectangle;
-    imgIcon: TSkSvg;
-    layOutput: TLayout;
-    memTitleOutput: TLabel;
-    btnOutputCopyToClipboard: TButton;
-    imgOutputCopyToClipboard: TSkSvg;
-    lblOutputCopyToClipboard: TLabel;
-    memOutput: TMemo;
+    svgIcon: TSkSvg;
+    layDetails: TGridPanelLayout;
+    layDetailsRight: TLayout;
+    Layout2: TLayout;
+    Label1: TLabel;
+    btnCopyToClipboardHTMLIconFont: TButton;
+    imgCopyToClipboardHTMLIconFont: TSkSvg;
+    lblCopyToClipboardHTMLIconFont: TLabel;
+    memHTMLIconFont: TMemo;
+    laySVGCode: TLayout;
+    memTitleSVGCode: TLabel;
+    btnCopyToClipboardSVGCode: TButton;
+    imgCopyToClipboardSVGCode: TSkSvg;
+    lblCopyToClipboardSVGCode: TLabel;
+    memSVGCode: TMemo;
+    lblIconName: TLabel;
+    lblExamples: TLabel;
+    layExamples: TRectangle;
+    layExamplesHeading: TLayout;
+    svgExamplesHeading: TSkSvg;
+    Label4: TLabel;
+    layExamplesSmallerHeading: TLayout;
+    svgExamplesSmallerHeading: TSkSvg;
+    Label5: TLabel;
+    layExamplesInlineText: TLayout;
+    Label6: TLabel;
+    svgExamplesInlineText: TSkSvg;
+    layExamplesInlineLinkText: TLayout;
+    Label7: TLabel;
+    svgExamplesInlineLinkText: TSkSvg;
+    layExamplesButton: TLayout;
+    Button2: TButton;
+    svgExamplesButton: TSkSvg;
+    Label8: TLabel;
     procedure FrameResized(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     procedure IconButtonClick(Sender: TObject);
     procedure btnBackClick(Sender: TObject);
-    procedure btnOutputCopyToClipboardClick(Sender: TObject);
+    procedure btnCopyToClipboardSVGCodeClick(Sender: TObject);
+    procedure btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,12 +96,20 @@ begin
   layDetails.Visible := False;
 end;
 
-procedure TFrame_BootstrapIcons.btnOutputCopyToClipboardClick(Sender: TObject);
+procedure TFrame_BootstrapIcons.btnCopyToClipboardSVGCodeClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+    ClipboardService.SetClipboard(memSVGCode.Text);
+end;
+
+procedure TFrame_BootstrapIcons.btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(memHTMLIconFont.Text);
 end;
 
 procedure TFrame_BootstrapIcons.FrameResize(Sender: TObject);
@@ -130,8 +166,15 @@ end;
 procedure TFrame_BootstrapIcons.IconButtonClick(Sender: TObject);
 begin
   var SVGCode := GetBootstrapIcon(TButton(Sender).Hint);
-  imgIcon.Svg.Source := SVGCode;
-  memOutput.Text := SVGCode;
+  svgIcon.Svg.Source := SVGCode;
+  svgExamplesHeading.Svg.Source := SVGCode;
+  svgExamplesSmallerHeading.Svg.Source := SVGCode;
+  svgExamplesInlineText.Svg.Source := SVGCode;
+  svgExamplesInlineLinkText.Svg.Source := SVGCode;
+  svgExamplesButton.Svg.Source := SVGCode;
+  lblIconName.Text := TButton(Sender).Hint.Replace('-', ' ', [rfReplaceAll]);
+  memSVGCode.Text := SVGCode;
+  memHTMLIconFont.Text := '<i class="bi bi-' + TButton(Sender).Hint + '"></i>';
   lblTitle.Text := TButton(Sender).Hint;
   btnBack.Visible := True;
   layIcons.Visible := False;
