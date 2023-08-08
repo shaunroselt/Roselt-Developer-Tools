@@ -57,9 +57,9 @@ uses
 
 begin
   GlobalUseSkia := True;
-//  {$IFDEF DEBUG}
-//    ReportMemoryLeaksOnShutdown := True; // This could be useful. Need to learn how it works.
-//  {$ENDIF}
+  {$IFDEF DEBUG}
+    ReportMemoryLeaksOnShutdown := True; // This could be useful. Need to learn how it works.
+  {$ENDIF}
   Application.Initialize;
   Application.CreateForm(TdmStyles, dmStyles);
   Application.CreateForm(TfrmMain, frmMain);
