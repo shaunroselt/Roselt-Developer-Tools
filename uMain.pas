@@ -184,7 +184,7 @@ type
     Label8: TLabel;
     Rectangle2: TRectangle;
     SkSvg2: TSkSvg;
-    layStuffThatwillNeverShow: TLayout;
+    layStuffThatWillNeverShow: TLayout;
     btnChangeLog: TButton;
     imgChangeLog: TSkSvg;
     layChangeLog: TScrollBox;
@@ -197,6 +197,12 @@ type
     btnSourceCodeLink: TRectangle;
     Image2: TSkSvg;
     Label2: TLabel;
+    layNameList: TRectangle;
+    cbNameList: TComboBox;
+    layTitleDescriptionNameList: TLayout;
+    lblTitleNameList: TLabel;
+    lblDescriptionNameList: TLabel;
+    imgNameList: TSkSvg;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -604,9 +610,9 @@ procedure TfrmMain.FormCreate(Sender: TObject);
     ToolFrame.Align := TAlignLayout.Client;
   end;
 begin
-  btnAllToolsTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
-  layNavTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
-  layNavTestingMore.Parent := layStuffThatwillNeverShow; // Hide Testing Button
+  btnAllToolsTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
+  layNavTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
+  layNavTestingMore.Parent := layStuffThatWillNeverShow; // Hide Testing Button
   CreateToolButtons();
   CreateToolNavButtons();
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width

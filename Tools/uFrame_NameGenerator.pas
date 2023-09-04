@@ -65,9 +65,9 @@ type
     sbAmount: TSpinBox;
     layLetterCase: TRectangle;
     cbLetterCase: TComboBox;
-    layLetterCaseTitleDescription: TLayout;
-    lblLetterCaseTitle: TLabel;
-    lblLetterCaseDescription: TLabel;
+    layTitleDescriptionLetterCase: TLayout;
+    lblTitleLetterCase: TLabel;
+    lblDescriptionLetterCase: TLabel;
     imgLetterCase: TSkSvg;
     btnRefresh: TButton;
     imgRefresh: TSkSvg;
@@ -81,6 +81,12 @@ type
     lblMaxLengthTitle: TLabel;
     lblMaxLengthDescription: TLabel;
     sbMaxLength: TSpinBox;
+    layNameList: TRectangle;
+    cbNameList: TComboBox;
+    layTitleDescriptionNameList: TLayout;
+    lblTitleNameList: TLabel;
+    lblDescriptionNameList: TLabel;
+    imgNameList: TSkSvg;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
     procedure SwitchSurnameSwitch(Sender: TObject);
@@ -113,8 +119,26 @@ begin
   memOutput.Text := '';
   for var I := 1 to Round(sbAmount.Value) do
   begin
-    var RandomName := GenerateRandomName(SwitchSurname.IsChecked);
-    while (RandomName.Length > sbMaxLength.Value) do RandomName := GenerateRandomName(SwitchSurname.IsChecked);
+    var RandomName := '';
+    if (cbNameList.Selected.Text = 'Real Life') then
+    begin
+      RandomName := GenerateRandomRealName(SwitchSurname.IsChecked);
+      while (RandomName.Length > sbMaxLength.Value) do
+        RandomName := GenerateRandomRealName(SwitchSurname.IsChecked);
+    end;
+    if (cbNameList.Selected.Text = 'GTA Vice City') then
+    begin
+      RandomName := GenerateRandomGTAViceCityName(SwitchSurname.IsChecked);
+      while (RandomName.Length > sbMaxLength.Value) do
+        RandomName := GenerateRandomGTAViceCityName(SwitchSurname.IsChecked);
+    end;
+    if (cbNameList.Selected.Text = 'GTA San Andreas') then
+    begin
+      RandomName := GenerateRandomGTASanAndreasName(SwitchSurname.IsChecked);
+      while (RandomName.Length > sbMaxLength.Value) do
+        RandomName := GenerateRandomGTASanAndreasName(SwitchSurname.IsChecked);
+    end;
+
 
     if (cbLetterCase.Selected.Text = 'lower') then RandomName := RandomName.ToLower;
     if (cbLetterCase.Selected.Text = 'UPPER') then RandomName := RandomName.ToUpper;
