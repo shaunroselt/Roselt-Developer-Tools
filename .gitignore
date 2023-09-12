@@ -70,5 +70,6 @@ modules/
 
 # Compiled Binary Folders
 Android64/
+Linux64/
 Win32/
 Win64/
