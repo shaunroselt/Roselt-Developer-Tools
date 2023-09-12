@@ -2,6 +2,8 @@ program Roselt_Developer_Tools;
 
 
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -57,9 +59,11 @@ uses
 
 begin
   GlobalUseSkia := True;
-//  {$IFDEF DEBUG}
-//    ReportMemoryLeaksOnShutdown := True; // This could be useful. Need to learn how it works.
-//  {$ENDIF}
+
+  // Enable Memory leaks detection for debug build
+  {$IFDEF DEBUG}
+    ReportMemoryLeaksOnShutdown := True;
+  {$ENDIF}
   Application.Initialize;
   Application.CreateForm(TdmStyles, dmStyles);
   Application.CreateForm(TfrmMain, frmMain);
