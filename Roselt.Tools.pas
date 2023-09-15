@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..44] of TRoseltTools = (
+  RoseltToolsArray: array[0..45] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -636,6 +636,21 @@ const
       parent: 'Graphics';
     ),
     (
+      text_short: 'Font Awesome Icons';
+      text_long: 'Font Awesome Icons';
+      name: 'FontAwesomeIcons';
+      description: 'Font Awesome Icons (SVG)';
+      icon: 'filetype-svg';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
       text_short: 'Color Blindness Simulator';
       text_long: 'Color Blindness Simulator';
       name: 'ColorBlindnessSimulator';
@@ -707,10 +722,13 @@ function IsToolParent(Tool: TRoseltTools): Boolean;
    A Tool qualifies as a Parent when the parent property is empty and
    there is a different Tool in the array with its parent property set to the name of the parent
 }
+var
+  ToolParentValid, ToolChildFound: Boolean;
+  ToolArrayItem: TRoseltTools;
 begin
-  var ToolParentValid := (Tool.parent = '');
-  var ToolChildFound := False;
-  for var ToolArrayItem in RoseltToolsArray do
+  ToolParentValid := (Tool.parent = '');
+  ToolChildFound := False;
+  for ToolArrayItem in RoseltToolsArray do
     if (Tool.name = ToolArrayItem.parent) then
     begin
       ToolChildFound := True;

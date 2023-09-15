@@ -394,183 +394,192 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="Roselt.ColorConversion.pas"/>
-        <DCCReference Include="Roselt.LoremIpsum.pas"/>
-        <DCCReference Include="Roselt.Screenshot.pas"/>
-        <DCCReference Include="Roselt.NameGenerator.pas"/>
-        <DCCReference Include="Tools\uFrame_Base64TextEncoderDecoder.pas">
-            <Form>Frame_Base64TextEncoderDecoder</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_JsonYamlConverter.pas">
-            <Form>Frame_JsonYamlConverter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_HashGenerator.pas">
-            <Form>Frame_HashGenerator</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_HTMLEncoderDecoder.pas">
-            <Form>Frame_HTMLEncoderDecoder</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_JsonFormatter.pas">
-            <Form>Frame_JsonFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_LoremIpsumGenerator.pas">
-            <Form>Frame_LoremIpsumGenerator</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_TextCaseConverterInspector.pas">
-            <Form>Frame_TextCaseConverterInspector</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_ColorPicker.pas">
-            <Form>Frame_ColorPicker</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Roselt.JsonYamlConverter.pas"/>
-        <DCCReference Include="Tools\uFrame_TimestampConverter.pas">
-            <Form>Frame_TimestampConverter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_NumberBaseConverter.pas">
-            <Form>Frame_NumberBaseConverter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_URLEncoderDecoder.pas">
-            <Form>Frame_URLEncoderDecoder</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_GZipCompressDecompress.pas">
-            <Form>Frame_GZipCompressDecompress</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_JWTDecoder.pas">
-            <Form>Frame_JWTDecoder</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_Base64ImageEncoderDecoder.pas">
+        <DCCReference Include="Roselt.Tools.pas"/>
+        <DCCReference Include="Tools\App\uFrame_Base64ImageEncoderDecoder.pas">
             <Form>Frame_Base64ImageEncoderDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Tools\uFrame_SQLFormatter.pas">
-            <Form>Frame_SQLFormatter</Form>
+        <DCCReference Include="Tools\App\uFrame_Base64TextEncoderDecoder.pas">
+            <Form>Frame_Base64TextEncoderDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Tools\uFrame_HTMLFormatter.pas">
-            <Form>Frame_HTMLFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_CSSFormatter.pas">
-            <Form>Frame_CSSFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_PHPFormatter.pas">
-            <Form>Frame_PHPFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_JavaScriptFormatter.pas">
-            <Form>Frame_JavaScriptFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_XMLFormatter.pas">
-            <Form>Frame_XMLFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_UUIDGenerator.pas">
-            <Form>Frame_UUIDGenerator</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_NameGenerator.pas">
-            <Form>Frame_NameGenerator</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_TextEscapeUnescape.pas">
-            <Form>Frame_TextEscapeUnescape</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_MarkdownPreview.pas">
-            <Form>Frame_MarkdownPreview</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_RegexTester.pas">
-            <Form>Frame_RegexTester</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="uBootstrapIcons.pas"/>
-        <DCCReference Include="Roselt.SystemInformation.pas"/>
-        <DCCReference Include="Roselt.NumberBaseConversion.pas"/>
-        <DCCReference Include="Roselt.Tools.pas"/>
-        <DCCReference Include="Tools\uFrame_JWTTokenGenerator.pas">
-            <Form>Frame_JWTTokenGenerator</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Roselt.Utility.pas"/>
-        <DCCReference Include="Tools\uFrame_PasswordGenerator.pas">
-            <Form>Frame_PasswordGenerator</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_ImageEffects.pas">
-            <Form>Frame_ImageEffects</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_HTMLPreview.pas">
-            <Form>Frame_HTMLPreview</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Roselt.CodeFormatting.pas"/>
-        <DCCReference Include="Tools\uFrame_TextToArray.pas">
-            <Form>Frame_TextToArray</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_PingIPDomain.pas">
-            <Form>Frame_PingIPDomain</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_DelphiFormatter.pas">
-            <Form>Frame_DelphiFormatter</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tools\uFrame_BootstrapIcons.pas">
+        <DCCReference Include="Tools\App\uFrame_BootstrapIcons.pas">
             <Form>Frame_BootstrapIcons</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_ColorPicker.pas">
+            <Form>Frame_ColorPicker</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_CSSFormatter.pas">
+            <Form>Frame_CSSFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_DelphiFormatter.pas">
+            <Form>Frame_DelphiFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_GZipCompressDecompress.pas">
+            <Form>Frame_GZipCompressDecompress</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_HashGenerator.pas">
+            <Form>Frame_HashGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_HTMLEncoderDecoder.pas">
+            <Form>Frame_HTMLEncoderDecoder</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_HTMLFormatter.pas">
+            <Form>Frame_HTMLFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_HTMLPreview.pas">
+            <Form>Frame_HTMLPreview</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_ImageEffects.pas">
+            <Form>Frame_ImageEffects</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_JavaScriptFormatter.pas">
+            <Form>Frame_JavaScriptFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_JsonFormatter.pas">
+            <Form>Frame_JsonFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_JsonYamlConverter.pas">
+            <Form>Frame_JsonYamlConverter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_JWTDecoder.pas">
+            <Form>Frame_JWTDecoder</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_JWTTokenGenerator.pas">
+            <Form>Frame_JWTTokenGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_LoremIpsumGenerator.pas">
+            <Form>Frame_LoremIpsumGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_MarkdownPreview.pas">
+            <Form>Frame_MarkdownPreview</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_NameGenerator.pas">
+            <Form>Frame_NameGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_NumberBaseConverter.pas">
+            <Form>Frame_NumberBaseConverter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_PasswordGenerator.pas">
+            <Form>Frame_PasswordGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_PHPFormatter.pas">
+            <Form>Frame_PHPFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_PingIPDomain.pas">
+            <Form>Frame_PingIPDomain</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_RegexTester.pas">
+            <Form>Frame_RegexTester</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_SQLFormatter.pas">
+            <Form>Frame_SQLFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_TextCaseConverterInspector.pas">
+            <Form>Frame_TextCaseConverterInspector</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_TextEscapeUnescape.pas">
+            <Form>Frame_TextEscapeUnescape</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_TextToArray.pas">
+            <Form>Frame_TextToArray</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_TimestampConverter.pas">
+            <Form>Frame_TimestampConverter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_URLEncoderDecoder.pas">
+            <Form>Frame_URLEncoderDecoder</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_UUIDGenerator.pas">
+            <Form>Frame_UUIDGenerator</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Tools\App\uFrame_XMLFormatter.pas">
+            <Form>Frame_XMLFormatter</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Lib\Ping.pas"/>
+        <DCCReference Include="Lib\Roselt.CodeFormatting.pas"/>
+        <DCCReference Include="Lib\Roselt.ColorConversion.pas"/>
+        <DCCReference Include="Lib\Roselt.JsonYamlConverter.pas"/>
+        <DCCReference Include="Lib\Roselt.LoremIpsum.pas"/>
+        <DCCReference Include="Lib\Roselt.NameGenerator.pas"/>
+        <DCCReference Include="Lib\Roselt.NumberBaseConversion.pas"/>
+        <DCCReference Include="Lib\Roselt.Screenshot.pas"/>
+        <DCCReference Include="Lib\Roselt.SystemInformation.pas"/>
+        <DCCReference Include="Lib\Roselt.Utility.pas"/>
+        <DCCReference Include="Lib\uBootstrapIcons.pas"/>
+        <DCCReference Include="Roselt.AppInfo.pas"/>
+        <DCCReference Include="Lib\uFontAwesomeIcons.pas"/>
+        <DCCReference Include="Tools\App\uFrame_FontAwesomeIcons.pas">
+            <Form>Frame_FontAwesomeIcons</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <None Include="README.md"/>
+        <None Include="RELEASE_NOTES.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -947,11 +956,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="RELEASE_NOTES.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>Roselt_Developer_Tools.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>Roselt_Developer_Tools.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
