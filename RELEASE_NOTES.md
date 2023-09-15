@@ -56,7 +56,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 * Version 2.1.4 (13/01/2018)
 * Version 3.0.0 Beta 1 (27/04/2020)
 * Version 3.0.0 Beta 2 (28/05/2023)
-* Version 3.0.0 Beta 3 (Unreleased)
+* Version 3.0.0 Beta 3 (29/07/2023)
 
 
 ## Version 0.1.0 Alpha (~2013)
@@ -334,7 +334,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added Image Effects Tool.
 
 
-## Version 3.0.0 Beta 3 (Unreleased)
+## Version 3.0.0 Beta 3 (29/07/2023)
 ![Roselt Developer Tools - Version 3.0.0 Beta 3](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f53f337f-9ac0-490e-9642-a0b445068ec0)
 - Fixed "Copy to Clipboard" buttons on Number Base Converter Tool.
 - Added "Copy to Clipboard" and "Save to File" for the Image Effects Tool.
