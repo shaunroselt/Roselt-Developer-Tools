@@ -1,13 +1,34 @@
-unit uFrame_CsvJsonConvertor;   //Converting CSV to JSON and JSON to CSV , Nice tool
+unit uFrame_CsvJsonConvertor;
 
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  Skia, FMX.Memo.Types, FMX.ListBox, FMX.Objects, FMX.ScrollBox, FMX.Memo,
-  Skia.FMX, FMX.Controls.Presentation, FMX.Layouts,System.JSON, Fmx.Clipboard, FMX.Platform, System.Threading,
-  System.Generics.Collections;
+  System.SysUtils, 
+  System.Types, 
+  System.UITypes, 
+  System.Classes, 
+  System.Variants,
+  System.Threading,
+  System.Generics.Collections, 
+
+  FMX.Types, 
+  FMX.Graphics, 
+  FMX.Controls, 
+  FMX.Forms, 
+  FMX.Dialogs, 
+  FMX.StdCtrls,
+  FMX.Memo.Types, 
+  FMX.ListBox, 
+  FMX.Objects, 
+  FMX.ScrollBox, 
+  FMX.Memo,
+  FMX.Controls.Presentation, 
+  FMX.Layouts,System.JSON, 
+  FMX.Clipboard, 
+  FMX.Platform,
+  
+  Skia.FMX, 
+  Skia;
 
 type
   TFrame_CsvJsonConvertor = class(TFrame)
@@ -75,16 +96,15 @@ end;
 
 procedure TFrame_CsvJsonConvertor.btnInputCopyToClipboardClick(Sender: TObject);
 var
-ClipboardService: IFMXClipboardService;
+  ClipboardService: IFMXClipboardService;
 begin
-if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
-begin
-ClipboardService.SetClipboard(memInput.Text);
-end;
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
+  begin
+    ClipboardService.SetClipboard(memInput.Text);
+  end;
 end;
 
 procedure TFrame_CsvJsonConvertor.btnInputLoadClick(Sender: TObject);
-begin
 begin
   if (OpenDialog1.Execute) then
   begin
@@ -93,10 +113,8 @@ begin
     memOutput.Text := CsvToJson(memInput.Text);
   end;
 end;
-end;
 
-procedure TFrame_CsvJsonConvertor.btnInputPasteFromClipboardClick(
-  Sender: TObject);
+procedure TFrame_CsvJsonConvertor.btnInputPasteFromClipboardClick(Sender: TObject);
 var
   ClipboardService: IFMXClipboardService;
 begin
@@ -107,19 +125,18 @@ begin
   end;
 end;
 
-procedure TFrame_CsvJsonConvertor.btnOutputCopyToClipboardClick(
-  Sender: TObject);
+procedure TFrame_CsvJsonConvertor.btnOutputCopyToClipboardClick(Sender: TObject);
 var
-ClipboardService: IFMXClipboardService;
+  ClipboardService: IFMXClipboardService;
 begin
-if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
-ClipboardService.SetClipboard(memOutput.Text)
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, IInterface(ClipboardService)) then
+    ClipboardService.SetClipboard(memOutput.Text)
 end;
 
 procedure TFrame_CsvJsonConvertor.cbConverChange(Sender: TObject);
 begin
-memInput.Text := '';
-memOutput.Text := '';
+  memInput.Text := '';
+  memOutput.Text := '';
 end;
 
 function TFrame_CsvJsonConvertor.CSVToJSON(const CSV: string): string;
@@ -164,24 +181,24 @@ end;
 
 procedure TFrame_CsvJsonConvertor.memInputChangeTracking(Sender: TObject);
 var
-ConvertTask: ITask;
+  ConvertTask: ITask;
 begin
-ConvertTask := TTask.Create(
-procedure
-begin
-TThread.Synchronize(nil,
-procedure
-begin
-case cbConversion.ItemIndex of
-0: memOutput.Text := CsvToJson(memInput.Text);
-1: memOutput.Text := JsonToCsv(memInput.Text)
+  ConvertTask := TTask.Create(
+    procedure
+    begin
+      TThread.Synchronize(nil,
+        procedure
+        begin
+          case cbConversion.ItemIndex of
+            0: memOutput.Text := CsvToJson(memInput.Text);
+            1: memOutput.Text := JsonToCsv(memInput.Text)
+          end;
+        end
+      );
+    end
+  );
+  ConvertTask.Start;
 end;
-end);
-end);
-ConvertTask.Start;
-end;
-
-
 
 function TFrame_CsvJsonConvertor.JSONToCSV(const JSON: string): string;
 var
@@ -260,7 +277,3 @@ begin
 end;
 
 end.
-
-
-end.
-
