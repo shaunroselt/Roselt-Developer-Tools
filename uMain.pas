@@ -1,4 +1,4 @@
-﻿{ TODO: Finish everything 😂 }
+﻿﻿{ TODO: Finish everything 😂 }
 unit uMain;
 
 interface
@@ -33,7 +33,10 @@ uses
   FMX.SearchBox,
   FMX.TabControl,
   FMX.Printer,
+  FMX.EditBox,
+  FMX.SpinBox,
 
+  Roselt.AppInfo,
   Roselt.Tools,
   Roselt.Utility,
 
@@ -48,12 +51,14 @@ uses
   uFrame_LoremIpsumGenerator,
   uFrame_TextCaseConverterInspector,
   uFrame_ColorPicker,
+  uFrame_ImageEffects,
   uFrame_TimestampConverter,
   uFrame_NumberBaseConverter,
   uFrame_URLEncoderDecoder,
   uFrame_GZipCompressDecompress,
   uFrame_JWTDecoder,
   uFrame_Base64ImageEncoderDecoder,
+  uFrame_DelphiFormatter,
   uFrame_SQLFormatter,
   uFrame_HTMLFormatter,
   uFrame_CSSFormatter,
@@ -62,15 +67,19 @@ uses
   uFrame_JavaScriptFormatter,
   uFrame_UUIDGenerator,
   uFrame_JWTTokenGenerator,
+  uFrame_PasswordGenerator,
   uFrame_TextEscapeUnescape,
   uFrame_MarkdownPreview,
+  uFrame_HTMLPreview,
   uFrame_RegexTester,
   uFrame_NameGenerator,
-  uFrame_PasswordGenerator,
-  uFrame_CsvJsonConvertor,
+  uFrame_TextToArray,
+  uFrame_PingIPDomain,
+  uFrame_BootstrapIcons,
+  uFrame_FontAwesomeIcons,
 
-  Skia,
-  Skia.FMX;
+  System.Skia,
+  FMX.Skia;
 
 type
   TfrmMain = class(TForm)
@@ -97,11 +106,12 @@ type
     btnSettings: TRectangle;
     imgSettings: TSkSvg;
     lblSettings: TLabel;
-    layNavTestingMore: TLayout;
-    layNavTestingMoreExpandCollapse: TLayout;
-    imgTestingMoreMoreExpandCollapse: TSkSvg;
-    lblTestingMoreExpandCollapse: TLabel;
-    imgConvertersExpandCollapseIcon: TSkSvg;
+    layNavTestingMoreStuff: TLayout;
+    layNavExpandCollapseTestingMoreStuff: TLayout;
+    btnExpandCollapseTestingMoreStuff: TRectangle;
+    imgExpandCollapseTestingMoreStuff: TSkSvg;
+    lblExpandCollapseTestingMoreStuff: TLabel;
+    imgExpandCollapseIconTestingMoreStuff: TSkSvg;
     layNavTesting1: TLayout;
     btnTesting1: TRectangle;
     imgTesting1: TSkSvg;
@@ -116,6 +126,7 @@ type
     lblTesting2: TLabel;
     SplitterNavContent: TSplitter;
     btnToolHelp: TButton;
+    laySettings: TScrollBox;
     layFontFamily: TRectangle;
     cbFontFamily: TComboBox;
     imgFontFamily: TSkSvg;
@@ -161,14 +172,10 @@ type
     Image1: TSkSvg;
     Label1: TLabel;
     laySourceCodeLink: TLayout;
-    Label2: TLabel;
-    Image2: TSkSvg;
     layMicrosoftStoreLink: TLayout;
     Label3: TLabel;
     Image3: TSkSvg;
     laySteamLink: TLayout;
-    Label4: TLabel;
-    Image5: TSkSvg;
     Button14: TButton;
     imgToolHelp: TSkSvg;
     layAllToolsHidden: TFlowLayout;
@@ -179,8 +186,25 @@ type
     Label8: TLabel;
     Rectangle2: TRectangle;
     SkSvg2: TSkSvg;
-    layStuffThatwillNeverShow: TLayout;
-    laySettings: TScrollBox;
+    layStuffThatWillNeverShow: TLayout;
+    btnChangeLog: TButton;
+    imgChangeLog: TSkSvg;
+    layChangeLog: TScrollBox;
+    layMemoChangeLog: TRectangle;
+    lblChangeLog: TLabel;
+    memChangeLog: TMemo;
+    btnSteamLink: TRectangle;
+    Image5: TSkSvg;
+    Label4: TLabel;
+    btnSourceCodeLink: TRectangle;
+    Image2: TSkSvg;
+    Label2: TLabel;
+    layNameList: TRectangle;
+    cbNameList: TComboBox;
+    layTitleDescriptionNameList: TLayout;
+    lblTitleNameList: TLabel;
+    lblDescriptionNameList: TLabel;
+    imgNameList: TSkSvg;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -196,12 +220,15 @@ type
     procedure AllToolsButtonClick(Sender: TObject);
     procedure edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtSearchAllToolsChange(Sender: TObject);
-    procedure laySourceCodeLinkClick(Sender: TObject);
+    procedure btnChangeLogClick(Sender: TObject);
+    procedure btnSteamLinkClick(Sender: TObject);
+    procedure btnSourceCodeLinkClick(Sender: TObject);
+    procedure btnSettingsMouseEnter(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
     procedure SelectTool(ToolLayoutName: String);
-    function GetAppInfo(): String;
     procedure AllToolsSearch();
   public
     { Public declarations }
@@ -220,27 +247,30 @@ begin
   begin
     MultiView.Width := HamburgerMenuWidth;
     for var Tool in RoseltToolsArray do
-      if IsToolParent(Tool) then
+      if IsToolParent(Tool) and Tool.visible then
       begin
-        // MultiView.FindComponent doesn't work. I don't know why. I feel like it should, but it doesn't 🙁
-        var ToolContainer := TControl(FindComponent('layNav' + Tool.name));
-        var ToolButton := TControl(FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
+        var ToolButtonContainer := ToolContainer.FindComponent('layNav' + Tool.name + 'ExpandCollapse');
+        var ToolButton := TControl(ToolButtonContainer.FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('img' + Tool.name + 'ExpandCollapseIcon'));
 
         ToolButton.OnClick := ExpandCollapseNavItem;
         ToolButton.OnDblClick := ExpandCollapseNavItem;
 
-        TControl(FindComponent('img' + Tool.name + 'ExpandCollapseIcon')).Visible := True;
+        ToolButtonExpandCollapseIcon.Visible := True;
       end;
+    TControl(FindComponent('btnAllTools')).OnClick := btnAllToolsClick;
   end else
   begin
     HamburgerMenuWidth := MultiView.Width;
     MultiView.Width := 50;
     for var Tool in RoseltToolsArray do
-      if IsToolParent(Tool) then
+      if IsToolParent(Tool) and Tool.visible then
       begin
-        // MultiView.FindComponent doesn't work. I don't know why. I feel like it should, but it doesn't 🙁
-        var ToolContainer := TControl(FindComponent('layNav' + Tool.name));
-        var ToolButton := TControl(FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
+        var ToolButtonContainer := ToolContainer.FindComponent('layNav' + Tool.name + 'ExpandCollapse');
+        var ToolButton := TControl(ToolButtonContainer.FindComponent('btn' + Tool.name + 'ExpandCollapse'));
+        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('img' + Tool.name + 'ExpandCollapseIcon'));
 
         ToolButton.OnClick := btnAllToolsSearchClick;
         ToolButton.OnDblClick := nil;
@@ -248,9 +278,26 @@ begin
         if (ToolContainer.Height <> TControl(ToolButton.Parent).Height) then
           ExpandCollapseNavItem(ToolButton);
 
-        TControl(FindComponent('img' + Tool.name + 'ExpandCollapseIcon')).Visible := False;
+        ToolButtonExpandCollapseIcon.Visible := False;
       end;
+    TControl(FindComponent('btnAllTools')).OnClick := btnAllToolsSearchClick;
   end;
+end;
+
+procedure TfrmMain.btnSettingsMouseEnter(Sender: TObject);
+begin
+  TRectangle(Sender).Fill.Kind := TBrushKind.Solid;
+  TRectangle(Sender).Fill.Color := $FF3C3C3C;
+end;
+
+procedure TfrmMain.btnSourceCodeLinkClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools');
+end;
+
+procedure TfrmMain.btnSteamLinkClick(Sender: TObject);
+begin
+  OpenURL('https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/');
 end;
 
 procedure TfrmMain.btnToolHelpClick(Sender: TObject);
@@ -265,6 +312,65 @@ begin
 
   if ToolName = 'Color Picker' then
     ShowMessage('Select a Color and get the Color Code');
+end;
+
+procedure TfrmMain.Button14Click(Sender: TObject);
+begin
+  var LocationPath := 'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Bootstrap Icons';
+
+  memTesting.Lines.Clear;
+  memTesting.Lines.Add('const');
+  memTesting.Lines.Add('  BootstrapIconsArray: array[0..IconCount] of TBootstrapIcon = (');
+  var IconCount := 0;
+  // loop through files in LocationPath folder and get file content and file name
+  for var svgFile in TDirectory.GetFiles(LocationPath) do
+  begin
+    var svgFileContent := TFile.ReadAllText(svgFile); // Get SVG Code
+    svgFileContent := svgFileContent.Replace(#9,'',[rfReplaceAll]); // Remove Tabs from SVG Code
+    svgFileContent := svgFileContent.Replace(#10,'',[rfReplaceAll]).Replace(#13,'',[rfReplaceAll]); // Remove Line Breaks from SVG Code
+
+
+    var svgFileName := ExtractFileName(svgFile).Replace('.svg',''); // Get SVG Name
+    memTesting.Lines.Add('    (');
+    memTesting.Lines.Add('      name: ' + QuotedStr(svgFileName) + ';');
+
+
+    var iCount := 1;
+    while (svgFileContent.Length > 0) do
+    begin
+      var svgLine := '';
+      if (svgFileContent.Length > 200) then
+      begin
+        svgLine := svgFileContent.Substring(0,200);
+        svgFileContent := svgFileContent.Remove(0,200);
+      end else
+      begin
+        svgLine := svgFileContent;
+        svgFileContent := '';
+      end;
+      if (iCount > 1) then
+      begin
+        svgLine := '           ' + QuotedStr(svgLine);
+        if (svgFileContent.Length > 0) then
+          svgLine := svgLine + ' +'
+        else
+          svgLine := svgLine + ';';
+        memTesting.Lines.Add(svgLine);
+      end else
+      begin
+        if (svgFileContent.Length = 0) then
+          memTesting.Lines.Add('      svg: ' + QuotedStr(svgLine) + ';')
+        else
+          memTesting.Lines.Add('      svg: ' + QuotedStr(svgLine) + ' +');
+      end;
+      inc(iCount);
+    end;
+    memTesting.Lines.Add('    ),');
+    inc(IconCount);
+  end;
+
+  memTesting.Text := memTesting.Text.Replace('width="16" height="16"','width="IconSize" height="IconSize"',[rfReplaceAll,rfIgnoreCase]).Replace('IconCount',IconCount.ToString,[rfReplaceAll,rfIgnoreCase]);
+  memTesting.Lines.Add('  );');
 end;
 
 procedure TfrmMain.cbThemeChange(Sender: TObject);
@@ -331,7 +437,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonContainer.Parent := ToolParentContainer;
         ToolButtonContainer.Align := TAlignLayout.Top;
         ToolButtonContainer.Height := 50;
-        ToolButtonContainer.Name := 'layNav' + Tool.name + 'ExpandCollapse';
+        ToolButtonContainer.Name := 'layNavExpandCollapse' + Tool.name;
         ToolButtonContainer.Enabled := Tool.active;
 
         var ToolButton := TRectangle.Create(ToolButtonContainer);
@@ -341,7 +447,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButton.Margins.Right := 5;
         ToolButton.Margins.Bottom := 5;
         ToolButton.Margins.Left := 5;
-        ToolButton.Name := 'btn' + Tool.name + 'ExpandCollapse';
+        ToolButton.Name := 'btnExpandCollapse' + Tool.name;
         ToolButton.Cursor := crHandPoint;
         ToolButton.Fill.Kind := TBrushKind.None;
         ToolButton.Sides := [];
@@ -361,7 +467,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonImg.Margins.Bottom := 8;
         ToolButtonImg.Margins.Left := 8;
         ToolButtonImg.Width := ToolButtonImg.Height;
-        ToolButtonImg.Name := 'img' + Tool.name + 'ExpandCollapse';
+        ToolButtonImg.Name := 'imgExpandCollapse' + Tool.name;
         ToolButtonImg.Svg.Source := GetBootstrapIcon(Tool.icon);
         ToolButtonImg.Svg.OverrideColor := TAlphaColors.White;
 
@@ -371,7 +477,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonLabel.Margins.Top := 5;
         ToolButtonLabel.Margins.Right := 5;
         ToolButtonLabel.Margins.Bottom := 5;
-        ToolButtonLabel.Name := 'lbl' + Tool.name + 'ExpandCollapse';
+        ToolButtonLabel.Name := 'lblExpandCollapse' + Tool.name;
         ToolButtonLabel.Text := Tool.text_long;
         ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
         ToolButtonLabel.TextSettings.Font.Size := 20;
@@ -386,7 +492,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         ToolButtonImgExpandCollapseIcon.Margins.Bottom := 11;
         ToolButtonImgExpandCollapseIcon.Margins.Left := 5;
         ToolButtonImgExpandCollapseIcon.Width := ToolButtonImgExpandCollapseIcon.Height;
-        ToolButtonImgExpandCollapseIcon.Name := 'img' + Tool.name + 'ExpandCollapseIcon';
+        ToolButtonImgExpandCollapseIcon.Name := 'imgExpandCollapseIcon' + Tool.name;
         ToolButtonImgExpandCollapseIcon.Svg.Source := GetBootstrapIcon('chevron-down');
         ToolButtonImgExpandCollapseIcon.Svg.OverrideColor := TAlphaColors.White;
         ToolButtonImgExpandCollapseIcon.Visible := Tool.active;
@@ -565,9 +671,9 @@ procedure TfrmMain.FormCreate(Sender: TObject);
     ToolFrame.Align := TAlignLayout.Client;
   end;
 begin
-  btnAllToolsTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
-  layNavTesting.Parent := layStuffThatwillNeverShow; // Hide Testing Button
-  layNavTestingMore.Parent := layStuffThatwillNeverShow; // Hide Testing Button
+  btnAllToolsTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
+  layNavTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
+  layNavTestingMoreStuff.Parent := layStuffThatWillNeverShow; // Hide Testing Button
   CreateToolButtons();
   CreateToolNavButtons();
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
@@ -578,6 +684,7 @@ begin
 
 
   // Dynamically create Tool Frames
+  CreateToolFrame(TFrame_DelphiFormatter.Create(Self),'layDelphiFormatter');
   CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
   CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
   CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
@@ -587,12 +694,14 @@ begin
   CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
   CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
   CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
+  CreateToolFrame(TFrame_PasswordGenerator.Create(Self),'layPasswordGenerator');
   CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
   CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
   CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
   CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
   CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
   CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
+  CreateToolFrame(TFrame_ImageEffects.Create(Self),'layImageEffects');
   CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
   CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
   CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
@@ -603,9 +712,12 @@ begin
   CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
   CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
   CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
+  CreateToolFrame(TFrame_HTMLPreview.Create(Self),'layHTMLPreview');
   CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
-  CreateToolFrame(TFrame_PasswordGenerator.Create(Self), 'layPasswordGenerator');
-  CreateToolFrame(TFrame_CsvJsonConvertor.Create(Self), 'layCsvJsonConvertor');
+  CreateToolFrame(TFrame_TextToArray.Create(Self),'layTextToArray');
+  CreateToolFrame(TFrame_PingIPDomain.Create(Self),'layPingIPDomain');
+  CreateToolFrame(TFrame_BootstrapIcons.Create(Self),'layBootstrapIcons');
+  CreateToolFrame(TFrame_FontAwesomeIcons.Create(Self),'layFontAwesomeIcons');
 
 
   // Load Themes (Settings)
@@ -638,25 +750,6 @@ end;
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
   layAllToolsGrid.Height := Round(layAllToolsGrid.ChildrenCount / (layAllToolsGrid.Width / 240)+1) * 185;  // Need to improve/change this in the future
-end;
-
-function TfrmMain.GetAppInfo: String;
-// Need to get all of the App Info dynamically in the future
-begin
-  var Version := 'Version 1.0.0.0';
-  var Architecture := 'X64';     // Get Environement Variable for this on Windows: https://superuser.com/questions/305901/possible-values-of-processor-architecture
-  var BuildType := 'RELEASE';
-  {$IFDEF DEBUG}
-    BuildType := 'DEBUG';
-  {$ENDIF}
-  var CompiledDate := Date.ToString;
-
-  Result := Version + ' | ' + Architecture + ' | ' + BuildType + ' | ' + CompiledDate;
-end;
-
-procedure TfrmMain.laySourceCodeLinkClick(Sender: TObject);
-begin
-  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools');
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
@@ -706,7 +799,14 @@ end;
 
 procedure TfrmMain.AllToolsButtonClick(Sender: TObject);
 begin
-  SelectTool('lay' + TButton(Sender).TagString);
+  var ToolButton := TButton(Sender);
+  for var I in ToolButton.Children do
+    if String(I.Name).Contains('btnAllToolsTitle') then
+    begin
+      lblNavTitle.Text := TLabel(I).Text;
+      break;
+    end;
+  SelectTool('lay' + ToolButton.TagString);
 end;
 
 procedure TfrmMain.AllToolsSearch();
@@ -750,7 +850,17 @@ end;
 procedure TfrmMain.btnAllToolsSearchClick(Sender: TObject);
 begin
   btnAllToolsClick(btnAllTools);
-  edtSearchAllTools.Text := String(TControl(Sender).Name).Replace('btn','').Replace('ExpandCollapse','');
+
+  var SearchText := String(TControl(Sender).Name).Replace('btn','').Replace('ExpandCollapse','');
+  if (TControl(Sender).Name = 'btnAllTools') then SearchText := '';
+
+  edtSearchAllTools.Text := SearchText;
+end;
+
+procedure TfrmMain.btnChangeLogClick(Sender: TObject);
+begin
+  lblNavTitle.Text := 'Change Log';
+  SelectTool('layChangeLog');
 end;
 
 end.

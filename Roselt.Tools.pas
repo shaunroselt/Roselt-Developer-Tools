@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..38] of TRoseltTools = (
+  RoseltToolsArray: array[0..45] of TRoseltTools = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -60,8 +60,8 @@ const
         active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: '';
     ),
@@ -110,6 +110,21 @@ const
       {$ENDIF}
       parent: '';
     ),
+    ( // Converters Main Category (Parent)
+      text_short: 'Other';
+      text_long: 'Other';
+      name: 'Other';
+      description: 'Other';
+      icon: 'hexagon';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: '';
+    ),
     (
       text_short: 'Testing';
       text_long: 'Testing';
@@ -141,11 +156,11 @@ const
       parent: 'Converters';
     ),
     (
-      text_short: 'JSON <> CSV';
-      text_long: 'JSON <> CSV';
-      name: 'CsvJsonConvertor';
-      description: 'Convert JSON to CSV and vice versa';
-      icon: 'arrow-left-right';
+      text_short: 'Text to Array';
+      text_long: 'Text to Array';
+      name: 'TextToArray';
+      description: 'Convert a text to an array';
+      icon: 'braces';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
@@ -267,7 +282,7 @@ const
       description: 'Decode a JWT header, payload and signature';
       icon: 'gear-wide';
       {$IFDEF DEBUG}
-        active: true;
+        active: false;
         visible: true;
       {$ELSE}
         active: false;
@@ -276,17 +291,32 @@ const
       parent: 'EncodersDecoders';
     ),
     (
+      text_short: 'Delphi';
+      text_long: 'Delphi Formatter';
+      name: 'DelphiFormatter';
+      description: 'Indent or minify Delphi code';
+      icon: 'file-earmark';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Formatters';
+    ),
+    (
       text_short: 'JSON';
       text_long: 'JSON Formatter';
       name: 'JsonFormatter';
       description: 'Indent or minify JSON data';
       icon: 'filetype-json';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Formatters';
     ),
@@ -297,7 +327,7 @@ const
       description: 'Indent or minify HTML code';
       icon: 'filetype-html';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -312,7 +342,7 @@ const
       description: 'Indent SQL queries';
       icon: 'server';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -327,11 +357,11 @@ const
       description: 'Indent or minify XML data';
       icon: 'filetype-xml';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
-        active: false;
-        visible: false;
+        active: true;
+        visible: true;
       {$ENDIF}
       parent: 'Formatters';
     ),
@@ -395,24 +425,6 @@ const
       {$ENDIF}
       parent: 'Generators';
     ),
-
-    //Password Generator
-    (
-      text_short: 'Password';
-      text_long: 'Password Generator';
-      name: 'PasswordGenerator';
-      description: 'Generates Passwords';
-      icon: 'key';
-      {$IFDEF DEBUG}
-        active: true;
-        visible: true;
-      {$ELSE}
-        active: true;
-        visible: true;
-      {$ENDIF}
-      parent: 'Generators';
-    ),
-
     (
       text_short: 'UUID';
       text_long: 'UUID Generator';
@@ -464,6 +476,21 @@ const
       name: 'NameGenerator';
       description: 'Generate random names';
       icon: 'person-square';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Generators';
+    ),
+    (
+      text_short: 'Password';
+      text_long: 'Password Generator';
+      name: 'PasswordGenerator';
+      description: 'Generate random passwords';
+      icon: 'key';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
@@ -549,11 +576,71 @@ const
       parent: 'Text';
     ),
     (
+      text_short: 'HTML Preview';
+      text_long: 'HTML Preview';
+      name: 'HTMLPreview';
+      description: 'Preview HTML, CSS and JavaScript';
+      icon: 'browser-edge';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Text';
+    ),
+    (
       text_short: 'Color Picker';
       text_long: 'Color Picker';
       name: 'ColorPicker';
       description: 'Fully featured color picker';
       icon: 'brush';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Image Effects';
+      text_long: 'Image Effects';
+      name: 'ImageEffects';
+      description: 'Different Effects applied to images';
+      icon: 'mask';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Bootstrap Icons';
+      text_long: 'Bootstrap Icons';
+      name: 'BootstrapIcons';
+      description: 'Bootstrap Icons (SVG)';
+      icon: 'filetype-svg';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Font Awesome Icons';
+      text_long: 'Font Awesome Icons';
+      name: 'FontAwesomeIcons';
+      description: 'Font Awesome Icons (SVG)';
+      icon: 'filetype-svg';
       {$IFDEF DEBUG}
         active: true;
         visible: true;
@@ -594,6 +681,21 @@ const
       parent: 'Graphics';
     ),
     (
+      text_short: 'Ping IP / Domain';
+      text_long: 'Ping IP / Domain';
+      name: 'PingIPDomain';
+      description: 'Ping and IP Address or Domain Name';
+      icon: 'wifi';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Other';
+    ),
+    (
       text_short: 'Image Converter';
       text_long: 'Image Converter';
       name: 'ImageConverter';
@@ -620,10 +722,13 @@ function IsToolParent(Tool: TRoseltTools): Boolean;
    A Tool qualifies as a Parent when the parent property is empty and
    there is a different Tool in the array with its parent property set to the name of the parent
 }
+var
+  ToolParentValid, ToolChildFound: Boolean;
+  ToolArrayItem: TRoseltTools;
 begin
-  var ToolParentValid := (Tool.parent = '');
-  var ToolChildFound := False;
-  for var ToolArrayItem in RoseltToolsArray do
+  ToolParentValid := (Tool.parent = '');
+  ToolChildFound := False;
+  for ToolArrayItem in RoseltToolsArray do
     if (Tool.name = ToolArrayItem.parent) then
     begin
       ToolChildFound := True;
