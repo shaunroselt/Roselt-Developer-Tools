@@ -1,0 +1,677 @@
+object Frame_TimestampConverter: TFrame_TimestampConverter
+  Padding.Left = 20.000000000000000000
+  Padding.Top = 20.000000000000000000
+  Padding.Right = 20.000000000000000000
+  Padding.Bottom = 20.000000000000000000
+  Size.Width = 790.000000000000000000
+  Size.Height = 748.000000000000000000
+  Size.PlatformDefault = False
+  OnResized = FrameResized
+  object layUnixTimestamp: TLayout
+    Align = Top
+    Margins.Bottom = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 372.000000000000000000
+    Size.Width = 750.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblUnixTimestamp: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 750.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Unix Timestamp'
+      TabOrder = 0
+      object btnInputClearUnixTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 679.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClick = btnInputClearUnixTimestampClick
+        object imgInputClearUnixTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">'#13#10'  <p' +
+            'ath d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.' +
+            '5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707' +
+            'l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>'#13#10'</sv' +
+            'g>'
+        end
+        object lblInputClearUnixTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Clear'
+          TabOrder = 5
+        end
+      end
+      object btnInputCopyToClipboardUnixTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 605.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        OnClick = btnInputCopyToClipboardUnixTimestampClick
+        object imgInputCopyToClipboardUnixTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+            #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+            ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+            ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+            '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+            '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+            ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+        end
+        object lblInputCopyToClipboardUnixTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Copy'
+          TabOrder = 5
+        end
+      end
+      object btnNowUnixTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 457.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        OnClick = btnNowUnixTimestampClick
+        object imgNowUnixTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">'#13#10'  <' +
+            'path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0' +
+            ' 0 0 .496-.868L8 8.71V3.5z"/>'#13#10'  <path d="M8 16A8 8 0 1 0 8 0a8 ' +
+            '8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>'#13#10'</svg>'
+        end
+        object lblNowUnixTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Now'
+          TabOrder = 5
+        end
+      end
+      object btnInputPasteFromClipboardUnixTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 531.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        OnClick = btnInputPasteFromClipboardUnixTimestampClick
+        object imgInputPasteFromClipboardUnixTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clipboard-plus" viewBox="0 0 16 ' +
+            '16">'#13#10'  <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.' +
+            '5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5' +
+            'A.5.5 0 0 1 8 7z"/>'#13#10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 ' +
+            '0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V' +
+            '14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <' +
+            'path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.' +
+            '5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0' +
+            ' 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13 +
+            #10'</svg>'
+        end
+        object lblInputPasteFromClipboardUnixTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Paste'
+          TabOrder = 5
+        end
+      end
+    end
+    object sbUnixTimestamp: TSpinBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 1
+      Cursor = crIBeam
+      Max = 1E22
+      Size.Width = 750.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = sbUnixTimestampChange
+    end
+  end
+  object layDateTime: TGridLayout
+    Align = Client
+    ItemHeight = 64.000000000000000000
+    ItemWidth = 250.000000000000000000
+    Orientation = Horizontal
+    Size.Width = 750.000000000000000000
+    Size.Height = 188.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object layYear: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      object lblYear: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Year'
+        TabOrder = 0
+      end
+      object sbYear: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Min = 1.000000000000000000
+        Max = 9999.000000000000000000
+        Value = 1.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = TimestampChange
+      end
+    end
+    object layMonth: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      object lblMonth: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Month'
+        TabOrder = 0
+      end
+      object sbMonth: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Min = 1.000000000000000000
+        Max = 12.000000000000000000
+        Value = 1.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = TimestampChange
+      end
+    end
+    object layDay: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object lblDay: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Day'
+        TabOrder = 0
+      end
+      object sbDay: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Min = 1.000000000000000000
+        Max = 31.000000000000000000
+        Value = 1.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = TimestampChange
+      end
+    end
+    object layHours: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      object lblHours: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Hours (24 hours)'
+        TabOrder = 0
+      end
+      object sbHours: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Max = 23.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = TimestampChange
+      end
+    end
+    object layMinutes: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object lblMinutes: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Minutes'
+        TabOrder = 0
+      end
+      object sbMinutes: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Max = 59.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = TimestampChange
+      end
+    end
+    object laySeconds: TLayout
+      Align = Client
+      Size.Width = 250.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lblSeconds: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 250.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        Text = 'Seconds'
+        TabOrder = 0
+      end
+      object sbSeconds: TSpinBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        TabOrder = 1
+        Cursor = crIBeam
+        Max = 59.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = TimestampChange
+      end
+    end
+  end
+  object layCalendar: TLayout
+    Align = MostTop
+    Position.X = 20.000000000000000000
+    Position.Y = 20.000000000000000000
+    Size.Width = 750.000000000000000000
+    Size.Height = 352.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object lblCalendar: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 750.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Calendar'
+      TabOrder = 0
+      object btnNowCalendar: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 679.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClick = btnNowUnixTimestampClick
+        object imgNowCalendar: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">'#13#10'  <' +
+            'path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0' +
+            ' 0 0 .496-.868L8 8.71V3.5z"/>'#13#10'  <path d="M8 16A8 8 0 1 0 8 0a8 ' +
+            '8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>'#13#10'</svg>'
+        end
+        object lblNowCalendar: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Now'
+          TabOrder = 5
+        end
+      end
+    end
+    object Calendar: TCalendar
+      Align = Client
+      Date = 44955.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Size.Width = 750.000000000000000000
+      Size.Height = 296.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = CalendarChange
+    end
+  end
+  object layVariantTimestamp: TLayout
+    Align = Top
+    Margins.Bottom = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 456.000000000000000000
+    Size.Width = 750.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbVariantTimestamp: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 750.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'Variant Timestamp'
+      TabOrder = 0
+      object btnInputClearVariantTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 679.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClick = btnInputClearVariantTimestampClick
+        object imgInputClearVariantTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">'#13#10'  <p' +
+            'ath d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.' +
+            '5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707' +
+            'l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>'#13#10'</sv' +
+            'g>'
+        end
+        object lblInputClearVariantTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Clear'
+          TabOrder = 5
+        end
+      end
+      object btnInputCopyToClipboardVariantTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 605.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        OnClick = btnInputCopyToClipboardVariantTimestampClick
+        object imgInputCopyToClipboardVariantTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+            #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+            ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+            ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+            '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+            '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+            ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+        end
+        object lblInputCopyToClipboardVariantTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Copy'
+          TabOrder = 5
+        end
+      end
+      object btnNowVariantTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 457.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        OnClick = btnNowUnixTimestampClick
+        object imgNowVariantTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">'#13#10'  <' +
+            'path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0' +
+            ' 0 0 .496-.868L8 8.71V3.5z"/>'#13#10'  <path d="M8 16A8 8 0 1 0 8 0a8 ' +
+            '8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>'#13#10'</svg>'
+        end
+        object lblNowVariantTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Now'
+          TabOrder = 5
+        end
+      end
+      object btnInputPasteFromClipboardVariantTimestamp: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 531.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        OnClick = btnInputPasteFromClipboardVariantTimestampClick
+        object imgInputPasteFromClipboardVariantTimestamp: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clipboard-plus" viewBox="0 0 16 ' +
+            '16">'#13#10'  <path fill-rule="evenodd" d="M8 7a.5.5 0 0 1 .5.5V9H10a.' +
+            '5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5' +
+            'A.5.5 0 0 1 8 7z"/>'#13#10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 ' +
+            '0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V' +
+            '14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <' +
+            'path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.' +
+            '5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0' +
+            ' 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13 +
+            #10'</svg>'
+        end
+        object lblInputPasteFromClipboardVariantTimestamp: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Paste'
+          TabOrder = 5
+        end
+      end
+    end
+    object sbVariantTimestamp: TSpinBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 1
+      Cursor = crIBeam
+      DecimalDigits = 6
+      Max = 1E22
+      ValueType = Float
+      KeyboardType = NumbersAndPunctuation
+      Size.Width = 750.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = sbVariantTimestampChange
+    end
+  end
+end
