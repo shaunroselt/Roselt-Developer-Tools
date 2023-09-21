@@ -3,7 +3,7 @@ unit Roselt.Tools;
 interface
 
 type
-  TRoseltTools = record
+  TRoseltTool = record
     {
       A Tool qualifies as a Parent when the parent property is empty and
       there is a different Tool in the array with its parent property set to the name of the parent
@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..45] of TRoseltTools = (
+  RoseltToolsArray: array[0..45] of TRoseltTool = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -712,11 +712,11 @@ const
     )
   );
 
-function IsToolParent(Tool: TRoseltTools): Boolean;
+function IsToolParent(Tool: TRoseltTool): Boolean;
 
 implementation
 
-function IsToolParent(Tool: TRoseltTools): Boolean;
+function IsToolParent(Tool: TRoseltTool): Boolean;
 // Checks to see if the tool qualifies as a parent
 {
    A Tool qualifies as a Parent when the parent property is empty and
@@ -724,7 +724,7 @@ function IsToolParent(Tool: TRoseltTools): Boolean;
 }
 var
   ToolParentValid, ToolChildFound: Boolean;
-  ToolArrayItem: TRoseltTools;
+  ToolArrayItem: TRoseltTool;
 begin
   ToolParentValid := (Tool.parent = '');
   ToolChildFound := False;
