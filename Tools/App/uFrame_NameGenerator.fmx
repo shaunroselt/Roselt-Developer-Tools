@@ -10,7 +10,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 379.000000000000000000
+    Size.Height = 307.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object memTitleOutput: TLabel
@@ -117,11 +117,11 @@ object Frame_NameGenerator: TFrame_NameGenerator
       TextSettings.WordWrap = True
       Align = Client
       Size.Width = 760.000000000000000000
-      Size.Height = 303.000000000000000000
+      Size.Height = 231.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       Viewport.Width = 756.000000000000000000
-      Viewport.Height = 299.000000000000000000
+      Viewport.Height = 227.000000000000000000
     end
   end
   object layTop: TLayout
@@ -131,7 +131,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 369.000000000000000000
+    Size.Height = 441.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object lblConfiguration: TLabel
@@ -237,7 +237,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Padding.Bottom = 12.000000000000000000
       Margins.Bottom = 6.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 128.000000000000000000
+      Position.Y = 206.000000000000000000
       Sides = []
       Size.Width = 760.000000000000000000
       Size.Height = 72.000000000000000000
@@ -329,7 +329,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Padding.Bottom = 12.000000000000000000
       Margins.Bottom = 6.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 284.000000000000000000
+      Position.Y = 362.000000000000000000
       Sides = []
       Size.Width = 760.000000000000000000
       Size.Height = 72.000000000000000000
@@ -418,7 +418,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Padding.Bottom = 12.000000000000000000
       Margins.Bottom = 6.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 50.000000000000000000
+      Position.Y = 128.000000000000000000
       Sides = []
       Size.Width = 760.000000000000000000
       Size.Height = 72.000000000000000000
@@ -441,13 +441,13 @@ object Frame_NameGenerator: TFrame_NameGenerator
         TabOrder = 1
         OnChange = btnRefreshClick
       end
-      object layLetterCaseTitleDescription: TLayout
+      object layTitleDescriptionLetterCase: TLayout
         Align = Client
         Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        object lblLetterCaseTitle: TLabel
+        object lblTitleLetterCase: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
           Size.Width = 559.000000000000000000
@@ -457,7 +457,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
           Text = 'Letter Case'
           TabOrder = 1
         end
-        object lblLetterCaseDescription: TLabel
+        object lblDescriptionLetterCase: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
           Size.Width = 559.000000000000000000
@@ -502,7 +502,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Padding.Bottom = 12.000000000000000000
       Margins.Bottom = 6.000000000000000000
       Position.X = 20.000000000000000000
-      Position.Y = 206.000000000000000000
+      Position.Y = 284.000000000000000000
       Sides = []
       Size.Width = 760.000000000000000000
       Size.Height = 72.000000000000000000
@@ -579,6 +579,85 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         OnChange = btnRefreshClick
+      end
+    end
+    object layNameList: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Sides = []
+      Size.Width = 760.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object cbNameList: TComboBox
+        Align = Right
+        Items.Strings = (
+          'Real Life'
+          'GTA Vice City'
+          'GTA San Andreas')
+        ItemIndex = 0
+        Position.X = 608.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object layTitleDescriptionNameList: TLayout
+        Align = Client
+        Size.Width = 559.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lblTitleNameList: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 559.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          Text = 'Name List'
+          TabOrder = 1
+        end
+        object lblDescriptionNameList: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 559.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Select what kind of names you want'
+          TabOrder = 0
+        end
+      end
+      object imgNameList: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-list" viewBox="0 0 16 16">'#13#10'  <p' +
+          'ath fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 ' +
+          '1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1' +
+          'H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5' +
+          '.5 0 0 1-.5-.5z"/>'#13#10'</svg>'
       end
     end
   end

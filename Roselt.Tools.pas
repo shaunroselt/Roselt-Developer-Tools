@@ -3,7 +3,7 @@ unit Roselt.Tools;
 interface
 
 type
-  TRoseltTools = record
+  TRoseltTool = record
     {
       A Tool qualifies as a Parent when the parent property is empty and
       there is a different Tool in the array with its parent property set to the name of the parent
@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..42] of TRoseltTools = (
+  RoseltToolsArray: array[0..45] of TRoseltTool = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -289,6 +289,21 @@ const
         visible: false;
       {$ENDIF}
       parent: 'EncodersDecoders';
+    ),
+    (
+      text_short: 'Delphi';
+      text_long: 'Delphi Formatter';
+      name: 'DelphiFormatter';
+      description: 'Indent or minify Delphi code';
+      icon: 'file-earmark';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Formatters';
     ),
     (
       text_short: 'JSON';
@@ -606,6 +621,36 @@ const
       parent: 'Graphics';
     ),
     (
+      text_short: 'Bootstrap Icons';
+      text_long: 'Bootstrap Icons';
+      name: 'BootstrapIcons';
+      description: 'Bootstrap Icons (SVG)';
+      icon: 'filetype-svg';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Font Awesome Icons';
+      text_long: 'Font Awesome Icons';
+      name: 'FontAwesomeIcons';
+      description: 'Font Awesome Icons (SVG)';
+      icon: 'filetype-svg';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
       text_short: 'Color Blindness Simulator';
       text_long: 'Color Blindness Simulator';
       name: 'ColorBlindnessSimulator';
@@ -667,20 +712,23 @@ const
     )
   );
 
-function IsToolParent(Tool: TRoseltTools): Boolean;
+function IsToolParent(Tool: TRoseltTool): Boolean;
 
 implementation
 
-function IsToolParent(Tool: TRoseltTools): Boolean;
+function IsToolParent(Tool: TRoseltTool): Boolean;
 // Checks to see if the tool qualifies as a parent
 {
    A Tool qualifies as a Parent when the parent property is empty and
    there is a different Tool in the array with its parent property set to the name of the parent
 }
+var
+  ToolParentValid, ToolChildFound: Boolean;
+  ToolArrayItem: TRoseltTool;
 begin
-  var ToolParentValid := (Tool.parent = '');
-  var ToolChildFound := False;
-  for var ToolArrayItem in RoseltToolsArray do
+  ToolParentValid := (Tool.parent = '');
+  ToolChildFound := False;
+  for ToolArrayItem in RoseltToolsArray do
     if (Tool.name = ToolArrayItem.parent) then
     begin
       ToolChildFound := True;

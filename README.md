@@ -7,7 +7,7 @@
 
 Cross-Platform Utilities App for Developers.
 
-![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/c3058dbe-1169-4f8f-98d9-a5d5eab7e009)
+![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f53f337f-9ac0-490e-9642-a0b445068ec0)
 
 
 _Note: All tools are still in active development with lots of bugs_
@@ -71,6 +71,8 @@ Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](http
 Skia4Delphi: https://github.com/skia4delphi/skia4delphi
 
 Bootstrap Icons: https://github.com/shaunroselt/Delphi-Bootstrap-Icons
+
+Font Awesome Icons: https://github.com/shaunroselt/Delphi-Font-Awesome-Icons
 
 
 ## Screenshots

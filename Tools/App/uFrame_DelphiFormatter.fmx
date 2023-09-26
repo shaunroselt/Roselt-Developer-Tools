@@ -1,4 +1,4 @@
-object Frame_XMLFormatter: TFrame_XMLFormatter
+object Frame_DelphiFormatter: TFrame_DelphiFormatter
   Size.Width = 800.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
@@ -45,24 +45,8 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
       object cbIndentation: TComboBox
         Align = Right
         Items.Strings = (
-          '1 space'
-          '2 spaces'
-          '3 spaces'
-          '4 spaces'
-          '5 spaces'
-          '6 spaces'
-          '7 spaces'
-          '8 spaces'
-          '1 tab'
-          '2 tabs'
-          '3 tabs'
-          '4 tabs'
-          '5 tabs'
-          '6 tabs'
-          '7 tabs'
-          '8 tabs'
           'Minified')
-        ItemIndex = 1
+        ItemIndex = 0
         Position.X = 608.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 140.000000000000000000
@@ -122,7 +106,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
           #10'</svg>'
       end
     end
-    object layCompressDecompress: TRectangle
+    object layNumberCharacters: TRectangle
       Align = Top
       Fill.Color = x4B000000
       Padding.Left = 12.000000000000000000
@@ -139,7 +123,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
       Stroke.Kind = None
       XRadius = 8.000000000000000000
       YRadius = 8.000000000000000000
-      object imgCompressDecompress: TSkSvg
+      object imgNumberCharacters: TSkSvg
         Align = Left
         Margins.Left = 5.000000000000000000
         Margins.Top = 12.000000000000000000
@@ -153,44 +137,63 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
         Svg.OverrideColor = claWhite
         Svg.Source = 
           '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-          'ill="currentColor" class="bi bi-list" viewBox="0 0 16 16">'#13#10'  <p' +
-          'ath fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 ' +
-          '1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1' +
-          'H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5' +
-          '.5 0 0 1-.5-.5z"/>'#13#10'</svg>'
+          'ill="currentColor" class="bi bi-braces" viewBox="0 0 16 16">'#13#10'  ' +
+          '<path d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c' +
+          '0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49' +
+          ' 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.36' +
+          '2 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.27' +
+          '3c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1' +
+          '.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094' +
+          '-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-' +
+          '2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.3' +
+          '62-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273' +
+          'c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z"/>' +
+          #13#10'</svg>'
       end
-      object layCompressDecompressTitleDescription: TLayout
+      object layTitleDescriptionNumberCharacters: TLayout
         Align = Client
-        Size.Width = 499.000000000000000000
+        Size.Width = 517.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
-        object lblCompressDecompressTitle: TLabel
+        object lblTitleNumberCharacters: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 499.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
-          Text = 'Put attributes on new line'
+          Text = 'Remove Comments'
           TabOrder = 1
         end
-        object lblCompressDecompressDescription: TLabel
+        object lblDescriptionNumberCharacters: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 499.000000000000000000
+          Size.Width = 517.000000000000000000
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
-          Text = 
-            'Select whether you want attributes to be put on a new line or no' +
-            't'
+          Text = 'Select whether you want to remove or keep comments'
           TabOrder = 0
         end
       end
-      object SwitchCompressDecompress: TSwitch
+      object lblSwitchNumberCharacters: TLabel
         Align = Right
-        Cursor = crHandPoint
+        Enabled = False
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Right = 8.000000000000000000
+        Position.X = 566.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.HorzAlign = Trailing
+        Text = 'Off'
+        TabOrder = 1
+      end
+      object SwitchNumberCharacters: TSwitch
+        Align = MostRight
         Enabled = False
         IsChecked = False
         Position.X = 670.000000000000000000
@@ -199,21 +202,6 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-      end
-      object lblSwitchCompressDecompress: TLabel
-        Align = Right
-        Enabled = False
-        StyledSettings = [Family, Style, FontColor]
-        Margins.Right = 8.000000000000000000
-        Position.X = 548.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Width = 114.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 18.000000000000000000
-        TextSettings.HorzAlign = Trailing
-        Text = 'Off'
-        TabOrder = 1
       end
     end
   end
@@ -255,7 +243,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 5
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -288,7 +276,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Paste'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputCopyToClipboard: TButton
@@ -302,7 +290,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 4
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -332,7 +320,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputLoad: TButton
@@ -346,7 +334,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 7
+          TabOrder = 6
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -373,7 +361,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
         object btnInputClear: TButton
@@ -387,7 +375,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -415,7 +403,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -430,10 +418,10 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 376.000000000000000000
-        Viewport.Height = 459.000000000000000000
+        Viewport.Width = 380.000000000000000000
+        Viewport.Height = 463.000000000000000000
         object OpenDialog: TOpenDialog
-          Filter = 'All Files|*|*.txt|*.txt|*.xml|*.xml'
+          Filter = 'All Files|*|*.txt|*.txt|*.json|*.json'
           Left = 320
           Top = 416
         end
@@ -458,14 +446,14 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
           Align = Right
           Cursor = crHandPoint
           Margins.Top = 1.000000000000000000
-          Margins.Right = 4.000000000000000000
+          Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 301.000000000000000000
+          Position.X = 304.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 3
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -495,7 +483,7 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 5
+            TabOrder = 4
           end
         end
       end
@@ -509,8 +497,8 @@ object Frame_XMLFormatter: TFrame_XMLFormatter
         Size.Height = 463.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 371.000000000000000000
-        Viewport.Height = 459.000000000000000000
+        Viewport.Width = 375.000000000000000000
+        Viewport.Height = 463.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter

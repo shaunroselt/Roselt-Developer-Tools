@@ -27,7 +27,7 @@ type
     class function FormatPHP(php: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: Integer = 2): String; static;
     class function FormatJson(json: String; IndentationType: TIndentationType = TIndentationType.Spaces; IndentationCount: Integer = 2): String; static;
 
-    class function MinifyDelphi(delphi: String): String; static;
+    class function MinifyDelphi(delphi: String; RemoveComments: Boolean = True): String; static;
     class function MinifyHTML(html: String): String; static;
     class function MinifyCSS(css: String): String; static;
     class function MinifySQL(sql: String): String; static;
@@ -58,21 +58,82 @@ begin
 end;
 
 class function TCodeFormatter.MinifyCSS(css: String): String;
-//  Doesn't work yet. Just testing things out.
+//  Doesn't work perfectly yet. Just testing things out.
 begin
-
+  for var I in css.Split([sLineBreak]) do
+    Result := Result + I.Trim([' ', #9, #10, #13]);
 end;
 
-class function TCodeFormatter.MinifyDelphi(delphi: String): String;
-//  Doesn't work yet. Just testing things out.
-begin
+class function TCodeFormatter.MinifyDelphi(delphi: String; RemoveComments: Boolean): String;
+  function RemoveCommentsFromLine(MyLine: String): String;
+  begin
+    var MultiLineComment := '';
+    if (MyLine.Contains('//')) then
+    begin
+      if (MyLine[1] = '/') AND (MyLine[2] = '/') then
+      begin
+        MyLine := ''; // This whole line is a comment that can't be minified, so remove it.
+      end else
+      begin
+        var StringCharCount := MyLine.CountChar('''');
+        var StringCharFirst := MyLine.IndexOf('''');
+        var StringCharSecond := MyLine.Substring(StringCharFirst+1).IndexOf('''') + StringCharFirst + 1;
+        var CommentChar := MyLine.IndexOf('//');
+        if (MyLine.CountChar('{') > 0) AND (MyLine.CountChar('}') > 0) then
+            if (MyLine.IndexOf('}') > MyLine.IndexOf('{')) then
+            begin
+                MultiLineComment := MyLine.Remove(MyLine.IndexOf('}')+1);
+                MyLine := MyLine.Substring(MultiLineComment.Length);
+                StringCharCount := MyLine.CountChar('''');
+                StringCharFirst := MyLine.IndexOf('''');
+                StringCharSecond := MyLine.Substring(StringCharFirst+1).IndexOf('''') + StringCharFirst + 1;
+                CommentChar := MyLine.IndexOf('//');
+            end;
 
+        if (StringCharCount > 1) AND (MyLine.Contains('//')) then
+        begin
+          if (StringCharFirst > -1) AND (StringCharSecond > -1) AND (StringCharFirst <> StringCharSecond) then
+            if (StringCharFirst < CommentChar) AND (StringCharSecond > CommentChar) AND (StringCharCount mod 2 = 0) then
+            begin
+               // We found //, but it is within a string (quotes ' '), let's leave it.
+              var CommentCharAnother := MyLine.LastIndexOf('//');
+              if (CommentChar <> CommentCharAnother) then
+                MyLine := MyLine.Remove(CommentCharAnother); // Somewhere else is a comment, remove it.
+            end else
+            begin
+              if (StringCharFirst < CommentChar) AND (StringCharSecond > CommentChar) then
+                CommentChar := MyLine.Substring(CommentChar+2).IndexOf('//') + CommentChar + 1;
+              MyLine := MyLine.Remove(CommentChar); // Somewhere else is a comment, remove it.
+            end;
+        end else
+          MyLine := MyLine.Remove(CommentChar); // There's no strings, remove this comment.
+      end;
+    end;
+    Result := MultiLineComment + MyLine;
+  end;
+begin
+  var sLine := '';
+  for var I in delphi.Split([sLineBreak]) do
+  begin
+    var TrimmedLine := I.Trim([' ', #09, #10, #13]);
+    TrimmedLine := RemoveCommentsFromLine(TrimmedLine);
+
+    if ((sLine.Length + TrimmedLine.Length + 1) >= 1023) then
+    begin
+      Result := Result + sLine + sLineBreak;
+      sLine := TrimmedLine + ' ';
+    end else
+      sLine := sLine + TrimmedLine + ' ';
+  end;
+
+  if (sLine.Length > 0) then Result := Result + sLine;
 end;
 
 class function TCodeFormatter.MinifyHTML(html: String): String;
-//  Doesn't work yet. Just testing things out.
+//  Doesn't work perfectly yet. Just testing things out.
 begin
-
+  for var I in html.Split([sLineBreak]) do
+    Result := Result + I.Trim([' ', #9, #10, #13]);
 end;
 
 class function TCodeFormatter.MinifyJavaScript(js: String): String;
