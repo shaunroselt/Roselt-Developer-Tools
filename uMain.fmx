@@ -135,21 +135,21 @@ object frmMain: TfrmMain
             Position.X = 12.000000000000000000
             Position.Y = 124.000000000000000000
             Size.Width = 161.000000000000000000
-            Size.Height = 21.714279174804690000
+            Size.Height = 21.500000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 16.000000000000000000
             Text = 'Testing Stuff '#55357#56833#55357#56833#55357#56833
-            TabOrder = 4
+            TabOrder = 5
           end
           object Label8: TLabel
             Align = Client
             Size.Width = 161.000000000000000000
-            Size.Height = 72.285720825195310000
+            Size.Height = 72.500000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 13.000000000000000000
             TextSettings.VertAlign = Leading
             Text = 'This is just some random testing text. Nothing important here.'
-            TabOrder = 3
+            TabOrder = 4
           end
           object Rectangle2: TRectangle
             Align = MostTop
@@ -248,8 +248,8 @@ object frmMain: TfrmMain
         Size.Height = 556.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 799.000000000000000000
-        Viewport.Height = 556.000000000000000000
+        Viewport.Width = 791.000000000000000000
+        Viewport.Height = 548.000000000000000000
       end
       object Button14: TButton
         Align = Top
@@ -6093,8 +6093,8 @@ object frmMain: TfrmMain
           Size.Height = 651.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          Viewport.Width = 735.000000000000000000
-          Viewport.Height = 651.000000000000000000
+          Viewport.Width = 727.000000000000000000
+          Viewport.Height = 643.000000000000000000
         end
       end
       object lblChangeLog: TLabel

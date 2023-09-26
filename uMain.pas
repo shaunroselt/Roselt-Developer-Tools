@@ -757,16 +757,16 @@ begin
   for var I := 0 to LayoutContainer.Children.Count-1 do // Loop through all tools and hide them
     TControl(LayoutContainer.Children.Items[I]).Visible := False;
 
-  var cmpToolLayoutName := FindComponent(ToolLayoutName); // Find the selected tool
-  if (cmpToolLayoutName <> nil) then
+  var cmpLayoutName := FindComponent(ToolLayoutName); // Find the selected tool
+  if (cmpLayoutName <> nil) then
   begin
-    TControl(cmpToolLayoutName).Visible := True; // Show the selected tool
-    if (cmpToolLayoutName is TFrame) then // Check if the tool is a Frame
+    TControl(cmpLayoutName).Visible := True; // Show the selected tool
+    if (cmpLayoutName is TFrame) then // Check if the tool is a Frame
     begin
-      var OnResizeEvent := TNotifyEvent(TFrame(cmpToolLayoutName).OnResize);
+      var OnResizeEvent := TNotifyEvent(TFrame(cmpLayoutName).OnResize);
       var NilEvent := TNotifyEvent(nil);
       if (TMethod(OnResizeEvent) <> TMethod(NilEvent)) then
-        TFrame(cmpToolLayoutName).OnResize(nil); // Call onResize Event if it's a Frame
+        TFrame(cmpLayoutName).OnResize(nil); // Call onResize Event if it's a Frame
     end;
   end else ShowMessage('This tool is not available');
 end;
