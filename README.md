@@ -20,6 +20,7 @@ _Note: All tools are still in active development with lots of bugs_
 - HTML Encoder/Decoder
 - Base64 Text Encoder/Decoder
 - URL Encoder/Decoder
+- JWT Decoder
 - Hash Generator
 - Name Generator
 - Lorem Ipsum Generator
@@ -37,7 +38,6 @@ _Note: All tools are still in active development with lots of bugs_
 ## Planned Tools
 - JSON <> XML Converter
 - JSON <> MsgPack Converter
-- JWT Decoder
 - GZip Encoder/Decoder
 - Base64 Image Encoder/Decoder
 - CSS Code Formatter
@@ -58,6 +58,8 @@ _Note: All tools are still in active development with lots of bugs_
 - Color Blindness Simulator
 - Code Minifier (Various languages)
 - SSL Certificate Decoder
+- Bootstrap Icons
+- Font Awesome Icons
 
 
 ## Download
