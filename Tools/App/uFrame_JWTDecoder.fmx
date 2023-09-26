@@ -1,5 +1,5 @@
 object Frame_JWTDecoder: TFrame_JWTDecoder
-  Size.Width = 842.000000000000000000
+  Size.Width = 840.000000000000000000
   Size.Height = 536.000000000000000000
   Size.PlatformDefault = False
   object layBottom: TLayout
@@ -8,7 +8,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
-    Size.Width = 842.000000000000000000
+    Size.Width = 840.000000000000000000
     Size.Height = 402.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -16,14 +16,14 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
       Align = MostTop
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
-      Size.Width = 802.000000000000000000
+      Size.Width = 800.000000000000000000
       Size.Height = 205.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object memTitleHeader: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 802.000000000000000000
+        Size.Width = 800.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -35,12 +35,12 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 731.000000000000000000
+          Position.X = 729.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnHeaderCopyToClipboardClick
           object imgHeaderCopyToClipboard: TSkSvg
             Align = Left
@@ -70,7 +70,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -80,22 +80,22 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
         ReadOnly = True
         TextSettings.WordWrap = True
         Align = Client
-        Size.Width = 802.000000000000000000
+        Size.Width = 800.000000000000000000
         Size.Height = 169.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 760.000000000000000000
-        Viewport.Height = 209.000000000000000000
+        Viewport.Width = 796.000000000000000000
+        Viewport.Height = 165.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
-          Left = 320
-          Top = 416
+          Left = 384
+          Top = 352
         end
       end
     end
     object layPayload: TLayout
       Align = Client
-      Size.Width = 802.000000000000000000
+      Size.Width = 800.000000000000000000
       Size.Height = 157.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -104,7 +104,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
         StyledSettings = [Family, Style, FontColor]
         Margins.Top = 4.000000000000000000
         Position.Y = 4.000000000000000000
-        Size.Width = 802.000000000000000000
+        Size.Width = 800.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -116,12 +116,12 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 731.000000000000000000
+          Position.X = 729.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           OnClick = btnPayloadCopyToClipboardClick
           object imgPayloadCopyToClipboard: TSkSvg
             Align = Left
@@ -151,7 +151,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -161,12 +161,12 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
         ReadOnly = True
         TextSettings.WordWrap = True
         Align = Client
-        Size.Width = 802.000000000000000000
+        Size.Width = 800.000000000000000000
         Size.Height = 117.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 760.000000000000000000
-        Viewport.Height = 289.000000000000000000
+        Viewport.Width = 796.000000000000000000
+        Viewport.Height = 113.000000000000000000
       end
     end
   end
@@ -176,20 +176,20 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
-    Size.Width = 842.000000000000000000
+    Size.Width = 840.000000000000000000
     Size.Height = 134.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object layJWTToken: TLayout
       Align = Client
-      Size.Width = 802.000000000000000000
+      Size.Width = 800.000000000000000000
       Size.Height = 94.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object lblJWTToken: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 802.000000000000000000
+        Size.Width = 800.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -201,12 +201,12 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 583.000000000000000000
+          Position.X = 581.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -250,12 +250,12 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 657.000000000000000000
+          Position.X = 655.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -285,7 +285,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Copy'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputLoad: TButton
@@ -294,7 +294,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 509.000000000000000000
+          Position.X = 507.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -326,7 +326,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Load'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
         object btnInputClear: TButton
@@ -335,7 +335,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 731.000000000000000000
+          Position.X = 729.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -368,7 +368,7 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
             Text = 'Clear'
-            TabOrder = 4
+            TabOrder = 5
           end
         end
       end
@@ -377,14 +377,13 @@ object Frame_JWTDecoder: TFrame_JWTDecoder
         DataDetectorTypes = []
         TextSettings.WordWrap = True
         OnChange = memJWTTokenChange
-        OnChangeTracking = memJWTTokenChangeTracking
         Align = Client
-        Size.Width = 802.000000000000000000
+        Size.Width = 800.000000000000000000
         Size.Height = 58.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 760.000000000000000000
-        Viewport.Height = 58.000000000000000000
+        Viewport.Width = 796.000000000000000000
+        Viewport.Height = 54.000000000000000000
       end
     end
   end

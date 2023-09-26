@@ -280,9 +280,9 @@ const
       text_long: 'JWT Decoder';
       name: 'JWTDecoder';
       description: 'Decode a JWT header, payload and signature';
-      icon: 'gear-wide';
+      icon: 'key';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -460,7 +460,7 @@ const
       text_long: 'JWT Token Generator';
       name: 'JWTTokenGenerator';
       description: 'Generate a JWT Token';
-      icon: 'gear-wide';
+      icon: 'shield-lock';
       {$IFDEF DEBUG}
         active: false;
         visible: true;
