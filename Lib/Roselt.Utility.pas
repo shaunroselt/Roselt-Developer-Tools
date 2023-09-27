@@ -107,7 +107,7 @@ begin
   {$ENDIF}
   {$IFDEF WEBLIB}
     asm
-      return S.replace(/[^0-9]/g,'');
+      Result = S.replace(/[^0-9]/g,'');
     end;
   {$ENDIF}
 end;
@@ -127,7 +127,7 @@ begin
   {$ENDIF}
   {$IFDEF WEBLIB}
     asm
-      return S.replace(/[^a-zA-Z0-9]/g,'');
+      Result = S.replace(/[^a-zA-Z0-9]/g,'');
     end;
   {$ENDIF}
 end;
