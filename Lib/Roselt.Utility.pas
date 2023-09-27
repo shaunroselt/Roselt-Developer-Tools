@@ -20,6 +20,9 @@ uses
     iOSapi.Foundation,
     FMX.helpers.iOS,
   {$ENDIF}
+  {$IFDEF WEBLIB}
+    Web,
+  {$ENDIF}
 
   System.SysUtils,
   System.StrUtils,
@@ -43,8 +46,8 @@ implementation
 {$IFDEF WEBLIB}
 procedure SetQueryParam(key, value, url: String);
 begin
+  if (url = '') then url := window.location.href;
   asm
-    if (!url) url = window.location.href;
     let re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"),hash;
 
     if (re.test(url))
