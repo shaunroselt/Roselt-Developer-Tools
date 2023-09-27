@@ -12,7 +12,7 @@ This app's history actually goes back to 2013 when I created the very first tool
 
 Initially, it was just a simple Color Picker Tool for myself and close friends. I kept updating and rewriting this tool and eventually in 2017 I released it to the public as "Roselt Color Picker".
 
-And in the back of my mind, I always knew I wanted the app to be fully cross-platform, open source, and have many many other tools in it.
+And in the back of my mind, I always knew I wanted the app to be fully cross-platform, open source, and have many other tools in it.
 
 And in 2020, I finally started working on "Roselt Developer Tools", one app to rule them all 😁.
 
@@ -56,6 +56,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 * [Version 3.0.0 Beta 1 (27/04/2020)](#version-300-beta-1-27042020)
 * [Version 3.0.0 Beta 2 (28/05/2023)](#version-300-beta-2-28052023)
 * [Version 3.0.0 Beta 3 (29/07/2023)](#version-300-beta-3-29072023)
+* [Version 3.0.0 Beta 4 (Unreleased)](#version-300-beta-4-unreleased)
 
 
 
@@ -341,6 +342,9 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added JSON Formatter Tool.
 - Added XML Formatter Tool.
 - Added Delphi Formatter Tool (Only minifies currently).
-- Added Ping IP / Domain Tool.
-- Added an option to enable/disable number characters in the Password Generator Tool.
-- General fixes and improvements for Windows, MacOS, and Linux.
+
+
+## Version 3.0.0 Beta 4 (Unreleased)
+- Added JWT Decoder Tool.
+- Added Bootstrap Icons Tool.
+- Added Font Awesome Icons Tool.
