@@ -88,9 +88,7 @@ begin
     SharedApplication.OpenURL(StrToNSUrl(URL));
   {$ENDIF}
   {$IFDEF WEBLIB}
-    asm
-      window.open(URL, '_blank').focus();
-    end;
+    window.open(URL, '_blank');
   {$ENDIF}
 end;
 
