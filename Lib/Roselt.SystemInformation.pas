@@ -128,7 +128,7 @@ implementation
 { TSystemInformation }
 
 {$IFDEF MACOS}
-function NSUserName: Pointer; cdecl; external '/System/Library/Frameworks/Foundation.framework/Foundation' name '_NSUserName';
+function NSUserName: Pointer; cdecl; external '/System/Library/Frameworks/Foundation.framework/Foundation' name _PU +'NSFullUserName';
 {$ENDIF}
 
 function TSystemInformation.GetUserName: String;
