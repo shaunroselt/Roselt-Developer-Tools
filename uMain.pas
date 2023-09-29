@@ -271,9 +271,9 @@ begin
       if IsToolParent(Tool) and Tool.visible then
       begin
         var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
-        var ToolButtonContainer := ToolContainer.FindComponent('layNav' + Tool.name + 'ExpandCollapse');
-        var ToolButton := TControl(ToolButtonContainer.FindComponent('btn' + Tool.name + 'ExpandCollapse'));
-        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('img' + Tool.name + 'ExpandCollapseIcon'));
+        var ToolButtonContainer := ToolContainer.FindComponent('layNavExpandCollapse' + Tool.name);
+        var ToolButton := TControl(ToolButtonContainer.FindComponent('btnExpandCollapse' + Tool.name));
+        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('imgExpandCollapseIcon' + Tool.name));
 
         ToolButton.OnClick := ExpandCollapseNavItem;
         ToolButton.OnDblClick := ExpandCollapseNavItem;
@@ -289,9 +289,9 @@ begin
       if IsToolParent(Tool) and Tool.visible then
       begin
         var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
-        var ToolButtonContainer := ToolContainer.FindComponent('layNav' + Tool.name + 'ExpandCollapse');
-        var ToolButton := TControl(ToolButtonContainer.FindComponent('btn' + Tool.name + 'ExpandCollapse'));
-        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('img' + Tool.name + 'ExpandCollapseIcon'));
+        var ToolButtonContainer := ToolContainer.FindComponent('layNavExpandCollapse' + Tool.name);
+        var ToolButton := TControl(ToolButtonContainer.FindComponent('btnExpandCollapse' + Tool.name));
+        var ToolButtonExpandCollapseIcon := TControl(ToolButtonContainer.FindComponent('imgExpandCollapseIcon' + Tool.name));
 
         ToolButton.OnClick := btnAllToolsSearchClick;
         ToolButton.OnDblClick := nil;
