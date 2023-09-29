@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  ShowFullScreenIcon = True
   OnCreate = FormCreate
   OnResize = FormResize
   DesignerMasterStyle = 0

@@ -804,17 +804,11 @@ end;
 
 procedure TfrmMain.SwitchFullScreenSwitch(Sender: TObject);
 begin
-  if (lblSwitchFullScreen.Text = 'FullScreen') then
-  begin
+  frmMain.FullScreen := not(frmMain.FullScreen); // This sometimes works, but is a bit buggy
+  if frmMain.FullScreen then
+    lblSwitchFullScreen.Text := 'FullScreen'
+  else
     lblSwitchFullScreen.Text := 'Normal';
-    SwitchFullScreen.IsChecked := False;
-    frmMain.FullScreen := True;
-  end else
-  begin
-    lblSwitchFullScreen.Text := 'FullScreen';
-    SwitchFullScreen.IsChecked := True;
-    frmMain.FullScreen := False;
-  end;
 end;
 
 procedure TfrmMain.SwitchLineNumbersSwitch(Sender: TObject);
