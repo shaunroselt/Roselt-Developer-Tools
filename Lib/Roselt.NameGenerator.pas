@@ -27,16 +27,16 @@ const
     'Mike Griffin', 'Marcus Hammond', 'Nick Kong', 'Zeppelin', 'Oliver Biscuit', 'Maurice Chavez', 'Adam First', 'Jonathan Freeloader', 'Lazlow Jones', 'Fernando Martinez', 'Michelle Montanius', 'DJ Toni', 'Amy Sheckenhausen', 'BJ Smith'
   ];
 begin
+  result := '';
   if (FullName) then
   begin
     result := FullNames[Random(length(FullNames))];
     while (result.Contains(' ') = False) do result := FullNames[Random(length(FullNames))];
   end else
   begin
-    var RandomName := FullNames[Random(length(FullNames))];
-    if (RandomName.Contains(' ')) then
-      RandomName := RandomName.Remove(RandomName.LastIndexOf(' '));
-    result := RandomName;
+    result := FullNames[Random(length(FullNames))];
+    if (result.Contains(' ')) then
+      result := result.Remove(result.LastIndexOf(' '));
   end;
 end;
 
@@ -60,10 +60,9 @@ begin
     while (result.Contains(' ') = False) do result := FullNames[Random(length(FullNames))];
   end else
   begin
-    var RandomName := FullNames[Random(length(FullNames))];
-    if (RandomName.Contains(' ')) then
-      RandomName := RandomName.Remove(RandomName.LastIndexOf(' '));
-    result := RandomName;
+    result := FullNames[Random(length(FullNames))];
+    if (result.Contains(' ')) then
+      result := result.Remove(result.LastIndexOf(' '));
   end;
 end;
 

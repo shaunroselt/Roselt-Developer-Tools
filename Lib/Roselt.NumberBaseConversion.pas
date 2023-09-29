@@ -103,12 +103,13 @@ end;
 
 function HexadecimalToDecimal(Value: string): Int64;
 var
-  HexValue: Int64;
+  HexValue: Int64;  
+  I: UInt64;
 begin
   Result := 0;
-  for var i := 1 to Length(Value) do
+  for I := 1 to Length(Value) do
   begin
-    HexValue := StrToInt('$' + Value[i]);
+    HexValue := StrToInt('$' + Value[I]);
     Result := Result * 16 + HexValue;
   end;
 end;
@@ -133,12 +134,13 @@ end;
 
 function OctalToDecimal(Value: String): Int64;
 var
-  OctValue: Int64;
+  OctValue: Int64; 
+  I: UInt64;
 begin
   Result := 0;
-  for var i := 1 to Length(Value) do
+  for I := 1 to Length(Value) do
   begin
-    OctValue := StrToInt('$' + Value[i]);
+    OctValue := StrToInt('$' + Value[I]);
     Result := Result * 8 + OctValue;
   end;
 end;
@@ -163,12 +165,13 @@ end;
 
 function BinaryToDecimal(Value: String): Int64;
 var
-  BinValue: Int64;
+  BinValue: Int64;   
+  I: UInt64;
 begin
   Result := 0;
-  for var i := 1 to Length(Value) do
+  for I := 1 to Length(Value) do
   begin
-    BinValue := StrToInt('$' + Value[i]);
+    BinValue := StrToInt('$' + Value[I]);
     Result := Result * 2 + BinValue;
   end;
 end;
@@ -193,24 +196,27 @@ end;
 
 function DuodecimalToDecimal(duodecimal: String): Int64;
 var
-  decimal: Int64;
+  decimal: Int64; 
+  I: UInt64;
 begin
   decimal := 0;
-  for var i := 1 to Length(duodecimal) do
+  for I := 1 to Length(duodecimal) do
   begin
-    if (duodecimal[i] >= '0') and (duodecimal[i] <= '9') then
-      decimal := decimal * 12 + (Ord(duodecimal[i]) - Ord('0'))
-    else if (duodecimal[i] >= 'A') and (duodecimal[i] <= 'B') then
-      decimal := decimal * 12 + (Ord(duodecimal[i]) - Ord('A') + 10);
+    if (duodecimal[I] >= '0') and (duodecimal[I] <= '9') then
+      decimal := decimal * 12 + (Ord(duodecimal[I]) - Ord('0'))
+    else if (duodecimal[I] >= 'A') and (duodecimal[I] <= 'B') then
+      decimal := decimal * 12 + (Ord(duodecimal[I]) - Ord('A') + 10);
   end;
   Result := decimal;
 end;
 
-function FormatNumberString(Value: String; Spaces: Cardinal): String;
+function FormatNumberString(Value: String; Spaces: Cardinal): String;   
+var
+  I: UInt64;
 begin
   Result := '';
   Value := ReverseString(Value);
-  for var I := 1 to Value.Length do
+  for I := 1 to Value.Length do
   begin
     Result := Result + Value[I];
     if (I mod Spaces) = 0 then
@@ -219,71 +225,95 @@ begin
   Result := Trim(ReverseString(Result));
 end;
 
-function RemoveNonDecimalDigits(const S: string): string;
-begin
-  SetLength(Result, S.Length);
-  var LActualLength := 0;
-  for var i := 1 to S.Length do
-    if CharInSet(S[i],  ['0'..'9']) OR (S[i] = '-') then
-    begin
-      Inc(LActualLength);
-      Result[LActualLength] := S[i];
+function RemoveNonDecimalDigits(const S: string): string;     
+begin         
+  {$IFNDEF WEBLIB}
+    SetLength(Result, S.Length);
+    var LActualLength := 0;
+    for var I := 1 to S.Length do
+      if CharInSet(S[I],  ['0'..'9']) OR (S[I] = '-') then
+      begin
+        Inc(LActualLength);
+        Result[LActualLength] := S[I];
+      end;
+    SetLength(Result, LActualLength); 
+  {$ENDIF}
+  {$IFDEF WEBLIB}
+    asm
+      Result = S.replace(/[^0-9.-]/g,'');
     end;
-  SetLength(Result, LActualLength);
+  {$ENDIF}
 end;
 
-function RemoveNonDuodecimalDigits(const S: string): string;
-begin
-  SetLength(Result, S.Length);
-  var LActualLength := 0;
-  for var i := 1 to S.Length do
-    if CharInSet(S[i],  ['0'..'9']) OR CharInSet(S[i],  ['A'..'B']) OR CharInSet(S[i],  ['a'..'b']) then
-    begin
-      Inc(LActualLength);
-      Result[LActualLength] := S[i];
+function RemoveNonDuodecimalDigits(const S: string): string;  
+begin         
+  {$IFNDEF WEBLIB}
+    SetLength(Result, S.Length);
+    var LActualLength := 0;
+    for var I := 1 to S.Length do
+      if CharInSet(S[I],  ['0'..'9']) OR CharInSet(S[I],  ['A'..'B']) OR CharInSet(S[I],  ['a'..'b']) then
+      begin
+        Inc(LActualLength);
+        Result[LActualLength] := S[I];
+      end;
+    SetLength(Result, LActualLength);  
+  {$ENDIF}
+  {$IFDEF WEBLIB}
+    asm
+      Result = S.replace(/[^a-bA-B0-9]/g,'');
     end;
-  SetLength(Result, LActualLength);
+  {$ENDIF}
 end;
 
 function RemoveNonHexadecimalCharacters(const S: string): string;
-begin
-  SetLength(Result, S.Length);
-  var LActualLength := 0;
-  for var i := 1 to S.Length do
-    if CharInSet(S[i],  ['0'..'9']) OR CharInSet(S[i],  ['A'..'F']) OR CharInSet(S[i],  ['a'..'f']) then
-    begin
-      Inc(LActualLength);
-      Result[LActualLength] := S[i];
+begin       
+  {$IFNDEF WEBLIB}
+    SetLength(Result, S.Length);
+    var LActualLength := 0;
+    for var I := 1 to S.Length do
+      if CharInSet(S[I],  ['0'..'9']) OR CharInSet(S[I],  ['A'..'F']) OR CharInSet(S[I],  ['a'..'f']) then
+      begin
+        Inc(LActualLength);
+        Result[LActualLength] := S[I];
+      end;
+    SetLength(Result, LActualLength);  
+  {$ENDIF}
+  {$IFDEF WEBLIB}
+    asm
+      Result = S.replace(/[^a-fA-F0-9]/g,'');
     end;
-  SetLength(Result, LActualLength);
+  {$ENDIF}
 end;
 
-function RemoveNonBinaryDigits(const Value: string): string;
+function RemoveNonBinaryDigits(const Value: string): string;  
+var
+  LActualLength, I: UInt64;
 begin
   SetLength(Result, Value.Length);
-  var LActualLength := 0;
-  for var i := 1 to Value.Length do
-    if (Value[i] = '0') OR (Value[i] = '1') then
+  LActualLength := 0;
+  for I := 1 to Value.Length do
+    if (Value[I] = '0') OR (Value[I] = '1') then
     begin
       Inc(LActualLength);
-      Result[LActualLength] := Value[i];
+      Result[LActualLength] := Value[I];
     end;
   SetLength(Result, LActualLength);
 end;
 
 function ConvertNumberBase(const input: string; fromBase, toBase: Integer): string;
 var
-  num, remainder: Int64;
+  num, remainder: Int64;  
+  I: UInt64;
 begin
   num := 0;
-  for var i := 1 to input.Length do
+  for I := 1 to input.Length do
   begin
-    if (Ord(input[i]) >= Ord('0')) and (Ord(input[i]) <= Ord('9')) then
-      num := num * fromBase + (Ord(input[i]) - Ord('0'))
-    else if (Ord(input[i]) >= Ord('A')) and (Ord(input[i]) <= Ord('Z')) then
-      num := num * fromBase + (Ord(input[i]) - Ord('A') + 10)
-    else if (Ord(input[i]) >= Ord('a')) and (Ord(input[i]) <= Ord('z')) then
-      num := num * fromBase + (Ord(input[i]) - Ord('a') + 10);
+    if (Ord(input[I]) >= Ord('0')) and (Ord(input[I]) <= Ord('9')) then
+      num := num * fromBase + (Ord(input[I]) - Ord('0'))
+    else if (Ord(input[I]) >= Ord('A')) and (Ord(input[I]) <= Ord('Z')) then
+      num := num * fromBase + (Ord(input[I]) - Ord('A') + 10)
+    else if (Ord(input[I]) >= Ord('a')) and (Ord(input[I]) <= Ord('z')) then
+      num := num * fromBase + (Ord(input[I]) - Ord('a') + 10);
   end;
   result := '';
   while num > 0 do
@@ -295,8 +325,7 @@ begin
       result := Chr(remainder - 10 + Ord('A')) + result;
     num := num div toBase;
   end;
-  if result = '' then
-    result := '0';
+  if result = '' then result := '0';
 end;
 
 

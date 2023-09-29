@@ -97,7 +97,6 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Visible = False
       Viewport.Width = 783.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layAllToolsGrid: TFlowLayout
@@ -139,7 +138,7 @@ object frmMain: TfrmMain
             Size.PlatformDefault = False
             TextSettings.Font.Size = 16.000000000000000000
             Text = 'Testing Stuff '#55357#56833#55357#56833#55357#56833
-            TabOrder = 4
+            TabOrder = 5
           end
           object Label8: TLabel
             Align = Client
@@ -149,7 +148,7 @@ object frmMain: TfrmMain
             TextSettings.Font.Size = 13.000000000000000000
             TextSettings.VertAlign = Leading
             Text = 'This is just some random testing text. Nothing important here.'
-            TabOrder = 3
+            TabOrder = 4
           end
           object Rectangle2: TRectangle
             Align = MostTop
@@ -230,6 +229,7 @@ object frmMain: TfrmMain
       Size.Width = 799.000000000000000000
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
+      Visible = False
       TabOrder = 0
       object Label41: TLabel
         Align = Top
@@ -248,8 +248,8 @@ object frmMain: TfrmMain
         Size.Height = 556.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 799.000000000000000000
-        Viewport.Height = 556.000000000000000000
+        Viewport.Width = 791.000000000000000000
+        Viewport.Height = 548.000000000000000000
       end
       object Button14: TButton
         Align = Top
@@ -5880,174 +5880,335 @@ object frmMain: TfrmMain
             TabOrder = 1
           end
         end
-        object laySourceCodeLink: TLayout
-          Align = Top
-          Position.X = 12.000000000000000000
-          Position.Y = 60.000000000000000000
+        object GridPanelLayout1: TGridPanelLayout
+          Align = Client
           Size.Width = 735.000000000000000000
-          Size.Height = 40.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 3
-          object btnSourceCodeLink: TRectangle
-            Align = Left
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 26.000000000000000000
-            Position.X = 26.000000000000000000
-            Sides = []
-            Size.Width = 145.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnSourceCodeLinkClick
-            OnMouseEnter = btnSettingsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object Image2: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-github" viewBox="0 0 16 16">'#13#10'  ' +
-                '<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.' +
-                '55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.' +
-                '09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1' +
-                '.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.6' +
-                '4-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 ' +
-                '0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1' +
-                '.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15' +
-                ' 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-' +
-                '.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8' +
-                '-8z"/>'#13#10'</svg>'
-            end
-            object Label2: TLabel
-              Align = Client
-              StyledSettings = [Family, Style, FontColor]
-              Margins.Top = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Size.Width = 105.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
-              Text = 'Source Code'
-              TabOrder = 1
-            end
-          end
-        end
-        object layMicrosoftStoreLink: TLayout
-          Align = Top
-          Position.X = 12.000000000000000000
-          Position.Y = 140.000000000000000000
-          Size.Width = 735.000000000000000000
-          Size.Height = 40.000000000000000000
-          Size.PlatformDefault = False
-          Visible = False
-          TabOrder = 2
-          object Label3: TLabel
-            Align = Client
-            StyledSettings = [Family, Style, FontColor]
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Size.Width = 666.000000000000000000
-            Size.Height = 30.000000000000000000
-            Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
-            Text = 'Download on Microsoft Store'
-            TabOrder = 1
-          end
-          object Image3: TSkSvg
-            Align = Left
-            Margins.Left = 32.000000000000000000
-            Margins.Top = 8.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 8.000000000000000000
-            Position.X = 32.000000000000000000
-            Position.Y = 8.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
-            Size.PlatformDefault = False
-            Svg.OverrideColor = claWhite
-            Svg.Source = 
-              '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-              'ill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">'#13 +
-              #10'  <path d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462' +
-              ' 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z"/>'#13#10'</svg>'
-          end
-        end
-        object laySteamLink: TLayout
-          Align = Top
-          Position.X = 12.000000000000000000
-          Position.Y = 100.000000000000000000
-          Size.Width = 735.000000000000000000
-          Size.Height = 40.000000000000000000
+          Size.Height = 80.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          object btnSteamLink: TRectangle
-            Align = Left
-            Cursor = crHandPoint
-            Fill.Kind = None
-            Margins.Left = 26.000000000000000000
-            Position.X = 26.000000000000000000
-            Sides = []
-            Size.Width = 193.000000000000000000
-            Size.Height = 40.000000000000000000
-            Size.PlatformDefault = False
-            Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = btnSteamLinkClick
-            OnMouseEnter = btnSettingsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
-            object Image5: TSkSvg
-              Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
-              Size.PlatformDefault = False
-              Svg.OverrideColor = claWhite
-              Svg.Source = 
-                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
-                'ill="currentColor" class="bi bi-steam" viewBox="0 0 16 16">'#13#10'  <' +
-                'path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418' +
-                ' 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 ' +
-                '1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.04' +
-                '6 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 ' +
-                '0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.21' +
-                '7 0 0 1-1.312-1.568L.33 10.333Z"/>'#13#10'  <path d="M4.868 12.683a1.7' +
-                '15 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424' +
-                'a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.72' +
-                '6-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 ' +
-                '2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.' +
-                '527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/' +
-                '>'#13#10'</svg>'
+          ColumnCollection = <
+            item
+              Value = 50.000000000000000000
             end
-            object Label4: TLabel
-              Align = Client
-              StyledSettings = [Family, Style, FontColor]
-              Margins.Top = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Size.Width = 153.000000000000000000
-              Size.Height = 24.000000000000000000
+            item
+              Value = 50.000000000000000000
+            end>
+          ControlCollection = <
+            item
+              Column = 0
+              Control = Layout1
+              Row = 0
+            end
+            item
+              Column = 1
+              Control = Layout2
+              Row = 0
+            end>
+          RowCollection = <
+            item
+              Value = 100.000000000000000000
+            end>
+          object Layout1: TLayout
+            Align = Client
+            Size.Width = 367.500000000000000000
+            Size.Height = 80.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object layMicrosoftStoreLink: TLayout
+              Align = Top
+              Position.X = 12.000000000000000000
+              Position.Y = 140.000000000000000000
+              Size.Width = 735.000000000000000000
+              Size.Height = 40.000000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
-              Text = 'Download on Steam'
+              Visible = False
+              TabOrder = 2
+              object Label3: TLabel
+                Align = Client
+                StyledSettings = [Family, Style, FontColor]
+                Margins.Top = 5.000000000000000000
+                Margins.Right = 5.000000000000000000
+                Margins.Bottom = 5.000000000000000000
+                Size.Width = 666.000000000000000000
+                Size.Height = 30.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Size = 14.000000000000000000
+                Text = 'Download on Microsoft Store'
+                TabOrder = 1
+              end
+              object Image3: TSkSvg
+                Align = Left
+                Margins.Left = 32.000000000000000000
+                Margins.Top = 8.000000000000000000
+                Margins.Right = 8.000000000000000000
+                Margins.Bottom = 8.000000000000000000
+                Position.X = 32.000000000000000000
+                Position.Y = 8.000000000000000000
+                Size.Width = 24.000000000000000000
+                Size.Height = 24.000000000000000000
+                Size.PlatformDefault = False
+                Svg.OverrideColor = claWhite
+                Svg.Source = 
+                  '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                  'ill="currentColor" class="bi bi-microsoft" viewBox="0 0 16 16">'#13 +
+                  #10'  <path d="M7.462 0H0v7.19h7.462V0zM16 0H8.538v7.19H16V0zM7.462' +
+                  ' 8.211H0V16h7.462V8.211zm8.538 0H8.538V16H16V8.211z"/>'#13#10'</svg>'
+              end
+            end
+            object laySourceCodeLink: TLayout
+              Align = Top
+              Size.Width = 367.500000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 3
+              object btnSourceCodeLink: TRectangle
+                Align = Left
+                Cursor = crHandPoint
+                Fill.Kind = None
+                Margins.Left = 26.000000000000000000
+                Position.X = 26.000000000000000000
+                Sides = []
+                Size.Width = 145.000000000000000000
+                Size.Height = 40.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                XRadius = 8.000000000000000000
+                YRadius = 8.000000000000000000
+                OnClick = btnSourceCodeLinkClick
+                OnMouseEnter = btnSettingsMouseEnter
+                OnMouseLeave = btnAllToolsMouseLeave
+                object Image2: TSkSvg
+                  Align = Left
+                  Margins.Left = 8.000000000000000000
+                  Margins.Top = 8.000000000000000000
+                  Margins.Right = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Position.X = 8.000000000000000000
+                  Position.Y = 8.000000000000000000
+                  Size.Width = 24.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  Svg.OverrideColor = claWhite
+                  Svg.Source = 
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                    'ill="currentColor" class="bi bi-github" viewBox="0 0 16 16">'#13#10'  ' +
+                    '<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.' +
+                    '55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.' +
+                    '09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1' +
+                    '.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.6' +
+                    '4-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 ' +
+                    '0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1' +
+                    '.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15' +
+                    ' 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-' +
+                    '.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8' +
+                    '-8z"/>'#13#10'</svg>'
+                end
+                object Label2: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Style, FontColor]
+                  Margins.Top = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Size.Width = 105.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.Font.Size = 14.000000000000000000
+                  Text = 'Source Code'
+                  TabOrder = 1
+                end
+              end
+            end
+            object laySteamLink: TLayout
+              Align = Top
+              Position.Y = 40.000000000000000000
+              Size.Width = 367.500000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
               TabOrder = 1
+              object btnSteamLink: TRectangle
+                Align = Left
+                Cursor = crHandPoint
+                Fill.Kind = None
+                Margins.Left = 26.000000000000000000
+                Position.X = 26.000000000000000000
+                Sides = []
+                Size.Width = 193.000000000000000000
+                Size.Height = 40.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                XRadius = 8.000000000000000000
+                YRadius = 8.000000000000000000
+                OnClick = btnSteamLinkClick
+                OnMouseEnter = btnSettingsMouseEnter
+                OnMouseLeave = btnAllToolsMouseLeave
+                object Image5: TSkSvg
+                  Align = Left
+                  Margins.Left = 8.000000000000000000
+                  Margins.Top = 8.000000000000000000
+                  Margins.Right = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Position.X = 8.000000000000000000
+                  Position.Y = 8.000000000000000000
+                  Size.Width = 24.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  Svg.OverrideColor = claWhite
+                  Svg.Source = 
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                    'ill="currentColor" class="bi bi-steam" viewBox="0 0 16 16">'#13#10'  <' +
+                    'path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418' +
+                    ' 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 ' +
+                    '1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.04' +
+                    '6 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 ' +
+                    '0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.21' +
+                    '7 0 0 1-1.312-1.568L.33 10.333Z"/>'#13#10'  <path d="M4.868 12.683a1.7' +
+                    '15 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424' +
+                    'a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.72' +
+                    '6-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 ' +
+                    '2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.' +
+                    '527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/' +
+                    '>'#13#10'</svg>'
+                end
+                object Label4: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Style, FontColor]
+                  Margins.Top = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Size.Width = 153.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.Font.Size = 14.000000000000000000
+                  Text = 'Download on Steam'
+                  TabOrder = 1
+                end
+              end
+            end
+          end
+          object Layout2: TLayout
+            Align = Client
+            Size.Width = 367.500000000000000000
+            Size.Height = 80.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object layLicenseLink: TLayout
+              Align = Top
+              Size.Width = 367.500000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 3
+              object btnLicenseLink: TRectangle
+                Align = Left
+                Cursor = crHandPoint
+                Fill.Kind = None
+                Margins.Left = 26.000000000000000000
+                Position.X = 26.000000000000000000
+                Sides = []
+                Size.Width = 111.000000000000000000
+                Size.Height = 40.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                XRadius = 8.000000000000000000
+                YRadius = 8.000000000000000000
+                OnClick = btnLicenseLinkClick
+                OnMouseEnter = btnSettingsMouseEnter
+                OnMouseLeave = btnAllToolsMouseLeave
+                object SkSvg1: TSkSvg
+                  Align = Left
+                  Margins.Left = 8.000000000000000000
+                  Margins.Top = 8.000000000000000000
+                  Margins.Right = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Position.X = 8.000000000000000000
+                  Position.Y = 8.000000000000000000
+                  Size.Width = 24.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  Svg.OverrideColor = claWhite
+                  Svg.Source = 
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                    'ill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">'#13#10 +
+                    '  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.73' +
+                    '2L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.' +
+                    '732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1' +
+                    '.732L7 6.268V1a1 1 0 0 1 1-1z"/>'#13#10'</svg>'
+                end
+                object Label5: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Style, FontColor]
+                  Margins.Top = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Size.Width = 71.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.Font.Size = 14.000000000000000000
+                  Text = 'License'
+                  TabOrder = 1
+                end
+              end
+            end
+            object layReportAProblemLink: TLayout
+              Align = Top
+              Position.Y = 40.000000000000000000
+              Size.Width = 367.500000000000000000
+              Size.Height = 40.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              object btnReportAProblemLink: TRectangle
+                Align = Left
+                Cursor = crHandPoint
+                Fill.Kind = None
+                Margins.Left = 26.000000000000000000
+                Position.X = 26.000000000000000000
+                Sides = []
+                Size.Width = 175.000000000000000000
+                Size.Height = 40.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                XRadius = 8.000000000000000000
+                YRadius = 8.000000000000000000
+                OnClick = btnReportAProblemLinkClick
+                OnMouseEnter = btnSettingsMouseEnter
+                OnMouseLeave = btnAllToolsMouseLeave
+                object SkSvg3: TSkSvg
+                  Align = Left
+                  Margins.Left = 8.000000000000000000
+                  Margins.Top = 8.000000000000000000
+                  Margins.Right = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Position.X = 8.000000000000000000
+                  Position.Y = 8.000000000000000000
+                  Size.Width = 24.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  Svg.OverrideColor = claWhite
+                  Svg.Source = 
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                    'ill="currentColor" class="bi bi-bug" viewBox="0 0 16 16">'#13#10'  <pa' +
+                    'th d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 ' +
+                    '8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41' +
+                    ' 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1' +
+                    ' 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1' +
+                    '.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0' +
+                    ' 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 ' +
+                    '1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5' +
+                    '.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l' +
+                    '-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4' +
+                    '.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.' +
+                    '982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.' +
+                    '989 0 0 0 4 6h8z"/>'#13#10'</svg>'
+                end
+                object Label6: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Style, FontColor]
+                  Margins.Top = 8.000000000000000000
+                  Margins.Bottom = 8.000000000000000000
+                  Size.Width = 135.000000000000000000
+                  Size.Height = 24.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.Font.Size = 14.000000000000000000
+                  Text = 'Report a problem'
+                  TabOrder = 1
+                end
+              end
             end
           end
         end
@@ -6093,8 +6254,8 @@ object frmMain: TfrmMain
           Size.Height = 651.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          Viewport.Width = 735.000000000000000000
-          Viewport.Height = 651.000000000000000000
+          Viewport.Width = 727.000000000000000000
+          Viewport.Height = 643.000000000000000000
         end
       end
       object lblChangeLog: TLabel

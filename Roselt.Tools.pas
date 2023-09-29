@@ -3,7 +3,7 @@ unit Roselt.Tools;
 interface
 
 type
-  TRoseltTools = record
+  TRoseltTool = record
     {
       A Tool qualifies as a Parent when the parent property is empty and
       there is a different Tool in the array with its parent property set to the name of the parent
@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..45] of TRoseltTools = (
+  RoseltToolsArray: array[0..45] of TRoseltTool = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -280,9 +280,9 @@ const
       text_long: 'JWT Decoder';
       name: 'JWTDecoder';
       description: 'Decode a JWT header, payload and signature';
-      icon: 'gear-wide';
+      icon: 'key';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;
@@ -460,7 +460,7 @@ const
       text_long: 'JWT Token Generator';
       name: 'JWTTokenGenerator';
       description: 'Generate a JWT Token';
-      icon: 'gear-wide';
+      icon: 'shield-lock';
       {$IFDEF DEBUG}
         active: false;
         visible: true;
@@ -712,11 +712,11 @@ const
     )
   );
 
-function IsToolParent(Tool: TRoseltTools): Boolean;
+function IsToolParent(Tool: TRoseltTool): Boolean;
 
 implementation
 
-function IsToolParent(Tool: TRoseltTools): Boolean;
+function IsToolParent(Tool: TRoseltTool): Boolean;
 // Checks to see if the tool qualifies as a parent
 {
    A Tool qualifies as a Parent when the parent property is empty and
@@ -724,7 +724,7 @@ function IsToolParent(Tool: TRoseltTools): Boolean;
 }
 var
   ToolParentValid, ToolChildFound: Boolean;
-  ToolArrayItem: TRoseltTools;
+  ToolArrayItem: TRoseltTool;
 begin
   ToolParentValid := (Tool.parent = '');
   ToolChildFound := False;

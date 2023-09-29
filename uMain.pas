@@ -1,4 +1,4 @@
-﻿{ TODO: Finish everything 😂 }
+{ TODO: Finish everything 😂 }
 unit uMain;
 
 interface
@@ -205,6 +205,17 @@ type
     lblTitleNameList: TLabel;
     lblDescriptionNameList: TLabel;
     imgNameList: TSkSvg;
+    GridPanelLayout1: TGridPanelLayout;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    layLicenseLink: TLayout;
+    btnLicenseLink: TRectangle;
+    SkSvg1: TSkSvg;
+    Label5: TLabel;
+    layReportAProblemLink: TLayout;
+    btnReportAProblemLink: TRectangle;
+    SkSvg3: TSkSvg;
+    Label6: TLabel;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -225,6 +236,8 @@ type
     procedure btnSourceCodeLinkClick(Sender: TObject);
     procedure btnSettingsMouseEnter(Sender: TObject);
     procedure Button14Click(Sender: TObject);
+    procedure btnLicenseLinkClick(Sender: TObject);
+    procedure btnReportAProblemLinkClick(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -282,6 +295,16 @@ begin
       end;
     TControl(FindComponent('btnAllTools')).OnClick := btnAllToolsSearchClick;
   end;
+end;
+
+procedure TfrmMain.btnLicenseLinkClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools/blob/master/LICENSE');
+end;
+
+procedure TfrmMain.btnReportAProblemLinkClick(Sender: TObject);
+begin
+  OpenURL('https://github.com/shaunroselt/Roselt-Developer-Tools/issues');
 end;
 
 procedure TfrmMain.btnSettingsMouseEnter(Sender: TObject);
@@ -757,16 +780,16 @@ begin
   for var I := 0 to LayoutContainer.Children.Count-1 do // Loop through all tools and hide them
     TControl(LayoutContainer.Children.Items[I]).Visible := False;
 
-  var cmpToolLayoutName := FindComponent(ToolLayoutName); // Find the selected tool
-  if (cmpToolLayoutName <> nil) then
+  var cmpLayoutName := FindComponent(ToolLayoutName); // Find the selected tool
+  if (cmpLayoutName <> nil) then
   begin
-    TControl(cmpToolLayoutName).Visible := True; // Show the selected tool
-    if (cmpToolLayoutName is TFrame) then // Check if the tool is a Frame
+    TControl(cmpLayoutName).Visible := True; // Show the selected tool
+    if (cmpLayoutName is TFrame) then // Check if the tool is a Frame
     begin
-      var OnResizeEvent := TNotifyEvent(TFrame(cmpToolLayoutName).OnResize);
+      var OnResizeEvent := TNotifyEvent(TFrame(cmpLayoutName).OnResize);
       var NilEvent := TNotifyEvent(nil);
       if (TMethod(OnResizeEvent) <> TMethod(NilEvent)) then
-        TFrame(cmpToolLayoutName).OnResize(nil); // Call onResize Event if it's a Frame
+        TFrame(cmpLayoutName).OnResize(nil); // Call onResize Event if it's a Frame
     end;
   end else ShowMessage('This tool is not available');
 end;
