@@ -348,3 +348,5 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added JWT Decoder Tool.
 - Added Bootstrap Icons Tool.
 - Added Font Awesome Icons Tool.
+- Improved Name Generator Tool.
+- Improved Ping Tool.
