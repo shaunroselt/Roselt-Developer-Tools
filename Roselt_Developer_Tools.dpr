@@ -42,7 +42,6 @@ uses
   uFrame_URLEncoderDecoder in 'Tools\App\uFrame_URLEncoderDecoder.pas' {Frame_URLEncoderDecoder: TFrame},
   uFrame_UUIDGenerator in 'Tools\App\uFrame_UUIDGenerator.pas' {Frame_UUIDGenerator: TFrame},
   uFrame_XMLFormatter in 'Tools\App\uFrame_XMLFormatter.pas' {Frame_XMLFormatter: TFrame},
-  Ping in 'Lib\Ping.pas',
   Roselt.CodeFormatting in 'Lib\Roselt.CodeFormatting.pas',
   Roselt.ColorConversion in 'Lib\Roselt.ColorConversion.pas',
   Roselt.JsonYamlConverter in 'Lib\Roselt.JsonYamlConverter.pas',
