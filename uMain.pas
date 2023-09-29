@@ -216,6 +216,13 @@ type
     btnReportAProblemLink: TRectangle;
     SkSvg3: TSkSvg;
     Label6: TLabel;
+    layFullScreen: TRectangle;
+    imgFullScreen: TSkSvg;
+    layFullScreenTitleDescription: TLayout;
+    lblFullScreenTitle: TLabel;
+    lblFullScreenDescription: TLabel;
+    lblSwitchFullScreen: TLabel;
+    SwitchFullScreen: TSwitch;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -238,6 +245,7 @@ type
     procedure Button14Click(Sender: TObject);
     procedure btnLicenseLinkClick(Sender: TObject);
     procedure btnReportAProblemLinkClick(Sender: TObject);
+    procedure SwitchFullScreenSwitch(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -792,6 +800,21 @@ begin
         TFrame(cmpLayoutName).OnResize(nil); // Call onResize Event if it's a Frame
     end;
   end else ShowMessage('This tool is not available');
+end;
+
+procedure TfrmMain.SwitchFullScreenSwitch(Sender: TObject);
+begin
+  if (lblSwitchFullScreen.Text = 'FullScreen') then
+  begin
+    lblSwitchFullScreen.Text := 'Normal';
+    SwitchFullScreen.IsChecked := False;
+    frmMain.FullScreen := True;
+  end else
+  begin
+    lblSwitchFullScreen.Text := 'FullScreen';
+    SwitchFullScreen.IsChecked := True;
+    frmMain.FullScreen := False;
+  end;
 end;
 
 procedure TfrmMain.SwitchLineNumbersSwitch(Sender: TObject);

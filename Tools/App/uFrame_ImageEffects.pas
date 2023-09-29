@@ -302,6 +302,7 @@ type
     btnCopyImageToClipboard: TMenuItem;
     btnSaveImageToFile: TMenuItem;
     SaveDialog: TSaveDialog;
+    LinkControlToPropertyGlowColor: TLinkControlToProperty;
     procedure EnabledSwitch(Sender: TObject);
     procedure cbColorGlowChange(Sender: TObject);
     procedure btnDropImageClick(Sender: TObject);
@@ -334,6 +335,10 @@ begin
     imgBlur.Bitmap.LoadFromFile(OpenDialog.FileName);
     imgGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
     imgInnerGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
+    imgBevel.Bitmap.LoadFromFile(OpenDialog.FileName);
+    imgRipple.Bitmap.LoadFromFile(OpenDialog.FileName);
+    imgSwirl.Bitmap.LoadFromFile(OpenDialog.FileName);
+    imgBands.Bitmap.LoadFromFile(OpenDialog.FileName);
   end;
 end;
 

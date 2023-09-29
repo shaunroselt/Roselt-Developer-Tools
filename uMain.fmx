@@ -97,6 +97,7 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
+      Visible = False
       Viewport.Width = 783.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layAllToolsGrid: TFlowLayout
@@ -350,7 +351,6 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Visible = False
       Viewport.Width = 799.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layFontFamily: TRectangle
@@ -822,7 +822,7 @@ object frmMain: TfrmMain
         Padding.Bottom = 12.000000000000000000
         Margins.Bottom = 6.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 206.000000000000000000
+        Position.Y = 284.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
         Size.Height = 72.000000000000000000
@@ -5832,7 +5832,7 @@ object frmMain: TfrmMain
         Padding.Bottom = 12.000000000000000000
         Margins.Bottom = 6.000000000000000000
         Position.X = 20.000000000000000000
-        Position.Y = 284.000000000000000000
+        Position.Y = 362.000000000000000000
         Sides = []
         Size.Width = 759.000000000000000000
         Size.Height = 152.000000000000000000
@@ -6211,6 +6211,100 @@ object frmMain: TfrmMain
               end
             end
           end
+        end
+      end
+      object layFullScreen: TRectangle
+        Align = Top
+        Fill.Color = x4B000000
+        Padding.Left = 12.000000000000000000
+        Padding.Top = 12.000000000000000000
+        Padding.Right = 12.000000000000000000
+        Padding.Bottom = 12.000000000000000000
+        Margins.Bottom = 6.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 206.000000000000000000
+        Sides = []
+        Size.Width = 759.000000000000000000
+        Size.Height = 72.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 8.000000000000000000
+        YRadius = 8.000000000000000000
+        object imgFullScreen: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 12.000000000000000000
+          Margins.Right = 8.000000000000000000
+          Margins.Bottom = 12.000000000000000000
+          Position.X = 17.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16">' +
+            #13#10'  <path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 ' +
+            '0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.' +
+            '5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 ' +
+            '1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 ' +
+            '1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .' +
+            '5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5' +
+            'v-4a.5.5 0 0 1 .5-.5z"/>'#13#10'</svg>'
+        end
+        object layFullScreenTitleDescription: TLayout
+          Align = Client
+          Size.Width = 536.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object lblFullScreenTitle: TLabel
+            Align = Top
+            StyledSettings = [Family, Style, FontColor]
+            Size.Width = 536.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 18.000000000000000000
+            Text = 'FullScreen (F11)'
+            TabOrder = 1
+          end
+          object lblFullScreenDescription: TLabel
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            Size.Width = 536.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 14.000000000000000000
+            Text = 'Select whether you want the app to be FullScreen or not'
+            TabOrder = 0
+          end
+        end
+        object lblSwitchFullScreen: TLabel
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Right = 8.000000000000000000
+          Position.X = 585.000000000000000000
+          Position.Y = 12.000000000000000000
+          Size.Width = 96.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.HorzAlign = Trailing
+          Text = 'Normal'
+          TabOrder = 1
+        end
+        object SwitchFullScreen: TSwitch
+          Align = Right
+          Cursor = crHandPoint
+          IsChecked = False
+          Position.X = 689.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 58.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          OnSwitch = SwitchFullScreenSwitch
         end
       end
     end
