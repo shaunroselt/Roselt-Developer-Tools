@@ -47006,5 +47006,12 @@ object Frame_ImageEffects: TFrame_ImageEffects
       Component = BandsEffect
       ComponentProperty = 'Enabled'
     end
+    object LinkControlToPropertyGlowColor: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = cbColorInnerGlow
+      Track = True
+      Component = InnerGlowEffect
+      ComponentProperty = 'GlowColor'
+    end
   end
 end
