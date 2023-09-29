@@ -560,7 +560,6 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Lib\Ping.pas"/>
         <DCCReference Include="Lib\Roselt.CodeFormatting.pas"/>
         <DCCReference Include="Lib\Roselt.ColorConversion.pas"/>
         <DCCReference Include="Lib\Roselt.JsonYamlConverter.pas"/>

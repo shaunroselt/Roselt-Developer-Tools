@@ -9,6 +9,7 @@ uses
   System.Classes,
   System.Variants,
   System.DateUtils,
+  System.Generics.Collections,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -27,7 +28,11 @@ uses
   FMX.SpinBox,
   FMX.Objects,
 
-  Ping,
+  IdBaseComponent,
+  IdComponent,
+  IdRawBase,
+  IdRawClient,
+  IdIcmpClient,
 
   System.Skia,
   FMX.Skia;
@@ -54,9 +59,22 @@ type
     layIPDomain: TLayout;
     lblIPDomainPing: TLabel;
     edtIPDomain: TEdit;
+    IdIcmpClient: TIdIcmpClient;
+    layPacketSize: TRectangle;
+    imgPacketSize: TSkSvg;
+    layTitleDescriptionPacketSize: TLayout;
+    lblTitlePacketSize: TLabel;
+    lblDescriptionPacketSize: TLabel;
+    sbPacketSize: TSpinBox;
     edtIPDomainButton: TEditButton;
     edtIPDomainButtonLabel: TLabel;
     edtIPDomainButtonImage: TSkSvg;
+    layPingCount: TRectangle;
+    imgPingCount: TSkSvg;
+    layTitleDescriptionPingCount: TLayout;
+    lblTitlePingCount: TLabel;
+    lblDescriptionPingCount: TLabel;
+    sbPingCount: TSpinBox;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
   private
@@ -68,7 +86,6 @@ type
 
 
 implementation
-
 
 
 {$R *.fmx}
@@ -87,25 +104,48 @@ begin
 end;
 
 procedure TFrame_PingIPDomain.PingIPDomain;
-var
-  PingResult: TPingStatistics;
 begin
   memOutput.Lines.Clear;
-  if (edtIPDomain.Text.IndexOf('.') > -1) then
+
+  IdIcmpClient.ReceiveTimeout := Round(sbTimeout.Value);
+  IdIcmpClient.PacketSize := Round(sbPacketSize.Value);
+  IdIcmpClient.Host := edtIPDomain.Text;
+
+  memOutput.Lines.Add('Pings:');
+  memOutput.Lines.Add('======================================');
+
+  var AvgTime: Double := 0.0;
+  var PingTimes := TList<Double>.Create;
+
+  for var I := 1 to Round(sbPingCount.Value) do
   begin
-    PingResult := Ping.PingHost(AnsiString(edtIPDomain.Text),Round(sbTimeout.Value));
-    if PingResult.Status = 0 then
+    IdIcmpClient.Ping();
+    if IdIcmpClient.ReplyStatus.ReplyStatusType = rsEcho then
     begin
-      memOutput.Lines.Add('Statistics:');
-      memOutput.Lines.Add('======================================');
-      memOutput.Lines.Add('Address: ' + String(PingResult.Address));
-      memOutput.Lines.Add('Round Trip Time: ' + PingResult.RoundTripTime.ToString + 'ms');
-      memOutput.Lines.Add('Replies Received: ' + PingResult.RepliesReceived.ToString);
-      memOutput.Lines.Add('Data Size: '+ PingResult.DataSize.ToString +' bytes');
-    end else
+      var RoundTripTime := IdIcmpClient.ReplyStatus.MsRoundTripTime;
+      PingTimes.Add(RoundTripTime);
+      memOutput.Lines.Add('Reply from ' + IdIcmpClient.ReplyStatus.FromIpAddress + ': time=' + RoundTripTime.ToString + 'ms');
+    end
+    else if IdIcmpClient.ReplyStatus.ReplyStatusType = rsTimeout then
+      memOutput.Lines.Add('Ping request timed out')
+    else
       memOutput.Lines.Add('Ping request failed');
-  end else
-    memOutput.Lines.Add('Ping request failed');
+  end;
+
+
+  PingTimes.Sort;
+  for var I := 1 to PingTimes.Count-1 do
+    AvgTime := AvgTime + PingTimes.Items[I];
+  AvgTime := AvgTime / PingTimes.Count;
+
+
+  memOutput.Lines.Add('======================================');
+  memOutput.Lines.Add('Statistics:');
+  memOutput.Lines.Add('======================================');
+  memOutput.Lines.Add('Min Time: ' + PingTimes.First.ToString + 'ms');
+  memOutput.Lines.Add('Max Time: ' + PingTimes.Last.ToString + 'ms');
+  memOutput.Lines.Add('Avg Time: ' + AvgTime.ToString + 'ms');
+
 end;
 
 end.
