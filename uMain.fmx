@@ -12,6 +12,7 @@ object frmMain: TfrmMain
   FormFactor.Devices = [Desktop]
   ShowFullScreenIcon = True
   OnCreate = FormCreate
+  OnResize = FormResize
   DesignerMasterStyle = 0
   object TopBar: TRectangle
     Align = Top

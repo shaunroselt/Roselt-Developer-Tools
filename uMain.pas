@@ -245,6 +245,7 @@ type
     procedure btnLicenseLinkClick(Sender: TObject);
     procedure btnReportAProblemLinkClick(Sender: TObject);
     procedure SwitchFullScreenSwitch(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -775,6 +776,25 @@ begin
     end
   ).Start;
   {$ENDIF}
+end;
+
+procedure TfrmMain.FormResize(Sender: TObject);
+var
+  Divisor: Double;
+  NewHeight: Integer;
+begin
+  // Check for zero width to avoid division by zero
+  if layAllToolsGrid.Width = 0 then
+    Exit; // Or handle this case appropriately
+
+  Divisor := layAllToolsGrid.Width / 240;
+  NewHeight := Round(layAllToolsGrid.ChildrenCount / Divisor + 1) * 185;
+
+  // Check for integer overflow and cap the value if needed
+  if NewHeight > MaxInt then
+    NewHeight := MaxInt;
+
+  layAllToolsGrid.Height := NewHeight;
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
