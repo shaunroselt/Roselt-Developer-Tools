@@ -234,7 +234,6 @@ type
     procedure cbThemeChange(Sender: TObject);
     procedure SwitchWordWrapSwitch(Sender: TObject);
     procedure SwitchLineNumbersSwitch(Sender: TObject);
-    procedure FormResize(Sender: TObject);
     procedure AllToolsButtonClick(Sender: TObject);
     procedure edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtSearchAllToolsChange(Sender: TObject);
@@ -776,11 +775,6 @@ begin
     end
   ).Start;
   {$ENDIF}
-end;
-
-procedure TfrmMain.FormResize(Sender: TObject);
-begin
-  layAllToolsGrid.Height := Round(layAllToolsGrid.ChildrenCount / (layAllToolsGrid.Width / 240)+1) * 185;  // Need to improve/change this in the future
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
