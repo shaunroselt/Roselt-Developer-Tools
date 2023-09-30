@@ -342,6 +342,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added JSON Formatter Tool.
 - Added XML Formatter Tool.
 - Added Delphi Formatter Tool (Only minifies currently).
+- Added Ping IP / Domain Tool
 
 
 ## Version 3.0.0 Beta 4 (Unreleased)
