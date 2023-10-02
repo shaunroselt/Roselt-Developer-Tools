@@ -32,9 +32,12 @@ uses
 {$IFDEF WEBLIB}
 // The WEBLIB functions are only used in the Web Version of the app
 procedure SetQueryParam(key, value: String; url: String = '');
+function GetCookie(cookie_name: String): String;
+procedure SetCookie(cookie_name, value: String; minutes: Integer);
+procedure DeleteCookie(cookie_name: String);
 {$IFEND}
 
-procedure OpenURL(URL: string);
+procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean = True{$IFEND});
 
 function RemoveNonDigits(const S: string): string;
 function RemoveNonDigitsAndLetters(const S: string): string;
@@ -68,9 +71,46 @@ begin
     window.history.pushState({ path: url }, '', url);
   end;
 end;
+
+function GetCookie(cookie_name: String): String;
+begin
+  asm
+    const name = cookie_name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ')
+            c = c.substring(1);
+        if (c.indexOf(name) == 0)
+            Result = c.substring(name.length, c.length);
+    }
+    Result = "";
+  end;
+end;
+
+procedure SetCookie(cookie_name, value: String; minutes: Integer);
+begin
+  asm
+    let expires = "";
+    if (minutes) {
+        let date = new Date();
+        date.setTime(date.getTime()+(minutes*60*1000));
+        expires = "; expires="+date.toUTCString();
+    }
+    document.cookie = cookie_name + "=" + value + expires + ";SameSite=Strict; path=/";
+  end;
+end;
+
+procedure DeleteCookie(cookie_name: String);
+begin
+  asm
+    document.cookie = cookie_name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ";SameSite=Strict; path=/";
+  end;
+end;
 {$IFEND}
 
-procedure OpenURL(URL: string);
+procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean{$IFEND});
 begin
   {$IFDEF MSWINDOWS}
     ShellExecute(0, 'OPEN', PWideChar(URL), nil, nil, SW_SHOWNORMAL);
@@ -88,7 +128,10 @@ begin
     SharedApplication.OpenURL(StrToNSUrl(URL));
   {$ENDIF}
   {$IFDEF WEBLIB}
-    window.open(URL, '_blank');
+    if NewTab then
+      window.open(URL, '_blank')
+    else
+      window.open(URL, '_self');
   {$ENDIF}
 end;
 
