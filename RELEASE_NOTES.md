@@ -342,7 +342,8 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added JSON Formatter Tool.
 - Added XML Formatter Tool.
 - Added Delphi Formatter Tool (Only minifies currently).
-- Added Ping IP / Domain Tool
+- Added Ping IP / Domain Tool.
+- Added an option to enable/disable number characters in the Password Generator Tool.
 
 
 ## Version 3.0.0 Beta 4 (Unreleased)
@@ -351,3 +352,5 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added Font Awesome Icons Tool.
 - Improved Name Generator Tool.
 - Improved Ping Tool.
+- Improved Image Effects Tool.
+- Added an experimental FullScreen Mode Toggle (In Settings)
