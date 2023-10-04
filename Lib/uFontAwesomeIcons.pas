@@ -17,9 +17,9 @@ type
     style: String; // Solid & Regular
   end;
 
-function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal = 16): String;
+function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
-function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal = 16): String;
+function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFEND}
 
 const
@@ -16615,11 +16615,11 @@ const
 implementation
 
 {$IFNDEF WEBLIB}
-function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal): String;
+function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 // This function doesn't work on all of the icons, but works on most of them.
 begin
   Result := '';
-  var Matches := TRegEx.Matches(GetFontAwesomeIcon(IconName, IconSize), '<path\s+d="([^"]+)"');
+  var Matches := TRegEx.Matches(GetFontAwesomeIcon(IconName, IconSize, HTMLColor), '<path\s+d="([^"]+)"');
   if Matches.Count > 0 then
   begin
     var Match := Matches[0];
@@ -16629,7 +16629,7 @@ begin
 end;
 {$IFEND}
 
-function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal): String;
+function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 const
   AddLicense: Boolean = true;
   License: String = '<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->';
@@ -16645,6 +16645,8 @@ begin
         Result := StringReplace(Result, '<!--FA-->', License, [rfReplaceAll])
       else
         Result := StringReplace(Result, '<!--FA-->', '', [rfReplaceAll]);
+      if (HTMLColor <> '') then
+        Result := StringReplace(Result, '<svg xmlns', '<svg fill="'+HTMLColor+'" xmlns', [rfReplaceAll]);
       Exit;
     end;
 end;

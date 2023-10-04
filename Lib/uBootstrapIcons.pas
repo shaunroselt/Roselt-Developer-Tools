@@ -16,9 +16,9 @@ type
     svg: String;
   end;
 
-function GetBootstrapIcon(IconName: String; IconSize: Cardinal = 16): String;
+function GetBootstrapIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
-function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal = 16): String;
+function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal = 16;  HTMLColor: String = ''): String;
 {$IFEND}
 
 const
@@ -13512,11 +13512,11 @@ const
 implementation
 
 {$IFNDEF WEBLIB}
-function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal): String;
+function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 // This function doesn't work on all of the icons, but works on most of them.
 begin
   Result := '';
-  var Matches := TRegEx.Matches(GetBootstrapIcon(IconName, IconSize), '<path\s+d="([^"]+)"');
+  var Matches := TRegEx.Matches(GetBootstrapIcon(IconName, IconSize, HTMLColor), '<path\s+d="([^"]+)"');
   if Matches.Count > 0 then
   begin
     var Match := Matches[0];
@@ -13526,7 +13526,7 @@ begin
 end;
 {$IFEND}
 
-function GetBootstrapIcon(IconName: String; IconSize: Cardinal): String;
+function GetBootstrapIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
   bIcon: TBootstrapIcon;
 begin
@@ -13535,6 +13535,8 @@ begin
     if bIcon.name = IconName then
     begin
       Result := StringReplace(bIcon.svg, 'IconSize', IconSize.ToString, [rfReplaceAll]);
+      if (HTMLColor <> '') then
+        Result := StringReplace(Result, '<svg xmlns', '<svg style="color: '+HTMLColor+';" xmlns', [rfReplaceAll]);
       Exit;
     end;
 end;
