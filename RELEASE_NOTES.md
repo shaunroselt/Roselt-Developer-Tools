@@ -351,3 +351,5 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Added Font Awesome Icons Tool.
 - Improved Name Generator Tool.
 - Improved Ping Tool.
+- Improved Image Effects
+- Added an experimental FullScreen Mode Toggle (In Settings)
