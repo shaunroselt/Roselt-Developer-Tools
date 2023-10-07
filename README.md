@@ -60,6 +60,7 @@ _Note: All tools are still in active development with lots of bugs_
 - SSL Certificate Decoder
 - Bootstrap Icons
 - Font Awesome Icons
+- Feather Icons
 
 
 ## Download
