@@ -347,11 +347,11 @@ end;
 
 procedure TfrmMain.Button14Click(Sender: TObject);
 begin
-  var LocationPath := 'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Bootstrap Icons';
+  var LocationPath := 'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Feather Icons';
 
   memTesting.Lines.Clear;
   memTesting.Lines.Add('const');
-  memTesting.Lines.Add('  BootstrapIconsArray: array[0..IconCount] of TBootstrapIcon = (');
+  memTesting.Lines.Add('  FeatherIconsArray: array[0..IconCount] of TFeatherIcon = (');
   var IconCount := 0;
   // loop through files in LocationPath folder and get file content and file name
   for var svgFile in TDirectory.GetFiles(LocationPath) do
@@ -400,7 +400,7 @@ begin
     inc(IconCount);
   end;
 
-  memTesting.Text := memTesting.Text.Replace('width="16" height="16"','width="IconSize" height="IconSize"',[rfReplaceAll,rfIgnoreCase]).Replace('IconCount',IconCount.ToString,[rfReplaceAll,rfIgnoreCase]);
+  memTesting.Text := memTesting.Text.Replace('width="24"  height="24"','width="IconSize" height="IconSize"',[rfReplaceAll,rfIgnoreCase]).Replace('IconCount',IconCount.ToString,[rfReplaceAll,rfIgnoreCase]);
   memTesting.Lines.Add('  );');
 end;
 
@@ -779,16 +779,13 @@ begin
 end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
-var
-  Divisor: Double;
-  NewHeight: Integer;
 begin
   // Check for zero width to avoid division by zero
   if layAllToolsGrid.Width = 0 then
     Exit; // Or handle this case appropriately
 
-  Divisor := layAllToolsGrid.Width / 240;
-  NewHeight := Round(layAllToolsGrid.ChildrenCount / Divisor + 1) * 185;
+  var Divisor := layAllToolsGrid.Width / 240;
+  var NewHeight := Round(layAllToolsGrid.ChildrenCount / Divisor + 1) * 185;
 
   // Check for integer overflow and cap the value if needed
   if NewHeight > MaxInt then

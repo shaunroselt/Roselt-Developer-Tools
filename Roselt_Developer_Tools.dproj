@@ -577,6 +577,7 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="Lib\uFeatherIcons.pas"/>
         <None Include="README.md"/>
         <None Include="RELEASE_NOTES.md"/>
         <BuildConfiguration Include="Base">

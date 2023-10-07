@@ -54,7 +54,8 @@ uses
   uBootstrapIcons in 'Lib\uBootstrapIcons.pas',
   Roselt.AppInfo in 'Roselt.AppInfo.pas',
   uFontAwesomeIcons in 'Lib\uFontAwesomeIcons.pas',
-  uFrame_FontAwesomeIcons in 'Tools\App\uFrame_FontAwesomeIcons.pas' {Frame_FontAwesomeIcons: TFrame};
+  uFrame_FontAwesomeIcons in 'Tools\App\uFrame_FontAwesomeIcons.pas' {Frame_FontAwesomeIcons: TFrame},
+  uFeatherIcons in 'Lib\uFeatherIcons.pas';
 
 {$R *.res}
 

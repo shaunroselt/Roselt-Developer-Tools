@@ -136,7 +136,7 @@ object frmMain: TfrmMain
             Position.X = 12.000000000000000000
             Position.Y = 124.000000000000000000
             Size.Width = 161.000000000000000000
-            Size.Height = 21.333328247070310000
+            Size.Height = 21.714279174804690000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 16.000000000000000000
             Text = 'Testing Stuff '#55357#56833#55357#56833#55357#56833
@@ -145,7 +145,7 @@ object frmMain: TfrmMain
           object Label8: TLabel
             Align = Client
             Size.Width = 161.000000000000000000
-            Size.Height = 72.666671752929690000
+            Size.Height = 72.285720825195310000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 13.000000000000000000
             TextSettings.VertAlign = Leading
@@ -231,7 +231,6 @@ object frmMain: TfrmMain
       Size.Width = 799.000000000000000000
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
-      Visible = False
       TabOrder = 0
       object Label41: TLabel
         Align = Top
@@ -352,6 +351,7 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
+      Visible = False
       Viewport.Width = 799.000000000000000000
       Viewport.Height = 751.000000000000000000
       object layFontFamily: TRectangle

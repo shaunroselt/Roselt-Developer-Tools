@@ -13536,7 +13536,7 @@ begin
     begin
       Result := StringReplace(bIcon.svg, 'IconSize', IconSize.ToString, [rfReplaceAll]);
       if (HTMLColor <> '') then
-        Result := StringReplace(Result, '<svg xmlns', '<svg style="color: '+HTMLColor+';" xmlns', [rfReplaceAll]);
+        Result := StringReplace(Result, 'currentColor', HTMLColor, [rfReplaceAll]);
       Exit;
     end;
 end;

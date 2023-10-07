@@ -28,6 +28,9 @@ uses
     FMX.Helpers.Android,
     System.Sensors,
   {$ENDIF}
+  {$IFDEF WEBLIB}
+    Web,
+  {$ENDIF}
 
   FMX.Forms,
   FMX.Platform,
@@ -363,7 +366,15 @@ end;
 
 function TSystemInformation.GetScreenResolution: String;
 begin
-  result := Screen.Width.ToString+'x'+Screen.Height.ToString;
+  {$IFDEF WEBLIB}
+    if ((UInt64(window['innerWidth']) > UInt64(window.screen['width'])) and
+       (UInt64(window['innerHeight']) > UInt64(window.screen['height']))) then
+        Result := String(window['innerWidth']) + 'x' + String(window['innerHeight']) // Browser Window Resolution
+    else
+        Result := String(window.screen['width']) + 'x' + String(window.screen['height']); // Screen Resolution
+  {$ELSE}
+    Result := Screen.Width.ToString + 'x' + Screen.Height.ToString;
+  {$ENDIF}
 end;
 
 function TSystemInformation.GetSystemLanguage: String;
