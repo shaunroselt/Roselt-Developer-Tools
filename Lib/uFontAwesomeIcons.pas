@@ -24,7 +24,7 @@ function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor
 {$IFNDEF WEBLIB}
 function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$ENDIF}
-function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
+function GetFontAwesomeIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 
 const
   FontAwesomeIconsArray: array[0..2023] of TFontAwesomeIcon = (
