@@ -55,7 +55,8 @@ uses
   Roselt.AppInfo in 'Roselt.AppInfo.pas',
   uFontAwesomeIcons in 'Lib\uFontAwesomeIcons.pas',
   uFrame_FontAwesomeIcons in 'Tools\App\uFrame_FontAwesomeIcons.pas' {Frame_FontAwesomeIcons: TFrame},
-  uFeatherIcons in 'Lib\uFeatherIcons.pas';
+  uFeatherIcons in 'Lib\uFeatherIcons.pas',
+  uFrame_TraceRoute in 'Tools\App\uFrame_TraceRoute.pas' {Frame_TraceRoute: TFrame};
 
 {$R *.res}
 

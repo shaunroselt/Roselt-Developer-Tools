@@ -1,4 +1,4 @@
-object Frame_PingIPDomain: TFrame_PingIPDomain
+object Frame_TraceRoute: TFrame_TraceRoute
   Size.Width = 904.000000000000000000
   Size.Height = 688.000000000000000000
   Size.PlatformDefault = False
@@ -161,7 +161,7 @@ object Frame_PingIPDomain: TFrame_PingIPDomain
             Size.Width = 34.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
-            Text = 'Ping'
+            Text = 'Trace'
             TabOrder = 5
           end
           object edtIPDomainButtonImage: TSkSvg
@@ -480,10 +480,13 @@ object Frame_PingIPDomain: TFrame_PingIPDomain
       end
     end
   end
-  object IdIcmpClient: TIdIcmpClient
+  object IdTraceRoute: TIdTraceRoute
+    ReceiveTimeout = 5000
     Protocol = 1
     ProtocolIPv6 = 58
-    Left = 488
-    Top = 480
+    ResolveHostNames = True
+    OnReply = IdTraceRouteReply
+    Left = 640
+    Top = 472
   end
 end

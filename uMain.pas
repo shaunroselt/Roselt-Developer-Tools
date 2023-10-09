@@ -75,6 +75,7 @@ uses
   uFrame_NameGenerator,
   uFrame_TextToArray,
   uFrame_PingIPDomain,
+  uFrame_TraceRoute,
   uFrame_BootstrapIcons,
   uFrame_FontAwesomeIcons,
 
@@ -747,6 +748,7 @@ begin
   CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
   CreateToolFrame(TFrame_TextToArray.Create(Self),'layTextToArray');
   CreateToolFrame(TFrame_PingIPDomain.Create(Self),'layPingIPDomain');
+  CreateToolFrame(TFrame_TraceRoute.Create(Self),'layTraceRoute');
   CreateToolFrame(TFrame_BootstrapIcons.Create(Self),'layBootstrapIcons');
   CreateToolFrame(TFrame_FontAwesomeIcons.Create(Self),'layFontAwesomeIcons');
 

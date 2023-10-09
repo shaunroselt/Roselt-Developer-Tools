@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..45] of TRoseltTool = (
+  RoseltToolsArray: array[0..46] of TRoseltTool = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -692,6 +692,21 @@ const
       {$ELSE}
         active: true;
         visible: true;
+      {$ENDIF}
+      parent: 'Other';
+    ),
+    (
+      text_short: 'Trace Route';
+      text_long: 'Trace Route';
+      name: 'TraceRoute';
+      description: 'Trace Route of IP Address or Domain';
+      icon: 'wifi';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: false;
+        visible: false;
       {$ENDIF}
       parent: 'Other';
     ),
