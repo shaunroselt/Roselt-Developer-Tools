@@ -12,12 +12,12 @@ function GetAppInfo: String;
   function GetAppArchitectureInfo: String;
   begin
     Result := 'Unknown Architecture';
-    {$IFDEF MSWINDOWS} Result := 'X64'; {$IFEND}
-    {$IFDEF IOS} Result := 'X64'; {$IFEND}
-    {$IFDEF MACOS} Result := 'X64'; {$IFEND}
-    {$IFDEF LINUX} Result := 'X64'; {$IFEND}
-    {$IFDEF ANDROID} Result := 'X64'; {$IFEND}
-    {$IFDEF WEBLIB} Result := 'Web'; {$IFEND}
+    {$IFDEF MSWINDOWS} Result := 'X64'; {$ENDIF}
+    {$IFDEF IOS} Result := 'X64'; {$ENDIF}
+    {$IFDEF MACOS} Result := 'X64'; {$ENDIF}
+    {$IFDEF LINUX} Result := 'X64'; {$ENDIF}
+    {$IFDEF ANDROID} Result := 'X64'; {$ENDIF}
+    {$IFDEF WEBLIB} Result := 'Web'; {$ENDIF}
   end;
 var
   Version, Architecture, BuildType, CompiledDate: String;

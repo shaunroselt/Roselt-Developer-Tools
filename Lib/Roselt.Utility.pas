@@ -35,9 +35,9 @@ procedure SetQueryParam(key, value: String; url: String = '');
 function GetCookie(cookie_name: String): String;
 procedure SetCookie(cookie_name, value: String; minutes: Integer);
 procedure DeleteCookie(cookie_name: String);
-{$IFEND}
+{$ENDIF}
 
-procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean = True{$IFEND});
+procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean = True{$ENDIF});
 
 function RemoveNonDigits(const S: string): string;
 function RemoveNonDigitsAndLetters(const S: string): string;
@@ -108,9 +108,9 @@ begin
     document.cookie = cookie_name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ";SameSite=Strict; path=/";
   end;
 end;
-{$IFEND}
+{$ENDIF}
 
-procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean{$IFEND});
+procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean{$ENDIF});
 begin
   {$IFDEF MSWINDOWS}
     ShellExecute(0, 'OPEN', PWideChar(URL), nil, nil, SW_SHOWNORMAL);

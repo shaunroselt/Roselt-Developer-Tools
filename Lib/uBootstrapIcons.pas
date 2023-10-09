@@ -5,9 +5,12 @@ interface
 
 uses
   System.SysUtils
-  {$IFNDEF WEBLIB}
+  {$IFDEF WEBLIB}
+    , Web
+  {$ELSE}
     , System.RegularExpressions
-  {$IFEND}
+    , System.NetEncoding
+  {$ENDIF}
 ;
 
 type
@@ -19,7 +22,8 @@ type
 function GetBootstrapIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
 function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal = 16;  HTMLColor: String = ''): String;
-{$IFEND}
+{$ENDIF}
+function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 
 const
   BootstrapIconsArray: array[0..2049] of TBootstrapIcon = (
@@ -13524,7 +13528,7 @@ begin
     Result := PathData;
   end;
 end;
-{$IFEND}
+{$ENDIF}
 
 function GetBootstrapIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
@@ -13539,6 +13543,16 @@ begin
         Result := StringReplace(Result, 'currentColor', HTMLColor, [rfReplaceAll]);
       Exit;
     end;
+end;
+
+function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+begin
+  Result := '';
+  {$IFDEF WEBLIB}
+    Result := 'data:image/svg+xml;base64,' + window.btoa(GetBootstrapIcon(IconName, IconSize, HTMLColor));
+  {$ELSE}
+    Result := 'data:image/svg+xml;base64,' + TNetEncoding.Base64.Encode(GetBootstrapIcon(IconName, IconSize, HTMLColor));
+  {$ENDIF}
 end;
 
 end.

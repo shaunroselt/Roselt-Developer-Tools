@@ -5,9 +5,12 @@ interface
 
 uses
   System.SysUtils
-  {$IFNDEF WEBLIB}
+  {$IFDEF WEBLIB}
+    , Web
+  {$ELSE}
     , System.RegularExpressions
-  {$IFEND}
+    , System.NetEncoding
+  {$ENDIF}
 ;
 
 type
@@ -20,7 +23,8 @@ type
 function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
 function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
-{$IFEND}
+{$ENDIF}
+function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 
 const
   FontAwesomeIconsArray: array[0..2023] of TFontAwesomeIcon = (
@@ -16627,7 +16631,7 @@ begin
     Result := PathData;
   end;
 end;
-{$IFEND}
+{$ENDIF}
 
 function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 const
@@ -16649,6 +16653,16 @@ begin
         Result := StringReplace(Result, '<svg xmlns', '<svg fill="'+HTMLColor+'" xmlns', [rfReplaceAll]);
       Exit;
     end;
+end;
+
+function GetFontAwesomeIconBase64(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+begin
+  Result := '';
+  {$IFDEF WEBLIB}
+    Result := 'data:image/svg+xml;base64,' + window.btoa(GetFontAwesomeIcon(IconName, IconSize, HTMLColor));
+  {$ELSE}
+    Result := 'data:image/svg+xml;base64,' + TNetEncoding.Base64.Encode(GetFontAwesomeIcon(IconName, IconSize, HTMLColor));
+  {$ENDIF}
 end;
 
 end.
