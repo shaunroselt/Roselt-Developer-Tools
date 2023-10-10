@@ -33,6 +33,9 @@ _Note: All tools are still in active development with lots of bugs_
 - Image Effects
 - HTML Preview
 - Ping IP / Domain
+- Bootstrap Icons
+- Font Awesome Icons
+- Feather Icons
 
 
 ## Planned Tools
@@ -58,9 +61,6 @@ _Note: All tools are still in active development with lots of bugs_
 - Color Blindness Simulator
 - Code Minifier (Various languages)
 - SSL Certificate Decoder
-- Bootstrap Icons
-- Font Awesome Icons
-- Feather Icons
 
 
 ## Download
