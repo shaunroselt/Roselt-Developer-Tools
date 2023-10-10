@@ -96,7 +96,6 @@ Type
     FVideoCard: String;
     FMacAddress: String;
     FComputerName: String;
-    FOperatingSystem: String;
     FApplicationType: String;
     FTotalMemory: String;
     FSystemLocation: TSystemLocation;
@@ -104,6 +103,7 @@ Type
     function GetSystemLanguage: String;
     function GetSystemTotalMemory: String;
     function GetScreenResolution: String;
+    function GetOperatingSystem: String;
     function GetIPAddress: String;
     function GetAppVersion: String;
     function GetSystemLocation: TSystemLocation;
@@ -118,7 +118,7 @@ Type
     property ComputerName: String read FComputerName;
     property IPAddress: String read GetIPAddress;
     property ScreenResolution: String read GetScreenResolution;
-    property OperatingSystem: String read FOperatingSystem;
+    property OperatingSystem: String read GetOperatingSystem;
     property ApplicationType: String read FApplicationType;
     property TotalMemory: String read FTotalMemory;
     property AppVersion: String read GetAppVersion;
@@ -196,7 +196,6 @@ constructor TSystemInformation.Create;
 begin
   FMacAddress := GetMacAddress;
   FComputerName := GetEnvironmentVariable('COMPUTERNAME');
-  FOperatingSystem := TOSVersion.ToString;
   FApplicationType := 'Application';
   FTotalMemory := GetSystemTotalMemory;
   FUserName := GetUserName;
@@ -364,6 +363,32 @@ begin
 {$ENDIF}
 end;
 
+function TSystemInformation.GetOperatingSystem: String;
+{$IFDEF WEBLIB}
+  var UserAgent: String;
+{$ENDIF}
+begin
+  {$IFDEF WEBLIB}
+    UserAgent := window.navigator.userAgent;
+    Result := 'Unknown';
+    if (UserAgent.indexOf('Windows NT 10.0') <> -1) then Result := 'Windows 10'
+    else if (UserAgent.indexOf('Windows NT 6.2') <> -1) then Result := 'Windows 8'
+    else if (UserAgent.indexOf('Windows NT 6.1') <> -1) then Result := 'Windows 7'
+    else if (UserAgent.indexOf('Windows NT 6.0') <> -1) then Result := 'Windows Vista'
+    else if (UserAgent.indexOf('Windows NT 5.1') <> -1) then Result := 'Windows XP'
+    else if (UserAgent.indexOf('Windows NT 5.0') <> -1) then Result := 'Windows 2000'
+    else if (UserAgent.indexOf('Windows Phone') <> -1) then Result := 'Windows 10 Mobile'
+    else if (UserAgent.indexOf('iPhone') <> -1) then Result := 'iOS'
+    else if (UserAgent.indexOf('Mac') <> -1) then Result := 'MacOS'
+    else if (UserAgent.indexOf('AppleTV') <> -1) then Result := 'tvOS'
+    else if (UserAgent.indexOf('Android') <> -1) then Result := 'Android'
+    else if (UserAgent.indexOf('Linux') <> -1) then Result := 'Linux'
+    else if (UserAgent.indexOf('X11') <> -1) then Result := 'UNIX';
+  {$ELSE}
+    Result := TOSVersion.ToString;
+  {$ENDIF}
+end;
+
 function TSystemInformation.GetScreenResolution: String;
 begin
   {$IFDEF WEBLIB}
@@ -411,6 +436,9 @@ begin
     else
       Result := 'en';
     StrDispose(buffer);
+  {$ENDIF}
+  {$IFDEF WEBLIB}
+    Result := window.navigator.language;
   {$ENDIF}
 end;
 
