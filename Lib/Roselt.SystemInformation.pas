@@ -31,9 +31,11 @@ uses
   {$IFDEF WEBLIB}
     Web,
   {$ENDIF}
+  {$IFNDEF WEBLIB}
+    FMX.Forms,
+    FMX.Platform,
+  {$ENDIF}
 
-  FMX.Forms,
-  FMX.Platform,
   System.SysUtils,
   System.Classes,
   System.Variants,
@@ -174,7 +176,7 @@ function TSystemInformation.GetVideoCardName: String;
     iValue: LongWord;
 {$ENDIF}
 begin;
-  result := '';
+  Result := '';
   {$IFDEF MSWINDOWS}
     try
       FSWbemLocator := CreateOleObject('WbemScripting.SWbemLocator');
@@ -183,11 +185,23 @@ begin;
       oEnum := IUnknown(FWbemObjectSet._NewEnum) as IEnumvariant;
       while oEnum.Next(1, FWbemObject, iValue) = 0 do
       begin
-        result := String(FWbemObject.Name);
+        Result := String(FWbemObject.Name);
         FWbemObject := Unassigned;
       end;
     except
 
+    end;
+  {$ENDIF}
+  {$IFDEF WEBLIB}
+    asm
+      let canvas = document.createElement("canvas");
+      let gl = canvas.getContext("experimental-webgl");
+
+      if (gl != null) {
+        let dbgRenderInfo = gl.getExtension("WEBGL_debug_renderer_info");
+        if (dbgRenderInfo != null)
+          Result := gl.getParameter(dbgRenderInfo.UNMASKED_RENDERER_WEBGL);
+      }
     end;
   {$ENDIF}
 end;
@@ -557,6 +571,10 @@ begin
       var TotalMb := MemoryInfo.totalMem shr 20; // Total Memory
       var AvailMb := MemoryInfo.availMem shr 20; // Available Memory
       result := Format('%0.1f GB', [TotalMb]);
+    {$ENDIF}
+    {$IFDEF WEBLIB}
+      // This doesn't work for devices that have more than 8GB of memory. It will return 8GB max.
+      Result := navigator.deviceMemory;
     {$ENDIF}
   except on E: Exception do
 
