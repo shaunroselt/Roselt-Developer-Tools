@@ -19,7 +19,7 @@ type
   end;
 
 const
-  RoseltToolsArray: array[0..46] of TRoseltTool = (
+  RoseltToolsArray: array[0..47] of TRoseltTool = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -640,6 +640,21 @@ const
       text_long: 'Font Awesome Icons';
       name: 'FontAwesomeIcons';
       description: 'Font Awesome Icons (SVG)';
+      icon: 'filetype-svg';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Graphics';
+    ),
+    (
+      text_short: 'Feather Icons';
+      text_long: 'Feather Icons';
+      name: 'FeatherIcons';
+      description: 'Feather Icons (SVG)';
       icon: 'filetype-svg';
       {$IFDEF DEBUG}
         active: true;

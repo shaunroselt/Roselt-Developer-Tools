@@ -78,6 +78,7 @@ uses
   uFrame_TraceRoute,
   uFrame_BootstrapIcons,
   uFrame_FontAwesomeIcons,
+  uFrame_FeatherIcons,
 
   System.Skia,
   FMX.Skia;
@@ -101,7 +102,7 @@ type
     imgTesting: TSkSvg;
     lblTesting: TLabel;
     layTesting: TLayout;
-    Label41: TLabel;
+    lblTestingStuff: TLabel;
     memTesting: TMemo;
     layNavSettings: TLayout;
     btnSettings: TRectangle;
@@ -751,6 +752,7 @@ begin
   CreateToolFrame(TFrame_TraceRoute.Create(Self),'layTraceRoute');
   CreateToolFrame(TFrame_BootstrapIcons.Create(Self),'layBootstrapIcons');
   CreateToolFrame(TFrame_FontAwesomeIcons.Create(Self),'layFontAwesomeIcons');
+  CreateToolFrame(TFrame_FeatherIcons.Create(Self),'layFeatherIcons');
 
 
   // Load Themes (Settings)

@@ -232,7 +232,7 @@ object frmMain: TfrmMain
       Size.Height = 751.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      object Label41: TLabel
+      object lblTestingStuff: TLabel
         Align = Top
         Size.Width = 799.000000000000000000
         Size.Height = 95.000000000000000000

@@ -56,7 +56,8 @@ uses
   uFontAwesomeIcons in 'Lib\uFontAwesomeIcons.pas',
   uFrame_FontAwesomeIcons in 'Tools\App\uFrame_FontAwesomeIcons.pas' {Frame_FontAwesomeIcons: TFrame},
   uFeatherIcons in 'Lib\uFeatherIcons.pas',
-  uFrame_TraceRoute in 'Tools\App\uFrame_TraceRoute.pas' {Frame_TraceRoute: TFrame};
+  uFrame_TraceRoute in 'Tools\App\uFrame_TraceRoute.pas' {Frame_TraceRoute: TFrame},
+  uFrame_FeatherIcons in 'Tools\App\uFrame_FeatherIcons.pas' {Frame_FeatherIcons: TFrame};
 
 {$R *.res}
 
