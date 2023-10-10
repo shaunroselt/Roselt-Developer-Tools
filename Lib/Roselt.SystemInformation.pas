@@ -200,7 +200,7 @@ begin;
       if (gl != null) {
         let dbgRenderInfo = gl.getExtension("WEBGL_debug_renderer_info");
         if (dbgRenderInfo != null)
-          Result := gl.getParameter(dbgRenderInfo.UNMASKED_RENDERER_WEBGL);
+          Result = gl.getParameter(dbgRenderInfo.UNMASKED_RENDERER_WEBGL);
       }
     end;
   {$ENDIF}
@@ -557,12 +557,12 @@ function TSystemInformation.GetSystemTotalMemory: String;
       MemoryInfo: TMemoryStatusEx;
   {$ENDIF}
 begin
-  result := '';
+  Result := '';
   try
     {$IFDEF MSWINDOWS}
       MemoryInfo.dwLength := SizeOf(TMemoryStatusEx);
       GlobalMemoryStatusEx(MemoryInfo);
-      result := Format('%0.1f GB', [MemoryInfo.ullTotalPhys / (1024 * 1024 * 1024)]);
+      Result := Format('%0.1f GB', [MemoryInfo.ullTotalPhys / (1024 * 1024 * 1024)]);
     {$ENDIF}
     {$IFDEF ANDROID}
       MemoryInfo:= TJActivityManager_MemoryInfo.JavaClass.init;
@@ -570,11 +570,13 @@ begin
         .GetObjectID).getMemoryInfo(MemoryInfo);
       var TotalMb := MemoryInfo.totalMem shr 20; // Total Memory
       var AvailMb := MemoryInfo.availMem shr 20; // Available Memory
-      result := Format('%0.1f GB', [TotalMb]);
+      Result := Format('%0.1f GB', [TotalMb]);
     {$ENDIF}
     {$IFDEF WEBLIB}
       // This doesn't work for devices that have more than 8GB of memory. It will return 8GB max.
-      Result := navigator.deviceMemory;
+      asm
+        Result = window.navigator.deviceMemory;
+      end;
     {$ENDIF}
   except on E: Exception do
 
