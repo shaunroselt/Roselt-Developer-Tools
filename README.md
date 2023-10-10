@@ -77,6 +77,8 @@ Bootstrap Icons: https://github.com/shaunroselt/Delphi-Bootstrap-Icons
 
 Font Awesome Icons: https://github.com/shaunroselt/Delphi-Font-Awesome-Icons
 
+Feather Icons: https://github.com/shaunroselt/Delphi-Feather-Icons
+
 
 ## Screenshots
 ![JSON-YAML Converter](https://user-images.githubusercontent.com/5418178/215146229-9509d54d-e2c5-4864-b9b6-9509efef440a.png)
