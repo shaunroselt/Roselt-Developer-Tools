@@ -59,9 +59,9 @@ type
     lblSwitchSurname: TLabel;
     layAmount: TRectangle;
     imgAmount: TSkSvg;
-    layAmountTitleDescription: TLayout;
-    lblAmountTitle: TLabel;
-    lblAmountDescription: TLabel;
+    layTitleDescriptionAmount: TLayout;
+    lblTitleAmount: TLabel;
+    lblDescriptionAmount: TLabel;
     sbAmount: TSpinBox;
     layLetterCase: TRectangle;
     cbLetterCase: TComboBox;

@@ -68,12 +68,6 @@ type
     edtIPDomainButton: TEditButton;
     edtIPDomainButtonLabel: TLabel;
     edtIPDomainButtonImage: TSkSvg;
-    layPingCount: TRectangle;
-    imgPingCount: TSkSvg;
-    layTitleDescriptionPingCount: TLayout;
-    lblTitlePingCount: TLabel;
-    lblDescriptionPingCount: TLabel;
-    sbPingCount: TSpinBox;
     IdTraceRoute: TIdTraceRoute;
     procedure btnOutputCopyToClipboardClick(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);

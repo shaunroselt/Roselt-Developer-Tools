@@ -30,9 +30,9 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Margins.Top = 1.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 1.000000000000000000
-        Position.X = 604.000000000000000000
+        Position.X = 603.000000000000000000
         Position.Y = 1.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 82.000000000000000000
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
@@ -59,7 +59,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
         end
         object lblRefresh: TLabel
           Align = Client
-          Size.Width = 47.000000000000000000
+          Size.Width = 48.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           Text = 'Refresh'
@@ -367,13 +367,13 @@ object Frame_NameGenerator: TFrame_NameGenerator
           '0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.6' +
           '29-.443h.635V5z"/>'#13#10'</svg>'
       end
-      object layAmountTitleDescription: TLayout
+      object layTitleDescriptionAmount: TLayout
         Align = Client
         Size.Width = 559.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        object lblAmountTitle: TLabel
+        object lblTitleAmount: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
           Size.Width = 559.000000000000000000
@@ -383,7 +383,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
           Text = 'Amount'
           TabOrder = 1
         end
-        object lblAmountDescription: TLabel
+        object lblDescriptionAmount: TLabel
           Align = Client
           StyledSettings = [Family, Style, FontColor]
           Size.Width = 559.000000000000000000

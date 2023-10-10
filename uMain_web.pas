@@ -26,7 +26,7 @@ uses
   Roselt.Tools,
   uBootstrapIcons,
 
-  uFrame_NameGenerator, DB, WEBLib.Grids;
+  uFrame_NameGenerator;
 
 type
   TfrmMain = class(TWebForm)
@@ -67,7 +67,7 @@ type
     layAllTools: TWebPanel;
     btnHamburger: TWebHTMLDiv;
     edtSearchAllTools: TWebEdit;
-    WebTableControl1: TWebTableControl;
+    WebImageControl1: TWebImageControl;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -490,6 +490,7 @@ end;
 procedure TfrmMain.WebFormShow(Sender: TObject);
 var
   ToolParam: String;
+  SVG_Code: String;
 begin
   ToolParam := GetQueryParam('tool');
 
@@ -504,6 +505,15 @@ begin
 
   SetQueryParam('first_name', 'Shaun');
   SetQueryParam('last_name', 'Roselt');
+
+  console.log(window.btoa('Shaun Roselt'));
+  console.log(window.atob('U2hhdW4gUm9zZWx0'));
+
+  SVG_Code := GetBootstrapIcon('5-square-fill', 24, 'purple'); // Returns SVG Code
+
+  WebImageControl1.ElementHandle.setAttribute('src',GetBootstrapIconBase64('5-square-fill', 24, 'purple'));
+
+
 end;
 
 end.

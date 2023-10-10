@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C4078FB2-7936-47D1-9562-94D50369D762}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Roselt_Developer_Tools.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Roselt_Developer_Tools_Web.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Roselt_Developer_Tools">
+        <MSBuild Projects="Roselt_Developer_Tools.dproj"/>
+    </Target>
+    <Target Name="Roselt_Developer_Tools:Clean">
+        <MSBuild Projects="Roselt_Developer_Tools.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Roselt_Developer_Tools:Make">
+        <MSBuild Projects="Roselt_Developer_Tools.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Roselt_Developer_Tools_Web">
+        <MSBuild Projects="Roselt_Developer_Tools_Web.dproj"/>
+    </Target>
+    <Target Name="Roselt_Developer_Tools_Web:Clean">
+        <MSBuild Projects="Roselt_Developer_Tools_Web.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Roselt_Developer_Tools_Web:Make">
+        <MSBuild Projects="Roselt_Developer_Tools_Web.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Roselt_Developer_Tools;Roselt_Developer_Tools_Web"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Roselt_Developer_Tools:Clean;Roselt_Developer_Tools_Web:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Roselt_Developer_Tools:Make;Roselt_Developer_Tools_Web:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
