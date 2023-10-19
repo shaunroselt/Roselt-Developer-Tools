@@ -865,57 +865,29 @@ begin
 end;
 
 procedure TfrmMain.AllToolsSearch();
-var
-  Tool: TRoseltTool;
-  ToolButton: TButton;
 begin
-  // Clear any previously hidden tools
-  if layAllToolsHidden.ChildrenCount > 0 then
-  begin
-    for var I := layAllToolsHidden.ChildrenCount - 1 downto 0 do
+  while ((layAllToolsHidden.ChildrenCount > 0)) do // If there are Tools currently hidden
+    for var ToolButton in layAllToolsHidden.Children do // Then move all of them to layAllToolsGrid
     begin
-      if layAllToolsHidden.Children[I] is TButton then
-      begin
-        ToolButton := TButton(layAllToolsHidden.Children[I]);
-        ToolButton.Parent := layAllToolsGrid;
-      end;
+      var Test := ToolButton.Name;
+      ToolButton.Parent := layAllToolsGrid;
     end;
-  end;
-
-  // Get the search text and convert it to lowercase
-  var searchText := edtSearchAllTools.Text.ToLower;
-
-  // If the search text is empty, show all tools and return
-  if searchText.IsEmpty then
-  begin
-    for Tool in RoseltToolsArray do
+  Caption := '876';
+  if (edtSearchAllTools.Text.IsEmpty = False) then
+    for var Tool in RoseltToolsArray do
     begin
-      ToolButton := TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name));
-      if ToolButton <> nil then
-        ToolButton.Parent := layAllToolsGrid;
+      if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
+      if (Tool.visible = False) then continue; // Skip tools that aren't visible
+
+      var ToolButtonVisible := False;
+      if Tool.text_short.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if Tool.text_long.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if Tool.description.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+      if Tool.parent.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+
+      if (ToolButtonVisible = False) then
+        TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name)).Parent := layAllToolsHidden;
     end;
-    Exit;
-  end;
-
-  // Iterate through the tools in RoseltToolsArray
-  for Tool in RoseltToolsArray do
-  begin
-    // Skip parent tools as they don't have buttons to filter
-    if IsToolParent(Tool) then
-      Continue;
-
-    ToolButton := TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name));
-
-    // Hide or show the button based on visibility
-    if ToolButton <> nil then
-    begin
-      var toolText := Tool.text_short.ToLower + Tool.text_long.ToLower + Tool.description.ToLower + Tool.parent.ToLower;
-      if toolText.Contains(searchText) then
-        ToolButton.Parent := layAllToolsGrid
-      else
-        ToolButton.Parent := layAllToolsHidden;
-    end;
-  end;
 end;
 
 procedure TfrmMain.btnAllToolsClick(Sender: TObject);
