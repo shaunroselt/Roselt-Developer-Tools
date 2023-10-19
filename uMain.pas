@@ -872,7 +872,6 @@ begin
       var Test := ToolButton.Name;
       ToolButton.Parent := layAllToolsGrid;
     end;
-  Caption := '876';
   if (edtSearchAllTools.Text.IsEmpty = False) then
     for var Tool in RoseltToolsArray do
     begin
