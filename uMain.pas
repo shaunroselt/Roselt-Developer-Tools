@@ -865,20 +865,26 @@ begin
 end;
 
 procedure TfrmMain.AllToolsSearch();
-// This doesn't work properly
 begin
-  if ((layAllToolsHidden.ChildrenCount > 0)) then // If there are Tools currently hidden
+  while ((layAllToolsHidden.ChildrenCount > 0)) do // If there are Tools currently hidden
     for var ToolButton in layAllToolsHidden.Children do // Then move all of them to layAllToolsGrid
+    begin
+      var Test := ToolButton.Name;
       ToolButton.Parent := layAllToolsGrid;
+    end;
+  Caption := '876';
   if (edtSearchAllTools.Text.IsEmpty = False) then
     for var Tool in RoseltToolsArray do
     begin
       if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
+      if (Tool.visible = False) then continue; // Skip tools that aren't visible
+
       var ToolButtonVisible := False;
       if Tool.text_short.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
       if Tool.text_long.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
       if Tool.description.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
       if Tool.parent.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
+
       if (ToolButtonVisible = False) then
         TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name)).Parent := layAllToolsHidden;
     end;
