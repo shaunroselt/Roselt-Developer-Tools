@@ -357,3 +357,5 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - Improved Image Effects Tool.
 - Added an experimental FullScreen Mode Toggle (In Settings)
 - Fixed "All Tools" Search Box
+- Added Change Log (Release Notes) to Settings
+- Added Useful Links to Settings
