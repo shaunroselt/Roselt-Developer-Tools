@@ -25,6 +25,8 @@ uses
   System.Skia,
   FMX.Skia,
 
+  Roselt.Utility,
+
   uFontAwesomeIcons
   ;
 
