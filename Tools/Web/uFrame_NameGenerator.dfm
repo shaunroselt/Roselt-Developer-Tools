@@ -1,12 +1,13 @@
 object Frame_NameGenerator: TFrame_NameGenerator
+  AlignWithMargins = True
   Left = 0
   Top = 0
   Width = 1693
   Height = 1185
-  Margins.Left = 5
-  Margins.Top = 5
-  Margins.Right = 5
-  Margins.Bottom = 5
+  Margins.Left = 24
+  Margins.Top = 24
+  Margins.Right = 24
+  Margins.Bottom = 24
   Color = 3947580
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWhite
@@ -22,7 +23,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
     Left = 0
     Top = 0
     Width = 1693
-    Height = 30
+    Height = 47
     Margins.Left = 5
     Margins.Top = 5
     Margins.Right = 5
@@ -32,42 +33,42 @@ object Frame_NameGenerator: TFrame_NameGenerator
     Color = 3947580
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -21
+    Font.Height = -35
     Font.Name = 'Segoe UI'
     Font.Style = []
     HeightPercent = 100.000000000000000000
     ParentFont = False
     WidthPercent = 100.000000000000000000
-    ExplicitWidth = 127
+    ExplicitWidth = 214
   end
   object layLetterCase: TWebPanel
+    AlignWithMargins = True
     Left = 0
-    Top = 127
+    Top = 150
     Width = 1693
     Height = 97
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 6
     Align = alTop
+    BorderStyle = bsNone
     ChildOrder = 1
-    Color = 3947580
+    Color = 2829099
     ShowCaption = False
-    ExplicitTop = 30
     object imgLetterCase: TWebHTMLDiv
       AlignWithMargins = True
-      Left = 9
-      Top = 0
-      Width = 128
-      Height = 97
-      Margins.Left = 9
-      Margins.Top = 0
+      Left = 12
+      Top = 12
+      Width = 73
+      Height = 73
+      Margins.Left = 12
+      Margins.Top = 12
       Margins.Right = 9
-      Margins.Bottom = 0
+      Margins.Bottom = 12
       WidthStyle = ssAuto
       Align = alLeft
       ChildOrder = 2
-      ElementFont = efCSS
       HTML.Strings = (
         
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" f' +
@@ -86,14 +87,15 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Role = ''
     end
     object cbLetterCase: TWebComboBox
-      Left = 1439
-      Top = 0
-      Width = 254
+      AlignWithMargins = True
+      Left = 1418
+      Top = 12
+      Width = 263
       Height = 38
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 12
+      Margins.Bottom = 12
       Align = alRight
       Color = 3947580
       HeightPercent = 100.000000000000000000
@@ -106,23 +108,24 @@ object Frame_NameGenerator: TFrame_NameGenerator
         'UPPER')
     end
     object layTitleDescriptionLetterCase: TWebPanel
-      Left = 146
-      Top = 0
-      Width = 1293
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      AlignWithMargins = True
+      Left = 94
+      Top = 12
+      Width = 1324
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 0
+      Margins.Bottom = 12
       Align = alClient
       BorderStyle = bsNone
       ChildOrder = 2
-      Color = 3947580
+      Color = 2829099
       ShowCaption = False
       object lblDescriptionLetterCase: TWebLabel
         Left = 0
-        Top = 30
-        Width = 1293
+        Top = 38
+        Width = 1324
         Height = 30
         Margins.Left = 9
         Margins.Top = 9
@@ -133,13 +136,13 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Color = clBtnFace
         HeightPercent = 100.000000000000000000
         WidthPercent = 100.000000000000000000
-        ExplicitLeft = 9
+        ExplicitWidth = 370
       end
       object lblTitleLetterCase: TWebLabel
         Left = 0
         Top = 0
-        Width = 1293
-        Height = 30
+        Width = 1324
+        Height = 38
         Margins.Left = 9
         Margins.Top = 9
         Margins.Right = 9
@@ -147,119 +150,46 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Align = alTop
         Caption = 'Letter Case'
         Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -28
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
-        ExplicitLeft = 9
-        ExplicitTop = 14
+        ExplicitWidth = 137
       end
     end
   end
-  object WebPanel3: TWebPanel
-    Left = 0
-    Top = 515
-    Width = 1693
-    Height = 56
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
-    Align = alTop
-    BorderStyle = bsNone
-    ChildOrder = 4
-    Color = 3947580
-    ShowCaption = False
-    ExplicitTop = 127
-    object WebLabel4: TWebLabel
-      Left = 0
-      Top = 0
-      Width = 1525
-      Height = 56
-      Margins.Left = 9
-      Margins.Top = 9
-      Margins.Right = 9
-      Margins.Bottom = 9
-      Align = alClient
-      Caption = 'Names'
-      Color = clBtnFace
-      HeightPercent = 100.000000000000000000
-      WidthPercent = 100.000000000000000000
-      ExplicitWidth = 65
-      ExplicitHeight = 30
-    end
-    object btnRefresh: TWebButton
-      Left = 1525
-      Top = 0
-      Width = 168
-      Height = 56
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
-      Align = alRight
-      Caption = 'Refresh'
-      Color = 3947580
-      ChildOrder = 1
-      HeightPercent = 100.000000000000000000
-      WidthPercent = 100.000000000000000000
-      OnClick = btnRefreshClick
-      ExplicitTop = -10
-    end
-  end
-  object memOutput: TWebMemo
-    Left = 0
-    Top = 571
-    Width = 1693
-    Height = 614
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
-    Align = alClient
-    AutoSize = False
-    Color = 2829099
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWhite
-    Font.Height = -21
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    HeightPercent = 100.000000000000000000
-    Lines.Strings = (
-      'memOutput')
-    ParentFont = False
-    SelLength = 0
-    SelStart = 0
-    WidthPercent = 100.000000000000000000
-    ExplicitTop = 183
-    ExplicitHeight = 1002
-  end
   object layAmount: TWebPanel
+    AlignWithMargins = True
     Left = 0
-    Top = 418
+    Top = 459
     Width = 1693
     Height = 97
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 6
     Align = alTop
+    BorderStyle = bsNone
     ChildOrder = 1
-    Color = 3947580
+    Color = 2829099
     ShowCaption = False
-    ExplicitTop = 44
     object imgAmount: TWebHTMLDiv
       AlignWithMargins = True
-      Left = 9
-      Top = 0
-      Width = 128
-      Height = 97
-      Margins.Left = 9
-      Margins.Top = 0
+      Left = 12
+      Top = 12
+      Width = 73
+      Height = 73
+      Margins.Left = 12
+      Margins.Top = 12
       Margins.Right = 9
-      Margins.Bottom = 0
+      Margins.Bottom = 12
       WidthStyle = ssAuto
       Align = alLeft
       ChildOrder = 2
-      ElementFont = efCSS
       HTML.Strings = (
         
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" f' +
@@ -278,29 +208,29 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Role = ''
     end
     object layTitleDescriptionAmount: TWebPanel
-      Left = 146
-      Top = 0
-      Width = 1284
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      AlignWithMargins = True
+      Left = 94
+      Top = 12
+      Width = 1324
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 0
+      Margins.Bottom = 12
       Align = alClient
       BorderStyle = bsNone
       ChildOrder = 2
-      Color = 3947580
+      Color = 2829099
       ShowCaption = False
-      ExplicitWidth = 1293
       object lblDescriptionAmount: TWebLabel
         Left = 0
-        Top = 30
-        Width = 1284
+        Top = 38
+        Width = 1324
         Height = 30
-        Margins.Left = 9
-        Margins.Top = 9
-        Margins.Right = 9
-        Margins.Bottom = 9
+        Margins.Left = 16
+        Margins.Top = 16
+        Margins.Right = 16
+        Margins.Bottom = 16
         Align = alTop
         Caption = 'Select how many names you want'
         Color = clBtnFace
@@ -311,29 +241,36 @@ object Frame_NameGenerator: TFrame_NameGenerator
       object lblTitleAmount: TWebLabel
         Left = 0
         Top = 0
-        Width = 1284
-        Height = 30
-        Margins.Left = 9
-        Margins.Top = 9
-        Margins.Right = 9
-        Margins.Bottom = 9
+        Width = 1324
+        Height = 38
+        Margins.Left = 16
+        Margins.Top = 16
+        Margins.Right = 16
+        Margins.Bottom = 16
         Align = alTop
         Caption = 'Amount'
         Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -28
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
-        ExplicitWidth = 75
+        ExplicitWidth = 99
       end
     end
     object sbAmount: TWebSpinEdit
-      Left = 1430
-      Top = 0
+      AlignWithMargins = True
+      Left = 1418
+      Top = 12
       Width = 263
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 12
+      Margins.Bottom = 12
       Align = alRight
       AutoSize = False
       BorderStyle = bsSingle
@@ -344,39 +281,36 @@ object Frame_NameGenerator: TFrame_NameGenerator
       MinValue = 0
       Role = ''
       Value = 20
-      ExplicitLeft = 714
-      ExplicitTop = 28
-      ExplicitHeight = 63
     end
   end
-  object WebPanel1: TWebPanel
+  object layNameList: TWebPanel
+    AlignWithMargins = True
     Left = 0
-    Top = 30
+    Top = 47
     Width = 1693
     Height = 97
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 6
     Align = alTop
+    BorderStyle = bsNone
     ChildOrder = 1
-    Color = 3947580
+    Color = 2829099
     ShowCaption = False
-    ExplicitTop = 100
-    object WebHTMLDiv1: TWebHTMLDiv
+    object imgNameList: TWebHTMLDiv
       AlignWithMargins = True
-      Left = 9
-      Top = 0
-      Width = 128
-      Height = 97
-      Margins.Left = 9
-      Margins.Top = 0
+      Left = 12
+      Top = 12
+      Width = 73
+      Height = 73
+      Margins.Left = 12
+      Margins.Top = 12
       Margins.Right = 9
-      Margins.Bottom = 0
+      Margins.Bottom = 12
       WidthStyle = ssAuto
       Align = alLeft
       ChildOrder = 2
-      ElementFont = efCSS
       HTML.Strings = (
         
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" f' +
@@ -395,14 +329,15 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Role = ''
     end
     object cbNameList: TWebComboBox
-      Left = 1439
-      Top = 0
-      Width = 254
+      AlignWithMargins = True
+      Left = 1418
+      Top = 12
+      Width = 263
       Height = 38
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 12
+      Margins.Bottom = 12
       Align = alRight
       Color = 3947580
       HeightPercent = 100.000000000000000000
@@ -414,24 +349,25 @@ object Frame_NameGenerator: TFrame_NameGenerator
         'GTA Vice City'
         'GTA San Andreas')
     end
-    object WebPanel2: TWebPanel
-      Left = 146
-      Top = 0
-      Width = 1293
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+    object layTitleDescriptionNameList: TWebPanel
+      AlignWithMargins = True
+      Left = 94
+      Top = 12
+      Width = 1324
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 0
+      Margins.Bottom = 12
       Align = alClient
       BorderStyle = bsNone
       ChildOrder = 2
-      Color = 3947580
+      Color = 2829099
       ShowCaption = False
-      object WebLabel2: TWebLabel
+      object lblDescriptionNameList: TWebLabel
         Left = 0
-        Top = 30
-        Width = 1293
+        Top = 38
+        Width = 1324
         Height = 30
         Margins.Left = 9
         Margins.Top = 9
@@ -444,11 +380,11 @@ object Frame_NameGenerator: TFrame_NameGenerator
         WidthPercent = 100.000000000000000000
         ExplicitWidth = 334
       end
-      object WebLabel3: TWebLabel
+      object lblTitleNameList: TWebLabel
         Left = 0
         Top = 0
-        Width = 1293
-        Height = 30
+        Width = 1324
+        Height = 38
         Margins.Left = 9
         Margins.Top = 9
         Margins.Right = 9
@@ -456,40 +392,46 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Align = alTop
         Caption = 'Name List'
         Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -28
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
-        ExplicitWidth = 93
+        ExplicitWidth = 123
       end
     end
   end
-  object WebPanel4: TWebPanel
+  object layMaxLength: TWebPanel
+    AlignWithMargins = True
     Left = 0
-    Top = 321
+    Top = 356
     Width = 1693
     Height = 97
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 6
     Align = alTop
+    BorderStyle = bsNone
     ChildOrder = 1
-    Color = 3947580
+    Color = 2829099
     ShowCaption = False
-    ExplicitTop = 200
     object WebHTMLDiv2: TWebHTMLDiv
       AlignWithMargins = True
-      Left = 9
-      Top = 0
-      Width = 128
-      Height = 97
-      Margins.Left = 9
-      Margins.Top = 0
+      Left = 12
+      Top = 12
+      Width = 73
+      Height = 73
+      Margins.Left = 12
+      Margins.Top = 12
       Margins.Right = 9
-      Margins.Bottom = 0
+      Margins.Bottom = 12
       WidthStyle = ssAuto
       Align = alLeft
       ChildOrder = 2
-      ElementFont = efCSS
       HTML.Strings = (
         
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" f' +
@@ -508,23 +450,24 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Role = ''
     end
     object WebPanel5: TWebPanel
-      Left = 146
-      Top = 0
-      Width = 1284
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      AlignWithMargins = True
+      Left = 94
+      Top = 12
+      Width = 1324
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 0
+      Margins.Bottom = 12
       Align = alClient
       BorderStyle = bsNone
       ChildOrder = 2
-      Color = 3947580
+      Color = 2829099
       ShowCaption = False
       object WebLabel5: TWebLabel
         Left = 0
-        Top = 30
-        Width = 1284
+        Top = 38
+        Width = 1324
         Height = 30
         Margins.Left = 9
         Margins.Top = 9
@@ -540,8 +483,8 @@ object Frame_NameGenerator: TFrame_NameGenerator
       object WebLabel6: TWebLabel
         Left = 0
         Top = 0
-        Width = 1284
-        Height = 30
+        Width = 1324
+        Height = 38
         Margins.Left = 9
         Margins.Top = 9
         Margins.Right = 9
@@ -549,20 +492,27 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Align = alTop
         Caption = 'Max Length'
         Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -28
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
-        ExplicitWidth = 110
+        ExplicitWidth = 145
       end
     end
     object sbMaxLength: TWebSpinEdit
-      Left = 1430
-      Top = 0
+      AlignWithMargins = True
+      Left = 1418
+      Top = 12
       Width = 263
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 12
+      Margins.Bottom = 12
       Align = alRight
       AutoSize = False
       BorderStyle = bsSingle
@@ -575,34 +525,34 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Value = 100
     end
   end
-  object WebPanel6: TWebPanel
+  object laySurname: TWebPanel
+    AlignWithMargins = True
     Left = 0
-    Top = 224
+    Top = 253
     Width = 1693
     Height = 97
-    Margins.Left = 5
-    Margins.Top = 5
-    Margins.Right = 5
-    Margins.Bottom = 5
+    Margins.Left = 0
+    Margins.Top = 0
+    Margins.Right = 0
+    Margins.Bottom = 6
     Align = alTop
+    BorderStyle = bsNone
     ChildOrder = 1
-    Color = 3947580
+    Color = 2829099
     ShowCaption = False
-    ExplicitTop = 141
     object WebHTMLDiv3: TWebHTMLDiv
       AlignWithMargins = True
-      Left = 9
-      Top = 0
-      Width = 128
-      Height = 97
-      Margins.Left = 9
-      Margins.Top = 0
+      Left = 12
+      Top = 12
+      Width = 73
+      Height = 73
+      Margins.Left = 12
+      Margins.Top = 12
       Margins.Right = 9
-      Margins.Bottom = 0
+      Margins.Bottom = 12
       WidthStyle = ssAuto
       Align = alLeft
       ChildOrder = 2
-      ElementFont = efCSS
       HTML.Strings = (
         
           '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" f' +
@@ -621,24 +571,24 @@ object Frame_NameGenerator: TFrame_NameGenerator
       Role = ''
     end
     object WebPanel7: TWebPanel
-      Left = 146
-      Top = 0
-      Width = 1503
-      Height = 97
-      Margins.Left = 5
-      Margins.Top = 5
-      Margins.Right = 5
-      Margins.Bottom = 5
+      AlignWithMargins = True
+      Left = 94
+      Top = 12
+      Width = 1543
+      Height = 73
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 0
+      Margins.Bottom = 12
       Align = alClient
       BorderStyle = bsNone
       ChildOrder = 2
-      Color = 3947580
+      Color = 2829099
       ShowCaption = False
-      ExplicitWidth = 1293
       object WebLabel7: TWebLabel
         Left = 0
-        Top = 30
-        Width = 1503
+        Top = 38
+        Width = 1543
         Height = 30
         Margins.Left = 9
         Margins.Top = 9
@@ -654,8 +604,8 @@ object Frame_NameGenerator: TFrame_NameGenerator
       object WebLabel8: TWebLabel
         Left = 0
         Top = 0
-        Width = 1503
-        Height = 30
+        Width = 1543
+        Height = 38
         Margins.Left = 9
         Margins.Top = 9
         Margins.Right = 9
@@ -663,22 +613,140 @@ object Frame_NameGenerator: TFrame_NameGenerator
         Align = alTop
         Caption = 'Surname'
         Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -28
+        Font.Name = 'Segoe UI'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
-        ExplicitWidth = 82
+        ExplicitWidth = 110
       end
     end
     object SwitchSurname: TWebToggleButton
-      Left = 1649
-      Top = 0
+      AlignWithMargins = True
+      Left = 1637
+      Top = 12
       Width = 44
       Height = 22
+      Margins.Left = 0
+      Margins.Top = 12
+      Margins.Right = 12
+      Margins.Bottom = 12
+      Align = alRight
+      Checked = True
+    end
+  end
+  object layBottom: TWebPanel
+    AlignWithMargins = True
+    Left = 0
+    Top = 586
+    Width = 1693
+    Height = 599
+    Margins.Left = 0
+    Margins.Top = 24
+    Margins.Right = 0
+    Margins.Bottom = 0
+    Align = alClient
+    BorderStyle = bsNone
+    ChildOrder = 8
+    ShowCaption = False
+    object memOutput: TWebMemo
+      Left = 0
+      Top = 56
+      Width = 1693
+      Height = 543
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
-      Align = alRight
-      ExplicitLeft = 1232
+      Align = alClient
+      AutoSize = False
+      Color = 2829099
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -21
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      HeightPercent = 100.000000000000000000
+      ParentFont = False
+      SelLength = 0
+      SelStart = 0
+      WidthPercent = 100.000000000000000000
+    end
+    object layMemTitleOutput: TWebPanel
+      Left = 0
+      Top = 0
+      Width = 1693
+      Height = 56
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alTop
+      BorderStyle = bsNone
+      ChildOrder = 4
+      Color = 3947580
+      ShowCaption = False
+      object memTitleOutput: TWebLabel
+        Left = 0
+        Top = 0
+        Width = 1352
+        Height = 56
+        Margins.Left = 9
+        Margins.Top = 9
+        Margins.Right = 9
+        Margins.Bottom = 9
+        Align = alClient
+        Caption = 'Names'
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -35
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        HeightPercent = 100.000000000000000000
+        ParentFont = False
+        WidthPercent = 100.000000000000000000
+        ExplicitWidth = 107
+        ExplicitHeight = 47
+      end
+      object btnRefresh: TWebButton
+        Left = 1352
+        Top = 0
+        Width = 168
+        Height = 56
+        Margins.Left = 5
+        Margins.Top = 5
+        Margins.Right = 5
+        Margins.Bottom = 5
+        Align = alRight
+        Caption = 'Refresh'
+        Color = 3947580
+        ChildOrder = 1
+        HeightPercent = 100.000000000000000000
+        WidthPercent = 100.000000000000000000
+        OnClick = btnRefreshClick
+      end
+      object btnCopy: TWebButton
+        AlignWithMargins = True
+        Left = 1525
+        Top = 0
+        Width = 168
+        Height = 56
+        Margins.Left = 5
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alRight
+        Caption = 'Copy'
+        Color = 3947580
+        ChildOrder = 1
+        HeightPercent = 100.000000000000000000
+        WidthPercent = 100.000000000000000000
+        OnClick = btnRefreshClick
+      end
     end
   end
 end

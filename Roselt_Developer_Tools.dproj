@@ -255,6 +255,7 @@
         <Icon_MainIcon>Roselt_Developer_Tools_Icon.ico</Icon_MainIcon>
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <Icns_MainIcns>Roselt_Developer_Tools_Icns.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
         <DCC_UsePackage>DataSnapServer;fmx;DbxCommonDriver;bindengine;IndyIPCommon;FireDACCommonODBC;emsclient;IndyProtocols;dbxcds;DBXFirebirdDriver;dxCoreRS28;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FireDACDBXDriver;fmxdae;CustomIPTransport;FireDACMSSQLDriver;IndySystem;ibxbindings;FMXTMSFNCCorePkgDXE14;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;bindcompdbx;rtl;FireDACMySQLDriver;DBXSqliteDriver;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;DBXOracleDriver;DBXInformixDriver;fmxobj;DataSnapNativeClient;FMXTMSFNCMapsPkgDXE14;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;cxLibraryRS28;bindcompfmx;inetdb;ibmonitor;FireDACASADriver;fmxFireDAC;DBXMySQLDriver;DataSnapCommon;fmxase;dbrtl;FireDACOracleDriver;DataSnapIndy10ServerTransport;DBXInterBaseDriver;FireDACMongoDBDriver;RadiantShapesFmx;FireDACTDataDriver;bindcomp;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;CloudService;DBXSybaseASADriver;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -265,6 +266,7 @@
         <Icon_MainIcon>Roselt_Developer_Tools_Icon.ico</Icon_MainIcon>
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <Icns_MainIcns>Roselt_Developer_Tools_Icns.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
         <DCC_UsePackage>DataSnapServer;fmx;DbxCommonDriver;bindengine;IndyIPCommon;FireDACCommonODBC;emsclient;IndyProtocols;dbxcds;DBXFirebirdDriver;FireDACSqliteDriver;DbxClientDriver;soapmidas;dbexpress;inet;FireDACDBXDriver;fmxdae;CustomIPTransport;FireDACMSSQLDriver;IndySystem;ibxbindings;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;bindcompdbx;rtl;FireDACMySQLDriver;DBXSqliteDriver;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;DBXOracleDriver;DBXInformixDriver;fmxobj;DataSnapNativeClient;FireDACCommonDriver;IndyIPClient;bindcompfmx;inetdb;ibmonitor;FireDACASADriver;fmxFireDAC;DBXMySQLDriver;DataSnapCommon;fmxase;dbrtl;FireDACOracleDriver;DataSnapIndy10ServerTransport;DBXInterBaseDriver;FireDACMongoDBDriver;FireDACTDataDriver;bindcomp;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;CloudService;DBXSybaseASADriver;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -275,6 +277,7 @@
         <Icon_MainIcon>Roselt_Developer_Tools_Icon.ico</Icon_MainIcon>
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <Icns_MainIcns>Roselt_Developer_Tools_Icns.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>RaizeComponentsVcl;dxPSdxSpreadSheetLnkRS28;vclwinx;DataSnapServer;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;cxExportRS28;dxHttpIndyRequestRS28;appanalytics;IndyProtocols;vclx;dxPSPrVwRibbonRS28;TeeTree2D28Tee9;dbxcds;vcledge;dxTileControlRS28;dxPSdxDBOCLnkRS28;cxPivotGridOLAPRS28;nsTrayIcon;dxGDIPlusRS28;DBXFirebirdDriver;dxCoreRS28;cxPivotGridRS28;dxPSCoreRS28;FireDACSqliteDriver;DbxClientDriver;FmxTeeUI928;dxSpreadSheetRS28;dxSkinsCoreRS28;soapmidas;dxBarRS28;dxSpreadSheetInplaceRichEditRS28;dxADOServerModeRS28;dxWizardControlRS28;dbexpress;Python;inet;dxServerModeRS28;MARSServerWizard;PythonVcl;vcltouch;cxTreeListRS28;dxBarDBNavRS28;TMSFMXPackPkgDXE14;TeeMaker128;FireDACDBXDriver;dxSpreadSheetCoreDialogsRS28;fmxdae;dxPScxCommonRS28;dxNavBarRS28;CustomIPTransport;FireDACMSSQLDriver;TeePro928;dxSpreadSheetReportDesignerRS28;dxFireDACEMFRS28;OmniThreadLibraryRuntime;dxComnRS28;madExcept_;dxFlowChartDesignerRS28;IndySystem;cxVerticalGridRS28;FMXTeeDB928;ibxbindings;dxmdsRS28;dxRichEditControlRS28;cxSchedulerGridRS28;dxPsPrVwAdvRS28;dxPScxSchedulerLnkRS28;dxPSdxOCLnkRS28;vclFireDAC;madDisAsm_;FMXTeePro928;FMXTMSFNCCorePkgDXE14;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;dxADOEMFRS28;dxRibbonCustomizationFormRS28;dxPSdxDBTVLnkRS28;bindcompdbx;dxGaugeControlRS28;rtl;FireDACMySQLDriver;dxDockingRS28;dxPDFViewerRS28;DBXSqliteDriver;TeeDB928;dxBarExtItemsRS28;dxPSdxFCLnkRS28;dxorgcRS28;DBXSybaseASEDriver;TeeImage928;dxSpreadSheetCoreConditionalFormattingDialogsRS28;dxPSRichEditControlLnkRS28;vclimg;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;TeeWorld928;ibxpress;dsnap;FireDACDb2Driver;cxSchedulerRibbonStyleEventEditorRS28;DBXOracleDriver;dxPScxTLLnkRS28;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;dxFlowChartRS28;dxPScxPCProdRS28;DatasnapConnectorsFreePascal;FMXTeeLanguage928;emshosting;dxRichEditDocumentModelRS28;dxPSdxMapControlLnkRS28;FMXTMSFNCMapsPkgDXE14;MARSClient.Core;dxPScxVGridLnkRS28;TeeUI928;dxPScxPivotGridLnkRS28;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;TeeGL928;cxLibraryRS28;dxCloudServiceLibraryRS28;bindcompvclwinx;emsedge;bindcompfmx;madBasic_;dxPSdxPDFViewerLnkRS28;inetdb;dxSpreadSheetCoreRS28;cxSchedulerTreeBrowserRS28;ibmonitor;FireDACASADriver;dxTabbedMDIRS28;VCLTeeGrid;MARSClient.FireDAC;dxRichEditInplaceRS28;vclactnband;TeeImport928;fmxFireDAC;FMXTree28;dxFireDACServerModeRS28;FireDACInfxDriver;DBXMySQLDriver;TeeLanguage928;VclSmp;dxPSdxLCLnkRS28;DataSnapCommon;fmxase;dxdbtrRS28;VCLTMSFNCMapsPkgDXE14;DBXOdbcDriver;dbrtl;FireDACOracleDriver;dxPSLnksRS28;FireDACMSAccDriver;FMXTeeGrid;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;dxSpreadSheetConditionalFormattingDialogsRS28;RadiantShapesFmx;FireDACTDataDriver;VCLTMSFNCCorePkgDXE14;vcldb;dxDBXServerModeRS28;cxSchedulerRS28;dxRibbonRS28;SynEditDR;dxFlowChartLayoutsRS28;dxPScxExtCommonRS28;dxdborRS28;dxRichEditControlCoreRS28;bindcomp;dxPScxGridLnkRS28;IndyCore;RESTBackendComponents;cxPivotGridChartRS28;dxBarExtDBItemsRS28;dxRichEditCoreRS28;cxTreeListdxBarPopupMenuRS28;dxFlowChartAdvancedCustomizeFormRS28;FireDACADSDriver;RaizeComponentsVclDb;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;FMXTee928;cxSchedulerWebServiceStorageRS28;dxtrmdRS28;DBXDb2Driver;dxPSdxGaugeControlLnkRS28;cxGridRS28;dxSpellCheckerRS28;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;dxMapControlRS28;bindcompvcl;dxEMFRS28;CloudService;DBXSybaseASADriver;PythonFmx;Tee928;soaprtl;FMXTeeImport928;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -290,6 +293,7 @@
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
         <VerInfo_MajorVer>3</VerInfo_MajorVer>
         <VerInfo_PreRelease>true</VerInfo_PreRelease>
+        <Icns_MainIcns>Roselt_Developer_Tools_Icns.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>RaizeComponentsVcl;dxPSdxSpreadSheetLnkRS28;vclwinx;DataSnapServer;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;cxExportRS28;dxHttpIndyRequestRS28;appanalytics;IndyProtocols;vclx;dxPSPrVwRibbonRS28;dbxcds;vcledge;dxTileControlRS28;dxPSdxDBOCLnkRS28;cxPivotGridOLAPRS28;nsTrayIcon;dxGDIPlusRS28;DBXFirebirdDriver;cxPivotGridRS28;dxPSCoreRS28;FireDACSqliteDriver;DbxClientDriver;dxSpreadSheetRS28;dxSkinsCoreRS28;soapmidas;dxBarRS28;dxSpreadSheetInplaceRichEditRS28;dxADOServerModeRS28;dxWizardControlRS28;dbexpress;Python;inet;dxServerModeRS28;PythonVcl;vcltouch;cxTreeListRS28;dxBarDBNavRS28;FireDACDBXDriver;dxSpreadSheetCoreDialogsRS28;fmxdae;dxPScxCommonRS28;dxNavBarRS28;CustomIPTransport;FireDACMSSQLDriver;dxSpreadSheetReportDesignerRS28;dxFireDACEMFRS28;OmniThreadLibraryRuntime;dxComnRS28;dxFlowChartDesignerRS28;IndySystem;cxVerticalGridRS28;ibxbindings;dxmdsRS28;dxRichEditControlRS28;cxSchedulerGridRS28;dxPsPrVwAdvRS28;dxPScxSchedulerLnkRS28;dxPSdxOCLnkRS28;vclFireDAC;FMXTMSFNCCorePkgDXE14;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;dxADOEMFRS28;dxRibbonCustomizationFormRS28;dxPSdxDBTVLnkRS28;bindcompdbx;dxGaugeControlRS28;rtl;FireDACMySQLDriver;dxDockingRS28;dxPDFViewerRS28;DBXSqliteDriver;dxBarExtItemsRS28;dxPSdxFCLnkRS28;dxorgcRS28;DBXSybaseASEDriver;dxSpreadSheetCoreConditionalFormattingDialogsRS28;dxPSRichEditControlLnkRS28;vclimg;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;FireDACDb2Driver;cxSchedulerRibbonStyleEventEditorRS28;DBXOracleDriver;dxPScxTLLnkRS28;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;dxFlowChartRS28;dxPScxPCProdRS28;DatasnapConnectorsFreePascal;emshosting;dxRichEditDocumentModelRS28;dxPSdxMapControlLnkRS28;FMXTMSFNCMapsPkgDXE14;MARSClient.Core;dxPScxVGridLnkRS28;dxPScxPivotGridLnkRS28;FireDACCommonDriver;RadiantShapesFmx_Design;IndyIPClient;dxCloudServiceLibraryRS28;bindcompvclwinx;emsedge;bindcompfmx;dxPSdxPDFViewerLnkRS28;inetdb;dxSpreadSheetCoreRS28;cxSchedulerTreeBrowserRS28;ibmonitor;FireDACASADriver;dxTabbedMDIRS28;VCLTeeGrid;dxRichEditInplaceRS28;vclactnband;fmxFireDAC;dxFireDACServerModeRS28;FireDACInfxDriver;DBXMySQLDriver;VclSmp;dxPSdxLCLnkRS28;DataSnapCommon;fmxase;dxdbtrRS28;VCLTMSFNCMapsPkgDXE14;DBXOdbcDriver;dbrtl;FireDACOracleDriver;dxPSLnksRS28;FireDACMSAccDriver;FMXTeeGrid;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;dxSpreadSheetConditionalFormattingDialogsRS28;RadiantShapesFmx;FireDACTDataDriver;VCLTMSFNCCorePkgDXE14;vcldb;dxDBXServerModeRS28;cxSchedulerRS28;dxRibbonRS28;SynEditDR;dxFlowChartLayoutsRS28;dxPScxExtCommonRS28;dxdborRS28;dxRichEditControlCoreRS28;bindcomp;dxPScxGridLnkRS28;IndyCore;RESTBackendComponents;cxPivotGridChartRS28;dxBarExtDBItemsRS28;dxRichEditCoreRS28;cxTreeListdxBarPopupMenuRS28;dxFlowChartAdvancedCustomizeFormRS28;FireDACADSDriver;RaizeComponentsVclDb;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;cxSchedulerWebServiceStorageRS28;dxtrmdRS28;DBXDb2Driver;dxPSdxGaugeControlLnkRS28;cxGridRS28;dxSpellCheckerRS28;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;dxMapControlRS28;bindcompvcl;dxEMFRS28;CloudService;DBXSybaseASADriver;PythonFmx;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -305,6 +309,7 @@
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
         <VerInfo_MajorVer>3</VerInfo_MajorVer>
         <VerInfo_PreRelease>true</VerInfo_PreRelease>
+        <Icns_MainIcns>Roselt_Developer_Tools_Icns.icns</Icns_MainIcns>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -380,6 +385,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>Roselt_Developer_Tools_Icon.ico</Icon_MainIcon>
         <VerInfo_Keys>CompanyName=Shaun Roselt;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_PreRelease>true</VerInfo_PreRelease>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -588,8 +594,13 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="Lib\Roselt.Clipboard.pas"/>
         <None Include="README.md"/>
         <None Include="RELEASE_NOTES.md"/>
+        <RcItem Include="Roselt_Developer_Tools_Icon.ico">
+            <ResourceType>ICON</ResourceType>
+            <ResourceId>Icon_1</ResourceId>
+        </RcItem>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -972,17 +983,23 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="RELEASE_NOTES.md" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Roselt_Developer_Tools_Icon.ico" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>Roselt_Developer_Tools.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win64\Debug\Roselt_Developer_Tools.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win64">
-                        <RemoteName>Roselt_Developer_Tools.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

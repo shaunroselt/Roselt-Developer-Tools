@@ -41,6 +41,7 @@ object Frame_FeatherIcons: TFrame_FeatherIcons
       TextSettings.HorzAlign = Center
       Text = 'https://feathericons.com/'
       TabOrder = 1
+      OnClick = lblTitleClick
     end
     object btnBack: TButton
       Align = Left

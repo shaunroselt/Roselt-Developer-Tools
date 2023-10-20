@@ -1,5 +1,7 @@
 program Roselt_Developer_Tools_Web;
 
+{$R *.dres}
+
 uses
   Vcl.Forms,
   WEBLib.Forms,
@@ -12,7 +14,9 @@ uses
   Roselt.NameGenerator in 'Lib\Roselt.NameGenerator.pas',
   Roselt.Utility in 'Lib\Roselt.Utility.pas',
   Roselt.NumberBaseConversion in 'Lib\Roselt.NumberBaseConversion.pas',
-  uFeatherIcons in 'Lib\uFeatherIcons.pas';
+  uFeatherIcons in 'Lib\uFeatherIcons.pas',
+  Roselt.SystemInformation in 'Lib\Roselt.SystemInformation.pas',
+  Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas';
 
 {$R *.res}
 

@@ -41,6 +41,7 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
       TextSettings.HorzAlign = Center
       Text = 'https://icons.getbootstrap.com/'
       TabOrder = 1
+      OnClick = lblTitleClick
     end
     object btnBack: TButton
       Align = Left
@@ -481,8 +482,8 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
-          Viewport.Width = 382.000000000000000000
-          Viewport.Height = 41.000000000000000000
+          Viewport.Width = 386.000000000000000000
+          Viewport.Height = 45.000000000000000000
         end
       end
       object laySVGCode: TLayout
@@ -557,8 +558,8 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
           Size.Height = 428.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
-          Viewport.Width = 382.000000000000000000
-          Viewport.Height = 424.000000000000000000
+          Viewport.Width = 386.000000000000000000
+          Viewport.Height = 428.000000000000000000
         end
       end
     end

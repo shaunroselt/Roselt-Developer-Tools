@@ -36,6 +36,7 @@ uses
   FMX.EditBox,
   FMX.SpinBox,
 
+  Roselt.Clipboard,
   Roselt.AppInfo,
   Roselt.Tools,
   Roselt.Utility,
@@ -225,6 +226,10 @@ type
     lblFullScreenDescription: TLabel;
     lblSwitchFullScreen: TLabel;
     SwitchFullScreen: TSwitch;
+    layTop: TLayout;
+    lblTitle: TLabel;
+    btnBackChangeLog: TButton;
+    imgBackChangeLog: TSkSvg;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -248,6 +253,9 @@ type
     procedure btnReportAProblemLinkClick(Sender: TObject);
     procedure SwitchFullScreenSwitch(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure btnAppInfoCopyToClipboardClick(Sender: TObject);
+    procedure btnBackChangeLogClick(Sender: TObject);
+    procedure lblTitleClick(Sender: TObject);
   private
     { Private declarations }
     HamburgerMenuWidth: Single;
@@ -798,6 +806,11 @@ begin
   layAllToolsGrid.Height := NewHeight;
 end;
 
+procedure TfrmMain.lblTitleClick(Sender: TObject);
+begin
+  OpenURL(TLabel(Sender).Text);
+end;
+
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
 begin
   for var I := 0 to LayoutContainer.Children.Count-1 do // Loop through all tools and hide them
@@ -915,6 +928,17 @@ begin
   if (TControl(Sender).Name = 'btnAllTools') then SearchText := '';
 
   edtSearchAllTools.Text := SearchText;
+end;
+
+procedure TfrmMain.btnAppInfoCopyToClipboardClick(Sender: TObject);
+begin
+  CopyToClipboard(lblAppInfoTitle.Text + sLineBreak + sLineBreak + lblAppInfoDescription.Text);
+end;
+
+procedure TfrmMain.btnBackChangeLogClick(Sender: TObject);
+begin
+  lblNavTitle.Text := 'Settings';
+  SelectTool('laySettings');
 end;
 
 procedure TfrmMain.btnChangeLogClick(Sender: TObject);

@@ -21,6 +21,7 @@ uses
   WEBLib.WebCtrls,
   WEBLib.WebTools,
 
+  Roselt.SystemInformation,
   Roselt.AppInfo,
   Roselt.Utility,
   Roselt.Tools,
@@ -68,6 +69,7 @@ type
     btnHamburger: TWebHTMLDiv;
     edtSearchAllTools: TWebEdit;
     WebImageControl1: TWebImageControl;
+    WebLabel4: TWebLabel;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -491,6 +493,7 @@ procedure TfrmMain.WebFormShow(Sender: TObject);
 var
   ToolParam: String;
   SVG_Code: String;
+  SysInfo: TSystemInformation;
 begin
   ToolParam := GetQueryParam('tool');
 
@@ -512,6 +515,20 @@ begin
   SVG_Code := GetBootstrapIcon('5-square-fill', 24, 'purple'); // Returns SVG Code
 
   WebImageControl1.ElementHandle.setAttribute('src',GetBootstrapIconBase64('5-square-fill', 24, 'purple'));
+
+
+  SysInfo := TSystemInformation.Create;
+
+  console.log(window.navigator.language);
+  console.log(window.navigator.userAgent);
+  console.log(SysInfo.OperatingSystem);
+  WebLabel4.Caption := window.navigator.userAgent;
+  edtSearchAllTools.Text := SysInfo.OperatingSystem;
+
+
+  console.log(SpeedTest);
+
+  SysInfo.Free;
 
 
 end;

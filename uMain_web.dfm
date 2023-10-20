@@ -15,9 +15,9 @@ object frmMain: TfrmMain
   OnShow = WebFormShow
   PixelsPerInch = 168
   object layStuffThatWillNeverShow: TWebPanel
-    Left = 708
+    Left = 701
     Top = 85
-    Width = 1490
+    Width = 1497
     Height = 1315
     Margins.Left = 6
     Margins.Top = 6
@@ -81,7 +81,7 @@ object frmMain: TfrmMain
   object SplitterNavContent: TWebSplitter
     Left = 700
     Top = 85
-    Width = 8
+    Width = 1
     Height = 1315
     Margins.Left = 6
     Margins.Top = 6
@@ -89,7 +89,7 @@ object frmMain: TfrmMain
     Margins.Bottom = 6
     Align = alLeft
     ChildOrder = 3
-    Color = clBtnFace
+    Color = clWhite
   end
   object MultiView: TWebScrollBox
     Left = 0
@@ -799,15 +799,14 @@ object frmMain: TfrmMain
     end
   end
   object LayoutContainer: TWebScrollBox
-    Left = 708
+    Left = 701
     Top = 85
-    Width = 1490
+    Width = 1497
     Height = 1315
     Margins.Left = 11
     Margins.Top = 11
     Margins.Right = 11
     Margins.Bottom = 11
-    ElementClassName = 'card'
     Align = alClient
     BorderStyle = bsNone
     ChildOrder = 6
@@ -816,19 +815,16 @@ object frmMain: TfrmMain
     object layTesting: TWebPanel
       Left = 0
       Top = 0
-      Width = 1490
+      Width = 1497
       Height = 1315
       Margins.Left = 11
       Margins.Top = 11
       Margins.Right = 11
       Margins.Bottom = 11
-      ElementClassName = 'card'
       Align = alClient
       BorderStyle = bsNone
       ChildOrder = 1
       Color = clWindow
-      ElementBodyClassName = 'card-body'
-      ElementFont = efCSS
       ShowCaption = False
       object WebLabel10: TWebLabel
         Left = 616
@@ -848,7 +844,7 @@ object frmMain: TfrmMain
       object lblAppInfoDescription: TWebLabel
         Left = 0
         Top = 0
-        Width = 1490
+        Width = 1497
         Height = 50
         Margins.Left = 6
         Margins.Top = 6
@@ -866,24 +862,40 @@ object frmMain: TfrmMain
     object layAllTools: TWebPanel
       Left = 0
       Top = 0
-      Width = 1490
+      Width = 1497
       Height = 1315
       Margins.Left = 11
       Margins.Top = 11
       Margins.Right = 11
       Margins.Bottom = 11
-      ElementClassName = 'card'
       Align = alClient
+      BorderStyle = bsNone
       ChildOrder = 2
       Color = 3947580
-      ElementBodyClassName = 'card-body'
-      ElementFont = efCSS
       ShowCaption = False
+      object WebLabel4: TWebLabel
+        Left = 0
+        Top = 89
+        Width = 1497
+        Height = 1226
+        Margins.Left = 5
+        Margins.Top = 5
+        Margins.Right = 5
+        Margins.Bottom = 5
+        Align = alClient
+        Caption = 'WebLabel4'
+        ElementFont = efCSS
+        HeightStyle = ssAuto
+        HeightPercent = 100.000000000000000000
+        WidthPercent = 100.000000000000000000
+        ExplicitWidth = 181
+        ExplicitHeight = 50
+      end
       object edtSearchAllTools: TWebEdit
         AlignWithMargins = True
         Left = 6
         Top = 6
-        Width = 1478
+        Width = 1485
         Height = 77
         Margins.Left = 6
         Margins.Top = 6

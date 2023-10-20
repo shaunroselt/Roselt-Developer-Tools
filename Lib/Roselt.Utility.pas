@@ -37,12 +37,14 @@ procedure SetCookie(cookie_name, value: String; minutes: Integer);
 procedure DeleteCookie(cookie_name: String);
 {$ENDIF}
 
-procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean = True{$ENDIF});
+procedure OpenURL(URL: String{$IFDEF WEBLIB}; NewTab: Boolean = True{$ENDIF});
 
-function RemoveNonDigits(const S: string): string;
-function RemoveNonDigitsAndLetters(const S: string): string;
+function SpeedTest(): String;
 
-function RemoveEmptyLinesAndWhitespace(const S: string): string;
+function RemoveNonDigits(const S: String): String;
+function RemoveNonDigitsAndLetters(const S: String): String;
+
+function RemoveEmptyLinesAndWhitespace(const S: String): String;
 
 implementation
 
@@ -110,7 +112,7 @@ begin
 end;
 {$ENDIF}
 
-procedure OpenURL(URL: string{$IFDEF WEBLIB}; NewTab: Boolean{$ENDIF});
+procedure OpenURL(URL: String{$IFDEF WEBLIB}; NewTab: Boolean{$ENDIF});
 begin
   {$IFDEF MSWINDOWS}
     ShellExecute(0, 'OPEN', PWideChar(URL), nil, nil, SW_SHOWNORMAL);
@@ -135,7 +137,59 @@ begin
   {$ENDIF}
 end;
 
-function RemoveNonDigits(const S: string): string;
+function SpeedTest(): String;
+const
+  imageAddr: String = 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Bloemen_van_adderwortel_%28Persicaria_bistorta%2C_synoniem%2C_Polygonum_bistorta%29_06-06-2021._%28d.j.b%29.jpg';
+  downloadSize: UInt64 = 7300000; //bytes
+begin
+  Result := '0Mbps';
+  {$IFDEF WEBLIB}
+    asm
+    if (navigator?.connection !== undefined)
+      Result = `${navigator?.connection?.downlink}Mbps`;
+
+    function InitiateSpeedDetection() {
+        console.log("Loading the image, please wait...");
+        window.setTimeout(MeasureConnectionSpeed, 1);
+    };
+
+    if (window.addEventListener) {
+        window.addEventListener('load', InitiateSpeedDetection, false);
+    } else if (window.attachEvent) {
+        window.attachEvent('onload', InitiateSpeedDetection);
+    }
+
+    function MeasureConnectionSpeed() {
+        let startTime, endTime;
+        let download = new Image();
+        download.onload = function () {
+            endTime = (new Date()).getTime();
+            showResults();
+        }
+
+        download.onerror = function (err, msg) {
+            console.log("Invalid image, or error downloading");
+        }
+
+        startTime = (new Date()).getTime();
+        const cacheBuster = "?nnn=" + startTime;
+        download.src = imageAddr + cacheBuster;
+
+        function showResults() {
+            const duration = (endTime - startTime) / 1000;
+            const bitsLoaded = downloadSize * 8;
+            const speedBps = (bitsLoaded / duration).toFixed(2);
+            const speedKbps = (speedBps / 1024).toFixed(2);
+            const speedMbps = (speedKbps / 1024).toFixed(2);
+            Result = `${speedMbps}Mbps`;
+            console.log(Result);
+        }
+    }
+    end;
+  {$ENDIF}
+end;
+
+function RemoveNonDigits(const S: String): String;
 begin
   {$IFNDEF WEBLIB}
     SetLength(Result, S.Length);
@@ -155,7 +209,7 @@ begin
   {$ENDIF}
 end;
 
-function RemoveNonDigitsAndLetters(const S: string): string;
+function RemoveNonDigitsAndLetters(const S: String): String;
 begin
   {$IFNDEF WEBLIB}
     SetLength(Result, S.Length);
@@ -175,7 +229,7 @@ begin
   {$ENDIF}
 end;
 
-function RemoveEmptyLinesAndWhitespace(const S: string): string;
+function RemoveEmptyLinesAndWhitespace(const S: String): String;
 var
   SL: TStringList;
   I: UInt64;

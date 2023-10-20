@@ -2,6 +2,8 @@ program Roselt_Developer_Tools;
 
 
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -57,7 +59,8 @@ uses
   uFrame_FontAwesomeIcons in 'Tools\App\uFrame_FontAwesomeIcons.pas' {Frame_FontAwesomeIcons: TFrame},
   uFeatherIcons in 'Lib\uFeatherIcons.pas',
   uFrame_TraceRoute in 'Tools\App\uFrame_TraceRoute.pas' {Frame_TraceRoute: TFrame},
-  uFrame_FeatherIcons in 'Tools\App\uFrame_FeatherIcons.pas' {Frame_FeatherIcons: TFrame};
+  uFrame_FeatherIcons in 'Tools\App\uFrame_FeatherIcons.pas' {Frame_FeatherIcons: TFrame},
+  Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas';
 
 {$R *.res}
 

@@ -78,6 +78,7 @@ type
     procedure btnBackClick(Sender: TObject);
     procedure btnCopyToClipboardSVGCodeClick(Sender: TObject);
     procedure btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
+    procedure lblTitleClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -179,6 +180,11 @@ begin
   btnBack.Visible := True;
   layIcons.Visible := False;
   layDetails.Visible := True;
+end;
+
+procedure TFrame_FontAwesomeIcons.lblTitleClick(Sender: TObject);
+begin
+  OpenURL(TLabel(Sender).Text);
 end;
 
 end.

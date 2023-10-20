@@ -41,6 +41,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
       TextSettings.HorzAlign = Center
       Text = 'https://fontawesome.com/icons'
       TabOrder = 1
+      OnClick = lblTitleClick
     end
     object btnBack: TButton
       Align = Left

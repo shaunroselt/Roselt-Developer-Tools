@@ -33,8 +33,8 @@ type
     lblDescriptionLetterCase: TWebLabel;
     lblTitleLetterCase: TWebLabel;
     btnRefresh: TWebButton;
-    WebPanel3: TWebPanel;
-    WebLabel4: TWebLabel;
+    layMemTitleOutput: TWebPanel;
+    memTitleOutput: TWebLabel;
     memOutput: TWebMemo;
     layAmount: TWebPanel;
     imgAmount: TWebHTMLDiv;
@@ -42,24 +42,26 @@ type
     lblDescriptionAmount: TWebLabel;
     lblTitleAmount: TWebLabel;
     sbAmount: TWebSpinEdit;
-    WebPanel1: TWebPanel;
-    WebHTMLDiv1: TWebHTMLDiv;
+    layNameList: TWebPanel;
+    imgNameList: TWebHTMLDiv;
     cbNameList: TWebComboBox;
-    WebPanel2: TWebPanel;
-    WebLabel2: TWebLabel;
-    WebLabel3: TWebLabel;
-    WebPanel4: TWebPanel;
+    layTitleDescriptionNameList: TWebPanel;
+    lblDescriptionNameList: TWebLabel;
+    lblTitleNameList: TWebLabel;
+    layMaxLength: TWebPanel;
     WebHTMLDiv2: TWebHTMLDiv;
     WebPanel5: TWebPanel;
     WebLabel5: TWebLabel;
     WebLabel6: TWebLabel;
     sbMaxLength: TWebSpinEdit;
-    WebPanel6: TWebPanel;
+    laySurname: TWebPanel;
     WebHTMLDiv3: TWebHTMLDiv;
     WebPanel7: TWebPanel;
     WebLabel7: TWebLabel;
     WebLabel8: TWebLabel;
     SwitchSurname: TWebToggleButton;
+    layBottom: TWebPanel;
+    btnCopy: TWebButton;
     procedure btnRefreshClick(Sender: TObject);
   private
     { Private declarations }

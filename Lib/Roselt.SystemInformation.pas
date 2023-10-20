@@ -112,6 +112,9 @@ Type
     function GetUserName: String;
     function GetMacAddress: String;
     function GetVideoCardName: String;
+    {$IFDEF WEBLIB}
+      function GetBrowser(): String;
+    {$ENDIF}
   Public
     constructor Create;
     property VideoCard: String read FVideoCard;
@@ -126,6 +129,9 @@ Type
     property AppVersion: String read GetAppVersion;
     property SystemLocation: TSystemLocation read GetSystemLocation;
     property UserName: String read FUserName write FUserName;
+    {$IFDEF WEBLIB}
+      property Browser: String read GetBrowser;
+    {$ENDIF}
   end;
 
 implementation
@@ -285,6 +291,26 @@ begin
 
   result := wMajor.ToString + '.' + wMinor.ToString + '.' + wRelease.ToString + '.' + wBuild.ToString;
 end;
+
+
+{$IFDEF WEBLIB}
+function TSystemInformation.GetBrowser: String;
+var
+  UserAgent: String;
+begin
+  UserAgent := window.navigator.userAgent;
+  Result := 'Unknown';
+  if (UserAgent.indexOf('Opera') <> -1) or (UserAgent.indexOf('OPR') <> -1) then Result := 'Opera';
+  if (UserAgent.indexOf('Edg') <> -1) then Result := 'Edge';
+  if (UserAgent.indexOf('Chrome') <> -1) then Result := 'Chrome';
+  if (UserAgent.indexOf('Windows NT 6.0') <> -1) then Result := 'Windows Vista';
+  if (UserAgent.indexOf('Windows NT 5.1') <> -1) then Result := 'Windows XP';
+  if (UserAgent.indexOf('Windows NT 5.0') <> -1) then Result := 'Windows 2000';
+  if (UserAgent.indexOf('Mac') <> -1) then Result := 'Mac/iOS';
+  if (UserAgent.indexOf('X11') <> -1) then Result := 'UNIX';
+  if (UserAgent.indexOf('Linux') <> -1) then Result := 'Linux';
+end;
+{$ENDIF}
 
 function TSystemInformation.GetIPAddress: String;
   {$IF Defined(MSWINDOWS)}

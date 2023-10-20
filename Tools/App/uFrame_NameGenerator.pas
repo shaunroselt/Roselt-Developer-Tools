@@ -28,10 +28,10 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   FMX.Edit,
-  FMX.Platform,
   FMX.EditBox,
   FMX.SpinBox,
 
+  Roselt.Clipboard,
   Roselt.NameGenerator,
 
   System.Skia,
@@ -102,11 +102,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_NameGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_NameGenerator.btnRefreshClick(Sender: TObject);
