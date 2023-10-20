@@ -7,7 +7,7 @@
 
 Cross-Platform Utilities App for Developers.
 
-![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/2ef0099e-0c42-4a9a-a5b8-72f06ec76da1)
+![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/a39f035c-686d-4b47-879c-2d0124667b82)
 
 
 _Note: All tools are still in active development with lots of bugs_
@@ -33,6 +33,7 @@ _Note: All tools are still in active development with lots of bugs_
 - Image Effects
 - HTML Preview
 - Ping IP / Domain
+- Trace Route
 - Bootstrap Icons
 - Font Awesome Icons
 - Feather Icons
