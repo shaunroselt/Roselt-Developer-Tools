@@ -56,7 +56,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 * [Version 3.0.0 Beta 1 (27/04/2020)](#version-300-beta-1-27042020)
 * [Version 3.0.0 Beta 2 (28/05/2023)](#version-300-beta-2-28052023)
 * [Version 3.0.0 Beta 3 (29/07/2023)](#version-300-beta-3-29072023)
-* [Version 3.0.0 Beta 4 (Unreleased)](#version-300-beta-4-unreleased)
+* [Version 3.0.0 Beta 4 (21/10/2023)](#version-300-beta-4-unreleased)
 
 
 
