@@ -68,11 +68,6 @@ _Note: All tools are still in active development with lots of bugs_
 ## Download
 Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/)
 
-### MacOS (Admin/Sudo Permissions)
-Ping Tool and TraceRoute will only work with Admin Permissions
-to get it working open a terminal and run
-sudo path-to.app/Contents/MacOS/Roselt_Developer_Tools
-
 
 ## Platform Support
 
@@ -84,6 +79,10 @@ sudo path-to.app/Contents/MacOS/Roselt_Developer_Tools
 | iOS / tvOS | *Coming soon!*             |
 | Linux      | *Coming soon!*             |
 | Web        | *Coming soon!*             |
+
+
+### MacOS (Admin/Sudo Permissions)
+The "Ping IP / Domain" Tool and "Trace Route" Tool will only work with Admin Permissions on MacOS. To get it working open a terminal and run `sudo path-to.app/Contents/MacOS/Roselt_Developer_Tools`
 
 ## Release Notes (Change Log)
 [RELEASE_NOTES.md](https://github.com/shaunroselt/Roselt-Developer-Tools/blob/master/RELEASE_NOTES.md)
