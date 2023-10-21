@@ -75,7 +75,7 @@ Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](http
 | ---------- | -------------------------- |
 | Windows    | 10                         |
 | Android    | *Coming soon!*             |
-| macOS      | 14                         |
+| MacOS      | 14                         |
 | iOS / tvOS | *Coming soon!*             |
 | Linux      | *Coming soon!*             |
 | Web        | *Coming soon!*             |
