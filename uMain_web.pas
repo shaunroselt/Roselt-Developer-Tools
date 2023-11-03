@@ -27,7 +27,7 @@ uses
   Roselt.Tools,
   uBootstrapIcons,
 
-  uFrame_NameGenerator;
+  uFrame_NameGenerator, Vcl.Imaging.pngimage;
 
 type
   TfrmMain = class(TWebForm)
@@ -268,6 +268,7 @@ begin
 //    end;
 end;
 
+
 procedure TfrmMain.WebFormCreate(Sender: TObject);
   procedure CreateToolNavButtons();
   var
@@ -347,10 +348,11 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         ToolButtonLabel.Align := alClient;
         ToolButtonLabel.AlignWithMargins := True;
         ToolButtonLabel.Margins.Top := 0;
-        ToolButtonLabel.Margins.Left := 5;
-        ToolButtonLabel.Margins.Right := 5;
+        ToolButtonLabel.Margins.Left := 4;
+        ToolButtonLabel.Margins.Right := 4;
         ToolButtonLabel.Margins.Bottom := 0;
         ToolButtonLabel.Name := 'lblExpandCollapse' + Tool.name;
+        ToolButtonLabel.Layout := tlCenter;
         ToolButtonLabel.Caption := Tool.text_long;
         ToolButtonLabel.OnClick := ExpandCollapseNavItem;
         ToolButtonLabel.OnDblClick := ExpandCollapseNavItem;
@@ -447,9 +449,10 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         ToolButtonLabel.Layout := tlCenter;
         ToolButtonLabel.AlignWithMargins := True;
         ToolButtonLabel.Margins.Top := 0;
-        ToolButtonLabel.Margins.Left := 5;
-        ToolButtonLabel.Margins.Right := 5;
+        ToolButtonLabel.Margins.Left := 4;
+        ToolButtonLabel.Margins.Right := 4;
         ToolButtonLabel.Margins.Bottom := 0;
+        ToolButtonLabel.Layout := tlCenter;
         ToolButtonLabel.Name := 'lbl' + Tool.name;
         ToolButtonLabel.Caption := Tool.text_long;
         ToolButtonLabel.OnClick := btnAllToolsClick;

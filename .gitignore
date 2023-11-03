@@ -73,3 +73,8 @@ Android64/
 Linux64/
 Win32/
 Win64/
+TMSWEB/
+
+# Other Folders
+Assets/
+Releases/

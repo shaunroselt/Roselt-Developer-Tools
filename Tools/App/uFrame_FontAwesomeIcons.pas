@@ -21,6 +21,7 @@ uses
   FMX.Memo.Types,
   FMX.ScrollBox,
   FMX.Memo,
+  FMX.Colors,
 
   System.Skia,
   FMX.Skia,
@@ -43,8 +44,8 @@ type
     svgIcon: TSkSvg;
     layDetails: TGridPanelLayout;
     layDetailsRight: TLayout;
-    Layout2: TLayout;
-    Label1: TLabel;
+    layHTMLIconFont: TLayout;
+    memTitleHTMLIconFont: TLabel;
     btnCopyToClipboardHTMLIconFont: TButton;
     imgCopyToClipboardHTMLIconFont: TSkSvg;
     lblCopyToClipboardHTMLIconFont: TLabel;
@@ -74,6 +75,12 @@ type
     Button2: TButton;
     svgExamplesButton: TSkSvg;
     Label8: TLabel;
+    layIconColor: TLayout;
+    cbTitleIconColor: TLabel;
+    btnCopyToClipboardIconColor: TButton;
+    imgCopyToClipboardIconColor: TSkSvg;
+    lblCopyToClipboardIconColor: TLabel;
+    cbIconColor: TComboColorBox;
     procedure FrameResized(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     procedure IconButtonClick(Sender: TObject);
@@ -81,8 +88,10 @@ type
     procedure btnCopyToClipboardSVGCodeClick(Sender: TObject);
     procedure btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
     procedure lblTitleClick(Sender: TObject);
+    procedure btnCopyToClipboardIconColorClick(Sender: TObject);
   private
     { Private declarations }
+    IconButtonsCreated: Boolean;
   public
     { Public declarations }
   end;
@@ -113,6 +122,14 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memHTMLIconFont.Text);
+end;
+
+procedure TFrame_FontAwesomeIcons.btnCopyToClipboardIconColorClick(Sender: TObject);
+var
+  ClipboardService: IFMXClipboardService;
+begin
+  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
+    ClipboardService.SetClipboard(cbIconColor.Color);
 end;
 
 procedure TFrame_FontAwesomeIcons.FrameResize(Sender: TObject);
@@ -159,29 +176,46 @@ procedure TFrame_FontAwesomeIcons.FrameResized(Sender: TObject);
     btnLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
   end;
 begin
-  if (layIconsGrid.ControlsCount = 0) then
-    for var bIcon in FontAwesomeIconsArray do
-      CreateIconButton(bIcon.name, bIcon.svg);
+  if (IconButtonsCreated = False) then
+  begin
+    layDetails.Visible := False;
+    if (layIconsGrid.ControlsCount = 0) then
+      for var bIcon in FontAwesomeIconsArray do
+        CreateIconButton(bIcon.name, bIcon.svg);
+    IconButtonsCreated := True;
+  end;
 
   layIconsGrid.Height := Round(Length(FontAwesomeIconsArray) / Round(layIconsGrid.Width / layIconsGrid.ItemWidth)) * layIconsGrid.ItemHeight;
 end;
 
 procedure TFrame_FontAwesomeIcons.IconButtonClick(Sender: TObject);
 begin
-  var SVGCode := GetFontAwesomeIcon(TButton(Sender).Hint);
+  var SVGCode := '';
+  if (Sender is TButton) then
+  begin
+    lblTitle.Text := TButton(Sender).Hint;
+    lblIconName.Text := TButton(Sender).Hint.Replace('-', ' ', [rfReplaceAll]);
+    btnBack.Visible := True;
+    layIcons.Visible := False;
+    layDetails.Visible := True;
+    cbIconColor.Color := TAlphaColors.White;
+    SVGCode := GetFontAwesomeIcon(lblTitle.Text);
+  end else if (Sender is TComboColorBox) then
+    SVGCode := GetFontAwesomeIcon(lblTitle.Text);
+
   svgIcon.Svg.Source := SVGCode;
   svgExamplesHeading.Svg.Source := SVGCode;
   svgExamplesSmallerHeading.Svg.Source := SVGCode;
   svgExamplesInlineText.Svg.Source := SVGCode;
   svgExamplesInlineLinkText.Svg.Source := SVGCode;
   svgExamplesButton.Svg.Source := SVGCode;
-  lblIconName.Text := TButton(Sender).Hint.Replace('-', ' ', [rfReplaceAll]);
   memSVGCode.Text := SVGCode;
-  memHTMLIconFont.Text := '<i class="fa-solid fa-' + TButton(Sender).Hint + '"></i>';
-  lblTitle.Text := TButton(Sender).Hint;
-  btnBack.Visible := True;
-  layIcons.Visible := False;
-  layDetails.Visible := True;
+  memHTMLIconFont.Text := '<i class="fa-solid fa-' + lblTitle.Text + '"></i>';
+  svgIcon.Svg.OverrideColor := cbIconColor.Color;
+  svgExamplesHeading.Svg.OverrideColor := cbIconColor.Color;
+  svgExamplesSmallerHeading.Svg.OverrideColor := cbIconColor.Color;
+  svgExamplesInlineText.Svg.OverrideColor := cbIconColor.Color;
+  svgExamplesButton.Svg.OverrideColor := cbIconColor.Color;
 end;
 
 procedure TFrame_FontAwesomeIcons.lblTitleClick(Sender: TObject);

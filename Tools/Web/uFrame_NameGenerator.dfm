@@ -574,7 +574,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       AlignWithMargins = True
       Left = 94
       Top = 12
-      Width = 1543
+      Width = 1324
       Height = 73
       Margins.Left = 0
       Margins.Top = 12
@@ -585,10 +585,11 @@ object Frame_NameGenerator: TFrame_NameGenerator
       ChildOrder = 2
       Color = 2829099
       ShowCaption = False
+      ExplicitWidth = 1543
       object WebLabel7: TWebLabel
         Left = 0
         Top = 38
-        Width = 1543
+        Width = 1324
         Height = 30
         Margins.Left = 9
         Margins.Top = 9
@@ -604,7 +605,7 @@ object Frame_NameGenerator: TFrame_NameGenerator
       object WebLabel8: TWebLabel
         Left = 0
         Top = 0
-        Width = 1543
+        Width = 1324
         Height = 38
         Margins.Left = 9
         Margins.Top = 9
@@ -626,10 +627,10 @@ object Frame_NameGenerator: TFrame_NameGenerator
     end
     object SwitchSurname: TWebToggleButton
       AlignWithMargins = True
-      Left = 1637
+      Left = 1418
       Top = 12
-      Width = 44
-      Height = 22
+      Width = 263
+      Height = 73
       Margins.Left = 0
       Margins.Top = 12
       Margins.Right = 12
