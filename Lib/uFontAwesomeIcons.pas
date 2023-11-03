@@ -14,20 +14,21 @@ uses
 ;
 
 type
-  TFontAwesomeIcon = record
+  TFontAwesomeIconRecord = record
     name: String;
     svg: String;
     style: String; // Solid & Regular
   end;
 
 function GetFontAwesomeIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
+function GetFontAwesomeIconHtmlFont(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
 function GetFontAwesomeIconPathData(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$ENDIF}
 function GetFontAwesomeIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 
 const
-  FontAwesomeIconsArray: array[0..2023] of TFontAwesomeIcon = (
+  FontAwesomeIconsArray: array[0..2023] of TFontAwesomeIconRecord = (
     (
       name: '0';
       svg: '<svg xmlns="http://www.w3.org/2000/svg" height="IconSize" viewBox="0 0 320 512"><!--FA--><path d="M0 192C0 103.6 71.6 32 160 32s160 71.6 160 160V320c0 88.4-71.6 160-160 160S0 408.4 0 320V192zM160 96c-53 0-96 43-96 96V3' +
@@ -16638,7 +16639,7 @@ const
   AddLicense: Boolean = true;
   License: String = '<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->';
 var
-  faIcon: TFontAwesomeIcon;
+  faIcon: TFontAwesomeIconRecord;
 begin
   Result := '';
   for faIcon in FontAwesomeIconsArray do
@@ -16651,6 +16652,28 @@ begin
         Result := StringReplace(Result, '<!--FA-->', '', [rfReplaceAll]);
       if (HTMLColor <> '') then
         Result := StringReplace(Result, '<svg xmlns', '<svg fill="'+HTMLColor+'" xmlns', [rfReplaceAll]);
+      Exit;
+    end;
+end;
+
+function GetFontAwesomeIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+var
+  bIcon: TFontAwesomeIconRecord;
+begin
+  Result := '';
+  for bIcon in FontAwesomeIconsArray do
+    if bIcon.name = IconName then
+    begin
+      Result := '<i class="fa-solid fa-' + IconName + '"></i>';
+
+      var ColorStyle := '';
+      var IconSizeStyle := '';
+      if (HTMLColor <> '') then ColorStyle := 'color: ' + HTMLColor + ';';
+      if (IconSize <> 16) then IconSizeStyle := 'font-size: ' + IconSize.ToString + 'px;';
+
+      if (ColorStyle <> '') or (IconSizeStyle <> '') then
+        Result := '<i class="fa-solid fa-' + IconName + '" style="' + ColorStyle + IconSizeStyle + '"></i>';
+
       Exit;
     end;
 end;

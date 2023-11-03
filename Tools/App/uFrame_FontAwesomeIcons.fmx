@@ -401,7 +401,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
               TextSettings.Font.Size = 20.000000000000000000
               TextSettings.Trimming = None
               Text = 'Button'
-              TabOrder = 5
+              TabOrder = 4
             end
           end
         end
@@ -448,7 +448,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
             Size.Width = 70.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 4
+            TabOrder = 3
             TextSettings.Trimming = None
             OnClick = btnCopyToClipboardHTMLIconFontClick
             object imgCopyToClipboardHTMLIconFont: TSkSvg
@@ -480,7 +480,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
               Size.PlatformDefault = False
               TextSettings.Trimming = None
               Text = 'Copy'
-              TabOrder = 5
+              TabOrder = 4
             end
           end
         end
@@ -494,8 +494,8 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
-          Viewport.Width = 382.000000000000000000
-          Viewport.Height = 41.000000000000000000
+          Viewport.Width = 386.000000000000000000
+          Viewport.Height = 45.000000000000000000
         end
       end
       object laySVGCode: TLayout
@@ -527,7 +527,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
             Size.Width = 70.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 4
+            TabOrder = 3
             TextSettings.Trimming = None
             OnClick = btnCopyToClipboardSVGCodeClick
             object imgCopyToClipboardSVGCode: TSkSvg
@@ -559,7 +559,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
               Size.PlatformDefault = False
               TextSettings.Trimming = None
               Text = 'Copy'
-              TabOrder = 5
+              TabOrder = 4
             end
           end
         end
@@ -573,8 +573,8 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
           Size.Height = 335.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
-          Viewport.Width = 382.000000000000000000
-          Viewport.Height = 331.000000000000000000
+          Viewport.Width = 386.000000000000000000
+          Viewport.Height = 335.000000000000000000
         end
       end
       object layIconColor: TLayout
@@ -607,7 +607,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
             Size.Width = 70.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 4
+            TabOrder = 3
             TextSettings.Trimming = None
             OnClick = btnCopyToClipboardIconColorClick
             object imgCopyToClipboardIconColor: TSkSvg
@@ -639,7 +639,7 @@ object Frame_FontAwesomeIcons: TFrame_FontAwesomeIcons
               Size.PlatformDefault = False
               TextSettings.Trimming = None
               Text = 'Copy'
-              TabOrder = 5
+              TabOrder = 4
             end
           end
         end

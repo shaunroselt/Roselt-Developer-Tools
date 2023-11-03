@@ -14,12 +14,13 @@ uses
 ;
 
 type
-  TFeatherIcon = record
+  TFeatherIconRecord = record
     name: String;
     svg: String;
   end;
 
 function GetFeatherIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
+function GetFeatherIconHtmlFont(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
 function GetFeatherIconPathData(IconName: String; IconSize: Cardinal = 16;  HTMLColor: String = ''): String;
 {$ENDIF}
@@ -27,7 +28,7 @@ function GetFeatherIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLCol
 
 
 const
-  FeatherIconsArray: array[0..286] of TFeatherIcon = (
+  FeatherIconsArray: array[0..286] of TFeatherIconRecord = (
     (
       name: 'activity';
       svg: '<svg  xmlns="http://www.w3.org/2000/svg"  width="IconSize" height="IconSize"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polylin' +
@@ -1533,7 +1534,7 @@ end;
 
 function GetFeatherIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
-  fIcon: TFeatherIcon;
+  fIcon: TFeatherIconRecord;
 begin
   Result := '';
   for fIcon in FeatherIconsArray do
@@ -1542,6 +1543,28 @@ begin
       Result := StringReplace(fIcon.svg, 'IconSize', IconSize.ToString, [rfReplaceAll]);
       if (HTMLColor <> '') then
         Result := StringReplace(Result, 'currentColor', HTMLColor, [rfReplaceAll]);
+      Exit;
+    end;
+end;
+
+function GetFeatherIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+var
+  bIcon: TFeatherIconRecord;
+begin
+  Result := '';
+  for bIcon in FeatherIconsArray do
+    if bIcon.name = IconName then
+    begin
+      Result := '<i data-feather="' + IconName + '"></i>';
+
+      var ColorStyle := '';
+      var IconSizeStyle := '';
+      if (HTMLColor <> '') then ColorStyle := ' stroke="' + HTMLColor + '"';
+      if (IconSize <> 16) then IconSizeStyle := ' width="' + IconSize.ToString + '" height="' + IconSize.ToString + '"';
+
+      if (ColorStyle <> '') or (IconSizeStyle <> '') then
+        Result := '<i data-feather="' + IconName + '"' + ColorStyle + IconSizeStyle + '></i>';
+
       Exit;
     end;
 end;

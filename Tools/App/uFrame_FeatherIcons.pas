@@ -200,8 +200,12 @@ begin
     layDetails.Visible := True;
     cbIconColor.Color := TAlphaColors.White;
     SVGCode := GetFeatherIcon(lblTitle.Text);
+    memHTMLIconFont.Text := GetFeatherIconHtmlFont(lblTitle.Text);
   end else if (Sender is TComboColorBox) then
-    SVGCode := GetFeatherIcon(lblTitle.Text);
+  begin
+    SVGCode := GetFeatherIcon(lblTitle.Text,16,'#'+IntToHex(cbIconColor.Color, 8).Substring(2));
+    memHTMLIconFont.Text := GetFeatherIconHtmlFont(lblTitle.Text,16,'#'+IntToHex(cbIconColor.Color, 8).Substring(2));
+  end;
 
   svgIcon.Svg.Source := SVGCode;
   svgExamplesHeading.Svg.Source := SVGCode;
@@ -210,7 +214,6 @@ begin
   svgExamplesInlineLinkText.Svg.Source := SVGCode;
   svgExamplesButton.Svg.Source := SVGCode;
   memSVGCode.Text := SVGCode;
-  memHTMLIconFont.Text := '<i data-feather="' + lblTitle.Text + '"></i>';
   svgIcon.Svg.OverrideColor := cbIconColor.Color;
   svgExamplesHeading.Svg.OverrideColor := cbIconColor.Color;
   svgExamplesSmallerHeading.Svg.OverrideColor := cbIconColor.Color;

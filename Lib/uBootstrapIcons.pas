@@ -14,19 +14,20 @@ uses
 ;
 
 type
-  TBootstrapIcon = record
+  TBootstrapIconRecord = record
     name: String;
     svg: String;
   end;
 
 function GetBootstrapIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
+function GetBootstrapIconHtmlFont(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
 function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal = 16;  HTMLColor: String = ''): String;
 {$ENDIF}
 function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
 
 const
-  BootstrapIconsArray: array[0..2049] of TBootstrapIcon = (
+  BootstrapIconsArray: array[0..2049] of TBootstrapIconRecord = (
     (
       name: '0-circle-fill';
       svg: '<svg xmlns="http://www.w3.org/2000/svg" width="IconSize" height="IconSize" fill="currentColor" class="bi bi-0-circle-fill" viewBox="0 0 16 16">  <path d="M8 4.951c-1.008 0-1.629 1.09-1.629 2.895v.31c0 1.81.627 2.' +
@@ -13532,7 +13533,7 @@ end;
 
 function GetBootstrapIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
-  bIcon: TBootstrapIcon;
+  bIcon: TBootstrapIconRecord;
 begin
   Result := '';
   for bIcon in BootstrapIconsArray do
@@ -13541,6 +13542,28 @@ begin
       Result := StringReplace(bIcon.svg, 'IconSize', IconSize.ToString, [rfReplaceAll]);
       if (HTMLColor <> '') then
         Result := StringReplace(Result, 'currentColor', HTMLColor, [rfReplaceAll]);
+      Exit;
+    end;
+end;
+
+function GetBootstrapIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+var
+  bIcon: TBootstrapIconRecord;
+begin
+  Result := '';
+  for bIcon in BootstrapIconsArray do
+    if bIcon.name = IconName then
+    begin
+      Result := '<i class="bi bi-' + IconName + '"></i>';
+
+      var ColorStyle := '';
+      var IconSizeStyle := '';
+      if (HTMLColor <> '') then ColorStyle := 'color: ' + HTMLColor + ';';
+      if (IconSize <> 16) then IconSizeStyle := 'font-size: ' + IconSize.ToString + 'px;';
+
+      if (ColorStyle <> '') or (IconSizeStyle <> '') then
+        Result := '<i class="bi bi-' + IconName + '" style="' + ColorStyle + IconSizeStyle + '"></i>';
+
       Exit;
     end;
 end;
