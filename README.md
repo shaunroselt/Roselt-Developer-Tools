@@ -7,65 +7,95 @@
 
 Cross-Platform Utilities App for Developers.
 
-![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/2ef0099e-0c42-4a9a-a5b8-72f06ec76da1)
+![All Tools (Roselt Developer Tools)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/a39f035c-686d-4b47-879c-2d0124667b82)
 
 
 _Note: All tools are still in active development with lots of bugs_
 
 ## Current Tools
-- YSON <> YAML Converter
-- Number Base Converter
-- Text to Array Converter
-- Timestamp Converter
-- HTML Encoder/Decoder
-- Base64 Text Encoder/Decoder
-- URL Encoder/Decoder
-- JWT Decoder
-- Hash Generator
-- Name Generator
-- Lorem Ipsum Generator
-- UUID Generator
-- Password Generator
-- JSON Code Formatter
-- XML Code Formatter
-- Text Case Converter & Inspector
-- Color Picker
-- Image Effects
-- HTML Preview
-- Ping IP / Domain
-- Bootstrap Icons
-- Font Awesome Icons
-- Feather Icons
+- Converters
+  - YSON <> YAML
+  - Number Base
+  - Text to Array
+  - Timestamp
+- Encoders / Decoders
+  - HTML
+  - Base64 Text
+  - URL 
+  - JWT Decoder
+- Generators
+  - Hash
+  - Name
+  - Lorem Ipsum
+  - UUID
+  - Password
+- Formatters
+  - JSON
+  - XML
+  - Delphi
+- Text
+  - Case Converter & Inspector
+  - HTML Preview
+- Graphics
+  - Color Picker
+  - Image Effects
+  - Bootstrap Icons
+  - Font Awesome Icons
+  - Feather Icons
+- Network
+  - Ping IP / Domain
+  - Trace Route
 
 
 ## Planned Tools
-- JSON <> XML Converter
-- JSON <> MsgPack Converter
-- GZip Encoder/Decoder
-- Base64 Image Encoder/Decoder
-- CSS Code Formatter
-- HTML Code Formatter
-- PHP Code Formatter
-- SQL Code Formatter
-- JavaScript Code Formatter
-- Delphi Code Formatter
-- JWT Token Generator
-- JSON Generator
-- YAML Generator
-- XML Generator
-- Text Difference
-- Markdown Preview
-- Text Escape/Unescape
-- Image Converter
-- PNG/JPEG Compressor
-- Color Blindness Simulator
-- Code Minifier (Various languages)
-- SSL Certificate Decoder
-- ASCII Table
+- Converters
+  - JSON <> XML
+  - JSON <> MsgPack
+- Encoders / Decoders
+  - GZip
+  - Base64 Image
+- Formatters
+  - CSS
+  - HTML
+  - PHP
+  - SQL
+  - JavaScript
+  - Delphi
+- Generators
+  - JWT Token
+  - JSON
+  - YAML
+  - XML
+  - CSS Shapes
+- Text
+  - Difference
+  - Markdown Preview
+  - Escape / Unescape
+- Graphics
+  - Image Converter
+  - PNG/JPEG Compressor
+  - Color Blindness Simulator
+- Network
+  - Port Scanner
+  - WiFi Scanner
+  - Network Devices
+  - Speed Test
+  - Data Experience Test
+  - Whois Lookup
+  - DNS Lookup
+  - Wake on LAN
+  - Down Detector
+  - Total IPs per country/region
+  - RJ45 Connector Wiring
+  - SSL Certificate Viewer
+- Other
+  - ASCII Table
+  - ASCII Art
 
 
 ## Download
 Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/)
+
 
 ## Platform Support
 
@@ -73,10 +103,14 @@ Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](http
 | ---------- | -------------------------- |
 | Windows    | 10                         |
 | Android    | *Coming soon!*             |
-| macOS      | *Coming soon!*             |
+| MacOS      | 14                         |
 | iOS / tvOS | *Coming soon!*             |
 | Linux      | *Coming soon!*             |
 | Web        | *Coming soon!*             |
+
+
+### MacOS (Admin/Sudo Permissions)
+The "Ping IP / Domain" Tool and "Trace Route" Tool will only work with Admin Permissions on MacOS. To get it working open a terminal and run `sudo path-to.app/Contents/MacOS/Roselt_Developer_Tools`
 
 ## Release Notes (Change Log)
 [RELEASE_NOTES.md](https://github.com/shaunroselt/Roselt-Developer-Tools/blob/master/RELEASE_NOTES.md)
