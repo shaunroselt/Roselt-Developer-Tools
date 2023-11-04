@@ -883,10 +883,7 @@ procedure TfrmMain.AllToolsSearch();
 begin
   while ((layAllToolsHidden.ChildrenCount > 0)) do // If there are Tools currently hidden
     for var ToolButton in layAllToolsHidden.Children do // Then move all of them to layAllToolsGrid
-    begin
-      var Test := ToolButton.Name;
       ToolButton.Parent := layAllToolsGrid;
-    end;
   if (edtSearchAllTools.Text.IsEmpty = False) then
     for var Tool in RoseltToolsArray do
     begin
