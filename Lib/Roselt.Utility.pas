@@ -46,6 +46,8 @@ function RemoveNonDigitsAndLetters(const S: String): String;
 
 function RemoveEmptyLinesAndWhitespace(const S: String): String;
 
+function ReplaceDigitsWithWords(const S: String): String;
+
 implementation
 
 {$IFDEF WEBLIB}
@@ -245,6 +247,20 @@ begin
 
   Result := SL.Text;
   SL.Free;
+end;
+
+function ReplaceDigitsWithWords(const S: String): String;
+begin
+  Result := S.Replace('0','zero',[rfReplaceAll])
+             .Replace('1','one',[rfReplaceAll])
+             .Replace('2','two',[rfReplaceAll])
+             .Replace('3','three',[rfReplaceAll])
+             .Replace('4','four',[rfReplaceAll])
+             .Replace('5','five',[rfReplaceAll])
+             .Replace('6','six',[rfReplaceAll])
+             .Replace('7','seven',[rfReplaceAll])
+             .Replace('8','eight',[rfReplaceAll])
+             .Replace('9','nine',[rfReplaceAll]);
 end;
 
 end.

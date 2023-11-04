@@ -12,15 +12,55 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
     TabOrder = 0
     Viewport.Width = 852.000000000000000000
     Viewport.Height = 609.000000000000000000
-    object layIconsGrid: TGridLayout
+    object layIconsGrid1: TGridLayout
       Align = Top
       ItemHeight = 150.000000000000000000
       ItemWidth = 150.000000000000000000
       Orientation = Horizontal
+      Position.Y = 55.000000000000000000
       Size.Width = 852.000000000000000000
       Size.Height = 500.000000000000000000
       Size.PlatformDefault = False
+      Visible = False
       TabOrder = 0
+    end
+    object edtSearchIcons: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = MostTop
+      TabOrder = 2
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 832.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Type to search for icons...'
+      OnChange = edtSearchIconsChange
+      OnKeyUp = edtSearchIconsKeyUp
+      object SearchEditButton1: TSearchEditButton
+        Touch.InteractiveGestures = [LongTap]
+        CanFocus = False
+        Cursor = crArrow
+        TextSettings.Trimming = None
+        Size.Width = 28.000000000000000000
+        Size.Height = 31.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
+    end
+    object layIconsGrid: TFlowLayout
+      Align = Top
+      Position.Y = 55.000000000000000000
+      Size.Width = 852.000000000000000000
+      Size.Height = 554.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Justify = Left
+      JustifyLastLine = Left
+      FlowDirection = LeftToRight
     end
   end
   object layTop: TLayout
@@ -655,5 +695,20 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
         end
       end
     end
+  end
+  object layIconsHidden: TLayout
+    Align = Bottom
+    Position.Y = 606.000000000000000000
+    Size.Width = 852.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 3
+  end
+  object SearchDelayTimer: TTimer
+    Enabled = False
+    OnTimer = SearchDelayTimerTimer
+    Left = 416
+    Top = 312
   end
 end

@@ -22,6 +22,7 @@ uses
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Colors,
+  FMX.Edit,
 
   System.Skia,
   FMX.Skia,
@@ -34,7 +35,7 @@ uses
 type
   TFrame_BootstrapIcons = class(TFrame)
     layIcons: TVertScrollBox;
-    layIconsGrid: TGridLayout;
+    layIconsGrid1: TGridLayout;
     layDetailsLeft: TLayout;
     layTop: TLayout;
     lblTitle: TLabel;
@@ -81,6 +82,11 @@ type
     imgCopyToClipboardIconColor: TSkSvg;
     lblCopyToClipboardIconColor: TLabel;
     cbIconColor: TComboColorBox;
+    edtSearchIcons: TEdit;
+    SearchEditButton1: TSearchEditButton;
+    layIconsHidden: TLayout;
+    layIconsGrid: TFlowLayout;
+    SearchDelayTimer: TTimer;
     procedure FrameResized(Sender: TObject);
     procedure FrameResize(Sender: TObject);
     procedure IconButtonClick(Sender: TObject);
@@ -89,9 +95,13 @@ type
     procedure btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
     procedure lblTitleClick(Sender: TObject);
     procedure btnCopyToClipboardIconColorClick(Sender: TObject);
+    procedure edtSearchIconsChange(Sender: TObject);
+    procedure edtSearchIconsKeyUp(Sender: TObject; var Key: Word; var KeyChar: WideChar; Shift: TShiftState);
+    procedure SearchDelayTimerTimer(Sender: TObject);
   private
     { Private declarations }
     IconButtonsCreated: Boolean;
+    procedure AllIconsSearch();
   public
     { Public declarations }
   end;
@@ -99,6 +109,16 @@ type
 implementation
 
 {$R *.fmx}
+
+procedure TFrame_BootstrapIcons.AllIconsSearch;
+begin
+  for var bIcon in BootstrapIconsArray do
+  begin
+    var IconBackendName := ReplaceDigitsWithWords(bIcon.name.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
+    TButton(layIcons.FindComponent(IconBackendName)).Visible := bIcon.name.ToLower.Contains(edtSearchIcons.Text.ToLower);
+  end;
+  FrameResize(nil);
+end;
 
 procedure TFrame_BootstrapIcons.btnBackClick(Sender: TObject);
 begin
@@ -114,6 +134,19 @@ var
 begin
   if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
     ClipboardService.SetClipboard(memSVGCode.Text);
+end;
+
+procedure TFrame_BootstrapIcons.edtSearchIconsChange(Sender: TObject);
+begin
+  SearchDelayTimer.Enabled := False;
+  SearchDelayTimer.Enabled := True;
+end;
+
+procedure TFrame_BootstrapIcons.edtSearchIconsKeyUp(Sender: TObject; var Key: Word; var KeyChar: WideChar;
+  Shift: TShiftState);
+begin
+  SearchDelayTimer.Enabled := False;
+  SearchDelayTimer.Enabled := True;
 end;
 
 procedure TFrame_BootstrapIcons.btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
@@ -134,15 +167,17 @@ end;
 
 procedure TFrame_BootstrapIcons.FrameResize(Sender: TObject);
 begin
-  layIconsGrid.Height := Round(Length(BootstrapIconsArray) / Round(layIconsGrid.Width / layIconsGrid.ItemWidth)) * layIconsGrid.ItemHeight;
+  layIconsGrid.Height := Round(Length(BootstrapIconsArray) / Round(layIconsGrid.Width / 150)) * 150;
 end;
 
 procedure TFrame_BootstrapIcons.FrameResized(Sender: TObject);
   procedure CreateIconButton(IconName, IconSVG: String);
   begin
-    var btn := TButton.Create(Application);
-    btn.name := IconName.Replace('-','_',[rfReplaceAll]).Trim(['0','1','2','3','4','5','6','7','8','9',' ','-','_', #9, #10, #13]) + '_' + Random(High(Integer)).ToString;
+    var btn := TButton.Create(layIcons);
+    btn.name := ReplaceDigitsWithWords(IconName.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
     btn.Text := '';
+    btn.Width := 150;
+    btn.Height := 150;
     btn.Parent := layIconsGrid;
     btn.Margins.Top := 16;
     btn.Margins.Left := 16;
@@ -185,7 +220,7 @@ begin
     IconButtonsCreated := True;
   end;
 
-  layIconsGrid.Height := Round(Length(BootstrapIconsArray) / Round(layIconsGrid.Width / layIconsGrid.ItemWidth)) * layIconsGrid.ItemHeight;
+  FrameResize(nil);
 end;
 
 procedure TFrame_BootstrapIcons.IconButtonClick(Sender: TObject);
@@ -224,6 +259,12 @@ end;
 procedure TFrame_BootstrapIcons.lblTitleClick(Sender: TObject);
 begin
   OpenURL(TLabel(Sender).Text);
+end;
+
+procedure TFrame_BootstrapIcons.SearchDelayTimerTimer(Sender: TObject);
+begin
+  TTimer(Sender).Enabled := False;
+  AllIconsSearch;
 end;
 
 end.
