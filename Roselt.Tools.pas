@@ -732,7 +732,7 @@ const
       description: 'Convert images to different formats';
       icon: 'file-earmark-image';
       {$IFDEF DEBUG}
-        active: false;
+        active: true;
         visible: true;
       {$ELSE}
         active: false;

@@ -1,0 +1,156 @@
+object Frame_ImageConverter: TFrame_ImageConverter
+  Size.Width = 541.000000000000000000
+  Size.Height = 711.000000000000000000
+  Size.PlatformDefault = False
+  object pnlContainer: TPanel
+    Align = Client
+    Size.Width = 541.000000000000000000
+    Size.Height = 711.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object DropTarget1: TDropTarget
+      Align = Top
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 37.000000000000000000
+      Size.Width = 501.000000000000000000
+      Size.Height = 136.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'dtInput'
+      object imgInput: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        Size.Width = 501.000000000000000000
+        Size.Height = 136.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object lblOrignal: TLabel
+      Align = Top
+      Size.Width = 541.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Orignal Image:'
+      TabOrder = 2
+    end
+    object pnMaster: TPanel
+      Align = Client
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Size.Width = 501.000000000000000000
+      Size.Height = 324.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object pnlChild: TPanel
+        Align = Top
+        Size.Width = 501.000000000000000000
+        Size.Height = 113.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object pnSlave: TPanel
+          Align = Left
+          Size.Width = 153.000000000000000000
+          Size.Height = 52.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object lblConvert: TLabel
+            Align = Client
+            Size.Width = 153.000000000000000000
+            Size.Height = 52.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Convert To:'
+            TabOrder = 1
+          end
+        end
+        object btnSave: TButton
+          Align = Bottom
+          Margins.Top = 20.000000000000000000
+          Position.Y = 72.000000000000000000
+          Size.Width = 501.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Save'
+        end
+        object ComboBox1: TComboBox
+          Align = Client
+          Items.Strings = (
+            'JPEG/JPG'
+            'PNG'
+            'GIF'
+            'TIFF'
+            'BMP'
+            'HEIF/HEIC'
+            'WebP'
+            'SVG'
+            'EPS'
+            'AI'
+            'INDD'
+            'DWG')
+          Size.Width = 348.000000000000000000
+          Size.Height = 52.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+        end
+      end
+      object lblProperties: TLabel
+        Align = Top
+        Margins.Top = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.Y = 133.000000000000000000
+        Size.Width = 501.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.HorzAlign = Center
+        Text = 'Properties'
+        TabOrder = 2
+      end
+      object Memo1: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Size.Width = 501.000000000000000000
+        Size.Height = 154.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 497.000000000000000000
+        Viewport.Height = 150.000000000000000000
+      end
+    end
+    object lblOutput: TLabel
+      Align = Top
+      Position.Y = 193.000000000000000000
+      Size.Width = 541.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Output Image:'
+      TabOrder = 1
+    end
+    object Image1: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Top
+      Position.Y = 210.000000000000000000
+      Size.Width = 541.000000000000000000
+      Size.Height = 137.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object sdSave: TSaveDialog
+    Left = 32
+  end
+  object odLoad: TOpenDialog
+  end
+end

@@ -77,6 +77,7 @@ uses
   uFrame_TextToArray,
   uFrame_PingIPDomain,
   uFrame_TraceRoute,
+  uFrame_ImageConverter,
   uFrame_BootstrapIcons,
   uFrame_FontAwesomeIcons,
   uFrame_FeatherIcons,
@@ -761,6 +762,7 @@ begin
   CreateToolFrame(TFrame_BootstrapIcons.Create(Self),'layBootstrapIcons');
   CreateToolFrame(TFrame_FontAwesomeIcons.Create(Self),'layFontAwesomeIcons');
   CreateToolFrame(TFrame_FeatherIcons.Create(Self),'layFeatherIcons');
+  CreateToolFrame(TFrame_ImageConverter.Create(Self),'layImageConverter');
 
 
   // Load Themes (Settings)
