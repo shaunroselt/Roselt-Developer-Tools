@@ -77,6 +77,7 @@ uses
   uFrame_TextToArray,
   uFrame_PingIPDomain,
   uFrame_TraceRoute,
+  uFrame_ImageConverter,
   uFrame_BootstrapIcons,
   uFrame_FontAwesomeIcons,
   uFrame_FeatherIcons,
@@ -761,6 +762,7 @@ begin
   CreateToolFrame(TFrame_BootstrapIcons.Create(Self),'layBootstrapIcons');
   CreateToolFrame(TFrame_FontAwesomeIcons.Create(Self),'layFontAwesomeIcons');
   CreateToolFrame(TFrame_FeatherIcons.Create(Self),'layFeatherIcons');
+  CreateToolFrame(TFrame_ImageConverter.Create(Self),'layImageConverter');
 
 
   // Load Themes (Settings)
@@ -881,10 +883,7 @@ procedure TfrmMain.AllToolsSearch();
 begin
   while ((layAllToolsHidden.ChildrenCount > 0)) do // If there are Tools currently hidden
     for var ToolButton in layAllToolsHidden.Children do // Then move all of them to layAllToolsGrid
-    begin
-      var Test := ToolButton.Name;
       ToolButton.Parent := layAllToolsGrid;
-    end;
   if (edtSearchAllTools.Text.IsEmpty = False) then
     for var Tool in RoseltToolsArray do
     begin

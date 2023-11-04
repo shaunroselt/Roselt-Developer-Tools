@@ -60,7 +60,8 @@ uses
   uFeatherIcons in 'Lib\uFeatherIcons.pas',
   uFrame_TraceRoute in 'Tools\App\uFrame_TraceRoute.pas' {Frame_TraceRoute: TFrame},
   uFrame_FeatherIcons in 'Tools\App\uFrame_FeatherIcons.pas' {Frame_FeatherIcons: TFrame},
-  Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas';
+  Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas',
+  uFrame_ImageConverter in 'Tools\App\uFrame_ImageConverter.pas' {Frame_ImageConverter: TFrame};
 
 {$R *.res}
 
