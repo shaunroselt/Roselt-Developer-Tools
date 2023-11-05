@@ -12,22 +12,10 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
     TabOrder = 0
     Viewport.Width = 852.000000000000000000
     Viewport.Height = 609.000000000000000000
-    object layIconsGrid1: TGridLayout
-      Align = Top
-      ItemHeight = 150.000000000000000000
-      ItemWidth = 150.000000000000000000
-      Orientation = Horizontal
-      Position.Y = 55.000000000000000000
-      Size.Width = 852.000000000000000000
-      Size.Height = 500.000000000000000000
-      Size.PlatformDefault = False
-      Visible = False
-      TabOrder = 0
-    end
     object edtSearchIcons: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = MostTop
-      TabOrder = 2
+      TabOrder = 0
       Position.X = 10.000000000000000000
       Position.Y = 10.000000000000000000
       Margins.Left = 10.000000000000000000
@@ -57,7 +45,7 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
       Size.Width = 852.000000000000000000
       Size.Height = 554.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 2
       Justify = Left
       JustifyLastLine = Left
       FlowDirection = LeftToRight
@@ -707,6 +695,7 @@ object Frame_BootstrapIcons: TFrame_BootstrapIcons
   end
   object SearchDelayTimer: TTimer
     Enabled = False
+    Interval = 650
     OnTimer = SearchDelayTimerTimer
     Left = 416
     Top = 312

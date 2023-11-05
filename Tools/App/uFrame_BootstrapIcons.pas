@@ -35,7 +35,6 @@ uses
 type
   TFrame_BootstrapIcons = class(TFrame)
     layIcons: TVertScrollBox;
-    layIconsGrid1: TGridLayout;
     layDetailsLeft: TLayout;
     layTop: TLayout;
     lblTitle: TLabel;
@@ -101,6 +100,7 @@ type
   private
     { Private declarations }
     IconButtonsCreated: Boolean;
+    IconsSearchCount: UInt64;
     procedure AllIconsSearch();
   public
     { Public declarations }
@@ -112,10 +112,24 @@ implementation
 
 procedure TFrame_BootstrapIcons.AllIconsSearch;
 begin
-  for var bIcon in BootstrapIconsArray do
+  if (edtSearchIcons.Text.IsEmpty = False) then
   begin
-    var IconBackendName := ReplaceDigitsWithWords(bIcon.name.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
-    TButton(layIcons.FindComponent(IconBackendName)).Visible := bIcon.name.ToLower.Contains(edtSearchIcons.Text.ToLower);
+    IconsSearchCount := 0;
+    for var bIcon in BootstrapIconsArray do
+    begin
+      var IconBackendName := ReplaceDigitsWithWords(bIcon.name.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
+      var IconVisible := bIcon.name.ToLower.Contains(edtSearchIcons.Text.ToLower);
+      TButton(layIcons.FindComponent(IconBackendName)).Visible := IconVisible;
+      inc(IconsSearchCount,IconVisible.ToInteger);
+    end;
+  end else
+  begin
+    IconsSearchCount := Length(BootstrapIconsArray);
+    for var bIcon in BootstrapIconsArray do
+    begin
+      var IconBackendName := ReplaceDigitsWithWords(bIcon.name.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
+      TButton(layIcons.FindComponent(IconBackendName)).Visible := True;
+    end;
   end;
   FrameResize(nil);
 end;
@@ -138,8 +152,7 @@ end;
 
 procedure TFrame_BootstrapIcons.edtSearchIconsChange(Sender: TObject);
 begin
-  SearchDelayTimer.Enabled := False;
-  SearchDelayTimer.Enabled := True;
+  AllIconsSearch;
 end;
 
 procedure TFrame_BootstrapIcons.edtSearchIconsKeyUp(Sender: TObject; var Key: Word; var KeyChar: WideChar;
@@ -167,7 +180,8 @@ end;
 
 procedure TFrame_BootstrapIcons.FrameResize(Sender: TObject);
 begin
-  layIconsGrid.Height := Round(Length(BootstrapIconsArray) / Round(layIconsGrid.Width / 150)) * 150;
+  var IconsInRow := Round(layIconsGrid.Width / (150+32))+1;
+  layIconsGrid.Height := (Round(IconsSearchCount / IconsInRow) * (150+32));
 end;
 
 procedure TFrame_BootstrapIcons.FrameResized(Sender: TObject);
@@ -217,6 +231,8 @@ begin
     if (layIconsGrid.ControlsCount = 0) then
       for var bIcon in BootstrapIconsArray do
         CreateIconButton(bIcon.name, bIcon.svg);
+
+    IconsSearchCount := Length(BootstrapIconsArray);
     IconButtonsCreated := True;
   end;
 

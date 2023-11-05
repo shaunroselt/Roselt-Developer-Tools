@@ -97,7 +97,6 @@ type
     lblAllTools: TLabel;
     btnAllTools: TRectangle;
     LayoutContainer: TLayout;
-    layAllToolsGrid: TFlowLayout;
     MultiViewScrollBox: TVertScrollBox;
     layNavTesting: TLayout;
     btnTesting: TRectangle;
@@ -182,7 +181,6 @@ type
     laySteamLink: TLayout;
     Button14: TButton;
     imgToolHelp: TSkSvg;
-    layAllToolsHidden: TFlowLayout;
     edtSearchAllTools: TEdit;
     SearchEditButton1: TSearchEditButton;
     btnAllToolsTesting: TButton;
@@ -231,6 +229,8 @@ type
     lblTitle: TLabel;
     btnBackChangeLog: TButton;
     imgBackChangeLog: TSkSvg;
+    SearchDelayTimer: TTimer;
+    layAllToolsGrid: TFlowLayout;
     procedure btnAllToolsMouseEnter(Sender: TObject);
     procedure btnAllToolsMouseLeave(Sender: TObject);
     procedure btnAllToolsClick(Sender: TObject);
@@ -257,8 +257,10 @@ type
     procedure btnAppInfoCopyToClipboardClick(Sender: TObject);
     procedure btnBackChangeLogClick(Sender: TObject);
     procedure lblTitleClick(Sender: TObject);
+    procedure SearchDelayTimerTimer(Sender: TObject);
   private
     { Private declarations }
+    ToolsSearchCount: UInt64;
     HamburgerMenuWidth: Single;
     procedure SelectTool(ToolLayoutName: String);
     procedure AllToolsSearch();
@@ -428,7 +430,8 @@ end;
 
 procedure TfrmMain.edtSearchAllToolsKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
 begin
-  AllToolsSearch;
+  SearchDelayTimer.Enabled := False;
+  SearchDelayTimer.Enabled := True;
 end;
 
 procedure TfrmMain.ExpandCollapseNavItem(Sender: TObject);
@@ -631,9 +634,11 @@ procedure TfrmMain.FormCreate(Sender: TObject);
   end;
   procedure CreateToolButtons();
   begin
+    ToolsSearchCount := 0;
     for var Tool in RoseltToolsArray do
     begin
       if (IsToolParent(Tool) OR (Tool.Visible = False)) then continue;
+      inc(ToolsSearchCount);
 
       var ToolButton := TButton.Create(layAllToolsGrid);
       // I think these buttons will be freed from memory when the app frees layAllToolsGrid 🤷
@@ -794,23 +799,19 @@ end;
 
 procedure TfrmMain.FormResize(Sender: TObject);
 begin
-  // Check for zero width to avoid division by zero
-  if layAllToolsGrid.Width = 0 then
-    Exit; // Or handle this case appropriately
-
-  var Divisor := layAllToolsGrid.Width / 240;
-  var NewHeight := Round(layAllToolsGrid.ChildrenCount / Divisor + 1) * 185;
-
-  // Check for integer overflow and cap the value if needed
-  if NewHeight > MaxInt then
-    NewHeight := MaxInt;
-
-  layAllToolsGrid.Height := NewHeight;
+  var ToolsInRow := Round(layAllToolsGrid.Width / (185+12))+1 ;
+  layAllToolsGrid.Height := (Round(ToolsSearchCount / ToolsInRow) * (240+12));
 end;
 
 procedure TfrmMain.lblTitleClick(Sender: TObject);
 begin
   OpenURL(TLabel(Sender).Text);
+end;
+
+procedure TfrmMain.SearchDelayTimerTimer(Sender: TObject);
+begin
+  TTimer(Sender).Enabled := False;
+  AllToolsSearch;
 end;
 
 procedure TfrmMain.SelectTool(ToolLayoutName: String);
@@ -877,18 +878,16 @@ begin
       break;
     end;
   SelectTool('lay' + ToolButton.TagString);
-end;
-
-procedure TfrmMain.AllToolsSearch();
+end;procedure TfrmMain.AllToolsSearch();
 begin
-  while ((layAllToolsHidden.ChildrenCount > 0)) do // If there are Tools currently hidden
-    for var ToolButton in layAllToolsHidden.Children do // Then move all of them to layAllToolsGrid
-      ToolButton.Parent := layAllToolsGrid;
   if (edtSearchAllTools.Text.IsEmpty = False) then
+  begin
+    ToolsSearchCount := 0;
     for var Tool in RoseltToolsArray do
     begin
       if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
       if (Tool.visible = False) then continue; // Skip tools that aren't visible
+      inc(ToolsSearchCount);
 
       var ToolButtonVisible := False;
       if Tool.text_short.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
@@ -896,9 +895,20 @@ begin
       if Tool.description.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
       if Tool.parent.ToLower.Contains(edtSearchAllTools.Text.ToLower) then ToolButtonVisible := True;
 
-      if (ToolButtonVisible = False) then
-        TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name)).Parent := layAllToolsHidden;
+      TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name)).Visible := ToolButtonVisible;
     end;
+  end else
+  begin
+    for var Tool in RoseltToolsArray do
+    begin
+      if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
+      if (Tool.visible = False) then continue; // Skip tools that aren't visible
+      inc(ToolsSearchCount);
+
+      TButton(layAllToolsGrid.FindComponent('btnAllTools' + Tool.name)).Visible := True;
+    end;
+  end;
+  FormResize(nil);
 end;
 
 procedure TfrmMain.btnAllToolsClick(Sender: TObject);
