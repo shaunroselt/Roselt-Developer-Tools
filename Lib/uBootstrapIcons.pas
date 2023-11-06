@@ -13549,6 +13549,8 @@ end;
 function GetBootstrapIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
   bIcon: TBootstrapIconRecord;
+  ColorStyle: String;
+  IconSizeStyle: String;
 begin
   Result := '';
   for bIcon in BootstrapIconsArray do
@@ -13556,8 +13558,8 @@ begin
     begin
       Result := '<i class="bi bi-' + IconName + '"></i>';
 
-      var ColorStyle := '';
-      var IconSizeStyle := '';
+      ColorStyle := '';
+      IconSizeStyle := '';
       if (HTMLColor <> '') then ColorStyle := 'color: ' + HTMLColor + ';';
       if (IconSize <> 16) then IconSizeStyle := 'font-size: ' + IconSize.ToString + 'px;';
 

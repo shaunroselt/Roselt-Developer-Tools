@@ -1550,6 +1550,8 @@ end;
 function GetFeatherIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
   bIcon: TFeatherIconRecord;
+  ColorStyle: String;
+  IconSizeStyle: String;
 begin
   Result := '';
   for bIcon in FeatherIconsArray do
@@ -1557,8 +1559,8 @@ begin
     begin
       Result := '<i data-feather="' + IconName + '"></i>';
 
-      var ColorStyle := '';
-      var IconSizeStyle := '';
+      ColorStyle := '';
+      IconSizeStyle := '';
       if (HTMLColor <> '') then ColorStyle := ' stroke="' + HTMLColor + '"';
       if (IconSize <> 16) then IconSizeStyle := ' width="' + IconSize.ToString + '" height="' + IconSize.ToString + '"';
 

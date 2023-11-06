@@ -16659,6 +16659,8 @@ end;
 function GetFontAwesomeIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
 var
   bIcon: TFontAwesomeIconRecord;
+  ColorStyle: String;
+  IconSizeStyle: String;
 begin
   Result := '';
   for bIcon in FontAwesomeIconsArray do
@@ -16666,8 +16668,8 @@ begin
     begin
       Result := '<i class="fa-solid fa-' + IconName + '"></i>';
 
-      var ColorStyle := '';
-      var IconSizeStyle := '';
+      ColorStyle := '';
+      IconSizeStyle := '';
       if (HTMLColor <> '') then ColorStyle := 'color: ' + HTMLColor + ';';
       if (IconSize <> 16) then IconSizeStyle := 'font-size: ' + IconSize.ToString + 'px;';
 
