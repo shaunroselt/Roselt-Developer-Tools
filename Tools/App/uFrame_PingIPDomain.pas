@@ -35,7 +35,9 @@ uses
   IdIcmpClient,
 
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_PingIPDomain = class(TFrame)
@@ -91,11 +93,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_PingIPDomain.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_PingIPDomain.btnRefreshClick(Sender: TObject);

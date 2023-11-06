@@ -23,8 +23,11 @@ uses
   FMX.EditBox,
   FMX.Objects,
   FMX.Calendar,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_TimestampConverter = class(TFrame)
@@ -118,20 +121,14 @@ begin
 end;
 
 procedure TFrame_TimestampConverter.btnInputCopyToClipboardUnixTimestampClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(sbUnixTimestamp.Value);
+  CopyToClipboard(sbUnixTimestamp.Value);
 end;
 
 procedure TFrame_TimestampConverter.btnInputCopyToClipboardVariantTimestampClick(
   Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(sbVariantTimestamp.Value);
+  CopyToClipboard(sbVariantTimestamp.Value);
 end;
 
 procedure TFrame_TimestampConverter.btnInputPasteFromClipboardUnixTimestampClick(Sender: TObject);

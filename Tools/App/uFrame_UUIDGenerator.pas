@@ -25,8 +25,11 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_UUIDGenerator = class(TFrame)
@@ -82,11 +85,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_UUIDGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_UUIDGenerator.btnOutputRefreshClick(Sender: TObject);

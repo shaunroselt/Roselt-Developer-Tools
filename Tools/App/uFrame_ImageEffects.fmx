@@ -16,30 +16,31 @@ object Frame_ImageEffects: TFrame_ImageEffects
     TabPosition = PlatformDefault
     Sizes = (
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s
+      907s
       996s
-      886s)
+      907s)
     object TabOriginal: TTabItem
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = True
-      Size.Width = 62.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -65,6 +66,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.PlatformDefault = False
           TabOrder = 75
           Text = 'Browse files'
+          TextSettings.Trimming = None
           OnClick = btnDropImageClick
         end
       end
@@ -4952,7 +4954,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
       end
     end
@@ -4960,9 +4962,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 62.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -9853,7 +9856,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object ShadowEffect: TShadowEffect
           Distance = 30.000000000000000000
@@ -9882,6 +9885,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -9933,6 +9937,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -9943,6 +9948,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -9958,6 +9964,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -10023,6 +10030,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Distance'
               TabOrder = 1
             end
@@ -10033,6 +10041,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the distance of the shadow'
               TabOrder = 0
             end
@@ -10104,6 +10113,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Direction'
               TabOrder = 1
             end
@@ -10114,6 +10124,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the direction you want'
               TabOrder = 0
             end
@@ -10184,6 +10195,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
             end
@@ -10194,6 +10206,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how soft you want'
               TabOrder = 0
             end
@@ -10266,6 +10279,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Opacity'
               TabOrder = 1
             end
@@ -10276,6 +10290,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how much opacity you want'
               TabOrder = 0
             end
@@ -10303,9 +10318,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 41.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -15196,7 +15212,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object BlurEffect: TBlurEffect
           Softness = 5.000000000000000000
@@ -15221,6 +15237,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -15273,6 +15290,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
             end
@@ -15283,6 +15301,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how many names you want'
               TabOrder = 0
             end
@@ -15350,6 +15369,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -15360,6 +15380,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -15387,6 +15408,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -15397,9 +15419,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 47.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -20290,7 +20313,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object GlowEffect: TGlowEffect
           Softness = 9.000000000000000000
@@ -20317,6 +20340,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -20368,6 +20392,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -20378,6 +20403,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -20393,6 +20419,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -20459,6 +20486,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Color'
               TabOrder = 1
             end
@@ -20469,6 +20497,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the glow color you want'
               TabOrder = 0
             end
@@ -20537,6 +20566,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
             end
@@ -20547,6 +20577,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how soft you want'
               TabOrder = 0
             end
@@ -20619,6 +20650,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Opacity'
               TabOrder = 1
             end
@@ -20629,6 +20661,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how much opacity you want'
               TabOrder = 0
             end
@@ -20656,9 +20689,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 78.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -25549,7 +25583,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object InnerGlowEffect: TInnerGlowEffect
           Softness = 5.000000000000000000
@@ -25576,6 +25610,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -25627,6 +25662,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -25637,6 +25673,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -25652,6 +25689,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -25718,6 +25756,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Color'
               TabOrder = 1
             end
@@ -25728,6 +25767,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the glow color you want'
               TabOrder = 0
             end
@@ -25795,6 +25835,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
             end
@@ -25805,6 +25846,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how soft you want'
               TabOrder = 0
             end
@@ -25877,6 +25919,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Opacity'
               TabOrder = 1
             end
@@ -25887,6 +25930,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select how much opacity you want'
               TabOrder = 0
             end
@@ -25914,9 +25958,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 49.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -30807,7 +30852,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object BevelEffect: TBevelEffect
           Direction = 45.000000000000000000
@@ -30833,6 +30878,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -30884,6 +30930,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -30894,6 +30941,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -30909,6 +30957,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -30974,6 +31023,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Size'
               TabOrder = 1
             end
@@ -30984,6 +31034,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the size you want'
               TabOrder = 0
             end
@@ -31055,6 +31106,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Direction'
               TabOrder = 1
             end
@@ -31065,6 +31117,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the direction you want'
               TabOrder = 0
             end
@@ -31092,9 +31145,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 54.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -35985,7 +36039,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object RippleEffect: TRippleEffect
           Amplitude = 0.100000001490116100
@@ -36013,6 +36067,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -36064,6 +36119,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -36074,6 +36130,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -36089,6 +36146,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -36154,6 +36212,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Aspect Ratio'
               TabOrder = 1
             end
@@ -36164,6 +36223,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the aspect ratio you want'
               TabOrder = 0
             end
@@ -36235,6 +36295,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Amplitude'
               TabOrder = 1
             end
@@ -36245,6 +36306,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the amplitude you want'
               TabOrder = 0
             end
@@ -36316,6 +36378,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Frequency'
               TabOrder = 1
             end
@@ -36326,6 +36389,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the frequency you want'
               TabOrder = 0
             end
@@ -36396,6 +36460,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Phase'
               TabOrder = 1
             end
@@ -36406,6 +36471,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the phase you want'
               TabOrder = 0
             end
@@ -36432,9 +36498,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 45.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -41325,7 +41392,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object SwirlEffect: TSwirlEffect
           SpiralStrength = 0.200000002980232200
@@ -41351,6 +41418,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -41402,6 +41470,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -41412,6 +41481,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -41427,6 +41497,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -41493,6 +41564,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Spiral Strength'
               TabOrder = 1
             end
@@ -41503,6 +41575,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the spiral strength you want'
               TabOrder = 0
             end
@@ -41573,6 +41646,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Aspect Ratio'
               TabOrder = 1
             end
@@ -41583,6 +41657,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the aspect ratio you want'
               TabOrder = 0
             end
@@ -41610,9 +41685,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
       CustomIcon = <
         item
         end>
+      TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 52.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 5.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -46503,7 +46579,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
         Align = Client
         PopupMenu = PopupMenu
         Size.Width = 996.000000000000000000
-        Size.Height = 437.000000000000000000
+        Size.Height = 458.000000000000000000
         Size.PlatformDefault = False
         object BandsEffect: TBandsEffect
           BandDensity = 65.000000000000000000
@@ -46529,6 +46605,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
         end
@@ -46580,6 +46657,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
             end
@@ -46590,6 +46668,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
             end
@@ -46605,6 +46684,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Size.PlatformDefault = False
             TextSettings.Font.Size = 18.000000000000000000
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
@@ -46673,6 +46753,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Intensity'
               TabOrder = 1
             end
@@ -46683,6 +46764,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the spiral strength you want'
               TabOrder = 0
             end
@@ -46756,6 +46838,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Density'
               TabOrder = 1
             end
@@ -46766,6 +46849,7 @@ object Frame_ImageEffects: TFrame_ImageEffects
               Size.Height = 24.000000000000000000
               Size.PlatformDefault = False
               TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Trimming = None
               Text = 'Select the aspect ratio you want'
               TabOrder = 0
             end

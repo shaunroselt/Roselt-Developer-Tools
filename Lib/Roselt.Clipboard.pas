@@ -8,14 +8,15 @@ uses
   {$ENDIF}
 
   {$IFNDEF WEBLIB}
+    System.Rtti,
     FMX.Platform;
   {$ENDIF}
 
-procedure CopyToClipboard(const aText: String);
+procedure CopyToClipboard(aText: TValue);
 
 implementation
 
-procedure CopyToClipboard(const aText: String);
+procedure CopyToClipboard(aText: TValue);
   {$IFNDEF WEBLIB}
     var ClipboardService: IFMXClipboardService;
   {$ENDIF}

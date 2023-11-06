@@ -27,6 +27,7 @@ uses
   FMX.Skia,
 
   Roselt.Utility,
+  Roselt.Clipboard,
 
   uFontAwesomeIcons
   ;
@@ -109,27 +110,18 @@ begin
 end;
 
 procedure TFrame_FontAwesomeIcons.btnCopyToClipboardSVGCodeClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memSVGCode.Text);
+  CopyToClipboard(memSVGCode.Text);
 end;
 
 procedure TFrame_FontAwesomeIcons.btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memHTMLIconFont.Text);
+  CopyToClipboard(memHTMLIconFont.Text);
 end;
 
 procedure TFrame_FontAwesomeIcons.btnCopyToClipboardIconColorClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(cbIconColor.Color);
+  CopyToClipboard(cbIconColor.Color);
 end;
 
 procedure TFrame_FontAwesomeIcons.FrameResize(Sender: TObject);

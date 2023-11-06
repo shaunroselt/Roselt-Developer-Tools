@@ -24,7 +24,9 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_Base64TextEncoderDecoder = class(TFrame)
@@ -116,11 +118,8 @@ begin
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.btnInputLoadClick(Sender: TObject);
@@ -141,11 +140,8 @@ begin
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_Base64TextEncoderDecoder.cbEncodingChange(Sender: TObject);

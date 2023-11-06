@@ -21,8 +21,11 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_TextEscapeUnescape = class(TFrame)
@@ -72,11 +75,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_TextEscapeUnescape.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_TextEscapeUnescape.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -88,11 +88,8 @@ begin
 end;
 
 procedure TFrame_TextEscapeUnescape.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 end.

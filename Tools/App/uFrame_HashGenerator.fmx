@@ -34,8 +34,8 @@ object Frame_HashGenerator: TFrame_HashGenerator
         Size.PlatformDefault = False
         TabOrder = 1
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 740.000000000000000000
-        Viewport.Height = 135.000000000000000000
+        Viewport.Width = 744.000000000000000000
+        Viewport.Height = 139.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
           Left = 320
@@ -49,6 +49,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'Input'
         TabOrder = 0
         object btnInputPasteFromClipboard: TButton
@@ -63,6 +64,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
+          TextSettings.Trimming = None
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -94,6 +96,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Paste'
             TabOrder = 5
           end
@@ -110,6 +113,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
+          TextSettings.Trimming = None
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -138,6 +142,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Copy'
             TabOrder = 5
           end
@@ -154,6 +159,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
+          TextSettings.Trimming = None
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -179,6 +185,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Load'
             TabOrder = 5
           end
@@ -195,6 +202,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          TextSettings.Trimming = None
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -221,6 +229,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Clear'
             TabOrder = 5
           end
@@ -246,6 +255,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.PlatformDefault = False
           TabOrder = 74
           Text = 'Browse files'
+          TextSettings.Trimming = None
           OnClick = btnInputLoadClick
         end
       end
@@ -271,6 +281,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'MD5'
           TabOrder = 0
         end
@@ -283,8 +294,10 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputMD5CopyToClipboard: TEditButton
+            Touch.InteractiveGestures = [LongTap]
             CanFocus = False
             Cursor = crHandPoint
+            TextSettings.Trimming = None
             Size.Width = 30.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
@@ -327,6 +340,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'SHA1'
           TabOrder = 0
         end
@@ -339,8 +353,10 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA1CopyToClipboard: TEditButton
+            Touch.InteractiveGestures = [LongTap]
             CanFocus = False
             Cursor = crHandPoint
+            TextSettings.Trimming = None
             Size.Width = 30.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
@@ -383,6 +399,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'SHA224'
           TabOrder = 0
         end
@@ -395,8 +412,10 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA224CopyToClipboard: TEditButton
+            Touch.InteractiveGestures = [LongTap]
             CanFocus = False
             Cursor = crHandPoint
+            TextSettings.Trimming = None
             Size.Width = 30.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
@@ -439,6 +458,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'SHA256'
           TabOrder = 0
         end
@@ -451,8 +471,10 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA256CopyToClipboard: TEditButton
+            Touch.InteractiveGestures = [LongTap]
             CanFocus = False
             Cursor = crHandPoint
+            TextSettings.Trimming = None
             Size.Width = 30.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
@@ -495,6 +517,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'SHA384'
           TabOrder = 0
         end
@@ -507,8 +530,10 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA384CopyToClipboard: TEditButton
+            Touch.InteractiveGestures = [LongTap]
             CanFocus = False
             Cursor = crHandPoint
+            TextSettings.Trimming = None
             Size.Width = 30.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
@@ -551,6 +576,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
           Text = 'SHA512'
           TabOrder = 0
         end
@@ -563,8 +589,10 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA512CopyToClipboard: TEditButton
+            Touch.InteractiveGestures = [LongTap]
             CanFocus = False
             Cursor = crHandPoint
+            TextSettings.Trimming = None
             Size.Width = 30.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
@@ -614,6 +642,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Configuration'
       TabOrder = 0
     end
@@ -671,6 +700,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Letter Case'
           TabOrder = 1
         end
@@ -681,6 +711,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select which letter case you want to use'
           TabOrder = 0
         end
@@ -708,6 +739,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
         Size.PlatformDefault = False
         TextSettings.Font.Size = 18.000000000000000000
         TextSettings.HorzAlign = Trailing
+        TextSettings.Trimming = None
         Text = 'Lowercase'
         TabOrder = 1
         OnClick = SwitchLetterCaseSwitch
@@ -779,6 +811,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Output Type'
           TabOrder = 1
         end
@@ -789,6 +822,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select which output type you want to use'
           TabOrder = 0
         end
@@ -859,6 +893,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Input Type'
           TabOrder = 1
         end
@@ -869,6 +904,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select which input type you want to use'
           TabOrder = 0
         end

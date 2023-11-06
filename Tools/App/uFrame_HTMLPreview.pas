@@ -23,8 +23,11 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts,
   FMX.WebBrowser,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_HTMLPreview = class(TFrame)
@@ -80,11 +83,8 @@ begin
 end;
 
 procedure TFrame_HTMLPreview.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_HTMLPreview.btnInputLoadClick(Sender: TObject);

@@ -1,5 +1,5 @@
 object Frame_HTMLPreview: TFrame_HTMLPreview
-  Size.Width = 906.000000000000000000
+  Size.Width = 904.000000000000000000
   Size.Height = 748.000000000000000000
   Size.PlatformDefault = False
   OnResized = FrameResized
@@ -9,7 +9,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
-    Size.Width = 906.000000000000000000
+    Size.Width = 904.000000000000000000
     Size.Height = 748.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -28,6 +28,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'HTML'
         TabOrder = 0
         object btnInputPasteFromClipboard: TButton
@@ -42,6 +43,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
+          TextSettings.Trimming = None
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -73,6 +75,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Paste'
             TabOrder = 5
           end
@@ -89,6 +92,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
+          TextSettings.Trimming = None
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -117,6 +121,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Copy'
             TabOrder = 5
           end
@@ -133,6 +138,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 7
+          TextSettings.Trimming = None
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -158,6 +164,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Load'
             TabOrder = 5
           end
@@ -174,6 +181,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          TextSettings.Trimming = None
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -200,6 +208,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Clear'
             TabOrder = 5
           end
@@ -216,8 +225,8 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 376.000000000000000000
-        Viewport.Height = 668.000000000000000000
+        Viewport.Width = 380.000000000000000000
+        Viewport.Height = 672.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 
             'All Files|*|*.txt|*.txt|*.html|*.html|*.xhtml|*.xhtml|*.htm|*.ht' +
@@ -229,17 +238,18 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
     end
     object layOutput: TLayout
       Align = Client
-      Size.Width = 481.000000000000000000
+      Size.Width = 479.000000000000000000
       Size.Height = 708.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object memTitleOutput: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 481.000000000000000000
+        Size.Width = 479.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'Preview'
         TabOrder = 0
         object btnRefresh: TButton
@@ -248,12 +258,13 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 396.000000000000000000
+          Position.X = 393.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 82.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          TextSettings.Trimming = None
           OnClick = btnRefreshClick
           object imgRefresh: TSkSvg
             Align = Left
@@ -277,9 +288,10 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
           end
           object lblRefresh: TLabel
             Align = Client
-            Size.Width = 47.000000000000000000
+            Size.Width = 48.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Refresh'
             TabOrder = 5
           end
@@ -287,7 +299,7 @@ object Frame_HTMLPreview: TFrame_HTMLPreview
       end
       object WebBrowser: TWebBrowser
         Align = Client
-        Size.Width = 481.000000000000000000
+        Size.Width = 479.000000000000000000
         Size.Height = 672.000000000000000000
         Size.PlatformDefault = False
         WindowsEngine = EdgeIfAvailable

@@ -26,6 +26,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'Text'
         TabOrder = 0
         object btnInputPasteFromClipboard: TButton
@@ -40,6 +41,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
+          TextSettings.Trimming = None
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -71,6 +73,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Paste'
             TabOrder = 4
           end
@@ -87,6 +90,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          TextSettings.Trimming = None
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -115,6 +119,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Copy'
             TabOrder = 4
           end
@@ -131,6 +136,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
+          TextSettings.Trimming = None
           OnClick = btnInputLoadClick
           object imgInputLoad: TSkSvg
             Align = Left
@@ -156,6 +162,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Load'
             TabOrder = 4
           end
@@ -172,6 +179,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
+          TextSettings.Trimming = None
           OnClick = btnInputClearClick
           object imgInputClear: TSkSvg
             Align = Left
@@ -198,6 +206,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Clear'
             TabOrder = 4
           end
@@ -240,6 +249,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'Inspect'
         TabOrder = 0
       end
@@ -265,6 +275,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.Width = 308.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Trimming = None
           Text = 'Selection'
           TabOrder = 13
         end
@@ -281,6 +292,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Line:'
             TabOrder = 8
           end
@@ -290,6 +302,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -307,6 +320,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Position:'
             TabOrder = 8
           end
@@ -316,6 +330,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -333,6 +348,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Column:'
             TabOrder = 8
           end
@@ -342,6 +358,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -354,6 +371,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.Width = 308.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Trimming = None
           Text = 'Statistics'
           TabOrder = 15
         end
@@ -370,6 +388,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Characters:'
             TabOrder = 8
           end
@@ -379,6 +398,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -396,6 +416,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Lines:'
             TabOrder = 8
           end
@@ -405,6 +426,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -422,6 +444,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Paragraphs:'
             TabOrder = 8
           end
@@ -431,6 +454,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -448,6 +472,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Words:'
             TabOrder = 8
           end
@@ -457,6 +482,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -474,6 +500,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Sentences:'
             TabOrder = 8
           end
@@ -483,6 +510,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -500,6 +528,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Bytes:'
             TabOrder = 8
           end
@@ -509,6 +538,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -538,6 +568,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 308.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Word distribution'
             TabOrder = 16
           end
@@ -569,6 +600,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 308.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Character distribution'
             TabOrder = 16
           end
@@ -586,6 +618,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Width = 121.000000000000000000
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Spaces:'
             TabOrder = 8
           end
@@ -595,6 +628,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
             Size.Height = 17.000000000000000000
             Size.PlatformDefault = False
             TextSettings.HorzAlign = Trailing
+            TextSettings.Trimming = None
             Text = '0'
             TabOrder = 7
           end
@@ -631,6 +665,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Convert'
       TabOrder = 0
     end
@@ -671,6 +706,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 15
           Text = 'Original text'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertKebabCase: TButton
@@ -686,6 +722,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 12
           Text = 'kebab-case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertAlternatingCase: TButton
@@ -701,6 +738,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 9
           Text = 'aLtErNaTiNg cAsE'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertConstantCase: TButton
@@ -716,6 +754,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 13
           Text = 'CONSTANT_CASE'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertTrainCase: TButton
@@ -731,6 +770,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 2
           Text = 'Train-Case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertInverseCase: TButton
@@ -746,6 +786,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 6
           Text = 'InVeRsE CaSe'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertLowerCase: TButton
@@ -761,6 +802,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 14
           Text = 'lower case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertCobolCase: TButton
@@ -776,6 +818,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 11
           Text = 'COBOL-CASE'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertSnakeCase: TButton
@@ -791,6 +834,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 8
           Text = 'snake_case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertSentenceCase: TButton
@@ -806,6 +850,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 10
           Text = 'Sentence case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertUpperCase: TButton
@@ -821,6 +866,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 0
           Text = 'UPPER CASE'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertCamelCase: TButton
@@ -836,6 +882,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 4
           Text = 'camelCase'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertPascalCase: TButton
@@ -851,6 +898,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 1
           Text = 'PascalCase'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertTitleCase: TButton
@@ -866,6 +914,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 3
           Text = 'Title Case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertUpperSnakeCase: TButton
@@ -881,6 +930,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 7
           Text = 'UPPER_SNAKE_CASE'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
         object btnTextCaseConverterInspectorConvertDotCase: TButton
@@ -896,6 +946,7 @@ object Frame_TextCaseConverterInspector: TFrame_TextCaseConverterInspector
           Size.PlatformDefault = False
           TabOrder = 5
           Text = 'dot.case'
+          TextSettings.Trimming = None
           OnClick = TextCaseConverterButtonsClick
         end
       end

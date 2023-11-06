@@ -28,6 +28,7 @@ uses
   FMX.Skia,
 
   Roselt.Utility,
+  Roselt.Clipboard,
 
   uBootstrapIcons
   ;
@@ -143,11 +144,8 @@ begin
 end;
 
 procedure TFrame_BootstrapIcons.btnCopyToClipboardSVGCodeClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memSVGCode.Text);
+  CopyToClipboard(memSVGCode.Text);
 end;
 
 procedure TFrame_BootstrapIcons.edtSearchIconsChange(Sender: TObject);
@@ -163,19 +161,13 @@ begin
 end;
 
 procedure TFrame_BootstrapIcons.btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memHTMLIconFont.Text);
+  CopyToClipboard(memHTMLIconFont.Text);
 end;
 
 procedure TFrame_BootstrapIcons.btnCopyToClipboardIconColorClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(cbIconColor.Color);
+  CopyToClipboard(cbIconColor.Color);
 end;
 
 procedure TFrame_BootstrapIcons.FrameResize(Sender: TObject);

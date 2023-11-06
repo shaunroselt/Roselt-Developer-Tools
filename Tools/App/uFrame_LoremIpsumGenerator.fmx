@@ -21,6 +21,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Output'
       TabOrder = 0
       object btnOutputCopyToClipboard: TButton
@@ -35,6 +36,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 5
+        TextSettings.Trimming = None
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -63,6 +65,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Width = 36.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Trimming = None
           Text = 'Copy'
           TabOrder = 5
         end
@@ -79,6 +82,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
+        TextSettings.Trimming = None
         OnClick = btnOutputRefreshClick
         object imgOutputRefresh: TSkSvg
           Align = Left
@@ -105,6 +109,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Width = 47.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Trimming = None
           Text = 'Refresh'
           TabOrder = 5
         end
@@ -120,8 +125,8 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       Size.Height = 383.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Viewport.Width = 756.000000000000000000
-      Viewport.Height = 379.000000000000000000
+      Viewport.Width = 760.000000000000000000
+      Viewport.Height = 383.000000000000000000
     end
   end
   object layTop: TLayout
@@ -143,6 +148,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Configuration'
       TabOrder = 0
     end
@@ -208,6 +214,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Type'
           TabOrder = 1
         end
@@ -218,6 +225,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select which type you want to use'
           TabOrder = 0
         end
@@ -297,6 +305,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Amount'
           TabOrder = 1
         end
@@ -307,6 +316,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select what amount you want'
           TabOrder = 0
         end
@@ -371,6 +381,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Letter Case'
           TabOrder = 1
         end
@@ -381,6 +392,7 @@ object Frame_LoremIpsumGenerator: TFrame_LoremIpsumGenerator
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select which letter case you want to use'
           TabOrder = 0
         end

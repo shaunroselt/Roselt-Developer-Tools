@@ -21,6 +21,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Results'
       TabOrder = 0
       object btnRefresh: TButton
@@ -35,6 +36,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
+        TextSettings.Trimming = None
         OnClick = btnRefreshClick
         object imgRefresh: TSkSvg
           Align = Left
@@ -61,6 +63,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
           Size.Width = 48.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Trimming = None
           Text = 'Refresh'
           TabOrder = 5
         end
@@ -77,6 +80,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 5
+        TextSettings.Trimming = None
         OnClick = btnOutputCopyToClipboardClick
         object imgOutputCopyToClipboard: TSkSvg
           Align = Left
@@ -105,6 +109,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
           Size.Width = 36.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Trimming = None
           Text = 'Copy'
           TabOrder = 5
         end
@@ -118,8 +123,8 @@ object Frame_TraceRoute: TFrame_TraceRoute
       Size.Height = 333.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Viewport.Width = 860.000000000000000000
-      Viewport.Height = 329.000000000000000000
+      Viewport.Width = 864.000000000000000000
+      Viewport.Height = 333.000000000000000000
     end
     object layIPDomain: TLayout
       Align = MostTop
@@ -137,6 +142,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'IP Address / Domain'
         TabOrder = 0
       end
@@ -149,8 +155,10 @@ object Frame_TraceRoute: TFrame_TraceRoute
         Size.Height = 34.000000000000000000
         Size.PlatformDefault = False
         object edtIPDomainButton: TEditButton
+          Touch.InteractiveGestures = [LongTap]
           CanFocus = False
           Cursor = crArrow
+          TextSettings.Trimming = None
           Size.Width = 69.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
@@ -161,6 +169,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
             Size.Width = 35.000000000000000000
             Size.Height = 30.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Trace'
             TabOrder = 5
           end
@@ -217,6 +226,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Configuration'
       TabOrder = 0
     end
@@ -278,6 +288,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Timeout (ms)'
           TabOrder = 1
         end
@@ -288,6 +299,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select the timeout in milliseconds'
           TabOrder = 0
         end
@@ -364,6 +376,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Packet Size (bytes)'
           TabOrder = 1
         end
@@ -374,6 +387,7 @@ object Frame_TraceRoute: TFrame_TraceRoute
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select the ping packet size'
           TabOrder = 0
         end

@@ -22,8 +22,11 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_HTMLEncoderDecoder = class(TFrame)
@@ -87,11 +90,8 @@ begin
 end;
 
 procedure TFrame_HTMLEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_HTMLEncoderDecoder.btnInputLoadClick(Sender: TObject);
@@ -112,11 +112,8 @@ begin
 end;
 
 procedure TFrame_HTMLEncoderDecoder.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_HTMLEncoderDecoder.FrameResize(Sender: TObject);

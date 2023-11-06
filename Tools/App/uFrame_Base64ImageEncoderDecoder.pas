@@ -25,7 +25,9 @@ uses
   FMX.Layouts,
 
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_Base64ImageEncoderDecoder = class(TFrame)
@@ -76,11 +78,8 @@ begin
 end;
 
 procedure TFrame_Base64ImageEncoderDecoder.btnCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memBase64.Text);
+  CopyToClipboard(memBase64.Text);
 end;
 
 procedure TFrame_Base64ImageEncoderDecoder.btnDropImageClick(Sender: TObject);

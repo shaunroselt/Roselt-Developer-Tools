@@ -25,6 +25,7 @@ uses
   FMX.Layouts,
 
   Roselt.CodeFormatting,
+  Roselt.Clipboard,
 
   System.Skia,
   FMX.Skia;
@@ -98,11 +99,8 @@ begin
 end;
 
 procedure TFrame_XMLFormatter.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_XMLFormatter.btnInputLoadClick(Sender: TObject);
@@ -123,11 +121,8 @@ begin
 end;
 
 procedure TFrame_XMLFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_XMLFormatter.cbIndentationChange(Sender: TObject);

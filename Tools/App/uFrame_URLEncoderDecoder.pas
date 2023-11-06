@@ -22,8 +22,11 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_URLEncoderDecoder = class(TFrame)
@@ -86,11 +89,8 @@ begin
 end;
 
 procedure TFrame_URLEncoderDecoder.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_URLEncoderDecoder.btnInputLoadClick(Sender: TObject);
@@ -111,11 +111,8 @@ begin
 end;
 
 procedure TFrame_URLEncoderDecoder.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_URLEncoderDecoder.FrameResize(Sender: TObject);

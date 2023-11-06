@@ -38,7 +38,9 @@ uses
   Data.Bind.Components,
 
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_ImageEffects = class(TFrame)
@@ -319,11 +321,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_ImageEffects.btnCopyImageToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(TImage(Sender).MakeScreenshot);
+  CopyToClipboard(TImage(Sender).MakeScreenshot);
 end;
 
 procedure TFrame_ImageEffects.btnDropImageClick(Sender: TObject);

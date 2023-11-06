@@ -33,9 +33,12 @@ uses
   IdRawBase,
   IdRawClient,
   IdIcmpClient,
+  IdTraceRoute,
 
   System.Skia,
-  FMX.Skia, IdTraceRoute;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_TraceRoute = class(TFrame)
@@ -86,11 +89,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_TraceRoute.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_TraceRoute.btnRefreshClick(Sender: TObject);

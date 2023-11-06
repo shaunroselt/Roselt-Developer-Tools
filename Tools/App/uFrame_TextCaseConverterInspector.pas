@@ -22,8 +22,11 @@ uses
   FMX.ScrollBox,
   FMX.Memo,
   FMX.Controls.Presentation,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_TextCaseConverterInspector = class(TFrame)
@@ -136,11 +139,8 @@ begin
 end;
 
 procedure TFrame_TextCaseConverterInspector.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memTextCaseConverterInspectorInput.Text);
+  CopyToClipboard(memTextCaseConverterInspectorInput.Text);
 end;
 
 procedure TFrame_TextCaseConverterInspector.btnInputLoadClick(Sender: TObject);

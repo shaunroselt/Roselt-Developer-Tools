@@ -27,7 +27,9 @@ uses
   FMX.Objects,
 
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_PasswordGenerator = class(TFrame)
@@ -90,11 +92,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_PasswordGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_PasswordGenerator.btnRefreshClick(Sender: TObject);

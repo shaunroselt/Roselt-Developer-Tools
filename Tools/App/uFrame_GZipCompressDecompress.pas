@@ -21,8 +21,11 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_GZipCompressDecompress = class(TFrame)
@@ -84,11 +87,8 @@ begin
 end;
 
 procedure TFrame_GZipCompressDecompress.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_GZipCompressDecompress.btnInputLoadClick(Sender: TObject);
@@ -109,11 +109,8 @@ begin
 end;
 
 procedure TFrame_GZipCompressDecompress.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_GZipCompressDecompress.FrameResize(Sender: TObject);

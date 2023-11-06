@@ -878,7 +878,9 @@ begin
       break;
     end;
   SelectTool('lay' + ToolButton.TagString);
-end;procedure TfrmMain.AllToolsSearch();
+end;
+
+procedure TfrmMain.AllToolsSearch();
 begin
   if (edtSearchAllTools.Text.IsEmpty = False) then
   begin

@@ -25,7 +25,10 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   Roselt.LoremIpsum,
+  Roselt.Clipboard,
+
   System.Skia,
   FMX.Skia;
 
@@ -74,11 +77,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_LoremIpsumGenerator.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_LoremIpsumGenerator.btnOutputRefreshClick(Sender: TObject);

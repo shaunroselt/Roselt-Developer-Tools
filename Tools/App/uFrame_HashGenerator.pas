@@ -26,8 +26,11 @@ uses
   FMX.Controls.Presentation,
   FMX.Layouts, 
   FMX.ExtCtrls,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_HashGenerator = class(TFrame)
@@ -141,11 +144,8 @@ begin
 end;
 
 procedure TFrame_HashGenerator.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_HashGenerator.btnInputLoadClick(Sender: TObject);
@@ -199,11 +199,8 @@ begin
 end;
 
 procedure TFrame_HashGenerator.CopyOutputToClipboard(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(TEdit(TControl(Sender).ParentControl).Text);
+  CopyToClipboard(TEdit(TControl(Sender).ParentControl).Text);
 end;
 
 procedure TFrame_HashGenerator.FrameResized(Sender: TObject);

@@ -22,8 +22,11 @@ uses
   FMX.Memo,
   FMX.Controls.Presentation,
   FMX.Layouts,
+
   System.Skia,
-  FMX.Skia;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_PHPFormatter = class(TFrame)
@@ -74,11 +77,8 @@ implementation
 {$R *.fmx}
 
 procedure TFrame_PHPFormatter.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_PHPFormatter.btnInputPasteFromClipboardClick(Sender: TObject);
@@ -90,11 +90,8 @@ begin
 end;
 
 procedure TFrame_PHPFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_PHPFormatter.FrameResize(Sender: TObject);

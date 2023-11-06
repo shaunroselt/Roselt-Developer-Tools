@@ -27,6 +27,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'Markdown'
         TabOrder = 0
         object btnInputPasteFromClipboard: TButton
@@ -41,6 +42,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
+          TextSettings.Trimming = None
           OnClick = btnInputPasteFromClipboardClick
           object imgInputPasteFromClipboard: TSkSvg
             Align = Left
@@ -72,6 +74,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Paste'
             TabOrder = 4
           end
@@ -88,6 +91,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
+          TextSettings.Trimming = None
           OnClick = btnInputCopyToClipboardClick
           object imgInputCopyToClipboard: TSkSvg
             Align = Left
@@ -116,6 +120,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Copy'
             TabOrder = 4
           end
@@ -132,6 +137,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
+          TextSettings.Trimming = None
           object imgInputLoad: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -156,6 +162,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Load'
             TabOrder = 4
           end
@@ -172,6 +179,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
+          TextSettings.Trimming = None
           object imgInputClear: TSkSvg
             Align = Left
             Margins.Left = 5.000000000000000000
@@ -197,6 +205,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Clear'
             TabOrder = 4
           end
@@ -233,6 +242,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Trimming = None
         Text = 'Preview'
         TabOrder = 0
         object btnOutputCopyToClipboard: TButton
@@ -247,6 +257,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
+          TextSettings.Trimming = None
           OnClick = btnOutputCopyToClipboardClick
           object imgOutputCopyToClipboard: TSkSvg
             Align = Left
@@ -275,6 +286,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
             Size.Width = 36.000000000000000000
             Size.Height = 34.000000000000000000
             Size.PlatformDefault = False
+            TextSettings.Trimming = None
             Text = 'Copy'
             TabOrder = 4
           end
@@ -324,6 +336,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
       Size.Height = 30.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
       Text = 'Configuration'
       TabOrder = 0
     end
@@ -357,6 +370,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Conversion'
           TabOrder = 1
         end
@@ -367,6 +381,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
           Size.Height = 24.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
           Text = 'Select which conversion mode you want to use'
           TabOrder = 0
         end
@@ -393,6 +408,7 @@ object Frame_MarkdownPreview: TFrame_MarkdownPreview
         Size.PlatformDefault = False
         TextSettings.Font.Size = 18.000000000000000000
         TextSettings.HorzAlign = Trailing
+        TextSettings.Trimming = None
         Text = 'Encode'
         TabOrder = 1
       end

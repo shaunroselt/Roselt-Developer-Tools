@@ -24,6 +24,7 @@ uses
   FMX.Layouts,
 
   Roselt.CodeFormatting,
+  Roselt.Clipboard,
 
   System.Skia,
   FMX.Skia;
@@ -95,11 +96,8 @@ begin
 end;
 
 procedure TFrame_JsonFormatter.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_JsonFormatter.btnInputLoadClick(Sender: TObject);
@@ -120,11 +118,8 @@ begin
 end;
 
 procedure TFrame_JsonFormatter.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_JsonFormatter.cbIndentationChange(Sender: TObject);

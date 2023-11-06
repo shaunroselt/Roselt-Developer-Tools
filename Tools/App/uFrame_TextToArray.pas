@@ -22,8 +22,12 @@ uses
   FMX.Platform,
   FMX.Controls.Presentation,
   FMX.Layouts,
+  FMX.Edit,
+
   System.Skia,
-  FMX.Skia, FMX.Edit;
+  FMX.Skia,
+
+  Roselt.Clipboard;
 
 type
   TFrame_TextToArray = class(TFrame)
@@ -92,11 +96,8 @@ begin
 end;
 
 procedure TFrame_TextToArray.btnInputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memInput.Text);
+  CopyToClipboard(memInput.Text);
 end;
 
 procedure TFrame_TextToArray.btnInputLoadClick(Sender: TObject);
@@ -117,11 +118,8 @@ begin
 end;
 
 procedure TFrame_TextToArray.btnOutputCopyToClipboardClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memOutput.Text);
+  CopyToClipboard(memOutput.Text);
 end;
 
 procedure TFrame_TextToArray.ConvertTextToArray;

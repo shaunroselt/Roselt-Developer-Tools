@@ -27,6 +27,7 @@ uses
   FMX.Skia,
 
   Roselt.Utility,
+  Roselt.Clipboard,
 
   uFeatherIcons
   ;
@@ -109,27 +110,18 @@ begin
 end;
 
 procedure TFrame_FeatherIcons.btnCopyToClipboardSVGCodeClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memSVGCode.Text);
+  CopyToClipboard(memSVGCode.Text);
 end;
 
 procedure TFrame_FeatherIcons.btnCopyToClipboardHTMLIconFontClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(memHTMLIconFont.Text);
+  CopyToClipboard(memHTMLIconFont.Text);
 end;
 
 procedure TFrame_FeatherIcons.btnCopyToClipboardIconColorClick(Sender: TObject);
-var
-  ClipboardService: IFMXClipboardService;
 begin
-  if TPlatformServices.Current.SupportsPlatformService(IFMXClipboardService, ClipboardService) then
-    ClipboardService.SetClipboard(cbIconColor.Color);
+  CopyToClipboard(cbIconColor.Color);
 end;
 
 procedure TFrame_FeatherIcons.FrameResize(Sender: TObject);
