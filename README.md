@@ -91,6 +91,8 @@ _Note: All tools are still in active development with lots of bugs_
 - Other
   - ASCII Table
   - ASCII Art
+  - Google PageRank Checker
+  - Broken Link Checker
 
 
 ## Download
