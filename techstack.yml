@@ -1,0 +1,18 @@
+repo_name: shaunroselt/Roselt-Developer-Tools
+report_id: de24b10a5a8076d864d7b38ba3064359
+repo_type: Public
+timestamp: '2023-11-09T14:44:06+00:00'
+requested_by: shaunroselt
+provider: github
+branch: master
+detected_tools_count: 1
+tools:
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
