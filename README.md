@@ -91,6 +91,8 @@ _Note: All tools are still in active development with lots of bugs_
 - Other
   - ASCII Table
   - ASCII Art
+  - Broken Link Checker
+  - Domain Name Search
 
 
 ## Download
