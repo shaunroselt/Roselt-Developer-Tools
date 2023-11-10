@@ -3,12 +3,12 @@ unit Roselt.Clipboard;
 interface
 
 uses
+  System.Rtti,
   {$IFDEF WEBLIB}
     WEBLib.Clipboard;
   {$ENDIF}
 
   {$IFNDEF WEBLIB}
-    System.Rtti,
     FMX.Platform;
   {$ENDIF}
 
@@ -31,7 +31,7 @@ begin
   {$IFDEF WEBLIB}
     WebClipboard := TWebClipboard.Create(nil);
     try
-      WebClipboard.CopyToClipboard(aText);
+      WebClipboard.CopyToClipboard(aText.toString());
     finally
       WebClipboard.Free;
     end;
