@@ -1,0 +1,192 @@
+object Frame_IPLookup: TFrame_IPLookup
+  Size.Width = 476.000000000000000000
+  Size.Height = 356.000000000000000000
+  Size.PlatformDefault = False
+  object lblHeading: TLabel
+    Align = Top
+    StyledSettings = [Family, Style, FontColor]
+    Margins.Left = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Size.Width = 466.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 18.000000000000000000
+    Text = 'Enter Domain/IP to Check Location:'
+    TabOrder = 0
+  end
+  object edtIP: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Top
+    TabOrder = 1
+    Position.X = 5.000000000000000000
+    Position.Y = 33.000000000000000000
+    Margins.Left = 5.000000000000000000
+    Size.Width = 471.000000000000000000
+    Size.Height = 34.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblSubHeading: TLabel
+    Align = Top
+    Margins.Left = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 67.000000000000000000
+    Size.Width = 466.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Enter any IP Address or domain name to Lookup the IP Location.'
+    TabOrder = 2
+  end
+  object btnLookup: TButton
+    Align = Top
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 94.000000000000000000
+    Size.Width = 456.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object svgBtnIPLookup: TSkSvg
+      Align = Left
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 39.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      Svg.Source = 
+        '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 ' +
+        '0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https' +
+        '://fontawesome.com License - https://fontawesome.com/license (Co' +
+        'mmercial License) Copyright 2023 Fonticons, Inc. --><path d="M16' +
+        ' 144a144 144 0 1 1 288 0A144 144 0 1 1 16 144zM160 80c8.8 0 16-7' +
+        '.2 16-16s-7.2-16-16-16c-53 0-96 43-96 96c0 8.8 7.2 16 16 16s16-7' +
+        '.2 16-16c0-35.3 28.7-64 64-64zM128 480V317.1c10.4 1.9 21.1 2.9 3' +
+        '2 2.9s21.6-1 32-2.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32z"/><' +
+        '/svg>'
+    end
+    object lblBtnIPLookupLabel: TLabel
+      Align = Center
+      TextSettings.HorzAlign = Center
+      Text = 'IP Lookup'
+      TabOrder = 6
+    end
+  end
+  object pnlDeatails: TPanel
+    Align = Client
+    Size.Width = 476.000000000000000000
+    Size.Height = 222.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object lblDetailsHeading: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Top = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 476.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.HorzAlign = Center
+      Text = 'IP2Location'
+      TabOrder = 0
+    end
+    object pnlDetailsContainer: TPanel
+      Align = Client
+      Size.Width = 476.000000000000000000
+      Size.Height = 180.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblIP: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'IP Address:'
+        TabOrder = 0
+      end
+      object lblState: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 50.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'State:'
+        TabOrder = 7
+      end
+      object lblCountry: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 25.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Country:'
+        TabOrder = 2
+      end
+      object lblCity: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 75.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'City:'
+        TabOrder = 6
+      end
+      object lblLatitude: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 100.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Latitude:'
+        TabOrder = 5
+      end
+      object lblLongitude: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 125.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Longitude:'
+        TabOrder = 4
+      end
+      object lblISP: TLabel
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 150.000000000000000000
+        Size.Width = 472.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'ISP:'
+        TabOrder = 3
+      end
+    end
+  end
+  object IdIcmpClient: TIdIcmpClient
+    Protocol = 1
+    ProtocolIPv6 = 58
+    Left = 317
+    Top = 8
+  end
+end
