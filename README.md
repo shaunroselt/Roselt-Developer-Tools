@@ -14,7 +14,7 @@ _Note: All tools are still in active development with lots of bugs_
 
 ## Current Tools
 - Converters
-  - YSON <> YAML
+  - JSON <> YAML
   - Number Base
   - Text to Array
   - Timestamp
