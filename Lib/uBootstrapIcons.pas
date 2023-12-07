@@ -19,12 +19,12 @@ type
     svg: String;
   end;
 
-function GetBootstrapIcon(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
-function GetBootstrapIconHtmlFont(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
+function GetBootstrapIcon(IconName: String; IconSize: String = '16'; HTMLColor: String = ''): String;
+function GetBootstrapIconHtmlFont(IconName: String; IconSize: String = '16'; HTMLColor: String = ''): String;
 {$IFNDEF WEBLIB}
-function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal = 16;  HTMLColor: String = ''): String;
+function GetBootstrapIconPathData(IconName: String; IconSize: String = '16';  HTMLColor: String = ''): String;
 {$ENDIF}
-function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal = 16; HTMLColor: String = ''): String;
+function GetBootstrapIconBase64(IconName: String; IconSize: String = '16'; HTMLColor: String = ''): String;
 
 const
   BootstrapIconsArray: array[0..2049] of TBootstrapIconRecord = (
@@ -13517,7 +13517,7 @@ const
 implementation
 
 {$IFNDEF WEBLIB}
-function GetBootstrapIconPathData(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+function GetBootstrapIconPathData(IconName: String; IconSize: String; HTMLColor: String): String;
 // This function doesn't work on all of the icons, but works on most of them.
 begin
   Result := '';
@@ -13531,7 +13531,7 @@ begin
 end;
 {$ENDIF}
 
-function GetBootstrapIcon(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+function GetBootstrapIcon(IconName: String; IconSize: String; HTMLColor: String): String;
 var
   bIcon: TBootstrapIconRecord;
 begin
@@ -13539,14 +13539,14 @@ begin
   for bIcon in BootstrapIconsArray do
     if bIcon.name = IconName then
     begin
-      Result := StringReplace(bIcon.svg, 'IconSize', IconSize.ToString, [rfReplaceAll]);
+      Result := StringReplace(bIcon.svg, 'IconSize', IconSize, [rfReplaceAll]);
       if (HTMLColor <> '') then
         Result := StringReplace(Result, 'currentColor', HTMLColor, [rfReplaceAll]);
       Exit;
     end;
 end;
 
-function GetBootstrapIconHtmlFont(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+function GetBootstrapIconHtmlFont(IconName: String; IconSize: String; HTMLColor: String): String;
 var
   bIcon: TBootstrapIconRecord;
   ColorStyle: String;
@@ -13561,7 +13561,7 @@ begin
       ColorStyle := '';
       IconSizeStyle := '';
       if (HTMLColor <> '') then ColorStyle := 'color: ' + HTMLColor + ';';
-      if (IconSize <> 16) then IconSizeStyle := 'font-size: ' + IconSize.ToString + 'px;';
+      if (IconSize <> '16') then IconSizeStyle := 'font-size: ' + IconSize + 'px;';
 
       if (ColorStyle <> '') or (IconSizeStyle <> '') then
         Result := '<i class="bi bi-' + IconName + '" style="' + ColorStyle + IconSizeStyle + '"></i>';
@@ -13570,7 +13570,7 @@ begin
     end;
 end;
 
-function GetBootstrapIconBase64(IconName: String; IconSize: Cardinal; HTMLColor: String): String;
+function GetBootstrapIconBase64(IconName: String; IconSize: String; HTMLColor: String): String;
 begin
   Result := '';
   {$IFDEF WEBLIB}
