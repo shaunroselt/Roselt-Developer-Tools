@@ -28,7 +28,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [shaunroselt/Roselt-Developer-Tools](https://github.com/shaunroselt/Roselt-Developer-Tools)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|5<br/>Tools used|01/05/24 <br/>Report generated|
+|4<br/>Tools used|01/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -71,20 +71,12 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## Other (2)
+## Other (1)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/3244/1_Mr1Fy00XjPGNf1Kkp_hWtw_2x.png' alt='Font Awesome'>
   <br>
   <sub><a href="https://fontawesome.com/">Font Awesome</a></sub>
-  <br>
-  <sub></sub>
-</td>
-
-<td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/2270/no-img-open-source.png' alt='HTML'>
-  <br>
-  <sub><a href="http://">HTML</a></sub>
   <br>
   <sub></sub>
 </td>
