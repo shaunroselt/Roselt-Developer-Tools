@@ -2,11 +2,11 @@ repo_name: shaunroselt/Roselt-Developer-Tools
 report_id: d8a09869beb77291642251b83b83b721
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:25:52+00:00'
+timestamp: '2024-01-11T12:14:32+00:00'
 requested_by: shaunroselt
 provider: github
 branch: master
-detected_tools_count: 5
+detected_tools_count: 4
 tools:
 - name: Pascal
   description: An imperative and procedural programming language
@@ -50,13 +50,3 @@ tools:
   image_url: https://img.stackshare.io/service/3244/1_Mr1Fy00XjPGNf1Kkp_hWtw_2x.png
   detection_source_url: https://github.com/shaunroselt/Roselt-Developer-Tools/blob/master/Lib/uFontAwesomeIcons.pas
   detection_source: Lib/uFontAwesomeIcons.pas
-- name: HTML
-  description: Hypertext Markup Language for creating web pages.
-  website_url: http://
-  open_source: false
-  hosted_saas: false
-  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
-  detection_source_url: https://github.com/shaunroselt/Roselt-Developer-Tools/blob/master/Tools/Web/uFrame_NameGenerator.html
-  detection_source: Tools/Web/uFrame_NameGenerator.html
-  last_updated_by: Shaun Roselt
-  last_updated_on: 2023-10-07 23:46:17.000000000 Z
