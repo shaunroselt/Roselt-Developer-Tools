@@ -12,9 +12,20 @@ Cross-Platform Utilities App for Developers.
 
 _Note: All tools are still in active development with lots of bugs_
 
+
+## Status
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/shaunroselt/Roselt-Developer-Tools/master/LICENSE)
+[![wakatime](https://wakatime.com/badge/github/shaunroselt/Roselt-Developer-Tools.svg)](https://wakatime.com/badge/github/shaunroselt/Roselt-Developer-Tools)
+
+![GitHub all releases](https://img.shields.io/github/downloads/ShaunRoselt/Roselt-Developer-Tools/total?label=Github%20Downloads)
+![Steam Downloads](https://img.shields.io/badge/Steam_Downloads-15K-green)
+![Microsoft Store Downloads](https://img.shields.io/badge/Microsoft_Store_Downloads-30K-green)
+
+
 ## Current Tools
 - Converters
-  - YSON <> YAML
+  - JSON <> YAML
   - Number Base
   - Text to Array
   - Timestamp
@@ -93,7 +104,7 @@ _Note: All tools are still in active development with lots of bugs_
   - ASCII Art
   - Broken Link Checker
   - Domain Name Search
-
+ 
 
 ## Download
 Steam: [https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/](https://store.steampowered.com/app/1223180/Roselt_Developer_Tools/)
