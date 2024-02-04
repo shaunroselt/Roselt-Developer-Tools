@@ -14,6 +14,8 @@ _Note: All tools are still in active development with lots of bugs_
 
 
 ## Status
+![](https://tokei.rs/b1/github/project-jedi/jcl?category=code)
+![](https://tokei.rs/b1/github/project-jedi/jcl?category=files)
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/shaunroselt/Roselt-Developer-Tools/master/LICENSE)
 [![wakatime](https://wakatime.com/badge/github/shaunroselt/Roselt-Developer-Tools.svg)](https://wakatime.com/badge/github/shaunroselt/Roselt-Developer-Tools)
