@@ -10,6 +10,7 @@ uses
   System.Variants,
   System.NetEncoding,
   System.Hash,
+  System.IOUtils,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -105,6 +106,16 @@ type
     btnInputClear: TButton;
     imgInputClear: TSkSvg;
     lblInputClear: TLabel;
+    layHashGeneratorOutputCRC32: TLayout;
+    lblHashGeneratorOutputCRC32: TLabel;
+    edtHashGeneratorOutputCRC32: TEdit;
+    edtHashGeneratorOutputCopyToClipboardCRC32: TEditButton;
+    imgHashGeneratorOutputCopyToClipboardCRC32: TSkSvg;
+    layHashGeneratorOutputBobJenkins: TLayout;
+    lblHashGeneratorOutputBobJenkins: TLabel;
+    edtHashGeneratorOutputBobJenkins: TEdit;
+    edtHashGeneratorOutputCopyToClipboardBobJenkins: TEditButton;
+    imgHashGeneratorOutputCopyToClipboardBobJenkins: TSkSvg;
     procedure SwitchLetterCaseSwitch(Sender: TObject);
     procedure memInputKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure cbOutputTypeChange(Sender: TObject);
@@ -132,6 +143,8 @@ begin
   memInput.OnChange := nil;
 
   memInput.Text := '';
+  edtHashGeneratorOutputBobJenkins.Text := '';
+  edtHashGeneratorOutputCRC32.Text := '';
   edtHashGeneratorOutputMD5.Text := '';
   edtHashGeneratorOutputSHA1.Text := '';
   edtHashGeneratorOutputSHA224.Text := '';
@@ -223,6 +236,7 @@ begin
   if (cbInputType.Selected.Text = 'Text') then
   begin
     var TextToHash := memInput.Text;
+    edtHashGeneratorOutputBobJenkins.Text := THashBobJenkins.GetHashString(TextToHash);
     edtHashGeneratorOutputMD5.Text := THashMD5.GetHashString(TextToHash);
     edtHashGeneratorOutputSHA1.Text := THashSHA1.GetHashString(TextToHash);
     edtHashGeneratorOutputSHA224.Text := THashSHA2.GetHashString(TextToHash,THashSHA2.TSHA2Version.SHA224);
@@ -232,6 +246,7 @@ begin
     // Need to add THashSHA2.TSHA2Version.SHA512_224 and THashSHA2.TSHA2Version.SHA512_256
   end else
   begin
+    edtHashGeneratorOutputBobJenkins.Text := THashBobJenkins.GetHashString(TFile.ReadAllText(OpenDialog.FileName));
     edtHashGeneratorOutputMD5.Text := THashMD5.GetHashStringFromFile(OpenDialog.FileName);
     edtHashGeneratorOutputSHA1.Text := THashSHA1.GetHashStringFromFile(OpenDialog.FileName);
     edtHashGeneratorOutputSHA224.Text := THashSHA2.GetHashStringFromFile(OpenDialog.FileName);
@@ -244,6 +259,7 @@ begin
 
   if (SwitchLetterCase.IsChecked) then
   begin
+    edtHashGeneratorOutputBobJenkins.Text := edtHashGeneratorOutputBobJenkins.Text.ToUpper;
     edtHashGeneratorOutputMD5.Text := edtHashGeneratorOutputMD5.Text.ToUpper;
     edtHashGeneratorOutputSHA1.Text := edtHashGeneratorOutputSHA1.Text.ToUpper;
     edtHashGeneratorOutputSHA224.Text := edtHashGeneratorOutputSHA224.Text.ToUpper;
@@ -255,6 +271,7 @@ begin
 
   if (cbOutputType.Selected.Text = 'Base64') then
   begin
+    edtHashGeneratorOutputBobJenkins.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputBobJenkins.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
     edtHashGeneratorOutputMD5.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputMD5.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
     edtHashGeneratorOutputSHA1.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA1.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);
     edtHashGeneratorOutputSHA224.Text := TNetEncoding.Base64.Encode(edtHashGeneratorOutputSHA224.Text).Replace(#13,'',[rfReplaceAll]).Replace(#10,'',[rfReplaceAll]);

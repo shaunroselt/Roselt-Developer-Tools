@@ -1,6 +1,6 @@
 object Frame_HashGenerator: TFrame_HashGenerator
   Size.Width = 800.000000000000000000
-  Size.Height = 748.000000000000000000
+  Size.Height = 984.000000000000000000
   Size.PlatformDefault = False
   OnResized = FrameResized
   object layBottom: TVertScrollBox
@@ -10,16 +10,16 @@ object Frame_HashGenerator: TFrame_HashGenerator
     Padding.Right = 20.000000000000000000
     Padding.Bottom = 20.000000000000000000
     Size.Width = 800.000000000000000000
-    Size.Height = 459.000000000000000000
+    Size.Height = 695.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Viewport.Width = 784.000000000000000000
-    Viewport.Height = 459.000000000000000000
+    Viewport.Width = 800.000000000000000000
+    Viewport.Height = 695.000000000000000000
     object layInput: TLayout
       Align = Top
       Position.X = 20.000000000000000000
       Position.Y = 20.000000000000000000
-      Size.Width = 744.000000000000000000
+      Size.Width = 760.000000000000000000
       Size.Height = 175.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -29,13 +29,13 @@ object Frame_HashGenerator: TFrame_HashGenerator
         TextSettings.WordWrap = True
         OnChange = memInputChange
         Align = Client
-        Size.Width = 744.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 139.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 744.000000000000000000
-        Viewport.Height = 139.000000000000000000
+        Viewport.Width = 756.000000000000000000
+        Viewport.Height = 135.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt'
           Left = 320
@@ -45,7 +45,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
       object memTitleInput: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Size.Width = 744.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 36.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 20.000000000000000000
@@ -58,7 +58,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 525.000000000000000000
+          Position.X = 541.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -107,7 +107,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 599.000000000000000000
+          Position.X = 615.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -153,7 +153,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Margins.Top = 1.000000000000000000
           Margins.Right = 4.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 451.000000000000000000
+          Position.X = 467.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -196,7 +196,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Margins.Top = 1.000000000000000000
           Margins.Right = 1.000000000000000000
           Margins.Bottom = 1.000000000000000000
-          Position.X = 673.000000000000000000
+          Position.X = 689.000000000000000000
           Position.Y = 1.000000000000000000
           Size.Width = 70.000000000000000000
           Size.Height = 34.000000000000000000
@@ -264,20 +264,21 @@ object Frame_HashGenerator: TFrame_HashGenerator
       Align = Top
       Position.X = 20.000000000000000000
       Position.Y = 195.000000000000000000
-      Size.Width = 744.000000000000000000
-      Size.Height = 385.000000000000000000
+      Size.Width = 760.000000000000000000
+      Size.Height = 454.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object layHashGeneratorOutputMD5: TLayout
         Align = Top
-        Size.Width = 744.000000000000000000
+        Position.Y = 64.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 64.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 5
+        TabOrder = 7
         object lblHashGeneratorOutputMD5: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
@@ -290,7 +291,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Align = Client
           TabOrder = 1
           ReadOnly = True
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputMD5CopyToClipboard: TEditButton
@@ -328,15 +329,15 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layHashGeneratorOutputSHA1: TLayout
         Align = Top
-        Position.Y = 64.000000000000000000
-        Size.Width = 744.000000000000000000
+        Position.Y = 128.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 64.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         object lblHashGeneratorOutputSHA1: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
@@ -349,7 +350,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Align = Client
           TabOrder = 1
           ReadOnly = True
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA1CopyToClipboard: TEditButton
@@ -387,15 +388,15 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layHashGeneratorOutputSHA224: TLayout
         Align = Top
-        Position.Y = 128.000000000000000000
-        Size.Width = 744.000000000000000000
+        Position.Y = 192.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 64.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
         object lblHashGeneratorOutputSHA224: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
@@ -408,7 +409,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Align = Client
           TabOrder = 1
           ReadOnly = True
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA224CopyToClipboard: TEditButton
@@ -446,15 +447,15 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layHashGeneratorOutputSHA256: TLayout
         Align = Top
-        Position.Y = 192.000000000000000000
-        Size.Width = 744.000000000000000000
+        Position.Y = 256.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 64.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         object lblHashGeneratorOutputSHA256: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
@@ -467,7 +468,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Align = Client
           TabOrder = 1
           ReadOnly = True
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA256CopyToClipboard: TEditButton
@@ -505,15 +506,15 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layHashGeneratorOutputSHA384: TLayout
         Align = Top
-        Position.Y = 256.000000000000000000
-        Size.Width = 744.000000000000000000
+        Position.Y = 320.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 64.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblHashGeneratorOutputSHA384: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
@@ -526,7 +527,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Align = Client
           TabOrder = 1
           ReadOnly = True
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA384CopyToClipboard: TEditButton
@@ -564,15 +565,15 @@ object Frame_HashGenerator: TFrame_HashGenerator
       end
       object layHashGeneratorOutputSHA512: TLayout
         Align = Top
-        Position.Y = 320.000000000000000000
-        Size.Width = 744.000000000000000000
+        Position.Y = 384.000000000000000000
+        Size.Width = 760.000000000000000000
         Size.Height = 64.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object lblHashGeneratorOutputSHA512: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 30.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 20.000000000000000000
@@ -585,7 +586,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
           Align = Client
           TabOrder = 1
           ReadOnly = True
-          Size.Width = 744.000000000000000000
+          Size.Width = 760.000000000000000000
           Size.Height = 34.000000000000000000
           Size.PlatformDefault = False
           object edtHashGeneratorOutputSHA512CopyToClipboard: TEditButton
@@ -599,6 +600,123 @@ object Frame_HashGenerator: TFrame_HashGenerator
             TabOrder = 0
             OnClick = CopyOutputToClipboard
             object imgHashGeneratorOutputSHA512CopyToClipboard: TSkSvg
+              Align = Client
+              Margins.Left = 3.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 3.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Size.Width = 24.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              Svg.OverrideColor = claWhite
+              Svg.Source = 
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+                #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+                ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+                ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+                '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+                '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+                ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+            end
+          end
+        end
+      end
+      object layHashGeneratorOutputCRC32: TLayout
+        Align = Top
+        Size.Width = 760.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        TabOrder = 6
+        object lblHashGeneratorOutputCRC32: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 760.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'CRC-32'
+          TabOrder = 0
+        end
+        object edtHashGeneratorOutputCRC32: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 1
+          ReadOnly = True
+          Size.Width = 760.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          object edtHashGeneratorOutputCopyToClipboardCRC32: TEditButton
+            Touch.InteractiveGestures = [LongTap]
+            CanFocus = False
+            Cursor = crHandPoint
+            TextSettings.Trimming = None
+            Size.Width = 30.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            OnClick = CopyOutputToClipboard
+            object imgHashGeneratorOutputCopyToClipboardCRC32: TSkSvg
+              Align = Client
+              Margins.Left = 3.000000000000000000
+              Margins.Top = 3.000000000000000000
+              Margins.Right = 3.000000000000000000
+              Margins.Bottom = 3.000000000000000000
+              Size.Width = 24.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              Svg.OverrideColor = claWhite
+              Svg.Source = 
+                '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+                'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+                #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+                ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+                ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+                '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+                '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+                ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+            end
+          end
+        end
+      end
+      object layHashGeneratorOutputBobJenkins: TLayout
+        Align = Top
+        Size.Width = 760.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object lblHashGeneratorOutputBobJenkins: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 760.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Bob Jenkins (joaat)'
+          TabOrder = 0
+        end
+        object edtHashGeneratorOutputBobJenkins: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          TabOrder = 1
+          ReadOnly = True
+          Size.Width = 760.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          object edtHashGeneratorOutputCopyToClipboardBobJenkins: TEditButton
+            Touch.InteractiveGestures = [LongTap]
+            CanFocus = False
+            Cursor = crHandPoint
+            TextSettings.Trimming = None
+            Size.Width = 30.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            OnClick = CopyOutputToClipboard
+            object imgHashGeneratorOutputCopyToClipboardBobJenkins: TSkSvg
               Align = Client
               Margins.Left = 3.000000000000000000
               Margins.Top = 3.000000000000000000
