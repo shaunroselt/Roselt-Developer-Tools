@@ -1,68 +1,68 @@
 object Frame_ImageEffects: TFrame_ImageEffects
-  Size.Width = 1036.000000000000000000
-  Size.Height = 952.000000000000000000
+  Size.Width = 1036.00000000000000000
+  Size.Height = 952.00000000000000000
   Size.PlatformDefault = False
   object TabControlImages: TTabControl
     Align = Client
-    Margins.Left = 20.000000000000000000
-    Margins.Top = 20.000000000000000000
-    Margins.Right = 20.000000000000000000
-    Margins.Bottom = 20.000000000000000000
-    Size.Width = 996.000000000000000000
-    Size.Height = 912.000000000000000000
+    Margins.Left = 20.00000000000000000
+    Margins.Top = 20.00000000000000000
+    Margins.Right = 20.00000000000000000
+    Margins.Bottom = 20.00000000000000000
+    Size.Width = 996.00000000000000000
+    Size.Height = 912.00000000000000000
     Size.PlatformDefault = False
     TabIndex = 0
     TabOrder = 0
     TabPosition = PlatformDefault
     Sizes = (
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s
+      886s
       996s
-      907s)
+      886s)
     object TabOriginal: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Trimming = None
       IsSelected = True
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 62.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Original'
-      ExplicitSize.cx = 62.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 62.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object DropImage: TDropTarget
         Align = Top
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Text = 'PNG, JPG, JPEG'
+        Text = 'PNG, JPG, JPEG, WEBP, SVG'
         object btnDropImage: TButton
           Align = Top
-          Margins.Left = 10.000000000000000000
-          Margins.Top = 10.000000000000000000
-          Margins.Right = 10.000000000000000000
-          Position.X = 10.000000000000000000
-          Position.Y = 10.000000000000000000
-          Size.Width = 976.000000000000000000
-          Size.Height = 22.000000000000000000
+          Margins.Left = 10.00000000000000000
+          Margins.Top = 10.00000000000000000
+          Margins.Right = 10.00000000000000000
+          Position.X = 10.00000000000000000
+          Position.Y = 10.00000000000000000
+          Size.Width = 976.00000000000000000
+          Size.Height = 22.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 75
           Text = 'Browse files'
@@ -4953,9 +4953,16 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
+      end
+      object svgOriginal: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
       end
     end
     object TabShadow: TTabItem
@@ -4964,14 +4971,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 62.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Shadow'
-      ExplicitSize.cx = 63.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 63.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgShadow: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -9855,36 +9862,36 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object ShadowEffect: TShadowEffect
-          Distance = 30.000000000000000000
-          Direction = 45.000000000000000000
-          Softness = 0.300000011920929000
-          Opacity = 0.600000023841857900
+        object imgShadowEffect: TShadowEffect
+          Distance = 30.00000000000000000
+          Direction = 45.00000000000000000
+          Softness = 0.30000001192092900
+          Opacity = 0.60000002384185790
           ShadowColor = claBlack
         end
       end
       object layTopShadow: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationShadow: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -9892,30 +9899,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledShadow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledShadow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -9926,17 +9933,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledShadow: TLayout
             Align = Client
-            Size.Width = 713.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 713.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledShadow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 713.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 713.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -9944,10 +9951,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledShadow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 713.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 713.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -9956,13 +9963,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledShadow: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 762.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 762.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -9972,10 +9979,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 866.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 78.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 866.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 78.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
             OnSwitch = EnabledSwitch
@@ -9984,30 +9991,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layDistanceShadow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgDistanceShadow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -10019,17 +10026,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionDistanceShadow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleDistanceShadow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Distance'
               TabOrder = 1
@@ -10037,10 +10044,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionDistanceShadow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the distance of the shadow'
               TabOrder = 0
@@ -10051,45 +10058,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 30.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 30.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layDirectionShadow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgDirectionShadow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -10102,17 +10109,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionDirectionShadow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleDirectionShadow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Direction'
               TabOrder = 1
@@ -10120,10 +10127,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionDirectionShadow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the direction you want'
               TabOrder = 0
@@ -10134,45 +10141,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 45.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 45.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object laySoftnessShadow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 362.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 362.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgSoftnessShadow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -10184,17 +10191,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionSoftnessShadow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleSoftnessShadow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
@@ -10202,10 +10209,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionSoftnessShadow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how soft you want'
               TabOrder = 0
@@ -10216,45 +10223,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.300000011920929000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.30000001192092900
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layOpacityShadow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 284.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 284.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgOpacityShadow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -10268,17 +10275,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionOpacityShadow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleOpacityShadow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Opacity'
               TabOrder = 1
@@ -10286,10 +10293,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionOpacityShadow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how much opacity you want'
               TabOrder = 0
@@ -10300,17 +10307,31 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.600000023841857900
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.60000002384185790
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgShadow: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgShadowEffect: TShadowEffect
+          Distance = 3.00000000000000000
+          Direction = 45.00000000000000000
+          Softness = 0.30000001192092900
+          Opacity = 0.60000002384185790
+          ShadowColor = claBlack
         end
       end
     end
@@ -10320,14 +10341,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 41.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Blur'
-      ExplicitSize.cx = 41.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 41.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgBlur: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -15211,32 +15232,32 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object BlurEffect: TBlurEffect
-          Softness = 5.000000000000000000
+        object imgBlurEffect: TBlurEffect
+          Softness = 5.00000000000000000
         end
       end
       object layTopBlur: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationSoftnessBlur: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -15244,30 +15265,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object laySoftnessBlur: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgSoftnessBlur: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -15279,17 +15300,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionSoftnessBlur: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleSoftnessBlur: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
@@ -15297,10 +15318,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionSoftnessBlur: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how many names you want'
               TabOrder = 0
@@ -15311,43 +15332,43 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 5.000000000000000000
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 5.00000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layEnabledBlur: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledBlur: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -15358,17 +15379,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledBlur: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledBlur: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -15376,10 +15397,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledBlur: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -15389,10 +15410,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
             OnSwitch = EnabledSwitch
@@ -15400,18 +15421,28 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledBlur: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
             TabOrder = 1
           end
+        end
+      end
+      object svgBlur: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgBlurEffect: TBlurEffect
+          Softness = 5.00000000000000000
         end
       end
     end
@@ -15421,14 +15452,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 47.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Glow'
-      ExplicitSize.cx = 47.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 47.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgGlow: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -20312,34 +20343,34 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object GlowEffect: TGlowEffect
-          Softness = 9.000000000000000000
+        object imgGlowEffect: TGlowEffect
+          Softness = 9.00000000000000000
           GlowColor = claGold
-          Opacity = 0.899999976158142100
+          Opacity = 0.89999997615814210
         end
       end
       object layTopGlow: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationGlow: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -20347,30 +20378,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -20381,17 +20412,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledGlow: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -20399,10 +20430,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -20411,13 +20442,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledGlow: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -20427,42 +20458,41 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
-            OnSwitch = cbColorGlowChange
           end
         end
         object layColorGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgColorGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -20475,17 +20505,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionColorGlow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleColorGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Color'
               TabOrder = 1
@@ -20493,10 +20523,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionColorGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the glow color you want'
               TabOrder = 0
@@ -20508,42 +20538,41 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             DisableFocusEffect = False
             ItemIndex = 51
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
-            OnChange = cbColorGlowChange
           end
         end
         object laySoftnessGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 284.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 284.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgSoftnessGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -20555,17 +20584,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionSoftnessGlow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleSoftnessGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
@@ -20573,10 +20602,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionSoftnessGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how soft you want'
               TabOrder = 0
@@ -20587,45 +20616,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 9.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 9.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layOpacityGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgOpacityGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -20639,17 +20668,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionOpacityGlow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleOpacityGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Opacity'
               TabOrder = 1
@@ -20657,10 +20686,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionOpacityGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how much opacity you want'
               TabOrder = 0
@@ -20671,17 +20700,29 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.899999976158142100
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.89999997615814210
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgGlow: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgGlowEffect: TGlowEffect
+          Softness = 9.00000000000000000
+          GlowColor = claGold
+          Opacity = 0.89999997615814210
         end
       end
     end
@@ -20691,14 +20732,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 78.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Inner Glow'
-      ExplicitSize.cx = 78.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 78.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgInnerGlow: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -25582,34 +25623,34 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
         object InnerGlowEffect: TInnerGlowEffect
-          Softness = 5.000000000000000000
+          Softness = 5.00000000000000000
           GlowColor = claGold
-          Opacity = 0.899999976158142100
+          Opacity = 0.89999997615814210
         end
       end
       object layTopInnerGlow: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationInnerGlow: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -25617,30 +25658,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledInnerGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledInnerGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -25651,17 +25692,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledInnerGlow: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledInnerGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -25669,10 +25710,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledInnerGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -25681,13 +25722,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledInnerGlow: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -25697,42 +25738,41 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
-            OnSwitch = cbColorGlowChange
           end
         end
         object layColorInnerGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgColorInnerGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -25745,17 +25785,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionColorInnerGlow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleColorInnerGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Color'
               TabOrder = 1
@@ -25763,10 +25803,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionColorInnerGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the glow color you want'
               TabOrder = 0
@@ -25778,10 +25818,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             DisableFocusEffect = False
             ItemIndex = 51
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
           end
@@ -25789,30 +25829,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object laySoftnessInnerGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 284.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 284.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgSoftnessInnerGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -25824,17 +25864,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionSoftnessInnerGlow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleSoftnessInnerGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Softness'
               TabOrder = 1
@@ -25842,10 +25882,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionSoftnessInnerGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how soft you want'
               TabOrder = 0
@@ -25856,45 +25896,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 5.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 5.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layOpacityInnerGlow: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgOpacityInnerGlow: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -25908,17 +25948,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionOpacityInnerGlow: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleOpacityInnerGlow: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Opacity'
               TabOrder = 1
@@ -25926,10 +25966,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionOpacityInnerGlow: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select how much opacity you want'
               TabOrder = 0
@@ -25940,17 +25980,29 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.899999976158142100
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.89999997615814210
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgInnerGlow: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgInnerGlowEffect: TInnerGlowEffect
+          Softness = 5.00000000000000000
+          GlowColor = claGold
+          Opacity = 0.89999997615814210
         end
       end
     end
@@ -25960,14 +26012,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 49.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Bevel'
-      ExplicitSize.cx = 49.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 49.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgBevel: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -30851,33 +30903,33 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object BevelEffect: TBevelEffect
-          Direction = 45.000000000000000000
+        object imgBevelEffect: TBevelEffect
+          Direction = 45.00000000000000000
           Size = 10
         end
       end
       object layTopBevel: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationBevel: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -30885,30 +30937,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledBevel: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledBevel: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -30919,17 +30971,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledBevel: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledBevel: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -30937,10 +30989,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledBevel: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -30949,13 +31001,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledBevel: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -30965,10 +31017,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
             OnSwitch = EnabledSwitch
@@ -30977,30 +31029,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object laySizeBevel: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgSizeBevel: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -31012,17 +31064,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionSizeBevel: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleSizeBevel: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Size'
               TabOrder = 1
@@ -31030,10 +31082,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionSizeBevel: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the size you want'
               TabOrder = 0
@@ -31044,45 +31096,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 10.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 10.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layDirectionBevel: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgDirectionBevel: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -31095,17 +31147,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionDirectionBevel: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleDirectionBevel: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Direction'
               TabOrder = 1
@@ -31113,10 +31165,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionDirectionBevel: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the direction you want'
               TabOrder = 0
@@ -31127,17 +31179,28 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 45.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 45.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgBevel: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgBevelEffect: TBevelEffect
+          Direction = 45.00000000000000000
+          Size = 10
         end
       end
     end
@@ -31147,14 +31210,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 54.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Ripple'
-      ExplicitSize.cx = 69.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 69.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgRipple: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -36038,35 +36101,35 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object RippleEffect: TRippleEffect
-          Amplitude = 0.100000001490116100
-          Frequency = 70.000000000000000000
-          Phase = 0.000000000000000000
-          AspectRatio = 1.500000000000000000
+        object imgRippleEffect: TRippleEffect
+          Amplitude = 0.10000000149011610
+          Frequency = 70.00000000000000000
+          Phase = 0.00000000000000000
+          AspectRatio = 1.50000000000000000
         end
       end
       object layTopRipple: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationRipple: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -36074,30 +36137,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledRipple: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledRipple: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -36108,17 +36171,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledRipple: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledRipple: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -36126,10 +36189,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledRipple: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -36138,13 +36201,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledRipple: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -36154,10 +36217,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
             OnSwitch = EnabledSwitch
@@ -36166,30 +36229,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layAspectRatioRipple: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgAspectRatioRipple: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -36201,17 +36264,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layAspectRatioTitleDescriptionRipple: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblAspectRatioTitleRipple: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Aspect Ratio'
               TabOrder = 1
@@ -36219,10 +36282,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblAspectRatioDescriptionRipple: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the aspect ratio you want'
               TabOrder = 0
@@ -36233,45 +36296,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 1.500000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 1.50000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layAmplitudeRipple: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgAmplitudeRipple: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -36284,17 +36347,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layAmplitudeTitleDescriptionRipple: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblAmplitudeTitleRipple: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Amplitude'
               TabOrder = 1
@@ -36302,10 +36365,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblAmplitudeDescriptionRipple: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the amplitude you want'
               TabOrder = 0
@@ -36316,45 +36379,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.100000001490116100
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.10000000149011610
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layFrequencyRipple: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 284.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 284.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgFrequencyRipple: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -36367,17 +36430,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layFrequencyTitleDescriptionRipple: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblFrequencyTitleRipple: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Frequency'
               TabOrder = 1
@@ -36385,10 +36448,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblFrequencyDescriptionRipple: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the frequency you want'
               TabOrder = 0
@@ -36399,45 +36462,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 70.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 70.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layPhaseRipple: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 362.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 362.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgPhaseRipple: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -36449,17 +36512,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layPhaseTitleDescriptionRipple: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblPhaseTitleRipple: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Phase'
               TabOrder = 1
@@ -36467,10 +36530,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblPhaseDescriptionRipple: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the phase you want'
               TabOrder = 0
@@ -36481,16 +36544,29 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgRipple: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgRippleEffect: TRippleEffect
+          Amplitude = 0.10000000149011610
+          Frequency = 70.00000000000000000
+          Phase = 0.00000000000000000
+          AspectRatio = 1.50000000000000000
         end
       end
     end
@@ -36500,14 +36576,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 45.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Swirl'
-      ExplicitSize.cx = 45.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 45.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgSwirl: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -41391,33 +41467,33 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object SwirlEffect: TSwirlEffect
-          SpiralStrength = 0.200000002980232200
-          AspectRatio = 0.500000000000000000
+        object imgSwirlEffect: TSwirlEffect
+          SpiralStrength = 0.20000000298023220
+          AspectRatio = 0.50000000000000000
         end
       end
       object layTopSwirl: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationSwirl: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -41425,30 +41501,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledSwirl: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledSwirl: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -41459,17 +41535,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledSwirl: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object lblTitleEnabledSwirl: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -41477,10 +41553,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionEnabledSwirl: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -41489,13 +41565,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledSwirl: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -41505,10 +41581,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
             OnSwitch = EnabledSwitch
@@ -41517,30 +41593,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object laySpiralStrengthSwirl: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgSpiralStrengthSwirl: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -41553,17 +41629,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionSpiralStrengthSwirl: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleSpiralStrengthSwirl: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Spiral Strength'
               TabOrder = 1
@@ -41571,10 +41647,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionSpiralStrengthSwirl: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the spiral strength you want'
               TabOrder = 0
@@ -41585,45 +41661,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.200000002980232200
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.20000000298023220
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layAspectRatioSwirl: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgAspectRatioSwirl: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -41635,17 +41711,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionAspectRatioSwirl: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleAspectRatioSwirl: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Aspect Ratio'
               TabOrder = 1
@@ -41653,10 +41729,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionAspectRatioSwirl: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the aspect ratio you want'
               TabOrder = 0
@@ -41667,17 +41743,28 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.500000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.50000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgSwirl: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgSwirlEffect: TSwirlEffect
+          SpiralStrength = 0.20000000298023220
+          AspectRatio = 0.50000000000000000
         end
       end
     end
@@ -41687,14 +41774,14 @@ object Frame_ImageEffects: TFrame_ImageEffects
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 0.000000000000000000
-      Size.Height = 5.000000000000000000
+      Size.Width = 52.00000000000000000
+      Size.Height = 26.00000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Bands'
-      ExplicitSize.cx = 52.000000000000000000
-      ExplicitSize.cy = 26.000000000000000000
+      ExplicitSize.cx = 52.00000000000000000
+      ExplicitSize.cy = 26.00000000000000000
       object imgBands: TImage
         MultiResBitmap.Height = 4070
         MultiResBitmap.Width = 4070
@@ -46578,33 +46665,33 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end>
         Align = Client
         PopupMenu = PopupMenu
-        Size.Width = 996.000000000000000000
-        Size.Height = 458.000000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
         Size.PlatformDefault = False
-        object BandsEffect: TBandsEffect
-          BandDensity = 65.000000000000000000
-          BandIntensity = 0.200000002980232200
+        object imgBandsEffect: TBandsEffect
+          BandDensity = 65.00000000000000000
+          BandIntensity = 0.20000000298023220
         end
       end
       object layTopBands: TLayout
         Align = Top
-        Padding.Left = 20.000000000000000000
-        Padding.Top = 20.000000000000000000
-        Padding.Right = 20.000000000000000000
-        Padding.Bottom = 20.000000000000000000
-        Size.Width = 996.000000000000000000
-        Size.Height = 449.000000000000000000
+        Padding.Left = 20.00000000000000000
+        Padding.Top = 20.00000000000000000
+        Padding.Right = 20.00000000000000000
+        Padding.Bottom = 20.00000000000000000
+        Size.Width = 996.00000000000000000
+        Size.Height = 449.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblConfigurationBands: TLabel
           Align = Top
           StyledSettings = [Family, Style, FontColor]
-          Position.X = 20.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 956.000000000000000000
-          Size.Height = 30.000000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Configuration'
           TabOrder = 0
@@ -46612,30 +46699,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layEnabledBands: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 50.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 50.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgEnabledBands: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -46646,17 +46733,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionEnabledBands: TLayout
             Align = Client
-            Size.Width = 733.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 733.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             object Label1: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Enabled'
               TabOrder = 1
@@ -46664,10 +46751,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object Label2: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 733.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 733.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select whether to have effect turned on or off'
               TabOrder = 0
@@ -46676,13 +46763,13 @@ object Frame_ImageEffects: TFrame_ImageEffects
           object lblSwitchEnabledBands: TLabel
             Align = Right
             StyledSettings = [Family, Style, FontColor]
-            Margins.Right = 8.000000000000000000
-            Position.X = 782.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 96.000000000000000000
-            Size.Height = 48.000000000000000000
+            Margins.Right = 8.00000000000000000
+            Position.X = 782.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 96.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.HorzAlign = Trailing
             TextSettings.Trimming = None
             Text = 'On'
@@ -46692,10 +46779,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = MostRight
             Cursor = crHandPoint
             IsChecked = True
-            Position.X = 886.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 58.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 886.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 58.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
             OnSwitch = EnabledSwitch
@@ -46704,30 +46791,30 @@ object Frame_ImageEffects: TFrame_ImageEffects
         object layIntensityBands: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 206.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 206.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgIntensityBands: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -46742,17 +46829,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionIntensityBands: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleIntensityBands: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Intensity'
               TabOrder = 1
@@ -46760,10 +46847,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionIntensityBands: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the spiral strength you want'
               TabOrder = 0
@@ -46774,45 +46861,45 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 0.200000002980232200
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 0.20000000298023220
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
         end
         object layDensityBands: TRectangle
           Align = Top
           Fill.Color = x4B000000
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 12.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 20.000000000000000000
-          Position.Y = 128.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 12.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 20.00000000000000000
+          Position.Y = 128.00000000000000000
           Sides = []
-          Size.Width = 956.000000000000000000
-          Size.Height = 72.000000000000000000
+          Size.Width = 956.00000000000000000
+          Size.Height = 72.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           object imgDensityBands: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 17.000000000000000000
-            Position.Y = 24.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 17.00000000000000000
+            Position.Y = 24.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -46827,17 +46914,17 @@ object Frame_ImageEffects: TFrame_ImageEffects
           end
           object layTitleDescriptionDensityBands: TLayout
             Align = Client
-            Size.Width = 755.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 755.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object lblTitleDensityBands: TLabel
               Align = Top
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.Font.Size = 18.00000000000000000
               TextSettings.Trimming = None
               Text = 'Density'
               TabOrder = 1
@@ -46845,10 +46932,10 @@ object Frame_ImageEffects: TFrame_ImageEffects
             object lblDescriptionDensityBands: TLabel
               Align = Client
               StyledSettings = [Family, Style, FontColor]
-              Size.Width = 755.000000000000000000
-              Size.Height = 24.000000000000000000
+              Size.Width = 755.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.Size = 14.00000000000000000
               TextSettings.Trimming = None
               Text = 'Select the aspect ratio you want'
               TabOrder = 0
@@ -46859,29 +46946,42 @@ object Frame_ImageEffects: TFrame_ImageEffects
             Align = Right
             TabOrder = 2
             Cursor = crIBeam
-            Min = -1000000.000000000000000000
-            Max = 1000000.000000000000000000
-            Value = 65.000000000000000000
+            Min = -1000000.00000000000000000
+            Max = 1000000.00000000000000000
+            Value = 65.00000000000000000
             ValueType = Float
             KeyboardType = NumbersAndPunctuation
-            Position.X = 804.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 140.000000000000000000
-            Size.Height = 48.000000000000000000
+            Position.X = 804.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 140.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
           end
+        end
+      end
+      object svgBands: TSkSvg
+        Align = Client
+        Size.Width = 996.00000000000000000
+        Size.Height = 437.00000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        object svgBandsEffect: TBandsEffect
+          BandDensity = 65.00000000000000000
+          BandIntensity = 0.20000000298023220
         end
       end
     end
   end
   object OpenDialog: TOpenDialog
-    Filter = 'All Files|*|*.jpg|*.jpg|*.jpeg|*.jpeg|*.png|*.png'
+    Filter = 
+      'All Files|*.jpg;*.jpeg;*.png;*.webp|*.jpg|*.jpg|*.jpeg|*.jpeg|*.' +
+      'png|*.png|*.webp|*.webp|*.svg|*.svg'
     Left = 216
     Top = 664
   end
   object PopupMenu: TPopupMenu
-    Left = 456
-    Top = 456
+    Left = 648
+    Top = 624
     object btnCopyImageToClipboard: TMenuItem
       Text = 'Copy Image to Clipboard'
       OnClick = btnCopyImageToClipboardClick
@@ -46905,70 +47005,70 @@ object Frame_ImageEffects: TFrame_ImageEffects
       Category = 'Quick Bindings'
       Control = sbDistanceShadow
       Track = True
-      Component = ShadowEffect
+      Component = imgShadowEffect
       ComponentProperty = 'Distance'
     end
     object LinkControlToPropertyDirection: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbDirectionShadow
       Track = True
-      Component = ShadowEffect
+      Component = imgShadowEffect
       ComponentProperty = 'Direction'
     end
     object LinkControlToPropertyEnabled: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = EnabledSwitchShadow
       Track = True
-      Component = ShadowEffect
+      Component = imgShadowEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertySoftness: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbSoftnessShadow
       Track = True
-      Component = ShadowEffect
+      Component = imgShadowEffect
       ComponentProperty = 'Softness'
     end
     object LinkControlToPropertyOpacity: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbOpacityShadow
       Track = True
-      Component = ShadowEffect
+      Component = imgShadowEffect
       ComponentProperty = 'Opacity'
     end
     object LinkControlToPropertySoftness2: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbSoftnessBlur
       Track = True
-      Component = BlurEffect
+      Component = imgBlurEffect
       ComponentProperty = 'Softness'
     end
     object LinkControlToPropertyEnabled2: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = SwitchEnabledBlur
       Track = True
-      Component = BlurEffect
+      Component = imgBlurEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertyEnabled3: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = SwitchEnabledGlow
       Track = True
-      Component = GlowEffect
+      Component = imgGlowEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertyOpacity2: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbOpacityGlow
       Track = True
-      Component = GlowEffect
+      Component = imgGlowEffect
       ComponentProperty = 'Opacity'
     end
     object LinkControlToPropertySoftness3: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbSoftnessGlow
       Track = True
-      Component = GlowEffect
+      Component = imgGlowEffect
       ComponentProperty = 'Softness'
     end
     object LinkControlToPropertyEnabled4: TLinkControlToProperty
@@ -46996,98 +47096,98 @@ object Frame_ImageEffects: TFrame_ImageEffects
       Category = 'Quick Bindings'
       Control = sbDirectionBevel
       Track = True
-      Component = BevelEffect
+      Component = imgBevelEffect
       ComponentProperty = 'Direction'
     end
     object LinkControlToPropertyEnabled5: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = SwitchEnabledBevel
       Track = True
-      Component = BevelEffect
+      Component = imgBevelEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertySize: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbSizeBevel
       Track = True
-      Component = BevelEffect
+      Component = imgBevelEffect
       ComponentProperty = 'Size'
     end
     object LinkControlToPropertyAmplitude: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbAmplitudeRipple
       Track = True
-      Component = RippleEffect
+      Component = imgRippleEffect
       ComponentProperty = 'Amplitude'
     end
     object LinkControlToPropertyAspectRatio: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbAspectRatioRipple
       Track = True
-      Component = RippleEffect
+      Component = imgRippleEffect
       ComponentProperty = 'AspectRatio'
     end
     object LinkControlToPropertyFrequency: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbFrequencyRipple
       Track = True
-      Component = RippleEffect
+      Component = imgRippleEffect
       ComponentProperty = 'Frequency'
     end
     object LinkControlToPropertyPhase: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbPhaseRipple
       Track = True
-      Component = RippleEffect
+      Component = imgRippleEffect
       ComponentProperty = 'Phase'
     end
     object LinkControlToPropertyEnabled6: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = EnabledSwitchRipple
       Track = True
-      Component = RippleEffect
+      Component = imgRippleEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertyAspectRatio2: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbAspectRatioSwirl
       Track = True
-      Component = SwirlEffect
+      Component = imgSwirlEffect
       ComponentProperty = 'AspectRatio'
     end
     object LinkControlToPropertyEnabled7: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = SwitchEnabledSwirl
       Track = True
-      Component = SwirlEffect
+      Component = imgSwirlEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertySpiralStrength: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbSpiralStrengthSwirl
       Track = True
-      Component = SwirlEffect
+      Component = imgSwirlEffect
       ComponentProperty = 'SpiralStrength'
     end
     object LinkControlToPropertyBandDensity: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbDensityBands
       Track = True
-      Component = BandsEffect
+      Component = imgBandsEffect
       ComponentProperty = 'BandDensity'
     end
     object LinkControlToPropertyBandIntensity: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = sbIntensityBands
       Track = True
-      Component = BandsEffect
+      Component = imgBandsEffect
       ComponentProperty = 'BandIntensity'
     end
     object LinkControlToPropertyEnabled8: TLinkControlToProperty
       Category = 'Quick Bindings'
       Control = SwitchEnabledBands
       Track = True
-      Component = BandsEffect
+      Component = imgBandsEffect
       ComponentProperty = 'Enabled'
     end
     object LinkControlToPropertyGlowColor: TLinkControlToProperty
@@ -47096,6 +47196,245 @@ object Frame_ImageEffects: TFrame_ImageEffects
       Track = True
       Component = InnerGlowEffect
       ComponentProperty = 'GlowColor'
+    end
+    object LinkControlToPropertyEnabled9: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = EnabledSwitchShadow
+      Track = True
+      Component = svgShadowEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyDirection3: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbDirectionShadow
+      Track = True
+      Component = svgShadowEffect
+      ComponentProperty = 'Direction'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyOpacity4: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbOpacityShadow
+      Track = True
+      Component = svgShadowEffect
+      ComponentProperty = 'Opacity'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertySoftness5: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbSoftnessShadow
+      Track = True
+      Component = svgShadowEffect
+      ComponentProperty = 'Softness'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyDistance2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbDistanceShadow
+      Track = True
+      Component = svgShadowEffect
+      ComponentProperty = 'Distance'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertySoftness6: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbSoftnessBlur
+      Track = True
+      Component = svgBlurEffect
+      ComponentProperty = 'Softness'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyEnabled10: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = SwitchEnabledBlur
+      Track = True
+      Component = svgBlurEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyGlowColor2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = cbColorGlow
+      Track = True
+      Component = imgGlowEffect
+      ComponentProperty = 'GlowColor'
+    end
+    object LinkControlToPropertyEnabled11: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = SwitchEnabledGlow
+      Track = True
+      Component = svgGlowEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyOpacity5: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbOpacityGlow
+      Track = True
+      Component = svgGlowEffect
+      ComponentProperty = 'Opacity'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyGlowColor3: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = cbColorGlow
+      Track = True
+      Component = svgGlowEffect
+      ComponentProperty = 'GlowColor'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertySoftness7: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbSoftnessGlow
+      Track = True
+      Component = svgGlowEffect
+      ComponentProperty = 'Softness'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyEnabled12: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = SwitchEnabledInnerGlow
+      Track = True
+      Component = svgInnerGlowEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertySoftness8: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbSoftnessInnerGlow
+      Track = True
+      Component = svgInnerGlowEffect
+      ComponentProperty = 'Softness'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyGlowColor4: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = cbColorInnerGlow
+      Track = True
+      Component = svgInnerGlowEffect
+      ComponentProperty = 'GlowColor'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyOpacity6: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbOpacityInnerGlow
+      Track = True
+      Component = svgInnerGlowEffect
+      ComponentProperty = 'Opacity'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyEnabled13: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = SwitchEnabledBevel
+      Track = True
+      Component = svgBevelEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyDirection4: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbDirectionBevel
+      Track = True
+      Component = svgBevelEffect
+      ComponentProperty = 'Direction'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertySize2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbSizeBevel
+      Track = True
+      Component = svgBevelEffect
+      ComponentProperty = 'Size'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyAspectRatio3: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbAspectRatioRipple
+      Track = True
+      Component = svgRippleEffect
+      ComponentProperty = 'AspectRatio'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyPhase2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbPhaseRipple
+      Track = True
+      Component = svgRippleEffect
+      ComponentProperty = 'Phase'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyEnabled14: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = EnabledSwitchRipple
+      Track = True
+      Component = svgRippleEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyFrequency2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbFrequencyRipple
+      Track = True
+      Component = svgRippleEffect
+      ComponentProperty = 'Frequency'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyAmplitude2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbAmplitudeRipple
+      Track = True
+      Component = svgRippleEffect
+      ComponentProperty = 'Amplitude'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyEnabled15: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = SwitchEnabledSwirl
+      Track = True
+      Component = svgSwirlEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertySpiralStrength2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbSpiralStrengthSwirl
+      Track = True
+      Component = svgSwirlEffect
+      ComponentProperty = 'SpiralStrength'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyAspectRatio4: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbAspectRatioSwirl
+      Track = True
+      Component = svgSwirlEffect
+      ComponentProperty = 'AspectRatio'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyBandDensity2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbDensityBands
+      Track = True
+      Component = svgBandsEffect
+      ComponentProperty = 'BandDensity'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyBandIntensity2: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = sbIntensityBands
+      Track = True
+      Component = svgBandsEffect
+      ComponentProperty = 'BandIntensity'
+      InitializeControlValue = False
+    end
+    object LinkControlToPropertyEnabled16: TLinkControlToProperty
+      Category = 'Quick Bindings'
+      Control = SwitchEnabledBands
+      Track = True
+      Component = svgBandsEffect
+      ComponentProperty = 'Enabled'
+      InitializeControlValue = False
     end
   end
 end

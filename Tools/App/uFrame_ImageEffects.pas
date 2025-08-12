@@ -3,14 +3,6 @@ unit uFrame_ImageEffects;
 interface
 
 uses
-  System.SysUtils,
-  System.Types,
-  System.UITypes,
-  System.Classes,
-  System.Variants,
-  System.Rtti,
-  System.Bindings.Outputs,
-
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -33,6 +25,15 @@ uses
   FMX.Filter.Effects,
   FMX.Bind.DBEngExt,
   FMX.Bind.Editors,
+
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Classes,
+  System.Variants,
+  System.Rtti,
+  System.Bindings.Outputs,
+  System.IOUtils,
 
   Data.Bind.EngExt,
   Data.Bind.Components,
@@ -73,7 +74,7 @@ type
     lblTitleDirectionShadow: TLabel;
     lblDescriptionDirectionShadow: TLabel;
     sbDirectionShadow: TSpinBox;
-    ShadowEffect: TShadowEffect;
+    imgShadowEffect: TShadowEffect;
     BindingsList: TBindingsList;
     LinkControlToPropertyDistance: TLinkControlToProperty;
     LinkControlToPropertyDirection: TLinkControlToProperty;
@@ -94,7 +95,7 @@ type
     LinkControlToPropertySoftness: TLinkControlToProperty;
     LinkControlToPropertyOpacity: TLinkControlToProperty;
     imgBlur: TImage;
-    BlurEffect: TBlurEffect;
+    imgBlurEffect: TBlurEffect;
     layTopBlur: TLayout;
     lblConfigurationSoftnessBlur: TLabel;
     laySoftnessBlur: TRectangle;
@@ -114,7 +115,7 @@ type
     LinkControlToPropertyEnabled2: TLinkControlToProperty;
     TabGlow: TTabItem;
     imgGlow: TImage;
-    GlowEffect: TGlowEffect;
+    imgGlowEffect: TGlowEffect;
     TabInnerGlow: TTabItem;
     imgInnerGlow: TImage;
     InnerGlowEffect: TInnerGlowEffect;
@@ -180,7 +181,7 @@ type
     LinkControlToPropertySoftness4: TLinkControlToProperty;
     TabBevelEffect: TTabItem;
     imgBevel: TImage;
-    BevelEffect: TBevelEffect;
+    imgBevelEffect: TBevelEffect;
     layTopBevel: TLayout;
     lblConfigurationBevel: TLabel;
     layEnabledBevel: TRectangle;
@@ -207,7 +208,7 @@ type
     LinkControlToPropertySize: TLinkControlToProperty;
     TabRipple: TTabItem;
     imgRipple: TImage;
-    RippleEffect: TRippleEffect;
+    imgRippleEffect: TRippleEffect;
     layTopRipple: TLayout;
     lblConfigurationRipple: TLabel;
     layEnabledRipple: TRectangle;
@@ -248,7 +249,7 @@ type
     LinkControlToPropertyEnabled6: TLinkControlToProperty;
     TabSwirl: TTabItem;
     imgSwirl: TImage;
-    SwirlEffect: TSwirlEffect;
+    imgSwirlEffect: TSwirlEffect;
     layTopSwirl: TLayout;
     lblConfigurationSwirl: TLabel;
     layEnabledSwirl: TRectangle;
@@ -275,7 +276,7 @@ type
     LinkControlToPropertySpiralStrength: TLinkControlToProperty;
     TabBands: TTabItem;
     imgBands: TImage;
-    BandsEffect: TBandsEffect;
+    imgBandsEffect: TBandsEffect;
     layTopBands: TLayout;
     lblConfigurationBands: TLabel;
     layEnabledBands: TRectangle;
@@ -305,8 +306,54 @@ type
     btnSaveImageToFile: TMenuItem;
     SaveDialog: TSaveDialog;
     LinkControlToPropertyGlowColor: TLinkControlToProperty;
+    svgOriginal: TSkSvg;
+    svgShadow: TSkSvg;
+    svgShadowEffect: TShadowEffect;
+    LinkControlToPropertyEnabled9: TLinkControlToProperty;
+    LinkControlToPropertyDirection3: TLinkControlToProperty;
+    LinkControlToPropertyOpacity4: TLinkControlToProperty;
+    LinkControlToPropertySoftness5: TLinkControlToProperty;
+    LinkControlToPropertyDistance2: TLinkControlToProperty;
+    svgBlur: TSkSvg;
+    svgBlurEffect: TBlurEffect;
+    LinkControlToPropertySoftness6: TLinkControlToProperty;
+    LinkControlToPropertyEnabled10: TLinkControlToProperty;
+    svgGlow: TSkSvg;
+    svgInnerGlow: TSkSvg;
+    svgBevel: TSkSvg;
+    svgRipple: TSkSvg;
+    svgSwirl: TSkSvg;
+    svgBands: TSkSvg;
+    svgGlowEffect: TGlowEffect;
+    svgInnerGlowEffect: TInnerGlowEffect;
+    svgBevelEffect: TBevelEffect;
+    svgRippleEffect: TRippleEffect;
+    svgSwirlEffect: TSwirlEffect;
+    svgBandsEffect: TBandsEffect;
+    LinkControlToPropertyGlowColor2: TLinkControlToProperty;
+    LinkControlToPropertyEnabled11: TLinkControlToProperty;
+    LinkControlToPropertyOpacity5: TLinkControlToProperty;
+    LinkControlToPropertyGlowColor3: TLinkControlToProperty;
+    LinkControlToPropertySoftness7: TLinkControlToProperty;
+    LinkControlToPropertyEnabled12: TLinkControlToProperty;
+    LinkControlToPropertySoftness8: TLinkControlToProperty;
+    LinkControlToPropertyGlowColor4: TLinkControlToProperty;
+    LinkControlToPropertyOpacity6: TLinkControlToProperty;
+    LinkControlToPropertyEnabled13: TLinkControlToProperty;
+    LinkControlToPropertyDirection4: TLinkControlToProperty;
+    LinkControlToPropertySize2: TLinkControlToProperty;
+    LinkControlToPropertyAspectRatio3: TLinkControlToProperty;
+    LinkControlToPropertyPhase2: TLinkControlToProperty;
+    LinkControlToPropertyEnabled14: TLinkControlToProperty;
+    LinkControlToPropertyFrequency2: TLinkControlToProperty;
+    LinkControlToPropertyAmplitude2: TLinkControlToProperty;
+    LinkControlToPropertyEnabled15: TLinkControlToProperty;
+    LinkControlToPropertySpiralStrength2: TLinkControlToProperty;
+    LinkControlToPropertyAspectRatio4: TLinkControlToProperty;
+    LinkControlToPropertyBandDensity2: TLinkControlToProperty;
+    LinkControlToPropertyBandIntensity2: TLinkControlToProperty;
+    LinkControlToPropertyEnabled16: TLinkControlToProperty;
     procedure EnabledSwitch(Sender: TObject);
-    procedure cbColorGlowChange(Sender: TObject);
     procedure btnDropImageClick(Sender: TObject);
     procedure btnSaveImageToFileClick(Sender: TObject);
     procedure btnCopyImageToClipboardClick(Sender: TObject);
@@ -329,15 +376,48 @@ procedure TFrame_ImageEffects.btnDropImageClick(Sender: TObject);
 begin
   if (OpenDialog.Execute) then
   begin
-    imgOriginal.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgShadow.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgBlur.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgInnerGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgBevel.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgRipple.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgSwirl.Bitmap.LoadFromFile(OpenDialog.FileName);
-    imgBands.Bitmap.LoadFromFile(OpenDialog.FileName);
+    var ImageFileExtension := TPath.GetExtension(OpenDialog.FileName);
+    imgOriginal.Visible := (ImageFileExtension <> '.svg');
+    imgShadow.Visible := (ImageFileExtension <> '.svg');
+    imgBlur.Visible := (ImageFileExtension <> '.svg');
+    imgGlow.Visible := (ImageFileExtension <> '.svg');
+    imgInnerGlow.Visible := (ImageFileExtension <> '.svg');
+    imgBevel.Visible := (ImageFileExtension <> '.svg');
+    imgRipple.Visible := (ImageFileExtension <> '.svg');
+    imgSwirl.Visible := (ImageFileExtension <> '.svg');
+    imgBands.Visible := (ImageFileExtension <> '.svg');
+    svgOriginal.Visible := (ImageFileExtension = '.svg');
+    svgShadow.Visible := (ImageFileExtension = '.svg');
+    svgBlur.Visible := (ImageFileExtension = '.svg');
+    svgGlow.Visible := (ImageFileExtension = '.svg');
+    svgInnerGlow.Visible := (ImageFileExtension = '.svg');
+    svgBevel.Visible := (ImageFileExtension = '.svg');
+    svgRipple.Visible := (ImageFileExtension = '.svg');
+    svgSwirl.Visible := (ImageFileExtension = '.svg');
+    svgBands.Visible := (ImageFileExtension = '.svg');
+    if (ImageFileExtension = '.svg') then
+    begin
+      svgOriginal.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgShadow.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgBlur.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgGlow.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgInnerGlow.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgBevel.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgRipple.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgSwirl.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+      svgBands.Svg.Source := TFile.ReadAllText(OpenDialog.FileName);
+    end else
+    begin
+      imgOriginal.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgShadow.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgBlur.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgInnerGlow.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgBevel.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgRipple.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgSwirl.Bitmap.LoadFromFile(OpenDialog.FileName);
+      imgBands.Bitmap.LoadFromFile(OpenDialog.FileName);
+    end;
   end;
 end;
 
@@ -347,18 +427,12 @@ begin
     TImage(Sender).MakeScreenshot.SaveToFile(SaveDialog.FileName);
 end;
 
-procedure TFrame_ImageEffects.cbColorGlowChange(Sender: TObject);
-begin
-  GlowEffect.GlowColor := cbColorGlow.Color;
-end;
-
 procedure TFrame_ImageEffects.EnabledSwitch(Sender: TObject);
 var
   FindLabel: TLabel;
 begin
   for var I in TSwitch(Sender).Parent.Children do
     if (I is TLabel) then FindLabel := TLabel(I);
-
 
   if (FindLabel <> nil) then
     if (FindLabel.Text = 'On') then
