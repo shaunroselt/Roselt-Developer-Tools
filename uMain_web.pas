@@ -27,7 +27,8 @@ uses
   Roselt.Tools,
   uBootstrapIcons,
 
-  uFrame_NameGenerator, Vcl.Imaging.pngimage;
+  uFrame_NameGenerator,
+  uFrame_URLEncoderDecoder;
 
 type
   TfrmMain = class(TWebForm)
@@ -233,11 +234,11 @@ begin
       if ((Tool.Visible) AND (Tool.parent = ToolBackendName)) then
         inc(ChildrenCount);
     ExpandCollapseLayout.Height := ButtonLayout.Height * ChildrenCount;
-    ExpandCollapseImage.HTML.Text := GetBootstrapIcon('chevron-up', 24);
+    ExpandCollapseImage.HTML.Text := GetBootstrapIcon('chevron-up', '24');
   end else
   begin
     ExpandCollapseLayout.Height := ButtonLayout.Height;
-    ExpandCollapseImage.HTML.Text := GetBootstrapIcon('chevron-down', 24);
+    ExpandCollapseImage.HTML.Text := GetBootstrapIcon('chevron-down', '24');
   end;
 end;
 
@@ -338,7 +339,7 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         ToolButtonImg.Margins.Left := 8;
         ToolButtonImg.Width := ToolButtonImg.Height;
         ToolButtonImg.Name := 'imgExpandCollapse' + Tool.name;
-        ToolButtonImg.HTML.Text := GetBootstrapIcon(Tool.icon, 24);
+        ToolButtonImg.HTML.Text := GetBootstrapIcon(Tool.icon, '24');
         ToolButtonImg.OnClick := ExpandCollapseNavItem;
         ToolButtonImg.OnDblClick := ExpandCollapseNavItem;
         ToolButtonImg.Cursor := crHandPoint;
@@ -367,7 +368,7 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         ToolButtonImgExpandCollapseIcon.Margins.Left := 5;
         ToolButtonImgExpandCollapseIcon.Width := ToolButtonImgExpandCollapseIcon.Height;
         ToolButtonImgExpandCollapseIcon.Name := 'imgExpandCollapseIcon' + Tool.name;
-        ToolButtonImgExpandCollapseIcon.HTML.Text := GetBootstrapIcon('chevron-down', 24);
+        ToolButtonImgExpandCollapseIcon.HTML.Text := GetBootstrapIcon('chevron-down', '24');
         ToolButtonImgExpandCollapseIcon.Visible := Tool.active;
         ToolButtonImgExpandCollapseIcon.OnClick := ExpandCollapseNavItem;
         ToolButtonImgExpandCollapseIcon.OnDblClick := ExpandCollapseNavItem;
@@ -439,7 +440,7 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         end;
         ToolButtonImg.Width := ToolButtonImg.Height;
         ToolButtonImg.Name := 'img' + Tool.name;
-        ToolButtonImg.HTML.Text := GetBootstrapIcon(Tool.icon, 24);
+        ToolButtonImg.HTML.Text := GetBootstrapIcon(Tool.icon, '24');
         ToolButtonImg.OnClick := btnAllToolsClick;
         ToolButtonImg.Cursor := crHandPoint;
 
@@ -489,6 +490,9 @@ begin
 
   // Dynamically create Tool Frames
   CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
+  CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
+
+//  console.log(THashBobJenkins.GetHashString('Shaun Roselt'));
 
 end;
 
@@ -515,9 +519,9 @@ begin
   console.log(window.btoa('Shaun Roselt'));
   console.log(window.atob('U2hhdW4gUm9zZWx0'));
 
-  SVG_Code := GetBootstrapIcon('5-square-fill', 24, 'purple'); // Returns SVG Code
+  SVG_Code := GetBootstrapIcon('5-square-fill', '24', 'purple'); // Returns SVG Code
 
-  WebImageControl1.ElementHandle.setAttribute('src',GetBootstrapIconBase64('5-square-fill', 24, 'purple'));
+  WebImageControl1.ElementHandle.setAttribute('src',GetBootstrapIconBase64('5-square-fill', '24', 'purple'));
 
 
   SysInfo := TSystemInformation.Create;

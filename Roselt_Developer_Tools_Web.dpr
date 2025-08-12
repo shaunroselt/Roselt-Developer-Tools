@@ -16,7 +16,8 @@ uses
   Roselt.NumberBaseConversion in 'Lib\Roselt.NumberBaseConversion.pas',
   uFeatherIcons in 'Lib\uFeatherIcons.pas',
   Roselt.SystemInformation in 'Lib\Roselt.SystemInformation.pas',
-  Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas';
+  Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas',
+  uFrame_URLEncoderDecoder in 'Tools\Web\uFrame_URLEncoderDecoder.pas' {Frame_URLEncoderDecoder: TWebFrame} {*.html};
 
 {$R *.res}
 

@@ -1,0 +1,81 @@
+object Frame_URLEncoderDecoder: TFrame_URLEncoderDecoder
+  Left = 0
+  Top = 0
+  Width = 1048
+  Height = 718
+  TabOrder = 0
+  object memOutput: TWebMemo
+    Left = 0
+    Top = 526
+    Width = 1048
+    Height = 192
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 5
+    Align = alClient
+    Color = 2829099
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    HeightPercent = 100.000000000000000000
+    ParentFont = False
+    SelLength = 0
+    SelStart = 0
+    WidthPercent = 100.000000000000000000
+    ExplicitTop = 56
+    ExplicitWidth = 967
+    ExplicitHeight = 287
+  end
+  object memInput: TWebMemo
+    Left = 0
+    Top = 77
+    Width = 1048
+    Height = 401
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 5
+    Align = alTop
+    Color = 2829099
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    HeightPercent = 100.000000000000000000
+    ParentFont = False
+    SelLength = 0
+    SelStart = 0
+    WidthPercent = 100.000000000000000000
+    ExplicitTop = 0
+  end
+  object WebButton1: TWebButton
+    Left = 0
+    Top = 478
+    Width = 1048
+    Height = 48
+    Align = alTop
+    Caption = 'Encode'
+    ChildOrder = 2
+    HeightPercent = 100.000000000000000000
+    WidthPercent = 100.000000000000000000
+    OnClick = WebButton1Click
+    ExplicitTop = 401
+  end
+  object SwitchConversion: TWebToggleButton
+    AlignWithMargins = True
+    Left = 0
+    Top = 12
+    Width = 1036
+    Height = 53
+    Margins.Left = 0
+    Margins.Top = 12
+    Margins.Right = 12
+    Margins.Bottom = 12
+    Align = alTop
+    Checked = True
+  end
+end
