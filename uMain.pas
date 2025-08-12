@@ -38,7 +38,7 @@ uses
 
   Roselt.Clipboard,
   Roselt.AppInfo,
-  Roselt.Tools,
+  Roselt.Menu,
   Roselt.Utility,
 
   uStyles,
@@ -280,8 +280,8 @@ begin
   if (MultiView.Width = 50) then
   begin
     MultiView.Width := HamburgerMenuWidth;
-    for var Tool in RoseltToolsArray do
-      if IsToolParent(Tool) and Tool.visible then
+    for var Tool in RoseltMenuArray do
+      if IsMenuParent(Tool) and Tool.visible then
       begin
         var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
         var ToolButtonContainer := ToolContainer.FindComponent('layNavExpandCollapse' + Tool.name);
@@ -298,8 +298,8 @@ begin
   begin
     HamburgerMenuWidth := MultiView.Width;
     MultiView.Width := 50;
-    for var Tool in RoseltToolsArray do
-      if IsToolParent(Tool) and Tool.visible then
+    for var Tool in RoseltMenuArray do
+      if IsMenuParent(Tool) and Tool.visible then
       begin
         var ToolContainer := TControl(MultiViewScrollBox.FindComponent('layNav' + Tool.name));
         var ToolButtonContainer := ToolContainer.FindComponent('layNavExpandCollapse' + Tool.name);
@@ -464,12 +464,12 @@ procedure TfrmMain.FormCreate(Sender: TObject);
   procedure CreateToolNavButtons();
   begin
     var DynamicParents := TList.Create;
-    for var Tool in RoseltToolsArray do
+    for var Tool in RoseltMenuArray do
     begin
       if (Tool.Visible = False) then Continue;
 
       // I think these buttons will be freed from memory when the app frees MultiViewScrollBox 🤷
-      if IsToolParent(Tool) then
+      if IsMenuParent(Tool) then
       begin
         var ToolParentContainer := TLayout.Create(MultiViewScrollBox);
         ToolParentContainer.Parent := MultiViewScrollBox;
@@ -635,9 +635,9 @@ procedure TfrmMain.FormCreate(Sender: TObject);
   procedure CreateToolButtons();
   begin
     ToolsSearchCount := 0;
-    for var Tool in RoseltToolsArray do
+    for var Tool in RoseltMenuArray do
     begin
-      if (IsToolParent(Tool) OR (Tool.Visible = False)) then continue;
+      if (IsMenuParent(Tool) OR (Tool.Visible = False)) then continue;
       inc(ToolsSearchCount);
 
       var ToolButton := TButton.Create(layAllToolsGrid);
@@ -885,9 +885,9 @@ begin
   if (edtSearchAllTools.Text.IsEmpty = False) then
   begin
     ToolsSearchCount := 0;
-    for var Tool in RoseltToolsArray do
+    for var Tool in RoseltMenuArray do
     begin
-      if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
+      if IsMenuParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
       if (Tool.visible = False) then continue; // Skip tools that aren't visible
       inc(ToolsSearchCount);
 
@@ -901,9 +901,9 @@ begin
     end;
   end else
   begin
-    for var Tool in RoseltToolsArray do
+    for var Tool in RoseltMenuArray do
     begin
-      if IsToolParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
+      if IsMenuParent(Tool) then continue; // Skip parent tools as they don't have buttons to filter
       if (Tool.visible = False) then continue; // Skip tools that aren't visible
       inc(ToolsSearchCount);
 

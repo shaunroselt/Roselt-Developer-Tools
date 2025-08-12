@@ -24,7 +24,7 @@ uses
   Roselt.SystemInformation,
   Roselt.AppInfo,
   Roselt.Utility,
-  Roselt.Tools,
+  Roselt.Menu,
   uBootstrapIcons,
 
   uFrame_NameGenerator,
@@ -140,7 +140,7 @@ end;
 
 procedure TfrmMain.btnHamburgerClick(Sender: TObject);
 var
-  Tool: TRoseltTool;
+  Tool: TRoseltMenu;
   ToolContainer: TControl;
   ToolButtonContainer: TControl;
   ToolButton: TControl;
@@ -157,8 +157,8 @@ begin
   if (MultiView.Width = 50) then
   begin
     MultiView.Width := HamburgerMenuWidth;
-    for Tool in RoseltToolsArray do
-      if IsToolParent(Tool) and Tool.visible then
+    for Tool in RoseltMenuArray do
+      if IsMenuParent(Tool) and Tool.visible then
       begin
         ToolContainer := TControl(FindComponent('layNav' + Tool.name));
         ToolButtonContainer := TControl(FindComponent('layNavExpandCollapse' + Tool.name));
@@ -180,8 +180,8 @@ begin
   begin
     HamburgerMenuWidth := MultiView.Width;
     MultiView.Width := 50;
-    for Tool in RoseltToolsArray do
-      if IsToolParent(Tool) and Tool.visible then
+    for Tool in RoseltMenuArray do
+      if IsMenuParent(Tool) and Tool.visible then
       begin
         ToolContainer := TControl(FindComponent('layNav' + Tool.name));
         ToolButtonContainer := TControl(FindComponent('layNavExpandCollapse' + Tool.name));
@@ -212,7 +212,7 @@ var
   ExpandCollapseImage: TWebHTMLDiv;
   I: UInt64;
   ChildrenCount: UInt64;
-  Tool: TRoseltTool;
+  Tool: TRoseltMenu;
 begin
   Button := TControl(Sender);
   ToolBackendName := StringReplace(Button.Name, 'ExpandCollapseIcon', '', [rfReplaceAll]);
@@ -230,7 +230,7 @@ begin
   if (ExpandCollapseLayout.Height = ButtonLayout.Height) then
   begin
     ChildrenCount := 1;
-    for Tool in RoseltToolsArray do
+    for Tool in RoseltMenuArray do
       if ((Tool.Visible) AND (Tool.parent = ToolBackendName)) then
         inc(ChildrenCount);
     ExpandCollapseLayout.Height := ButtonLayout.Height * ChildrenCount;
@@ -274,7 +274,7 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
   procedure CreateToolNavButtons();
   var
     DynamicParents: TList;
-    Tool: TRoseltTool;
+    Tool: TRoseltMenu;
     ToolParentContainer: TWebPanel;
     ToolButtonContainer: TWebPanel;
     ToolButton: TWebPanel;
@@ -287,12 +287,12 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
     ParentChild: JSValue;
   begin
     DynamicParents := TList.Create;
-    for Tool in RoseltToolsArray do
+    for Tool in RoseltMenuArray do
     begin
       if (Tool.Visible = False) then Continue;
 
       // I think these buttons will be freed from memory when the app frees frmMain 🤷
-      if IsToolParent(Tool) then
+      if IsMenuParent(Tool) then
       begin
         ToolParentContainer := TWebPanel.Create(frmMain);
         ToolParentContainer.Parent := MultiView;
@@ -460,8 +460,8 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         ToolButtonLabel.Cursor := crHandPoint;
       end;
     end;
-    for Tool in RoseltToolsArray do
-      if ((Tool.Visible) AND (IsToolParent(Tool))) then
+    for Tool in RoseltMenuArray do
+      if ((Tool.Visible) AND (IsMenuParent(Tool))) then
         ExpandCollapseNavItem(TWebPanel(FindComponent('btnExpandCollapse' + Tool.name)));
     DynamicParents.Free;
   end;

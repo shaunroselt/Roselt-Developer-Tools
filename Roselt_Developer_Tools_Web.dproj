@@ -147,7 +147,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
-        <DCCReference Include="Roselt.Tools.pas"/>
+        <DCCReference Include="Roselt.Menupas"/>
         <DCCReference Include="Lib\uBootstrapIcons.pas"/>
         <DCCReference Include="Roselt.AppInfo.pas"/>
         <DCCReference Include="Tools\Web\uFrame_NameGenerator.pas">

@@ -10,7 +10,7 @@ uses
   FMX.Skia,
   uMain in 'uMain.pas' {frmMain},
   uStyles in 'uStyles.pas' {dmStyles: TDataModule},
-  Roselt.Tools in 'Roselt.Tools.pas',
+  Roselt.Menu in 'Roselt.Menu.pas',
   uFrame_Base64ImageEncoderDecoder in 'Tools\App\uFrame_Base64ImageEncoderDecoder.pas' {Frame_Base64ImageEncoderDecoder: TFrame},
   uFrame_Base64TextEncoderDecoder in 'Tools\App\uFrame_Base64TextEncoderDecoder.pas' {Frame_Base64TextEncoderDecoder: TFrame},
   uFrame_BootstrapIcons in 'Tools\App\uFrame_BootstrapIcons.pas' {Frame_BootstrapIcons: TFrame},
