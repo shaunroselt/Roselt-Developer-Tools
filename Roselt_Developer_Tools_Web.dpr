@@ -9,7 +9,7 @@ uses
   Roselt.Menu in 'Roselt.Menu.pas',
   uBootstrapIcons in 'Lib\uBootstrapIcons.pas',
   Roselt.AppInfo in 'Roselt.AppInfo.pas',
-  uFrame_NameGenerator in 'Tools\Web\uFrame_NameGenerator.pas' {Frame_NameGenerator: TWebFrame} {*.html},
+  uFrame_NameGenerator in 'Frames\Web\uFrame_NameGenerator.pas' {Frame_NameGenerator: TWebFrame} {*.html},
   uFontAwesomeIcons in 'Lib\uFontAwesomeIcons.pas',
   Roselt.NameGenerator in 'Lib\Roselt.NameGenerator.pas',
   Roselt.Utility in 'Lib\Roselt.Utility.pas',
@@ -17,7 +17,7 @@ uses
   uFeatherIcons in 'Lib\uFeatherIcons.pas',
   Roselt.SystemInformation in 'Lib\Roselt.SystemInformation.pas',
   Roselt.Clipboard in 'Lib\Roselt.Clipboard.pas',
-  uFrame_URLEncoderDecoder in 'Tools\Web\uFrame_URLEncoderDecoder.pas' {Frame_URLEncoderDecoder: TWebFrame} {*.html};
+  uFrame_URLEncoderDecoder in 'Frames\Web\uFrame_URLEncoderDecoder.pas' {Frame_URLEncoderDecoder: TWebFrame} {*.html};
 
 {$R *.res}
 

@@ -8,6 +8,7 @@ uses
   System.UITypes,
   System.Classes,
   System.Variants,
+  System.Threading,
   FMX.Types,
   FMX.Graphics,
   FMX.Controls,
@@ -103,6 +104,7 @@ type
     IconButtonsCreated: Boolean;
     IconsSearchCount: UInt64;
     procedure AllIconsSearch();
+    procedure CreateIconButton(IconName, IconSVG: String);
   public
     { Public declarations }
   end;
@@ -176,46 +178,47 @@ begin
   layIconsGrid.Height := (Round(IconsSearchCount / IconsInRow) * (150+32));
 end;
 
+procedure TFrame_BootstrapIcons.CreateIconButton(IconName, IconSVG: String);
+begin
+  var btn := TButton.Create(nil);
+  btn.name := ReplaceDigitsWithWords(IconName.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
+  btn.Text := '';
+  btn.Width := 150;
+  btn.Height := 150;
+  btn.Parent := layIconsGrid;
+  btn.Margins.Top := 16;
+  btn.Margins.Left := 16;
+  btn.Padding.Top := 12;
+  btn.Padding.Right := 12;
+  btn.Padding.Bottom := 6;
+  btn.Padding.Left := 12;
+  btn.Cursor := crHandPoint;
+  btn.OnClick := IconButtonClick;
+  btn.Hint := IconName;
+
+  var btnIcon := TSkSvg.Create(btn);
+  btnIcon.Parent := btn;
+  btnIcon.Name := btn.name + '_svg';
+  btnIcon.Align := TAlignLayout.Top;
+  btnIcon.Margins.Top := 6;
+  btnIcon.Margins.Right := 6;
+  btnIcon.Margins.Bottom := 6;
+  btnIcon.Margins.Left := 6;
+  btnIcon.Svg.OverrideColor := TAlphaColors.White;
+  btnIcon.Svg.Source := IconSVG;
+
+  var btnLabel := TLabel.Create(btn);
+  btnLabel.Parent := btn;
+  btnLabel.Name := btn.name + '_label';
+  btnLabel.Align := TAlignLayout.Client;
+  btnLabel.Text := IconName;
+  btnLabel.TextSettings.Font.Size := 13;
+  btnLabel.TextSettings.WordWrap := True;
+  btnLabel.TextSettings.HorzAlign := TTextAlign.Center;
+  btnLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+end;
+
 procedure TFrame_BootstrapIcons.FrameResized(Sender: TObject);
-  procedure CreateIconButton(IconName, IconSVG: String);
-  begin
-    var btn := TButton.Create(layIcons);
-    btn.name := ReplaceDigitsWithWords(IconName.Replace('-','_',[rfReplaceAll]).Trim([' ','-','_', #9, #10, #13]));
-    btn.Text := '';
-    btn.Width := 150;
-    btn.Height := 150;
-    btn.Parent := layIconsGrid;
-    btn.Margins.Top := 16;
-    btn.Margins.Left := 16;
-    btn.Padding.Top := 12;
-    btn.Padding.Right := 12;
-    btn.Padding.Bottom := 6;
-    btn.Padding.Left := 12;
-    btn.Cursor := crHandPoint;
-    btn.OnClick := IconButtonClick;
-    btn.Hint := IconName;
-
-    var btnIcon := TSkSvg.Create(btn);
-    btnIcon.Parent := btn;
-    btnIcon.Name := btn.name + '_svg';
-    btnIcon.Align := TAlignLayout.Top;
-    btnIcon.Margins.Top := 6;
-    btnIcon.Margins.Right := 6;
-    btnIcon.Margins.Bottom := 6;
-    btnIcon.Margins.Left := 6;
-    btnIcon.Svg.OverrideColor := TAlphaColors.White;
-    btnIcon.Svg.Source := IconSVG;
-
-    var btnLabel := TLabel.Create(btn);
-    btnLabel.Parent := btn;
-    btnLabel.Name := btn.name + '_label';
-    btnLabel.Align := TAlignLayout.Client;
-    btnLabel.Text := IconName;
-    btnLabel.TextSettings.Font.Size := 13;
-    btnLabel.TextSettings.WordWrap := True;
-    btnLabel.TextSettings.HorzAlign := TTextAlign.Center;
-    btnLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
-  end;
 begin
   if (IconButtonsCreated = False) then
   begin
@@ -223,6 +226,13 @@ begin
     if (layIconsGrid.ControlsCount = 0) then
       for var bIcon in BootstrapIconsArray do
         CreateIconButton(bIcon.name, bIcon.svg);
+
+//          TParallel.For(0, 2049,
+//            procedure(i: Integer)
+//            begin
+//              CreateIconButton(BootstrapIconsArray[i].name, BootstrapIconsArray[i].svg);
+//            end
+//          );
 
     IconsSearchCount := Length(BootstrapIconsArray);
     IconButtonsCreated := True;
@@ -246,8 +256,8 @@ begin
     memHTMLIconFont.Text := GetBootstrapIconHtmlFont(lblTitle.Text);
   end else if (Sender is TComboColorBox) then
   begin
-    SVGCode := GetBootstrapIcon(lblTitle.Text,16,'#'+IntToHex(cbIconColor.Color, 8).Substring(2));
-    memHTMLIconFont.Text := GetBootstrapIconHtmlFont(lblTitle.Text,16,'#'+IntToHex(cbIconColor.Color, 8).Substring(2));
+    SVGCode := GetBootstrapIcon(lblTitle.Text,'16','#'+IntToHex(cbIconColor.Color, 8).Substring(2));
+    memHTMLIconFont.Text := GetBootstrapIconHtmlFont(lblTitle.Text,'16','#'+IntToHex(cbIconColor.Color, 8).Substring(2));
   end;
 
   svgIcon.Svg.Source := SVGCode;

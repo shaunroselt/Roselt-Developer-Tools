@@ -150,7 +150,7 @@
         <DCCReference Include="Roselt.Menupas"/>
         <DCCReference Include="Lib\uBootstrapIcons.pas"/>
         <DCCReference Include="Roselt.AppInfo.pas"/>
-        <DCCReference Include="Tools\Web\uFrame_NameGenerator.pas">
+        <DCCReference Include="Frames\Web\uFrame_NameGenerator.pas">
             <Form>Frame_NameGenerator</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebFrame</DesignClass>
@@ -162,7 +162,7 @@
         <DCCReference Include="Lib\uFeatherIcons.pas"/>
         <DCCReference Include="Lib\Roselt.SystemInformation.pas"/>
         <DCCReference Include="Lib\Roselt.Clipboard.pas"/>
-        <DCCReference Include="Tools\Web\uFrame_URLEncoderDecoder.pas">
+        <DCCReference Include="Frames\Web\uFrame_URLEncoderDecoder.pas">
             <Form>Frame_URLEncoderDecoder</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebFrame</DesignClass>
