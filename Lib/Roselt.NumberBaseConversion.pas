@@ -148,18 +148,14 @@ end;
 function DecimalToBinary(Value: Int64): string;
 const
   tt: array [0 .. 1] of char = ('0', '1');
-var
-  tempval: Int64;
 begin
   Result := '';
-  tempval := Value;
-  if tempval = 0 then
-    Result := '0'
+  if Value = 0 then Result := '0'
   else
-    while (tempval <> 0) do
+    while (Value <> 0) do
     begin
-      Result := tt[(tempval and $1)] + Result;
-      tempval := (tempval shr 1);
+      Result := tt[(Value and $1)] + Result;
+      Value := (Value shr 1);
     end;
 end;
 
@@ -171,7 +167,7 @@ begin
   Result := 0;
   for I := 1 to Length(Value) do
   begin
-    BinValue := StrToInt('$' + Value[I]);
+    BinValue := ('$' + Value[I]).ToInt64;
     Result := Result * 2 + BinValue;
   end;
 end;
@@ -327,6 +323,5 @@ begin
   end;
   if result = '' then result := '0';
 end;
-
 
 end.
