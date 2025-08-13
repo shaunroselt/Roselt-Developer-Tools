@@ -6,14 +6,12 @@ uses
   {$IFDEF MACOS}
     MacApi.CoreFoundation,
     MacApi.Foundation,
-    System.Sensors,
   {$ENDIF}
   {$IFDEF MSWINDOWS}
     Winapi.Windows,
     Winapi.ActiveX,
     Winapi.WinSock,
     System.Win.ComObj,
-    System.Sensors,
   {$ENDIF}
   {$IFDEF ANDROID}
     Androidapi.Helpers,
@@ -26,7 +24,6 @@ uses
     Androidapi.JNI.Java.Net,
     Androidapi.JNI.Os,
     FMX.Helpers.Android,
-    System.Sensors,
   {$ENDIF}
   {$IFDEF WEBLIB}
     Web,
@@ -34,6 +31,8 @@ uses
   {$IFNDEF WEBLIB}
     FMX.Forms,
     FMX.Platform,
+    System.IOUtils,
+    System.Sensors,
   {$ENDIF}
 
   System.SysUtils,
@@ -93,44 +92,44 @@ Type
     Longitude: Double;
   end;
 
+  // Static helper: no instantiation required; all members are class functions/properties
   TSystemInformation = class
   private
-    FVideoCard: String;
-    FMacAddress: String;
-    FComputerName: String;
-    FApplicationType: String;
-    FTotalMemory: String;
-    FSystemLocation: TSystemLocation;
-    FUserName: String;
-    function GetSystemLanguage: String;
-    function GetSystemTotalMemory: String;
-    function GetScreenResolution: String;
-    function GetOperatingSystem: String;
-    function GetIPAddress: String;
-    function GetAppVersion: String;
-    function GetSystemLocation: TSystemLocation;
-    function GetUserName: String;
-    function GetMacAddress: String;
-    function GetVideoCardName: String;
+    class function GetSystemLanguage: String; static;
+    class function GetSystemTotalMemory: String; static;
+    class function GetScreenResolution: String; static;
+    class function GetOperatingSystem: String; static;
+    class function GetSystemArchitecture: String; static;
+    class function GetIPAddress: String; static;
+    class function GetAppVersion: String; static;
+    class function GetAppCompiledDate: String; static;
+    class function GetSystemLocation: TSystemLocation; static;
+    class function GetUserName: String; static;
+    class function GetMacAddress: String; static;
+    class function GetVideoCardName: String; static;
+    class function GetComputerName: String; static;
+    class function GetApplicationType: String; static;
     {$IFDEF WEBLIB}
-      function GetBrowser(): String;
+      class function GetBrowser(): String; static;
     {$ENDIF}
-  Public
-    constructor Create;
-    property VideoCard: String read FVideoCard;
-    property MacAddress: String read FMacAddress;
-    property SystemLanguage: String read GetSystemLanguage;
-    property ComputerName: String read FComputerName;
-    property IPAddress: String read GetIPAddress;
-    property ScreenResolution: String read GetScreenResolution;
-    property OperatingSystem: String read GetOperatingSystem;
-    property ApplicationType: String read FApplicationType;
-    property TotalMemory: String read FTotalMemory;
-    property AppVersion: String read GetAppVersion;
-    property SystemLocation: TSystemLocation read GetSystemLocation;
-    property UserName: String read FUserName write FUserName;
+  public
+    // Class properties for direct access: TSystemInformation.OperatingSystem, etc.
+    class property VideoCard: String read GetVideoCardName;
+    class property MacAddress: String read GetMacAddress;
+    class property SystemLanguage: String read GetSystemLanguage;
+    class property ComputerName: String read GetComputerName;
+    class property IPAddress: String read GetIPAddress;
+    class property ScreenResolution: String read GetScreenResolution;
+    class property OperatingSystem: String read GetOperatingSystem;
+    class property SystemArchitecture: String read GetSystemArchitecture;
+    class property ApplicationType: String read GetApplicationType;
+    class property TotalMemory: String read GetSystemTotalMemory;
+    class property AppVersion: String read GetAppVersion;
+    class property AppCompiledDate: String read GetAppCompiledDate;
+    class property SystemLocation: TSystemLocation read GetSystemLocation;
+    class property UserName: String read GetUserName;
     {$IFDEF WEBLIB}
-      property Browser: String read GetBrowser;
+      class property Browser: String read GetBrowser;
     {$ENDIF}
   end;
 
@@ -142,7 +141,7 @@ implementation
 function NSUserName: Pointer; cdecl; external '/System/Library/Frameworks/Foundation.framework/Foundation' name _PU +'NSFullUserName';
 {$ENDIF}
 
-function TSystemInformation.GetUserName: String;
+class function TSystemInformation.GetUserName: String;
 begin
   Result := '';
   {$IFDEF MACOS}
@@ -166,7 +165,7 @@ begin
   {$ENDIF}
 end;
 
-function TSystemInformation.GetVideoCardName: String;
+class function TSystemInformation.GetVideoCardName: String;
 {$IFDEF MSWINDOWS}
   const
     WbemUser = '';
@@ -212,17 +211,7 @@ begin;
   {$ENDIF}
 end;
 
-constructor TSystemInformation.Create;
-begin
-  FMacAddress := GetMacAddress;
-  FComputerName := GetEnvironmentVariable('COMPUTERNAME');
-  FApplicationType := 'Application';
-  FTotalMemory := GetSystemTotalMemory;
-  FUserName := GetUserName;
-  FVideoCard := GetVideoCardName;
-end;
-
-function TSystemInformation.GetAppVersion: String;
+class function TSystemInformation.GetAppVersion: String;
 var
   wMajor, wMinor, wRelease, wBuild: Word;
   VersionSuccess: Boolean;
@@ -294,7 +283,7 @@ end;
 
 
 {$IFDEF WEBLIB}
-function TSystemInformation.GetBrowser: String;
+class function TSystemInformation.GetBrowser: String;
 var
   UserAgent: String;
 begin
@@ -312,7 +301,7 @@ begin
 end;
 {$ENDIF}
 
-function TSystemInformation.GetIPAddress: String;
+class function TSystemInformation.GetIPAddress: String;
   {$IF Defined(MSWINDOWS)}
     type
       pu_long = ^u_long;
@@ -361,7 +350,7 @@ begin
   end;
 end;
 
-function TSystemInformation.GetMacAddress: String;
+class function TSystemInformation.GetMacAddress: String;
 {$IFDEF MSWINDOWS}
 var
   Lib: Cardinal;
@@ -403,7 +392,7 @@ begin
 {$ENDIF}
 end;
 
-function TSystemInformation.GetOperatingSystem: String;
+class function TSystemInformation.GetOperatingSystem: String;
 {$IFDEF WEBLIB}
   var UserAgent: String;
 {$ENDIF}
@@ -425,11 +414,11 @@ begin
     else if (UserAgent.indexOf('Linux') <> -1) then Result := 'Linux'
     else if (UserAgent.indexOf('X11') <> -1) then Result := 'UNIX';
   {$ELSE}
-    Result := TOSVersion.ToString;
+    Result := TOSVersion.Name;
   {$ENDIF}
 end;
 
-function TSystemInformation.GetScreenResolution: String;
+class function TSystemInformation.GetScreenResolution: String;
 begin
   {$IFDEF WEBLIB}
     if ((UInt64(window['innerWidth']) > UInt64(window.screen['width'])) and
@@ -442,7 +431,18 @@ begin
   {$ENDIF}
 end;
 
-function TSystemInformation.GetSystemLanguage: String;
+class function TSystemInformation.GetSystemArchitecture: String; // Consider using TOSVersion.Architecture
+begin
+  Result := 'Unknown Architecture';
+  {$IFDEF MSWINDOWS} Result := 'X64'; {$ENDIF}
+  {$IFDEF IOS} Result := 'X64'; {$ENDIF}
+  {$IFDEF MACOS} Result := 'X64'; {$ENDIF}
+  {$IFDEF LINUX} Result := 'X64'; {$ENDIF}
+  {$IFDEF ANDROID} Result := 'X64'; {$ENDIF}
+  {$IFDEF WEBLIB} Result := 'Web'; {$ENDIF}
+end;
+
+class function TSystemInformation.GetSystemLanguage: String;
   {$IFDEF MACOS}
     var
       Languages: NSArray;
@@ -482,7 +482,7 @@ begin
   {$ENDIF}
 end;
 
-function TSystemInformation.GetSystemLocation: TSystemLocation;
+class function TSystemInformation.GetSystemLocation: TSystemLocation;
   {$IFDEF MSWINDOWS}
     var
       MyLocationSensorArray : TSensorArray;
@@ -573,7 +573,7 @@ begin
   {$ENDIF}
 end;
 
-function TSystemInformation.GetSystemTotalMemory: String;
+class function TSystemInformation.GetSystemTotalMemory: String;
   {$IFDEF ANDROID}
     var
       MemoryInfo: JActivityManager_MemoryInfo;
@@ -607,6 +607,32 @@ begin
   except on E: Exception do
 
   end;
+end;
+
+class function TSystemInformation.GetComputerName: String;
+begin
+  Result := '';
+  {$IFDEF MSWINDOWS}
+    Result := GetEnvironmentVariable('COMPUTERNAME');
+  {$ENDIF}
+  {$IFDEF LINUX}
+    Result := GetEnvironmentVariable('HOSTNAME');
+  {$ENDIF}
+  // Other platforms not implemented
+end;
+
+class function TSystemInformation.GetAppCompiledDate: String;
+begin
+  Result := DateToStr(Date);
+  {$IFNDEF WEBLIB}
+    Result := DateToStr(TFile.GetLastWriteTime(ParamStr(0)));
+  {$ENDIF}
+end;
+
+class function TSystemInformation.GetApplicationType: String;
+begin
+  // Preserve previous constant behavior
+  Result := 'Application';
 end;
 
 end.

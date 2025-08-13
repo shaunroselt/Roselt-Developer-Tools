@@ -44,44 +44,6 @@ uses
   uStyles,
   uBootstrapIcons,
 
-  uFrame_Base64TextEncoderDecoder,
-  uFrame_JsonYamlConverter,
-  uFrame_HashGenerator,
-  uFrame_HTMLEncoderDecoder,
-  uFrame_JsonFormatter,
-  uFrame_LoremIpsumGenerator,
-  uFrame_TextCaseConverterInspector,
-  uFrame_ColorPicker,
-  uFrame_ImageEffects,
-  uFrame_TimestampConverter,
-  uFrame_NumberBaseConverter,
-  uFrame_URLEncoderDecoder,
-  uFrame_GZipCompressDecompress,
-  uFrame_JWTDecoder,
-  uFrame_Base64ImageEncoderDecoder,
-  uFrame_DelphiFormatter,
-  uFrame_SQLFormatter,
-  uFrame_HTMLFormatter,
-  uFrame_CSSFormatter,
-  uFrame_PHPFormatter,
-  uFrame_XMLFormatter,
-  uFrame_JavaScriptFormatter,
-  uFrame_UUIDGenerator,
-  uFrame_JWTTokenGenerator,
-  uFrame_PasswordGenerator,
-  uFrame_TextEscapeUnescape,
-  uFrame_MarkdownPreview,
-  uFrame_HTMLPreview,
-  uFrame_RegexTester,
-  uFrame_NameGenerator,
-  uFrame_TextToArray,
-  uFrame_PingIPDomain,
-  uFrame_TraceRoute,
-  uFrame_ImageConverter,
-  uFrame_BootstrapIcons,
-  uFrame_FontAwesomeIcons,
-  uFrame_FeatherIcons,
-
   System.Skia,
   FMX.Skia;
 
@@ -462,6 +424,90 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
   procedure CreateToolNavButtons();
+    function CreateToolParentContainer(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'layNav'): TLayout;
+    begin
+      Result := TLayout.Create(Owner);
+      Result.Parent := Parent;
+      Result.Align := TAlignLayout.Bottom;
+      Result.Height := 100;
+      Result.Align := TAlignLayout.Top;
+      Result.Name := NameStart + Tool.name;
+    end;
+    function CreateToolButtonContainer(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'layNav'): TLayout;
+    begin
+      Result := TLayout.Create(Owner);
+      Result.Parent := Parent;
+      Result.Align := TAlignLayout.Bottom;
+      Result.Height := 50;
+      Result.Align := TAlignLayout.Top;
+      Result.Name := NameStart + Tool.name;
+      Result.Enabled := Tool.active;
+    end;
+    function CreateToolButton(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'btn'): TRectangle;
+    begin
+      Result := TRectangle.Create(Owner);
+      Result.Parent := Parent;
+      Result.Align := TAlignLayout.Client;
+      Result.Margins.Top := 5;
+      Result.Margins.Right := 5;
+      Result.Margins.Bottom := 5;
+      Result.Margins.Left := 5;
+      Result.Name := NameStart + Tool.name;
+      Result.Cursor := crHandPoint;
+      Result.Fill.Kind := TBrushKind.None;
+      Result.Sides := [];
+      Result.YRadius := 8;
+      Result.XRadius := 8;
+      Result.Stroke.Kind := TBrushKind.None;
+      Result.OnMouseEnter := btnAllToolsMouseEnter;
+      Result.OnMouseLeave := btnAllToolsMouseLeave;
+    end;
+    function CreateToolButtonImg(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'img'): TSkSvg;
+    begin
+      Result := TSkSvg.Create(Owner);
+      Result.Parent := Parent;
+      Result.Align := TAlignLayout.Left;
+      Result.Margins.Top := 8;
+      Result.Margins.Right := 8;
+      Result.Margins.Bottom := 8;
+      Result.Margins.Left := 8;
+      if (Tool.parent <> '') then Result.Margins.Left := 32;
+      Result.Width := Result.Height;
+      Result.Name := NameStart + Tool.name;
+      Result.Svg.Source := GetBootstrapIcon(Tool.icon);
+      Result.Svg.OverrideColor := TAlphaColors.White;
+    end;
+    function CreateToolButtonLabel(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'lbl'): TLabel;
+    begin
+      Result := TLabel.Create(Owner);
+      Result.Parent := Parent;
+      Result.Align := TAlignLayout.Client;
+      Result.Margins.Top := 5;
+      Result.Margins.Right := 5;
+      Result.Margins.Bottom := 5;
+      Result.Name := NameStart + Tool.name;
+      Result.Text := Tool.text_long;
+      Result.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+      Result.TextSettings.Font.Size := 20;
+      if (Tool.active = False) then
+        Result.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+    end;
+    function CreateToolButtonImgExpandCollapseIcon(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'imgExpandCollapseIcon'): TSkSvg;
+    begin
+      Result := TSkSvg.Create(Owner);
+      Result.Parent := Parent;
+      Result.Align := TAlignLayout.Right;
+      Result.Margins.Top := 11;
+      Result.Margins.Right := 5;
+      Result.Margins.Bottom := 11;
+      Result.Margins.Left := 5;
+      Result.Width := Result.Height;
+      Result.Name := NameStart + Tool.name;
+      Result.Svg.Source := GetBootstrapIcon('chevron-down');
+      Result.Svg.OverrideColor := TAlphaColors.White;
+      Result.Visible := Tool.active;
+    end;
+
   begin
     var DynamicParents := TList.Create;
     for var Tool in RoseltMenuArray do
@@ -471,81 +517,22 @@ procedure TfrmMain.FormCreate(Sender: TObject);
       // I think these buttons will be freed from memory when the app frees MultiViewScrollBox 🤷
       if IsMenuParent(Tool) then
       begin
-        var ToolParentContainer := TLayout.Create(MultiViewScrollBox);
-        ToolParentContainer.Parent := MultiViewScrollBox;
-        ToolParentContainer.Align := TAlignLayout.Bottom;
-        ToolParentContainer.Height := 100;
-        ToolParentContainer.Align := TAlignLayout.Top;
-        ToolParentContainer.Name := 'layNav' + Tool.name;
+        var ToolParentContainer := CreateToolParentContainer(Tool, MultiViewScrollBox, MultiViewScrollBox);
 
-        var ToolButtonContainer := TLayout.Create(ToolParentContainer);
-        ToolButtonContainer.Parent := ToolParentContainer;
-        ToolButtonContainer.Align := TAlignLayout.Top;
-        ToolButtonContainer.Height := 50;
-        ToolButtonContainer.Name := 'layNavExpandCollapse' + Tool.name;
-        ToolButtonContainer.Enabled := Tool.active;
+        var ToolButtonContainer := CreateToolButtonContainer(Tool, ToolParentContainer, ToolParentContainer, 'layNavExpandCollapse');
 
-        var ToolButton := TRectangle.Create(ToolButtonContainer);
-        ToolButton.Parent := ToolButtonContainer;
-        ToolButton.Align := TAlignLayout.Client;
-        ToolButton.Margins.Top := 5;
-        ToolButton.Margins.Right := 5;
-        ToolButton.Margins.Bottom := 5;
-        ToolButton.Margins.Left := 5;
-        ToolButton.Name := 'btnExpandCollapse' + Tool.name;
-        ToolButton.Cursor := crHandPoint;
-        ToolButton.Fill.Kind := TBrushKind.None;
-        ToolButton.Sides := [];
-        ToolButton.YRadius := 8;
-        ToolButton.XRadius := 8;
-        ToolButton.Stroke.Kind := TBrushKind.None;
-        ToolButton.OnMouseEnter := btnAllToolsMouseEnter;
-        ToolButton.OnMouseLeave := btnAllToolsMouseLeave;
+        var ToolButton := CreateToolButton(Tool, ToolButtonContainer, ToolButtonContainer, 'btnExpandCollapse');
         ToolButton.OnClick := ExpandCollapseNavItem;
         ToolButton.OnDblClick := ExpandCollapseNavItem;
 
-        var ToolButtonImg := TSkSvg.Create(ToolButtonContainer);
-        ToolButtonImg.Parent := ToolButton;
-        ToolButtonImg.Align := TAlignLayout.Left;
-        ToolButtonImg.Margins.Top := 8;
-        ToolButtonImg.Margins.Right := 8;
-        ToolButtonImg.Margins.Bottom := 8;
-        ToolButtonImg.Margins.Left := 8;
-        ToolButtonImg.Width := ToolButtonImg.Height;
-        ToolButtonImg.Name := 'imgExpandCollapse' + Tool.name;
-        ToolButtonImg.Svg.Source := GetBootstrapIcon(Tool.icon);
-        ToolButtonImg.Svg.OverrideColor := TAlphaColors.White;
-
-        var ToolButtonLabel := TLabel.Create(ToolButtonContainer);
-        ToolButtonLabel.Parent := ToolButton;
-        ToolButtonLabel.Align := TAlignLayout.Client;
-        ToolButtonLabel.Margins.Top := 5;
-        ToolButtonLabel.Margins.Right := 5;
-        ToolButtonLabel.Margins.Bottom := 5;
-        ToolButtonLabel.Name := 'lblExpandCollapse' + Tool.name;
-        ToolButtonLabel.Text := Tool.text_long;
-        ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
-        ToolButtonLabel.TextSettings.Font.Size := 20;
-        if (Tool.active = False) then
-          ToolButtonLabel.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
-
-        var ToolButtonImgExpandCollapseIcon := TSkSvg.Create(ToolButtonContainer);
-        ToolButtonImgExpandCollapseIcon.Parent := ToolButton;
-        ToolButtonImgExpandCollapseIcon.Align := TAlignLayout.Right;
-        ToolButtonImgExpandCollapseIcon.Margins.Top := 11;
-        ToolButtonImgExpandCollapseIcon.Margins.Right := 5;
-        ToolButtonImgExpandCollapseIcon.Margins.Bottom := 11;
-        ToolButtonImgExpandCollapseIcon.Margins.Left := 5;
-        ToolButtonImgExpandCollapseIcon.Width := ToolButtonImgExpandCollapseIcon.Height;
-        ToolButtonImgExpandCollapseIcon.Name := 'imgExpandCollapseIcon' + Tool.name;
-        ToolButtonImgExpandCollapseIcon.Svg.Source := GetBootstrapIcon('chevron-down');
-        ToolButtonImgExpandCollapseIcon.Svg.OverrideColor := TAlphaColors.White;
-        ToolButtonImgExpandCollapseIcon.Visible := Tool.active;
+        CreateToolButtonImg(Tool, ToolButtonContainer, ToolButton, 'imgExpandCollapse');
+        CreateToolButtonLabel(Tool, ToolButtonContainer, ToolButton, 'lblExpandCollapse');
+        CreateToolButtonImgExpandCollapseIcon(Tool, ToolButtonContainer, ToolButton, 'imgExpandCollapseIcon');
 
         DynamicParents.Add(ToolParentContainer);
       end else
       begin
-        var ToolButtonContainer := TLayout.Create(MultiViewScrollBox);
+        var ToolButtonContainer := CreateToolButtonContainer(Tool, MultiViewScrollBox, MultiViewScrollBox, 'layNav');
 
         if (Tool.parent = '') then
         begin
@@ -567,67 +554,19 @@ procedure TfrmMain.FormCreate(Sender: TObject);
             Continue;
           end;
         end;
-        ToolButtonContainer.Align := TAlignLayout.Bottom;
-        ToolButtonContainer.Height := 50;
-        ToolButtonContainer.Align := TAlignLayout.Top;
-        ToolButtonContainer.Name := 'layNav' + Tool.name;
-        ToolButtonContainer.Enabled := Tool.active;
 
-        var ToolButton := TRectangle.Create(ToolButtonContainer);
-        ToolButton.Parent := ToolButtonContainer;
-        ToolButton.Align := TAlignLayout.Client;
-        ToolButton.Margins.Top := 5;
-        ToolButton.Margins.Right := 5;
-        ToolButton.Margins.Bottom := 5;
-        ToolButton.Margins.Left := 5;
-        ToolButton.Name := 'btn' + Tool.name;
-        ToolButton.Cursor := crHandPoint;
-        ToolButton.Fill.Kind := TBrushKind.None;
-        ToolButton.Sides := [];
-        ToolButton.YRadius := 8;
-        ToolButton.XRadius := 8;
-        ToolButton.Stroke.Kind := TBrushKind.None;
-        ToolButton.OnMouseEnter := btnAllToolsMouseEnter;
-        ToolButton.OnMouseLeave := btnAllToolsMouseLeave;
+        var ToolButton := CreateToolButton(Tool, ToolButtonContainer, ToolButtonContainer);
         ToolButton.OnClick := btnAllToolsClick;
 
-        var ToolButtonImg := TSkSvg.Create(ToolButtonContainer);
-        ToolButtonImg.Parent := ToolButton;
-        ToolButtonImg.Align := TAlignLayout.Left;
-        ToolButtonImg.Margins.Top := 8;
-        ToolButtonImg.Margins.Right := 8;
-        ToolButtonImg.Margins.Bottom := 8;
-        if (Tool.parent = '') then
-        begin
-          ToolButtonImg.Margins.Left := 8;
-        end else
-        begin
-          ToolButtonImg.Margins.Left := 32;
-        end;
-        ToolButtonImg.Width := ToolButtonImg.Height;
-        ToolButtonImg.Name := 'img' + Tool.name;
-        ToolButtonImg.Svg.Source := GetBootstrapIcon(Tool.icon);
-        ToolButtonImg.Svg.OverrideColor := TAlphaColors.White;
-
-        var ToolButtonLabel := TLabel.Create(ToolButtonContainer);
-        ToolButtonLabel.Parent := ToolButton;
-        ToolButtonLabel.Align := TAlignLayout.Client;
-        ToolButtonLabel.Margins.Top := 5;
-        ToolButtonLabel.Margins.Right := 5;
-        ToolButtonLabel.Margins.Bottom := 5;
-        ToolButtonLabel.Name := 'lbl' + Tool.name;
-        ToolButtonLabel.Text := Tool.text_long;
-        ToolButtonLabel.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
-        ToolButtonLabel.TextSettings.Font.Size := 20;
-        if (Tool.active = False) then
-          ToolButtonLabel.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+        CreateToolButtonImg(Tool, ToolButtonContainer, ToolButton);
+        CreateToolButtonLabel(Tool, ToolButtonContainer, ToolButton);
       end;
     end;
     for var ParentContainer in DynamicParents do
       for var ParentChild in TLayout(ParentContainer).Children do
         if (String(TLayout(ParentChild).Name).Contains('ExpandCollapse')) then
         begin
-          ExpandCollapseNavItem(TRectangle(TLayout(ParentChild).Children[0]));
+          ExpandCollapseNavItem(TRectangle(TLayout(ParentChild).Children[0])); // Collapse all Menu Categories
           break;
         end;
     DynamicParents.Free;
@@ -710,12 +649,12 @@ procedure TfrmMain.FormCreate(Sender: TObject);
       ToolIconDescription.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
     end;
   end;
-  procedure CreateToolFrame(ToolFrame: TFrame; FrameName: String);
+  procedure CreateFrame(Frame: TFrame; FrameName: String);
   begin
-    ToolFrame.Name := FrameName;
-    ToolFrame.Visible := False;
-    ToolFrame.Parent := LayoutContainer;
-    ToolFrame.Align := TAlignLayout.Client;
+    Frame.Name := FrameName;
+    Frame.Visible := False;
+    Frame.Parent := LayoutContainer;
+    Frame.Align := TAlignLayout.Client;
   end;
 begin
   btnAllToolsTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
@@ -730,44 +669,17 @@ begin
   btnAllTools.OnClick(btnAllTools);
 
 
-  // Dynamically create Tool Frames
-  CreateToolFrame(TFrame_DelphiFormatter.Create(Self),'layDelphiFormatter');
-  CreateToolFrame(TFrame_PHPFormatter.Create(Self),'layPHPFormatter');
-  CreateToolFrame(TFrame_CSSFormatter.Create(Self),'layCSSFormatter');
-  CreateToolFrame(TFrame_HTMLFormatter.Create(Self),'layHTMLFormatter');
-  CreateToolFrame(TFrame_JsonFormatter.Create(Self),'layJsonFormatter');
-  CreateToolFrame(TFrame_SQLFormatter.Create(Self),'laySQLFormatter');
-  CreateToolFrame(TFrame_XMLFormatter.Create(Self),'layXMLFormatter');
-  CreateToolFrame(TFrame_JavaScriptFormatter.Create(Self),'layJavaScriptFormatter');
-  CreateToolFrame(TFrame_NumberBaseConverter.Create(Self),'layNumberBaseConverter');
-  CreateToolFrame(TFrame_NameGenerator.Create(Self),'layNameGenerator');
-  CreateToolFrame(TFrame_PasswordGenerator.Create(Self),'layPasswordGenerator');
-  CreateToolFrame(TFrame_UUIDGenerator.Create(Self),'layUUIDGenerator');
-  CreateToolFrame(TFrame_HashGenerator.Create(Self),'layHashGenerator');
-  CreateToolFrame(TFrame_TimestampConverter.Create(Self),'layTimestampConverter');
-  CreateToolFrame(TFrame_Base64TextEncoderDecoder.Create(Self),'layBase64EncoderDecoder');
-  CreateToolFrame(TFrame_Base64ImageEncoderDecoder.Create(Self),'layBase64ImageEncoderDecoder');
-  CreateToolFrame(TFrame_ColorPicker.Create(Self),'layColorPicker');
-  CreateToolFrame(TFrame_ImageEffects.Create(Self),'layImageEffects');
-  CreateToolFrame(TFrame_GZipCompressDecompress.Create(Self),'layGZipCompressDecompress');
-  CreateToolFrame(TFrame_HTMLEncoderDecoder.Create(Self),'layHTMLEncoderDecoder');
-  CreateToolFrame(TFrame_JsonYamlConverter.Create(Self),'layJsonYamlConverter');
-  CreateToolFrame(TFrame_JWTDecoder.Create(Self),'layJWTDecoder');
-  CreateToolFrame(TFrame_LoremIpsumGenerator.Create(Self),'layLoremIpsumGenerator');
-  CreateToolFrame(TFrame_JWTTokenGenerator.Create(Self),'layJWTTokenGenerator');
-  CreateToolFrame(TFrame_TextCaseConverterInspector.Create(Self),'layTextCaseConverterInspector');
-  CreateToolFrame(TFrame_URLEncoderDecoder.Create(Self),'layURLEncoderDecoder');
-  CreateToolFrame(TFrame_TextEscapeUnescape.Create(Self),'layTextEscapeUnescape');
-  CreateToolFrame(TFrame_MarkdownPreview.Create(Self),'layMarkdownPreview');
-  CreateToolFrame(TFrame_HTMLPreview.Create(Self),'layHTMLPreview');
-  CreateToolFrame(TFrame_RegexTester.Create(Self),'layRegexTester');
-  CreateToolFrame(TFrame_TextToArray.Create(Self),'layTextToArray');
-  CreateToolFrame(TFrame_PingIPDomain.Create(Self),'layPingIPDomain');
-  CreateToolFrame(TFrame_TraceRoute.Create(Self),'layTraceRoute');
-  CreateToolFrame(TFrame_BootstrapIcons.Create(Self),'layBootstrapIcons');
-  CreateToolFrame(TFrame_FontAwesomeIcons.Create(Self),'layFontAwesomeIcons');
-  CreateToolFrame(TFrame_FeatherIcons.Create(Self),'layFeatherIcons');
-  CreateToolFrame(TFrame_ImageConverter.Create(Self),'layImageConverter');
+  // Dynamically create Frames using RoseltMenuArray definitions
+  for var Tool in RoseltMenuArray do
+  begin
+    if IsMenuParent(Tool) then
+      Continue; // skip category parents
+    if (Tool.visible = False) or (Tool.active = False) then
+      Continue; // only create for active and visible tools
+    if Tool.frame = nil then
+      Continue; // skip tools without a frame assigned
+    CreateFrame(Tool.frame.Create(Self), 'lay' + Tool.name);
+  end;
 
 
   // Load Themes (Settings)

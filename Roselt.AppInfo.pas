@@ -4,42 +4,27 @@ interface
 
 uses
   System.SysUtils,
-  System.IOUtils;
+  {$IFNDEF WEBLIB}
+    System.IOUtils,
+  {$ENDIF}
+  Roselt.SystemInformation;
 
 function GetAppInfo: String; // Need to get all of the App Info dynamically in the future
 
 implementation
 
 function GetAppInfo: String;
-  function GetAppArchitectureInfo: String; // Consider using TOSVersion.Architecture
-  begin
-    Result := 'Unknown Architecture';
-    {$IFDEF MSWINDOWS} Result := 'X64'; {$ENDIF}
-    {$IFDEF IOS} Result := 'X64'; {$ENDIF}
-    {$IFDEF MACOS} Result := 'X64'; {$ENDIF}
-    {$IFDEF LINUX} Result := 'X64'; {$ENDIF}
-    {$IFDEF ANDROID} Result := 'X64'; {$ENDIF}
-    {$IFDEF WEBLIB} Result := 'Web'; {$ENDIF}
-  end;
-  function GetAppCompiledDate: String;
-  begin
-    try
-      Result := DateToStr(TFile.GetLastWriteTime(ParamStr(0)));
-    except
-      Result := DateToStr(Date);
-    end;
-  end;
 var
   Version, OperatingSystem, Architecture, BuildType, CompiledDate: String;
 begin
   Version := 'Version 3.0.0.0 Beta 5';
-  Architecture := GetAppArchitectureInfo;
-  OperatingSystem := TOSVersion.Name;
+  Architecture := TSystemInformation.SystemArchitecture;
+  OperatingSystem := TSystemInformation.OperatingSystem;
   BuildType := 'RELEASE';
   {$IFDEF DEBUG}
     BuildType := 'DEBUG';
   {$ENDIF}
-  CompiledDate := GetAppCompiledDate;
+  CompiledDate := TSystemInformation.AppCompiledDate;
 
   Result := '${Version} | ${OperatingSystem} | ${Architecture} | ${BuildType} | ${CompiledDate}';
   Result := Result.Replace('${Version}', Version)

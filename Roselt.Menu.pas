@@ -2,7 +2,48 @@ unit Roselt.Menu;
 
 interface
 
+uses
+  FMX.Forms,
+  uFrame_Base64TextEncoderDecoder,
+  uFrame_JsonYamlConverter,
+  uFrame_HashGenerator,
+  uFrame_HTMLEncoderDecoder,
+  uFrame_JsonFormatter,
+  uFrame_LoremIpsumGenerator,
+  uFrame_TextCaseConverterInspector,
+  uFrame_ColorPicker,
+  uFrame_ImageEffects,
+  uFrame_TimestampConverter,
+  uFrame_NumberBaseConverter,
+  uFrame_URLEncoderDecoder,
+  uFrame_GZipCompressDecompress,
+  uFrame_JWTDecoder,
+  uFrame_Base64ImageEncoderDecoder,
+  uFrame_DelphiFormatter,
+  uFrame_SQLFormatter,
+  uFrame_HTMLFormatter,
+  uFrame_CSSFormatter,
+  uFrame_PHPFormatter,
+  uFrame_XMLFormatter,
+  uFrame_JavaScriptFormatter,
+  uFrame_UUIDGenerator,
+  uFrame_JWTTokenGenerator,
+  uFrame_PasswordGenerator,
+  uFrame_TextEscapeUnescape,
+  uFrame_MarkdownPreview,
+  uFrame_HTMLPreview,
+  uFrame_RegexTester,
+  uFrame_NameGenerator,
+  uFrame_TextToArray,
+  uFrame_PingIPDomain,
+  uFrame_TraceRoute,
+  uFrame_ImageConverter,
+  uFrame_BootstrapIcons,
+  uFrame_FontAwesomeIcons,
+  uFrame_FeatherIcons;
+
 type
+  TRoseltMenuFrame = class of TFrame;
   TRoseltMenu = record
     {
       A Tool qualifies as a Parent when the parent property is empty and
@@ -16,6 +57,7 @@ type
     active: Boolean;
     visible: Boolean;
     parent: String;
+    frame: TRoseltMenuFrame;
   end;
 
 const
@@ -154,6 +196,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Converters';
+      frame: TFrame_JsonYamlConverter;
     ),
     (
       text_short: 'Text to Array';
@@ -169,6 +212,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Converters';
+      frame: TFrame_TextToArray;
     ),
     (
       text_short: 'Timestamp';
@@ -184,6 +228,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Converters';
+      frame: TFrame_TimestampConverter;
     ),
     (
       text_short: 'Number Base';
@@ -199,6 +244,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Converters';
+      frame: TFrame_NumberBaseConverter;
     ),
     (
       text_short: 'HTML';
@@ -214,6 +260,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'EncodersDecoders';
+      frame: TFrame_HTMLEncoderDecoder;
     ),
     (
       text_short: 'URL';
@@ -229,11 +276,12 @@ const
         visible: true;
       {$ENDIF}
       parent: 'EncodersDecoders';
+      frame: TFrame_URLEncoderDecoder;
     ),
     (
       text_short: 'Base64 Text';
       text_long: 'Base64 Text';
-      name: 'Base64EncoderDecoder';
+      name: 'Base64TextEncoderDecoder';
       description: 'Encode and decode Base64 text data';
       icon: 'file-binary';
       {$IFDEF DEBUG}
@@ -244,6 +292,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'EncodersDecoders';
+      frame: TFrame_Base64TextEncoderDecoder;
     ),
     (
       text_short: 'Base64 Image';
@@ -259,6 +308,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'EncodersDecoders';
+      frame: TFrame_Base64ImageEncoderDecoder;
     ),
     (
       text_short: 'GZip';
@@ -274,6 +324,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'EncodersDecoders';
+      frame: TFrame_GZipCompressDecompress;
     ),
     (
       text_short: 'JWT Decoder';
@@ -289,6 +340,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'EncodersDecoders';
+      frame: TFrame_JWTDecoder;
     ),
     (
       text_short: 'Delphi';
@@ -304,6 +356,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_DelphiFormatter;
     ),
     (
       text_short: 'JSON';
@@ -319,6 +372,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_JsonFormatter;
     ),
     (
       text_short: 'HTML';
@@ -334,6 +388,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_HTMLFormatter;
     ),
     (
       text_short: 'SQL';
@@ -349,6 +404,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_SQLFormatter;
     ),
     (
       text_short: 'XML';
@@ -364,6 +420,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_XMLFormatter;
     ),
     (
       text_short: 'JavaScript';
@@ -379,6 +436,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_JavaScriptFormatter;
     ),
     (
       text_short: 'PHP';
@@ -394,6 +452,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_PHPFormatter;
     ),
     (
       text_short: 'CSS';
@@ -409,6 +468,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Formatters';
+      frame: TFrame_CSSFormatter;
     ),
     (
       text_short: 'Hash';
@@ -424,6 +484,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Generators';
+      frame: TFrame_HashGenerator;
     ),
     (
       text_short: 'UUID';
@@ -439,6 +500,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Generators';
+      frame: TFrame_UUIDGenerator;
     ),
     (
       text_short: 'Lorem Ipsum';
@@ -454,6 +516,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Generators';
+      frame: TFrame_LoremIpsumGenerator;
     ),
     (
       text_short: 'JWT Token';
@@ -469,6 +532,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Generators';
+      frame: TFrame_JWTTokenGenerator;
     ),
     (
       text_short: 'Name';
@@ -484,6 +548,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Generators';
+      frame: TFrame_NameGenerator;
     ),
     (
       text_short: 'Password';
@@ -499,6 +564,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Generators';
+      frame: TFrame_PasswordGenerator;
     ),
     (
       text_short: 'Case Converter && Inspector';
@@ -514,6 +580,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Text';
+      frame: TFrame_TextCaseConverterInspector;
     ),
     (
       text_short: 'Escape / Unescape';
@@ -529,6 +596,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Text';
+      frame: TFrame_TextEscapeUnescape;
     ),
     (
       text_short: 'Regex Tester';
@@ -544,6 +612,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Text';
+      frame: TFrame_RegexTester;
     ),
     (
       text_short: 'Text Difference';
@@ -559,6 +628,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Text';
+//      frame: TFrame_TextDifference;
     ),
     (
       text_short: 'Markdown Preview';
@@ -574,6 +644,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Text';
+      frame: TFrame_MarkdownPreview;
     ),
     (
       text_short: 'HTML Preview';
@@ -589,6 +660,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Text';
+      frame: TFrame_HTMLPreview;
     ),
     (
       text_short: 'Color Picker';
@@ -604,6 +676,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Graphics';
+      frame: TFrame_ColorPicker;
     ),
     (
       text_short: 'Image Effects';
@@ -619,6 +692,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Graphics';
+      frame: TFrame_ImageEffects;
     ),
     (
       text_short: 'Bootstrap Icons';
@@ -634,6 +708,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Graphics';
+      frame: TFrame_BootstrapIcons;
     ),
     (
       text_short: 'Font Awesome Icons';
@@ -649,6 +724,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Graphics';
+      frame: TFrame_FontAwesomeIcons;
     ),
     (
       text_short: 'Feather Icons';
@@ -664,6 +740,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Graphics';
+      frame: TFrame_FeatherIcons;
     ),
     (
       text_short: 'Color Blindness Simulator';
@@ -679,6 +756,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Graphics';
+//      frame: TFrame_ColorBlindnessSimulator;
     ),
     (
       text_short: 'PNG / JPEG Compressor';
@@ -694,6 +772,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Graphics';
+//      frame: TFrame_PNGJPEGCompressor;
     ),
     (
       text_short: 'Ping IP / Domain';
@@ -709,6 +788,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Other';
+      frame: TFrame_PingIPDomain;
     ),
     (
       text_short: 'Trace Route';
@@ -724,6 +804,7 @@ const
         visible: true;
       {$ENDIF}
       parent: 'Other';
+      frame: TFrame_TraceRoute;
     ),
     (
       text_short: 'Image Converter';
@@ -739,6 +820,7 @@ const
         visible: false;
       {$ENDIF}
       parent: 'Graphics';
+      frame: TFrame_ImageConverter;
     )
   );
 
