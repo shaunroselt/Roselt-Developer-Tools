@@ -742,7 +742,7 @@ object Frame_HashGenerator: TFrame_HashGenerator
     end
   end
   object layTop: TLayout
-    Align = Top
+    Align = MostTop
     Padding.Left = 20.000000000000000000
     Padding.Top = 20.000000000000000000
     Padding.Right = 20.000000000000000000

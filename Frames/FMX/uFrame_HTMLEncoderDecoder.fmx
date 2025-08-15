@@ -347,8 +347,8 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
         Size.PlatformDefault = False
         TabOrder = 4
         OnKeyUp = memInputKeyUp
-        Viewport.Width = 380.000000000000000000
-        Viewport.Height = 538.000000000000000000
+        Viewport.Width = 376.000000000000000000
+        Viewport.Height = 534.000000000000000000
         object OpenDialog: TOpenDialog
           Filter = 'All Files|*|*.txt|*.txt|*.html|*.html'
           Left = 320
@@ -429,8 +429,8 @@ object Frame_HTMLEncoderDecoder: TFrame_HTMLEncoderDecoder
         Size.Height = 538.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
-        Viewport.Width = 375.000000000000000000
-        Viewport.Height = 538.000000000000000000
+        Viewport.Width = 371.000000000000000000
+        Viewport.Height = 534.000000000000000000
       end
     end
     object SplitterInputOutput: TSplitter

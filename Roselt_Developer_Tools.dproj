@@ -378,167 +378,167 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="Roselt.Menu.pas"/>
-        <DCCReference Include="Frames\App\uFrame_Base64ImageEncoderDecoder.pas">
+        <DCCReference Include="Frames\FMX\uFrame_Base64ImageEncoderDecoder.pas">
             <Form>Frame_Base64ImageEncoderDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_Base64TextEncoderDecoder.pas">
+        <DCCReference Include="Frames\FMX\uFrame_Base64TextEncoderDecoder.pas">
             <Form>Frame_Base64TextEncoderDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_BootstrapIcons.pas">
+        <DCCReference Include="Frames\FMX\uFrame_BootstrapIcons.pas">
             <Form>Frame_BootstrapIcons</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_ColorPicker.pas">
+        <DCCReference Include="Frames\FMX\uFrame_ColorPicker.pas">
             <Form>Frame_ColorPicker</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_CSSFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_CSSFormatter.pas">
             <Form>Frame_CSSFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_DelphiFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_DelphiFormatter.pas">
             <Form>Frame_DelphiFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_GZipCompressDecompress.pas">
+        <DCCReference Include="Frames\FMX\uFrame_GZipCompressDecompress.pas">
             <Form>Frame_GZipCompressDecompress</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_HashGenerator.pas">
+        <DCCReference Include="Frames\FMX\uFrame_HashGenerator.pas">
             <Form>Frame_HashGenerator</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_HTMLEncoderDecoder.pas">
+        <DCCReference Include="Frames\FMX\uFrame_HTMLEncoderDecoder.pas">
             <Form>Frame_HTMLEncoderDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_HTMLFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_HTMLFormatter.pas">
             <Form>Frame_HTMLFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_HTMLPreview.pas">
+        <DCCReference Include="Frames\FMX\uFrame_HTMLPreview.pas">
             <Form>Frame_HTMLPreview</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_ImageEffects.pas">
+        <DCCReference Include="Frames\FMX\uFrame_ImageEffects.pas">
             <Form>Frame_ImageEffects</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_JavaScriptFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_JavaScriptFormatter.pas">
             <Form>Frame_JavaScriptFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_JsonFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_JsonFormatter.pas">
             <Form>Frame_JsonFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_JsonYamlConverter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_JsonYamlConverter.pas">
             <Form>Frame_JsonYamlConverter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_JWTDecoder.pas">
+        <DCCReference Include="Frames\FMX\uFrame_JWTDecoder.pas">
             <Form>Frame_JWTDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_JWTTokenGenerator.pas">
+        <DCCReference Include="Frames\FMX\uFrame_JWTTokenGenerator.pas">
             <Form>Frame_JWTTokenGenerator</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_LoremIpsumGenerator.pas">
+        <DCCReference Include="Frames\FMX\uFrame_LoremIpsumGenerator.pas">
             <Form>Frame_LoremIpsumGenerator</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_MarkdownPreview.pas">
+        <DCCReference Include="Frames\FMX\uFrame_MarkdownPreview.pas">
             <Form>Frame_MarkdownPreview</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_NameGenerator.pas">
+        <DCCReference Include="Frames\FMX\uFrame_NameGenerator.pas">
             <Form>Frame_NameGenerator</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_NumberBaseConverter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_NumberBaseConverter.pas">
             <Form>Frame_NumberBaseConverter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_PasswordGenerator.pas">
+        <DCCReference Include="Frames\FMX\uFrame_PasswordGenerator.pas">
             <Form>Frame_PasswordGenerator</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_PHPFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_PHPFormatter.pas">
             <Form>Frame_PHPFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_PingIPDomain.pas">
+        <DCCReference Include="Frames\FMX\uFrame_PingIPDomain.pas">
             <Form>Frame_PingIPDomain</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_RegexTester.pas">
+        <DCCReference Include="Frames\FMX\uFrame_RegexTester.pas">
             <Form>Frame_RegexTester</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_SQLFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_SQLFormatter.pas">
             <Form>Frame_SQLFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_TextCaseConverterInspector.pas">
+        <DCCReference Include="Frames\FMX\uFrame_TextCaseConverterInspector.pas">
             <Form>Frame_TextCaseConverterInspector</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_TextEscapeUnescape.pas">
+        <DCCReference Include="Frames\FMX\uFrame_TextEscapeUnescape.pas">
             <Form>Frame_TextEscapeUnescape</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_TextToArray.pas">
+        <DCCReference Include="Frames\FMX\uFrame_TextToArray.pas">
             <Form>Frame_TextToArray</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_TimestampConverter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_TimestampConverter.pas">
             <Form>Frame_TimestampConverter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_URLEncoderDecoder.pas">
+        <DCCReference Include="Frames\FMX\uFrame_URLEncoderDecoder.pas">
             <Form>Frame_URLEncoderDecoder</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_UUIDGenerator.pas">
+        <DCCReference Include="Frames\FMX\uFrame_UUIDGenerator.pas">
             <Form>Frame_UUIDGenerator</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_XMLFormatter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_XMLFormatter.pas">
             <Form>Frame_XMLFormatter</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
@@ -555,24 +555,24 @@
         <DCCReference Include="Lib\uBootstrapIcons.pas"/>
         <DCCReference Include="Roselt.AppInfo.pas"/>
         <DCCReference Include="Lib\uFontAwesomeIcons.pas"/>
-        <DCCReference Include="Frames\App\uFrame_FontAwesomeIcons.pas">
+        <DCCReference Include="Frames\FMX\uFrame_FontAwesomeIcons.pas">
             <Form>Frame_FontAwesomeIcons</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Lib\uFeatherIcons.pas"/>
-        <DCCReference Include="Frames\App\uFrame_TraceRoute.pas">
+        <DCCReference Include="Frames\FMX\uFrame_TraceRoute.pas">
             <Form>Frame_TraceRoute</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Frames\App\uFrame_FeatherIcons.pas">
+        <DCCReference Include="Frames\FMX\uFrame_FeatherIcons.pas">
             <Form>Frame_FeatherIcons</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Lib\Roselt.Clipboard.pas"/>
-        <DCCReference Include="Frames\App\uFrame_ImageConverter.pas">
+        <DCCReference Include="Frames\FMX\uFrame_ImageConverter.pas">
             <Form>Frame_ImageConverter</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
