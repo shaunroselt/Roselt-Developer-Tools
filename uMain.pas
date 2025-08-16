@@ -211,7 +211,6 @@ type
     procedure btnSteamLinkClick(Sender: TObject);
     procedure btnSourceCodeLinkClick(Sender: TObject);
     procedure btnSettingsMouseEnter(Sender: TObject);
-    procedure Button14Click(Sender: TObject);
     procedure btnLicenseLinkClick(Sender: TObject);
     procedure btnReportAProblemLinkClick(Sender: TObject);
     procedure SwitchFullScreenSwitch(Sender: TObject);
@@ -320,65 +319,6 @@ begin
     ShowMessage('Select a Color and get the Color Code');
 end;
 
-procedure TfrmMain.Button14Click(Sender: TObject);
-begin
-  var LocationPath := 'C:\Shaun Roselt Development\Roselt-Developer-Tools\Assets\Feather Icons';
-
-  memTesting.Lines.Clear;
-  memTesting.Lines.Add('const');
-  memTesting.Lines.Add('  FeatherIconsArray: array[0..IconCount] of TFeatherIcon = (');
-  var IconCount := 0;
-  // loop through files in LocationPath folder and get file content and file name
-  for var svgFile in TDirectory.GetFiles(LocationPath) do
-  begin
-    var svgFileContent := TFile.ReadAllText(svgFile); // Get SVG Code
-    svgFileContent := svgFileContent.Replace(#9,'',[rfReplaceAll]); // Remove Tabs from SVG Code
-    svgFileContent := svgFileContent.Replace(#10,'',[rfReplaceAll]).Replace(#13,'',[rfReplaceAll]); // Remove Line Breaks from SVG Code
-
-
-    var svgFileName := ExtractFileName(svgFile).Replace('.svg',''); // Get SVG Name
-    memTesting.Lines.Add('    (');
-    memTesting.Lines.Add('      name: ' + QuotedStr(svgFileName) + ';');
-
-
-    var iCount := 1;
-    while (svgFileContent.Length > 0) do
-    begin
-      var svgLine := '';
-      if (svgFileContent.Length > 200) then
-      begin
-        svgLine := svgFileContent.Substring(0,200);
-        svgFileContent := svgFileContent.Remove(0,200);
-      end else
-      begin
-        svgLine := svgFileContent;
-        svgFileContent := '';
-      end;
-      if (iCount > 1) then
-      begin
-        svgLine := '           ' + QuotedStr(svgLine);
-        if (svgFileContent.Length > 0) then
-          svgLine := svgLine + ' +'
-        else
-          svgLine := svgLine + ';';
-        memTesting.Lines.Add(svgLine);
-      end else
-      begin
-        if (svgFileContent.Length = 0) then
-          memTesting.Lines.Add('      svg: ' + QuotedStr(svgLine) + ';')
-        else
-          memTesting.Lines.Add('      svg: ' + QuotedStr(svgLine) + ' +');
-      end;
-      inc(iCount);
-    end;
-    memTesting.Lines.Add('    ),');
-    inc(IconCount);
-  end;
-
-  memTesting.Text := memTesting.Text.Replace('width="24"  height="24"','width="IconSize" height="IconSize"',[rfReplaceAll,rfIgnoreCase]).Replace('IconCount',IconCount.ToString,[rfReplaceAll,rfIgnoreCase]);
-  memTesting.Lines.Add('  );');
-end;
-
 procedure TfrmMain.cbThemeChange(Sender: TObject);
 begin
   if cbTheme.ItemIndex > -1 then
@@ -423,7 +363,7 @@ begin
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
-  procedure CreateToolNavButtons();
+  procedure CreateMenuButtons();
     function CreateToolParentContainer(Tool: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'layNav'): TLayout;
     begin
       Result := TLayout.Create(Owner);
@@ -571,7 +511,7 @@ procedure TfrmMain.FormCreate(Sender: TObject);
         end;
     DynamicParents.Free;
   end;
-  procedure CreateToolButtons();
+  procedure CreateHomeButtons();
   begin
     ToolsSearchCount := 0;
     for var Tool in RoseltMenuArray do
@@ -660,8 +600,8 @@ begin
   btnAllToolsTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
   layNavTesting.Parent := layStuffThatWillNeverShow; // Hide Testing Button
   layNavTestingMoreStuff.Parent := layStuffThatWillNeverShow; // Hide Testing Button
-  CreateToolButtons();
-  CreateToolNavButtons();
+  CreateHomeButtons();
+  CreateMenuButtons();
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
   SplitterNavContent.Position.X := HamburgerMenuWidth * 2; // Make sure Splitter is in the correct place
   lblAppInfoDescription.Text := GetAppInfo;

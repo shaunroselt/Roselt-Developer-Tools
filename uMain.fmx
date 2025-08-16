@@ -257,7 +257,6 @@ object frmMain: TfrmMain
         TabOrder = 2
         Text = 'Button14'
         TextSettings.Trimming = None
-        OnClick = Button14Click
       end
       object layNameList: TRectangle
         Align = Top
