@@ -4,6 +4,18 @@ interface
 
 uses
   FMX.Forms,
+  System.Classes,
+  System.SysUtils,
+  System.UITypes,
+  System.Generics.Collections,
+  FMX.Types,
+  FMX.Graphics,
+  FMX.Controls,
+  FMX.Layouts,
+  FMX.Objects,
+  FMX.StdCtrls,
+  FMX.Skia,
+  uBootstrapIcons,
   uFrame_Base64TextEncoderDecoder,
   uFrame_JsonYamlConverter,
   uFrame_HashGenerator,
@@ -44,6 +56,13 @@ uses
 
 type
   TRoseltMenuFrame = class of TFrame;
+
+  TBuildMenuOptions = record
+    NavContainer: TControl;
+    OnExpandCollapse: TNotifyEvent;
+    OnNavItemClick: TNotifyEvent;
+  end;
+
   TRoseltMenu = record
     {
       A Tool qualifies as a Parent when the parent property is empty and
@@ -59,6 +78,20 @@ type
     parent: String;
     frame: TRoseltMenuFrame;
   end;
+
+  TNavMouseHelper = class
+  public
+    procedure NavMouseEnter(Sender: TObject);
+    procedure NavMouseLeave(Sender: TObject);
+    procedure ExpandCollapseNavItem(Sender: TObject);
+  end;
+
+function IsMenuParent(Menu: TRoseltMenu): Boolean;
+
+procedure BuildMenu(var Options: TBuildMenuOptions);
+
+var
+  NavMouseHelper: TNavMouseHelper;
 
 const
   RoseltMenuArray: array[0..47] of TRoseltMenu = (
@@ -824,7 +857,6 @@ const
     )
   );
 
-function IsMenuParent(Menu: TRoseltMenu): Boolean;
 
 implementation
 
@@ -849,5 +881,198 @@ begin
 
   result := ParentValid and ChildFound;
 end;
+
+procedure TNavMouseHelper.NavMouseEnter(Sender: TObject);
+begin
+  if (Sender is TRectangle) then
+  begin
+    TRectangle(Sender).Fill.Kind := TBrushKind.Solid;
+    TRectangle(Sender).Fill.Color := $FF2B2B2B;
+  end;
+end;
+
+procedure TNavMouseHelper.NavMouseLeave(Sender: TObject);
+begin
+  if (Sender is TRectangle) then
+  begin
+    TRectangle(Sender).Fill.Kind := TBrushKind.None;
+  end;
+end;
+
+procedure TNavMouseHelper.ExpandCollapseNavItem(Sender: TObject);
+begin
+  var Button := TRectangle(Sender);
+  var ButtonLayout := Button.ParentControl;
+  var ExpandCollapseLayout := ButtonLayout.ParentControl;
+  var ExpandCollapseImage := TSkSvg(Button.Children.Items[2]);
+
+  if (ExpandCollapseLayout.Height = ButtonLayout.Height) then
+  begin
+    ExpandCollapseLayout.Height := ButtonLayout.Height * ExpandCollapseLayout.ChildrenCount;
+    ExpandCollapseImage.Svg.Source := GetBootstrapIcon('chevron-up');
+
+    for var I := 0 to ExpandCollapseLayout.ChildrenCount-1 do
+      if ExpandCollapseLayout.Children.Items[I].Name <> ButtonLayout.Name then
+        TControl(ExpandCollapseLayout.Children.Items[I]).Visible := True;
+  end else
+  begin
+    ExpandCollapseLayout.Height := ButtonLayout.Height;
+    ExpandCollapseImage.Svg.Source := GetBootstrapIcon('chevron-down');
+
+    for var I := 0 to ExpandCollapseLayout.ChildrenCount-1 do
+      if ExpandCollapseLayout.Children.Items[I].Name <> ButtonLayout.Name then
+        TControl(ExpandCollapseLayout.Children.Items[I]).Visible := False;
+  end;
+end;
+
+procedure BuildMenu(var Options: TBuildMenuOptions);
+  function CreateParentContainer(Menu: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'layNav'): TLayout;
+  begin
+    Result := TLayout.Create(Owner);
+    Result.Parent := Parent;
+    Result.Align := TAlignLayout.Bottom;
+    Result.Height := 100;
+    Result.Align := TAlignLayout.Top;
+    Result.Name := NameStart + Menu.name;
+  end;
+  function CreateButtonContainer(Menu: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'layNav'): TLayout;
+  begin
+    Result := TLayout.Create(Owner);
+    Result.Parent := Parent;
+    Result.Align := TAlignLayout.Bottom;
+    Result.Height := 50;
+    Result.Align := TAlignLayout.Top;
+    Result.Name := NameStart + Menu.name;
+    Result.Enabled := Menu.active;
+  end;
+  function CreateButton(Menu: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'btn'): TRectangle;
+  begin
+    Result := TRectangle.Create(Owner);
+    Result.Parent := Parent;
+    Result.Align := TAlignLayout.Client;
+    Result.Margins.Top := 5;
+    Result.Margins.Right := 5;
+    Result.Margins.Bottom := 5;
+    Result.Margins.Left := 5;
+    Result.Name := NameStart + Menu.name;
+    Result.Cursor := crHandPoint;
+    Result.Fill.Kind := TBrushKind.None;
+    Result.Sides := [];
+    Result.YRadius := 8;
+    Result.XRadius := 8;
+    Result.Stroke.Kind := TBrushKind.None;
+  Result.OnMouseEnter := NavMouseHelper.NavMouseEnter;
+  Result.OnMouseLeave := NavMouseHelper.NavMouseLeave;
+  end;
+  function CreateButtonImg(Menu: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'img'): TSkSvg;
+  begin
+    Result := TSkSvg.Create(Owner);
+    Result.Parent := Parent;
+    Result.Align := TAlignLayout.Left;
+    Result.Margins.Top := 8;
+    Result.Margins.Right := 8;
+    Result.Margins.Bottom := 8;
+    Result.Margins.Left := 8;
+    if (Menu.parent <> '') then Result.Margins.Left := 32;
+    Result.Width := Result.Height;
+    Result.Name := NameStart + Menu.name;
+    Result.Svg.Source := GetBootstrapIcon(Menu.icon);
+    Result.Svg.OverrideColor := TAlphaColors.White;
+  end;
+  function CreateButtonLabel(Menu: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'lbl'): TLabel;
+  begin
+    Result := TLabel.Create(Owner);
+    Result.Parent := Parent;
+    Result.Align := TAlignLayout.Client;
+    Result.Margins.Top := 5;
+    Result.Margins.Right := 5;
+    Result.Margins.Bottom := 5;
+    Result.Name := NameStart + Menu.name;
+    Result.Text := Menu.text_long;
+    Result.StyledSettings := [TStyledSetting.Family,TStyledSetting.FontColor];
+    Result.TextSettings.Font.Size := 20;
+    if (Menu.active = False) then
+      Result.TextSettings.Font.Style := [TFontStyle.fsStrikeOut];
+  end;
+  function CreateButtonImgExpandCollapseIcon(Menu: TRoseltMenu; Owner, Parent: TControl; NameStart: String = 'imgExpandCollapseIcon'): TSkSvg;
+  begin
+    Result := TSkSvg.Create(Owner);
+    Result.Parent := Parent;
+    Result.Align := TAlignLayout.Right;
+    Result.Margins.Top := 11;
+    Result.Margins.Right := 5;
+    Result.Margins.Bottom := 11;
+    Result.Margins.Left := 5;
+    Result.Width := Result.Height;
+    Result.Name := NameStart + Menu.name;
+    Result.Svg.Source := GetBootstrapIcon('chevron-down');
+    Result.Svg.OverrideColor := TAlphaColors.White;
+    Result.Visible := Menu.active;
+  end;
+begin
+  var DynamicParents := TList<TLayout>.Create;
+  try
+  for var Menu in RoseltMenuArray do
+    begin
+      if (Menu.Visible = False) then Continue;
+      if IsMenuParent(Menu) then
+      begin
+        var ToolParentContainer := CreateParentContainer(Menu, Options.NavContainer, Options.NavContainer);
+        var ToolButtonContainer := CreateButtonContainer(Menu, ToolParentContainer, ToolParentContainer, 'layNavExpandCollapse');
+        var ToolButtonRect := CreateButton(Menu, ToolButtonContainer, ToolButtonContainer, 'btnExpandCollapse');
+        ToolButtonRect.OnClick := Options.OnExpandCollapse;
+        ToolButtonRect.OnDblClick := Options.OnExpandCollapse;
+        CreateButtonImg(Menu, ToolButtonContainer, ToolButtonRect, 'imgExpandCollapse');
+        CreateButtonLabel(Menu, ToolButtonContainer, ToolButtonRect, 'lblExpandCollapse');
+        CreateButtonImgExpandCollapseIcon(Menu, ToolButtonContainer, ToolButtonRect, 'imgExpandCollapseIcon');
+        DynamicParents.Add(ToolParentContainer);
+      end else
+      begin
+        var ToolButtonContainer := CreateButtonContainer(Menu, Options.NavContainer, Options.NavContainer, 'layNav');
+        if (Menu.parent = '') then
+        begin
+          ToolButtonContainer.Parent := Options.NavContainer;
+        end else
+        begin
+          var ParentFound := False;
+          for var ParentContainer in DynamicParents do
+            if (TLayout(ParentContainer).Name = 'layNav' + Menu.parent) then
+            begin
+              ToolButtonContainer.Parent := TLayout(ParentContainer);
+              TLayout(ParentContainer).Height := TLayout(ParentContainer).Height + 50;
+              ParentFound := True;
+              break;
+            end;
+          if (ParentFound = False) then
+          begin
+            FreeAndNil(ToolButtonContainer);
+            Continue;
+          end;
+        end;
+
+        var ToolRect := CreateButton(Menu, ToolButtonContainer, ToolButtonContainer);
+        ToolRect.OnClick := Options.OnNavItemClick;
+        CreateButtonImg(Menu, ToolButtonContainer, ToolRect);
+        CreateButtonLabel(Menu, ToolButtonContainer, ToolRect);
+      end;
+    end;
+
+    for var ParentContainer in DynamicParents do
+      for var ParentChild in TLayout(ParentContainer).Children do
+        if (String(TLayout(ParentChild).Name).Contains('ExpandCollapse')) then
+        begin
+          Options.OnExpandCollapse(TRectangle(TLayout(ParentChild).Children[0])); // Collapse all Menu Categories
+          break;
+        end;
+  finally
+    DynamicParents.Free;
+  end;
+end;
+
+initialization
+  NavMouseHelper := TNavMouseHelper.Create;
+
+finalization
+  NavMouseHelper.Free;
 
 end.

@@ -19,16 +19,16 @@ object frmMain: TfrmMain
     Corners = []
     Fill.Color = x4B000000
     Sides = []
-    Size.Width = 1200.000000000000000000
-    Size.Height = 49.000000000000000000
+    Size.Width = 1200.00000000000000000
+    Size.Height = 49.00000000000000000
     Size.PlatformDefault = False
     object lblNavTitle: TLabel
       Align = Client
       StyledSettings = [Family, FontColor]
-      Size.Width = 1200.000000000000000000
-      Size.Height = 49.000000000000000000
+      Size.Width = 1200.00000000000000000
+      Size.Height = 49.00000000000000000
       Size.PlatformDefault = False
-      TextSettings.Font.Size = 28.000000000000000000
+      TextSettings.Font.Size = 28.00000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.HorzAlign = Center
       TextSettings.Trimming = None
@@ -37,8 +37,8 @@ object frmMain: TfrmMain
       object btnHamburger: TButton
         Align = Left
         Cursor = crHandPoint
-        Size.Width = 48.000000000000000000
-        Size.Height = 49.000000000000000000
+        Size.Width = 48.00000000000000000
+        Size.Height = 49.00000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'detailstoolbutton'
         TabOrder = 1
@@ -49,14 +49,14 @@ object frmMain: TfrmMain
       object btnToolHelp: TButton
         Align = Right
         Cursor = crHandPoint
-        Margins.Left = 6.000000000000000000
-        Margins.Top = 6.000000000000000000
-        Margins.Right = 6.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 1159.000000000000000000
-        Position.Y = 6.000000000000000000
-        Size.Width = 35.000000000000000000
-        Size.Height = 37.000000000000000000
+        Margins.Left = 6.00000000000000000
+        Margins.Top = 6.00000000000000000
+        Margins.Right = 6.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 1159.00000000000000000
+        Position.Y = 6.00000000000000000
+        Size.Width = 35.00000000000000000
+        Size.Height = 37.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         TextSettings.Trimming = None
@@ -64,12 +64,12 @@ object frmMain: TfrmMain
         OnClick = btnToolHelpClick
         object imgToolHelp: TSkSvg
           Align = Client
-          Margins.Left = 6.000000000000000000
-          Margins.Top = 6.000000000000000000
-          Margins.Right = 6.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Size.Width = 23.000000000000000000
-          Size.Height = 25.000000000000000000
+          Margins.Left = 6.00000000000000000
+          Margins.Top = 6.00000000000000000
+          Margins.Right = 6.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Size.Width = 23.00000000000000000
+          Size.Height = 25.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -87,31 +87,31 @@ object frmMain: TfrmMain
   end
   object LayoutContainer: TLayout
     Align = Client
-    Size.Width = 799.000000000000000000
-    Size.Height = 751.000000000000000000
+    Size.Width = 799.00000000000000000
+    Size.Height = 751.00000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
     object layAllTools: TScrollBox
       Align = Client
-      Padding.Left = 10.000000000000000000
-      Padding.Top = 10.000000000000000000
-      Padding.Right = 10.000000000000000000
-      Padding.Bottom = 10.000000000000000000
-      Size.Width = 799.000000000000000000
-      Size.Height = 751.000000000000000000
+      Padding.Left = 10.00000000000000000
+      Padding.Top = 10.00000000000000000
+      Padding.Right = 10.00000000000000000
+      Padding.Bottom = 10.00000000000000000
+      Size.Width = 799.00000000000000000
+      Size.Height = 751.00000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Viewport.Width = 799.000000000000000000
-      Viewport.Height = 751.000000000000000000
+      Viewport.Width = 799.00000000000000000
+      Viewport.Height = 751.00000000000000000
       object edtSearchAllTools: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = MostTop
         TabOrder = 0
-        Position.X = 10.000000000000000000
-        Position.Y = 10.000000000000000000
-        Margins.Bottom = 10.000000000000000000
-        Size.Width = 779.000000000000000000
-        Size.Height = 35.000000000000000000
+        Position.X = 10.00000000000000000
+        Position.Y = 10.00000000000000000
+        Margins.Bottom = 10.00000000000000000
+        Size.Width = 779.00000000000000000
+        Size.Height = 35.00000000000000000
         Size.PlatformDefault = False
         TextPrompt = 'Type to search for tools...'
         OnChange = edtSearchAllToolsChange
@@ -121,18 +121,18 @@ object frmMain: TfrmMain
           CanFocus = False
           Cursor = crArrow
           TextSettings.Trimming = None
-          Size.Width = 28.000000000000000000
-          Size.Height = 31.000000000000000000
+          Size.Width = 28.00000000000000000
+          Size.Height = 31.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
         end
       end
       object layAllToolsGrid: TFlowLayout
         Align = Top
-        Position.X = 10.000000000000000000
-        Position.Y = 55.000000000000000000
-        Size.Width = 779.000000000000000000
-        Size.Height = 686.000000000000000000
+        Position.X = 10.00000000000000000
+        Position.Y = 55.00000000000000000
+        Size.Width = 779.00000000000000000
+        Size.Height = 686.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         Justify = Left
@@ -140,18 +140,18 @@ object frmMain: TfrmMain
         FlowDirection = LeftToRight
         object btnAllToolsTesting: TButton
           Cursor = crHandPoint
-          Padding.Left = 12.000000000000000000
-          Padding.Top = 12.000000000000000000
-          Padding.Right = 12.000000000000000000
-          Padding.Bottom = 8.000000000000000000
-          Margins.Left = 6.000000000000000000
-          Margins.Top = 6.000000000000000000
-          Margins.Right = 6.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 6.000000000000000000
-          Position.Y = 6.000000000000000000
-          Size.Width = 185.000000000000000000
-          Size.Height = 240.000000000000000000
+          Padding.Left = 12.00000000000000000
+          Padding.Top = 12.00000000000000000
+          Padding.Right = 12.00000000000000000
+          Padding.Bottom = 8.00000000000000000
+          Margins.Left = 6.00000000000000000
+          Margins.Top = 6.00000000000000000
+          Margins.Right = 6.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 6.00000000000000000
+          Position.Y = 6.00000000000000000
+          Size.Width = 185.00000000000000000
+          Size.Height = 240.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 11
           TextSettings.Trimming = None
@@ -159,23 +159,23 @@ object frmMain: TfrmMain
             Align = Top
             AutoSize = True
             StyledSettings = [Family, Style, FontColor]
-            Margins.Bottom = 14.000000000000000000
-            Position.X = 12.000000000000000000
-            Position.Y = 124.000000000000000000
-            Size.Width = 161.000000000000000000
-            Size.Height = 21.714279174804690000
+            Margins.Bottom = 14.00000000000000000
+            Position.X = 12.00000000000000000
+            Position.Y = 124.00000000000000000
+            Size.Width = 161.00000000000000000
+            Size.Height = 21.71427917480469000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.Size = 16.00000000000000000
             TextSettings.Trimming = None
             Text = 'Testing Stuff '#55357#56833#55357#56833#55357#56833
             TabOrder = 5
           end
           object Label8: TLabel
             Align = Client
-            Size.Width = 161.000000000000000000
-            Size.Height = 72.285720825195310000
+            Size.Width = 161.00000000000000000
+            Size.Height = 72.28572082519532000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.Font.Size = 13.00000000000000000
             TextSettings.VertAlign = Leading
             TextSettings.Trimming = None
             Text = 'This is just some random testing text. Nothing important here.'
@@ -184,26 +184,26 @@ object frmMain: TfrmMain
           object Rectangle2: TRectangle
             Align = MostTop
             Fill.Color = x4B000000
-            Padding.Left = 12.000000000000000000
-            Padding.Top = 12.000000000000000000
-            Padding.Right = 12.000000000000000000
-            Padding.Bottom = 12.000000000000000000
-            Margins.Left = 26.000000000000000000
-            Margins.Right = 26.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 38.000000000000000000
-            Position.Y = 12.000000000000000000
+            Padding.Left = 12.00000000000000000
+            Padding.Top = 12.00000000000000000
+            Padding.Right = 12.00000000000000000
+            Padding.Bottom = 12.00000000000000000
+            Margins.Left = 26.00000000000000000
+            Margins.Right = 26.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 38.00000000000000000
+            Position.Y = 12.00000000000000000
             Sides = []
-            Size.Width = 109.000000000000000000
-            Size.Height = 100.000000000000000000
+            Size.Width = 109.00000000000000000
+            Size.Height = 100.00000000000000000
             Size.PlatformDefault = False
-            Stroke.Thickness = 0.000000000000000000
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
+            Stroke.Thickness = 0.00000000000000000
+            XRadius = 8.00000000000000000
+            YRadius = 8.00000000000000000
             object SkSvg2: TSkSvg
               Align = Client
-              Size.Width = 85.000000000000000000
-              Size.Height = 76.000000000000000000
+              Size.Width = 85.00000000000000000
+              Size.Height = 76.00000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -222,15 +222,15 @@ object frmMain: TfrmMain
     end
     object layTesting: TLayout
       Align = Client
-      Size.Width = 799.000000000000000000
-      Size.Height = 751.000000000000000000
+      Size.Width = 799.00000000000000000
+      Size.Height = 751.00000000000000000
       Size.PlatformDefault = False
       Visible = False
       TabOrder = 0
       object lblTestingStuff: TLabel
         Align = Top
-        Size.Width = 799.000000000000000000
-        Size.Height = 95.000000000000000000
+        Size.Width = 799.00000000000000000
+        Size.Height = 95.00000000000000000
         Size.PlatformDefault = False
         TextSettings.HorzAlign = Center
         TextSettings.Trimming = None
@@ -241,18 +241,18 @@ object frmMain: TfrmMain
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
         Align = Client
-        Size.Width = 799.000000000000000000
-        Size.Height = 556.000000000000000000
+        Size.Width = 799.00000000000000000
+        Size.Height = 556.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 791.000000000000000000
-        Viewport.Height = 548.000000000000000000
+        Viewport.Width = 791.00000000000000000
+        Viewport.Height = 548.00000000000000000
       end
       object Button14: TButton
         Align = Top
-        Position.Y = 173.000000000000000000
-        Size.Width = 799.000000000000000000
-        Size.Height = 22.000000000000000000
+        Position.Y = 173.00000000000000000
+        Size.Width = 799.00000000000000000
+        Size.Height = 22.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
         Text = 'Button14'
@@ -261,19 +261,19 @@ object frmMain: TfrmMain
       object layNameList: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.Y = 95.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.Y = 95.00000000000000000
         Sides = []
-        Size.Width = 799.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 799.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object cbNameList: TComboBox
           Align = Right
           Enabled = False
@@ -281,26 +281,26 @@ object frmMain: TfrmMain
             'Real Life'
             'GTA San Andreas')
           ItemIndex = 0
-          Position.X = 647.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 140.000000000000000000
-          Size.Height = 48.000000000000000000
+          Position.X = 647.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 140.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
         end
         object layTitleDescriptionNameList: TLayout
           Align = Client
-          Size.Width = 598.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 598.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object lblTitleNameList: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 598.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 598.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Name List'
             TabOrder = 1
@@ -308,10 +308,10 @@ object frmMain: TfrmMain
           object lblDescriptionNameList: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 598.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 598.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select what kind of names you want'
             TabOrder = 0
@@ -319,14 +319,14 @@ object frmMain: TfrmMain
         end
         object imgNameList: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -341,32 +341,32 @@ object frmMain: TfrmMain
     end
     object layChangeLog: TScrollBox
       Align = Client
-      Padding.Left = 20.000000000000000000
-      Padding.Top = 20.000000000000000000
-      Padding.Right = 20.000000000000000000
-      Padding.Bottom = 20.000000000000000000
-      Size.Width = 799.000000000000000000
-      Size.Height = 751.000000000000000000
+      Padding.Left = 20.00000000000000000
+      Padding.Top = 20.00000000000000000
+      Padding.Right = 20.00000000000000000
+      Padding.Bottom = 20.00000000000000000
+      Size.Width = 799.00000000000000000
+      Size.Height = 751.00000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       Visible = False
-      Viewport.Width = 799.000000000000000000
-      Viewport.Height = 751.000000000000000000
+      Viewport.Width = 799.00000000000000000
+      Viewport.Height = 751.00000000000000000
       object layMemoChangeLog: TRectangle
         Align = Client
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 628.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 628.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object memChangeLog: TMemo
           Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
           DataDetectorTypes = []
@@ -807,33 +807,33 @@ object frmMain: TfrmMain
           ReadOnly = True
           TextSettings.WordWrap = True
           Align = Client
-          Size.Width = 735.000000000000000000
-          Size.Height = 604.000000000000000000
+          Size.Width = 735.00000000000000000
+          Size.Height = 604.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
-          Viewport.Width = 711.000000000000000000
-          Viewport.Height = 596.000000000000000000
+          Viewport.Width = 711.00000000000000000
+          Viewport.Height = 596.00000000000000000
         end
       end
       object lblChangeLog: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Position.X = 20.000000000000000000
-        Position.Y = 67.000000000000000000
-        Size.Width = 759.000000000000000000
-        Size.Height = 30.000000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 67.00000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 30.00000000000000000
         Size.PlatformDefault = False
-        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.Size = 20.00000000000000000
         TextSettings.Trimming = None
         Text = 'Change Log'
         TabOrder = 0
       end
       object layTop: TLayout
         Align = Top
-        Position.X = 20.000000000000000000
-        Position.Y = 20.000000000000000000
-        Size.Width = 759.000000000000000000
-        Size.Height = 47.000000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 20.00000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 47.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object lblTitle: TLabel
@@ -841,10 +841,10 @@ object frmMain: TfrmMain
           Cursor = crHandPoint
           StyledSettings = [Family, Style, FontColor]
           HitTest = True
-          Size.Width = 712.000000000000000000
-          Size.Height = 47.000000000000000000
+          Size.Width = 712.00000000000000000
+          Size.Height = 47.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.Size = 14.00000000000000000
           TextSettings.HorzAlign = Center
           TextSettings.Trimming = None
           Text = 
@@ -856,26 +856,26 @@ object frmMain: TfrmMain
         object btnBackChangeLog: TButton
           Align = Left
           Cursor = crHandPoint
-          Margins.Left = 6.000000000000000000
-          Margins.Top = 6.000000000000000000
-          Margins.Right = 6.000000000000000000
-          Margins.Bottom = 6.000000000000000000
-          Position.X = 6.000000000000000000
-          Position.Y = 6.000000000000000000
-          Size.Width = 35.000000000000000000
-          Size.Height = 35.000000000000000000
+          Margins.Left = 6.00000000000000000
+          Margins.Top = 6.00000000000000000
+          Margins.Right = 6.00000000000000000
+          Margins.Bottom = 6.00000000000000000
+          Position.X = 6.00000000000000000
+          Position.Y = 6.00000000000000000
+          Size.Width = 35.00000000000000000
+          Size.Height = 35.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           TextSettings.Trimming = None
           OnClick = btnBackChangeLogClick
           object imgBackChangeLog: TSkSvg
             Align = Client
-            Margins.Left = 6.000000000000000000
-            Margins.Top = 6.000000000000000000
-            Margins.Right = 6.000000000000000000
-            Margins.Bottom = 6.000000000000000000
-            Size.Width = 23.000000000000000000
-            Size.Height = 23.000000000000000000
+            Margins.Left = 6.00000000000000000
+            Margins.Top = 6.00000000000000000
+            Margins.Right = 6.00000000000000000
+            Margins.Bottom = 6.00000000000000000
+            Size.Width = 23.00000000000000000
+            Size.Height = 23.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -891,54 +891,54 @@ object frmMain: TfrmMain
     end
     object laySettings: TScrollBox
       Align = Client
-      Padding.Left = 20.000000000000000000
-      Padding.Top = 20.000000000000000000
-      Padding.Right = 20.000000000000000000
-      Padding.Bottom = 20.000000000000000000
-      Size.Width = 799.000000000000000000
-      Size.Height = 751.000000000000000000
+      Padding.Left = 20.00000000000000000
+      Padding.Top = 20.00000000000000000
+      Padding.Right = 20.00000000000000000
+      Padding.Bottom = 20.00000000000000000
+      Size.Width = 799.00000000000000000
+      Size.Height = 751.00000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Viewport.Width = 799.000000000000000000
-      Viewport.Height = 751.000000000000000000
+      Viewport.Width = 799.00000000000000000
+      Viewport.Height = 751.00000000000000000
       object layFontFamily: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 206.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 206.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         Visible = False
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object cbFontFamily: TComboBox
           Align = Right
-          Position.X = 560.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 187.000000000000000000
-          Size.Height = 48.000000000000000000
+          Position.X = 560.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 187.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           OnChange = cbThemeChange
         end
         object imgFontFamily: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -951,17 +951,17 @@ object frmMain: TfrmMain
         end
         object layFontFamilyTitleDescription: TLayout
           Align = Client
-          Size.Width = 511.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 511.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object lblFontFamilyTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 511.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 511.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Font Family'
             TabOrder = 1
@@ -969,10 +969,10 @@ object frmMain: TfrmMain
           object lblFontFamilyDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 511.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 511.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select which font family to display'
             TabOrder = 0
@@ -982,43 +982,43 @@ object frmMain: TfrmMain
       object layLanguage: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 128.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 128.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object cbLanguage: TComboBox
           Align = Right
           Items.Strings = (
             'English')
           ItemIndex = 0
-          Position.X = 560.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 187.000000000000000000
-          Size.Height = 48.000000000000000000
+          Position.X = 560.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 187.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           OnChange = cbThemeChange
         end
         object imgLanguage: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -1038,17 +1038,17 @@ object frmMain: TfrmMain
         end
         object layLanguageTitleDescription: TLayout
           Align = Client
-          Size.Width = 511.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 511.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object lblLanguageTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 511.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 511.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Language'
             TabOrder = 1
@@ -1056,10 +1056,10 @@ object frmMain: TfrmMain
           object lblLanguageDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 511.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 511.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select which language to display'
             TabOrder = 0
@@ -1069,31 +1069,31 @@ object frmMain: TfrmMain
       object layLineNumbers: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 284.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 284.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         Visible = False
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object imgLineNumbers: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -1116,17 +1116,17 @@ object frmMain: TfrmMain
         end
         object layLineNumbersTitleDescription: TLayout
           Align = Client
-          Size.Width = 536.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 536.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object lblLineNumbersTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 536.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 536.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Line Numbers'
             TabOrder = 1
@@ -1134,10 +1134,10 @@ object frmMain: TfrmMain
           object lblLineNumbersDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 536.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 536.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select whether you want line numbers shown in text areas'
             TabOrder = 0
@@ -1147,10 +1147,10 @@ object frmMain: TfrmMain
           Align = Right
           Cursor = crHandPoint
           IsChecked = False
-          Position.X = 689.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 58.000000000000000000
-          Size.Height = 32.000000000000000000
+          Position.X = 689.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 58.00000000000000000
+          Size.Height = 32.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
           OnSwitch = SwitchLineNumbersSwitch
@@ -1158,13 +1158,13 @@ object frmMain: TfrmMain
         object lblSwitchLineNumbers: TLabel
           Align = Right
           StyledSettings = [Family, Style, FontColor]
-          Margins.Right = 8.000000000000000000
-          Position.X = 585.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 96.000000000000000000
-          Size.Height = 48.000000000000000000
+          Margins.Right = 8.00000000000000000
+          Position.X = 585.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 96.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Size = 18.00000000000000000
           TextSettings.HorzAlign = Trailing
           TextSettings.Trimming = None
           Text = 'Off'
@@ -1174,40 +1174,40 @@ object frmMain: TfrmMain
       object layTheme: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 50.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 50.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object cbTheme: TComboBox
           Align = Right
-          Position.X = 560.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 187.000000000000000000
-          Size.Height = 48.000000000000000000
+          Position.X = 560.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 187.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           OnChange = cbThemeChange
         end
         object imgTheme: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -1227,17 +1227,17 @@ object frmMain: TfrmMain
         end
         object layThemeTitleDescription: TLayout
           Align = Client
-          Size.Width = 511.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 511.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object lblThemeTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 511.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 511.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Theme'
             TabOrder = 1
@@ -1245,10 +1245,10 @@ object frmMain: TfrmMain
           object lblThemeDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 511.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 511.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select which theme to display'
             TabOrder = 0
@@ -1258,31 +1258,31 @@ object frmMain: TfrmMain
       object layWordWrap: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 206.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 206.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
         Visible = False
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object imgWordWrap: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -1304,17 +1304,17 @@ object frmMain: TfrmMain
         end
         object layWordWrapTitleDescription: TLayout
           Align = Client
-          Size.Width = 536.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 536.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           object lblWordWrapTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 536.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 536.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Word Wrap'
             TabOrder = 1
@@ -1322,10 +1322,10 @@ object frmMain: TfrmMain
           object lblWordWrapDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 536.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 536.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select whether you want word wrap on or off'
             TabOrder = 0
@@ -1335,10 +1335,10 @@ object frmMain: TfrmMain
           Align = Right
           Cursor = crHandPoint
           IsChecked = True
-          Position.X = 689.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 58.000000000000000000
-          Size.Height = 32.000000000000000000
+          Position.X = 689.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 58.00000000000000000
+          Size.Height = 32.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
           OnSwitch = SwitchWordWrapSwitch
@@ -1346,13 +1346,13 @@ object frmMain: TfrmMain
         object lblSwitchWordWrap: TLabel
           Align = Right
           StyledSettings = [Family, Style, FontColor]
-          Margins.Right = 8.000000000000000000
-          Position.X = 585.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 96.000000000000000000
-          Size.Height = 48.000000000000000000
+          Margins.Right = 8.00000000000000000
+          Position.X = 585.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 96.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Size = 18.00000000000000000
           TextSettings.HorzAlign = Trailing
           TextSettings.Trimming = None
           Text = 'On'
@@ -1364,12 +1364,12 @@ object frmMain: TfrmMain
       object lblTopSettings: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Position.X = 20.000000000000000000
-        Position.Y = 20.000000000000000000
-        Size.Width = 759.000000000000000000
-        Size.Height = 30.000000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 20.00000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 30.00000000000000000
         Size.PlatformDefault = False
-        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.Size = 20.00000000000000000
         TextSettings.Trimming = None
         Text = 'Settings'
         TabOrder = 0
@@ -1377,20 +1377,20 @@ object frmMain: TfrmMain
       object layAppInfo: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 284.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 284.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object imgAppInfo: TImage
           MultiResBitmap.Height = 4070
           MultiResBitmap.Width = 4070
@@ -6273,29 +6273,29 @@ object frmMain: TfrmMain
                 'ng'
             end>
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
         end
         object layAppInfoTitleDescription: TLayout
           Align = Client
-          Size.Width = 600.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 600.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           object lblAppInfoTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 600.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 600.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Roselt Developer Tools'
             TabOrder = 1
@@ -6303,10 +6303,10 @@ object frmMain: TfrmMain
           object lblAppInfoDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 600.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 600.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Version 1.0.0.0 | X64 | RELEASE | 19/03/1998'
             TabOrder = 0
@@ -6316,23 +6316,23 @@ object frmMain: TfrmMain
           Align = Right
           Cursor = crHandPoint
           Hint = 'Copy App Info to Clipboard'
-          Margins.Right = 2.000000000000000000
-          Position.X = 649.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 48.000000000000000000
-          Size.Height = 48.000000000000000000
+          Margins.Right = 2.00000000000000000
+          Position.X = 649.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 48.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
           TextSettings.Trimming = None
           OnClick = btnAppInfoCopyToClipboardClick
           object imgAppInfoCopyToClipboard: TSkSvg
             Align = Client
-            Margins.Left = 12.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 12.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 12.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 12.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -6353,22 +6353,22 @@ object frmMain: TfrmMain
           Align = Right
           Cursor = crHandPoint
           Hint = 'View Change Log'
-          Position.X = 699.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 48.000000000000000000
-          Size.Height = 48.000000000000000000
+          Position.X = 699.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 48.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           TextSettings.Trimming = None
           OnClick = btnChangeLogClick
           object imgChangeLog: TSkSvg
             Align = Client
-            Margins.Left = 12.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 12.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 12.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 12.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -6391,38 +6391,38 @@ object frmMain: TfrmMain
       object layUsefulLinks: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 362.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 362.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 152.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 152.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object layUsefulLinksTitle: TLayout
           Align = Top
-          Position.X = 12.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 735.000000000000000000
-          Size.Height = 48.000000000000000000
+          Position.X = 12.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 735.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           object Image1: TSkSvg
             Align = Left
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 12.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 12.000000000000000000
-            Position.X = 5.000000000000000000
-            Position.Y = 12.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 12.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 12.00000000000000000
+            Position.X = 5.00000000000000000
+            Position.Y = 12.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -6437,10 +6437,10 @@ object frmMain: TfrmMain
           object Label1: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 698.000000000000000000
-            Size.Height = 48.000000000000000000
+            Size.Width = 698.00000000000000000
+            Size.Height = 48.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'Useful Links'
             TabOrder = 1
@@ -6448,16 +6448,16 @@ object frmMain: TfrmMain
         end
         object GridPanelLayout1: TGridPanelLayout
           Align = Client
-          Size.Width = 735.000000000000000000
-          Size.Height = 80.000000000000000000
+          Size.Width = 735.00000000000000000
+          Size.Height = 80.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           ColumnCollection = <
             item
-              Value = 50.000000000000000000
+              Value = 50.00000000000000000
             end
             item
-              Value = 50.000000000000000000
+              Value = 50.00000000000000000
             end>
           ControlCollection = <
             item
@@ -6472,47 +6472,47 @@ object frmMain: TfrmMain
             end>
           RowCollection = <
             item
-              Value = 100.000000000000000000
+              Value = 100.00000000000000000
             end>
           object Layout1: TLayout
             Align = Client
-            Size.Width = 367.500000000000000000
-            Size.Height = 80.000000000000000000
+            Size.Width = 367.50000000000000000
+            Size.Height = 80.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
             object layMicrosoftStoreLink: TLayout
               Align = Top
-              Position.X = 12.000000000000000000
-              Position.Y = 140.000000000000000000
-              Size.Width = 735.000000000000000000
-              Size.Height = 40.000000000000000000
+              Position.X = 12.00000000000000000
+              Position.Y = 140.00000000000000000
+              Size.Width = 735.00000000000000000
+              Size.Height = 40.00000000000000000
               Size.PlatformDefault = False
               Visible = False
               TabOrder = 2
               object Label3: TLabel
                 Align = Client
                 StyledSettings = [Family, Style, FontColor]
-                Margins.Top = 5.000000000000000000
-                Margins.Right = 5.000000000000000000
-                Margins.Bottom = 5.000000000000000000
-                Size.Width = 666.000000000000000000
-                Size.Height = 30.000000000000000000
+                Margins.Top = 5.00000000000000000
+                Margins.Right = 5.00000000000000000
+                Margins.Bottom = 5.00000000000000000
+                Size.Width = 666.00000000000000000
+                Size.Height = 30.00000000000000000
                 Size.PlatformDefault = False
-                TextSettings.Font.Size = 14.000000000000000000
+                TextSettings.Font.Size = 14.00000000000000000
                 TextSettings.Trimming = None
                 Text = 'Download on Microsoft Store'
                 TabOrder = 1
               end
               object Image3: TSkSvg
                 Align = Left
-                Margins.Left = 32.000000000000000000
-                Margins.Top = 8.000000000000000000
-                Margins.Right = 8.000000000000000000
-                Margins.Bottom = 8.000000000000000000
-                Position.X = 32.000000000000000000
-                Position.Y = 8.000000000000000000
-                Size.Width = 24.000000000000000000
-                Size.Height = 24.000000000000000000
+                Margins.Left = 32.00000000000000000
+                Margins.Top = 8.00000000000000000
+                Margins.Right = 8.00000000000000000
+                Margins.Bottom = 8.00000000000000000
+                Position.X = 32.00000000000000000
+                Position.Y = 8.00000000000000000
+                Size.Width = 24.00000000000000000
+                Size.Height = 24.00000000000000000
                 Size.PlatformDefault = False
                 Svg.OverrideColor = claWhite
                 Svg.Source = 
@@ -6524,36 +6524,34 @@ object frmMain: TfrmMain
             end
             object laySourceCodeLink: TLayout
               Align = Top
-              Size.Width = 367.500000000000000000
-              Size.Height = 40.000000000000000000
+              Size.Width = 367.50000000000000000
+              Size.Height = 40.00000000000000000
               Size.PlatformDefault = False
               TabOrder = 3
               object btnSourceCodeLink: TRectangle
                 Align = Left
                 Cursor = crHandPoint
                 Fill.Kind = None
-                Margins.Left = 26.000000000000000000
-                Position.X = 26.000000000000000000
+                Margins.Left = 26.00000000000000000
+                Position.X = 26.00000000000000000
                 Sides = []
-                Size.Width = 145.000000000000000000
-                Size.Height = 40.000000000000000000
+                Size.Width = 145.00000000000000000
+                Size.Height = 40.00000000000000000
                 Size.PlatformDefault = False
                 Stroke.Kind = None
-                XRadius = 8.000000000000000000
-                YRadius = 8.000000000000000000
+                XRadius = 8.00000000000000000
+                YRadius = 8.00000000000000000
                 OnClick = btnSourceCodeLinkClick
-                OnMouseEnter = btnSettingsMouseEnter
-                OnMouseLeave = btnAllToolsMouseLeave
                 object Image2: TSkSvg
                   Align = Left
-                  Margins.Left = 8.000000000000000000
-                  Margins.Top = 8.000000000000000000
-                  Margins.Right = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Position.X = 8.000000000000000000
-                  Position.Y = 8.000000000000000000
-                  Size.Width = 24.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Left = 8.00000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Right = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Position.X = 8.00000000000000000
+                  Position.Y = 8.00000000000000000
+                  Size.Width = 24.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
                   Svg.OverrideColor = claWhite
                   Svg.Source = 
@@ -6573,12 +6571,12 @@ object frmMain: TfrmMain
                 object Label2: TLabel
                   Align = Client
                   StyledSettings = [Family, Style, FontColor]
-                  Margins.Top = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Size.Width = 105.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Size.Width = 105.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
-                  TextSettings.Font.Size = 14.000000000000000000
+                  TextSettings.Font.Size = 14.00000000000000000
                   TextSettings.Trimming = None
                   Text = 'Source Code'
                   TabOrder = 1
@@ -6587,37 +6585,35 @@ object frmMain: TfrmMain
             end
             object laySteamLink: TLayout
               Align = Top
-              Position.Y = 40.000000000000000000
-              Size.Width = 367.500000000000000000
-              Size.Height = 40.000000000000000000
+              Position.Y = 40.00000000000000000
+              Size.Width = 367.50000000000000000
+              Size.Height = 40.00000000000000000
               Size.PlatformDefault = False
               TabOrder = 1
               object btnSteamLink: TRectangle
                 Align = Left
                 Cursor = crHandPoint
                 Fill.Kind = None
-                Margins.Left = 26.000000000000000000
-                Position.X = 26.000000000000000000
+                Margins.Left = 26.00000000000000000
+                Position.X = 26.00000000000000000
                 Sides = []
-                Size.Width = 193.000000000000000000
-                Size.Height = 40.000000000000000000
+                Size.Width = 193.00000000000000000
+                Size.Height = 40.00000000000000000
                 Size.PlatformDefault = False
                 Stroke.Kind = None
-                XRadius = 8.000000000000000000
-                YRadius = 8.000000000000000000
+                XRadius = 8.00000000000000000
+                YRadius = 8.00000000000000000
                 OnClick = btnSteamLinkClick
-                OnMouseEnter = btnSettingsMouseEnter
-                OnMouseLeave = btnAllToolsMouseLeave
                 object Image5: TSkSvg
                   Align = Left
-                  Margins.Left = 8.000000000000000000
-                  Margins.Top = 8.000000000000000000
-                  Margins.Right = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Position.X = 8.000000000000000000
-                  Position.Y = 8.000000000000000000
-                  Size.Width = 24.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Left = 8.00000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Right = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Position.X = 8.00000000000000000
+                  Position.Y = 8.00000000000000000
+                  Size.Width = 24.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
                   Svg.OverrideColor = claWhite
                   Svg.Source = 
@@ -6639,12 +6635,12 @@ object frmMain: TfrmMain
                 object Label4: TLabel
                   Align = Client
                   StyledSettings = [Family, Style, FontColor]
-                  Margins.Top = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Size.Width = 153.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Size.Width = 153.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
-                  TextSettings.Font.Size = 14.000000000000000000
+                  TextSettings.Font.Size = 14.00000000000000000
                   TextSettings.Trimming = None
                   Text = 'Download on Steam'
                   TabOrder = 1
@@ -6654,42 +6650,40 @@ object frmMain: TfrmMain
           end
           object Layout2: TLayout
             Align = Client
-            Size.Width = 367.500000000000000000
-            Size.Height = 80.000000000000000000
+            Size.Width = 367.50000000000000000
+            Size.Height = 80.00000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
             object layLicenseLink: TLayout
               Align = Top
-              Size.Width = 367.500000000000000000
-              Size.Height = 40.000000000000000000
+              Size.Width = 367.50000000000000000
+              Size.Height = 40.00000000000000000
               Size.PlatformDefault = False
               TabOrder = 3
               object btnLicenseLink: TRectangle
                 Align = Left
                 Cursor = crHandPoint
                 Fill.Kind = None
-                Margins.Left = 26.000000000000000000
-                Position.X = 26.000000000000000000
+                Margins.Left = 26.00000000000000000
+                Position.X = 26.00000000000000000
                 Sides = []
-                Size.Width = 111.000000000000000000
-                Size.Height = 40.000000000000000000
+                Size.Width = 111.00000000000000000
+                Size.Height = 40.00000000000000000
                 Size.PlatformDefault = False
                 Stroke.Kind = None
-                XRadius = 8.000000000000000000
-                YRadius = 8.000000000000000000
+                XRadius = 8.00000000000000000
+                YRadius = 8.00000000000000000
                 OnClick = btnLicenseLinkClick
-                OnMouseEnter = btnSettingsMouseEnter
-                OnMouseLeave = btnAllToolsMouseLeave
                 object SkSvg1: TSkSvg
                   Align = Left
-                  Margins.Left = 8.000000000000000000
-                  Margins.Top = 8.000000000000000000
-                  Margins.Right = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Position.X = 8.000000000000000000
-                  Position.Y = 8.000000000000000000
-                  Size.Width = 24.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Left = 8.00000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Right = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Position.X = 8.00000000000000000
+                  Position.Y = 8.00000000000000000
+                  Size.Width = 24.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
                   Svg.OverrideColor = claWhite
                   Svg.Source = 
@@ -6703,12 +6697,12 @@ object frmMain: TfrmMain
                 object Label5: TLabel
                   Align = Client
                   StyledSettings = [Family, Style, FontColor]
-                  Margins.Top = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Size.Width = 71.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Size.Width = 71.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
-                  TextSettings.Font.Size = 14.000000000000000000
+                  TextSettings.Font.Size = 14.00000000000000000
                   TextSettings.Trimming = None
                   Text = 'License'
                   TabOrder = 1
@@ -6717,37 +6711,35 @@ object frmMain: TfrmMain
             end
             object layReportAProblemLink: TLayout
               Align = Top
-              Position.Y = 40.000000000000000000
-              Size.Width = 367.500000000000000000
-              Size.Height = 40.000000000000000000
+              Position.Y = 40.00000000000000000
+              Size.Width = 367.50000000000000000
+              Size.Height = 40.00000000000000000
               Size.PlatformDefault = False
               TabOrder = 1
               object btnReportAProblemLink: TRectangle
                 Align = Left
                 Cursor = crHandPoint
                 Fill.Kind = None
-                Margins.Left = 26.000000000000000000
-                Position.X = 26.000000000000000000
+                Margins.Left = 26.00000000000000000
+                Position.X = 26.00000000000000000
                 Sides = []
-                Size.Width = 175.000000000000000000
-                Size.Height = 40.000000000000000000
+                Size.Width = 175.00000000000000000
+                Size.Height = 40.00000000000000000
                 Size.PlatformDefault = False
                 Stroke.Kind = None
-                XRadius = 8.000000000000000000
-                YRadius = 8.000000000000000000
+                XRadius = 8.00000000000000000
+                YRadius = 8.00000000000000000
                 OnClick = btnReportAProblemLinkClick
-                OnMouseEnter = btnSettingsMouseEnter
-                OnMouseLeave = btnAllToolsMouseLeave
                 object SkSvg3: TSkSvg
                   Align = Left
-                  Margins.Left = 8.000000000000000000
-                  Margins.Top = 8.000000000000000000
-                  Margins.Right = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Position.X = 8.000000000000000000
-                  Position.Y = 8.000000000000000000
-                  Size.Width = 24.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Left = 8.00000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Right = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Position.X = 8.00000000000000000
+                  Position.Y = 8.00000000000000000
+                  Size.Width = 24.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
                   Svg.OverrideColor = claWhite
                   Svg.Source = 
@@ -6769,12 +6761,12 @@ object frmMain: TfrmMain
                 object Label6: TLabel
                   Align = Client
                   StyledSettings = [Family, Style, FontColor]
-                  Margins.Top = 8.000000000000000000
-                  Margins.Bottom = 8.000000000000000000
-                  Size.Width = 135.000000000000000000
-                  Size.Height = 24.000000000000000000
+                  Margins.Top = 8.00000000000000000
+                  Margins.Bottom = 8.00000000000000000
+                  Size.Width = 135.00000000000000000
+                  Size.Height = 24.00000000000000000
                   Size.PlatformDefault = False
-                  TextSettings.Font.Size = 14.000000000000000000
+                  TextSettings.Font.Size = 14.00000000000000000
                   TextSettings.Trimming = None
                   Text = 'Report a problem'
                   TabOrder = 1
@@ -6787,30 +6779,30 @@ object frmMain: TfrmMain
       object layFullScreen: TRectangle
         Align = Top
         Fill.Color = x4B000000
-        Padding.Left = 12.000000000000000000
-        Padding.Top = 12.000000000000000000
-        Padding.Right = 12.000000000000000000
-        Padding.Bottom = 12.000000000000000000
-        Margins.Bottom = 6.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 206.000000000000000000
+        Padding.Left = 12.00000000000000000
+        Padding.Top = 12.00000000000000000
+        Padding.Right = 12.00000000000000000
+        Padding.Bottom = 12.00000000000000000
+        Margins.Bottom = 6.00000000000000000
+        Position.X = 20.00000000000000000
+        Position.Y = 206.00000000000000000
         Sides = []
-        Size.Width = 759.000000000000000000
-        Size.Height = 72.000000000000000000
+        Size.Width = 759.00000000000000000
+        Size.Height = 72.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         object imgFullScreen: TSkSvg
           Align = Left
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 12.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 12.000000000000000000
-          Position.X = 17.000000000000000000
-          Position.Y = 24.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 12.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 12.00000000000000000
+          Position.X = 17.00000000000000000
+          Position.Y = 24.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -6826,17 +6818,17 @@ object frmMain: TfrmMain
         end
         object layFullScreenTitleDescription: TLayout
           Align = Client
-          Size.Width = 536.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 536.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
           object lblFullScreenTitle: TLabel
             Align = Top
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 536.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 536.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.Size = 18.00000000000000000
             TextSettings.Trimming = None
             Text = 'FullScreen (F11)'
             TabOrder = 1
@@ -6844,10 +6836,10 @@ object frmMain: TfrmMain
           object lblFullScreenDescription: TLabel
             Align = Client
             StyledSettings = [Family, Style, FontColor]
-            Size.Width = 536.000000000000000000
-            Size.Height = 24.000000000000000000
+            Size.Width = 536.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 14.000000000000000000
+            TextSettings.Font.Size = 14.00000000000000000
             TextSettings.Trimming = None
             Text = 'Select whether you want the app to be FullScreen or not'
             TabOrder = 0
@@ -6856,13 +6848,13 @@ object frmMain: TfrmMain
         object lblSwitchFullScreen: TLabel
           Align = Right
           StyledSettings = [Family, Style, FontColor]
-          Margins.Right = 8.000000000000000000
-          Position.X = 585.000000000000000000
-          Position.Y = 12.000000000000000000
-          Size.Width = 96.000000000000000000
-          Size.Height = 48.000000000000000000
+          Margins.Right = 8.00000000000000000
+          Position.X = 585.00000000000000000
+          Position.Y = 12.00000000000000000
+          Size.Width = 96.00000000000000000
+          Size.Height = 48.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.Size = 18.00000000000000000
           TextSettings.HorzAlign = Trailing
           TextSettings.Trimming = None
           Text = 'Normal'
@@ -6872,10 +6864,10 @@ object frmMain: TfrmMain
           Align = Right
           Cursor = crHandPoint
           IsChecked = False
-          Position.X = 689.000000000000000000
-          Position.Y = 20.000000000000000000
-          Size.Width = 58.000000000000000000
-          Size.Height = 32.000000000000000000
+          Position.X = 689.00000000000000000
+          Position.Y = 20.00000000000000000
+          Size.Width = 58.00000000000000000
+          Size.Height = 32.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
           OnSwitch = SwitchFullScreenSwitch
@@ -6886,10 +6878,10 @@ object frmMain: TfrmMain
   object SplitterNavContent: TSplitter
     Align = Left
     Cursor = crHSplit
-    MinSize = 20.000000000000000000
-    Position.Y = 49.000000000000000000
-    Size.Width = 1.000000000000000000
-    Size.Height = 751.000000000000000000
+    MinSize = 20.00000000000000000
+    Position.Y = 49.00000000000000000
+    Size.Width = 1.00000000000000000
+    Size.Height = 751.00000000000000000
     Size.PlatformDefault = False
   end
   object layStuffThatWillNeverShow: TLayout
@@ -6905,56 +6897,54 @@ object frmMain: TfrmMain
     Top = 192
   end
   object MultiView: TMultiView
-    DrawerOptions.TouchAreaSize = 25.000000000000000000
+    DrawerOptions.TouchAreaSize = 25.00000000000000000
     Mode = Panel
-    NavigationPaneOptions.CollapsedWidth = 250.000000000000000000
-    Size.Width = 400.000000000000000000
-    Size.Height = 751.000000000000000000
+    NavigationPaneOptions.CollapsedWidth = 250.00000000000000000
+    Size.Width = 400.00000000000000000
+    Size.Height = 751.00000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'MultiView1Style1'
     TabOrder = 2
     object MultiViewScrollBox: TVertScrollBox
       Align = Client
-      Size.Width = 400.000000000000000000
-      Size.Height = 701.000000000000000000
+      Size.Width = 400.00000000000000000
+      Size.Height = 701.00000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      Viewport.Width = 400.000000000000000000
-      Viewport.Height = 701.000000000000000000
+      Viewport.Width = 400.00000000000000000
+      Viewport.Height = 701.00000000000000000
       object layNavAllTools: TLayout
         Align = Top
-        Size.Width = 400.000000000000000000
-        Size.Height = 50.000000000000000000
+        Size.Width = 400.00000000000000000
+        Size.Height = 50.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         object btnAllTools: TRectangle
           Align = Client
           Cursor = crHandPoint
           Fill.Kind = None
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 5.00000000000000000
+          Margins.Right = 5.00000000000000000
+          Margins.Bottom = 5.00000000000000000
           Sides = []
-          Size.Width = 390.000000000000000000
-          Size.Height = 40.000000000000000000
+          Size.Width = 390.00000000000000000
+          Size.Height = 40.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           OnClick = btnAllToolsClick
-          OnMouseEnter = btnAllToolsMouseEnter
-          OnMouseLeave = btnAllToolsMouseLeave
           object imgAllTools: TSkSvg
             Align = Left
-            Margins.Left = 6.000000000000000000
-            Margins.Top = 8.000000000000000000
-            Margins.Right = 6.000000000000000000
-            Margins.Bottom = 8.000000000000000000
-            Position.X = 6.000000000000000000
-            Position.Y = 8.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 6.00000000000000000
+            Margins.Top = 8.00000000000000000
+            Margins.Right = 6.00000000000000000
+            Margins.Bottom = 8.00000000000000000
+            Position.X = 6.00000000000000000
+            Position.Y = 8.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -6970,13 +6960,13 @@ object frmMain: TfrmMain
           object lblAllTools: TLabel
             Align = Client
             StyledSettings = [Family, FontColor]
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Size.Width = 349.000000000000000000
-            Size.Height = 30.000000000000000000
+            Margins.Top = 5.00000000000000000
+            Margins.Right = 5.00000000000000000
+            Margins.Bottom = 5.00000000000000000
+            Size.Width = 349.00000000000000000
+            Size.Height = 30.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.Size = 20.00000000000000000
             TextSettings.Trimming = None
             Text = 'All Tools'
             TabOrder = 1
@@ -6985,39 +6975,37 @@ object frmMain: TfrmMain
       end
       object layNavTesting: TLayout
         Align = Top
-        Position.Y = 50.000000000000000000
-        Size.Width = 400.000000000000000000
-        Size.Height = 50.000000000000000000
+        Position.Y = 50.00000000000000000
+        Size.Width = 400.00000000000000000
+        Size.Height = 50.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
         object btnTesting: TRectangle
           Align = Client
           Cursor = crHandPoint
           Fill.Kind = None
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
+          Margins.Left = 5.00000000000000000
+          Margins.Top = 5.00000000000000000
+          Margins.Right = 5.00000000000000000
+          Margins.Bottom = 5.00000000000000000
           Sides = []
-          Size.Width = 390.000000000000000000
-          Size.Height = 40.000000000000000000
+          Size.Width = 390.00000000000000000
+          Size.Height = 40.00000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
-          XRadius = 8.000000000000000000
-          YRadius = 8.000000000000000000
+          XRadius = 8.00000000000000000
+          YRadius = 8.00000000000000000
           OnClick = btnAllToolsClick
-          OnMouseEnter = btnAllToolsMouseEnter
-          OnMouseLeave = btnAllToolsMouseLeave
           object imgTesting: TSkSvg
             Align = Left
-            Margins.Left = 8.000000000000000000
-            Margins.Top = 8.000000000000000000
-            Margins.Right = 8.000000000000000000
-            Margins.Bottom = 8.000000000000000000
-            Position.X = 8.000000000000000000
-            Position.Y = 8.000000000000000000
-            Size.Width = 24.000000000000000000
-            Size.Height = 24.000000000000000000
+            Margins.Left = 8.00000000000000000
+            Margins.Top = 8.00000000000000000
+            Margins.Right = 8.00000000000000000
+            Margins.Bottom = 8.00000000000000000
+            Position.X = 8.00000000000000000
+            Position.Y = 8.00000000000000000
+            Size.Width = 24.00000000000000000
+            Size.Height = 24.00000000000000000
             Size.PlatformDefault = False
             Svg.OverrideColor = claWhite
             Svg.Source = 
@@ -7033,13 +7021,13 @@ object frmMain: TfrmMain
           object lblTesting: TLabel
             Align = Client
             StyledSettings = [Family, FontColor]
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Size.Width = 345.000000000000000000
-            Size.Height = 30.000000000000000000
+            Margins.Top = 5.00000000000000000
+            Margins.Right = 5.00000000000000000
+            Margins.Bottom = 5.00000000000000000
+            Size.Width = 345.00000000000000000
+            Size.Height = 30.00000000000000000
             Size.PlatformDefault = False
-            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.Size = 20.00000000000000000
             TextSettings.Trimming = None
             Text = 'Testing Stuff '#55357#56833#55357#56833#55357#56833
             TabOrder = 1
@@ -7048,46 +7036,42 @@ object frmMain: TfrmMain
       end
       object layNavTestingMoreStuff: TLayout
         Align = Top
-        Position.Y = 100.000000000000000000
-        Size.Width = 400.000000000000000000
-        Size.Height = 217.000000000000000000
+        Position.Y = 100.00000000000000000
+        Size.Width = 400.00000000000000000
+        Size.Height = 217.00000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object layNavExpandCollapseTestingMoreStuff: TLayout
           Align = Top
-          Size.Width = 400.000000000000000000
-          Size.Height = 50.000000000000000000
+          Size.Width = 400.00000000000000000
+          Size.Height = 50.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 6
           object btnExpandCollapseTestingMoreStuff: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 5.00000000000000000
+            Margins.Right = 5.00000000000000000
+            Margins.Bottom = 5.00000000000000000
             Sides = []
-            Size.Width = 390.000000000000000000
-            Size.Height = 40.000000000000000000
+            Size.Width = 390.00000000000000000
+            Size.Height = 40.00000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
-            OnClick = ExpandCollapseNavItem
-            OnDblClick = ExpandCollapseNavItem
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
+            XRadius = 8.00000000000000000
+            YRadius = 8.00000000000000000
             object imgExpandCollapseTestingMoreStuff: TSkSvg
               Align = Left
-              Margins.Left = 8.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 8.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
+              Margins.Left = 8.00000000000000000
+              Margins.Top = 8.00000000000000000
+              Margins.Right = 8.00000000000000000
+              Margins.Bottom = 8.00000000000000000
+              Position.X = 8.00000000000000000
+              Position.Y = 8.00000000000000000
+              Size.Width = 24.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -7103,26 +7087,26 @@ object frmMain: TfrmMain
             object lblExpandCollapseTestingMoreStuff: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 322.000000000000000000
-              Size.Height = 30.000000000000000000
+              Margins.Top = 5.00000000000000000
+              Margins.Bottom = 5.00000000000000000
+              Size.Width = 322.00000000000000000
+              Size.Height = 30.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
+              TextSettings.Font.Size = 20.00000000000000000
               TextSettings.Trimming = None
               Text = 'Testing More Stuff '#55358#56593
               TabOrder = 1
             end
             object imgExpandCollapseIconTestingMoreStuff: TSkSvg
               Align = Right
-              Margins.Left = 5.000000000000000000
-              Margins.Top = 11.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 11.000000000000000000
-              Position.X = 367.000000000000000000
-              Position.Y = 11.000000000000000000
-              Size.Width = 18.000000000000000000
-              Size.Height = 18.000000000000000000
+              Margins.Left = 5.00000000000000000
+              Margins.Top = 11.00000000000000000
+              Margins.Right = 5.00000000000000000
+              Margins.Bottom = 11.00000000000000000
+              Position.X = 367.00000000000000000
+              Position.Y = 11.00000000000000000
+              Size.Width = 18.00000000000000000
+              Size.Height = 18.00000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -7136,39 +7120,37 @@ object frmMain: TfrmMain
         end
         object layNavTesting1: TLayout
           Align = Top
-          Position.Y = 50.000000000000000000
-          Size.Width = 400.000000000000000000
-          Size.Height = 50.000000000000000000
+          Position.Y = 50.00000000000000000
+          Size.Width = 400.00000000000000000
+          Size.Height = 50.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 11
           object btnTesting1: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 5.00000000000000000
+            Margins.Right = 5.00000000000000000
+            Margins.Bottom = 5.00000000000000000
             Sides = []
-            Size.Width = 390.000000000000000000
-            Size.Height = 40.000000000000000000
+            Size.Width = 390.00000000000000000
+            Size.Height = 40.00000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
+            XRadius = 8.00000000000000000
+            YRadius = 8.00000000000000000
             OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
             object imgTesting1: TSkSvg
               Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
+              Margins.Left = 32.00000000000000000
+              Margins.Top = 8.00000000000000000
+              Margins.Right = 8.00000000000000000
+              Margins.Bottom = 8.00000000000000000
+              Position.X = 32.00000000000000000
+              Position.Y = 8.00000000000000000
+              Size.Width = 24.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -7184,13 +7166,13 @@ object frmMain: TfrmMain
             object lblTesting1: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 321.000000000000000000
-              Size.Height = 30.000000000000000000
+              Margins.Top = 5.00000000000000000
+              Margins.Right = 5.00000000000000000
+              Margins.Bottom = 5.00000000000000000
+              Size.Width = 321.00000000000000000
+              Size.Height = 30.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
+              TextSettings.Font.Size = 20.00000000000000000
               TextSettings.Trimming = None
               Text = 'Testing 1'
               TabOrder = 1
@@ -7199,39 +7181,37 @@ object frmMain: TfrmMain
         end
         object layNavTesting3: TLayout
           Align = Top
-          Position.Y = 150.000000000000000000
-          Size.Width = 400.000000000000000000
-          Size.Height = 50.000000000000000000
+          Position.Y = 150.00000000000000000
+          Size.Width = 400.00000000000000000
+          Size.Height = 50.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 10
           object btnTesting3: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 5.00000000000000000
+            Margins.Right = 5.00000000000000000
+            Margins.Bottom = 5.00000000000000000
             Sides = []
-            Size.Width = 390.000000000000000000
-            Size.Height = 40.000000000000000000
+            Size.Width = 390.00000000000000000
+            Size.Height = 40.00000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
+            XRadius = 8.00000000000000000
+            YRadius = 8.00000000000000000
             OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
             object imgTesting3: TSkSvg
               Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
+              Margins.Left = 32.00000000000000000
+              Margins.Top = 8.00000000000000000
+              Margins.Right = 8.00000000000000000
+              Margins.Bottom = 8.00000000000000000
+              Position.X = 32.00000000000000000
+              Position.Y = 8.00000000000000000
+              Size.Width = 24.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -7253,13 +7233,13 @@ object frmMain: TfrmMain
             object lblTesting3: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 321.000000000000000000
-              Size.Height = 30.000000000000000000
+              Margins.Top = 5.00000000000000000
+              Margins.Right = 5.00000000000000000
+              Margins.Bottom = 5.00000000000000000
+              Size.Width = 321.00000000000000000
+              Size.Height = 30.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
+              TextSettings.Font.Size = 20.00000000000000000
               TextSettings.Trimming = None
               Text = 'Testing 3'
               TabOrder = 1
@@ -7268,39 +7248,37 @@ object frmMain: TfrmMain
         end
         object layNavTesting2: TLayout
           Align = Top
-          Position.Y = 100.000000000000000000
-          Size.Width = 400.000000000000000000
-          Size.Height = 50.000000000000000000
+          Position.Y = 100.00000000000000000
+          Size.Width = 400.00000000000000000
+          Size.Height = 50.00000000000000000
           Size.PlatformDefault = False
           TabOrder = 9
           object btnTesting2: TRectangle
             Align = Client
             Cursor = crHandPoint
             Fill.Kind = None
-            Margins.Left = 5.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 5.000000000000000000
-            Margins.Bottom = 5.000000000000000000
+            Margins.Left = 5.00000000000000000
+            Margins.Top = 5.00000000000000000
+            Margins.Right = 5.00000000000000000
+            Margins.Bottom = 5.00000000000000000
             Sides = []
-            Size.Width = 390.000000000000000000
-            Size.Height = 40.000000000000000000
+            Size.Width = 390.00000000000000000
+            Size.Height = 40.00000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
-            XRadius = 8.000000000000000000
-            YRadius = 8.000000000000000000
+            XRadius = 8.00000000000000000
+            YRadius = 8.00000000000000000
             OnClick = btnAllToolsClick
-            OnMouseEnter = btnAllToolsMouseEnter
-            OnMouseLeave = btnAllToolsMouseLeave
             object imgTesting2: TSkSvg
               Align = Left
-              Margins.Left = 32.000000000000000000
-              Margins.Top = 8.000000000000000000
-              Margins.Right = 8.000000000000000000
-              Margins.Bottom = 8.000000000000000000
-              Position.X = 32.000000000000000000
-              Position.Y = 8.000000000000000000
-              Size.Width = 24.000000000000000000
-              Size.Height = 24.000000000000000000
+              Margins.Left = 32.00000000000000000
+              Margins.Top = 8.00000000000000000
+              Margins.Right = 8.00000000000000000
+              Margins.Bottom = 8.00000000000000000
+              Position.X = 32.00000000000000000
+              Position.Y = 8.00000000000000000
+              Size.Width = 24.00000000000000000
+              Size.Height = 24.00000000000000000
               Size.PlatformDefault = False
               Svg.OverrideColor = claWhite
               Svg.Source = 
@@ -7319,13 +7297,13 @@ object frmMain: TfrmMain
             object lblTesting2: TLabel
               Align = Client
               StyledSettings = [Family, FontColor]
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 5.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 321.000000000000000000
-              Size.Height = 30.000000000000000000
+              Margins.Top = 5.00000000000000000
+              Margins.Right = 5.00000000000000000
+              Margins.Bottom = 5.00000000000000000
+              Size.Width = 321.00000000000000000
+              Size.Height = 30.00000000000000000
               Size.PlatformDefault = False
-              TextSettings.Font.Size = 20.000000000000000000
+              TextSettings.Font.Size = 20.00000000000000000
               TextSettings.Trimming = None
               Text = 'Testing 2'
               TabOrder = 1
@@ -7336,39 +7314,37 @@ object frmMain: TfrmMain
     end
     object layNavSettings: TLayout
       Align = Bottom
-      Position.Y = 701.000000000000000000
-      Size.Width = 400.000000000000000000
-      Size.Height = 50.000000000000000000
+      Position.Y = 701.00000000000000000
+      Size.Width = 400.00000000000000000
+      Size.Height = 50.00000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
       object btnSettings: TRectangle
         Align = Client
         Cursor = crHandPoint
         Fill.Kind = None
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
+        Margins.Left = 5.00000000000000000
+        Margins.Top = 5.00000000000000000
+        Margins.Right = 5.00000000000000000
+        Margins.Bottom = 5.00000000000000000
         Sides = []
-        Size.Width = 390.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Width = 390.00000000000000000
+        Size.Height = 40.00000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        XRadius = 8.000000000000000000
-        YRadius = 8.000000000000000000
+        XRadius = 8.00000000000000000
+        YRadius = 8.00000000000000000
         OnClick = btnAllToolsClick
-        OnMouseEnter = btnAllToolsMouseEnter
-        OnMouseLeave = btnAllToolsMouseLeave
         object imgSettings: TSkSvg
           Align = Left
-          Margins.Left = 8.000000000000000000
-          Margins.Top = 8.000000000000000000
-          Margins.Right = 8.000000000000000000
-          Margins.Bottom = 8.000000000000000000
-          Position.X = 8.000000000000000000
-          Position.Y = 8.000000000000000000
-          Size.Width = 24.000000000000000000
-          Size.Height = 24.000000000000000000
+          Margins.Left = 8.00000000000000000
+          Margins.Top = 8.00000000000000000
+          Margins.Right = 8.00000000000000000
+          Margins.Bottom = 8.00000000000000000
+          Position.X = 8.00000000000000000
+          Position.Y = 8.00000000000000000
+          Size.Width = 24.00000000000000000
+          Size.Height = 24.00000000000000000
           Size.PlatformDefault = False
           Svg.OverrideColor = claWhite
           Svg.Source = 
@@ -7400,13 +7376,13 @@ object frmMain: TfrmMain
         object lblSettings: TLabel
           Align = Client
           StyledSettings = [Family, FontColor]
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 345.000000000000000000
-          Size.Height = 30.000000000000000000
+          Margins.Top = 5.00000000000000000
+          Margins.Right = 5.00000000000000000
+          Margins.Bottom = 5.00000000000000000
+          Size.Width = 345.00000000000000000
+          Size.Height = 30.00000000000000000
           Size.PlatformDefault = False
-          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.Size = 20.00000000000000000
           TextSettings.Trimming = None
           Text = 'Settings'
           TabOrder = 1

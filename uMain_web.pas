@@ -465,7 +465,7 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
         ExpandCollapseNavItem(TWebPanel(FindComponent('btnExpandCollapse' + Tool.name)));
     DynamicParents.Free;
   end;
-  procedure CreateToolButtons();
+  procedure CreateButtons();
   begin
 
   end;
@@ -480,7 +480,7 @@ procedure TfrmMain.WebFormCreate(Sender: TObject);
 begin
   layNavTestingStuff.Parent := layStuffThatWillNeverShow; // Hide Testing Button
   layNavTestingMoreStuff.Parent := layStuffThatWillNeverShow; // Hide Testing Button
-  CreateToolButtons();
+  CreateButtons();
   CreateToolNavButtons();
   HamburgerMenuWidth := 400; // Default Hamburger Menu Width
   SplitterNavContent.Left := Round(HamburgerMenuWidth * 2); // Make sure Splitter is in the correct place
