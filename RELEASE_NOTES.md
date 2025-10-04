@@ -71,7 +71,7 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 ![Programming Color Code Helper - Version 1.0.0 Prototype (January 2014)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f82aac6a-9b03-41aa-bdb8-9eace9b13360)
 - Changed name to "Programming Color Code Helper".
 - Redesigned the entire user interface.
-- Addd many more color codes and features.
+- Added many more color codes and features.
 - This version wasn't really working yet. It was just the GUI and not much was functional yet.
 
 ## Version 1.0.0 Prototype (February 2014)
