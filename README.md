@@ -133,7 +133,6 @@ The "Ping IP / Domain" Tool and "Trace Route" Tool will only work with Admin Per
 | Name                                                                           | Description                                              |
 | ------------------------------------------------------------------------------ | -------------------------------------------------------- |
 | [TMS Web Core](https://www.tmssoftware.com/site/tmswebcore.asp)                | Framework for creating modern web applications in Delphi |
-| [Skia4Delphi](https://github.com/skia4delphi/skia4delphi)                      | Cross-platform 2D graphics library for Delphi            |
 | [Bootstrap Icons](https://github.com/shaunroselt/Delphi-Bootstrap-Icons)       | The Bootstrap Icons library to use within Delphi         |
 | [Font Awesome Icons](https://github.com/shaunroselt/Delphi-Font-Awesome-Icons) | The Font Awesome Icons library to use within Delphi      |
 | [Feather Icons](https://github.com/shaunroselt/Delphi-Feather-Icons)           | The Feather Icons library to use within Delphi           |
