@@ -20,7 +20,8 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 
 ## Release Notes
 * [Version 0.1.0 Alpha (~2013)](#version-010-alpha-2013)
-* [Version 1.0.0 Prototype (~2014)](#version-100-prototype-2014)
+* [Version 1.0.0 Prototype (January_2014)](#version-100-prototype-january-2014)
+* [Version 1.0.0 Prototype (February)](#version-100-prototype-february-2014)
 * [Version 0.2.0 Alpha (Early 2015)](#version-020-alpha-early-2015)
 * [Version 0.3.0 Alpha (Late 2015)](#version-030-alpha-late-2015)
 * [Version 1.0.0 (29/08/2017)](#version-100-29082017)
@@ -66,9 +67,16 @@ Since 2017, I've kept release notes for every release of the app and I'm proud t
 - This is the first version I built and I distributed it to all my friends and fellow IT classmates.
 - It actually evolved into having over 100 different colors instead of the 20 in the screenshot, but that version is lost.
 
-## Version 1.0.0 Prototype (~2014)
-![Programming Color Code Helper - Version 1.0.0 Prototype (~2014)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f82aac6a-9b03-41aa-bdb8-9eace9b13360)
-- Changed name to "Programming Color Code Helper" and added many more color codes and features.
+## Version 1.0.0 Prototype (January 2014)
+![Programming Color Code Helper - Version 1.0.0 Prototype (January 2014)](https://github.com/shaunroselt/Roselt-Developer-Tools/assets/5418178/f82aac6a-9b03-41aa-bdb8-9eace9b13360)
+- Changed name to "Programming Color Code Helper".
+- Redesigned the entire user interface.
+- Addd many more color codes and features.
+- This version wasn't really working yet. It was just the GUI and not much was functional yet.
+
+## Version 1.0.0 Prototype (February 2014)
+![Programming Color Code Helper - Version 1.0.0 Prototype (February 2014)](https://github.com/user-attachments/assets/ef7377c9-d928-4dd2-b858-ccb95e59b1df)
+- Added more features.
 - This was supposed to become Version 1.0.0, but I never finished it and I lost the source code to it.
 
 ## Version 0.2.0 Alpha (Early 2015)
