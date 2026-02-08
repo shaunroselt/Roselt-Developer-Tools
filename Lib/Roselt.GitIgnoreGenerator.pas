@@ -309,11 +309,12 @@ begin
   Result[7].Content := 
     '# General' + sLineBreak +
     '.DS_Store' + sLineBreak +
+    '__MACOSX/' + sLineBreak +
     '.AppleDouble' + sLineBreak +
     '.LSOverride' + sLineBreak +
     '' + sLineBreak +
     '# Icon must end with two \r' + sLineBreak +
-    'Icon' + sLineBreak +
+    'Icon[]' + sLineBreak +
     '' + sLineBreak +
     '# Thumbnails' + sLineBreak +
     '._*' + sLineBreak +
