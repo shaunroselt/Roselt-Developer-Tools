@@ -1,0 +1,286 @@
+object Frame_GitIgnoreGenerator: TFrame_GitIgnoreGenerator
+  Size.Width = 852.000000000000000000
+  Size.Height = 756.000000000000000000
+  Size.PlatformDefault = False
+  object layBottom: TLayout
+    Align = Client
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 852.000000000000000000
+    Size.Height = 568.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object memTitleOutput: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 812.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
+      Text = '.gitignore Content'
+      TabOrder = 0
+      object btnOutputCopyToClipboard: TButton
+        Align = Right
+        Cursor = crHandPoint
+        Margins.Top = 1.000000000000000000
+        Margins.Right = 1.000000000000000000
+        Margins.Bottom = 1.000000000000000000
+        Position.X = 741.000000000000000000
+        Position.Y = 1.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        TextSettings.Trimming = None
+        OnClick = btnOutputCopyToClipboardClick
+        object imgOutputCopyToClipboard: TSkSvg
+          Align = Left
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          Svg.OverrideColor = claWhite
+          Svg.Source = 
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+            'ill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">'#13 +
+            #10'  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0' +
+            ' 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1' +
+            ' 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>'#13#10'  <path d="M9.5 1a.5.5 ' +
+            '0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .' +
+            '5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5' +
+            ' 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>'#13#10'</svg>'
+        end
+        object lblOutputCopyToClipboard: TLabel
+          Align = Client
+          Size.Width = 36.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Copy'
+          TabOrder = 5
+        end
+      end
+    end
+    object memOutput: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Size.Width = 812.000000000000000000
+      Size.Height = 492.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 812.000000000000000000
+      Viewport.Height = 492.000000000000000000
+    end
+  end
+  object layTop: TLayout
+    Align = Top
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Padding.Bottom = 20.000000000000000000
+    Size.Width = 852.000000000000000000
+    Size.Height = 188.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object lblConfiguration: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 812.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Trimming = None
+      Text = 'Configuration'
+      TabOrder = 0
+    end
+    object layCategory: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 50.000000000000000000
+      Sides = []
+      Size.Width = 812.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgCategory: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">'#13#10'  ' +
+          '<path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.' +
+          '828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 ' +
+          '2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 ' +
+          '0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .99' +
+          '5.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19z"/>' +
+          #13#10'  <path d="M6.172 2a1 1 0 0 0-.707.293L4.586 3H2.19c-.24 0-.47' +
+          '.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.' +
+          '586 3h3.982a1 1 0 0 1 .992 1.09l-.636 7a.993.993 0 0 1-.105.398l' +
+          '.63-6.937A2 2 0 0 0 9.828 2H6.172z"/>'#13#10'</svg>'
+      end
+      object layCategoryTitleDescription: TLayout
+        Align = Client
+        Size.Width = 611.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblCategoryTitle: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 611.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Category'
+          TabOrder = 1
+        end
+        object lblCategoryDescription: TLabel
+          Align = Bottom
+          StyledSettings = [Family, Style, FontColor]
+          Position.Y = 32.000000000000000000
+          Size.Width = 611.000000000000000000
+          Size.Height = 0.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Select the category of gitignore template'
+          TabOrder = 0
+          Visible = False
+        end
+      end
+      object cbCategory: TComboBox
+        Align = Right
+        Items.Strings = (
+          'Languages'
+          'IDEs'
+          'Operating Systems')
+        ItemIndex = 0
+        Position.X = 660.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        OnChange = cbCategoryChange
+      end
+    end
+    object layTemplate: TRectangle
+      Align = Top
+      Fill.Color = x4B000000
+      Padding.Left = 12.000000000000000000
+      Padding.Top = 12.000000000000000000
+      Padding.Right = 12.000000000000000000
+      Padding.Bottom = 12.000000000000000000
+      Margins.Bottom = 6.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 112.000000000000000000
+      Sides = []
+      Size.Width = 812.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object imgTemplate: TSkSvg
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 17.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        Svg.OverrideColor = claWhite
+        Svg.Source = 
+          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" f' +
+          'ill="currentColor" class="bi bi-file-earmark-code" viewBox="0 0 ' +
+          '16 16">'#13#10'  <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2' +
+          ' 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-' +
+          '1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>'#13#10'  <path d="M8.6' +
+          '46 6.24v3.81h.569v-3.81h-.569zm-1.193 3.81V6.24h-.569v3.81h.569z' +
+          'm2.707-3.81L8.854 8.4l1.306 2.16h.664L9.5 8.4l1.324-2.16h-.664z' +
+          'm-4.51 0L4.346 8.4l1.306 2.16h.664L5 8.4l1.324-2.16H5.66z"/>'#13#10'</' +
+          'svg>'
+      end
+      object layTemplateTitleDescription: TLayout
+        Align = Client
+        Size.Width = 611.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblTemplateTitle: TLabel
+          Align = Client
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 611.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Template'
+          TabOrder = 1
+        end
+        object lblTemplateDescription: TLabel
+          Align = Bottom
+          StyledSettings = [Family, Style, FontColor]
+          Position.Y = 32.000000000000000000
+          Size.Width = 611.000000000000000000
+          Size.Height = 0.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
+          Text = 'Select the gitignore template'
+          TabOrder = 0
+          Visible = False
+        end
+      end
+      object cbTemplate: TComboBox
+        Align = Right
+        Items.Strings = (
+          'Python'
+          'Node'
+          'Java')
+        ItemIndex = 0
+        Position.X = 660.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        OnChange = cbTemplateChange
+      end
+    end
+  end
+end

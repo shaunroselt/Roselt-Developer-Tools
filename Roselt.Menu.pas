@@ -52,7 +52,8 @@ uses
   uFrame_ImageConverter,
   uFrame_BootstrapIcons,
   uFrame_FontAwesomeIcons,
-  uFrame_FeatherIcons;
+  uFrame_FeatherIcons,
+  uFrame_GitIgnoreGenerator;
 
 type
   TRoseltMenuFrame = class of TFrame;
@@ -94,7 +95,7 @@ var
   NavMouseHelper: TNavMouseHelper;
 
 const
-  RoseltMenuArray: array[0..47] of TRoseltMenu = (
+  RoseltMenuArray: array[0..48] of TRoseltMenu = (
     ( // Converters Main Category (Parent)
       text_short: 'Converters';
       text_long: 'Converters';
@@ -598,6 +599,22 @@ const
       {$ENDIF}
       parent: 'Generators';
       frame: TFrame_PasswordGenerator;
+    ),
+    (
+      text_short: '.gitignore';
+      text_long: '.gitignore Generator';
+      name: 'GitIgnoreGenerator';
+      description: 'Generate .gitignore files for various languages and platforms';
+      icon: 'file-earmark-code';
+      {$IFDEF DEBUG}
+        active: true;
+        visible: true;
+      {$ELSE}
+        active: true;
+        visible: true;
+      {$ENDIF}
+      parent: 'Generators';
+      frame: TFrame_GitIgnoreGenerator;
     ),
     (
       text_short: 'Case Converter && Inspector';
