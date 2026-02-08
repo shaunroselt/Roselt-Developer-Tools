@@ -181,11 +181,7 @@ object Frame_GitIgnoreGenerator: TFrame_GitIgnoreGenerator
       end
       object cbCategory: TComboBox
         Align = Right
-        Items.Strings = (
-          'Languages'
-          'IDEs'
-          'Operating Systems')
-        ItemIndex = 0
+        ItemIndex = -1
         Position.X = 660.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 140.000000000000000000
@@ -268,11 +264,7 @@ object Frame_GitIgnoreGenerator: TFrame_GitIgnoreGenerator
       end
       object cbTemplate: TComboBox
         Align = Right
-        Items.Strings = (
-          'Python'
-          'Node'
-          'Java')
-        ItemIndex = 0
+        ItemIndex = -1
         Position.X = 660.000000000000000000
         Position.Y = 12.000000000000000000
         Size.Width = 140.000000000000000000

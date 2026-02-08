@@ -313,7 +313,7 @@ begin
     '.AppleDouble' + sLineBreak +
     '.LSOverride' + sLineBreak +
     '' + sLineBreak +
-    '# Icon must end with two \r' + sLineBreak +
+    '# Icon file with custom folder icon (represented as Icon[] in gitignore)' + sLineBreak +
     'Icon[]' + sLineBreak +
     '' + sLineBreak +
     '# Thumbnails' + sLineBreak +
